@@ -4,11 +4,13 @@
   "description": "",
   "source": [
     "index.css",
+    "scoped.scss",
     "button/button.scss"
   ],
   "scripts": {
     "build": "parcel build",
-    "dev": "parcel watch"
+    "dev": "parcel watch",
+    "clean": "rm -rf .turbo && rm -rf .parcel-cache && rm -rf node_modules && rm -rf dist"
   },
   "license": "MIT",
   "devDependencies": {
