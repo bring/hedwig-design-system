@@ -26,7 +26,8 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@posten-hedwig/css": "*"
+    "@posten-hedwig/css": "*",
+    "clsx": "2.0.0"
   },
   "publishConfig": {
     "access": "public"
