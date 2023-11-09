@@ -8,11 +8,14 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "release": "turbo run build --filter=docs^... && changeset publish",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
     "eslint": "^8.48.0",
+    "husky": "8.0.3",
+    "lint-staged": "15.0.2",
     "prettier": "^3.0.3",
     "tsconfig": "*",
     "turbo": "latest"
@@ -21,5 +24,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx,css,md,json}": "prettier --write"
+  }
 }
