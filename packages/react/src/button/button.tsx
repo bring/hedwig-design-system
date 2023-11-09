@@ -1,7 +1,6 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { warnForStyleOverrides } from "../utils";
-import "@posten-hedwig/css/dist/button/button.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
