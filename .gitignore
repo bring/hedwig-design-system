@@ -13,3 +13,4 @@ public/dist
 storybook-static/
 .eslintcache
 .vscode/
+.parcel-cache/

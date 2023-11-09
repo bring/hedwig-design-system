@@ -25,6 +25,9 @@
     "tsup": "^5.10.1",
     "typescript": "^5.2.2"
   },
+  "dependencies": {
+    "@posten-hedwig/css": "*"
+  },
   "publishConfig": {
     "access": "public"
   }

@@ -1,0 +1,28 @@
+{
+  "name": "@posten-hedwig/css",
+  "version": "0.0.0",
+  "description": "",
+  "source": [
+    "index.css",
+    "button/button.scss"
+  ],
+  "scripts": {
+    "build": "parcel build",
+    "dev": "parcel watch"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.10.2",
+    "autoprefixer": "10.4.16",
+    "parcel": "2.10.2",
+    "postcss": "8.4.31",
+    "postcss-import": "15.1.0",
+    "postcss-nested": "6.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
