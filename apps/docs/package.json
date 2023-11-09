@@ -21,7 +21,7 @@
     "@storybook/addon-links": "^7.5.3",
     "@storybook/react": "^7.5.3",
     "@storybook/react-vite": "^7.5.3",
-    "@vitejs/plugin-react": "^1.3.2",
+    "@vitejs/plugin-react": "^4.1.1",
     "eslint-config-custom": "*",
     "serve": "^14.2.1",
     "storybook": "^7.5.3",
