@@ -1,5 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@posten-hedwig/react";
+import { Button } from "./button";
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -28,19 +29,11 @@ export const Primary: Story = {
         // eslint-disable-next-line no-alert -- alert for demo
         alert("Hello from Turborepo!");
       }}
-    >
-      Hello
-    </Button>
+    />
   ),
   name: "Button",
   args: {
-    children: "Hello",
+    children: "Hello world",
     type: "button",
-    style: {
-      color: "blue",
-      border: "1px solid gray",
-      padding: 10,
-      borderRadius: 10,
-    },
   },
 };

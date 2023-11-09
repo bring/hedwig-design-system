@@ -5,7 +5,7 @@ function getAbsolutePath(value) {
 }
 
 const config = {
-  stories: ["../stories/*.stories.tsx", "../stories/**/*.stories.tsx"],
+  stories: ["../../../packages/react/src/**/*.stories.tsx"],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
@@ -28,6 +28,10 @@ const config = {
           {
             find: "@posten-hedwig/react",
             replacement: resolve(__dirname, "../../../packages/react/"),
+          },
+          {
+            find: "@posten-hedwig/css",
+            replacement: resolve(__dirname, "../../../packages/css/"),
           },
         ],
       },
