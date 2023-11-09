@@ -23,7 +23,8 @@
   "packageManager": "npm@10.1.0",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "packages-internal/*"
   ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
