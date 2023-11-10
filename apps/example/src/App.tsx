@@ -1,4 +1,4 @@
-import { Button } from "@postenbring/hedwig-react/dist/button/button-with-css";
+import { Button } from "@postenbring/hedwig-react";
 
 function App() {
   return (
