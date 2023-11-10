@@ -1,24 +1,17 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from ".";
+import { PrimaryButton } from ".";
 
-const meta: Meta<typeof Button> = {
-  component: Button,
-  // argTypes: {
-  //   type: {
-  //     control: { type: "radio" },
-  //     options: ["button", "submit", "reset"],
-  //   },
-  // },
+const meta: Meta<typeof PrimaryButton> = {
+  component: PrimaryButton,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof PrimaryButton>;
 
 export const Primary: Story = {
   args: {
     children: "Primary",
-    size: "medium",
   },
 };

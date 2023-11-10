@@ -198,43 +198,4 @@
       background: transparent !important;
     }
   }
-
-  &--stripped {
-    background: none;
-    fill: var(--hds-color-gray-dark);
-    color: var(--hds-color-gray-dark);
-
-    &:hover {
-      fill: var(--hds-color-gray-dark);
-      color: var(--hds-color-gray-dark);
-    }
-  }
-  &--chat {
-    width: 60px;
-    height: 60px;
-    margin: 0px;
-    padding: 10px 10px 8px;
-    border-radius: 50%;
-    background: var(--hds-color-primary-light);
-    color: var(--hds-color-primary-darker);
-
-    &:hover,
-    &:active {
-      color: var(--hds-color-primary-darker);
-      fill: var(--hds-color-primary-darker);
-      border-color: var(--hds-color-button-primary-light-hover);
-      background: var(--hds-color-button-primary-light-hover);
-    }
-
-    &:active {
-      background: var(--hds-color-button-primary-light-hover);
-    }
-  }
-  &--chat-fixed {
-    position: fixed;
-    bottom: 12px;
-    right: 12px;
-    z-index: var(--z-index--stickynav);
-    @extend .hds-button--chat;
-  }
 }

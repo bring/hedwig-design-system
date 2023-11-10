@@ -8,12 +8,12 @@
   margin-right: var(--hds-spacing-small-4);
   border-radius: var(--hds-border-radius);
   border-width: 0px;
-  background: var(--hds-color-gray-normal);
-  border-color: var(--hds-color-gray-normal);
-  color: var(--hds-color-button-text);
-  fill: var(--hds-color-button-text);
-  font-family: var(--hds-font-primary-medium);
-  font-size: var(--hds-font-size-small);
+  background: var(--hds-ui-colors-grey);
+  border-color: var(--hds-ui-colors-grey);
+  color: var(--hds-brand-button-text);
+  fill: var(--hds-brand-button-text);
+  font-family: var(--hds-fonts-posten-sans-medium-name);
+  font-size: var(--hds-typography-body-small-font-size);
   line-height: var(--hds-font-size-p);
   transition: all var(--hds-transition-time-quick) var(--hds-transition-easing-normal);
   text-align: center; /* Center text when this is an <a> */

@@ -1,4 +1,4 @@
-import { Button } from "@postenbring/hedwig-react";
+import { PrimaryButton } from "@postenbring/hedwig-react";
 
 function App() {
   return (
@@ -6,7 +6,7 @@ function App() {
       <div className="hds-theme-posten">
         <h1>Hello, world</h1>
         <h2>En knapp</h2>
-        <Button>Hello</Button>
+        <PrimaryButton>Hello</PrimaryButton>
       </div>
     </>
   );

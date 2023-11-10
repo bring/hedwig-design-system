@@ -2,22 +2,34 @@ import * as React from "react";
 import { clsx } from "clsx";
 import { warnForStyleOverrides } from "../utils";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className" | "style"> {
   children: React.ReactNode;
   size?: "small" | "medium" | "large";
+  fullWidth?: boolean | "mobile";
+  fill?: "contained" | "outlined";
+  buttonRef?: React.ForwardedRef<HTMLButtonElement>;
 }
 
-export function Button({
+function BaseButton({
   children,
-  style,
-  className,
+  variant,
   size = "medium",
+  fullWidth = false,
+  fill = "contained",
+  buttonRef,
   ...rest
-}: ButtonProps): JSX.Element {
-  warnForStyleOverrides(style, className);
+}: ButtonProps & { variant: "primary" | "secondary" }) {
+  warnForStyleOverrides(rest);
   return (
     <button
-      className={clsx("hds-button", "hds-button--primary", `hds-button--${size}`)}
+      className={clsx("hds-button", `hds-button--${size}`, {
+        [`hds-button--${variant}`]: fill === "contained",
+        [`hds-button--outline-${variant}`]: fill === "outlined",
+        "hds-button--full": fullWidth,
+        "hds-button--mobile-full": fullWidth === "mobile",
+      })}
+      ref={buttonRef}
       type="button"
       {...rest}
     >
@@ -26,4 +38,22 @@ export function Button({
   );
 }
 
-Button.displayName = "Button";
+BaseButton.displayName = "BaseButton";
+
+/**
+ * TODO:
+ * - [ ] Prefix variant in component name
+ * - [ ] Handle links that looks like buttons
+ * - [ ] Revisit how to handle outline
+ * - [ ] Figure out outline-white
+ */
+
+export function PrimaryButton(props: ButtonProps) {
+  return <BaseButton {...props} variant="primary" />;
+}
+PrimaryButton.displayName = "PrimaryButton";
+
+export function SecondaryButton(props: ButtonProps) {
+  return <BaseButton {...props} variant="secondary" />;
+}
+SecondaryButton.displayName = "SecondaryButton";
