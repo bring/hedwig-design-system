@@ -14,8 +14,8 @@
   fill: var(--hds-brand-button-text);
   font-family: var(--hds-fonts-posten-sans-medium-name);
   font-size: var(--hds-typography-body-small-font-size);
-  line-height: var(--hds-font-size-p);
-  transition: all var(--hds-transition-time-quick) var(--hds-transition-easing-normal);
+  // line-height: var(--hds-font-size-p); // TODO
+  transition: all var(--hds-transition-time-quick) var(--hds-micro-animation-easing-normal);
   text-align: center; /* Center text when this is an <a> */
   cursor: pointer;
   word-break: normal;
