@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/react-app.json",
+  "extends": "hedwig-tsconfig/react-app.json",
   "include": [".", "../../packages/react/src/**/*.stories.tsx"],
   "exclude": ["dist", "build", "node_modules"]
 }
