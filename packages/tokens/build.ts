@@ -1,4 +1,5 @@
 /* eslint-disable no-console -- script */
+import { readFileSync, writeFileSync } from "node:fs";
 import StyleDictionaryPackage from "style-dictionary";
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
@@ -39,6 +40,15 @@ brands.forEach(function mapBrand(brand) {
 
   console.log("\nEnd processing");
 });
+
+const bringCss = String(readFileSync("./dist/web/bring/tokens.css"));
+const postenCss = String(readFileSync("./dist/web/posten/tokens.css"));
+
+const final =
+  bringCss.replace(":root {", ".hw-theme-bring {") +
+  postenCss.replace(":root {", ".hw-theme-posten {");
+
+writeFileSync("./dist/web/tokens.css", final, "utf8");
 
 console.log("\n==============================================");
 console.log("\nBuild completed!");

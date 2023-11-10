@@ -1,0 +1,3 @@
+{
+  "extends": "hedwig-tsconfig/base.json"
+}
