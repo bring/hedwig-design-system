@@ -1,0 +1,29 @@
+name: Build and Publish Storybook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+        with:
+          install_command: npm ci
+          build_command: npm run build
+          path: apps/docs/storybook-static
