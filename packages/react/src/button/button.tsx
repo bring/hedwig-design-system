@@ -20,7 +20,7 @@ export function Button({
   warnForStyleOverrides(style, className);
   return (
     <button
-      className={clsx("hwc-button", "hwc-button--primary", `hwc-button--${size}`)}
+      className={clsx("hds-button", "hds-button--primary", `hds-button--${size}`)}
       type="button"
       {...rest}
     >

@@ -3,20 +3,19 @@
   -webkit-appearance: button;
   box-sizing: border-box;
   display: inline-block;
-  padding: var(--hwc-spacing-small-3) var(--hwc-spacing-medium-2);
+  padding: var(--hds-spacing-small-3) var(--hds-spacing-medium-2);
   margin-top: 3px;
-  margin-right: var(--hwc-spacing-small-4);
-  border-radius: var(--hwc-border-radius);
+  margin-right: var(--hds-spacing-small-4);
+  border-radius: var(--hds-border-radius);
   border-width: 0px;
-  background: var(--hwc-color-gray-normal);
-  border-color: var(--hwc-color-gray-normal);
-  color: var(--hwc-color-button-text);
-  fill: var(--hwc-color-button-text);
-  font-family: var(--hwc-font-primary-medium);
-  font-size: var(--hwc-font-size-small);
-  line-height: var(--hwc-font-size-p);
-  transition: all var(--hwc-transition-time-quick)
-    var(--hwc-transition-easing-normal);
+  background: var(--hds-color-gray-normal);
+  border-color: var(--hds-color-gray-normal);
+  color: var(--hds-color-button-text);
+  fill: var(--hds-color-button-text);
+  font-family: var(--hds-font-primary-medium);
+  font-size: var(--hds-font-size-small);
+  line-height: var(--hds-font-size-p);
+  transition: all var(--hds-transition-time-quick) var(--hds-transition-easing-normal);
   text-align: center; /* Center text when this is an <a> */
   cursor: pointer;
   word-break: normal;

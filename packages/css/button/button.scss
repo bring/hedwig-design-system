@@ -3,7 +3,7 @@
  * Block
  */
 
-.hwc-button {
+.hds-button {
   @include base.button;
 
   &:last-of-type {
@@ -13,10 +13,10 @@
   &:disabled,
   &[disabled],
   &[disabled]:active {
-    color: var(--hwc-color-gray-dark) !important;
-    fill: var(--hwc-color-gray-dark) !important;
-    background: var(--hwc-color-gray-normal) !important;
-    border-color: var(--hwc-color-gray-normal) !important;
+    color: var(--hds-color-gray-dark) !important;
+    fill: var(--hds-color-gray-dark) !important;
+    background: var(--hds-color-gray-normal) !important;
+    border-color: var(--hds-color-gray-normal) !important;
     outline: 0 !important;
     box-shadow: none !important;
     cursor: default;
@@ -75,45 +75,45 @@
      */
 
   &--primary {
-    background: var(--hwc-color-primary);
-    border-color: var(--hwc-color-primary);
-    color: var(--hwc-color-button-text);
-    fill: var(--hwc-color-button-text);
+    background: var(--hds-color-primary);
+    border-color: var(--hds-color-primary);
+    color: var(--hds-color-button-text);
+    fill: var(--hds-color-button-text);
 
     &:hover,
     &:active {
-      background: var(--hwc-color-button-primary-hover);
-      border-color: var(--hwc-color-primary);
-      outline: 0px solid var(--hwc-color-button-primary-hover);
+      background: var(--hds-color-button-primary-hover);
+      border-color: var(--hds-color-primary);
+      outline: 0px solid var(--hds-color-button-primary-hover);
     }
 
     &:active {
-      background: var(--hwc-color-primary) !important;
+      background: var(--hds-color-primary) !important;
     }
   }
 
   &--secondary {
-    background: var(--hwc-color-primary-darker);
-    border-color: var(--hwc-color-primary-darker);
-    color: var(--hwc-color-white);
-    fill: var(--hwc-color-white);
+    background: var(--hds-color-primary-darker);
+    border-color: var(--hds-color-primary-darker);
+    color: var(--hds-color-white);
+    fill: var(--hds-color-white);
 
     &:hover,
     &:active {
-      background: var(--hwc-color-black);
-      outline: 0px solid var(--hwc-color-black);
+      background: var(--hds-color-black);
+      outline: 0px solid var(--hds-color-black);
     }
 
     &:active {
-      background: var(--hwc-color-primary-darker) !important;
+      background: var(--hds-color-primary-darker) !important;
     }
   }
 
   &--outline {
     background: transparent;
-    color: var(--hwc-color-primary-dark);
-    fill: var(--hwc-color-primary-dark);
-    border: var(--hwc-border-thickness) solid var(--hwc-color-primary-dark);
+    color: var(--hds-color-primary-dark);
+    fill: var(--hds-color-primary-dark);
+    border: var(--hds-border-thickness) solid var(--hds-color-primary-dark);
 
     &:disabled,
     &[disabled],
@@ -123,90 +123,90 @@
 
     &:hover,
     &:active {
-      color: var(--hwc-color-black);
-      fill: var(--hwc-color-black);
-      border-color: var(--hwc-color-black);
+      color: var(--hds-color-black);
+      fill: var(--hds-color-black);
+      border-color: var(--hds-color-black);
       background: none;
     }
 
     &:active {
-      border-color: var(--hwc-color-gray-dark);
+      border-color: var(--hds-color-gray-dark);
     }
   }
 
   &--outline-dark {
-    @extend .hwc-button--outline-secondary;
+    @extend .hds-button--outline-secondary;
   }
 
   &--outline-white {
     background: transparent;
-    border: var(--hwc-border-thickness) solid var(--hwc-color-primary-light);
-    color: var(--hwc-color-white);
-    fill: var(--hwc-color-white);
+    border: var(--hds-border-thickness) solid var(--hds-color-primary-light);
+    color: var(--hds-color-white);
+    fill: var(--hds-color-white);
     outline-offset: 3px;
 
     &:hover,
     &:active {
-      color: var(--hwc-color-primary-light);
-      fill: var(--hwc-color-primary-light);
+      color: var(--hds-color-primary-light);
+      fill: var(--hds-color-primary-light);
     }
   }
 
   &--outline-primary {
     background: transparent;
-    border: var(--hwc-border-thickness) solid var(--hwc-color-primary);
-    color: var(--hwc-color-black);
-    fill: var(--hwc-color-black);
+    border: var(--hds-border-thickness) solid var(--hds-color-primary);
+    color: var(--hds-color-black);
+    fill: var(--hds-color-black);
     outline-offset: 3px;
 
     &:hover,
     &:active {
-      color: var(--hwc-color-primary-dark);
-      fill: var(--hwc-color-primary-dark);
-      border: var(--hwc-border-thickness) solid var(--hwc-color-primary-dark);
+      color: var(--hds-color-primary-dark);
+      fill: var(--hds-color-primary-dark);
+      border: var(--hds-border-thickness) solid var(--hds-color-primary-dark);
     }
     &:disabled,
     &[disabled],
     &[disabled]:active {
-      border: var(--hwc-border-thickness) solid var(--hwc-color-gray-normal);
-      color: var(--hwc-color-gray-dark);
-      fill: var(--hwc-color-gray-dark);
+      border: var(--hds-border-thickness) solid var(--hds-color-gray-normal);
+      color: var(--hds-color-gray-dark);
+      fill: var(--hds-color-gray-dark);
       background: transparent !important;
     }
   }
 
   &--outline-secondary {
     background: transparent;
-    border: var(--hwc-border-thickness) solid var(--hwc-color-primary-darker);
-    color: var(--hwc-color-primary-darker);
-    fill: var(--hwc-color-primary-darker);
+    border: var(--hds-border-thickness) solid var(--hds-color-primary-darker);
+    color: var(--hds-color-primary-darker);
+    fill: var(--hds-color-primary-darker);
     outline-offset: 3px;
 
     &:hover,
     &:active {
-      color: var(--hwc-color-black);
-      fill: var(--hwc-color-black);
-      border: var(--hwc-border-thickness) solid var(--hwc-color-black);
-      /*outline: 0px solid var(--hwc-color-white);*/
+      color: var(--hds-color-black);
+      fill: var(--hds-color-black);
+      border: var(--hds-border-thickness) solid var(--hds-color-black);
+      /*outline: 0px solid var(--hds-color-white);*/
     }
     &:disabled,
     &[disabled],
     &[disabled]:active {
-      border: var(--hwc-border-thickness) solid var(--hwc-color-gray-normal);
-      color: var(--hwc-color-gray-dark);
-      fill: var(--hwc-color-gray-dark);
+      border: var(--hds-border-thickness) solid var(--hds-color-gray-normal);
+      color: var(--hds-color-gray-dark);
+      fill: var(--hds-color-gray-dark);
       background: transparent !important;
     }
   }
 
   &--stripped {
     background: none;
-    fill: var(--hwc-color-gray-dark);
-    color: var(--hwc-color-gray-dark);
+    fill: var(--hds-color-gray-dark);
+    color: var(--hds-color-gray-dark);
 
     &:hover {
-      fill: var(--hwc-color-gray-dark);
-      color: var(--hwc-color-gray-dark);
+      fill: var(--hds-color-gray-dark);
+      color: var(--hds-color-gray-dark);
     }
   }
   &--chat {
@@ -215,19 +215,19 @@
     margin: 0px;
     padding: 10px 10px 8px;
     border-radius: 50%;
-    background: var(--hwc-color-primary-light);
-    color: var(--hwc-color-primary-darker);
+    background: var(--hds-color-primary-light);
+    color: var(--hds-color-primary-darker);
 
     &:hover,
     &:active {
-      color: var(--hwc-color-primary-darker);
-      fill: var(--hwc-color-primary-darker);
-      border-color: var(--hwc-color-button-primary-light-hover);
-      background: var(--hwc-color-button-primary-light-hover);
+      color: var(--hds-color-primary-darker);
+      fill: var(--hds-color-primary-darker);
+      border-color: var(--hds-color-button-primary-light-hover);
+      background: var(--hds-color-button-primary-light-hover);
     }
 
     &:active {
-      background: var(--hwc-color-button-primary-light-hover);
+      background: var(--hds-color-button-primary-light-hover);
     }
   }
   &--chat-fixed {
@@ -235,6 +235,6 @@
     bottom: 12px;
     right: 12px;
     z-index: var(--z-index--stickynav);
-    @extend .hwc-button--chat;
+    @extend .hds-button--chat;
   }
 }
