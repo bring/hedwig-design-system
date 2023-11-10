@@ -10,7 +10,9 @@
     "lint": "eslint ../../packages/react/src/**/*.stories.tsx"
   },
   "dependencies": {
+    "@postenbring/hedwig-css": "*",
     "@postenbring/hedwig-react": "*",
+    "@postenbring/hedwig-tokens": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
