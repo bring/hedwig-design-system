@@ -1,5 +1,5 @@
 {
   "extends": "tsconfig/react-app.json",
-  "include": ["."],
+  "include": [".", "../../packages/react/src/**/*.stories.tsx"],
   "exclude": ["dist", "build", "node_modules"]
 }
