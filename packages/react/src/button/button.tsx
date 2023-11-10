@@ -4,10 +4,23 @@ import { warnForStyleOverrides } from "../utils";
 
 interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className" | "style"> {
-  children: React.ReactNode;
+  /**
+   * The height, font size and padding of the button
+   */
   size?: "small" | "medium" | "large";
+
+  /**
+   * Make the button use 100% width available.
+   * Using the "mobile" it only stretch to full width on smaller screens
+   */
   fullWidth?: boolean | "mobile";
+
+  /**
+   * The background of the button.
+   */
   fill?: "contained" | "outlined";
+
+  children: React.ReactNode;
   buttonRef?: React.ForwardedRef<HTMLButtonElement>;
 }
 
