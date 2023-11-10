@@ -41,14 +41,14 @@ brands.forEach(function mapBrand(brand) {
   console.log("\nEnd processing");
 });
 
-const bringCss = String(readFileSync("./dist/web/bring/tokens.css"));
-const postenCss = String(readFileSync("./dist/web/posten/tokens.css"));
+const bringCss = String(readFileSync(`${__dirname}/dist/web/bring/tokens.css`));
+const postenCss = String(readFileSync(`${__dirname}/dist/web/posten/tokens.css`));
 
 const final =
   bringCss.replace(":root {", ".hds-theme-bring {") +
   postenCss.replace(":root {", ".hds-theme-posten {");
 
-writeFileSync("./dist/web/tokens.css", final, "utf8");
+writeFileSync(`${__dirname}/dist/web/tokens.css`, final, "utf8");
 
 console.log("\n==============================================");
 console.log("\nBuild completed!");
