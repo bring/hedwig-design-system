@@ -4,12 +4,9 @@ import { warnForStyleOverrides } from "../utils";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  size: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
 }
 
-/**
- * Hedwig button element
- */
 export function Button({
   children,
   style,
