@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@postenbring/hedwig-css": "*",
+    "@postenbring/hedwig-tokens": "*",
     "clsx": "2.0.0"
   },
   "publishConfig": {

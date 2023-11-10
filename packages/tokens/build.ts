@@ -45,8 +45,8 @@ const bringCss = String(readFileSync("./dist/web/bring/tokens.css"));
 const postenCss = String(readFileSync("./dist/web/posten/tokens.css"));
 
 const final =
-  bringCss.replace(":root {", ".hw-theme-bring {") +
-  postenCss.replace(":root {", ".hw-theme-posten {");
+  bringCss.replace(":root {", ".hds-theme-bring {") +
+  postenCss.replace(":root {", ".hds-theme-posten {");
 
 writeFileSync("./dist/web/tokens.css", final, "utf8");
 

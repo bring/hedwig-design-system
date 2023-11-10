@@ -8,7 +8,7 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsx build.ts && ./postprocess.sh",
+    "build": "tsx build.ts",
     "dev": "npm run build && chokidar \"build.ts\" \"tokens/**\" -c \"npm run build\"",
     "lint": "eslint \"*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"

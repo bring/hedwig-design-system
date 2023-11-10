@@ -10,6 +10,7 @@ const config = {
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-docs"),
+    getAbsolutePath("@storybook/addon-themes"),
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
@@ -32,6 +33,10 @@ const config = {
           {
             find: "@postenbring/hedwig-css",
             replacement: resolve(__dirname, "../../../packages/css/"),
+          },
+          {
+            find: "@postenbring/hedwig-tokens",
+            replacement: resolve(__dirname, "../../../packages/tokens/"),
           },
         ],
       },
