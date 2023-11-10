@@ -2,8 +2,7 @@ import * as React from "react";
 import { clsx } from "clsx";
 import { warnForStyleOverrides } from "../utils";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   size: "small" | "medium" | "large";
 }
@@ -21,11 +20,7 @@ export function Button({
   warnForStyleOverrides(style, className);
   return (
     <button
-      className={clsx(
-        "hwc-button",
-        "hwc-button--primary",
-        `hwc-button--${size}`,
-      )}
+      className={clsx("hwc-button", "hwc-button--primary", `hwc-button--${size}`)}
       type="button"
       {...rest}
     >

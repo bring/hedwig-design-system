@@ -32,6 +32,7 @@
     "*.{js,jsx,ts,tsx,css,scss,md,json}": "prettier --write"
   },
   "prettier": {
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "printWidth": 100
   }
 }
