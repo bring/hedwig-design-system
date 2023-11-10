@@ -22,10 +22,10 @@
     "eslint-config-custom": "*",
     "react": "^18.2.0",
     "sd-tailwindcss-transformer": "1.4.0",
-    "style-dictionary": "3.8.0",
+    "style-dictionary": "3.9.0",
     "tsconfig": "*",
     "tsup": "^7.2.0",
-    "tsx": "3.12.7",
+    "tsx": "4.1.0",
     "typescript": "^5.2.2"
   },
   "publishConfig": {
