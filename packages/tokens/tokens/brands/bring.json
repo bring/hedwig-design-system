@@ -1,0 +1,83 @@
+{
+  "brand": {
+    "signature": {
+      "value": "{bring-colors.signature-green}",
+      "type": "color"
+    },
+    "darker": {
+      "value": "{bring-colors.darker-green}",
+      "type": "color"
+    },
+    "dark": {
+      "value": "{bring-colors.dark-green}",
+      "type": "color"
+    },
+    "light": {
+      "value": "{bring-colors.light-green}",
+      "type": "color"
+    },
+    "lighter": {
+      "value": "{bring-colors.lighter-green}",
+      "type": "color"
+    },
+    "signature-hover": {
+      "value": "{bring-colors.signature-green-hover}",
+      "type": "color"
+    },
+    "light-hover": {
+      "value": "{bring-colors.light-green-hover}",
+      "type": "color"
+    },
+
+    "button": {
+      "type": "color",
+      "text": { "value": "{ui-colors.black}" }
+    },
+
+    "h1-display": {
+      "fontFamily": { "value": "{typography.bring-h1-display.fontFamily}" },
+      "fontSize": {
+        "min": { "value": "{typography.bring-h1-display.fontSize.min}" },
+        "max": { "value": "{typography.bring-h1-display.fontSize.max}" }
+      },
+      "lineHeight": {
+        "min": { "value": "{typography.bring-h1-display.lineHeight.min}" },
+        "max": { "value": "{typography.bring-h1-display.lineHeight.max}" }
+      },
+      "fontWeight": { "value": "{typography.bring-h1-display.fontWeight}" },
+      "letterSpacing": {
+        "value": "{typography.bring-h1-display.letterSpacing}"
+      }
+    },
+    "h1": {
+      "fontFamily": { "value": "{typography.bring-h1.fontFamily}" },
+      "fontSize": {
+        "min": { "value": "{typography.bring-h1.fontSize.min}" },
+        "max": { "value": "{typography.bring-h1.fontSize.max}" }
+      },
+      "lineHeight": {
+        "min": { "value": "{typography.bring-h1.lineHeight.min}" },
+        "max": { "value": "{typography.bring-h1.lineHeight.max}" }
+      },
+      "fontWeight": { "value": "{typography.bring-h1.fontWeight}" },
+      "letterSpacing": {
+        "value": "{typography.bring-h1.letterSpacing}"
+      }
+    },
+    "h2": {
+      "fontFamily": { "value": "{typography.bring-h2.fontFamily}" },
+      "fontSize": {
+        "min": { "value": "{typography.bring-h2.fontSize.min}" },
+        "max": { "value": "{typography.bring-h2.fontSize.max}" }
+      },
+      "lineHeight": {
+        "min": { "value": "{typography.bring-h2.lineHeight.min}" },
+        "max": { "value": "{typography.bring-h2.lineHeight.max}" }
+      },
+      "fontWeight": { "value": "{typography.bring-h2.fontWeight}" },
+      "letterSpacing": {
+        "value": "{typography.bring-h2.letterSpacing}"
+      }
+    }
+  }
+}

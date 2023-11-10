@@ -1,0 +1,89 @@
+{
+  "brand": {
+    "signature": {
+      "value": "{posten-colors.signature-red}",
+      "type": "color"
+    },
+    "darker": {
+      "value": "{posten-colors.darker-red}",
+      "type": "color"
+    },
+    "dark": {
+      "value": "{posten-colors.dark-red}",
+      "type": "color"
+    },
+    "light": {
+      "value": "{posten-colors.light-red}",
+      "type": "color"
+    },
+    "lighter": {
+      "value": "{posten-colors.lighter-red}",
+      "type": "color"
+    },
+    "signature-hover": {
+      "value": "{posten-colors.signature-red-hover}",
+      "type": "color"
+    },
+    "light-hover": {
+      "value": "{posten-colors.light-red-hover}",
+      "type": "color"
+    },
+
+    "button": {
+      "type": "color",
+      "text": { "value": "{ui-colors.white}" }
+    },
+
+    "h1-display": {
+      "fontFamily": { "value": "{typography.posten-h1-display.fontFamily}" },
+      "fontSize": {
+        "value": "{typography.posten-h1-display.fontSize}",
+        "min": { "value": "{typography.posten-h1-display.fontSize.min}" },
+        "max": { "value": "{typography.posten-h1-display.fontSize.max}" }
+      },
+      "lineHeight": {
+        "value": "{typography.posten-h1-display.lineHeight}",
+        "min": { "value": "{typography.posten-h1-display.lineHeight.min}" },
+        "max": { "value": "{typography.posten-h1-display.lineHeight.max}" }
+      },
+      "fontWeight": { "value": "{typography.posten-h1-display.fontWeight}" },
+      "letterSpacing": {
+        "value": "{typography.posten-h1-display.letterSpacing}"
+      }
+    },
+    "h1": {
+      "fontFamily": { "value": "{typography.posten-h1.fontFamily}" },
+      "fontSize": {
+        "value": "{typography.posten-h1.fontSize}",
+        "min": { "value": "{typography.posten-h1.fontSize.min}" },
+        "max": { "value": "{typography.posten-h1.fontSize.max}" }
+      },
+      "lineHeight": {
+        "value": "{typography.posten-h1.lineHeight}",
+        "min": { "value": "{typography.posten-h1.lineHeight.min}" },
+        "max": { "value": "{typography.posten-h1.lineHeight.max}" }
+      },
+      "fontWeight": { "value": "{typography.posten-h1.fontWeight}" },
+      "letterSpacing": {
+        "value": "{typography.posten-h1.letterSpacing}"
+      }
+    },
+    "h2": {
+      "fontFamily": { "value": "{typography.posten-h2.fontFamily}" },
+      "fontSize": {
+        "value": "{typography.posten-h2.fontSize}",
+        "min": { "value": "{typography.posten-h2.fontSize.min}" },
+        "max": { "value": "{typography.posten-h2.fontSize.max}" }
+      },
+      "lineHeight": {
+        "value": "{typography.posten-h2.lineHeight}",
+        "min": { "value": "{typography.posten-h2.lineHeight.min}" },
+        "max": { "value": "{typography.posten-h2.lineHeight.max}" }
+      },
+      "fontWeight": { "value": "{typography.posten-h2.fontWeight}" },
+      "letterSpacing": {
+        "value": "{typography.posten-h2.letterSpacing}"
+      }
+    }
+  }
+}

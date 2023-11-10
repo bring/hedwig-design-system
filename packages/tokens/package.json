@@ -1,0 +1,33 @@
+{
+  "name": "@postenbring/hedwig-tokens",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "assets/**",
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsx build.ts && ./postprocess.sh",
+    "dev": "npm run build && chokidar \"build.ts\" \"tokens/**\" -c \"npm run build\"",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "tsconfig": "*",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "chokidar-cli": "3.0.0",
+    "eslint": "^8.48.0",
+    "eslint-config-custom": "*",
+    "react": "^18.2.0",
+    "sd-tailwindcss-transformer": "1.4.0",
+    "style-dictionary": "3.8.0",
+    "tsup": "^7.2.0",
+    "tsx": "3.12.7",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
