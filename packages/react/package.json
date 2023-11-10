@@ -1,5 +1,5 @@
 {
-  "name": "@posten-hedwig/react",
+  "name": "@postenbring/hedwig-react",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -26,7 +26,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@posten-hedwig/css": "*",
+    "@postenbring/hedwig-css": "*",
     "clsx": "2.0.0"
   },
   "publishConfig": {

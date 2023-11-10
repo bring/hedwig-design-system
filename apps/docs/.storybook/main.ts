@@ -26,11 +26,11 @@ const config = {
       resolve: {
         alias: [
           {
-            find: "@posten-hedwig/react",
+            find: "@postenbring/hedwig-react",
             replacement: resolve(__dirname, "../../../packages/react/"),
           },
           {
-            find: "@posten-hedwig/css",
+            find: "@postenbring/hedwig-css",
             replacement: resolve(__dirname, "../../../packages/css/"),
           },
         ],

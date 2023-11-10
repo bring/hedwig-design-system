@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@posten-hedwig/react": "*"
+    "@postenbring/hedwig-react": "*"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^7.5.3",
