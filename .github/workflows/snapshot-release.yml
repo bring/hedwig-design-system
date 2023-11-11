@@ -1,0 +1,36 @@
+name: Release Snapshot Version
+
+on:
+  push:
+    branches-ignore:
+      - master
+      - changeset-release/*
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release-snapshot:
+    name: Release Snapshot Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Set snapshot version
+        run: npx changeset version --snapshot ${GITHUB_REF##*/}
+
+      - name: Setup .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> $HOME/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish snapshot versions to npm
+        run: npx turbo run build --filter=docs^... && npx changeset publish --no-git-tag --tag ${GITHUB_REF##*/}
