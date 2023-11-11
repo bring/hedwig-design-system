@@ -8,23 +8,18 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsx build.ts",
-    "dev": "npm run build && chokidar \"build.ts\" \"tokens/**\" -c \"npm run build\"",
+    "build": "node --import tsx build.ts",
+    "dev": "node --import tsx --watch-path tokens --watch build.ts",
     "lint": "eslint \"*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
     "@types/node": "20.9.0",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "chokidar-cli": "3.0.0",
     "eslint": "^8.48.0",
     "eslint-config-custom": "*",
-    "react": "^18.2.0",
     "sd-tailwindcss-transformer": "1.4.0",
     "style-dictionary": "3.9.0",
     "tsconfig": "*",
-    "tsup": "^7.2.0",
     "tsx": "4.1.0",
     "typescript": "^5.2.2"
   },
