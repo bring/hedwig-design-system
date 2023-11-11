@@ -1,0 +1,44 @@
+{
+  "spacing": {
+    "type": "dimension",
+    "small-1": {
+      "value": "4px"
+    },
+    "small-2": {
+      "value": "8px"
+    },
+    "small-3": {
+      "value": "12px"
+    },
+    "small-4": {
+      "value": "16px"
+    },
+    "medium-1": {
+      "value": "20px"
+    },
+    "medium-2": {
+      "value": "24px"
+    },
+    "medium-3": {
+      "value": "32px"
+    },
+    "medium-4": {
+      "value": "40px"
+    },
+    "large-1": {
+      "value": "48px"
+    },
+    "large-2": {
+      "value": "64px"
+    },
+    "large-3": {
+      "value": "80px"
+    },
+    "large-4": {
+      "value": "120px"
+    },
+    "large-5": {
+      "value": "160px"
+    }
+  }
+}

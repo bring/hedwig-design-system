@@ -1,0 +1,37 @@
+{
+  "fonts": {
+    "type": "fontFamily",
+    "posten-sans-bold": {
+      "name": { "value": ["Posten Sans Bold", "Arial", "sans-serif"] },
+      "eot": { "value": "assets/fonts/PostenSans-Bold.eot" },
+      "otf": { "value": "assets/fonts/PostenSans-Bold.otf" },
+      "ttf": { "value": "assets/fonts/PostenSans-Bold.ttf" },
+      "woff": { "value": "assets/fonts/PostenSans-Bold.woff" },
+      "woff2": { "value": "assets/fonts/PostenSans-Bold.woff2" }
+    },
+    "posten-sans-medium": {
+      "name": { "value": ["Posten Sans Medium", "Arial", "sans-serif"] },
+      "eot": { "value": "assets/fonts/PostenSans-Medium.eot" },
+      "otf": { "value": "assets/fonts/PostenSans-Medium.otf" },
+      "ttf": { "value": "assets/fonts/PostenSans-Medium.ttf" },
+      "woff": { "value": "assets/fonts/PostenSans-Medium.woff" },
+      "woff2": { "value": "assets/fonts/PostenSans-Medium.woff2" }
+    },
+    "posten-sans-regular": {
+      "name": { "value": ["Posten Sans Regular", "Arial", "sans-serif"] },
+      "eot": { "value": "assets/fonts/PostenSans-Regular.eot" },
+      "otf": { "value": "assets/fonts/PostenSans-Regular.otf" },
+      "ttf": { "value": "assets/fonts/PostenSans-Regular.ttf" },
+      "woff": { "value": "assets/fonts/PostenSans-Regular.woff" },
+      "woff2": { "value": "assets/fonts/PostenSans-Regular.woff2" }
+    },
+    "posten-sans-light": {
+      "name": { "value": ["Posten Sans Light", "Arial", "sans-serif"] },
+      "eot": { "value": "assets/fonts/PostenSans-Light.eot" },
+      "otf": { "value": "assets/fonts/PostenSans-Light.otf" },
+      "ttf": { "value": "assets/fonts/PostenSans-Light.ttf" },
+      "woff": { "value": "assets/fonts/PostenSans-Light.woff" },
+      "woff2": { "value": "assets/fonts/PostenSans-Light.woff2" }
+    }
+  }
+}

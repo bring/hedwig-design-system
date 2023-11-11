@@ -1,0 +1,34 @@
+{
+  "border-radius": {
+    "value": "2px",
+    "type": "borderRadius"
+  },
+  "stroke-default": {
+    "value": "1px",
+    "type": "borderWidth"
+  },
+  "stroke-thick": {
+    "value": "2px",
+    "type": "borderWidth"
+  },
+  "shadow-default": {
+    "type": "shadow",
+    "color": { "value": "#00000022" },
+    "offsetX": { "value": "0px" },
+    "offsetY": { "value": "1px" },
+    "blur": { "value": "5px" },
+    "spread": { "value": "0px" }
+  },
+  "micro-animation": {
+    "type": "cubicBezier",
+    "easing-in": {
+      "value": [0.65, 0, 1, 0.1]
+    },
+    "easing-out": {
+      "value": [0, 0.45, 0.1, 1]
+    },
+    "easing-normal": {
+      "value": [0.45, 0.1, 0.65, 1]
+    }
+  }
+}

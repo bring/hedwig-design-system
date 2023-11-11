@@ -1,0 +1,25 @@
+{
+  "dark-mode-colors": {
+    "type": "color",
+    "obsidian": {
+      "value": "#121212",
+      "comment": "Base color for dark mode"
+    },
+    "coal": {
+      "value": "#252525",
+      "comment": "Background on none-clickable cards"
+    },
+    "dusk": {
+      "value": "#2c2c2c",
+      "comment": "Fill inputfields, checkbox, radiobuttons, toogles"
+    },
+    "spider": {
+      "value": "#333333",
+      "comment": "Clickable cards or tiles"
+    },
+    "ash": {
+      "value": "#999999",
+      "comment": "Default radio buttons, checkbox, label on inputsfields, toogle off  (background)"
+    }
+  }
+}

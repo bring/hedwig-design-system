@@ -1,14 +1,15 @@
 /* eslint-disable no-console -- script */
 import { readFileSync, writeFileSync } from "node:fs";
+import type { Config } from "style-dictionary";
 import StyleDictionaryPackage from "style-dictionary";
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
 
 type Brand = "posten" | "bring";
 const brands: Brand[] = ["posten", "bring"];
-function getStyleDictionaryConfig(brand: Brand) {
+function getStyleDictionaryConfig(brand: Brand): Config {
   return {
-    source: ["tokens/shared.json", `tokens/brands/${brand}.json`],
+    source: ["tokens/color/*.json", "tokens/*.json", `tokens/brands/${brand}.json`],
     platforms: {
       web: {
         prefix: "hds",
@@ -19,7 +20,7 @@ function getStyleDictionaryConfig(brand: Brand) {
             destination: "tokens.css",
             format: "css/variables",
             options: {
-              outputReferences: true,
+              outputReferences: false,
             },
           },
         ],
