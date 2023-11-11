@@ -27,11 +27,10 @@ jobs:
       - name: Set snapshot version
         run: npx changeset version --snapshot ${GITHUB_REF##*/}
 
-      - name: Publish snapshot versions to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: npx turbo run build --filter=docs^... && npx changeset publish --no-git-tag --tag ${GITHUB_REF##*/}
+      - name: Setup .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> $HOME/.npmrc
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish snapshot versions to npm
+        run: npx turbo run build --filter=docs^... && npx changeset publish --no-git-tag --tag ${GITHUB_REF##*/}
