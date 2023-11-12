@@ -17,6 +17,9 @@ StyleDictionary.registerTransform({
   ...customTypography,
 });
 
+/**
+ * CSS Variables output
+ */
 const cssTransforms = [
   ...StyleDictionary.transformGroup.css,
   "fontFamily/css",
@@ -35,7 +38,7 @@ function buildSharedCssVariables() {
         transforms: cssTransforms,
         files: [
           {
-            destination: "tokens-output/variables/shared.css",
+            destination: "tokens-output/css/shared.css",
             format: "css/variables",
           },
         ],
@@ -58,7 +61,7 @@ function buildBrandCssVariables() {
           files: [
             {
               filter: "isSource",
-              destination: `tokens-output/variables/${brand}.css`,
+              destination: `tokens-output/css/${brand}.css`,
               format: "css/variables",
               options: {
                 outputReferences: false,
@@ -74,9 +77,9 @@ buildBrandCssVariables();
 
 function buildFinalCssVariables() {
   console.log("✨ Building final css variables");
-  const postenCss = String(readFileSync(`${__dirname}/tokens-output/variables/posten.css`));
-  const bringCss = String(readFileSync(`${__dirname}/tokens-output/variables/bring.css`));
-  const sharedCss = String(readFileSync(`${__dirname}/tokens-output/variables/shared.css`));
+  const postenCss = String(readFileSync(`${__dirname}/tokens-output/css/posten.css`));
+  const bringCss = String(readFileSync(`${__dirname}/tokens-output/css/bring.css`));
+  const sharedCss = String(readFileSync(`${__dirname}/tokens-output/css/shared.css`));
 
   function extractVariables(fromString: string) {
     const variables = fromString.match(/--.+/g);
@@ -99,6 +102,63 @@ ${printVariables(extractVariables(bringCss))}
 }
 `;
 
-  writeFileSync(`${__dirname}/tokens-output/variables/final.css`, final, "utf8");
+  writeFileSync(`${__dirname}/tokens-output/css/tokens.css`, final, "utf8");
 }
 buildFinalCssVariables();
+
+/**
+ * Javascript and Json output
+ */
+StyleDictionary.extend({
+  source: ["tokens-source/shared.json"],
+  platforms: {
+    ts: {
+      transformGroup: "js",
+      files: [
+        {
+          destination: "tokens-output/tokens.mjs",
+          format: "javascript/es6",
+          options: {
+            outputStringLiterals: true,
+          },
+        },
+        {
+          destination: "tokens-output/tokens.d.ts",
+          format: "typescript/es6-declarations",
+          options: {
+            outputStringLiterals: true,
+          },
+        },
+      ],
+    },
+    json: {
+      transformGroup: "web",
+      files: [
+        {
+          destination: "tokens-output/tokens.json",
+          format: "json/flat",
+          options: {
+            outputStringLiterals: true,
+          },
+        },
+      ],
+    },
+    // javascript: {
+    //   transforms: ["attribute/cti", "name/cti/pascal", "size/px", "color/css"],
+    //   files: [
+    //     {
+    //       format: "typescript/cjs-module",
+    //       destination: "tokens-output/tokens-2.js",
+    //     },
+    //     {
+    //       format: "typescript/es-module",
+    //       destination: "tokens-output/tokens-2.mjs",
+    //     },
+    //     {
+    //       format: "typescript/typings",
+    //       destination: "tokens-output/tokens-2.d.ts",
+    //     },
+    //   ],
+    // },
+  },
+}).buildAllPlatforms();
