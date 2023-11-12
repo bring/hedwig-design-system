@@ -1,0 +1,41 @@
+{
+  "brand-colors": {
+    "type": "color",
+    "signature": {
+      "value": "{posten-colors.signature-red}"
+    },
+    "darker": {
+      "value": "{posten-colors.darker-red}"
+    },
+    "dark": {
+      "value": "{posten-colors.dark-red}"
+    },
+    "light": {
+      "value": "{posten-colors.light-red}"
+    },
+    "lighter": {
+      "value": "{posten-colors.lighter-red}"
+    },
+    "signature-hover": {
+      "value": "{posten-colors.signature-red-hover}"
+    },
+    "light-hover": {
+      "value": "{posten-colors.light-red-hover}"
+    },
+    "button": {
+      "text": { "type": "color", "value": "{ui-colors.white}" }
+    }
+  },
+
+  "brand-typography": {
+    "h1-display": {
+      "value": "{typography.posten-h1-display}"
+    },
+    "h1": {
+      "value": "{typography.posten-h1}"
+    },
+    "h2": {
+      "value": "{typography.posten-h2}"
+    }
+  }
+}

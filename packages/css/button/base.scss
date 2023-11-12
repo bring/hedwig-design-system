@@ -4,15 +4,13 @@
   box-sizing: border-box;
   display: inline-block;
   padding: var(--hds-spacing-small-3) var(--hds-spacing-medium-2);
-  margin-top: 3px;
-  margin-right: var(--hds-spacing-small-4);
   border-radius: var(--hds-border-radius);
   border-width: 0px;
   background: var(--hds-ui-colors-grey);
   border-color: var(--hds-ui-colors-grey);
-  color: var(--hds-brand-button-text);
-  fill: var(--hds-brand-button-text);
-  font-family: var(--hds-fonts-posten-sans-medium-name);
+  color: var(--hds-brand-colors-button-text);
+  fill: var(--hds-brand-colors-button-text);
+  font-family: var(--hds-fonts-posten-sans-medium);
   font-size: var(--hds-typography-body-small-font-size);
   // line-height: var(--hds-font-size-p); // TODO
   transition: all var(--hds-transition-time-quick) var(--hds-micro-animation-easing-normal);

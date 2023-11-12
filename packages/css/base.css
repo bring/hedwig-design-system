@@ -1,0 +1,20 @@
+/*
+ * Based on hedwig global css
+ * https://github.com/bring/hedwig/blob/master/src/shared/base/body.css
+ *
+ * Scoped to the theme selectors, this way the global effects are only applied
+ * where they are wanted
+ */
+.hds-theme-posten,
+.hds-theme-bring {
+  box-sizing: border-box;
+  font: var(--hds-typography-body);
+  fill: var(--hds-ui-colors-black);
+  color: var(--hds-ui-colors-black);
+  line-height: 1.4;
+  cursor: auto;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: var(--hds-ui-colors-white);
+}

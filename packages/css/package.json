@@ -4,6 +4,7 @@
   "description": "",
   "source": [
     "index.css",
+    "base.css",
     "scoped.scss",
     "button/button.scss"
   ],
