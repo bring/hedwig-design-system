@@ -31,6 +31,9 @@ function buildSharedCssVariables() {
     source: ["tokens-source/shared.json"],
     platforms: {
       css: {
+        options: {
+          showFileHeader: false,
+        },
         prefix: config.cssVariablesPrefix,
         transforms: cssTransforms,
         files: [
@@ -53,6 +56,9 @@ function buildBrandCssVariables() {
       source: [`tokens-source/brands/${brand}.json`],
       platforms: {
         css: {
+          options: {
+            showFileHeader: false,
+          },
           prefix: "hds",
           transforms: cssTransforms,
           files: [
@@ -110,6 +116,9 @@ StyleDictionary.extend({
   source: ["tokens-source/shared.json"],
   platforms: {
     javascript: {
+      options: {
+        showFileHeader: false,
+      },
       transformGroup: "js",
       files: [
         {
@@ -129,6 +138,9 @@ StyleDictionary.extend({
       ],
     },
     json: {
+      options: {
+        showFileHeader: false,
+      },
       transformGroup: "web",
       files: [
         {

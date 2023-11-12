@@ -1,8 +1,3 @@
-/**
- * Do not edit directly
- * Generated on Sun, 12 Nov 2023 17:20:27 GMT
- */
-
 export const PostenColorsSignatureRed : "#e32d22";
 export const PostenColorsDarkerRed : "#4a1011";
 export const PostenColorsDarkRed : "#980000";

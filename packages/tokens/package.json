@@ -5,7 +5,7 @@
   "license": "MIT",
   "files": [
     "assets/**",
-    "dist/**"
+    "tokens-output/**"
   ],
   "scripts": {
     "build": "node --import tsx build.ts",
