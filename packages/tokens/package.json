@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "node --import tsx build.ts",
-    "dev": "node --import tsx --watch-path tokens --watch build.ts",
+    "dev": "node --import tsx --watch-path tokens --watch-path build.ts --watch build.ts",
     "lint": "eslint \"*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
@@ -19,6 +19,7 @@
     "eslint-config-custom": "*",
     "sd-tailwindcss-transformer": "1.4.0",
     "style-dictionary": "3.9.0",
+    "style-dictionary-utils": "2.0.1",
     "tsconfig": "*",
     "tsx": "4.1.0",
     "typescript": "^5.2.2"

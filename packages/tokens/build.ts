@@ -1,55 +1,90 @@
 /* eslint-disable no-console -- script */
 import { readFileSync, writeFileSync } from "node:fs";
-import type { Config } from "style-dictionary";
-import StyleDictionaryPackage from "style-dictionary";
+import StyleDictionary from "style-dictionary-utils";
+import { w3cTokenJsonParser } from "style-dictionary-utils/dist/parser/w3c-token-json-parser";
+import { hedwigTypography } from "./transforms/typography";
 
-// HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
+// Handle $type, $value, $description
+StyleDictionary.registerParser(w3cTokenJsonParser);
 
-type Brand = "posten" | "bring";
-const brands: Brand[] = ["posten", "bring"];
-function getStyleDictionaryConfig(brand: Brand): Config {
-  return {
-    source: ["tokens/color/*.json", "tokens/*.json", `tokens/brands/${brand}.json`],
+// Handle typography
+StyleDictionary.registerTransform({
+  name: "hedwig/typography",
+  ...hedwigTypography,
+});
+const cssTransforms = [...StyleDictionary.transformGroup.css, "hedwig/typography", "shadow/css"];
+
+function buildSharedCssVariables() {
+  console.log("🤖 Building shared css variables");
+  StyleDictionary.extend({
+    source: ["tokens/shared.json"],
     platforms: {
-      web: {
+      css: {
         prefix: "hds",
-        transformGroup: "css",
-        buildPath: `dist/web/${brand}/`,
+        transforms: cssTransforms,
         files: [
           {
-            destination: "tokens.css",
+            destination: "dist/variables/shared.css",
             format: "css/variables",
-            options: {
-              outputReferences: false,
-            },
           },
         ],
       },
     },
-  };
+  }).buildAllPlatforms();
 }
+buildSharedCssVariables();
 
-console.log("Build started...");
+function buildBrandCssVariables() {
+  for (const brand of ["posten", "bring"]) {
+    console.log(`🤖 Building ${brand} css variables`);
+    StyleDictionary.extend({
+      include: ["tokens/shared.json"],
+      source: [`tokens/brands/${brand}.json`],
+      platforms: {
+        css: {
+          prefix: "hds",
+          transforms: cssTransforms,
+          files: [
+            {
+              filter: "isSource",
+              destination: `dist/variables/${brand}.css`,
+              format: "css/variables",
+            },
+          ],
+        },
+      },
+    }).buildAllPlatforms();
+  }
+}
+buildBrandCssVariables();
 
-brands.forEach(function mapBrand(brand) {
-  console.log("\n==============================================");
-  console.log(`\nProcessing:  [${brand}]`);
+function buildFinalCssVariables() {
+  console.log("✨ Building final css variables");
+  const postenCss = String(readFileSync(`${__dirname}/dist/variables/posten.css`));
+  const bringCss = String(readFileSync(`${__dirname}/dist/variables/bring.css`));
+  const sharedCss = String(readFileSync(`${__dirname}/dist/variables/shared.css`));
 
-  const StyleDictionary = StyleDictionaryPackage.extend(getStyleDictionaryConfig(brand));
+  function extractVariables(fromString: string) {
+    const variables = fromString.match(/--.+/g);
+    if (!variables) throw new Error("no variables extracted");
+    return variables.map(String);
+  }
+  function printVariables(variables: string[]) {
+    return variables.map((variable) => `  ${variable}`).join("\n");
+  }
 
-  StyleDictionary.buildAllPlatforms();
+  const final = `
+.hds-theme-posten, .hds-theme-bring {
+${printVariables(extractVariables(sharedCss))}
+}
+.hds-theme-posten {
+${printVariables(extractVariables(postenCss))}
+}
+.hds-theme-bring {
+${printVariables(extractVariables(bringCss))}
+}
+`;
 
-  console.log("\nEnd processing");
-});
-
-const bringCss = String(readFileSync(`${__dirname}/dist/web/bring/tokens.css`));
-const postenCss = String(readFileSync(`${__dirname}/dist/web/posten/tokens.css`));
-
-const final =
-  bringCss.replace(":root {", ".hds-theme-bring {") +
-  postenCss.replace(":root {", ".hds-theme-posten {");
-
-writeFileSync(`${__dirname}/dist/web/tokens.css`, final, "utf8");
-
-console.log("\n==============================================");
-console.log("\nBuild completed!");
+  writeFileSync(`${__dirname}/dist/variables/final.css`, final, "utf8");
+}
+buildFinalCssVariables();
