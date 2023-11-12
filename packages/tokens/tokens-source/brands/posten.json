@@ -21,9 +21,27 @@
     },
     "light-hover": {
       "value": "{posten-colors.light-red-hover}"
+    }
+  },
+
+  "brand-button-colors": {
+    "type": "color",
+    "text": { "value": "{ui-colors.white}" }
+  },
+
+  "brand-link-colors": {
+    "type": "color",
+    "text": {
+      "value": "{ui-colors.black}"
     },
-    "button": {
-      "text": { "type": "color", "value": "{ui-colors.white}" }
+    "underline": {
+      "value": "{posten-colors.signature-red}"
+    },
+    "hover": {
+      "value": "{posten-colors.signature-red}"
+    },
+    "underline-hover": {
+      "value": "{posten-colors.signature-red}"
     }
   },
 

@@ -39,7 +39,7 @@ function BaseButton({
       className={clsx("hds-button", `hds-button--${size}`, {
         [`hds-button--${variant}`]: fill === "contained",
         [`hds-button--outline-${variant}`]: fill === "outlined",
-        "hds-button--full": fullWidth,
+        "hds-button--full": fullWidth === true,
         "hds-button--mobile-full": fullWidth === "mobile",
       })}
       ref={buttonRef}

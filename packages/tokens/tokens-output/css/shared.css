@@ -69,4 +69,11 @@
   --hds-micro-animation-easing-in: cubic-bezier(0.65, 0, 1, 0.1);
   --hds-micro-animation-easing-out: cubic-bezier(0, 0.45, 0.1, 1);
   --hds-micro-animation-easing-normal: cubic-bezier(0.45, 0.1, 0.65, 1);
+  --hds-micro-animation-duration-quick: 0.130s;
+  --hds-micro-animation-duration-normal: 0.300s;
+  --hds-micro-animation-duration-slow: 0.700s;
+  --hds-breakpoints-small: 460px;
+  --hds-breakpoints-medium: 720px;
+  --hds-breakpoints-large: 940px;
+  --hds-breakpoints-xlarge: 1200px;
 }

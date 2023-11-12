@@ -28,7 +28,7 @@ const cssTransforms = [
 function buildSharedCssVariables() {
   console.log("🤖 Building shared css variables");
   StyleDictionary.extend({
-    source: ["tokens-source/shared.json"],
+    source: ["tokens-source/*shared*.json"],
     platforms: {
       css: {
         options: {
@@ -52,7 +52,7 @@ function buildBrandCssVariables() {
   for (const brand of ["posten", "bring"]) {
     console.log(`🤖 Building ${brand} css variables`);
     StyleDictionary.extend({
-      include: ["tokens-source/shared.json"],
+      include: ["tokens-source/*shared*.json"],
       source: [`tokens-source/brands/${brand}.json`],
       platforms: {
         css: {
@@ -113,7 +113,7 @@ buildFinalCssVariables();
  * Javascript and Json output
  */
 StyleDictionary.extend({
-  source: ["tokens-source/shared.json"],
+  source: ["tokens-source/*shared*.json"],
   platforms: {
     javascript: {
       options: {
