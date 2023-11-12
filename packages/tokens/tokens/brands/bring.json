@@ -21,11 +21,11 @@
     },
     "light-hover": {
       "value": "{bring-colors.light-green-hover}"
-    }
-  },
+    },
 
-  "brand-button": {
-    "text": { "type": "color", "value": "{ui-colors.black}" }
+    "button": {
+      "text": { "type": "color", "value": "{ui-colors.black}" }
+    }
   },
 
   "brand-typography": {

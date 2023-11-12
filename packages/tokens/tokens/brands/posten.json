@@ -21,11 +21,10 @@
     },
     "light-hover": {
       "value": "{posten-colors.light-red-hover}"
+    },
+    "button": {
+      "text": { "type": "color", "value": "{ui-colors.black}" }
     }
-  },
-
-  "brand-button": {
-    "text": { "type": "color", "value": "{ui-colors.black}" }
   },
 
   "brand-typography": {
