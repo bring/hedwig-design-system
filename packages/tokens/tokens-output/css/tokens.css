@@ -79,7 +79,7 @@
   --hds-brand-colors-lighter: #fff5f0;
   --hds-brand-colors-signature-hover: #d62722;
   --hds-brand-colors-light-hover: #ff7d55;
-  --hds-brand-colors-button-text: #000000;
+  --hds-brand-colors-button-text: #ffffff;
   --hds-brand-typography-h1-display: 400 calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)))/calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Bold', Arial, sans-serif;
   --hds-brand-typography-h1: 400 calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300)))/calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Bold', Arial, sans-serif;
   --hds-brand-typography-h2: 400 calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))/calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Medium', Arial, sans-serif;

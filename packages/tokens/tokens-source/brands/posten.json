@@ -23,7 +23,7 @@
       "value": "{posten-colors.light-red-hover}"
     },
     "button": {
-      "text": { "type": "color", "value": "{ui-colors.black}" }
+      "text": { "type": "color", "value": "{ui-colors.white}" }
     }
   },
 

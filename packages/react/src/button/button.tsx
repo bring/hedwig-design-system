@@ -54,8 +54,8 @@ function BaseButton({
 BaseButton.displayName = "BaseButton";
 
 /**
- * TODO:
- * - [ ] Prefix variant in component name
+ * ## TODO
+ *
  * - [ ] Handle links that looks like buttons
  * - [ ] Revisit how to handle outline
  * - [ ] Figure out outline-white
