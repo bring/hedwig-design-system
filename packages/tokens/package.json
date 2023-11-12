@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "node --import tsx build.ts",
-    "dev": "node --import tsx --watch-path tokens --watch-path build.ts --watch build.ts",
+    "dev": "node --import tsx --watch-path tokens-source --watch-path build.ts --watch build.ts",
     "lint": "eslint \"*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },

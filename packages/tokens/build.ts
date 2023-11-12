@@ -28,14 +28,14 @@ const cssTransforms = [
 function buildSharedCssVariables() {
   console.log("🤖 Building shared css variables");
   StyleDictionary.extend({
-    source: ["tokens/shared.json"],
+    source: ["tokens-source/shared.json"],
     platforms: {
       css: {
         prefix: config.cssVariablesPrefix,
         transforms: cssTransforms,
         files: [
           {
-            destination: "dist/variables/shared.css",
+            destination: "tokens-output/variables/shared.css",
             format: "css/variables",
           },
         ],
@@ -49,8 +49,8 @@ function buildBrandCssVariables() {
   for (const brand of ["posten", "bring"]) {
     console.log(`🤖 Building ${brand} css variables`);
     StyleDictionary.extend({
-      include: ["tokens/shared.json"],
-      source: [`tokens/brands/${brand}.json`],
+      include: ["tokens-source/shared.json"],
+      source: [`tokens-source/brands/${brand}.json`],
       platforms: {
         css: {
           prefix: "hds",
@@ -58,7 +58,7 @@ function buildBrandCssVariables() {
           files: [
             {
               filter: "isSource",
-              destination: `dist/variables/${brand}.css`,
+              destination: `tokens-output/variables/${brand}.css`,
               format: "css/variables",
               options: {
                 outputReferences: false,
@@ -74,9 +74,9 @@ buildBrandCssVariables();
 
 function buildFinalCssVariables() {
   console.log("✨ Building final css variables");
-  const postenCss = String(readFileSync(`${__dirname}/dist/variables/posten.css`));
-  const bringCss = String(readFileSync(`${__dirname}/dist/variables/bring.css`));
-  const sharedCss = String(readFileSync(`${__dirname}/dist/variables/shared.css`));
+  const postenCss = String(readFileSync(`${__dirname}/tokens-output/variables/posten.css`));
+  const bringCss = String(readFileSync(`${__dirname}/tokens-output/variables/bring.css`));
+  const sharedCss = String(readFileSync(`${__dirname}/tokens-output/variables/shared.css`));
 
   function extractVariables(fromString: string) {
     const variables = fromString.match(/--.+/g);
@@ -99,6 +99,6 @@ ${printVariables(extractVariables(bringCss))}
 }
 `;
 
-  writeFileSync(`${__dirname}/dist/variables/final.css`, final, "utf8");
+  writeFileSync(`${__dirname}/tokens-output/variables/final.css`, final, "utf8");
 }
 buildFinalCssVariables();

@@ -1,0 +1,105 @@
+/**
+ * Do not edit directly
+ * Generated on Sun, 12 Nov 2023 16:13:12 GMT
+ */
+
+:root {
+  --hds-posten-colors-signature-red: #e32d22;
+  --hds-posten-colors-darker-red: #4a1011;
+  --hds-posten-colors-dark-red: #980000;
+  --hds-posten-colors-light-red: #ff8a5f;
+  --hds-posten-colors-lighter-red: #fff5f0;
+  --hds-posten-colors-signature-red-hover: #d62722;
+  --hds-posten-colors-light-red-hover: #ff7d55;
+  --hds-bring-colors-signature-green: #7bc144;
+  --hds-bring-colors-darker-green: #002f19;
+  --hds-bring-colors-dark-green: #00643a;
+  --hds-bring-colors-light-green: #c8dc8c;
+  --hds-bring-colors-lighter-green: #f1f7e9;
+  --hds-bring-colors-signature-green-hover: #86cc4a;
+  --hds-bring-colors-light-green-hover: #d3e593;
+  --hds-ui-colors-black: #000000;
+  --hds-ui-colors-dark-grey: #6e6e6e;
+  --hds-ui-colors-grey: #d6d6d6;
+  --hds-ui-colors-light-grey-stroke: #e4e4e4;
+  --hds-ui-colors-light-grey-fill: #f2f2f2;
+  --hds-ui-colors-white: #ffffff;
+  --hds-ui-colors-warning-yellow: #fdbb2f;
+  --hds-ui-colors-warning-yellow-stroke: #d68000;
+  --hds-ui-colors-warning-yellow-light-fill: #fff5e0;
+  --hds-ui-colors-warning-yellow-hover: #ffc340;
+  --hds-ui-colors-black-hover: #1e1e1e;
+  --hds-dark-mode-colors-obsidian: #121212; /* Base color for dark mode */
+  --hds-dark-mode-colors-coal: #252525; /* Background on none-clickable cards */
+  --hds-dark-mode-colors-dusk: #2c2c2c; /* Fill inputfields, checkbox, radiobuttons, toogles */
+  --hds-dark-mode-colors-spider: #333333; /* Clickable cards or tiles */
+  --hds-dark-mode-colors-ash: #999999; /* Default radio buttons, checkbox, label on inputsfields, toogle off  (background) */
+  --hds-spacing-small-1: 4px;
+  --hds-spacing-small-2: 8px;
+  --hds-spacing-small-3: 12px;
+  --hds-spacing-small-4: 16px;
+  --hds-spacing-medium-1: 20px;
+  --hds-spacing-medium-2: 24px;
+  --hds-spacing-medium-3: 32px;
+  --hds-spacing-medium-4: 40px;
+  --hds-spacing-large-1: 48px;
+  --hds-spacing-large-2: 64px;
+  --hds-spacing-large-3: 80px;
+  --hds-spacing-large-4: 120px;
+  --hds-spacing-large-5: 160px;
+  --hds-fonts-posten-sans-bold: "Posten Sans Bold", Arial, sans-serif;
+  --hds-fonts-posten-sans-medium: "Posten Sans Medium", Arial, sans-serif;
+  --hds-fonts-posten-sans-regular: "Posten Sans Regular", Arial, sans-serif;
+  --hds-fonts-posten-sans-light: "Posten Sans Light", Arial, sans-serif;
+  --hds-typography-posten-h1-display: 400 calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))) /
+      calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Bold",
+    Arial, sans-serif;
+  --hds-typography-posten-h1: 400 calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))) /
+      calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Bold",
+    Arial, sans-serif;
+  --hds-typography-posten-h2: 400 calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))) /
+      calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Medium",
+    Arial, sans-serif;
+  --hds-typography-bring-h1-display: 400 calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))) /
+      calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Light",
+    Arial, sans-serif;
+  --hds-typography-bring-h1: 400 calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))) /
+      calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Light",
+    Arial, sans-serif;
+  --hds-typography-bring-h2: 400 calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))) /
+      calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Regular",
+    Arial, sans-serif;
+  --hds-typography-header-h3: 400 calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))) /
+      calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Regular",
+    Arial, sans-serif;
+  --hds-typography-header-h3-title: 400 calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))) /
+      calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Medium",
+    Arial, sans-serif;
+  --hds-typography-body: 400 calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))) /
+      calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Regular",
+    Arial, sans-serif;
+  --hds-typography-body-title: 400 calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))) /
+      calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Medium",
+    Arial, sans-serif;
+  --hds-typography-body-small: 400 calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300))) /
+      calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Regular",
+    Arial, sans-serif;
+  --hds-typography-body-small-title: 400 calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300))) /
+      calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Medium",
+    Arial, sans-serif;
+  --hds-typography-technical: 400 calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300))) /
+      calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Regular",
+    Arial, sans-serif;
+  --hds-typography-technical-title: 400 calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300))) /
+      calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))) "Posten Sans Medium",
+    Arial, sans-serif;
+  --hds-typography-caption: 400 13px/18px "Posten Sans Regular", Arial, sans-serif;
+  --hds-typography-caption-title: 400 13px/18px "Posten Sans Regular", Arial, sans-serif;
+  --hds-border-radius: 2px;
+  --hds-stroke-default: 1px;
+  --hds-stroke-thick: 2px;
+  --hds-shadow-default: 0px 1px 5px 0px #00000022;
+  --hds-micro-animation-easing-in: cubic-bezier(0.65, 0, 1, 0.1);
+  --hds-micro-animation-easing-out: cubic-bezier(0, 0.45, 0.1, 1);
+  --hds-micro-animation-easing-normal: cubic-bezier(0.45, 0.1, 0.65, 1);
+}
