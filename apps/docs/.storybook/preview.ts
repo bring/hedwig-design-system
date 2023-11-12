@@ -5,6 +5,7 @@ import { withThemeByClassName } from "@storybook/addon-themes";
 import "@postenbring/hedwig-tokens/tokens-output/css/tokens.css";
 import "@postenbring/hedwig-tokens/tokens-output/css/fonts.css";
 import "@postenbring/hedwig-css/dist/index.css";
+import "@postenbring/hedwig-css/dist/reset.css";
 
 export default {
   decorators: [

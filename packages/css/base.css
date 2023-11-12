@@ -16,5 +16,8 @@
 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: var(--hds-ui-colors-white);
+
+  & body {
+    background: var(--hds-ui-colors-white);
+  }
 }
