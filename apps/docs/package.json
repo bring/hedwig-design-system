@@ -10,9 +10,9 @@
     "lint": "eslint ../../packages/react/src/**/*.stories.tsx"
   },
   "dependencies": {
-    "@postenbring/hedwig-css": "*",
-    "@postenbring/hedwig-react": "*",
-    "@postenbring/hedwig-tokens": "*",
+    "@postenbring/hedwig-css": "workspace:*",
+    "@postenbring/hedwig-react": "workspace:*",
+    "@postenbring/hedwig-tokens": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -26,8 +26,8 @@
     "@storybook/react-vite": "^7.5.3",
     "@vitejs/plugin-react": "^4.2.0",
     "@whitespace/storybook-addon-html": "5.1.6",
-    "eslint-config-custom": "*",
-    "hedwig-tsconfig": "*",
+    "eslint-config-custom": "workspace:*",
+    "hedwig-tsconfig": "workspace:*",
     "serve": "^14.2.1",
     "storybook": "^7.5.3",
     "typescript": "^5.2.2",

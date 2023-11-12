@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/node": "20.9.1",
     "eslint": "^8.53.0",
-    "eslint-config-custom": "*",
+    "eslint-config-custom": "workspace:*",
     "style-dictionary": "3.9.0",
     "style-dictionary-utils": "2.0.1",
     "tsconfig": "*",
