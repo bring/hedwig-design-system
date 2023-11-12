@@ -6,7 +6,8 @@
     "index.css",
     "base.css",
     "scoped.scss",
-    "button/button.scss"
+    "button/button.scss",
+    "link/link.scss"
   ],
   "scripts": {
     "build": "parcel build",
