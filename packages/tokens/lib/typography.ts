@@ -1,4 +1,4 @@
-import { type Transform } from "style-dictionary";
+import type { Named, Transform } from "style-dictionary";
 import { isTypography } from "style-dictionary-utils/dist/filter/isTypography";
 import { transformMaybeFluidValue } from "./fluid-value";
 
@@ -10,7 +10,8 @@ interface CustomTokenTypography {
   fontStyle?: string;
 }
 
-export const customTypography: Transform = {
+export const customTypography: Named<Transform> = {
+  name: "custom/typography",
   type: `value`,
   transitive: true,
   matcher: (token) => {

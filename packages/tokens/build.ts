@@ -12,10 +12,7 @@ const config = {
 StyleDictionary.registerParser(customTokensParser);
 
 // Handle typography
-StyleDictionary.registerTransform({
-  name: "hedwig/typography",
-  ...customTypography,
-});
+StyleDictionary.registerTransform(customTypography);
 
 /**
  * CSS Variables output
@@ -25,7 +22,7 @@ const cssTransforms = [
   "fontFamily/css",
   "shadow/css",
   "cubicBezier/css",
-  "hedwig/typography",
+  "custom/typography",
 ];
 
 function buildSharedCssVariables() {
@@ -112,7 +109,7 @@ buildFinalCssVariables();
 StyleDictionary.extend({
   source: ["tokens-source/shared.json"],
   platforms: {
-    ts: {
+    javascript: {
       transformGroup: "js",
       files: [
         {
@@ -143,22 +140,5 @@ StyleDictionary.extend({
         },
       ],
     },
-    // javascript: {
-    //   transforms: ["attribute/cti", "name/cti/pascal", "size/px", "color/css"],
-    //   files: [
-    //     {
-    //       format: "typescript/cjs-module",
-    //       destination: "tokens-output/tokens-2.js",
-    //     },
-    //     {
-    //       format: "typescript/es-module",
-    //       destination: "tokens-output/tokens-2.mjs",
-    //     },
-    //     {
-    //       format: "typescript/typings",
-    //       destination: "tokens-output/tokens-2.d.ts",
-    //     },
-    //   ],
-    // },
   },
 }).buildAllPlatforms();
