@@ -15,13 +15,13 @@
   },
   "devDependencies": {
     "@types/node": "20.9.0",
-    "eslint": "^8.48.0",
+    "eslint": "^8.53.0",
     "eslint-config-custom": "*",
     "sd-tailwindcss-transformer": "1.4.0",
     "style-dictionary": "3.9.0",
     "style-dictionary-utils": "2.0.1",
     "tsconfig": "*",
-    "tsx": "4.1.0",
+    "tsx": "4.1.1",
     "typescript": "^5.2.2"
   },
   "publishConfig": {
