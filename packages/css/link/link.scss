@@ -1,0 +1,78 @@
+/**
+ * Block
+ */
+
+.hds-link {
+  text-decoration: none;
+  border-bottom: var(--hds-stroke-default) solid var(--hds-brand-link-colors-underline);
+  fill: var(--hds-brand-link-colors-text);
+  color: var(--hds-brand-link-colors-text);
+  transition: all 0.1s ease;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: var(--hds-brand-link-colors-hover);
+    fill: var(--hds-brand-link-colors-hover);
+    border-color: var(--hds-brand-link-colors-underline-hover);
+
+    & .hw-link__text {
+      border-color: var(--hds-brand-link-colors-underline-hover);
+    }
+  }
+
+  /**
+   * Modifers
+   */
+
+  &--inverted {
+    color: var(--hds-ui-colors-white);
+    text-decoration-color: var(--hds-brand-colors-signature);
+    border-color: currentColor;
+    &:hover,
+    &:active {
+      color: var(--hds-brand-colors-light);
+      border-color: currentColor;
+    }
+    &:disabled {
+      color: var(--hds-ui-colors-dark-grey);
+      fill: currentColor;
+      border-color: currentColor;
+      outline: 0 !important;
+      box-shadow: none !important;
+      cursor: default;
+    }
+  }
+
+  &--small {
+    font: var(--hds-typography-body-small);
+  }
+
+  &--large {
+    font: var(--hds-typography-header-h3);
+  }
+
+  &--no-underline {
+    font-family: var(--hw-font-primary-medium);
+    color: var(--hds-brand-colors-dark);
+    text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      color: var(--hds-brand-colors-dark);
+      text-decoration: underline;
+      text-decoration-color: var(--hds-brand-colors-dark);
+      border-bottom: none;
+    }
+  }
+
+  &--solid {
+    color: var(--hds-ui-colors-black);
+    border-color: var(--hds-ui-colors-black);
+    &:hover,
+    &:active {
+      color: var(--hds-ui-colors-black-hover);
+      border-color: var(--hds-ui-colors-black-hover);
+    }
+  }
+}
