@@ -70,6 +70,13 @@
   --hds-micro-animation-easing-in: cubic-bezier(0.65, 0, 1, 0.1);
   --hds-micro-animation-easing-out: cubic-bezier(0, 0.45, 0.1, 1);
   --hds-micro-animation-easing-normal: cubic-bezier(0.45, 0.1, 0.65, 1);
+  --hds-micro-animation-duration-quick: 0.130s;
+  --hds-micro-animation-duration-normal: 0.300s;
+  --hds-micro-animation-duration-slow: 0.700s;
+  --hds-breakpoints-small: 460px;
+  --hds-breakpoints-medium: 720px;
+  --hds-breakpoints-large: 940px;
+  --hds-breakpoints-xlarge: 1200px;
 }
 .hds-theme-posten {
   --hds-brand-colors-signature: #e32d22;
@@ -79,7 +86,11 @@
   --hds-brand-colors-lighter: #fff5f0;
   --hds-brand-colors-signature-hover: #d62722;
   --hds-brand-colors-light-hover: #ff7d55;
-  --hds-brand-colors-button-text: #ffffff;
+  --hds-brand-button-colors-text: #ffffff;
+  --hds-brand-link-colors-text: #000000;
+  --hds-brand-link-colors-underline: #e32d22;
+  --hds-brand-link-colors-hover: #e32d22;
+  --hds-brand-link-colors-underline-hover: #e32d22;
   --hds-brand-typography-h1-display: 400 calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)))/calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Bold', Arial, sans-serif;
   --hds-brand-typography-h1: 400 calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300)))/calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Bold', Arial, sans-serif;
   --hds-brand-typography-h2: 400 calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))/calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Medium', Arial, sans-serif;
@@ -92,7 +103,11 @@
   --hds-brand-colors-lighter: #f1f7e9;
   --hds-brand-colors-signature-hover: #86cc4a;
   --hds-brand-colors-light-hover: #d3e593;
-  --hds-brand-colors-button-text: #000000;
+  --hds-brand-button-colors-text: #000000;
+  --hds-brand-link-colors-text: #000000;
+  --hds-brand-link-colors-underline: #7bc144;
+  --hds-brand-link-colors-hover: #00643a;
+  --hds-brand-link-colors-underline-hover: #00643a;
   --hds-brand-typography-h1-display: 400 calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)))/calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Light', Arial, sans-serif;
   --hds-brand-typography-h1: 400 calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300)))/calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Light', Arial, sans-serif;
   --hds-brand-typography-h2: 400 calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))/calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Regular', Arial, sans-serif;

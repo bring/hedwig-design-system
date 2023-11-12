@@ -8,12 +8,10 @@
   border-width: 0px;
   background: var(--hds-ui-colors-grey);
   border-color: var(--hds-ui-colors-grey);
-  color: var(--hds-brand-colors-button-text);
-  fill: var(--hds-brand-colors-button-text);
-  font-family: var(--hds-fonts-posten-sans-medium);
-  font-size: var(--hds-typography-body-small-font-size);
-  // line-height: var(--hds-font-size-p); // TODO
-  transition: all var(--hds-transition-time-quick) var(--hds-micro-animation-easing-normal);
+  color: var(--hds-brand-button-colors-text);
+  fill: var(--hds-brand-button-colors-text);
+  font: var(--hds-typography-body-small);
+  transition: all var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
   text-align: center; /* Center text when this is an <a> */
   cursor: pointer;
   word-break: normal;

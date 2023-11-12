@@ -73,3 +73,10 @@ export const ShadowDefault : { color: string, offsetX: string, offsetY: string, 
 export const MicroAnimationEasingIn : number[];
 export const MicroAnimationEasingOut : number[];
 export const MicroAnimationEasingNormal : number[];
+export const MicroAnimationDurationQuick : "0.130s";
+export const MicroAnimationDurationNormal : "0.300s";
+export const MicroAnimationDurationSlow : "0.700s";
+export const BreakpointsSmall : "460px";
+export const BreakpointsMedium : "720px";
+export const BreakpointsLarge : "940px";
+export const BreakpointsXlarge : "1200px";

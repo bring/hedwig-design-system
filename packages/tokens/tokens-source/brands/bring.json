@@ -21,10 +21,27 @@
     },
     "light-hover": {
       "value": "{bring-colors.light-green-hover}"
-    },
+    }
+  },
 
-    "button": {
-      "text": { "type": "color", "value": "{ui-colors.black}" }
+  "brand-button-colors": {
+    "type": "color",
+    "text": { "value": "{ui-colors.black}" }
+  },
+
+  "brand-link-colors": {
+    "type": "color",
+    "text": {
+      "value": "{ui-colors.black}"
+    },
+    "underline": {
+      "value": "{bring-colors.signature-green}"
+    },
+    "hover": {
+      "value": "{bring-colors.dark-green}"
+    },
+    "underline-hover": {
+      "value": "{bring-colors.dark-green}"
     }
   },
 
