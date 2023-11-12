@@ -2,7 +2,7 @@ import { type Transform } from "style-dictionary";
 import { isTypography } from "style-dictionary-utils/dist/filter/isTypography";
 import { transformMaybeFluidValue } from "./fluid-value";
 
-interface HedwigTokenTypography {
+interface CustomTokenTypography {
   fontFamily: string;
   fontSize: number | [number, number];
   fontWeight?: number;
@@ -10,7 +10,7 @@ interface HedwigTokenTypography {
   fontStyle?: string;
 }
 
-export const hedwigTypography: Transform = {
+export const customTypography: Transform = {
   type: `value`,
   transitive: true,
   matcher: (token) => {
@@ -18,12 +18,12 @@ export const hedwigTypography: Transform = {
       isTypography(token) ||
       Boolean(
         typeof token.value === "object" &&
-          (token.value as HedwigTokenTypography).fontFamily &&
-          (token.value as HedwigTokenTypography).fontSize,
+          (token.value as CustomTokenTypography).fontFamily &&
+          (token.value as CustomTokenTypography).fontSize,
       )
     );
   },
-  transformer: ({ value }: { value: HedwigTokenTypography }) => {
+  transformer: ({ value }: { value: CustomTokenTypography }) => {
     const fontSize = transformMaybeFluidValue(value.fontSize);
     const lineHeight = transformMaybeFluidValue(value.lineHeight);
 
