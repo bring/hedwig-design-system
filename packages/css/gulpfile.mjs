@@ -14,12 +14,12 @@ import cssnano from "cssnano";
 import { deleteAsync } from "del";
 
 const paths = {
-  sources: ["**/*.scss", "index.css"],
+  source: "**/*.scss",
   destination: "dist",
 };
 
 function style() {
-  return src(paths.sources)
+  return src(paths.source)
     .pipe(init())
     .pipe(sass().on("error", sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
@@ -29,7 +29,7 @@ function style() {
 
 function watchStyles() {
   style();
-  watch(paths.sources, style);
+  watch(paths.source, style);
 }
 
 async function clean() {
