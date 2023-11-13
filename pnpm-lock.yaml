@@ -107,34 +107,34 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@types/react':
-        specifier: ^18.2.15
+        specifier: ^18.2.37
         version: 18.2.37
       '@types/react-dom':
-        specifier: ^18.2.7
+        specifier: ^18.2.15
         version: 18.2.15
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.0.0
+        specifier: ^6.10.0
         version: 6.10.0(@typescript-eslint/parser@6.10.0)(eslint@8.53.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.0.0
+        specifier: ^6.10.0
         version: 6.10.0(eslint@8.53.0)(typescript@5.2.2)
       '@vitejs/plugin-react':
-        specifier: ^4.0.3
+        specifier: ^4.1.1
         version: 4.1.1(vite@4.5.0)
       eslint:
-        specifier: ^8.45.0
+        specifier: ^8.53.0
         version: 8.53.0
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.0(eslint@8.53.0)
       eslint-plugin-react-refresh:
-        specifier: ^0.4.3
+        specifier: ^0.4.4
         version: 0.4.4(eslint@8.53.0)
       typescript:
-        specifier: ^5.0.2
+        specifier: ^5.2.2
         version: 5.2.2
       vite:
-        specifier: ^4.4.5
+        specifier: ^4.5.0
         version: 4.5.0(@types/node@20.9.0)
 
   packages-internal/eslint-config-custom:
@@ -220,17 +220,11 @@ importers:
       '@types/node':
         specifier: 20.9.0
         version: 20.9.0
-      '@types/react':
-        specifier: ^18.2.21
-        version: 18.2.37
-      '@types/react-dom':
-        specifier: ^18.2.7
-        version: 18.2.15
       chokidar-cli:
         specifier: 3.0.0
         version: 3.0.0
       eslint:
-        specifier: ^8.48.0
+        specifier: ^8.53.0
         version: 8.53.0
       eslint-config-custom:
         specifier: workspace:*
@@ -238,21 +232,21 @@ importers:
       hedwig-tsconfig:
         specifier: workspace:*
         version: link:../../packages-internal/tsconfig
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
       sd-tailwindcss-transformer:
         specifier: 1.4.0
         version: 1.4.0(style-dictionary@3.9.0)
       style-dictionary:
         specifier: 3.9.0
         version: 3.9.0
+      style-dictionary-utils:
+        specifier: 2.0.1
+        version: 2.0.1(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.9.0)
       tsup:
         specifier: ^7.2.0
         version: 7.2.0(typescript@5.2.2)
       tsx:
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.1.1
+        version: 4.1.1
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -5677,6 +5671,10 @@ packages:
   /color-support@1.1.3:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
     hasBin: true
+    dev: true
+
+  /color2k@2.0.2:
+    resolution: {integrity: sha512-kJhwH5nAwb34tmyuqq/lgjEKzlFXn1U99NlnB6Ws4qVaERcRUYeYP1cBw6BJ4vxaWStAUEef4WMr7WjOCnBt8w==}
     dev: true
 
   /colord@2.9.3:
@@ -12827,6 +12825,20 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /style-dictionary-utils@2.0.1(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.9.0):
+    resolution: {integrity: sha512-+xHcpNojLU83DWQOLINmZ094VT+Xj8Fr/SqpxVHLNHCKO85v0IX244svVh9RClWEwZGNzh5wP4zXgILo743Fzw==}
+    peerDependencies:
+      color2k: ^2.0.0
+      json5: ^2.2.1
+      prettier: ^2.7.1
+      style-dictionary: '>= 3'
+    dependencies:
+      color2k: 2.0.2
+      json5: 2.2.3
+      prettier: 2.8.8
+      style-dictionary: 3.9.0
+    dev: true
+
   /style-dictionary@3.9.0:
     resolution: {integrity: sha512-mnq8QfPJoj3ellKHRKZwmCgYUGgwYtoagW5edyKpR09O1W4/XqBdeKXoY/LbeIKqHrqVR7sGgk6E/dNYkPS4aA==}
     engines: {node: '>=12.0.0'}
@@ -13258,8 +13270,8 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /tsx@4.1.0:
-    resolution: {integrity: sha512-u4l17Yd63Wsk2fzNn1wZCmcS9kwJ/2ysl7wuoVggv2hd3NjLA5JQPpyJMXoWSXOwOvoQUzNcu/sf/35HEsnXsg==}
+  /tsx@4.1.1:
+    resolution: {integrity: sha512-zyPn5BFMB0TB5kMLbYPNx4x/oL/oSlaecdKCv6WeJ0TeSEfx8RTJWjuB5TZ2dSewktgfBsBO/HNA9mrMWqLXMA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
