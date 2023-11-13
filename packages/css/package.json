@@ -7,15 +7,22 @@
     "dev": "parcel watch 'src/*.css' 'src/**/*.css' 'src/*.scss' 'src/**/*.scss'",
     "clean": "rm -rf .turbo && rm -rf .parcel-cache && rm -rf node_modules && rm -rf dist"
   },
+  "files": [
+    "dist/**",
+    "typed-classname.mjs",
+    "typed-classname.d.mts"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@parcel/transformer-sass": "2.10.2",
     "autoprefixer": "10.4.16",
     "parcel": "2.10.2",
     "postcss": "8.4.31",
+    "postcss-custom-properties": "13.3.2",
     "postcss-import": "15.1.0",
     "postcss-nested": "6.0.1",
-    "sanitize.css": "^13.0.0"
+    "sanitize.css": "^13.0.0",
+    "postcss-ts-classnames": "0.3.0"
   },
   "publishConfig": {
     "access": "public"

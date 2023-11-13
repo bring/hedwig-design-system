@@ -1,5 +1,6 @@
 import * as React from "react";
 import { clsx } from "clsx";
+import { t } from "@postenbring/hedwig-css/typed-classname.mjs";
 import { warnForStyleOverrides } from "../utils";
 
 interface ButtonProps
@@ -36,11 +37,11 @@ function BaseButton({
   warnForStyleOverrides(rest);
   return (
     <button
-      className={clsx("hds-button", `hds-button--${size}`, {
-        [`hds-button--${variant}`]: fill === "contained",
-        [`hds-button--outline-${variant}`]: fill === "outlined",
-        "hds-button--full": fullWidth === true,
-        "hds-button--mobile-full": fullWidth === "mobile",
+      className={clsx(t("hds-button"), t(`hds-button--${size}`), {
+        [t(`hds-button--${variant}`)]: fill === "contained",
+        [t(`hds-button--outline-${variant}`)]: fill === "outlined",
+        [t("hds-button--full")]: fullWidth === true,
+        [t("hds-button--mobile-full")]: fullWidth === "mobile",
       })}
       ref={buttonRef}
       type="button"
