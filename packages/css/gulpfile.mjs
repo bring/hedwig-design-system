@@ -14,7 +14,7 @@ import cssnano from "cssnano";
 import { deleteAsync } from "del";
 
 const paths = {
-  source: "**/*.scss",
+  source: "src/**/*.{css,scss}",
   destination: "dist",
 };
 
