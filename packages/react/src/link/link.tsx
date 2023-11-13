@@ -1,5 +1,6 @@
 import * as React from "react";
 import { clsx } from "clsx";
+import { t } from "@postenbring/hedwig-css/typed-classname.mjs";
 import { warnForStyleOverrides } from "../utils";
 
 interface LinkProps
@@ -33,10 +34,11 @@ export function Link({
   warnForStyleOverrides(rest);
   return (
     <a
-      className={clsx("hds-link", {
-        [`hds-link--${variant}`]: variant !== "underline",
-        [`hds-link--${size}`]: size !== "medium",
-      })}
+      className={clsx(
+        t("hds-link"),
+        variant !== "underline" && t(`hds-link--${variant}`),
+        size !== "medium" && t(`hds-link--${size}`),
+      )}
       ref={anchorRef}
       {...rest}
     >

@@ -1,0 +1,87 @@
+.hds-typography-h2-display {
+  font: var(--hds-brand-typography-h1-display);
+}
+
+.hds-typography-h1 {
+  font: var(--hds-brand-typography-h1);
+
+  &.hds-typography-h1--spacing {
+    margin-top: var(--hds-spacing-large-2);
+  }
+}
+
+.hds-typography-h2 {
+  font: var(--hds-brand-typography-h2);
+
+  &.hds-typography-h2--spacing {
+    margin-top: var(--hds-spacing-large-2);
+  }
+  .hds-typography-h1 ~ &.hds-typography-h2--spacing {
+    margin-top: var(--hds-spacing-medium-3);
+  }
+}
+
+.hds-typography-h3 {
+  font: var(--hds-typography-header-h3);
+
+  &.hds-typography-h3--title {
+    font: var(--hds-typography-header-h3-title);
+  }
+
+  &.hds-typography-h3--spacing {
+    margin-top: var(--hds-spacing-large-2);
+  }
+}
+
+.hds-typography-body {
+  font: var(--hds-typography-body);
+
+  &.hds-typography-body--title {
+    font: var(--hds-typography-body-title);
+  }
+
+  &.hds-typography-body--spacing {
+    margin-top: var(--hds-spacing-medium-2);
+  }
+}
+
+.hds-typography-body-small {
+  font: var(--hds-typography-body-small);
+
+  &.hds-typography-body-small--title {
+    font: var(--hds-typography-body-small-title);
+  }
+
+  &.hds-typography-body-small--spacing {
+    margin-top: var(--hds-spacing-medium-2);
+  }
+}
+
+.hds-typography-caption {
+  font: var(--hds-typography-caption);
+
+  &.hds-typography-caption--title {
+    font: var(--hds-typography-caption-title);
+  }
+
+  &.hds-typography-caption--spacing {
+    margin-top: var(--hds-spacing-medium-2);
+  }
+}
+
+.hds-typography-technical {
+  font: var(--hds-typography-technical);
+
+  &.hds-typography-technical--title {
+    font: var(--hds-typography-technical-title);
+  }
+
+  &.hds-typography-technical--spacing {
+    margin-top: var(--hds-spacing-small-1);
+  }
+  @media (min-width: 940px) {
+    &.hds-typography-technical--spacing {
+      margin-top: var(--hds-spacing-small-2);
+    }
+  }
+}
