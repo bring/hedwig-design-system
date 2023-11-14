@@ -1,6 +1,6 @@
 import { PrimaryButton, Link } from "@postenbring/hedwig-react";
 
-function App() {
+function ReactComponentsKitchenSink() {
   return (
     <>
       <div className="hds-theme-posten">
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default ReactComponentsKitchenSink;
