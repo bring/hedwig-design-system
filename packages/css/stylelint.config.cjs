@@ -6,13 +6,16 @@ module.exports = {
   extends: ["stylelint-config-standard", "stylelint-config-standard-scss"],
   plugins: ["stylelint-value-no-unknown-custom-properties"],
   rules: {
-    /** Make sure we don't misspell the tokens */
+    // Make sure we don't misspell the tokens
     "csstools/value-no-unknown-custom-properties": [
       true,
       {
         importFrom: [`${__dirname}/../tokens/tokens-output/css/tokens.css`],
       },
     ],
+
+    // Supported in chrome since 2022 - https://caniuse.com/css-media-range-syntax
+    "media-feature-range-notation": "prefix",
 
     // Disabled for now, since we use both css @import url() and scss @import "" at the same time
     "import-notation": [null],

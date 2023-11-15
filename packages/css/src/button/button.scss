@@ -1,11 +1,11 @@
 .hds-button {
   -webkit-font-smoothing: antialiased;
-  -webkit-appearance: button;
+  appearance: button;
   box-sizing: border-box;
   display: inline-block;
   padding: var(--hds-spacing-small-3) var(--hds-spacing-medium-2);
   border-radius: var(--hds-border-radius);
-  border-width: 0px;
+  border-width: 0;
   background: var(--hds-ui-colors-grey);
   border-color: var(--hds-ui-colors-grey);
   color: var(--hds-brand-button-colors-text);
@@ -37,6 +37,7 @@
     line-height: 26px;
     height: 58px;
     padding: 16px 24px;
+
     i,
     svg {
       margin-right: 12px;
@@ -48,6 +49,7 @@
     line-height: 26px;
     height: 50px;
     padding: 12px 20px;
+
     i,
     svg {
       margin-right: 10px;
@@ -59,6 +61,7 @@
     line-height: 24px;
     height: 48px;
     padding: 12px 16px;
+
     i,
     svg {
       margin-right: 8px;
@@ -96,7 +99,7 @@
     &:active {
       background: var(--hds-brand-colors-signature-hover);
       border-color: var(--hds-brand-colors-signature);
-      outline: 0px solid var(--hds-brand-colors-signature-hover);
+      outline: 0 solid var(--hds-brand-colors-signature-hover);
     }
 
     &:active {
@@ -113,7 +116,7 @@
     &:hover,
     &:active {
       background: var(--hds-ui-colors-black);
-      outline: 0px solid var(--hds-ui-colors-black);
+      outline: 0 solid var(--hds-ui-colors-black);
     }
 
     &:active {
@@ -146,10 +149,6 @@
     }
   }
 
-  &--outline-dark {
-    @extend .hds-button--outline-secondary;
-  }
-
   &--outline-white {
     background: transparent;
     border: var(--hds-stroke-thick) solid var(--hds-brand-colors-light);
@@ -177,6 +176,7 @@
       fill: var(--hds-brand-colors-dark);
       border: var(--hds-stroke-thick) solid var(--hds-brand-colors-dark);
     }
+
     &:disabled,
     &[disabled],
     &[disabled]:active {
@@ -187,7 +187,8 @@
     }
   }
 
-  &--outline-secondary {
+  &--outline-secondary,
+  &--outline-dark {
     background: transparent;
     border: var(--hds-stroke-thick) solid var(--hds-brand-colors-darker);
     color: var(--hds-brand-colors-darker);
@@ -199,8 +200,10 @@
       color: var(--hds-ui-colors-black);
       fill: var(--hds-ui-colors-black);
       border: var(--hds-stroke-thick) solid var(--hds-ui-colors-black);
-      /*outline: 0px solid var(--hds-ui-colors-white);*/
+
+      /* outline: 0px solid var(--hds-ui-colors-white); */
     }
+
     &:disabled,
     &[disabled],
     &[disabled]:active {

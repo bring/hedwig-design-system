@@ -16,6 +16,7 @@
   &.hds-typography-h2--spacing {
     margin-top: var(--hds-spacing-large-2);
   }
+
   .hds-typography-h1 ~ &.hds-typography-h2--spacing {
     margin-top: var(--hds-spacing-medium-3);
   }
@@ -79,6 +80,7 @@
   &.hds-typography-technical--spacing {
     margin-top: var(--hds-spacing-small-1);
   }
+
   @media (min-width: 940px) {
     &.hds-typography-technical--spacing {
       margin-top: var(--hds-spacing-small-2);

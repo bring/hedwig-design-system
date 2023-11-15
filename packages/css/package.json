@@ -5,7 +5,8 @@
   "scripts": {
     "build": "parcel build 'src/*.css' 'src/**/*.css' 'src/*.scss' 'src/**/*.scss'",
     "dev": "parcel watch 'src/*.css' 'src/**/*.css' 'src/*.scss' 'src/**/*.scss'",
-    "lint": "stylelint 'src/**/*.scss' --cache",
+    "lint": "stylelint 'src/**/*.css' 'src/**/*.scss' --cache",
+    "lint:fix": "npm run lint -- --fix",
     "clean": "rm -rf .turbo && rm -rf .parcel-cache && rm -rf node_modules && rm -rf dist"
   },
   "files": [
