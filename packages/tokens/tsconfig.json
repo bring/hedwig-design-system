@@ -1,0 +1,5 @@
+{
+  "extends": "hedwig-tsconfig/base.json",
+  "include": ["build.ts", "lib"],
+  "exclude": ["dist", "build", "node_modules"]
+}

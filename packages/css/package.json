@@ -5,6 +5,7 @@
   "scripts": {
     "build": "parcel build 'src/*.css' 'src/**/*.css' 'src/*.scss' 'src/**/*.scss'",
     "dev": "parcel watch 'src/*.css' 'src/**/*.css' 'src/*.scss' 'src/**/*.scss'",
+    "lint": "stylelint 'src/**/*.scss' --cache",
     "clean": "rm -rf .turbo && rm -rf .parcel-cache && rm -rf node_modules && rm -rf dist"
   },
   "files": [
@@ -21,8 +22,12 @@
     "postcss-custom-properties": "13.3.2",
     "postcss-import": "15.1.0",
     "postcss-nested": "6.0.1",
+    "postcss-ts-classnames": "0.3.0",
     "sanitize.css": "^13.0.0",
-    "postcss-ts-classnames": "0.3.0"
+    "stylelint": "15.11.0",
+    "stylelint-config-standard": "34.0.0",
+    "stylelint-config-standard-scss": "11.1.0",
+    "stylelint-value-no-unknown-custom-properties": "5.0.0"
   },
   "publishConfig": {
     "access": "public"
