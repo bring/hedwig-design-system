@@ -1,6 +1,7 @@
 .hds-button {
   -webkit-font-smoothing: antialiased;
-  appearance: button;
+  /* stylelint-disable-next-line property-no-vendor-prefix -- Not sure if we need this or not 🤷 */
+  -webkit-appearance: button;
   box-sizing: border-box;
   display: inline-block;
   padding: var(--hds-spacing-small-3) var(--hds-spacing-medium-2);
