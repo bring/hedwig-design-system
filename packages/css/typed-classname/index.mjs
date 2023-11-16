@@ -1,6 +1,6 @@
 // @ts-check
 /**
- * @typedef {import('./dist/classnames').ClassNames} ClassNames
+ * @typedef {import('../dist/classnames').ClassNames} ClassNames
  */
 
 /**

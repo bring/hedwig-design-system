@@ -1,4 +1,4 @@
-import { ClassNames } from "./dist/classnames";
+import { ClassNames } from "../dist/classnames";
 
 /**
  * Helper function to get ensure classnames are referenced correctly

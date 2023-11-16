@@ -24,6 +24,6 @@ jobs:
 
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
         with:
-          install_command: npm ci
+          install_command: npm install
           build_command: npm run build
           path: apps/docs/storybook-static
