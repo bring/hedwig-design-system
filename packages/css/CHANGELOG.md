@@ -1,5 +1,14 @@
 # @postenbring/hedwig-css
 
+## 0.0.4
+
+### Patch Changes
+
+- d0febe5: fix badge & add some comments for button tokens
+- 2bb6767: fix typed-classname
+- 1a909d1: Added badge component
+- 8cdb781: setup stylelint for css package
+
 ## 0.0.3
 
 ### Patch Changes

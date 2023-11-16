@@ -1,5 +1,21 @@
 # @postenbring/hedwig-react
 
+## 0.0.4
+
+### Patch Changes
+
+- 2bb6767: fix typed-classname
+- 1a909d1: Added badge component
+- ae1af04: export interface types and use star exports
+- Updated dependencies [ef9551a]
+- Updated dependencies [d0febe5]
+- Updated dependencies [2bb6767]
+- Updated dependencies [8cdb781]
+- Updated dependencies [1a909d1]
+- Updated dependencies [8cdb781]
+  - @postenbring/hedwig-tokens@0.0.2
+  - @postenbring/hedwig-css@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
