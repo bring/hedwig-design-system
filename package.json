@@ -30,7 +30,8 @@
   ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "*.{js,jsx,ts,tsx,css,scss,md,json}": "prettier --write"
+    "packages/css/**/*.{css,scss}": "stylelint --cache --fix",
+    "*.{js,jsx,ts,tsx,css,scss,md,json}": "prettier --cache --write"
   },
   "prettier": {
     "trailingComma": "all",

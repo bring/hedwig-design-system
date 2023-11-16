@@ -28,16 +28,18 @@
   &--inverted {
     color: var(--hds-ui-colors-white);
     text-decoration-color: var(--hds-brand-colors-signature);
-    border-color: currentColor;
+    border-color: currentcolor;
+
     &:hover,
     &:active {
       color: var(--hds-brand-colors-light);
-      border-color: currentColor;
+      border-color: currentcolor;
     }
+
     &:disabled {
       color: var(--hds-ui-colors-dark-grey);
-      fill: currentColor;
-      border-color: currentColor;
+      fill: currentcolor;
+      border-color: currentcolor;
       outline: 0 !important;
       box-shadow: none !important;
       cursor: default;
@@ -53,7 +55,7 @@
   }
 
   &--no-underline {
-    font-family: var(--hw-font-primary-medium);
+    font: var(--hds-fonts-posten-sans-medium);
     color: var(--hds-brand-colors-dark);
     text-decoration: none;
     border-bottom: none;
@@ -69,6 +71,7 @@
   &--solid {
     color: var(--hds-ui-colors-black);
     border-color: var(--hds-ui-colors-black);
+
     &:hover,
     &:active {
       color: var(--hds-ui-colors-black-hover);
