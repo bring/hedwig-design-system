@@ -12,7 +12,8 @@ server/dist
 public/dist
 storybook-static/
 .eslintcache
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 .parcel-cache/
 .idea/
 .stylelintcache
