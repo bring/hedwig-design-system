@@ -47,6 +47,7 @@
   --hds-fonts-posten-sans-medium: 'Posten Sans Medium', Arial, sans-serif;
   --hds-fonts-posten-sans-regular: 'Posten Sans Regular', Arial, sans-serif;
   --hds-fonts-posten-sans-light: 'Posten Sans Light', Arial, sans-serif;
+  --hds-font-size-p: 20px;
   --hds-typography-posten-h1-display: 400 calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)))/calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Bold', Arial, sans-serif;
   --hds-typography-posten-h1: 400 calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300)))/calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Bold', Arial, sans-serif;
   --hds-typography-posten-h2: 400 calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))/calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Medium', Arial, sans-serif;

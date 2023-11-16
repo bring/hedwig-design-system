@@ -50,6 +50,7 @@ export const FontsPostenSansBold : string[];
 export const FontsPostenSansMedium : string[];
 export const FontsPostenSansRegular : string[];
 export const FontsPostenSansLight : string[];
+export const FontSizeP : "20px";
 export const TypographyPostenH1Display : { fontFamily: string[], fontSize: string[], lineHeight: string[], fontWeight: number, letterSpacing: string };
 export const TypographyPostenH1 : { fontFamily: string[], fontSize: string[], lineHeight: string[], fontWeight: number, letterSpacing: string };
 export const TypographyPostenH2 : { fontFamily: string[], fontSize: string[], lineHeight: string[], fontWeight: number, letterSpacing: string };

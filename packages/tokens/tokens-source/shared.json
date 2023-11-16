@@ -163,6 +163,12 @@
       "value": ["Posten Sans Light", "Arial", "sans-serif"]
     }
   },
+  "font-size": {
+    "type": "fontSize",
+    "p": {
+      "value": "20px"
+    }
+  },
   "typography": {
     "type": "typography",
     "posten-h1-display": {
