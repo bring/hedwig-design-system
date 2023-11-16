@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname.mjs";
 import { warnForStyleOverrides } from "../utils";
 
-interface ButtonProps
+export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className" | "style"> {
   /**
    * The height, font size and padding of the button

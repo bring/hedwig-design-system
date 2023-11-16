@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname.mjs";
 import { warnForStyleOverrides } from "../utils";
 
-interface BadgeProps
+export interface BadgeProps
   extends Omit<React.AnchorHTMLAttributes<HTMLSpanElement>, "className" | "style"> {
   /**
    * Font size of the badge
@@ -47,4 +47,4 @@ WhiteBadge.displayName = "WhiteBadge";
 export function WarningBadge(props: BadgeProps) {
   return <BaseBadge {...props} variant="warning" />;
 }
-WarningBadge.displayName = "Badge";
+WarningBadge.displayName = "WarningBadge";
