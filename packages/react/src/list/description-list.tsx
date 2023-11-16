@@ -2,40 +2,46 @@ import type { HTMLAttributes, ReactNode } from "react";
 import React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverridesAndRender } from "../utils";
+import { warnForStyleOverrides } from "../utils";
 
-type DDProps = DLDTProps;
-type DTProps = DLDTProps;
+export type DescriptionDetailsProps = DLDTProps;
+export type DescriptionTermProps = DLDTProps;
 
-export interface DLDTProps
-  extends Omit<React.HTMLAttributes<HTMLBaseElement>, "className" | "style"> {
+interface DLDTProps extends Omit<React.HTMLAttributes<HTMLBaseElement>, "className" | "style"> {
   children: ReactNode;
 }
 
-export interface DLProps extends Omit<HTMLAttributes<HTMLDListElement>, "className" | "style"> {
+export interface DescriptionListProps
+  extends Omit<HTMLAttributes<HTMLDListElement>, "className" | "style"> {
+  /**
+   * Either `DescriptionDetails` or `DescriptionTerm` elements
+   */
+  children: ReactNode;
   /**
    * Direction of the description list
    */
   variant?: "vertical" | "horizontal";
 }
 
-export function DescriptionDetails({ children, ...rest }: DDProps) {
-  return warnForStyleOverridesAndRender(rest, <dd {...rest}>{children}</dd>);
+export function DescriptionDetails({ children, ...rest }: DescriptionDetailsProps) {
+  warnForStyleOverrides(rest);
+  return <dd {...rest}>{children}</dd>;
 }
 
-export function DescriptionTerm({ children, ...rest }: DTProps) {
-  return warnForStyleOverridesAndRender(rest, <dt {...rest}>{children}</dt>);
+export function DescriptionTerm({ children, ...rest }: DescriptionTermProps) {
+  warnForStyleOverrides(rest);
+  return <dt {...rest}>{children}</dt>;
 }
 
-export function DescriptionList({ variant = "vertical", ...rest }: DLProps) {
-  return warnForStyleOverridesAndRender(
-    rest,
+export function DescriptionList({ variant = "vertical", ...rest }: DescriptionListProps) {
+  warnForStyleOverrides(rest);
+  return (
     <dl
       className={clsx(t("hds-description-list"), {
         [t("hds-description-list--horizontal")]: variant === "horizontal",
       })}
       {...rest}
-    />,
+    />
   );
 }
 

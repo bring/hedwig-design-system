@@ -2,7 +2,7 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverridesAndRender } from "../utils";
+import { warnForStyleOverrides } from "../utils";
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className" | "style"> {
@@ -35,8 +35,8 @@ function BaseButton({
   buttonRef,
   ...rest
 }: ButtonProps & { variant: "primary" | "secondary" }) {
-  return warnForStyleOverridesAndRender(
-    rest,
+  warnForStyleOverrides(rest);
+  return (
     <button
       className={clsx(t("hds-button"), t(`hds-button--${size}`), {
         [t(`hds-button--${variant}`)]: fill === "contained",
@@ -48,7 +48,7 @@ function BaseButton({
       {...rest}
     >
       {children}
-    </button>,
+    </button>
   );
 }
 
