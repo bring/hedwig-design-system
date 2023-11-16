@@ -1,0 +1,62 @@
+/**
+ * Block
+ */
+
+.hds-badge {
+  display: inline-block;
+  background-color: var(--hds-brand-colors-lighter);
+  border: var(--hds-stroke-default) solid var(--hds-brand-colors-lighter);
+  border-radius: var(--hds-border-radius);
+  padding: var(--hds-spacing-small-1) var(--hds-spacing-small-2);
+  color: var(--hds-brand-colors-dark);
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: 12px; /* For now, this might be changed later */
+  font-family: var(--hds-fonts-posten-sans-medium);
+  -moz-osx-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+  vertical-align: 10%;
+
+  /**
+     * Modifiers
+     */
+
+  /* Variations */
+
+  /* Size variations */
+
+  &--small {
+    padding: var(--hds-spacing-small-1) var(--hds-spacing-small-2);
+  }
+
+  &--smaller {
+    padding: 2px var(--hds-spacing-small-1);
+  }
+
+  /* Color variations */
+
+  &--primary {
+    /* Default */
+    background-color: var(--hds-brand-colors-lighter);
+    border-color: var(--hds-brand-colors-lighter);
+    color: var(--hds-brand-colors-dark);
+  }
+
+  &--dark {
+    background-color: var(--hds-brand-colors-darker);
+    border-color: var(--hds-brand-colors-darker);
+    color: var(--hds-ui-colors-white);
+  }
+
+  &--white {
+    background-color: var(--hds-ui-colors-white);
+    border-color: var(--hds-ui-colors-white);
+    color: var(--hds-brand-colors-dark);
+  }
+
+  &--warning {
+    background-color: var(--hds-ui-colors-warning-yellow);
+    border-color: var(--hds-ui-colors-warning-yellow);
+    color: var(--hds-brand-link-colors-text);
+  }
+}

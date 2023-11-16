@@ -1,3 +1,4 @@
-export { PrimaryButton, SecondaryButton } from "./button";
-export { Link } from "./link";
+export * from "./button";
+export * from "./link";
+export * from "./badge";
 export * from "./list";
