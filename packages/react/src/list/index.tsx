@@ -3,4 +3,4 @@ import "@postenbring/hedwig-css/dist/base.css";
 
 import "@postenbring/hedwig-css/dist/list/description-list.css";
 
-export { DD, DL, DT } from "./description-list";
+export { DescriptionDetails, DescriptionList, DescriptionTerm } from "./description-list";

@@ -45,7 +45,6 @@ export const FontsPostenSansBold = ["Posten Sans Bold","Arial","sans-serif"];
 export const FontsPostenSansMedium = ["Posten Sans Medium","Arial","sans-serif"];
 export const FontsPostenSansRegular = ["Posten Sans Regular","Arial","sans-serif"];
 export const FontsPostenSansLight = ["Posten Sans Light","Arial","sans-serif"];
-export const FontSizeP = "20px";
 export const TypographyPostenH1Display = {"fontFamily":["Posten Sans Bold","Arial","sans-serif"],"fontSize":["40px","72px"],"lineHeight":["56px","80px"],"fontWeight":400,"letterSpacing":"0"};
 export const TypographyPostenH1 = {"fontFamily":["Posten Sans Bold","Arial","sans-serif"],"fontSize":["32px","48px"],"lineHeight":["40px","56px"],"fontWeight":400,"letterSpacing":"0"};
 export const TypographyPostenH2 = {"fontFamily":["Posten Sans Medium","Arial","sans-serif"],"fontSize":["28px","32px"],"lineHeight":["36px","40px"],"fontWeight":400,"letterSpacing":"0"};

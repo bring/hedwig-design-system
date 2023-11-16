@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import type { DLProps } from "./description-list";
-import { DD, DL, DT } from ".";
+import { DescriptionDetails, DescriptionList, DescriptionTerm } from ".";
 
-type Story = StoryObj<typeof DL>;
+type Story = StoryObj<typeof DescriptionList>;
 type DLVariant = Pick<DLProps, "variant">;
 
 const DLStory = (variant: DLVariant): Story => ({
@@ -11,14 +11,14 @@ const DLStory = (variant: DLVariant): Story => ({
     variant: variant.variant,
     children: (
       <>
-        <DT>Vekt</DT>
-        <DD>12 kg</DD>
-        <DT>Antall kolli</DT>
-        <DD>2</DD>
-        <DT>Sendingsnummer</DT>
-        <DD>7000001</DD>
-        <DT>Avsender</DT>
-        <DD>Fjellsport</DD>
+        <DescriptionTerm>Vekt</DescriptionTerm>
+        <DescriptionDetails>12 kg</DescriptionDetails>
+        <DescriptionTerm>Antall kolli</DescriptionTerm>
+        <DescriptionDetails>2</DescriptionDetails>
+        <DescriptionTerm>Sendingsnummer</DescriptionTerm>
+        <DescriptionDetails>7000001</DescriptionDetails>
+        <DescriptionTerm>Avsender</DescriptionTerm>
+        <DescriptionDetails>Fjellsport</DescriptionDetails>
       </>
     ),
   },
@@ -28,9 +28,9 @@ export const Horizontal: Story = DLStory({ variant: "horizontal" });
 export const Vertical: Story = DLStory({ variant: "vertical" });
 export const Default: Story = DLStory({ variant: "vertical" });
 
-const meta: Meta<typeof DL> = {
+const meta: Meta<typeof DescriptionList> = {
   title: "Description List",
-  component: DL,
+  component: DescriptionList,
   argTypes: {
     children: {
       description: "Either DT or DD elements",

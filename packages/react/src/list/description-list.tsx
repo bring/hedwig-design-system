@@ -19,26 +19,29 @@ export interface DLProps extends Omit<HTMLAttributes<HTMLDListElement>, "classNa
   variant?: "vertical" | "horizontal";
 }
 
-export function DD({ children, ...rest }: DDProps) {
+export function DescriptionDetails({ children, ...rest }: DDProps) {
   return warnForStyleOverridesAndRender(rest, <dd {...rest}>{children}</dd>);
 }
 
-export function DT({ children, ...rest }: DTProps) {
+export function DescriptionTerm({ children, ...rest }: DTProps) {
   return warnForStyleOverridesAndRender(rest, <dt {...rest}>{children}</dt>);
 }
 
-export function DL({ variant = "vertical", ...rest }: DLProps) {
+export function DescriptionList({ variant = "vertical", ...rest }: DLProps) {
   return warnForStyleOverridesAndRender(
     rest,
     <dl
-      className={clsx(t("hds-dl"), variant === "horizontal" && t("hds-dl--horizontal"))}
+      className={clsx(
+        t("hds-description-list"),
+        variant === "horizontal" && t("hds-description-list--horizontal"),
+      )}
       {...rest}
     />,
   );
 }
 
-DL.displayName = "DL";
-DD.displayName = "DD";
-DT.displayName = "DT";
+DescriptionList.displayName = "DescriptionList";
+DescriptionTerm.displayName = "DescriptionTerm";
+DescriptionDetails.displayName = "DescriptionDetails";
 
-export default DL;
+export default DescriptionList;
