@@ -1,7 +1,7 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverridesAndRender } from "../utils";
+import { warnForStyleOverrides } from "../utils";
 
 export interface BadgeProps
   extends Omit<React.AnchorHTMLAttributes<HTMLSpanElement>, "className" | "style"> {
@@ -19,11 +19,11 @@ function BaseBadge({
   size = "small",
   ...rest
 }: BadgeProps & { variant: "primary" | "dark" | "white" | "warning" }) {
-  return warnForStyleOverridesAndRender(
-    rest,
+  warnForStyleOverrides(rest);
+  return (
     <span className={clsx(t("hds-badge"), t(`hds-badge--${size}`), t(`hds-badge--${variant}`))}>
       {children}
-    </span>,
+    </span>
   );
 }
 

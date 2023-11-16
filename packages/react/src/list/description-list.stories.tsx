@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import type { DLProps } from "./description-list";
+import type { DescriptionListProps } from "./description-list";
 import { DescriptionDetails, DescriptionList, DescriptionTerm } from ".";
 
 type Story = StoryObj<typeof DescriptionList>;
-type DLVariant = Pick<DLProps, "variant">;
+type DLVariant = Pick<DescriptionListProps, "variant">;
 
 const DLStory = (variant: DLVariant): Story => ({
   args: {
@@ -31,15 +31,5 @@ export const Default: Story = DLStory({ variant: "vertical" });
 const meta: Meta<typeof DescriptionList> = {
   title: "Description List",
   component: DescriptionList,
-  argTypes: {
-    children: {
-      description: "Either DT or DD elements",
-    },
-    variant: {
-      type: "string",
-      defaultValue: "vertical",
-      description: "Direction of the description list",
-    },
-  },
 };
 export default meta;

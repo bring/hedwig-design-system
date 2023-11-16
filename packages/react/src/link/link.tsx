@@ -1,7 +1,7 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverridesAndRender } from "../utils";
+import { warnForStyleOverrides } from "../utils";
 
 export interface LinkProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "style"> {
@@ -31,8 +31,8 @@ export function Link({
   anchorRef,
   ...rest
 }: LinkProps) {
-  return warnForStyleOverridesAndRender(
-    rest,
+  warnForStyleOverrides(rest);
+  return (
     <a
       className={clsx(
         t("hds-link"),
@@ -43,7 +43,7 @@ export function Link({
       {...rest}
     >
       {children}
-    </a>,
+    </a>
   );
 }
 
