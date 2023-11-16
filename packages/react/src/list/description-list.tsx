@@ -31,10 +31,9 @@ export function DescriptionList({ variant = "vertical", ...rest }: DLProps) {
   return warnForStyleOverridesAndRender(
     rest,
     <dl
-      className={clsx(
-        t("hds-description-list"),
-        variant === "horizontal" && t("hds-description-list--horizontal"),
-      )}
+      className={clsx(t("hds-description-list"), {
+        [t("hds-description-list--horizontal")]: variant === "horizontal",
+      })}
       {...rest}
     />,
   );
