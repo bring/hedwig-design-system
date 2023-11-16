@@ -12,5 +12,8 @@ export default defineConfig({
 
     "src/link/index.tsx",
     "src/link/link.tsx",
+
+    "src/list/index.tsx",
+    "src/list/description-list.tsx",
   ],
 });
