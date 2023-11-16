@@ -30,6 +30,9 @@
     "stylelint-config-standard-scss": "11.1.0",
     "stylelint-value-no-unknown-custom-properties": "5.0.0"
   },
+  "optionalDependencies": {
+    "@parcel/watcher-linux-x64-glibc": "^2.3.0"
+  },
   "publishConfig": {
     "access": "public"
   },

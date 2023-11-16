@@ -30,9 +30,6 @@
     "@postenbring/hedwig-tokens": "*",
     "clsx": "^2.0.0"
   },
-  "optionalDependencies": {
-    "@parcel/watcher-linux-x64-glibc": "^2.3.0"
-  },
   "publishConfig": {
     "access": "public"
   }
