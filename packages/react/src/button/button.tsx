@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type -- Less magic, don't override the button behaviour */
 import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname.mjs";
@@ -44,7 +45,6 @@ function BaseButton({
         [t("hds-button--mobile-full")]: fullWidth === "mobile",
       })}
       ref={buttonRef}
-      type="button"
       {...rest}
     >
       {children}

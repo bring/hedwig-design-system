@@ -75,3 +75,7 @@ export const BreakpointsSmall = "460px";
 export const BreakpointsMedium = "720px";
 export const BreakpointsLarge = "940px";
 export const BreakpointsXlarge = "1200px";
+export const Opacity7 = ".07";
+export const Opacity10 = ".1";
+export const Opacity20 = ".2";
+export const Opacity50 = ".5";

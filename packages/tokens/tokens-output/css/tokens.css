@@ -77,6 +77,10 @@
   --hds-breakpoints-medium: 720px;
   --hds-breakpoints-large: 940px;
   --hds-breakpoints-xlarge: 1200px;
+  --hds-opacity-7: .07;
+  --hds-opacity-10: .1;
+  --hds-opacity-20: .2;
+  --hds-opacity-50: .5;
 }
 .hds-theme-posten {
   --hds-brand-colors-signature: #e32d22;

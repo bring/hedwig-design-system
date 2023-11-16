@@ -5,7 +5,8 @@
   "license": "MIT",
   "files": [
     "assets/**",
-    "tokens-output/**"
+    "tokens-output/**",
+    "tailwind.config.js"
   ],
   "scripts": {
     "build": "node --import tsx build.ts",
