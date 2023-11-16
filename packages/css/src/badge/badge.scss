@@ -5,7 +5,7 @@
 .hds-badge {
   display: inline-block;
   background-color: var(--hds-brand-colors-lighter);
-  border: var(--hds-border-thickness) solid var(--hds-brand-colors-lighter);
+  border: var(--hds-stroke-default) solid var(--hds-brand-colors-lighter);
   border-radius: var(--hds-border-radius);
   padding: var(--hds-spacing-small-1) var(--hds-spacing-small-2);
   color: var(--hds-brand-colors-dark);
@@ -13,10 +13,8 @@
   line-height: 1.1;
   font-size: 12px; /* For now, this might be changed later */
   font-family: var(--hds-fonts-posten-sans-medium);
-
   -moz-osx-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
-
   vertical-align: 10%;
 
   /**
@@ -24,6 +22,7 @@
      */
 
   /* Variations */
+
   /* Size variations */
 
   &--small {
@@ -45,13 +44,13 @@
 
   &--dark {
     background-color: var(--hds-brand-colors-darker);
-    border-color: var(--hds-brand-colors-darkerer);
+    border-color: var(--hds-brand-colors-darker);
     color: var(--hds-ui-colors-white);
   }
 
   &--white {
-    background-color: var(--hds-color-white);
-    border-color: var(--hds-color-white);
+    background-color: var(--hds-ui-colors-white);
+    border-color: var(--hds-ui-colors-white);
     color: var(--hds-brand-colors-dark);
   }
 
