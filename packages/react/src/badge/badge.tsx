@@ -21,7 +21,10 @@ function BaseBadge({
 }: BadgeProps & { variant: "primary" | "dark" | "white" | "warning" }) {
   warnForStyleOverrides(rest);
   return (
-    <span className={clsx(t("hds-badge"), t(`hds-badge--${size}`), t(`hds-badge--${variant}`))}>
+    <span
+      className={clsx(t("hds-badge"), t(`hds-badge--${size}`), t(`hds-badge--${variant}`))}
+      {...rest}
+    >
       {children}
     </span>
   );
