@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname.mjs";
 import { warnForStyleOverrides } from "../utils";
 
-interface LinkProps
+export interface LinkProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "style"> {
   /**
    * The visual style of the link

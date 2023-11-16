@@ -3,4 +3,4 @@ import "@postenbring/hedwig-css/dist/base.css";
 
 import "@postenbring/hedwig-css/dist/link/link.css";
 
-export { Link } from "./link";
+export * from "./link";
