@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import React from "react";
 import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname.mjs";
+import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { warnForStyleOverridesAndRender } from "../utils";
 
 type DDProps = DLDTProps;
