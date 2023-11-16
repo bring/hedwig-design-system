@@ -1,4 +1,10 @@
-import { PrimaryButton, Link } from "@postenbring/hedwig-react";
+import {
+  DescriptionDetails,
+  DescriptionList,
+  DescriptionTerm,
+  PrimaryButton,
+  Link,
+} from "@postenbring/hedwig-react";
 
 function ReactComponentsKitchenSink() {
   return (
@@ -10,6 +16,14 @@ function ReactComponentsKitchenSink() {
         <Link href="#demo-link" variant="no-underline" size="large">
           En Link
         </Link>
+        <DescriptionList variant="vertical">
+          <DescriptionTerm>Something:</DescriptionTerm>
+          <DescriptionDetails>To keep your eyes on 👀, vertically</DescriptionDetails>
+        </DescriptionList>
+        <DescriptionList variant="horizontal">
+          <DescriptionTerm>Something:</DescriptionTerm>
+          <DescriptionDetails>To keep your eyes on 👀, horizontally</DescriptionDetails>
+        </DescriptionList>
       </div>
     </>
   );
