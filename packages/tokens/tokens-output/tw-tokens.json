@@ -1,0 +1,471 @@
+{
+  "posten-colors": {
+    "type": "color",
+    "signature-red": "#e32d22",
+    "darker-red": "#4a1011",
+    "dark-red": "#980000",
+    "light-red": "#ff8a5f",
+    "lighter-red": "#fff5f0",
+    "signature-red-hover": "#d62722",
+    "light-red-hover": "#ff7d55"
+  },
+  "bring-colors": {
+    "type": "color",
+    "signature-green": "#7bc144",
+    "darker-green": "#002f19",
+    "dark-green": "#00643a",
+    "light-green": "#c8dc8c",
+    "lighter-green": "#f1f7e9",
+    "signature-green-hover": "#86cc4a",
+    "light-green-hover": "#d3e593"
+  },
+  "ui-colors": {
+    "type": "color",
+    "black": "#000000",
+    "dark-grey": "#6e6e6e",
+    "grey": "#d6d6d6",
+    "light-grey-stroke": "#e4e4e4",
+    "light-grey-fill": "#f2f2f2",
+    "white": "#ffffff",
+    "warning-yellow": "#fdbb2f",
+    "warning-yellow-stroke": "#d68000",
+    "warning-yellow-light-fill": "#fff5e0",
+    "warning-yellow-hover": "#ffc340",
+    "black-hover": "#1e1e1e"
+  },
+  "dark-mode-colors": {
+    "type": "color",
+    "obsidian": "#121212",
+    "coal": "#252525",
+    "dusk": "#2c2c2c",
+    "spider": "#333333",
+    "ash": "#999999"
+  },
+  "spacing": {
+    "type": "dimension",
+    "small-1": "4px",
+    "small-2": "8px",
+    "small-3": "12px",
+    "small-4": "16px",
+    "medium-1": "20px",
+    "medium-2": "24px",
+    "medium-3": "32px",
+    "medium-4": "40px",
+    "large-1": "48px",
+    "large-2": "64px",
+    "large-3": "80px",
+    "large-4": "120px",
+    "large-5": "160px"
+  },
+  "fonts": {
+    "type": "fontFamily",
+    "posten-sans-bold": [
+      "Posten Sans Bold",
+      "Arial",
+      "sans-serif"
+    ],
+    "posten-sans-medium": [
+      "Posten Sans Medium",
+      "Arial",
+      "sans-serif"
+    ],
+    "posten-sans-regular": [
+      "Posten Sans Regular",
+      "Arial",
+      "sans-serif"
+    ],
+    "posten-sans-light": [
+      "Posten Sans Light",
+      "Arial",
+      "sans-serif"
+    ]
+  },
+  "typography": {
+    "type": "typography",
+    "posten-h1-display": {
+      "fontFamily": [
+        "Posten Sans Bold",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "40px",
+        "72px"
+      ],
+      "lineHeight": [
+        "56px",
+        "80px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "posten-h1": {
+      "fontFamily": [
+        "Posten Sans Bold",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "32px",
+        "48px"
+      ],
+      "lineHeight": [
+        "40px",
+        "56px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "posten-h2": {
+      "fontFamily": [
+        "Posten Sans Medium",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "28px",
+        "32px"
+      ],
+      "lineHeight": [
+        "36px",
+        "40px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "bring-h1-display": {
+      "fontFamily": [
+        "Posten Sans Light",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "40px",
+        "72px"
+      ],
+      "lineHeight": [
+        "56px",
+        "80px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "bring-h1": {
+      "fontFamily": [
+        "Posten Sans Light",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "32px",
+        "48px"
+      ],
+      "lineHeight": [
+        "40px",
+        "56px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "bring-h2": {
+      "fontFamily": [
+        "Posten Sans Regular",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "28px",
+        "32px"
+      ],
+      "lineHeight": [
+        "36px",
+        "40px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "header-h3": {
+      "fontFamily": [
+        "Posten Sans Regular",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "22px",
+        "24px"
+      ],
+      "lineHeight": [
+        "28px",
+        "32px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "header-h3-title": {
+      "fontFamily": [
+        "Posten Sans Medium",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "22px",
+        "24px"
+      ],
+      "lineHeight": [
+        "28px",
+        "32px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "body": {
+      "fontFamily": [
+        "Posten Sans Regular",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "18px",
+        "20px"
+      ],
+      "lineHeight": [
+        "26px",
+        "28px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "body title": {
+      "fontFamily": [
+        "Posten Sans Medium",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "18px",
+        "20px"
+      ],
+      "lineHeight": [
+        "26px",
+        "28px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "body small": {
+      "fontFamily": [
+        "Posten Sans Regular",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "16px",
+        "18px"
+      ],
+      "lineHeight": [
+        "24px",
+        "26px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "body small title": {
+      "fontFamily": [
+        "Posten Sans Medium",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "16px",
+        "18px"
+      ],
+      "lineHeight": [
+        "24px",
+        "26px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "technical": {
+      "fontFamily": [
+        "Posten Sans Regular",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "14px",
+        "16px"
+      ],
+      "lineHeight": [
+        "22px",
+        "24px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "technical title": {
+      "fontFamily": [
+        "Posten Sans Medium",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": [
+        "14px",
+        "16px"
+      ],
+      "lineHeight": [
+        "22px",
+        "24px"
+      ],
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "caption": {
+      "fontFamily": [
+        "Posten Sans Regular",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "13px",
+      "lineHeight": "18px",
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    },
+    "caption title": {
+      "fontFamily": [
+        "Posten Sans Regular",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "13px",
+      "lineHeight": "18px",
+      "fontWeight": 400,
+      "letterSpacing": "0"
+    }
+  },
+  "border-radius": "2px",
+  "stroke-default": "1px",
+  "stroke-thick": "2px",
+  "shadow-default": "0px 1px 5px 0px #00000022",
+  "micro-animation": {
+    "$type": "cubicBezier",
+    "easing-in": "cubic-bezier(0.65, 0, 1, 0.1)",
+    "easing-out": "cubic-bezier(0, 0.45, 0.1, 1)",
+    "easing-normal": "cubic-bezier(0.45, 0.1, 0.65, 1)"
+  },
+  "font-size": {
+    "type": "dimension",
+    "posten-h1-display": "calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)))",
+    "posten-h1-display-min": "40px",
+    "posten-h1-display-max": "72px",
+    "posten-h1": "calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300)))",
+    "posten-h1-min": "32px",
+    "posten-h1-max": "48px",
+    "posten-h2": "calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))",
+    "posten-h2-min": "28px",
+    "posten-h2-max": "32px",
+    "bring-h1-display": "calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)))",
+    "bring-h1-display-min": "40px",
+    "bring-h1-display-max": "72px",
+    "bring-h1": "calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300)))",
+    "bring-h1-min": "32px",
+    "bring-h1-max": "48px",
+    "bring-h2": "calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))",
+    "bring-h2-min": "28px",
+    "bring-h2-max": "32px",
+    "header-h3": "calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300)))",
+    "header-h3-min": "22px",
+    "header-h3-max": "24px",
+    "header-h3-title": "calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300)))",
+    "header-h3-title-min": "22px",
+    "header-h3-title-max": "24px",
+    "body": "calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300)))",
+    "body-min": "18px",
+    "body-max": "20px",
+    "body title": "calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300)))",
+    "body title-min": "18px",
+    "body title-max": "20px",
+    "body small": "calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300)))",
+    "body small-min": "16px",
+    "body small-max": "18px",
+    "body small title": "calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300)))",
+    "body small title-min": "16px",
+    "body small title-max": "18px",
+    "technical": "calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300)))",
+    "technical-min": "14px",
+    "technical-max": "16px",
+    "technical title": "calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300)))",
+    "technical title-min": "14px",
+    "technical title-max": "16px",
+    "caption": "13px",
+    "caption title": "13px"
+  },
+  "line-height": {
+    "type": "dimension",
+    "posten-h1-display": "calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300)))",
+    "posten-h1-display-min": "56px",
+    "posten-h1-display-max": "80px",
+    "posten-h1": "calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300)))",
+    "posten-h1-min": "40px",
+    "posten-h1-max": "56px",
+    "posten-h2": "calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300)))",
+    "posten-h2-min": "36px",
+    "posten-h2-max": "40px",
+    "bring-h1-display": "calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300)))",
+    "bring-h1-display-min": "56px",
+    "bring-h1-display-max": "80px",
+    "bring-h1": "calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300)))",
+    "bring-h1-min": "40px",
+    "bring-h1-max": "56px",
+    "bring-h2": "calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300)))",
+    "bring-h2-min": "36px",
+    "bring-h2-max": "40px",
+    "header-h3": "calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))",
+    "header-h3-min": "28px",
+    "header-h3-max": "32px",
+    "header-h3-title": "calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))",
+    "header-h3-title-min": "28px",
+    "header-h3-title-max": "32px",
+    "body": "calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300)))",
+    "body-min": "26px",
+    "body-max": "28px",
+    "body title": "calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300)))",
+    "body title-min": "26px",
+    "body title-max": "28px",
+    "body small": "calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300)))",
+    "body small-min": "24px",
+    "body small-max": "26px",
+    "body small title": "calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300)))",
+    "body small title-min": "24px",
+    "body small title-max": "26px",
+    "technical": "calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300)))",
+    "technical-min": "22px",
+    "technical-max": "24px",
+    "technical title": "calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300)))",
+    "technical title-min": "22px",
+    "technical title-max": "24px",
+    "caption": "18px",
+    "caption title": "18px"
+  },
+  "$description1": "Tokens manually added that are not from an Figma Export",
+  "$description2": "Here we can add missing tokens under development",
+  "micro-animation-duration": {
+    "type": "time",
+    "quick": "0.130s",
+    "normal": "0.300s",
+    "slow": "0.700s"
+  },
+  "breakpoints": {
+    "type": "dimension",
+    "small": "460px",
+    "medium": "720px",
+    "large": "940px",
+    "xlarge": "1200px"
+  },
+  "opacity": {
+    "7": ".07",
+    "10": ".1",
+    "20": ".2",
+    "50": ".5"
+  }
+}

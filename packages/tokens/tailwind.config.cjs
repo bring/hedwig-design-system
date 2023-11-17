@@ -1,32 +1,87 @@
+// @ts-check
+const tokens = require("./tokens-output/tw-tokens.json");
+
+/**
+ * Remove attributes we don't want in the tailwind config
+ *
+ * @param {any} obj
+ */
+const prepare = (obj) => {
+  delete obj["type"];
+  delete obj["$type"];
+  for (const child in Object.values(obj)) {
+    if (typeof child === "object") {
+      prepare(child);
+    }
+  }
+};
+prepare(tokens);
+
+/**
+ * @param {any} obj
+ * @param {string} prefix
+ * @returns
+ */
+function expandAndPrefix(obj, prefix) {
+  const result = {};
+  for (const [key, value] of Object.entries(obj)) {
+    // @ts-ignore
+    result[prefix + key] = value;
+  }
+  return result;
+}
+
+/**
+ * @param {keyof typeof tokens["font-size"]} name
+ * @returns
+ */
+function fontSize(name) {
+  return [tokens["font-size"][name], tokens["line-height"][name]];
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     fontFamily: {
-      bold: "var(--hds-fonts-posten-sans-bold)",
-      medium: "var(--hds-fonts-posten-sans-medium)",
-      regular: "var(--hds-fonts-posten-sans-regular)",
-      light: "var(--hds-fonts-posten-sans-light)",
+      bold: tokens.fonts["posten-sans-bold"],
+      medium: tokens.fonts["posten-sans-medium"],
+      regular: tokens.fonts["posten-sans-regular"],
+      light: tokens.fonts["posten-sans-light"],
     },
     fontSize: {
-      /* minimum font sizes */
-      body: ["18px", "26px"],
-      "body-small": ["16px", "24px"],
-      technical: ["14px", "22px"],
-      caption: ["13px", "18px"],
-      h3: ["22px", "28px"],
-      h2: ["28px", "36px"],
-      h1: ["32px", "40px"],
-      "h1-display": ["40px", "56px"],
-      /* maximum font sizes */
-      "body-max": ["20px", "28px"],
-      "body-small-max": ["18px", "26px"],
-      "technical-max": ["16px", "24px"],
-      "h3-max": ["24px", "32px"],
-      "h2-max": ["32px", "40px"],
-      "h1-max": ["48px", "56px"],
-      "h1-display-max": ["72px", "80px"],
+      "h1-display": fontSize("posten-h1-display"),
+      "h1-display-min": fontSize("posten-h1-display-min"),
+      "h1-display-max": fontSize("posten-h1-display-max"),
+
+      h1: fontSize("posten-h1"),
+      "h1-min": fontSize("posten-h1-min"),
+      "h1-max": fontSize("posten-h1-max"),
+
+      h2: fontSize("posten-h2"),
+      "h2-min": fontSize("posten-h2-min"),
+      "h2-max": fontSize("posten-h2-max"),
+
+      h3: fontSize("header-h3"),
+      "h3-min": fontSize("header-h3-min"),
+      "h3-max": fontSize("header-h3-max"),
+
+      body: fontSize("body"),
+      "body-min": fontSize("body-min"),
+      "body-max": fontSize("body-max"),
+
+      "body-small": fontSize("body small"),
+      "body-small-min": fontSize("body small-min"),
+      "body-small-max": fontSize("body small-max"),
+
+      technical: fontSize("technical"),
+      "technical-min": fontSize("technical-min"),
+      "technical-max": fontSize("technical-max"),
+
+      caption: fontSize("caption"),
     },
     colors: {
+      // The brand specifc tokens are themeable,
+      // so they must be referneced by css variables
       signature: "var(--hds-brand-colors-signature)",
       darker: "var(--hds-brand-colors-darker)",
       dark: "var(--hds-brand-colors-dark)",
@@ -35,40 +90,13 @@ module.exports = {
       "signature-hover": "var(--hds-brand-colors-signature-hover)",
       "light-hover": "var(--hds-brand-colors-light-hover)",
 
-      "ui-black": "var(--hds-ui-colors-black)",
-      "ui-dark-grey": "var(--hds-ui-colors-dark-grey)",
-      "ui-grey": "var(--hds-ui-colors-grey)",
-      "ui-light-grey-stroke": "var(--hds-ui-colors-light-grey-stroke)",
-      "ui-light-grey-fill": "var(--hds-ui-colors-light-grey-fill)",
-      "ui-white": "var(--hds-ui-colors-white)",
-      "ui-warning-yellow": "var(--hds-ui-colors-warning-yellow)",
-      "ui-warning-yellow-stroke": "var(--hds-ui-colors-warning-yellow-stroke)",
-      "ui-warning-yellow-light-fill": "var(--hds-ui-colors-warning-yellow-light-fill)",
-      "ui-warning-yellow-hover": "var(--hds-ui-colors-warning-yellow-hover)",
-      "ui-black-hover": "var(--hds-ui-colors-black-hover)",
-
-      "dm-obsidian": "var(--hds-dark-mode-colors-obsidian)",
-      "dm-coal": "var(--hds-dark-mode-colors-coal)",
-      "dm-dusk": "var(--hds-dark-mode-colors-dusk)",
-      "dm-spider": "var(--hds-dark-mode-colors-spider)",
-      "dm-ash": "var(--hds-dark-mode-colors-ash)",
+      ...expandAndPrefix(tokens["ui-colors"], "ui-"),
+      ...expandAndPrefix(tokens["dark-mode-colors"], "dm-"),
     },
     spacing: {
       0: 0,
-      "small-1": "var(--hds-spacing-small-1)",
-      "small-2": "var(--hds-spacing-small-2)",
-      "small-3": "var(--hds-spacing-small-3)",
-      "small-4": "var(--hds-spacing-small-4)",
-      "medium-1": "var(--hds-spacing-medium-1)",
-      DEFAULT: "var(--hds-spacing-medium-2)",
-      "medium-2": "var(--hds-spacing-medium-2)",
-      "medium-3": "var(--hds-spacing-medium-3)",
-      "medium-4": "var(--hds-spacing-medium-4)",
-      "large-1": "var(--hds-spacing-large-1)",
-      "large-2": "var(--hds-spacing-large-2)",
-      "large-3": "var(--hds-spacing-large-3)",
-      "large-4": "var(--hds-spacing-large-4)",
-      "large-5": "var(--hds-spacing-large-5)",
+      ...tokens.spacing,
+      DEFAULT: tokens.spacing["medium-2"],
     },
     listStyleType: {
       none: "none",
@@ -79,29 +107,23 @@ module.exports = {
     },
     borderRadius: {
       0: 0,
-      DEFAULT: "var(--hds-border-radius)",
+      DEFAULT: tokens["border-radius"],
     },
     borderWidth: {
       0: 0,
-      DEFAULT: "var(--hds-stroke-default)",
-      2: "var(--hds-stroke-thick)",
+      DEFAULT: tokens["stroke-default"],
+      thick: tokens["stroke-thick"],
     },
     boxShadow: {
-      "card-hover": "0 1px 3px 0 rgb(0 0 0 / 12%)",
+      DEFAULT: tokens["shadow-default"],
     },
-    screens: {
-      small: "var(--hds-breakpoints-small)",
-      medium: "var(--hds-breakpoints-medium)",
-      large: "var(--hds-breakpoints-large)",
-      xlarge: "var(--hds-breakpoints-xlarge)",
-    },
+    screens: tokens.breakpoints,
     opacity: {
       0: 0,
-      7: "var(--hds-opacity-7)",
-      10: "var(--hds-opacity-10)",
-      20: "var(--hds-opacity-20)",
-      50: "var(--hds-opacity-50)",
+      ...tokens.opacity,
     },
+    transitionTimingFunction: tokens["micro-animation"],
+    transitionDuration: tokens["micro-animation-duration"],
     extend: {},
   },
   corePlugins: {

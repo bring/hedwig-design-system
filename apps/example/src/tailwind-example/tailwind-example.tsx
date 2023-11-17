@@ -6,7 +6,8 @@ export function TailwindExample() {
     <div className="hds-theme-posten">
       <div className="p-[64px]">
         <div className="bg-lighter rounded p-medium-3">
-          <p className="mb-medium-2">Inside some kinda card</p>
+          <h2 className="text-h1 text-signature">Tittle</h2>
+          <p className="text-body mb-medium-2">Inside some kinda card</p>
           <Link href="#some-link" size="small">
             With a link to somewhere
           </Link>

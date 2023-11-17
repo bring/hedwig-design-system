@@ -29,6 +29,13 @@ const cssTransforms = [
   "custom/typography",
   "custom/fluidDimension",
 ];
+const forTailwindTransforms = [
+  ...StyleDictionary.transformGroup.web,
+  "name/cti/kebab",
+  "shadow/css",
+  "cubicBezier/css",
+  "custom/fluidDimension",
+];
 
 function buildSharedCssVariables() {
   console.log("🤖 Building shared css variables");
@@ -142,15 +149,16 @@ StyleDictionary.extend({
         },
       ],
     },
-    json: {
+
+    tailwind: {
       options: {
         showFileHeader: false,
       },
-      transformGroup: "web",
+      transforms: forTailwindTransforms,
       files: [
         {
-          destination: "tokens-output/tokens.json",
-          format: "json/flat",
+          destination: "tokens-output/tw-tokens.json",
+          format: "json/nested",
           options: {
             outputStringLiterals: true,
           },
