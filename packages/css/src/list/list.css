@@ -2,12 +2,9 @@
   margin: 0;
   padding-left: var(--hds-spacing-medium-2);
 
-  & ul,
-  & ol {
-    & li {
-      margin-bottom: var(--hds-spacing-small-3);
-      position: relative;
-    }
+  & li {
+    margin-bottom: var(--hds-spacing-small-3);
+    position: relative;
   }
 
   & ul {
