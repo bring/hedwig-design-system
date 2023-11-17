@@ -55,5 +55,64 @@
     "h2": {
       "value": "{typography.bring-h2}"
     }
+  },
+
+  "brand-font-size": {
+    "h1-display": {
+      "value": "{font-size.bring-h1-display}"
+    },
+    "h1-display-min": {
+      "value": "{font-size.bring-h1-display-min}"
+    },
+    "h1-display-max": {
+      "value": "{font-size.bring-h1-display-max}"
+    },
+    "h1": {
+      "value": "{font-size.bring-h1}"
+    },
+    "h1-min": {
+      "value": "{font-size.bring-h1-min}"
+    },
+    "h1-max": {
+      "value": "{font-size.bring-h1-max}"
+    },
+    "h2": {
+      "value": "{font-size.bring-h2}"
+    },
+    "h2-min": {
+      "value": "{font-size.bring-h2-min}"
+    },
+    "h2-max": {
+      "value": "{font-size.bring-h2-max}"
+    }
+  },
+  "brand-line-height": {
+    "h1-display": {
+      "value": "{line-height.bring-h1-display}"
+    },
+    "h1-display-min": {
+      "value": "{line-height.bring-h1-display-min}"
+    },
+    "h1-display-max": {
+      "value": "{line-height.bring-h1-display-max}"
+    },
+    "h1": {
+      "value": "{line-height.bring-h1}"
+    },
+    "h1-min": {
+      "value": "{line-height.bring-h1-min}"
+    },
+    "h1-max": {
+      "value": "{line-height.bring-h1-max}"
+    },
+    "h2": {
+      "value": "{line-height.bring-h2}"
+    },
+    "h2-min": {
+      "value": "{line-height.bring-h2-min}"
+    },
+    "h2-max": {
+      "value": "{line-height.bring-h2-max}"
+    }
   }
 }

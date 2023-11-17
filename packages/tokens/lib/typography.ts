@@ -1,12 +1,12 @@
 import type { Named, Transform } from "style-dictionary";
 import { isTypography } from "style-dictionary-utils/dist/filter/isTypography";
-import { transformMaybeFluidValue } from "./fluid-value";
+import { transformMaybeFluidDimension } from "./fluid-dimension";
 
-interface CustomTokenTypography {
+export interface CustomTokenTypography {
   fontFamily: string;
-  fontSize: number | [number, number];
+  fontSize: string | [string, string];
   fontWeight?: number;
-  lineHeight?: number | [number, number];
+  lineHeight?: string | [string, string];
   fontStyle?: string;
 }
 
@@ -25,8 +25,8 @@ export const customTypography: Named<Transform> = {
     );
   },
   transformer: ({ value }: { value: CustomTokenTypography }) => {
-    const fontSize = transformMaybeFluidValue(value.fontSize);
-    const lineHeight = transformMaybeFluidValue(value.lineHeight);
+    const fontSize = transformMaybeFluidDimension(value.fontSize);
+    const lineHeight = transformMaybeFluidDimension(value.lineHeight);
 
     // font: font-style font-variant font-weight font-size/line-height font-family;
     return `${value.fontStyle || ""} ${value.fontWeight || ""} ${fontSize}${

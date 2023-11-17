@@ -14,6 +14,7 @@
     }
   },
   "breakpoints": {
+    "type": "dimension",
     "small": { "value": "460px" },
     "medium": { "value": "720px" },
     "large": { "value": "940px" },
