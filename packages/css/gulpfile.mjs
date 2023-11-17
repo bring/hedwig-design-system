@@ -1,35 +1,45 @@
 import gulp from "gulp";
-const { series, src, dest, watch } = gulp;
-
 import gulpSourcemaps from "gulp-sourcemaps";
-const { init, write } = gulpSourcemaps;
-
 import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
-const sass = gulpSass(dartSass);
-
 import autoprefixer from "autoprefixer";
 import postcss from "gulp-postcss";
+import concat from 'gulp-concat'
 import cssnano from "cssnano";
+import importCss from "gulp-import-css";
+import { exclude } from 'gulp-ignore';
 import { deleteAsync } from "del";
+
+const { series, src, dest, watch } = gulp;
+const { init, write } = gulpSourcemaps;
+const sass = gulpSass(dartSass);
 
 const paths = {
   source: "src/**/*.{css,scss}",
+  resetStyles: "src/reset.css",
   destination: "dist",
 };
 
-function style() {
+function transpileStyles() {
   return src(paths.source)
+    .pipe(exclude("src/reset.css"))
     .pipe(init())
     .pipe(sass().on("error", sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(concat('index.css'))
     .pipe(write("."))
     .pipe(dest(paths.destination));
 }
 
+function transpileResetStyles() {
+  return src(paths.resetStyles).pipe(importCss()).pipe(dest(paths.destination));
+}
+
+const transpileAll = series(transpileStyles, transpileResetStyles);
+
 function watchStyles() {
-  style();
-  watch(paths.source, style);
+  transpileAll();
+  watch(paths.source, transpileAll);
 }
 
 async function clean() {
