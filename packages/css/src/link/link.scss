@@ -7,7 +7,7 @@
   border-bottom: var(--hds-stroke-default) solid var(--hds-brand-link-colors-underline);
   fill: var(--hds-brand-link-colors-text);
   color: var(--hds-brand-link-colors-text);
-  transition: all 0.1s ease;
+  transition: all var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
   cursor: pointer;
 
   &:hover,
@@ -55,7 +55,7 @@
   }
 
   &--no-underline {
-    font: var(--hds-fonts-posten-sans-medium);
+    font-family: var(--hds-fonts-posten-sans-medium);
     color: var(--hds-brand-colors-dark);
     text-decoration: none;
     border-bottom: none;
