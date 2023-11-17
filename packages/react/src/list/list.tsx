@@ -43,6 +43,7 @@ function BaseList({
 }
 
 export function ListItem({ children, ...rest }: ListItemProps) {
+  warnForStyleOverrides(rest);
   return <li {...rest}>{children}</li>;
 }
 
