@@ -34,8 +34,8 @@
      */
 
   &--large {
-    font-size: 18px; /* TODO Token: typography-body minimum value */
-    line-height: 26px;
+    font-size: var(--hds-font-size-body-min);
+    line-height: var(--hds-line-height-body-min);
     height: 58px;
     padding: 16px 24px;
 
@@ -46,8 +46,8 @@
   }
 
   &--medium {
-    font-size: 18px; /* TODO Token: typography-body minimum value */
-    line-height: 26px;
+    font-size: var(--hds-font-size-body-min);
+    line-height: var(--hds-line-height-body-min);
     height: 50px;
     padding: 12px 20px;
 
@@ -58,8 +58,8 @@
   }
 
   &--small {
-    font-size: 16px; /* TODO Token: typography-body-small minimum value */
-    line-height: 24px;
+    font-size: var(--hds-font-size-body-small-min);
+    line-height: var(--hds-line-height-body-small-min);
     height: 48px;
     padding: 12px 16px;
 

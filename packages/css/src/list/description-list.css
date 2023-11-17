@@ -10,14 +10,14 @@
 
   & dd {
     margin-left: 0;
-    margin-bottom: 12px;
+    margin-bottom: var(--hds-spacing-small-3);
   }
 
   &.hds-description-list--horizontal {
     & dt {
       display: inline-block;
-      margin-right: 4px;
-      margin-bottom: 8px;
+      margin-right: var(--hds-spacing-small-1);
+      margin-bottom: var(--hds-spacing-small-2);
 
       &::after {
         content: "\a";
