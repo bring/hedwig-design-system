@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import StyleDictionary from "style-dictionary-utils";
 import { customTypography } from "./lib/typography";
 import { customTokensParser } from "./lib/parser";
+import { customFluidDimension } from "./lib/fluid-dimension";
 
 const config = {
   cssVariablesPrefix: "hds",
@@ -14,6 +15,9 @@ StyleDictionary.registerParser(customTokensParser);
 // Handle typography
 StyleDictionary.registerTransform(customTypography);
 
+// Handle fluid dimensions
+StyleDictionary.registerTransform(customFluidDimension);
+
 /**
  * CSS Variables output
  */
@@ -23,6 +27,7 @@ const cssTransforms = [
   "shadow/css",
   "cubicBezier/css",
   "custom/typography",
+  "custom/fluidDimension",
 ];
 
 function buildSharedCssVariables() {

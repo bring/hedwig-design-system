@@ -1,5 +1,6 @@
 import type { DesignTokens, Parser } from "style-dictionary-utils";
 import { w3cTokenJsonParser } from "style-dictionary-utils/dist/parser/w3c-token-json-parser";
+import type { CustomTokenTypography } from "./typography";
 
 /**
  * Custom tokens parser
@@ -10,15 +11,23 @@ import { w3cTokenJsonParser } from "style-dictionary-utils/dist/parser/w3c-token
 export const customTokensParser: Parser = {
   pattern: w3cTokenJsonParser.pattern,
   parse: (options) => {
-    // Handle $type, $value, $description
+    /**
+     * Case #1
+     *
+     * Handle $type, $value, $description
+     */
     const result = w3cTokenJsonParser.parse(options) as DesignTokens;
 
-    // Ensure type is set on all tokens,
-    // by setting the parent type on every child.
-    //
-    // This is needed because the transformer matchers don't have access to the parent types
-    // and thus will not be applied.
-    // This is a shortcoming of the current version of style-dictionary
+    /**
+     * Case #2
+     *
+     * Ensure type is set on all tokens,
+     * by setting the parent type on every child.
+     *
+     * This is needed because the transformer matchers don't have access to the parent types
+     * and thus will not be applied.
+     * This is a shortcoming of the current version of style-dictionary
+     */
     function applyTypeToEachChild(obj: Partial<DesignTokens>, parentType?: string) {
       const type =
         (obj.type as string | undefined) ?? (obj.$type as string | undefined) ?? parentType;
@@ -33,6 +42,64 @@ export const customTokensParser: Parser = {
       }
     }
     applyTypeToEachChild(result);
+
+    /**
+     * Case #3
+     *
+     * Extract font sizes into their own values,
+     * including fluid values with min-max
+     * Very specialized for the current structure of the tokens
+     *
+     * Creates two new token categories, `font-size` and `line-height`
+     */
+    function extractFontSizeAndLineHeights(
+      obj: Partial<DesignTokens>,
+      parentKey = "",
+      extractedTokens: {
+        fontSize: Record<string, { type?: string; value: string | [string, string] }>;
+        lineHeight: Record<string, { type?: string; value: string | [string, string] }>;
+      } = {
+        fontSize: {},
+        lineHeight: {},
+      },
+    ) {
+      const type = obj.type as string | undefined;
+      const value = obj.value as unknown as CustomTokenTypography | undefined;
+      if (type === "typography" && typeof value !== "undefined") {
+        if (Array.isArray(value.fontSize)) {
+          const [min, max] = value.fontSize;
+          extractedTokens.fontSize[`${parentKey}`] = { type: "fluidDimension", value: [min, max] };
+          extractedTokens.fontSize[`${parentKey}-min`] = { value: min };
+          extractedTokens.fontSize[`${parentKey}-max`] = { value: max };
+        } else if (value.fontSize) {
+          extractedTokens.fontSize[parentKey] = { value: value.fontSize };
+        }
+        if (Array.isArray(value.lineHeight)) {
+          const [min, max] = value.lineHeight;
+          extractedTokens.lineHeight[`${parentKey}`] = {
+            type: "fluidDimension",
+            value: [min, max],
+          };
+          extractedTokens.lineHeight[`${parentKey}-min`] = { value: min };
+          extractedTokens.lineHeight[`${parentKey}-max`] = { value: max };
+        } else if (value.lineHeight) {
+          extractedTokens.lineHeight[parentKey] = { value: value.lineHeight };
+        }
+      }
+
+      for (const [key, child] of Object.entries(obj)) {
+        if (typeof child === "object") {
+          extractFontSizeAndLineHeights(child, key, extractedTokens);
+        }
+      }
+      return extractedTokens;
+    }
+    const extractedTokens = extractFontSizeAndLineHeights(result);
+    Object.assign(result, {
+      "font-size": { type: "dimension", ...extractedTokens.fontSize },
+      "line-height": { type: "dimension", ...extractedTokens.lineHeight },
+    });
+
     return result;
   },
 };
