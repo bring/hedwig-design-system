@@ -14,7 +14,6 @@
       &::before {
         content: "";
         position: absolute;
-        background: #980000;
         background: var(--hds-brand-colors-dark);
         width: 6px;
         height: 6px;
