@@ -25,7 +25,7 @@
    * Modifers
    */
 
-  &--inverted {
+  &.hds-link--inverted {
     color: var(--hds-ui-colors-white);
     text-decoration-color: var(--hds-brand-colors-signature);
     border-color: currentcolor;
@@ -46,15 +46,15 @@
     }
   }
 
-  &--small {
+  &.hds-link--small {
     font: var(--hds-typography-body-small);
   }
 
-  &--large {
+  &.hds-link--large {
     font: var(--hds-typography-header-h3);
   }
 
-  &--no-underline {
+  &.hds-link--no-underline {
     font-family: var(--hds-fonts-posten-sans-medium);
     color: var(--hds-brand-colors-dark);
     text-decoration: none;
@@ -68,7 +68,7 @@
     }
   }
 
-  &--solid {
+  &.hds-link--solid {
     color: var(--hds-ui-colors-black);
     border-color: var(--hds-ui-colors-black);
 
