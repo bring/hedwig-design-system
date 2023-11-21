@@ -3,7 +3,11 @@
  * @type {Config}
  */
 module.exports = {
-  extends: ["stylelint-config-standard", "stylelint-config-standard-scss"],
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss",
+  ],
   plugins: ["stylelint-value-no-unknown-custom-properties"],
   rules: {
     // Make sure we don't misspell the tokens
