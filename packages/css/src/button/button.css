@@ -1,0 +1,173 @@
+.hds-button {
+  --hds-component-button-border-width: 0px;
+
+  -webkit-font-smoothing: antialiased;
+  /* stylelint-disable-next-line property-no-vendor-prefix -- Not sure if we need this or not 🤷 */
+  -webkit-appearance: button;
+  box-sizing: border-box;
+  display: inline-block;
+  border-style: solid;
+  border-radius: var(--hds-border-radius);
+  border-width: var(--hds-component-button-border-width);
+  transition: all var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
+  cursor: pointer;
+  word-break: normal;
+  font: var(--hds-typography-body-small-title);
+
+  /**
+   * Modifiers: sizes
+   */
+  &.hds-button--small {
+    font-size: var(--hds-font-size-technical-title-max);
+    line-height: var(--hds-line-height-technical-title-max);
+    padding: calc(var(--hds-spacing-small-3) - var(--hds-component-button-border-width))
+      calc(var(--hds-spacing-small-4) - var(--hds-component-button-border-width));
+    height: calc(var(--hds-line-height-technical-title-max) + var(--hds-spacing-small-3) * 2);
+  }
+
+  &.hds-button--medium {
+    font-size: var(--hds-font-size-body-small-title-max);
+    line-height: var(--hds-line-height-body-small-title-max);
+    padding: calc(var(--hds-spacing-small-3) - var(--hds-component-button-border-width))
+      calc(var(--hds-spacing-medium-1) - var(--hds-component-button-border-width));
+    height: calc(var(--hds-line-height-body-small-title-max) + var(--hds-spacing-small-3) * 2);
+  }
+
+  &.hds-button--large {
+    font-size: var(--hds-font-size-body-small-title-max);
+    line-height: var(--hds-line-height-body-small-title-max);
+    padding: calc(var(--hds-spacing-small-4) - var(--hds-component-button-border-width))
+      calc(var(--hds-spacing-medium-2) - var(--hds-component-button-border-width));
+    height: calc(var(--hds-line-height-body-small-title-max) + var(--hds-spacing-small-4) * 2);
+  }
+
+  /**
+   * Modifiers: Width
+   */
+
+  &.hds-button--full {
+    width: 100%;
+  }
+
+  &.hds-button--mobile-full {
+    width: 100%;
+
+    @media (min-width: 720px) {
+      width: unset;
+    }
+  }
+
+  /**
+   * Modifiers: Variants
+   */
+
+  &.hds-button--primary {
+    background-color: var(--hds-brand-colors-signature);
+    color: var(--hds-brand-button-colors-text);
+    fill: var(--hds-brand-button-colors-text);
+
+    &:hover {
+      background-color: var(--hds-brand-colors-signature-hover);
+      outline: 0 solid var(--hds-brand-colors-signature-hover);
+    }
+
+    &:active {
+      background-color: var(--hds-brand-colors-signature);
+      outline: 0 solid var(--hds-brand-colors-signature-hover);
+    }
+  }
+
+  &.hds-button--secondary {
+    background-color: var(--hds-brand-colors-darker);
+    color: var(--hds-ui-colors-white);
+    fill: var(--hds-ui-colors-white);
+
+    &:hover {
+      background-color: var(--hds-ui-colors-black);
+      outline: 0 solid var(--hds-ui-colors-black);
+    }
+
+    &:active {
+      background-color: var(--hds-brand-colors-darker);
+      outline: 0 solid var(--hds-ui-colors-black);
+    }
+  }
+
+  &.hds-button--outline-primary {
+    --hds-component-button-border-width: var(--hds-stroke-thick);
+
+    background-color: transparent;
+    border-color: var(--hds-brand-colors-signature);
+    color: var(--hds-ui-colors-black);
+    fill: var(--hds-ui-colors-black);
+    outline-offset: 3px;
+
+    &:hover,
+    &:active {
+      color: var(--hds-brand-colors-dark);
+      fill: var(--hds-brand-colors-dark);
+      border-color: var(--hds-brand-colors-dark);
+    }
+  }
+
+  &.hds-button--outline-secondary {
+    --hds-component-button-border-width: var(--hds-stroke-thick);
+
+    background-color: transparent;
+    border-color: var(--hds-brand-colors-darker);
+    color: var(--hds-brand-colors-darker);
+    fill: var(--hds-brand-colors-darker);
+    outline-offset: 3px;
+
+    &:hover,
+    &:active {
+      color: var(--hds-ui-colors-black);
+      fill: var(--hds-ui-colors-black);
+      border-color: var(--hds-ui-colors-black);
+    }
+  }
+
+  &.hds-button--outline-white {
+    --hds-component-button-border-width: var(--hds-stroke-thick);
+
+    background-color: transparent;
+    border-color: var(--hds-brand-colors-light);
+    color: var(--hds-ui-colors-white);
+    fill: var(--hds-ui-colors-white);
+    outline-offset: 3px;
+
+    &:hover,
+    &:active {
+      color: var(--hds-brand-colors-light);
+      fill: var(--hds-brand-colors-light);
+    }
+  }
+
+  /**
+   * State: Disabled
+   */
+
+  &:disabled,
+  &[disabled],
+  &[disabled]:active {
+    &.hds-button--primary,
+    &.hds-button--secondary {
+      color: var(--hds-ui-colors-dark-grey);
+      fill: var(--hds-ui-colors-dark-grey);
+      background-color: var(--hds-ui-colors-grey);
+      border-color: var(--hds-ui-colors-grey);
+      outline: 0;
+      box-shadow: none;
+      cursor: default;
+    }
+
+    &.hds-button--outline-primary,
+    &.hds-button--outline-secondary {
+      border-color: var(--hds-ui-colors-grey);
+      color: var(--hds-ui-colors-dark-grey);
+      fill: var(--hds-ui-colors-dark-grey);
+      background-color: transparent;
+      cursor: default;
+    }
+  }
+}
