@@ -20,13 +20,13 @@
   }
 
   /* Padding */
-  --hds-box-padding: var(--hds-spacing-medium-2);
+  --hds-component-box-padding: var(--hds-spacing-medium-2);
 
   @media (min-width: 720px) {
-    --hds-box-padding: var(--hds-spacing-medium-3);
+    --hds-component-box-padding: var(--hds-spacing-medium-3);
   }
 
-  padding: var(--hds-box-padding);
+  padding: var(--hds-component-box-padding);
 
   /* Closed state */
   &.hds-box--closed {

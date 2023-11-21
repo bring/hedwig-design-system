@@ -7,7 +7,7 @@
   }
 
   /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- Comes from `box.css` */
-  --hds-component-message-padding: var(--hds-box-padding);
+  --hds-component-message-padding: var(--hds-component-box-padding);
 
   padding-left: calc(
     var(--hds-component-message-padding) + var(--hds-component-message-icon-width) +
