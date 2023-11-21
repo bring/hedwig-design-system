@@ -25,6 +25,7 @@
     "@storybook/react": "^7.5.3",
     "@storybook/react-vite": "^7.5.3",
     "@vitejs/plugin-react": "^4.2.0",
+    "@whitespace/storybook-addon-html": "5.1.6",
     "eslint-config-custom": "*",
     "hedwig-tsconfig": "*",
     "serve": "^14.2.1",
