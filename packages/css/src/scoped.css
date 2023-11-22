@@ -1,0 +1,5 @@
+/* stylelint-disable scss/at-rule-no-unknown -- It's ok it's a postcss plugin */
+.kp-decorator-header-and-footer {
+  @nested-import "./button/button.css";
+  @nested-import "./link/link.css";
+}
