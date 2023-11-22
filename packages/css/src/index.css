@@ -1,5 +1,5 @@
 @import url("base.css");
-@import url("button/button.scss");
+@import url("button/button.css");
 @import url("link/link.scss");
 @import url("badge/badge.scss");
 @import url("list/description-list.css");
