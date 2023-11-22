@@ -11,7 +11,8 @@
     "dev:typed-classname": "chokidar 'dist/index.css' -c 'npm run build:typed-classname'",
     "lint": "stylelint 'src/**/*.css' 'src/**/*.scss' --cache",
     "lint:fix": "npm run lint -- --fix",
-    "clean": "rm -rf .turbo && rm -rf .parcel-cache && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf .parcel-cache && rm -rf node_modules && rm -rf dist",
+    "show-css-size": "npm run build:css && echo '\nSize of dist/index.css (original → gzip)' && npx gzip-size-cli dist/index.css --include-original"
   },
   "files": [
     "dist/**",
