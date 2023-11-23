@@ -15,8 +15,8 @@ importers:
         specifier: 2.10.3
         version: registry.npmjs.org/@parcel/transformer-sass@2.10.3(@parcel/core@2.10.3)
       '@types/node':
-        specifier: 20.9.0
-        version: registry.npmjs.org/@types/node@20.9.0
+        specifier: 20.9.4
+        version: registry.npmjs.org/@types/node@20.9.4
       eslint:
         specifier: ^8.53.0
         version: registry.npmjs.org/eslint@8.54.0
@@ -264,8 +264,8 @@ importers:
         specifier: ^18.2.0
         version: registry.npmjs.org/react@18.2.0
       tsup:
-        specifier: ^7.3.0
-        version: registry.npmjs.org/tsup@7.3.0(postcss@8.4.31)(typescript@5.3.2)
+        specifier: ^8.0.1
+        version: registry.npmjs.org/tsup@8.0.1(postcss@8.4.31)(typescript@5.3.2)
       typescript:
         specifier: ^5.2.2
         version: registry.npmjs.org/typescript@5.3.2
@@ -273,8 +273,8 @@ importers:
   packages/tokens:
     devDependencies:
       '@types/node':
-        specifier: 20.9.1
-        version: registry.npmjs.org/@types/node@20.9.1
+        specifier: 20.9.4
+        version: registry.npmjs.org/@types/node@20.9.4
       eslint:
         specifier: ^8.53.0
         version: registry.npmjs.org/eslint@8.54.0
@@ -288,11 +288,11 @@ importers:
         specifier: 3.9.0
         version: registry.npmjs.org/style-dictionary@3.9.0
       style-dictionary-utils:
-        specifier: 2.0.1
-        version: registry.npmjs.org/style-dictionary-utils@2.0.1(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.9.0)
+        specifier: 2.0.4
+        version: registry.npmjs.org/style-dictionary-utils@2.0.4(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.9.0)
       tsx:
-        specifier: 4.1.2
-        version: registry.npmjs.org/tsx@4.1.2
+        specifier: 4.4.0
+        version: registry.npmjs.org/tsx@4.4.0
       typescript:
         specifier: ^5.2.2
         version: registry.npmjs.org/typescript@5.3.2
@@ -6625,6 +6625,14 @@ packages:
     resolution: {integrity: sha512-HhmzZh5LSJNS5O8jQKpJ/3ZcrrlG6L70hpGqMIAoM9YVD0YBRNWYsfwcXq8VnSjlNpCpgLzMXdiPo+dxcvSmiA==, tarball: https://registry.npmjs.org/@types/node/-/node-20.9.1.tgz}
     name: '@types/node'
     version: 20.9.1
+    dependencies:
+      undici-types: registry.npmjs.org/undici-types@5.26.5
+    dev: true
+
+  registry.npmjs.org/@types/node@20.9.4:
+    resolution: {integrity: sha512-wmyg8HUhcn6ACjsn8oKYjkN/zUzQeNtMy44weTJSM6p4MMzEOuKbA3OjJ267uPCOW7Xex9dyrNTful8XTQYoDA==, tarball: https://registry.npmjs.org/@types/node/-/node-20.9.4.tgz}
+    name: '@types/node'
+    version: 20.9.4
     dependencies:
       undici-types: registry.npmjs.org/undici-types@5.26.5
     dev: true
@@ -16446,11 +16454,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  registry.npmjs.org/style-dictionary-utils@2.0.1(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.9.0):
-    resolution: {integrity: sha512-+xHcpNojLU83DWQOLINmZ094VT+Xj8Fr/SqpxVHLNHCKO85v0IX244svVh9RClWEwZGNzh5wP4zXgILo743Fzw==, tarball: https://registry.npmjs.org/style-dictionary-utils/-/style-dictionary-utils-2.0.1.tgz}
-    id: registry.npmjs.org/style-dictionary-utils/2.0.1
+  registry.npmjs.org/style-dictionary-utils@2.0.4(color2k@2.0.2)(json5@2.2.3)(prettier@2.8.8)(style-dictionary@3.9.0):
+    resolution: {integrity: sha512-EVIWd4w8IFj3BF/STJCsRxgqpUfUJrcgblU7I4BLUgrg6ybd4VYQnRQ4TYA/AElRZdWQD1uEWAgi3l/+3Rj5mQ==, tarball: https://registry.npmjs.org/style-dictionary-utils/-/style-dictionary-utils-2.0.4.tgz}
+    id: registry.npmjs.org/style-dictionary-utils/2.0.4
     name: style-dictionary-utils
-    version: 2.0.1
+    version: 2.0.4
     peerDependencies:
       color2k: ^2.0.0
       json5: ^2.2.1
@@ -17100,19 +17108,21 @@ packages:
     version: 2.6.2
     dev: true
 
-  registry.npmjs.org/tsup@7.3.0(postcss@8.4.31)(typescript@5.3.2):
-    resolution: {integrity: sha512-Ja1eaSRrE+QarmATlNO5fse2aOACYMBX+IZRKy1T+gpyH+jXgRrl5l4nHIQJQ1DoDgEjHDTw8cpE085UdBZuWQ==, tarball: https://registry.npmjs.org/tsup/-/tsup-7.3.0.tgz}
-    id: registry.npmjs.org/tsup/7.3.0
+  registry.npmjs.org/tsup@8.0.1(postcss@8.4.31)(typescript@5.3.2):
+    resolution: {integrity: sha512-hvW7gUSG96j53ZTSlT4j/KL0q1Q2l6TqGBFc6/mu/L46IoNWqLLUzLRLP1R8Q7xrJTmkDxxDoojV5uCVs1sVOg==, tarball: https://registry.npmjs.org/tsup/-/tsup-8.0.1.tgz}
+    id: registry.npmjs.org/tsup/8.0.1
     name: tsup
-    version: 7.3.0
+    version: 8.0.1
     engines: {node: '>=18'}
-    deprecated: Breaking node 16
     hasBin: true
     peerDependencies:
+      '@microsoft/api-extractor': ^7.36.0
       '@swc/core': ^1
       postcss: ^8.4.12
       typescript: '>=4.5.0'
     peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
       '@swc/core':
         optional: true
       postcss:
@@ -17154,16 +17164,15 @@ packages:
       typescript: registry.npmjs.org/typescript@5.3.2
     dev: true
 
-  registry.npmjs.org/tsx@4.1.2:
-    resolution: {integrity: sha512-1spM1bFV6MP2s4tO4tDC7g52fsaFdtEWdO4GfGdqi20qUgPbnAJqixOyIAvCSx1DDj3YIUB4CD06owTWUsOAuQ==, tarball: https://registry.npmjs.org/tsx/-/tsx-4.1.2.tgz}
+  registry.npmjs.org/tsx@4.4.0:
+    resolution: {integrity: sha512-4fwcEjRUxW20ciSaMB8zkpGwCPxuRGnadDuj/pBk5S9uT29zvWz15PK36GrKJo45mSJomDxVejZ73c6lr3811Q==, tarball: https://registry.npmjs.org/tsx/-/tsx-4.4.0.tgz}
     name: tsx
-    version: 4.1.2
+    version: 4.4.0
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
       esbuild: registry.npmjs.org/esbuild@0.18.20
       get-tsconfig: registry.npmjs.org/get-tsconfig@4.7.2
-      source-map-support: registry.npmjs.org/source-map-support@0.5.21
     optionalDependencies:
       fsevents: registry.npmjs.org/fsevents@2.3.3
     dev: true
