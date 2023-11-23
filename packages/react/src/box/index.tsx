@@ -3,6 +3,6 @@ import "@postenbring/hedwig-tokens/tokens-output/css/tokens.css";
 import "@postenbring/hedwig-css/dist/base.css";
 
 import "@postenbring/hedwig-css/dist/box/box.css";
-import "@postenbring/hedwig-css/dist/box/message.css";
+import "@postenbring/hedwig-css/dist/message/message.css";
 
 export * from "./box";
