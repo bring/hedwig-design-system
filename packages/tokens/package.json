@@ -21,7 +21,7 @@
     "eslint-config-custom": "*",
     "style-dictionary": "3.9.0",
     "style-dictionary-utils": "2.0.1",
-    "tsconfig": "*",
+    "hedwig-tsconfig": "workspace:*",
     "tsx": "4.1.2",
     "typescript": "^5.2.2"
   },

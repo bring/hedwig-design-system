@@ -21,16 +21,20 @@ jobs:
         with:
           node-version: 20
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Set snapshot version
-        run: npx changeset version --snapshot ${GITHUB_REF##*/}
+        run: pnpm changeset version --snapshot ${GITHUB_REF##*/}
 
       - name: Setup .npmrc
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> $HOME/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish snapshot versions to npm
-        run: npx turbo run build --filter=docs^... && npx changeset publish --no-git-tag --tag ${GITHUB_REF##*/}
+      - name: Publish snapshot versions to npm registry
+        run: pnpm dlx turbo run build --filter=docs^... && pnpm changeset publish --no-git-tag --tag ${GITHUB_REF##*/}
