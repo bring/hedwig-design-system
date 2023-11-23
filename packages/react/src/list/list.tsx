@@ -3,12 +3,8 @@ import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
-export interface ListItemProps extends React.HTMLAttributes<HTMLLIElement> {
-  children: React.ReactNode;
-}
-
 export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListElement> {
-  children: React.ReactElement<ListItemProps> | React.ReactElement<ListItemProps>[];
+  children: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
   /**
    * Inherit list styles or do not show these
    */
@@ -38,10 +34,6 @@ function BaseList({
   );
 }
 
-export function ListItem({ children, ...rest }: ListItemProps) {
-  return <li {...rest}>{children}</li>;
-}
-
 export function UnorderedList(props: ListProps) {
   return (
     <BaseList as="ul" {...props}>
@@ -58,7 +50,6 @@ export function OrderedList(props: ListProps) {
   );
 }
 
-ListItem.displayName = "ListItem";
 BaseList.displayName = "BaseList";
 OrderedList.displayName = "UnorderedList";
 UnorderedList.displayName = "UnorderedList";

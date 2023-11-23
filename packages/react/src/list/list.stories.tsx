@@ -1,15 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { ListItem, OrderedList, UnorderedList } from ".";
+import { OrderedList, UnorderedList } from ".";
 
 type Story = StoryObj<typeof UnorderedList>;
 
 const listItems = () => (
   <>
-    <ListItem>Something</ListItem>
-    <ListItem>Some thing</ListItem>
-    <ListItem>Thingsome</ListItem>
-    <ListItem>Thing some</ListItem>
+    <li>Something</li>
+    <li>Some thing</li>
+    <li>Thingsome</li>
+    <li>Thing some</li>
   </>
 );
 

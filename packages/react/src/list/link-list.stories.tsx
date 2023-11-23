@@ -1,25 +1,25 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import { Link } from "../link";
-import { LinkList, LinkListItem } from "./link-list";
+import { LinkList } from "./link-list";
 
 type Story = StoryObj<typeof LinkList>;
 
 const linkListItems = () => (
   <>
-    <LinkListItem>
+    <li>
       <Link href="https://hedwig.posten.no">Link somwhere</Link>
-    </LinkListItem>
-    <LinkListItem>
+    </li>
+    <li>
       <Link href="https://hedwig.posten.no" target="_blank">
         Link somwhere
       </Link>
-    </LinkListItem>
-    <LinkListItem>
+    </li>
+    <li>
       <Link href="https://hedwig.posten.no" target="_self">
         Link somwhere
       </Link>
-    </LinkListItem>
+    </li>
   </>
 );
 

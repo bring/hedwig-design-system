@@ -2,4 +2,4 @@
 "@postenbring/hedwig-react": patch
 ---
 
-✨ New component for LinkLists
+✨ New component for LinkList
