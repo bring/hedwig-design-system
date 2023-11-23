@@ -6,12 +6,11 @@ import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 export type DescriptionDetailsProps = DLDTProps;
 export type DescriptionTermProps = DLDTProps;
 
-interface DLDTProps extends Omit<React.HTMLAttributes<HTMLBaseElement>, "className" | "style"> {
+interface DLDTProps extends HTMLAttributes<HTMLBaseElement> {
   children: ReactNode;
 }
 
-export interface DescriptionListProps
-  extends Omit<HTMLAttributes<HTMLDListElement>, "className" | "style"> {
+export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
   /**
    * Either `DescriptionDetails` or `DescriptionTerm` elements
    */

@@ -3,13 +3,11 @@ import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
-export interface ListItemProps
-  extends Omit<React.HTMLAttributes<HTMLLIElement>, "className" | "style"> {
+export interface ListItemProps extends React.HTMLAttributes<HTMLLIElement> {
   children: React.ReactNode;
 }
 
-export interface ListProps
-  extends Omit<HTMLAttributes<HTMLOListElement | HTMLUListElement>, "className" | "style"> {
+export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListElement> {
   children: React.ReactElement<ListItemProps> | React.ReactElement<ListItemProps>[];
   /**
    * Inherit list styles or do not show these

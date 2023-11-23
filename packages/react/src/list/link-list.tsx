@@ -1,17 +1,16 @@
-import type { HTMLAttributes } from "react";
 import * as React from "react";
 import type { LinkProps } from "../link";
-import type { ListProps, ListItemProps } from "./list";
+import type { ListItemProps, ListProps } from "./list";
 import { UnorderedList } from "./list";
 
-export interface LinkListItemProps
-  extends Omit<React.HTMLAttributes<HTMLLIElement>, "className" | "style"> {
+export interface LinkListItemProps extends React.HTMLAttributes<HTMLLIElement> {
+  /**
+   * Can contain Link-elements
+   */
   children: React.ReactElement<LinkProps>;
 }
 
-export interface LinkListProps
-  extends Omit<HTMLAttributes<HTMLOListElement | HTMLUListElement>, "className" | "style">,
-    Omit<ListProps, "listStyle"> {
+export interface LinkListProps extends Omit<ListProps, "listStyle"> {
   children: React.ReactElement<LinkListItemProps> | React.ReactElement<LinkListItemProps>[];
 }
 
