@@ -32,6 +32,9 @@ importers:
       prettier:
         specifier: ^3.1.0
         version: registry.npmjs.org/prettier@3.1.0
+      stylelint:
+        specifier: 15.11.0
+        version: registry.npmjs.org/stylelint@15.11.0
       turbo:
         specifier: latest
         version: registry.npmjs.org/turbo@1.10.16
@@ -262,7 +265,7 @@ importers:
         version: registry.npmjs.org/react@18.2.0
       tsup:
         specifier: ^7.3.0
-        version: registry.npmjs.org/tsup@7.3.0(typescript@5.3.2)
+        version: registry.npmjs.org/tsup@7.3.0(postcss@8.4.31)(typescript@5.3.2)
       typescript:
         specifier: ^5.2.2
         version: registry.npmjs.org/typescript@5.3.2
@@ -17097,7 +17100,7 @@ packages:
     version: 2.6.2
     dev: true
 
-  registry.npmjs.org/tsup@7.3.0(typescript@5.3.2):
+  registry.npmjs.org/tsup@7.3.0(postcss@8.4.31)(typescript@5.3.2):
     resolution: {integrity: sha512-Ja1eaSRrE+QarmATlNO5fse2aOACYMBX+IZRKy1T+gpyH+jXgRrl5l4nHIQJQ1DoDgEjHDTw8cpE085UdBZuWQ==, tarball: https://registry.npmjs.org/tsup/-/tsup-7.3.0.tgz}
     id: registry.npmjs.org/tsup/7.3.0
     name: tsup
@@ -17125,6 +17128,7 @@ packages:
       execa: registry.npmjs.org/execa@5.1.1
       globby: registry.npmjs.org/globby@11.1.0
       joycon: registry.npmjs.org/joycon@3.1.1
+      postcss: registry.npmjs.org/postcss@8.4.31
       postcss-load-config: registry.npmjs.org/postcss-load-config@4.0.2(postcss@8.4.31)
       resolve-from: registry.npmjs.org/resolve-from@5.0.0
       rollup: registry.npmjs.org/rollup@4.5.1
