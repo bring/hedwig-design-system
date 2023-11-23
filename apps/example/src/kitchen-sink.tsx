@@ -2,10 +2,13 @@ import {
   DescriptionDetails,
   DescriptionList,
   DescriptionTerm,
-  PrimaryButton,
   Link,
-  UnorderedList,
+  LinkList,
+  LinkListItem,
   ListItem,
+  OrderedList,
+  PrimaryButton,
+  UnorderedList,
 } from "@postenbring/hedwig-react";
 
 function ReactComponentsKitchenSink() {
@@ -34,6 +37,18 @@ function ReactComponentsKitchenSink() {
             <ListItem>Hello</ListItem>
             <ListItem>World</ListItem>
           </UnorderedList>
+          <OrderedList>
+            <ListItem>Hello</ListItem>
+            <ListItem>World</ListItem>
+          </OrderedList>
+          <LinkList>
+            <LinkListItem>
+              <Link href="#demo-link">Link to wherever</Link>
+            </LinkListItem>
+            <LinkListItem>
+              <Link href="https://hedwig.posten.no">Hedwig rocks 🪨</Link>
+            </LinkListItem>
+          </LinkList>
         </div>
       </div>
     </>
