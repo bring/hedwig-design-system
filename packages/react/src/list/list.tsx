@@ -2,16 +2,9 @@ import type { HTMLAttributes } from "react";
 import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverrides } from "../utils";
 
-export interface ListItemProps
-  extends Omit<React.HTMLAttributes<HTMLLIElement>, "className" | "style"> {
-  children: React.ReactNode;
-}
-
-export interface ListProps
-  extends Omit<HTMLAttributes<HTMLOListElement | HTMLUListElement>, "className" | "style"> {
-  children: React.ReactElement<ListItemProps> | React.ReactElement<ListItemProps>[];
+export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListElement> {
+  children: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
   /**
    * Inherit list styles or do not show these
    */
@@ -29,7 +22,6 @@ function BaseList({
   size = "medium",
   ...rest
 }: ListProps & { as?: "ul" | "ol" }) {
-  warnForStyleOverrides(rest);
   return (
     <ListTag
       className={clsx(t("hds-list"), t(`hds-list--${size}`), {
@@ -40,11 +32,6 @@ function BaseList({
       {children}
     </ListTag>
   );
-}
-
-export function ListItem({ children, ...rest }: ListItemProps) {
-  warnForStyleOverrides(rest);
-  return <li {...rest}>{children}</li>;
 }
 
 export function UnorderedList(props: ListProps) {
@@ -63,7 +50,6 @@ export function OrderedList(props: ListProps) {
   );
 }
 
-ListItem.displayName = "ListItem";
 BaseList.displayName = "BaseList";
 OrderedList.displayName = "UnorderedList";
 UnorderedList.displayName = "UnorderedList";

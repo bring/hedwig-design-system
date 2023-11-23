@@ -7,3 +7,4 @@ import "@postenbring/hedwig-css/dist/list/list.css";
 
 export * from "./description-list";
 export * from "./list";
+export * from "./link-list";

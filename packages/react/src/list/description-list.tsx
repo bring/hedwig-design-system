@@ -2,17 +2,15 @@ import type { HTMLAttributes, ReactNode } from "react";
 import React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverrides } from "../utils";
 
 export type DescriptionDetailsProps = DLDTProps;
 export type DescriptionTermProps = DLDTProps;
 
-interface DLDTProps extends Omit<React.HTMLAttributes<HTMLBaseElement>, "className" | "style"> {
+interface DLDTProps extends HTMLAttributes<HTMLBaseElement> {
   children: ReactNode;
 }
 
-export interface DescriptionListProps
-  extends Omit<HTMLAttributes<HTMLDListElement>, "className" | "style"> {
+export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
   /**
    * Either `DescriptionDetails` or `DescriptionTerm` elements
    */
@@ -24,17 +22,14 @@ export interface DescriptionListProps
 }
 
 export function DescriptionDetails({ children, ...rest }: DescriptionDetailsProps) {
-  warnForStyleOverrides(rest);
   return <dd {...rest}>{children}</dd>;
 }
 
 export function DescriptionTerm({ children, ...rest }: DescriptionTermProps) {
-  warnForStyleOverrides(rest);
   return <dt {...rest}>{children}</dt>;
 }
 
 export function DescriptionList({ variant = "vertical", ...rest }: DescriptionListProps) {
-  warnForStyleOverrides(rest);
   return (
     <dl
       className={clsx(t("hds-description-list"), {
