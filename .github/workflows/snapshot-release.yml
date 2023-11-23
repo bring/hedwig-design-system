@@ -29,12 +29,12 @@ jobs:
         run: pnpm install
 
       - name: Set snapshot version
-        run: pnpm dlx changeset version --snapshot ${GITHUB_REF##*/}
+        run: pnpm changeset version --snapshot ${GITHUB_REF##*/}
 
       - name: Setup .npmrc
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> $HOME/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish snapshot versions to npm
-        run: pnpm dlx turbo run build --filter=docs^... && pnpm dlx changeset publish --no-git-tag --tag ${GITHUB_REF##*/}
+      - name: Publish snapshot versions to npm registry
+        run: pnpm dlx turbo run build --filter=docs^... && pnpm changeset publish --no-git-tag --tag ${GITHUB_REF##*/}

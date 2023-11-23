@@ -27,7 +27,7 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Create Release Pull Request or Publish to npm
+      - name: Create Release Pull Request or Publish to npm registry
         id: changesets
         uses: changesets/action@v1
         with:
