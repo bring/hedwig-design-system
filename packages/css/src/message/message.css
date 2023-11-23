@@ -1,0 +1,62 @@
+.hds-box.hds-message {
+  --hds-component-message-icon-width: var(--hds-spacing-medium-3);
+  --hds-component-message-spacing-between: var(--hds-spacing-small-4);
+
+  @media (min-width: 720px) {
+    --hds-component-message-spacing-between: var(--hds-spacing-medium-2);
+  }
+
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- Comes from `box.css` */
+  --hds-component-message-padding: var(--hds-component-box-padding);
+
+  padding-left: calc(
+    var(--hds-component-message-padding) + var(--hds-component-message-icon-width) +
+      var(--hds-component-message-spacing-between)
+  );
+
+  /* Icon placement */
+  &::before {
+    content: "";
+    position: absolute;
+    top: var(--hds-component-message-padding);
+    left: var(--hds-component-message-padding);
+    width: var(--hds-component-message-icon-width);
+    height: var(--hds-component-message-icon-width);
+  }
+
+  &.hds-message--success {
+    background-color: var(--hds-ui-colors-light-grey-fill);
+
+    &::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M27.6412 7.54758C28.3713 8.22153 28.3713 9.40094 27.6412 10.0749L13.2636 24.4524C12.5897 25.1825 11.4103 25.1825 10.7363 24.4524L3.54758 17.2637C2.81747 16.5897 2.81747 15.4103 3.54758 14.7363C4.22153 14.0062 5.40094 14.0062 6.07488 14.7363L11.9719 20.6334L25.1139 7.54758C25.7878 6.81747 26.9672 6.81747 27.6412 7.54758Z" fill="%237BC144"/></svg>');
+    }
+  }
+
+  &.hds-message--attention {
+    background-color: var(--hds-ui-colors-warning-yellow-light-fill);
+
+    &::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M29.0323 23.7656C29.8537 25.2031 28.8269 27 27.1327 27H5.21084C3.51664 27 2.48986 25.2031 3.25994 23.7656L14.2466 5.07812C14.7086 4.35938 15.4274 4 16.1974 4C16.9162 4 17.6349 4.35938 18.097 5.07812L29.0323 23.7656ZM5.72423 24.5357H26.6193L16.1461 6.72098L5.72423 24.5357ZM16.1974 19.7098C17.0702 19.7098 17.789 20.4286 17.789 21.3013C17.789 22.1741 17.0702 22.8929 16.1974 22.8929C15.2733 22.8929 14.5546 22.1741 14.5546 21.3013C14.5546 20.4286 15.2733 19.7098 16.1974 19.7098ZM14.9653 11.8036C14.9653 11.1362 15.4787 10.5714 16.1974 10.5714C16.8649 10.5714 17.4296 11.1362 17.4296 11.8036V16.7321C17.4296 17.4509 16.8649 17.9643 16.1974 17.9643C15.4787 17.9643 14.9653 17.4509 14.9653 16.7321V11.8036Z" fill="black"/></svg>');
+    }
+  }
+
+  &.hds-message--warning {
+    background-color: var(--hds-ui-colors-warning-yellow);
+
+    &::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="12" y="10" width="8" height="14.6667" rx="4" fill="%23FDBB2F"/><path d="M29.0094 24.7656C29.8308 26.2031 28.804 28 27.1098 28H5.18794C3.49374 28 2.46695 26.2031 3.28838 24.7656L14.275 6.07812C15.0964 4.64062 17.2013 4.64062 18.0741 6.07812L29.0094 24.7656ZM14.9424 11.9821V18.5536C14.9424 19.2723 15.5585 19.7857 16.1745 19.7857C16.842 19.7857 17.4067 19.2723 17.4067 18.5536V11.9821C17.4067 11.3147 16.842 10.75 16.1745 10.75C15.4558 10.75 14.9424 11.3147 14.9424 11.9821ZM16.1745 24.7143C17.0473 24.7143 17.7661 23.9955 17.7661 23.1228C17.7661 22.25 17.0473 21.5312 16.1745 21.5312C15.2504 21.5312 14.5317 22.25 14.5317 23.1228C14.5317 23.9955 15.2504 24.7143 16.1745 24.7143Z" fill="black"/></svg>');
+    }
+  }
+
+  &.hds-message--neutral {
+    background-color: var(--hds-ui-colors-light-grey-fill);
+
+    /* stylelint-disable-next-line selector-class-pattern -- Custom icon is only available for the neutral variant */
+    .hds-message--neutral__icon {
+      position: absolute;
+      top: var(--hds-component-message-padding);
+      left: var(--hds-component-message-padding);
+      width: var(--hds-component-message-icon-width);
+    }
+  }
+}

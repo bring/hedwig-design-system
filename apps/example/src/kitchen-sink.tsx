@@ -9,6 +9,8 @@ import {
   OrderedList,
   PrimaryButton,
   UnorderedList,
+  Box,
+  Message,
 } from "@postenbring/hedwig-react";
 
 function ReactComponentsKitchenSink() {
@@ -50,6 +52,33 @@ function ReactComponentsKitchenSink() {
             </LinkListItem>
           </LinkList>
         </div>
+
+        <section>
+          <h2>Box and Message</h2>
+          <div
+            style={{
+              display: "flex",
+              maxWidth: 600,
+              padding: "var(--hds-spacing-medium-2)",
+              flexDirection: "column",
+              gap: "var(--hds-spacing-medium-2)",
+            }}
+          >
+            <Box hideCloseButton variant="lighter">
+              <h3 style={{ font: "var(--hds-typography-body-title)" }}>This is box</h3>
+              <p style={{ marginTop: "var(--hds-spacing-small-2)" }}>With some content and stuff</p>
+            </Box>
+            <Message>
+              <h3 style={{ font: "var(--hds-typography-header-h3)" }}>This is a message</h3>
+            </Message>
+            <Message variant="attention">
+              <h3 style={{ font: "var(--hds-typography-header-h3)" }}>Attention, attention</h3>
+              <p style={{ marginTop: "var(--hds-spacing-small-3)" }}>
+                Will the real slim shady please stand up
+              </p>
+            </Message>
+          </div>
+        </section>
       </div>
     </>
   );
