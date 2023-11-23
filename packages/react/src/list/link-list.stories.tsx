@@ -29,7 +29,6 @@ export const LinkListStory: Story = {
     size: "medium",
     children: linkListItems(),
   },
-  render: (props) => <LinkList {...props} />,
 };
 
 const meta: Meta<typeof LinkList> = {
