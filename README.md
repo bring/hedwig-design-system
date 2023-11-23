@@ -2,6 +2,10 @@
 
 Welcome to the Hedwig Design System – a comprehensive design system built to streamline the development process across Posten and Bring's projects.
 
+## Usage
+
+TBA. How to consume.
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
@@ -43,6 +47,12 @@ TBA
 
 TBA.
 
-## Usage
+## Updating dependencies
 
-TBA. How to consume.
+TODO: Setup dependabot
+
+Use [`pnpm update`](https://pnpm.io/cli/update) to interactivly upgrade dependencies
+
+```bash
+pnpm update -i --latest -r
+```
