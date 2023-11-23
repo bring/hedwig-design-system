@@ -2,7 +2,6 @@ import type { HTMLAttributes, ReactNode } from "react";
 import React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverrides } from "../utils";
 
 export type DescriptionDetailsProps = DLDTProps;
 export type DescriptionTermProps = DLDTProps;
@@ -24,17 +23,14 @@ export interface DescriptionListProps
 }
 
 export function DescriptionDetails({ children, ...rest }: DescriptionDetailsProps) {
-  warnForStyleOverrides(rest);
   return <dd {...rest}>{children}</dd>;
 }
 
 export function DescriptionTerm({ children, ...rest }: DescriptionTermProps) {
-  warnForStyleOverrides(rest);
   return <dt {...rest}>{children}</dt>;
 }
 
 export function DescriptionList({ variant = "vertical", ...rest }: DescriptionListProps) {
-  warnForStyleOverrides(rest);
   return (
     <dl
       className={clsx(t("hds-description-list"), {

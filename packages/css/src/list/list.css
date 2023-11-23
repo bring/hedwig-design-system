@@ -24,11 +24,6 @@
     }
   }
 
-  &.hds-list--style-hidden {
-    list-style: none;
-    padding-left: 0;
-  }
-
   &.hds-list--small {
     font: var(--hds-typography-body-small);
     line-height: 1.8;
@@ -64,5 +59,10 @@
         top: 10px;
       }
     }
+  }
+
+  &.hds-list--style-hidden {
+    list-style: none;
+    padding-left: 0;
   }
 }

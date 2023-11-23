@@ -13,7 +13,8 @@ const listItems = () => (
   </>
 );
 
-export const OrderedListMedium: Story = {
+export const OrderedListStory: Story = {
+  name: "Ordered List",
   args: {
     size: "medium",
     children: listItems(),
@@ -21,39 +22,10 @@ export const OrderedListMedium: Story = {
   render: (props) => <OrderedList {...props} />,
 };
 
-export const OrderedListLarge: Story = {
-  args: {
-    size: "large",
-    children: listItems(),
-  },
-  render: (props) => <OrderedList {...props} />,
-};
-
-export const UnorderedListNoBullets: Story = {
+export const UnorderedListStory: Story = {
+  name: "Unordered List",
   args: {
     size: "medium",
-    listStyle: "no-bullets",
-    children: listItems(),
-  },
-};
-
-export const UnorderedListMedium: Story = {
-  args: {
-    size: "medium",
-    children: listItems(),
-  },
-};
-
-export const UnorderedListSmall: Story = {
-  args: {
-    size: "small",
-    children: listItems(),
-  },
-};
-
-export const UnorderedListLarge: Story = {
-  args: {
-    size: "large",
     children: listItems(),
   },
 };

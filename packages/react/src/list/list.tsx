@@ -2,7 +2,6 @@ import type { HTMLAttributes } from "react";
 import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverrides } from "../utils";
 
 export interface ListItemProps
   extends Omit<React.HTMLAttributes<HTMLLIElement>, "className" | "style"> {
@@ -29,7 +28,6 @@ function BaseList({
   size = "medium",
   ...rest
 }: ListProps & { as?: "ul" | "ol" }) {
-  warnForStyleOverrides(rest);
   return (
     <ListTag
       className={clsx(t("hds-list"), t(`hds-list--${size}`), {
@@ -43,7 +41,6 @@ function BaseList({
 }
 
 export function ListItem({ children, ...rest }: ListItemProps) {
-  warnForStyleOverrides(rest);
   return <li {...rest}>{children}</li>;
 }
 
