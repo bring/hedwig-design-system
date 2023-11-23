@@ -8,11 +8,11 @@
     "build:typed-classname": "postcss dist/index.css --config ./typed-classname --no-map > /dev/null",
     "dev": "npm-run-all -p dev:*",
     "dev:css": "parcel watch --no-cache 'src/*.css' 'src/**/*.css' 'src/*.scss' 'src/**/*.scss'",
-    "dev:typed-classname": "chokidar 'dist/index.css' -c 'npm run build:typed-classname'",
+    "dev:typed-classname": "chokidar 'dist/index.css' -c 'pnpm build:typed-classname'",
     "lint": "stylelint 'src/**/*.css' 'src/**/*.scss' --cache",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "pnpm lint -- --fix",
     "clean": "rm -rf .turbo && rm -rf .parcel-cache && rm -rf node_modules && rm -rf dist",
-    "show-css-size": "npm run build:css && echo '\nSize of dist/index.css (original → gzip)' && npx gzip-size-cli dist/index.css --include-original"
+    "show-css-size": "pnpm build:css && echo '\nSize of dist/index.css (original → gzip)' && pnpm dlx gzip-size-cli dist/index.css --include-original"
   },
   "files": [
     "dist/**",
