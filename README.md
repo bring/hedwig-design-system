@@ -45,7 +45,7 @@ Use [`fnm`](https://github.com/Schniz/fnm), [`asdf`](https://github.com/asdf-vm/
 
 ### Install pnpm
 
-There multiple ways to [install pnpm](https://pnpm.io/installation), one is through npm
+There are multiple ways to [install pnpm](https://pnpm.io/installation), one is through npm:
 
 ```bash
 npm install -g pnpm
