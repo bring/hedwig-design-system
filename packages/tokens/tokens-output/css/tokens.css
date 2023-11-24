@@ -62,7 +62,7 @@
   --hds-typography-technical: 400 calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300)))/calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Regular', Arial, sans-serif;
   --hds-typography-technical-title: 400 calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300)))/calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Medium', Arial, sans-serif;
   --hds-typography-caption: 400 13px/18px 'Posten Sans Regular', Arial, sans-serif;
-  --hds-typography-caption-title: 400 13px/18px 'Posten Sans Regular', Arial, sans-serif;
+  --hds-typography-caption-title: 400 13px/18px 'Posten Sans Medium', Arial, sans-serif;
   --hds-border-radius: 2px;
   --hds-stroke-default: 1px;
   --hds-stroke-thick: 2px;

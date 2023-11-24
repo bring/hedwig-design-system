@@ -302,7 +302,7 @@
     },
     "caption title": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-regular}",
+        "fontFamily": "{fonts.posten-sans-medium}",
         "fontSize": "13px",
         "lineHeight": "18px",
         "fontWeight": 400,
