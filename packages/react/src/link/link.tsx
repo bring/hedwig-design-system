@@ -1,10 +1,8 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverrides } from "../utils";
 
-export interface LinkProps
-  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "style"> {
+export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /**
    * The visual style of the link
    */
@@ -31,7 +29,6 @@ export function Link({
   anchorRef,
   ...rest
 }: LinkProps) {
-  warnForStyleOverrides(rest);
   return (
     <a
       className={clsx(

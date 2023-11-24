@@ -1,10 +1,8 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { warnForStyleOverrides } from "../utils";
 
-export interface BadgeProps
-  extends Omit<React.AnchorHTMLAttributes<HTMLSpanElement>, "className" | "style"> {
+export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> {
   /**
    * Font size of the badge
    */
@@ -19,7 +17,6 @@ function BaseBadge({
   size = "small",
   ...rest
 }: BadgeProps & { variant: "primary" | "dark" | "white" | "warning" }) {
-  warnForStyleOverrides(rest);
   return (
     <span
       className={clsx(t("hds-badge"), t(`hds-badge--${size}`), t(`hds-badge--${variant}`))}

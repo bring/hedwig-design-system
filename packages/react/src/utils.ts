@@ -1,14 +1,4 @@
-/* eslint-disable no-console -- console.warn for unsupported features */
 import type { RefAttributes, FC, ElementType, ComponentPropsWithRef } from "react";
-
-export function warnForStyleOverrides(props: Record<string, unknown>) {
-  if (props.className) {
-    console.warn("Overriding styles are not premited");
-  }
-  if (props.styles) {
-    console.warn("Overriding styles are not premited");
-  }
-}
 
 /**
  * OverridableComponent makes the `as` prop available,
