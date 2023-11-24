@@ -17,6 +17,7 @@
     "@parcel/transformer-sass": "2.10.3",
     "@types/node": "20.9.4",
     "eslint": "^8.53.0",
+    "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "husky": "8.0.3",
     "lint-staged": "15.1.0",
@@ -31,7 +32,6 @@
     "*.{js,jsx,ts,tsx,css,scss,md,json}": "prettier --cache --write"
   },
   "prettier": {
-    "trailingComma": "all",
     "printWidth": 100
   }
 }
