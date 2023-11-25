@@ -23,7 +23,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   buttonRef?: React.ForwardedRef<HTMLButtonElement>;
 }
 
-function BaseButton({
+export function BaseButton({
   children,
   variant,
   size = "medium",
