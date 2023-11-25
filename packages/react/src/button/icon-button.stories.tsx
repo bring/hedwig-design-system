@@ -5,6 +5,13 @@ import { IconButton } from ".";
 const meta: Meta<typeof IconButton> = {
   title: "IconButton",
   component: IconButton,
+  render: (args) => (
+    <div style={{ display: "flex", alignItems: "flex-end", gap: "var(--hds-spacing-small-4)" }}>
+      <IconButton {...args} size="small" />
+      <IconButton {...args} size="medium" />
+      <IconButton {...args} size="large" />
+    </div>
+  ),
   args: {
     variant: "primary",
     lang: "en",
@@ -69,3 +76,13 @@ export const DisabledOutlined: Story = {
     disabled: true,
   },
 };
+
+// export const Sizes: Story = {
+//   render: (args) => (
+//     <div style={{ display: "flex", gap: "var(--hds-spacing-small-4)" }}>
+//       <IconButton {...args} size="small" />
+//       <IconButton {...args} size="medium" />
+//       <IconButton {...args} size="large" />
+//     </div>
+//   ),
+// };
