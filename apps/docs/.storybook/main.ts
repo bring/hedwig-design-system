@@ -1,4 +1,4 @@
-import { dirname, join, resolve } from "path";
+import { dirname, join } from "path";
 import type { StorybookConfig } from "@storybook/react-vite";
 
 function getAbsolutePath(value) {
@@ -21,30 +21,6 @@ const config: StorybookConfig = {
   },
 
   core: {},
-
-  async viteFinal(config, { configType }) {
-    // customize the Vite config here
-    return {
-      ...config,
-      define: { "process.env": {} },
-      resolve: {
-        alias: [
-          {
-            find: "@postenbring/hedwig-react",
-            replacement: resolve(__dirname, "../../../packages/react/"),
-          },
-          {
-            find: "@postenbring/hedwig-css",
-            replacement: resolve(__dirname, "../../../packages/css/"),
-          },
-          {
-            find: "@postenbring/hedwig-tokens",
-            replacement: resolve(__dirname, "../../../packages/tokens/"),
-          },
-        ],
-      },
-    };
-  },
 
   docs: {
     autodocs: true,
