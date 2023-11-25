@@ -80,10 +80,10 @@ importers:
         version: registry.npmjs.org/@storybook/react@7.5.3(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@storybook/react-vite':
         specifier: ^7.5.3
-        version: registry.npmjs.org/@storybook/react-vite@7.5.3(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)(vite@5.0.2)
+        version: registry.npmjs.org/@storybook/react-vite@7.5.3(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)(vite@4.5.0)
       '@vitejs/plugin-react':
         specifier: ^4.2.0
-        version: registry.npmjs.org/@vitejs/plugin-react@4.2.0(vite@5.0.2)
+        version: registry.npmjs.org/@vitejs/plugin-react@4.2.0(vite@4.5.0)
       '@whitespace/storybook-addon-html':
         specifier: 5.1.6
         version: registry.npmjs.org/@whitespace/storybook-addon-html@5.1.6(@storybook/addons@7.5.3)(@storybook/api@7.5.3)(@storybook/components@7.5.3)(@storybook/core-events@7.5.3)(@storybook/theming@7.5.3)(prettier@2.8.8)(react-dom@18.2.0)(react-syntax-highlighter@15.5.0)(react@18.2.0)
@@ -103,8 +103,8 @@ importers:
         specifier: ^5.2.2
         version: registry.npmjs.org/typescript@5.3.2
       vite:
-        specifier: ^5.0.0
-        version: registry.npmjs.org/vite@5.0.2(@types/node@20.9.4)
+        specifier: 4.5.0
+        version: registry.npmjs.org/vite@4.5.0(@types/node@20.9.4)
 
   apps/example:
     dependencies:
@@ -2993,7 +2993,7 @@ packages:
       chalk: registry.npmjs.org/chalk@4.1.2
     dev: true
 
-  registry.npmjs.org/@joshwooding/vite-plugin-react-docgen-typescript@0.3.0(typescript@5.3.2)(vite@5.0.2):
+  registry.npmjs.org/@joshwooding/vite-plugin-react-docgen-typescript@0.3.0(typescript@5.3.2)(vite@4.5.0):
     resolution: {integrity: sha512-2D6y7fNvFmsLmRt6UCOFJPvFoPMJGT0Uh1Wg0RaigUp7kdQPs6yYn8Dmx6GZkOH/NW0yMTwRz/p0SRMMRo50vA==, tarball: https://registry.npmjs.org/@joshwooding/vite-plugin-react-docgen-typescript/-/vite-plugin-react-docgen-typescript-0.3.0.tgz}
     id: registry.npmjs.org/@joshwooding/vite-plugin-react-docgen-typescript/0.3.0
     name: '@joshwooding/vite-plugin-react-docgen-typescript'
@@ -3010,7 +3010,7 @@ packages:
       magic-string: registry.npmjs.org/magic-string@0.27.0
       react-docgen-typescript: registry.npmjs.org/react-docgen-typescript@2.2.2(typescript@5.3.2)
       typescript: registry.npmjs.org/typescript@5.3.2
-      vite: registry.npmjs.org/vite@5.0.2(@types/node@20.9.4)
+      vite: registry.npmjs.org/vite@4.5.0(@types/node@20.9.4)
     dev: true
 
   registry.npmjs.org/@jridgewell/gen-mapping@0.3.3:
@@ -5571,7 +5571,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmjs.org/@storybook/builder-vite@7.5.3(typescript@5.3.2)(vite@5.0.2):
+  registry.npmjs.org/@storybook/builder-vite@7.5.3(typescript@5.3.2)(vite@4.5.0):
     resolution: {integrity: sha512-c104V3O75OCVnfZj0Jr70V09g0KSbPGvQK2Zh31omXGvakG8XrhWolYxkmjOcForJmAqsXnKs/nw3F75Gp853g==, tarball: https://registry.npmjs.org/@storybook/builder-vite/-/builder-vite-7.5.3.tgz}
     id: registry.npmjs.org/@storybook/builder-vite/7.5.3
     name: '@storybook/builder-vite'
@@ -5606,7 +5606,7 @@ packages:
       magic-string: registry.npmjs.org/magic-string@0.30.5
       rollup: registry.npmjs.org/rollup@3.29.4
       typescript: registry.npmjs.org/typescript@5.3.2
-      vite: registry.npmjs.org/vite@5.0.2(@types/node@20.9.4)
+      vite: registry.npmjs.org/vite@4.5.0(@types/node@20.9.4)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -6004,7 +6004,7 @@ packages:
       react-dom: registry.npmjs.org/react-dom@18.2.0(react@18.2.0)
     dev: true
 
-  registry.npmjs.org/@storybook/react-vite@7.5.3(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)(vite@5.0.2):
+  registry.npmjs.org/@storybook/react-vite@7.5.3(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)(vite@4.5.0):
     resolution: {integrity: sha512-ArPyHgiPbT5YvcyK4xK/DfqBOpn4R4/EP3kfIGhx8QKJyOtxPEYFdkLIZ5xu3KnPX7/z7GT+4a6Rb+8sk9gliA==, tarball: https://registry.npmjs.org/@storybook/react-vite/-/react-vite-7.5.3.tgz}
     id: registry.npmjs.org/@storybook/react-vite/7.5.3
     name: '@storybook/react-vite'
@@ -6015,16 +6015,16 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
     dependencies:
-      '@joshwooding/vite-plugin-react-docgen-typescript': registry.npmjs.org/@joshwooding/vite-plugin-react-docgen-typescript@0.3.0(typescript@5.3.2)(vite@5.0.2)
+      '@joshwooding/vite-plugin-react-docgen-typescript': registry.npmjs.org/@joshwooding/vite-plugin-react-docgen-typescript@0.3.0(typescript@5.3.2)(vite@4.5.0)
       '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils@5.0.5
-      '@storybook/builder-vite': registry.npmjs.org/@storybook/builder-vite@7.5.3(typescript@5.3.2)(vite@5.0.2)
+      '@storybook/builder-vite': registry.npmjs.org/@storybook/builder-vite@7.5.3(typescript@5.3.2)(vite@4.5.0)
       '@storybook/react': registry.npmjs.org/@storybook/react@7.5.3(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
-      '@vitejs/plugin-react': registry.npmjs.org/@vitejs/plugin-react@3.1.0(vite@5.0.2)
+      '@vitejs/plugin-react': registry.npmjs.org/@vitejs/plugin-react@3.1.0(vite@4.5.0)
       magic-string: registry.npmjs.org/magic-string@0.30.5
       react: registry.npmjs.org/react@18.2.0
       react-docgen: registry.npmjs.org/react-docgen@6.0.4
       react-dom: registry.npmjs.org/react-dom@18.2.0(react@18.2.0)
-      vite: registry.npmjs.org/vite@5.0.2(@types/node@20.9.4)
+      vite: registry.npmjs.org/vite@4.5.0(@types/node@20.9.4)
     transitivePeerDependencies:
       - '@preact/preset-vite'
       - encoding
@@ -7028,7 +7028,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmjs.org/@vitejs/plugin-react@3.1.0(vite@5.0.2):
+  registry.npmjs.org/@vitejs/plugin-react@3.1.0(vite@4.5.0):
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==, tarball: https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-3.1.0.tgz}
     id: registry.npmjs.org/@vitejs/plugin-react/3.1.0
     name: '@vitejs/plugin-react'
@@ -7042,7 +7042,26 @@ packages:
       '@babel/plugin-transform-react-jsx-source': registry.npmjs.org/@babel/plugin-transform-react-jsx-source@7.23.3(@babel/core@7.23.3)
       magic-string: registry.npmjs.org/magic-string@0.27.0
       react-refresh: registry.npmjs.org/react-refresh@0.14.0
-      vite: registry.npmjs.org/vite@5.0.2(@types/node@20.9.4)
+      vite: registry.npmjs.org/vite@4.5.0(@types/node@20.9.4)
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  registry.npmjs.org/@vitejs/plugin-react@4.2.0(vite@4.5.0):
+    resolution: {integrity: sha512-+MHTH/e6H12kRp5HUkzOGqPMksezRMmW+TNzlh/QXfI8rRf6l2Z2yH/v12no1UvTwhZgEDMuQ7g7rrfMseU6FQ==, tarball: https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-4.2.0.tgz}
+    id: registry.npmjs.org/@vitejs/plugin-react/4.2.0
+    name: '@vitejs/plugin-react'
+    version: 4.2.0
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.2.0 || ^5.0.0
+    dependencies:
+      '@babel/core': registry.npmjs.org/@babel/core@7.23.3
+      '@babel/plugin-transform-react-jsx-self': registry.npmjs.org/@babel/plugin-transform-react-jsx-self@7.23.3(@babel/core@7.23.3)
+      '@babel/plugin-transform-react-jsx-source': registry.npmjs.org/@babel/plugin-transform-react-jsx-source@7.23.3(@babel/core@7.23.3)
+      '@types/babel__core': registry.npmjs.org/@types/babel__core@7.20.5
+      react-refresh: registry.npmjs.org/react-refresh@0.14.0
+      vite: registry.npmjs.org/vite@4.5.0(@types/node@20.9.4)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -17852,6 +17871,45 @@ packages:
       is-buffer: registry.npmjs.org/is-buffer@2.0.5
       unist-util-stringify-position: registry.npmjs.org/unist-util-stringify-position@3.0.3
       vfile-message: registry.npmjs.org/vfile-message@3.1.4
+    dev: true
+
+  registry.npmjs.org/vite@4.5.0(@types/node@20.9.4):
+    resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==, tarball: https://registry.npmjs.org/vite/-/vite-4.5.0.tgz}
+    id: registry.npmjs.org/vite/4.5.0
+    name: vite
+    version: 4.5.0
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': registry.npmjs.org/@types/node@20.9.4
+      esbuild: registry.npmjs.org/esbuild@0.18.20
+      postcss: registry.npmjs.org/postcss@8.4.31
+      rollup: registry.npmjs.org/rollup@3.29.4
+    optionalDependencies:
+      fsevents: registry.npmjs.org/fsevents@2.3.3
     dev: true
 
   registry.npmjs.org/vite@5.0.2(@types/node@20.9.4):
