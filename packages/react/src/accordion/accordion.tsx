@@ -1,4 +1,4 @@
-import * as React from "react";
+import type { HTMLAttributes, ReactElement } from "react";
 import { forwardRef, useState } from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
@@ -7,10 +7,22 @@ import type { AccordionType } from "./context";
 import { AccordionContext } from "./context";
 import type { AccordionItemProps } from "./accordion-item";
 
-export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactElement<AccordionItemProps> | React.ReactElement<AccordionItemProps>[];
+export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+  children: ReactElement<AccordionItemProps> | ReactElement<AccordionItemProps>[];
   className?: string | undefined;
+  /**
+   * Can be either "single" or "multiple".
+   *
+   * Single will basically mean that just a singular item will be opened at the time, and all
+   * others will be closed
+   *
+   * Multiple is the default option, and will allow for multiple options to be visible/opened at the
+   * same time
+   */
   variant?: AccordionType;
+  /**
+   * Size of the entire accordion. Currently, only small and medium is supported
+   */
   size?: "small" | "medium";
 }
 

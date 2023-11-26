@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ButtonHTMLAttributes, MouseEvent, ReactNode } from "react";
 import { forwardRef, useContext } from "react";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { clsx } from "clsx";
@@ -23,7 +23,7 @@ export const AccordionTrigger: OverridableComponent<AccordionTriggerProps, HTMLB
     if (itemContext === null) {
       return null;
     }
-    const expandOrCollapse = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const expandOrCollapse = (e: MouseEvent<HTMLButtonElement>) => {
       itemContext.setOpen(!itemContext.open);
       onClick && onClick(e);
     };

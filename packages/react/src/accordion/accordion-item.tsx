@@ -1,4 +1,5 @@
-import React, { forwardRef, useContext, useEffect, useId, useState } from "react";
+import type { HTMLAttributes, ReactElement } from "react";
+import { forwardRef, useContext, useEffect, useId, useState } from "react";
 import { clsx } from "clsx";
 import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
@@ -7,10 +8,10 @@ import type { AccordionTriggerProps } from "./accordion-item-trigger";
 import type { AccordionContentProps } from "./accordion-item-content";
 
 export type AccordionItemChildrenType =
-  | React.ReactElement<AccordionTriggerProps>
-  | React.ReactElement<AccordionContentProps>;
+  | ReactElement<AccordionTriggerProps>
+  | ReactElement<AccordionContentProps>;
 
-export interface AccordionItemProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   children: AccordionItemChildrenType[];
 }
 
