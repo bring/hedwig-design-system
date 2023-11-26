@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css/dist/reset.css";
 import {
   Box,
   DescriptionDetails,
@@ -11,7 +12,7 @@ import {
   UnorderedList,
 } from "@postenbring/hedwig-react";
 
-function ReactComponentsKitchenSink() {
+export default function KitchenSink() {
   return (
     <>
       <div className="hds-theme-posten">
@@ -81,5 +82,3 @@ function ReactComponentsKitchenSink() {
     </>
   );
 }
-
-export default ReactComponentsKitchenSink;

@@ -108,6 +108,9 @@ importers:
 
   apps/example:
     dependencies:
+      '@postenbring/hedwig-css':
+        specifier: workspace:*
+        version: link:../../packages/css
       '@postenbring/hedwig-react':
         specifier: workspace:*
         version: link:../../packages/react

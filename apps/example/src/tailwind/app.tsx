@@ -1,7 +1,7 @@
-import { Link } from "@postenbring/hedwig-react";
 import "./tailwind.css";
+import { Link } from "@postenbring/hedwig-react";
 
-export function TailwindExample() {
+export default function TailwindExample() {
   return (
     <div className="hds-theme-posten">
       <div className="p-[64px]">
