@@ -3,6 +3,14 @@
   "version": "0.0.4",
   "description": "",
   "scripts": {
+    "build-v2": "pnpm run --sequential /^build-v2:.*/",
+    "build-v2:css": "mkdir -p dist && lightningcss --minify --bundle --sourcemap --targets '>= 0.25%' src/*.css src/**/*.css -d ./dist",
+    "build-v2:typed-classname": "node ./typed-classname/build.mjs",
+    "build-v2:scoped-css": "node ./build-scoped-css.mjs",
+    "dev-v2": "pnpm run --parallel /^dev-v2:.*/",
+    "dev-v2:css": "chokidar 'src/**/*.css' -c 'pnpm build:css'",
+    "dev-v2:typed-classname": "node --watch-preserve-output --watch-path dist/index.css --watch ./typed-classname/build.mjs",
+    "": "",
     "build": "npm-run-all build:*",
     "build:css": "parcel build --no-cache 'src/*.css' 'src/**/*.css' 'src/*.scss' 'src/**/*.scss'",
     "build:typed-classname": "node ./typed-classname/build.mjs",
@@ -24,6 +32,7 @@
     "@parcel/transformer-sass": "2.10.3",
     "autoprefixer": "10.4.16",
     "lightningcss": "1.22.1",
+    "lightningcss-cli": "1.22.1",
     "npm-run-all": "4.1.5",
     "parcel": "2.10.3",
     "postcss": "8.4.31",
@@ -47,5 +56,9 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "dependencies": {
+    "browserslist": "4.22.1",
+    "chokidar-cli": "3.0.0"
+  }
 }
