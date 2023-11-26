@@ -6,7 +6,9 @@ on:
       - master
       - changeset-release/*
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   release-snapshot:
