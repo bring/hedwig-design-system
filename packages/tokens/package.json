@@ -6,7 +6,8 @@
   "files": [
     "assets/**",
     "tokens-output/**",
-    "tailwind.config.js"
+    "tailwind.config.cjs",
+    "tailwind.config.d.cts"
   ],
   "scripts": {
     "build": "node --import tsx build.ts",
