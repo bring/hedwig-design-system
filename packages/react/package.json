@@ -27,8 +27,7 @@
   },
   "dependencies": {
     "@postenbring/hedwig-css": "workspace:*",
-    "@postenbring/hedwig-tokens": "workspace:*",
-    "clsx": "^2.0.0"
+    "@postenbring/hedwig-tokens": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

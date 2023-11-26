@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { clsx } from "clsx";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { useState } from "react";
 import { Box, BoxCloseButton } from ".";
 
@@ -11,10 +10,7 @@ const meta: Meta<typeof Box> = {
   args: {
     children: (
       <>
-        <h3
-          className={clsx(t("hds-typography-h3"), t("hds-typography-h3--title"))}
-          style={{ margin: 0 }}
-        >
+        <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
           Replace me please
         </h3>
         <p>
@@ -97,10 +93,7 @@ export const Custom: Story = {
             closeTimer === null && countDownFrom(5);
           }}
         />
-        <h3
-          className={clsx(t("hds-typography-h3"), t("hds-typography-h3--title"))}
-          style={{ margin: 0 }}
-        >
+        <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
           A customomized box
           {closeTimer !== null && ` - closing in ${closeTimer} seconds`}
         </h3>

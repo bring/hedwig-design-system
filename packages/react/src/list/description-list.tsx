@@ -1,6 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
 export type DescriptionDetailsProps = DLDTProps;
 export type DescriptionTermProps = DLDTProps;
@@ -28,12 +27,20 @@ export function DescriptionTerm({ children, ...rest }: DescriptionTermProps) {
   return <dt {...rest}>{children}</dt>;
 }
 
-export function DescriptionList({ variant = "vertical", ...rest }: DescriptionListProps) {
+export function DescriptionList({
+  variant = "vertical",
+  className,
+  ...rest
+}: DescriptionListProps) {
   return (
     <dl
-      className={clsx(t("hds-description-list"), {
-        [t("hds-description-list--horizontal")]: variant === "horizontal",
-      })}
+      className={clsx(
+        "hds-description-list",
+        {
+          "hds-description-list--horizontal": variant === "horizontal",
+        },
+        className as undefined,
+      )}
       {...rest}
     />
   );

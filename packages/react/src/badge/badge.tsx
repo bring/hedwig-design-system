@@ -1,6 +1,5 @@
 import * as React from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
 export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> {
   /**
@@ -15,11 +14,17 @@ function BaseBadge({
   children,
   variant,
   size = "small",
+  className,
   ...rest
 }: BadgeProps & { variant: "primary" | "dark" | "white" | "warning" }) {
   return (
     <span
-      className={clsx(t("hds-badge"), t(`hds-badge--${size}`), t(`hds-badge--${variant}`))}
+      className={clsx(
+        "hds-badge",
+        `hds-badge--${size}`,
+        `hds-badge--${variant}`,
+        className as undefined,
+      )}
       {...rest}
     >
       {children}

@@ -1,6 +1,5 @@
 import * as React from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
 export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /**
@@ -27,14 +26,16 @@ export function Link({
   variant = "underline",
   size = "medium",
   anchorRef,
+  className,
   ...rest
 }: LinkProps) {
   return (
     <a
       className={clsx(
-        t("hds-link"),
-        variant !== "underline" && t(`hds-link--${variant}`),
-        size !== "medium" && t(`hds-link--${size}`),
+        "hds-link",
+        variant !== "underline" && `hds-link--${variant}`,
+        size !== "medium" && `hds-link--${size}`,
+        className as undefined,
       )}
       ref={anchorRef}
       {...rest}

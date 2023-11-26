@@ -1,6 +1,5 @@
 import { forwardRef, useCallback, useState } from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 
 export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -69,10 +68,10 @@ export const Box: OverridableComponent<BoxProps, HTMLDivElement> = forwardRef(
     return (
       <Component
         className={clsx(
-          t("hds-box"),
-          t(`hds-box--${variant}`),
-          { [t("hds-box--closed")]: closed },
-          className,
+          "hds-box",
+          `hds-box--${variant}`,
+          { "hds-box--closed": closed },
+          className as undefined,
         )}
         ref={ref}
         {...rest}
@@ -90,7 +89,7 @@ export const BoxCloseButton = forwardRef<HTMLButtonElement, BoxCloseButtonProps>
   ({ className, ...rest }, ref) => {
     return (
       <button
-        className={clsx(t("hds-box__close-button"), className)}
+        className={clsx("hds-box__close-button", className as undefined)}
         ref={ref}
         type="button"
         {...rest}

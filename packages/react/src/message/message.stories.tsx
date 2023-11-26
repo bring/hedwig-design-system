@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { clsx } from "clsx";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { useState } from "react";
 import { Message } from ".";
 
@@ -11,10 +10,7 @@ const meta: Meta<typeof Message> = {
   args: {
     children: (
       <>
-        <h3
-          className={clsx(t("hds-typography-h3"), t("hds-typography-h3--title"))}
-          style={{ margin: 0 }}
-        >
+        <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
           Message header
         </h3>
         <p>
@@ -64,10 +60,7 @@ export const Neutral: Story = {
     const [_, rerender] = useState(0);
     return (
       <Message icon={<span style={{ fontSize: 24 }}>{icon}</span>} variant="neutral">
-        <h3
-          className={clsx(t("hds-typography-h3"), t("hds-typography-h3--title"))}
-          style={{ margin: 0 }}
-        >
+        <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
           Custom icons
         </h3>
         <p>
