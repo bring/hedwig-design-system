@@ -29,6 +29,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "browserslist": "4.22.1",
+    "chokidar-cli": "3.0.0",
     "@parcel/transformer-sass": "2.10.3",
     "autoprefixer": "10.4.16",
     "lightningcss": "1.22.1",
@@ -56,9 +58,5 @@
   },
   "browserslist": [
     "defaults"
-  ],
-  "dependencies": {
-    "browserslist": "4.22.1",
-    "chokidar-cli": "3.0.0"
-  }
+  ]
 }
