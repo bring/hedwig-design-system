@@ -1,8 +1,0 @@
-{
-  "plugins": {
-    "postcss-ts-classnames": {
-      "dest": "dist/classnames.d.ts",
-      "isModule": true
-    }
-  }
-}
