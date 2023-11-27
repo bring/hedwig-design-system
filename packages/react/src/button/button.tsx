@@ -19,17 +19,23 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    */
   fill?: "contained" | "outlined";
 
+  /**
+   * Use an icon inside the button
+   */
+  icon?: React.ReactNode;
+
   children: React.ReactNode;
   buttonRef?: React.ForwardedRef<HTMLButtonElement>;
 }
 
-export function BaseButton({
+function BaseButton({
   children,
   variant,
   size = "medium",
   fullWidth = false,
   fill = "contained",
   buttonRef,
+  icon,
   className,
   ...rest
 }: ButtonProps & { variant: "primary" | "secondary" }) {
@@ -43,12 +49,14 @@ export function BaseButton({
           [`hds-button--outline-${variant}`]: fill === "outlined",
           "hds-button--full": fullWidth === true,
           "hds-button--mobile-full": fullWidth === "mobile",
+          "hds-button--icon-only": icon && !children,
         },
         className as undefined,
       )}
       ref={buttonRef}
       {...rest}
     >
+      {icon && !children ? icon : null}
       {children}
     </button>
   );
