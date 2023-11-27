@@ -8,8 +8,8 @@
     "build:typed-classname": "node ./typed-classname/build.mjs",
     "build:scoped-css": "node ./build-scoped-css.mjs",
     "dev": "pnpm run --parallel /^dev:.*/",
-    "dev:css": "chokidar 'src/**/*.css' -c 'pnpm build:css'",
-    "dev:typed-classname": "node --watch-preserve-output --watch-path dist/index.css --watch ./typed-classname/build.mjs",
+    "dev:css": "chokidar --initial 'src/**/*.css' -c 'pnpm build:css'",
+    "dev:typed-classname": "wait-on dist/index.css && node --watch-preserve-output --watch-path dist/index.css --watch ./typed-classname/build.mjs",
     "lint": "stylelint 'src/**/*.css' 'src/**/*.scss' --cache",
     "lint:fix": "pnpm lint -- --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
@@ -31,7 +31,8 @@
     "stylelint-config-prettier-scss": "1.0.0",
     "stylelint-config-standard": "34.0.0",
     "stylelint-config-standard-scss": "11.1.0",
-    "stylelint-value-no-unknown-custom-properties": "5.0.0"
+    "stylelint-value-no-unknown-custom-properties": "5.0.0",
+    "wait-on": "^7.2.0"
   },
   "publishConfig": {
     "access": "public"
