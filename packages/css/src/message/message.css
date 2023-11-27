@@ -59,4 +59,27 @@
       width: var(--hds-component-message-icon-width);
     }
   }
+
+  /* Reset margin */
+  & .hds-message__title,
+  & .hds-message__description {
+    margin: 0;
+  }
+
+  /* Offset to match the icon */
+  & *:is(.hds-message__title, .hds-message__description):first-of-type {
+    margin-top: 2px;
+  }
+
+  & .hds-message__title {
+    font: var(--hds-typography-body-title);
+  }
+
+  & .hds-message__title ~ .hds-message__description {
+    margin-top: var(--hds-spacing-small-3);
+
+    @media (min-width: 720px) {
+      margin-top: var(--hds-spacing-small-4);
+    }
+  }
 }
