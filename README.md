@@ -2,15 +2,15 @@
 
 Welcome to the Hedwig Design System – a comprehensive design system built to streamline the development process across Posten and Bring's projects.
 
-## Usage
+## ✨ Usage
 
 Storybook: https://bring.github.io/hedwig-design-system/
 
 This package has three packages
 
-- `@postenbring/tokens`
-- `@postenbring/css`
-- `@postenbring/react`
+- `@postenbring/hedwig-tokens`
+- `@postenbring/hedwig-css`
+- `@postenbring/hedwig-react`
 
 ### Getting started
 
@@ -31,7 +31,9 @@ export function MyComponent() {
 }
 ```
 
-## Prerequisites
+## 🧑‍💻 Contributing
+
+### Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -51,7 +53,7 @@ There are multiple ways to [install pnpm](https://pnpm.io/installation), one is 
 npm install -g pnpm
 ```
 
-## Getting Started
+### Getting Started
 
 Follow these steps to get the design system up and running on your local machine for development and testing purposes.
 
