@@ -1,7 +1,6 @@
 import type { ButtonHTMLAttributes, MouseEvent, ReactNode } from "react";
 import { forwardRef, useContext } from "react";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { clsx } from "clsx";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import { AccordionItemContext } from "./context";
 
@@ -31,13 +30,13 @@ export const AccordionTrigger: OverridableComponent<AccordionTriggerProps, HTMLB
       <Component
         {...rest}
         aria-expanded={itemContext.open}
-        className={clsx(t("hds-accordion-item-trigger"), className)}
+        className={clsx("hds-accordion-item-trigger", className as undefined)}
         onClick={expandOrCollapse}
         ref={ref}
         type="button"
       >
         <span>
-          <div className={clsx(t("hds-accordion-item-trigger--icon"))}>
+          <div className={clsx("hds-accordion-item-trigger--icon")}>
             {itemContext.open ? <FaArrowUpButNotReally /> : <FaArrowDownButNotReally />}
           </div>
           {children}

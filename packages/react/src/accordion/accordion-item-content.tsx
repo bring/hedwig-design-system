@@ -1,7 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import { forwardRef, useContext } from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import { AccordionItemContext } from "./context";
 
@@ -19,11 +18,11 @@ export const AccordionContent: OverridableComponent<AccordionContentProps, HTMLD
       <Component
         {...rest}
         className={clsx(
-          t("hds-accordion-item-content"),
+          "hds-accordion-item-content",
           {
-            [t(`hds-accordion-item-content--closed`)]: !context.open,
+            "hds-accordion-item-content--closed": !context.open,
           },
-          className,
+          className as undefined,
         )}
         ref={ref}
       >
