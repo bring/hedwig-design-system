@@ -14,12 +14,12 @@ This package has three packages
 
 ### Getting started
 
-The simplest way is to just install the `@postenbring/react` package, and start using the components. The css is imported in the javascript files so a bundler that supports side effect imports are required. Vite and Remix supports this out of the box.
+The simplest way is to just install the `@postenbring/hedwig-react` package, and start using the components. The css is imported in the javascript files so a bundler that supports side effect imports are required. Vite and Remix supports this out of the box.
 
 ```tsx
 import {
   Box,
-  Button,
+  PrimaryButton,
 } from "@postenbring/hedwig-react";
 
 export function MyComponent() {
