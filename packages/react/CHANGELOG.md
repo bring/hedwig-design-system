@@ -1,5 +1,29 @@
 # @postenbring/hedwig-react
 
+## 0.0.5
+
+### Patch Changes
+
+- 179fcb0: Adding description lists to the mix for hedwig components
+- f26bdb2: Adding support for List components!
+- 54cdfb5: Adding new component for Accordion
+- cc4c78c: Various minor technical changes
+- d219982: :sparkles: Box and Message component
+- 1e0a73f: Add Input component and styling
+- a5a9054: ✨ New component for LinkList
+- Updated dependencies [fa82315]
+- Updated dependencies [179fcb0]
+- Updated dependencies [f26bdb2]
+- Updated dependencies [54cdfb5]
+- Updated dependencies [cc4c78c]
+- Updated dependencies [d219982]
+- Updated dependencies [1e0a73f]
+- Updated dependencies [430b517]
+- Updated dependencies [856c871]
+- Updated dependencies [321c814]
+  - @postenbring/hedwig-css@0.0.5
+  - @postenbring/hedwig-tokens@0.0.3
+
 ## 0.0.4
 
 ### Patch Changes

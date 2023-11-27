@@ -1,5 +1,17 @@
 # @postenbring/hedwig-css
 
+## 0.0.5
+
+### Patch Changes
+
+- fa82315: use tokens/variables instead of hardcoded dimensions whenever applicable
+- 179fcb0: Adding description lists to the mix for hedwig components
+- f26bdb2: Adding support for List components!
+- 54cdfb5: Adding new component for Accordion
+- cc4c78c: Various minor technical changes
+- d219982: :sparkles: Box and Message component
+- 1e0a73f: Add Input component and styling
+
 ## 0.0.4
 
 ### Patch Changes

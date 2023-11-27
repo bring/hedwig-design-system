@@ -1,5 +1,14 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.3
+
+### Patch Changes
+
+- 179fcb0: Adding description lists to the mix for hedwig components
+- 430b517: update tailwind config to use literal values instead of variables, makes for better DX when used with the tailwind plugin for vscode
+- 856c871: Fix caption title to correctly use medium font
+- 321c814: :sparkles: extract, min, max, and fluid font-size and line-height from all typography tokens
+
 ## 0.0.2
 
 ### Patch Changes
