@@ -33,6 +33,9 @@
     "stylelint-value-no-unknown-custom-properties": "5.0.0",
     "wait-on": "^7.2.0"
   },
+  "dependencies": {
+    "@postenbring/hedwig-tokens": "workspace:*"
+  },
   "publishConfig": {
     "access": "public"
   },
