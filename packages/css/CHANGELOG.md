@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.6
+
+### Patch Changes
+
+- correctly include typed-classname in npm package
+
 ## 0.0.5
 
 ### Patch Changes
