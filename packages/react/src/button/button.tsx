@@ -1,7 +1,6 @@
 /* eslint-disable react/button-has-type -- Less magic, don't override the button behaviour */
 import * as React from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -31,16 +30,22 @@ function BaseButton({
   fullWidth = false,
   fill = "contained",
   buttonRef,
+  className,
   ...rest
 }: ButtonProps & { variant: "primary" | "secondary" }) {
   return (
     <button
-      className={clsx(t("hds-button"), t(`hds-button--${size}`), {
-        [t(`hds-button--${variant}`)]: fill === "contained",
-        [t(`hds-button--outline-${variant}`)]: fill === "outlined",
-        [t("hds-button--full")]: fullWidth === true,
-        [t("hds-button--mobile-full")]: fullWidth === "mobile",
-      })}
+      className={clsx(
+        "hds-button",
+        `hds-button--${size}`,
+        {
+          [`hds-button--${variant}`]: fill === "contained",
+          [`hds-button--outline-${variant}`]: fill === "outlined",
+          "hds-button--full": fullWidth === true,
+          "hds-button--mobile-full": fullWidth === "mobile",
+        },
+        className as undefined,
+      )}
       ref={buttonRef}
       {...rest}
     >

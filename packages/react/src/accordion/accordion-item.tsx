@@ -1,7 +1,6 @@
 import type { HTMLAttributes, ReactElement } from "react";
 import { forwardRef, useContext, useEffect, useId, useState } from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import { AccordionContext, AccordionItemContext } from "./context";
 import type { AccordionTriggerProps } from "./accordion-item-trigger";
@@ -44,11 +43,11 @@ export const AccordionItem: OverridableComponent<AccordionItemProps, HTMLDivElem
       <Component
         {...rest}
         className={clsx(
-          t("hds-accordion-item"),
+          "hds-accordion-item",
           {
-            [t(`hds-accordion-item__expanded`)]: open,
+            "hds-accordion-item__expanded": open,
           },
-          className,
+          className as undefined,
         )}
         ref={ref}
       >

@@ -1,7 +1,6 @@
 import type { HTMLAttributes } from "react";
 import * as React from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
 export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListElement> {
   children: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
@@ -20,13 +19,19 @@ function BaseList({
   children,
   listStyle = "inherit",
   size = "medium",
+  className,
   ...rest
 }: ListProps & { as?: "ul" | "ol" }) {
   return (
     <ListTag
-      className={clsx(t("hds-list"), t(`hds-list--${size}`), {
-        [t(`hds-list--style-hidden`)]: listStyle === "no-bullets",
-      })}
+      className={clsx(
+        "hds-list",
+        `hds-list--${size}`,
+        {
+          "hds-list--style-hidden": listStyle === "no-bullets",
+        },
+        className as undefined,
+      )}
       {...rest}
     >
       {children}

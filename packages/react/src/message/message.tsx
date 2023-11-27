@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import { Box, type BoxProps } from "../box/box";
 
@@ -22,12 +21,14 @@ export const Message: OverridableComponent<MessageProps, HTMLDivElement> = forwa
   ({ children, className, variant = "success", icon, iconClassName, ...rest }, ref) => {
     return (
       <Box
-        className={clsx(t(`hds-message`), t(`hds-message--${variant}`), className)}
+        className={clsx(`hds-message`, `hds-message--${variant}`, className as undefined)}
         ref={ref}
         {...rest}
       >
         {variant === "neutral" && (
-          <div className={clsx(t("hds-message--neutral__icon"), iconClassName)}>{icon}</div>
+          <div className={clsx("hds-message--neutral__icon", iconClassName as undefined)}>
+            {icon}
+          </div>
         )}
         {children}
       </Box>

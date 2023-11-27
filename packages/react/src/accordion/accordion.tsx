@@ -1,7 +1,6 @@
 import type { HTMLAttributes, ReactElement } from "react";
 import { forwardRef, useState } from "react";
-import { clsx } from "clsx";
-import { t } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import type { AccordionType } from "./context";
 import { AccordionContext } from "./context";
@@ -41,7 +40,7 @@ export const Accordion: OverridableComponent<AccordionProps, HTMLDivElement> = f
     };
     return (
       <AccordionContext.Provider value={{ variant, openItems, toggleOpenItem, mounted: true }}>
-        <Component {...rest} className={clsx(t("hds-accordion"), className)} ref={ref}>
+        <Component {...rest} className={clsx("hds-accordion", className as undefined)} ref={ref}>
           {children}
         </Component>
       </AccordionContext.Provider>
