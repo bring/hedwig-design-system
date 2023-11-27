@@ -1,5 +1,4 @@
 .hds-accordion {
-  --hds-border-thickness: 2px;
   --hds-accordion-icon-dimension: 24px;
   --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-small-4);
   --hds-component-accordion-content-spacing: var(--hds-spacing-medium-3);
@@ -12,7 +11,7 @@
   display: block;
   list-style: none;
   border: none;
-  border-bottom: var(--hds-border-thickness) solid var(--hds-ui-colors-light-grey-fill);
+  border-bottom: var(--hds-stroke-thick) solid var(--hds-ui-colors-light-grey-fill);
   font: var(--hds-typography-body);
   fill: var(--hds-ui-colors-black);
   color: var(--hds-ui-colors-black);
@@ -34,7 +33,7 @@
       width: 100%;
       padding: var(--hds-component-accordion-trigger-spacing-between) 0;
       border: 0;
-      border-top: var(--hds-border-thickness) solid var(--hds-ui-colors-light-grey-fill);
+      border-top: var(--hds-stroke-thick) solid var(--hds-ui-colors-light-grey-fill);
       text-align: left;
       background-color: transparent;
       font: var(--hds-typography-body);
