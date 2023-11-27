@@ -12,6 +12,9 @@ export type AccordionItemChildrenType =
   | ReactElement<AccordionContentProps>;
 
 export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Accepts type of <AccordionContent/> and <AccordionTrigger/>
+   */
   children: AccordionItemChildrenType[];
 }
 

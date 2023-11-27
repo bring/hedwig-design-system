@@ -8,6 +8,9 @@ import { AccordionContext } from "./context";
 import type { AccordionItemProps } from "./accordion-item";
 
 export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Accepts type of <AccordionItem/>
+   */
   children: ReactElement<AccordionItemProps> | ReactElement<AccordionItemProps>[];
   className?: string | undefined;
   /**
@@ -20,17 +23,10 @@ export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
    * same time
    */
   variant?: AccordionType;
-  /**
-   * Size of the entire accordion. Currently, only small and medium is supported
-   */
-  size?: "small" | "medium";
 }
 
 export const Accordion: OverridableComponent<AccordionProps, HTMLDivElement> = forwardRef(
-  (
-    { as: Component = "div", children, className, variant = "multiple", size = "medium", ...rest },
-    ref,
-  ) => {
+  ({ as: Component = "div", children, className, variant = "multiple", ...rest }, ref) => {
     const [openItems, setOpenItems] = useState<string[]>([]);
     const toggleOpenItem = (itemId: string) => {
       if (variant === "single") {
@@ -45,11 +41,7 @@ export const Accordion: OverridableComponent<AccordionProps, HTMLDivElement> = f
     };
     return (
       <AccordionContext.Provider value={{ variant, openItems, toggleOpenItem, mounted: true }}>
-        <Component
-          {...rest}
-          className={clsx(t("hds-accordion"), t(`hds-accordion--${size}`), className)}
-          ref={ref}
-        >
+        <Component {...rest} className={clsx(t("hds-accordion"), className)} ref={ref}>
           {children}
         </Component>
       </AccordionContext.Provider>

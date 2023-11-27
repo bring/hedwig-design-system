@@ -12,11 +12,13 @@ const meta: Meta<typeof Accordion> = {
     children: (
       <>
         <AccordionItem>
-          <AccordionTrigger>And this too</AccordionTrigger>
-          <AccordionContent>hello content</AccordionContent>
+          <AccordionTrigger>Professional accordion title</AccordionTrigger>
+          <AccordionContent>
+            This is the simplest form of accordion body. Can be extensive.
+          </AccordionContent>
         </AccordionItem>
         <AccordionItem>
-          <AccordionTrigger>This is just so amazing, can you imagine!</AccordionTrigger>
+          <AccordionTrigger>Yet another POAT with &laquo;advanced&raquo; content</AccordionTrigger>
           <AccordionContent>
             <h4>Hello</h4>
             <div>
@@ -44,12 +46,6 @@ const meta: Meta<typeof Accordion> = {
         type: "radio",
       },
     },
-    size: {
-      options: ["small", "medium"],
-      control: {
-        type: "radio",
-      },
-    },
   },
 };
 
@@ -62,24 +58,10 @@ export const SingleItem: Story = {
   },
 };
 
-export const SingleItemSmallSmall: Story = {
-  args: {
-    variant: "single",
-    size: "small",
-  },
-};
-
 export const MultipleItems: Story = {
   name: "Multiple items",
   args: {
     variant: "multiple",
-  },
-};
-
-export const MultipleItemsSmall: Story = {
-  args: {
-    variant: "multiple",
-    size: "small",
   },
 };
 
