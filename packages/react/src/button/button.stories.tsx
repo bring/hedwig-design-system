@@ -58,7 +58,6 @@ export const DisabledOutlined: Story = {
   },
 };
 
-// As a link
 export const AsALink: Story = {
   name: "As a link",
   render: (args) => (
