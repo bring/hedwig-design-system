@@ -180,6 +180,9 @@ importers:
 
   packages/css:
     dependencies:
+      '@postenbring/hedwig-tokens':
+        specifier: workspace:*
+        version: link:../tokens
       clsx:
         specifier: ^2.0.0
         version: 2.0.0
