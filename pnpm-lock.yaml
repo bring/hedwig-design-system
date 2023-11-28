@@ -111,9 +111,6 @@ importers:
       '@postenbring/hedwig-react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@postenbring/hedwig-tokens':
-        specifier: workspace:*
-        version: link:../../packages/tokens
       react:
         specifier: ^18.2.0
         version: 18.2.0
