@@ -78,4 +78,17 @@
       border-color: var(--hds-ui-colors-black-hover);
     }
   }
+
+  &:is(button) {
+    padding: 0;
+    background: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+    /* Button inherits the font size from the user agent by default  */
+    &:not(.hds-link--small, .hds-link--large) {
+      font: var(--hds-typography-body);
+    }
+  }
 }
