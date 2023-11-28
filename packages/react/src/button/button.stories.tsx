@@ -84,7 +84,6 @@ export const AsALink: Story = {
   },
 };
 
-// Icon
 const createIconStory = (
   Component: typeof PrimaryButton,
   extraArgs: Partial<ButtonProps> = {},
