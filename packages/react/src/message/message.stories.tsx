@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { useState } from "react";
 import { Message } from ".";
 
@@ -10,13 +9,11 @@ const meta: Meta<typeof Message> = {
   args: {
     children: (
       <>
-        <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
-          Message header
-        </h3>
-        <p>
+        <Message.Title>Message header</Message.Title>
+        <Message.Description>
           Message header Message description. A more detailed explanation of whats happening, but
           not too long.
-        </p>
+        </Message.Description>
       </>
     ),
   },
@@ -60,10 +57,8 @@ export const Neutral: Story = {
     const [_, rerender] = useState(0);
     return (
       <Message icon={<span style={{ fontSize: 24 }}>{icon}</span>} variant="neutral">
-        <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
-          Custom icons
-        </h3>
-        <p>
+        <Message.Title>Custom icons</Message.Title>
+        <Message.Description>
           Icon is a prop, so you can use whatever you like.
           <button
             onClick={() => {
@@ -73,8 +68,32 @@ export const Neutral: Story = {
           >
             Rerender
           </button>
-        </p>
+        </Message.Description>
       </Message>
     );
+  },
+};
+
+export const TitleOnly: Story = {
+  args: {
+    variant: "attention",
+    children: <Message.Title>Message header</Message.Title>,
+  },
+};
+
+export const DescriptionOnly: Story = {
+  args: {
+    children: <Message.Description>Message description</Message.Description>,
+  },
+};
+
+export const LongDescriptionOnly: Story = {
+  args: {
+    children: (
+      <Message.Description>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et dolor id nisl consectetur
+        aliquet. Donec euismod, nibh et aliquam tincidunt, nunc urna ultricies
+      </Message.Description>
+    ),
   },
 };

@@ -36,3 +36,29 @@ export const Message: OverridableComponent<MessageProps, HTMLDivElement> = forwa
   },
 );
 Message.displayName = "Message";
+
+export const MessageTitle: OverridableComponent<object, HTMLParagraphElement> = forwardRef(
+  ({ as: Component = "p", className, ...rest }, ref) => {
+    return (
+      <Component
+        className={clsx("hds-message__title", className as undefined)}
+        ref={ref}
+        {...rest}
+      />
+    );
+  },
+);
+MessageTitle.displayName = "MessageTitle";
+
+export const MessageDescription: OverridableComponent<object, HTMLParagraphElement> = forwardRef(
+  ({ as: Component = "p", className, ...rest }, ref) => {
+    return (
+      <Component
+        className={clsx("hds-message__description", className as undefined)}
+        ref={ref}
+        {...rest}
+      />
+    );
+  },
+);
+MessageDescription.displayName = "MessageDescription";
