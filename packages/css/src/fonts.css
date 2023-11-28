@@ -28,40 +28,40 @@
 
 @font-face {
   font-family: "Posten Sans Light";
-  src: url("../../assets/fonts/PostenSans-Light.eot");
+  src: url("../assets/fonts/PostenSans-Light.eot");
   src:
-    url("../../assets/fonts/PostenSans-Light.woff2") format("woff2"),
-    url("../../assets/fonts/PostenSans-Light.woff") format("woff"),
-    url("../../assets/fonts/PostenSans-Light.ttf") format("truetype");
+    url("../assets/fonts/PostenSans-Light.woff2") format("woff2"),
+    url("../assets/fonts/PostenSans-Light.woff") format("woff"),
+    url("../assets/fonts/PostenSans-Light.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Posten Sans Regular";
-  src: url("../../assets/fonts/PostenSans-Regular.eot");
+  src: url("../assets/fonts/PostenSans-Regular.eot");
   src:
-    url("../../assets/fonts/PostenSans-Regular.woff2") format("woff2"),
-    url("../../assets/fonts/PostenSans-Regular.woff") format("woff"),
-    url("../../assets/fonts/PostenSans-Regular.ttf") format("truetype");
+    url("../assets/fonts/PostenSans-Regular.woff2") format("woff2"),
+    url("../assets/fonts/PostenSans-Regular.woff") format("woff"),
+    url("../assets/fonts/PostenSans-Regular.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Posten Sans Medium";
-  src: url("../../assets/fonts/PostenSans-Medium.eot");
+  src: url("../assets/fonts/PostenSans-Medium.eot");
   src:
-    url("../../assets/fonts/PostenSans-Medium.woff2") format("woff2"),
-    url("../../assets/fonts/PostenSans-Medium.woff") format("woff"),
-    url("../../assets/fonts/PostenSans-Medium.ttf") format("truetype");
+    url("../assets/fonts/PostenSans-Medium.woff2") format("woff2"),
+    url("../assets/fonts/PostenSans-Medium.woff") format("woff"),
+    url("../assets/fonts/PostenSans-Medium.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Posten Sans Bold";
-  src: url("../../assets/fonts/PostenSans-Bold.eot");
+  src: url("../assets/fonts/PostenSans-Bold.eot");
   src:
-    url("../../assets/fonts/PostenSans-Bold.woff2") format("woff2"),
-    url("../../assets/fonts/PostenSans-Bold.woff") format("woff"),
-    url("../../assets/fonts/PostenSans-Bold.ttf") format("truetype");
+    url("../assets/fonts/PostenSans-Bold.woff2") format("woff2"),
+    url("../assets/fonts/PostenSans-Bold.woff") format("woff"),
+    url("../assets/fonts/PostenSans-Bold.ttf") format("truetype");
   font-display: swap;
 }

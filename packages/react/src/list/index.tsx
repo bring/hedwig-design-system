@@ -1,5 +1,5 @@
-import "@postenbring/hedwig-tokens/tokens-output/css/fonts.css";
-import "@postenbring/hedwig-tokens/tokens-output/css/tokens.css";
+import "@postenbring/hedwig-css/dist/fonts.css";
+import "@postenbring/hedwig-css/dist/tokens.css";
 import "@postenbring/hedwig-css/dist/base.css";
 
 import "@postenbring/hedwig-css/dist/description-list.css";

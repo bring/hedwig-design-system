@@ -12,7 +12,6 @@
   "dependencies": {
     "@postenbring/hedwig-css": "workspace:*",
     "@postenbring/hedwig-react": "workspace:*",
-    "@postenbring/hedwig-tokens": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

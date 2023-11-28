@@ -4,7 +4,6 @@
   "sideEffects": false,
   "license": "MIT",
   "files": [
-    "assets/**",
     "tokens-output/**",
     "tailwind.config.cjs",
     "tailwind.config.d.cts"

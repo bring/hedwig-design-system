@@ -8,7 +8,7 @@
     "build:typed-classname": "node ./typed-classname/build.mjs",
     "build:scoped-css": "node ./build-scoped-css.mjs",
     "dev": "pnpm run --parallel /^dev:.*/",
-    "dev:css": "chokidar --initial 'src/**/*.css' -c 'pnpm build:css'",
+    "dev:css": "chokidar --initial 'src/**/*.css' '../tokens/tokens-output/**' -c 'pnpm build:css'",
     "dev:typed-classname": "wait-on dist/index.css && node --watch-preserve-output --watch-path dist/index.css --watch ./typed-classname/build.mjs",
     "lint": "stylelint 'src/**/*.css' 'src/**/*.scss' --cache",
     "lint:fix": "pnpm lint -- --fix",
@@ -17,7 +17,8 @@
   },
   "files": [
     "dist/**",
-    "typed-classname/**"
+    "typed-classname/**",
+    "assets/**"
   ],
   "license": "MIT",
   "devDependencies": {
@@ -33,13 +34,14 @@
     "stylelint-value-no-unknown-custom-properties": "5.0.0",
     "wait-on": "^7.2.0"
   },
+  "dependencies": {
+    "@postenbring/hedwig-tokens": "workspace:*",
+    "clsx": "^2.0.0"
+  },
   "publishConfig": {
     "access": "public"
   },
   "browserslist": [
     "defaults"
-  ],
-  "dependencies": {
-    "clsx": "^2.0.0"
-  }
+  ]
 }

@@ -1,6 +1,1 @@
-/* 😮‍💨 So much css to load... */
-@import url("@postenbring/hedwig-css/dist/reset.css");
-@import url("@postenbring/hedwig-css/dist/base.css");
-@import url("@postenbring/hedwig-tokens/tokens-output/css/fonts.css");
-@import url("@postenbring/hedwig-tokens/tokens-output/css/tokens.css");
-@import url("@postenbring/hedwig-css/dist/index.css");
+@import url("@postenbring/hedwig-css/dist/all-in-one.css");
