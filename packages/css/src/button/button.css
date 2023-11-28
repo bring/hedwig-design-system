@@ -14,15 +14,23 @@
   word-break: normal;
   font: var(--hds-typography-body-small-title);
 
+  /* When used as a link (<a>) */
+  text-decoration: none;
+
   /**
    * Modifiers: sizes
    */
   &.hds-button--small {
+    /* In figma, the actual padding for the text is 10px */
+    --hds-component-button-small-y-padding: 10px;
+
     font-size: var(--hds-font-size-technical-title-max);
     line-height: var(--hds-line-height-technical-title-max);
-    padding: calc(var(--hds-spacing-small-3) - var(--hds-component-button-border-width))
+    padding: calc(
+        var(--hds-component-button-small-y-padding) - var(--hds-component-button-border-width)
+      )
       calc(var(--hds-spacing-small-4) - var(--hds-component-button-border-width));
-    height: calc(var(--hds-line-height-technical-title-max) + var(--hds-spacing-small-3) * 2);
+    height: 44px;
   }
 
   &.hds-button--medium {
@@ -30,7 +38,7 @@
     line-height: var(--hds-line-height-body-small-title-max);
     padding: calc(var(--hds-spacing-small-3) - var(--hds-component-button-border-width))
       calc(var(--hds-spacing-medium-1) - var(--hds-component-button-border-width));
-    height: calc(var(--hds-line-height-body-small-title-max) + var(--hds-spacing-small-3) * 2);
+    height: 50px;
   }
 
   &.hds-button--large {
@@ -38,7 +46,7 @@
     line-height: var(--hds-line-height-body-small-title-max);
     padding: calc(var(--hds-spacing-small-4) - var(--hds-component-button-border-width))
       calc(var(--hds-spacing-medium-2) - var(--hds-component-button-border-width));
-    height: calc(var(--hds-line-height-body-small-title-max) + var(--hds-spacing-small-4) * 2);
+    height: 58px;
   }
 
   /**
@@ -168,6 +176,55 @@
       fill: var(--hds-ui-colors-dark-grey);
       background-color: transparent;
       cursor: default;
+    }
+  }
+
+  /**
+  * Variant: Icon only
+  * TODO: Support text + icon on either left or right side.
+  * See button component in digdir/designsystemet and nav/aksel
+  */
+  &.hds-button--icon-only {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    /**
+    * Modifiers: sizes
+    *
+    * TODO: Consider/figure out using css variables for these values
+    * must make sense, not just choosing a value that matches for the sake of it
+    */
+
+    &.hds-button--small {
+      height: 44px;
+      width: 44px;
+
+      & * {
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    &.hds-button--medium {
+      height: 50px;
+      width: 50px;
+
+      & * {
+        height: 32px;
+        width: 32px;
+      }
+    }
+
+    &.hds-button--large {
+      height: 58px;
+      width: 58px;
+
+      & * {
+        height: 32px;
+        width: 32px;
+      }
     }
   }
 }
