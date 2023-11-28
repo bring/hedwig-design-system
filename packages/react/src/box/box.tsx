@@ -7,10 +7,10 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 
   /**
-   * If `true`, the close button will be hidden.
+   * If `true`, a close button will be shown.
    * Use when you want to control the close button using the BoxCloseButton component.
    */
-  hideCloseButton?: boolean;
+  closeable?: boolean;
 
   /**
    * Callback fired when the component requests to be closed.
@@ -41,7 +41,7 @@ export const Box: OverridableComponent<BoxProps, HTMLDivElement> = forwardRef(
     {
       as: Component = "div",
       variant = "light-grey",
-      hideCloseButton,
+      closeable = false,
       onClose: onCloseProp,
       closed: closedProp,
       closeButtonProps,
@@ -76,7 +76,7 @@ export const Box: OverridableComponent<BoxProps, HTMLDivElement> = forwardRef(
         ref={ref}
         {...rest}
       >
-        {!hideCloseButton && <BoxCloseButton onClick={onClose} {...closeButtonProps} />}
+        {closeable ? <BoxCloseButton onClick={onClose} {...closeButtonProps} /> : null}
         {children}
       </Component>
     );
