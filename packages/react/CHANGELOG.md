@@ -1,5 +1,15 @@
 # @postenbring/hedwig-react
 
+## 0.0.7
+
+### Patch Changes
+
+- 811c3b0: :lipstick: add `Message.Title` and `Message.Description` helper components to `Message` & Fix 2px missing margin for the first text so it matches the icon
+- 8baa704: ✨ Button Icon variant and ✨ Button as a link
+- Updated dependencies [811c3b0]
+- Updated dependencies [8baa704]
+  - @postenbring/hedwig-css@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes
