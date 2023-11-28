@@ -63,11 +63,11 @@ export default function KitchenSink() {
               gap: "var(--hds-spacing-medium-2)",
             }}
           >
-            <Box hideCloseButton variant="lighter">
+            <Box variant="lighter">
               <h3 style={{ font: "var(--hds-typography-body-title)" }}>This is box</h3>
               <p style={{ marginTop: "var(--hds-spacing-small-2)" }}>With some content and stuff</p>
             </Box>
-            <Message>
+            <Message closeable>
               <h3 style={{ font: "var(--hds-typography-header-h3)" }}>This is a message</h3>
             </Message>
             <Message variant="attention">

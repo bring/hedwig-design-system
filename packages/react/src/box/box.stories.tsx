@@ -8,6 +8,7 @@ const meta: Meta<typeof Box> = {
   title: "Box",
   component: Box,
   args: {
+    closeable: false,
     children: (
       <>
         <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
@@ -41,24 +42,28 @@ export const LightGreyBox: Story = {
 
 export const LighterBox: Story = {
   args: {
+    closeable: true,
     variant: "lighter",
   },
 };
 
 export const WhiteBox: Story = {
   args: {
+    closeable: true,
     variant: "white",
   },
 };
 
 export const WarningBox: Story = {
   args: {
+    closeable: true,
     variant: "warning",
   },
 };
 
 export const AreYouSureDialog: Story = {
   args: {
+    closeable: true,
     variant: "warning",
     // eslint-disable-next-line no-alert -- Storybook story
     onClose: () => window.confirm("Are you sure you want to close?"),
@@ -86,7 +91,7 @@ export const Custom: Story = {
     }
 
     return (
-      <Box hideCloseButton variant="lighter">
+      <Box variant="lighter">
         {/* Choosing to render the close button manualy */}
         <BoxCloseButton
           onClick={() => {
