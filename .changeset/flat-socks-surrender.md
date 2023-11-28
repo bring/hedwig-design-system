@@ -3,4 +3,4 @@
 "@postenbring/hedwig-react": patch
 ---
 
-✨ Icon button
+✨ Button Icon variant and ✨ Button as a link
