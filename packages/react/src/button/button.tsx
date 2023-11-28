@@ -1,6 +1,6 @@
-/* eslint-disable react/button-has-type -- Less magic, don't override the button behaviour */
-import * as React from "react";
+import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import type { OverridableComponent } from "../utils";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -24,62 +24,72 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    */
   icon?: React.ReactNode;
 
-  children: React.ReactNode;
-  buttonRef?: React.ForwardedRef<HTMLButtonElement>;
+  children?: React.ReactNode;
 }
 
-function BaseButton({
-  children,
-  variant,
-  size = "medium",
-  fullWidth = false,
-  fill = "contained",
-  buttonRef,
-  icon,
-  className,
-  ...rest
-}: ButtonProps & { variant: "primary" | "secondary" }) {
-  return (
-    <button
-      className={clsx(
-        "hds-button",
-        `hds-button--${size}`,
-        {
-          [`hds-button--${variant}`]: fill === "contained",
-          [`hds-button--outline-${variant}`]: fill === "outlined",
-          "hds-button--full": fullWidth === true,
-          "hds-button--mobile-full": fullWidth === "mobile",
-          "hds-button--icon-only": icon && !children,
-        },
-        className as undefined,
-      )}
-      ref={buttonRef}
-      {...rest}
-    >
-      {icon && !children ? icon : null}
-      {children}
-    </button>
-  );
-}
-
+export const BaseButton: OverridableComponent<
+  ButtonProps & { variant: "primary" | "secondary" },
+  HTMLButtonElement
+> = forwardRef(
+  (
+    {
+      as: Component = "button",
+      children,
+      variant,
+      size = "medium",
+      fullWidth = false,
+      fill = "contained",
+      icon,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
+    return (
+      <Component
+        className={clsx(
+          "hds-button",
+          `hds-button--${size}`,
+          {
+            [`hds-button--${variant}`]: fill === "contained",
+            [`hds-button--outline-${variant}`]: fill === "outlined",
+            "hds-button--full": fullWidth === true,
+            "hds-button--mobile-full": fullWidth === "mobile",
+            "hds-button--icon-only": icon && !children,
+          },
+          className as undefined,
+        )}
+        ref={ref}
+        {...rest}
+      >
+        {icon && !children ? icon : null}
+        {children}
+      </Component>
+    );
+  },
+);
 BaseButton.displayName = "BaseButton";
 
 /**
  * ## TODO
  *
- * - [ ] Handle links that looks like buttons
+ * - [x] Handle links that looks like buttons
  * - [ ] Revisit how to handle outline
  * - [ ] Figure out outline-white
  */
 
-export function PrimaryButton(props: ButtonProps) {
-  return <BaseButton {...props} variant="primary" />;
-}
+export const PrimaryButton: OverridableComponent<ButtonProps, HTMLButtonElement> = forwardRef(
+  (props, ref) => {
+    return <BaseButton {...props} ref={ref} variant="primary" />;
+  },
+);
 
 PrimaryButton.displayName = "PrimaryButton";
 
-export function SecondaryButton(props: ButtonProps) {
-  return <BaseButton {...props} variant="secondary" />;
-}
+export const SecondaryButton: OverridableComponent<ButtonProps, HTMLButtonElement> = forwardRef(
+  (props, ref) => {
+    return <BaseButton {...props} ref={ref} variant="secondary" />;
+  },
+);
 
 SecondaryButton.displayName = "SecondaryButton";

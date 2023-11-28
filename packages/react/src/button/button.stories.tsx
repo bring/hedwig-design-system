@@ -58,9 +58,35 @@ export const DisabledOutlined: Story = {
   },
 };
 
+// As a link
+export const AsALink: Story = {
+  name: "As a link",
+  render: (args) => (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "flex-end",
+        gap: "var(--hds-spacing-small-4)",
+      }}
+    >
+      <PrimaryButton {...args} />
+      <PrimaryButton {...args} fill="outlined" />
+      <SecondaryButton {...args} />
+      <SecondaryButton {...args} fill="outlined" />
+    </div>
+  ),
+  args: {
+    children: "Link button",
+    as: "a",
+    href: "https://www.posten.no",
+    target: "_blank",
+  },
+};
+
 // Icon
 const createIconStory = (
-  Component: typeof PrimaryButton | typeof SecondaryButton,
+  Component: typeof PrimaryButton,
   extraArgs: Partial<ButtonProps> = {},
 ): Story => ({
   render: (args) => (
@@ -93,8 +119,8 @@ const createIconStory = (
 });
 
 export const IconPrimary: Story = createIconStory(PrimaryButton);
-export const IconSecondary: Story = createIconStory(SecondaryButton);
 export const IconPrimaryOutline: Story = createIconStory(PrimaryButton, { fill: "outlined" });
+export const IconSecondary: Story = createIconStory(SecondaryButton);
 export const IconSecondaryOutline: Story = createIconStory(SecondaryButton, { fill: "outlined" });
 export const IconDisabled: Story = createIconStory(PrimaryButton, { disabled: true });
 export const IconDisabledOutline: Story = createIconStory(PrimaryButton, {
