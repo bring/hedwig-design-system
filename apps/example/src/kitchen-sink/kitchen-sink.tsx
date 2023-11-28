@@ -64,17 +64,15 @@ export default function KitchenSink() {
             }}
           >
             <Box variant="lighter">
-              <h3 style={{ font: "var(--hds-typography-body-title)" }}>This is box</h3>
+              <h3 style={{ margin: 0, font: "var(--hds-typography-body-title)" }}>This is box</h3>
               <p style={{ marginTop: "var(--hds-spacing-small-2)" }}>With some content and stuff</p>
             </Box>
             <Message closeable>
-              <h3 style={{ font: "var(--hds-typography-header-h3)" }}>This is a message</h3>
+              <Message.Title>This is a message</Message.Title>
             </Message>
             <Message variant="attention">
-              <h3 style={{ font: "var(--hds-typography-header-h3)" }}>Attention, attention</h3>
-              <p style={{ marginTop: "var(--hds-spacing-small-3)" }}>
-                Will the real slim shady please stand up
-              </p>
+              <Message.Title>Attention, attention</Message.Title>
+              <Message.Description>Will the real slim shady please stand up</Message.Description>
             </Message>
           </div>
         </section>
