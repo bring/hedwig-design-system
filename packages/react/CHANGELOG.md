@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.9
+
+### Patch Changes
+
+- 090a3e5: Added proper icon for accordion (svg)
+- Updated dependencies [090a3e5]
+  - @postenbring/hedwig-css@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.9
+
+### Patch Changes
+
+- 090a3e5: Added proper icon for accordion (svg)
+
 ## 0.0.8
 
 ### Patch Changes
