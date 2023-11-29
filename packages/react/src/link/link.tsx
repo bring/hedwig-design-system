@@ -1,5 +1,7 @@
 import * as React from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { forwardRef } from "react";
+import type { OverridableComponent } from "../utils";
 
 export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   /**
@@ -16,33 +18,25 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
   anchorRef?: React.ForwardedRef<HTMLAnchorElement>;
 }
 
-/**
- * ## TODO
- *
- * - [ ] Handle button styling
- */
-export function Link({
-  children,
-  variant = "underline",
-  size = "medium",
-  anchorRef,
-  className,
-  ...rest
-}: LinkProps) {
-  return (
-    <a
-      className={clsx(
-        "hds-link",
-        variant !== "underline" && `hds-link--${variant}`,
-        size !== "medium" && `hds-link--${size}`,
-        className as undefined,
-      )}
-      ref={anchorRef}
-      {...rest}
-    >
-      {children}
-    </a>
-  );
-}
-
+export const Link: OverridableComponent<LinkProps, HTMLAnchorElement> = forwardRef(
+  (
+    { as: Component = "a", children, variant = "underline", size = "medium", className, ...rest },
+    ref,
+  ) => {
+    return (
+      <Component
+        className={clsx(
+          "hds-link",
+          variant !== "underline" && `hds-link--${variant}`,
+          size !== "medium" && `hds-link--${size}`,
+          className as undefined,
+        )}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
 Link.displayName = "Link";
