@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.8
+
+### Patch Changes
+
+- b49b65b: :sparkles: make Link overrideable, so it can be used as a button
+
 ## 0.0.7
 
 ### Patch Changes
