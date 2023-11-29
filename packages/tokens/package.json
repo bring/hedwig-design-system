@@ -16,14 +16,15 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@types/node": "20.9.4",
+    "@types/node": "20.10.0",
+    "color2k": "2.0.2",
     "eslint": "^8.53.0",
     "eslint-config-custom": "*",
     "hedwig-tsconfig": "workspace:*",
     "style-dictionary": "3.9.0",
-    "style-dictionary-utils": "2.0.4",
+    "style-dictionary-utils": "2.0.5",
     "tailwindcss": "3.3.5",
-    "tsx": "4.4.0",
+    "tsx": "4.6.0",
     "typescript": "^5.2.2"
   },
   "publishConfig": {
