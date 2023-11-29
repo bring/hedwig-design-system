@@ -27,6 +27,7 @@
     }
 
     .hds-accordion-item-trigger {
+      cursor: pointer;
       display: grid;
       grid-template-columns: 24px auto;
       grid-gap: var(--hds-spacing-small-4);
