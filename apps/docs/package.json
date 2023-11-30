@@ -22,7 +22,7 @@
     "@storybook/addon-docs": "^7.6.0",
     "@storybook/addon-essentials": "^7.6.0",
     "@storybook/addon-links": "^7.6.0",
-    "@storybook/addon-themes": "7.6.0",
+    "@storybook/addon-themes": "7.6.1",
     "@storybook/react": "^7.6.0",
     "@storybook/react-vite": "^7.6.0",
     "@vitejs/plugin-react": "^4.2.0",
