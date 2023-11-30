@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.4
+
+### Patch Changes
+
+- 20c62c5: Make posten tokens apply to root.
+
 ## 0.0.3
 
 ### Patch Changes
