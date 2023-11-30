@@ -7,10 +7,12 @@ import {
   Link,
   LinkList,
   Message,
+  Modal,
   OrderedList,
   PrimaryButton,
   UnorderedList,
 } from "@postenbring/hedwig-react";
+import { useRef } from "react";
 
 const bringButtonText = "Bring button";
 
@@ -98,7 +100,35 @@ export default function KitchenSink() {
             </Message>
           </div>
         </section>
+
+        <section>
+          <h2>Modal</h2>
+          <ModalExample />
+        </section>
       </div>
+    </>
+  );
+}
+
+function ModalExample() {
+  const modalRef = useRef<HTMLDialogElement>(null);
+
+  return (
+    <>
+      <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
+      <Modal ref={modalRef}>
+        <Modal.Header>Dialog header</Modal.Header>
+        <p>
+          Dialog header Dialog description - a description of what is about to happen and maybe
+          something about the consequences.
+        </p>
+        <div style={{ display: "flex", gap: 16 }}>
+          <PrimaryButton>Main action</PrimaryButton>
+          <PrimaryButton fill="outlined" onClick={() => modalRef.current?.close()}>
+            Cancel
+          </PrimaryButton>
+        </div>
+      </Modal>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { forwardRef, useRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { Box } from "../box/box";
+import type { OverridableComponent } from "../utils";
 import { useMergeRefs } from "../utils";
 
 export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
@@ -8,7 +9,7 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
 }
 
 /**
- * # WORK IN PROGRESS - 🚨 NOT READY 🚨
+ * # 🚨 WORK IN PROGRESS 🚨
  */
 export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
   ({ children, className, ...rest }, ref) => {
@@ -38,3 +39,16 @@ export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
   },
 );
 Modal.displayName = "Modal";
+
+export const ModalHeader: OverridableComponent<object, HTMLParagraphElement> = forwardRef(
+  ({ as: Component = "h1", className, ...rest }, ref) => {
+    return (
+      <Component
+        className={clsx("hds-modal__header", className as undefined)}
+        ref={ref}
+        {...rest}
+      />
+    );
+  },
+);
+ModalHeader.displayName = "ModalHeader";

@@ -1,31 +1,54 @@
 .hds-modal {
   /* Reset */
   border: none;
-  min-width: var(--hds-breakpoints-small);
 
   &::backdrop {
-    background-color: var(--hds-ui-colors-dark-grey);
-    animation: fade-in var(--hds-micro-animation-duration-normal) ease-in-out;
+    /* Need to hardcode values in css for now.
+      https://stackoverflow.com/questions/58818299/css-variables-not-working-in-dialogbackdrop
+     */
+    background-color: rgba(0 0 0 / 40%);
+    animation: hds-modal-fade-in 0.3s cubic-bezier(0.45, 0.1, 0.65, 1); /* --hds-micro-animation-duration-normal */
   }
 
   &[open] {
-    animation:
-      slide-in var(--hds-micro-animation-duration-normal) ease-in-out,
-      fade-in var(--hds-micro-animation-duration-normal) ease-in-out;
+    animation: hds-modal-fade-in var(--hds-micro-animation-duration-normal)
+      var(--hds-micro-animation-easing-in);
+  }
+
+  /**
+   * Size
+   */
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+
+  @media (min-width: 720px) {
+    min-width: 720px;
+    max-width: min(720px, calc(100% - 6px - 2em));
+
+    /* NOTE: Re-adding border radius.
+     * We actually get the border radius from .hds-box,
+     * but since we are resetting border radius above for small screens
+     * we need to re-add it here for larger screens.
+     */
+    border-radius: var(--hds-border-radius);
+  }
+
+  /* Reset margin */
+  & .hds-modal__header {
+    margin: 0;
+  }
+
+  /* stylelint-disable-next-line no-duplicate-selectors -- It's ok */
+  & .hds-modal__header {
+    font: var(--hds-typography-body-title);
+
+    /* Offset the close button, so text is not overlapping or right next to the button */
+    padding-right: 16px;
   }
 }
 
-@keyframes slide-in {
-  0% {
-    transform: translateY(50px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
+@keyframes hds-modal-fade-in {
   0% {
     opacity: 0;
   }

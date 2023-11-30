@@ -1,5 +1,6 @@
 .hds-box {
   position: relative;
+  border-radius: var(--hds-border-radius);
 
   &, /* Default */
   &.hds-box--light-grey {
@@ -61,8 +62,8 @@
     filter: invert(40%);
   }
 
-  /* Focus effect */
-  &:focus {
+  /* Active effect */
+  &:active {
     outline: none;
     box-shadow: 0 0 0 2px var(--hds-ui-colors-black-hover);
   }
