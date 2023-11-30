@@ -106,10 +106,8 @@ function buildFinalCssVariables() {
   }
 
   const final = `
-.hds-theme-posten, .hds-theme-bring {
+:root {
 ${printVariables(extractVariables(sharedCss))}
-}
-.hds-theme-posten {
 ${printVariables(extractVariables(postenCss))}
 }
 .hds-theme-bring {

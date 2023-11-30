@@ -2,7 +2,7 @@ import { Link, LinkList } from "@postenbring/hedwig-react";
 
 export default function App() {
   return (
-    <main className="hds-theme-posten">
+    <main>
       <h1>Hedwig Example Apps</h1>
       <LinkList>
         <li>
