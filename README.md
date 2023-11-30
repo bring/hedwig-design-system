@@ -106,13 +106,3 @@ TBA
 ## Developer guide lines
 
 TBA.
-
-## Updating dependencies
-
-TODO: Setup dependabot
-
-Use [`pnpm update`](https://pnpm.io/cli/update) to interactivly upgrade dependencies
-
-```bash
-pnpm update -i --latest -r
-```
