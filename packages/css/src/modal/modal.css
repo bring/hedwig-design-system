@@ -1,0 +1,36 @@
+.hds-modal {
+  /* Reset */
+  border: none;
+  min-width: var(--hds-breakpoints-small);
+
+  &::backdrop {
+    background-color: var(--hds-ui-colors-dark-grey);
+    animation: fade-in var(--hds-micro-animation-duration-normal) ease-in-out;
+  }
+
+  &[open] {
+    animation:
+      slide-in var(--hds-micro-animation-duration-normal) ease-in-out,
+      fade-in var(--hds-micro-animation-duration-normal) ease-in-out;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(50px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

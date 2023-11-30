@@ -157,9 +157,9 @@
   --hds-line-height-technical-title-max: 24px;
   --hds-line-height-caption: 18px;
   --hds-line-height-caption-title: 18px;
-  --hds-micro-animation-duration-quick: 0.130s;
-  --hds-micro-animation-duration-normal: 0.300s;
-  --hds-micro-animation-duration-slow: 0.700s;
+  --hds-micro-animation-duration-quick: 130ms;
+  --hds-micro-animation-duration-normal: 300ms;
+  --hds-micro-animation-duration-slow: 700ms;
   --hds-breakpoints-small: 460px;
   --hds-breakpoints-medium: 720px;
   --hds-breakpoints-large: 940px;

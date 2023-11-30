@@ -4,13 +4,13 @@
   "micro-animation-duration": {
     "type": "time",
     "quick": {
-      "value": "0.130s"
+      "value": "130ms"
     },
     "normal": {
-      "value": "0.300s"
+      "value": "300ms"
     },
     "slow": {
-      "value": "0.700s"
+      "value": "700ms"
     }
   },
   "breakpoints": {
