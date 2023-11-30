@@ -40,7 +40,7 @@ Before you begin, ensure you have the following installed:
 - Node.js (v20 or higher)
 - pnpm (v8 or higher)
 
-### Install node
+### Check node
 
 Check if you have node 20 or higher
 
@@ -48,7 +48,9 @@ Check if you have node 20 or higher
 node -v
 ```
 
-If not you need install it. Use [`fnm`](https://github.com/Schniz/fnm), [`asdf`](https://github.com/asdf-vm/asdf) or [`nvm`](https://github.com/nvm-sh/nvm) to ensure you have node 20.
+#### Install node
+
+If node is not installed, or you don't have version 20 or higher you need to install it. Download from [nodejs.org](https://nodejs.org/en/download/), or use package manager [`fnm`](https://github.com/Schniz/fnm), [`nvm`](https://github.com/nvm-sh/nvm), or [`asdf`](https://github.com/asdf-vm/asdf).
 
 ### Install pnpm
 
