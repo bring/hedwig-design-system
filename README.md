@@ -17,19 +17,32 @@ This package has three packages
 The simplest way is to just install the `@postenbring/hedwig-react` package, and start using the components. The css is imported in the javascript files so a bundler that supports side effect imports is required. Vite and Remix supports this out of the box.
 
 ```tsx
-import {
-  Box,
-  PrimaryButton,
-} from "@postenbring/hedwig-react";
+import { Box, PrimaryButton } from "@postenbring/hedwig-react";
 
 export function MyComponent() {
   return (
     <Box>
       <PrimaryButton>Hello, World</PrimaryButton>
     </Box>
-  )
+  );
 }
 ```
+
+![Button inside Box with Posten theme](screenshots/box-and-button-posten-theme.png)
+
+By default you will get the Posten theme in your app. If you want to use the Bring theme, you have to apply the `hds-theme-bring` class to the a wrapping element in e.g. your `index.html` or `App.tsx` file:
+
+```tsx
+function App() {
+  return (
+    <div className="hds-theme-bring">
+      <MyComponent />
+    </div>
+  );
+}
+```
+
+![Button inside Box with Bring theme](screenshots/box-and-button-bring-theme.png)
 
 ## 🧑‍💻 Contributing
 
