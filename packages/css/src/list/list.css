@@ -1,68 +1,52 @@
 .hds-list {
   margin: 0;
-  padding-left: var(--hds-spacing-medium-2);
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--hds-spacing-medium-3);
 
   & li {
-    margin-bottom: var(--hds-spacing-small-3);
-    position: relative;
-  }
+    padding-left: var(--hds-spacing-small-2);
 
-  & ul {
-    list-style: none;
-
-    & li {
-      &::before {
-        content: "";
-        position: absolute;
-        background: var(--hds-brand-colors-dark);
-        width: 6px;
-        height: 6px;
-        margin-left: -22px;
-        border-radius: 50%;
-        top: 11px;
-      }
+    &::marker {
+      color: var(--hds-brand-colors-dark);
     }
   }
 
+  &:is(ol) {
+    list-style: decimal;
+  }
+
+  &:is(ul) {
+    list-style: disc;
+  }
+
+  /**
+   * Modifers: Style
+   */
+  &.hds-list--no-bullets {
+    list-style: none;
+    padding-left: 0;
+
+    & li {
+      padding-left: 0;
+    }
+  }
+
+  /**
+   * Modifers: Sizes
+   */
   &.hds-list--small {
     font: var(--hds-typography-body-small);
-    line-height: 1.8;
-    padding-left: var(--hds-spacing-medium-1);
-
-    & li {
-      margin-bottom: 0;
-
-      &::before {
-        width: 5px;
-        height: 5px;
-        margin-left: -18px;
-        margin-top: 3px;
-        top: 9px;
-      }
-    }
+    gap: var(--hds-spacing-small-1);
   }
 
+  &, /* Default */
   &.hds-list--medium {
-    font: var(--hds-typography-body);
+    gap: var(--hds-spacing-small-2);
   }
 
   &.hds-list--large {
     font: var(--hds-typography-header-h3);
-
-    & li {
-      margin-bottom: 9px;
-
-      &::before {
-        width: 8px;
-        height: 8px;
-        margin-left: -24px;
-        top: 10px;
-      }
-    }
-  }
-
-  &.hds-list--style-hidden {
-    list-style: none;
-    padding-left: 0;
+    gap: var(--hds-spacing-small-3);
   }
 }
