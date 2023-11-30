@@ -6,7 +6,7 @@ export default {
   decorators: [
     withThemeByClassName({
       themes: {
-        Posten: "hds-theme-posten",
+        Posten: "",
         Bring: "hds-theme-bring",
       },
       defaultTheme: "Posten",
