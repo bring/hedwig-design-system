@@ -30,7 +30,7 @@ export function MyComponent() {
 
 ![Button inside Box with Posten theme](screenshots/box-and-button-posten-theme.png)
 
-By default you will get the Posten theme in your app. If you want to use the Bring theme, you have to apply the `hds-theme-bring` class to the a wrapping element in e.g. your `index.html` or `App.tsx` file:
+By default you will get the Posten theme in your app. If you want to use the Bring theme, you have to apply the `hds-theme-bring` class to a wrapping element in e.g. your `index.html` or `App.tsx` file:
 
 ```tsx
 function App() {
