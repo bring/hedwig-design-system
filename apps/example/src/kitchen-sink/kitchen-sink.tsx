@@ -12,16 +12,18 @@ import {
   UnorderedList,
 } from "@postenbring/hedwig-react";
 
+const bringButtonText = "Bring button";
+
 export default function KitchenSink() {
   return (
     <>
-      <div className="hds-theme-posten">
-        <h1>Hei verden</h1>
+      <div>
+        <h1>Hello world</h1>
         <h2>Buttons</h2>
-        <PrimaryButton>En knapp</PrimaryButton>
+        <PrimaryButton>A button</PrimaryButton>
         <h2>Links</h2>
         <Link href="#demo-link" variant="no-underline" size="large">
-          En Link
+          A link
         </Link>
         <h2>Descriptive lists</h2>
         <DescriptionList variant="vertical">
@@ -50,6 +52,26 @@ export default function KitchenSink() {
               <Link href="https://hedwig.posten.no">Hedwig rocks 🪨</Link>
             </li>
           </LinkList>
+          <div className="hds-theme-bring">
+            <Box>
+              <p>
+                To apply Bring theme instead of Posten theme in your app, you can wrap a{" "}
+                <code>div</code> around your components:
+                <br />
+                <code>
+                  &lt;div className="hds-theme-bring"&gt;
+                  <br />
+                  &emsp;&lt;PrimaryButton&gt;
+                  {bringButtonText}&lt;/PrimaryButton&gt;
+                  <br />
+                  &lt;/div&gt;
+                </code>
+                <br />
+                Result:
+              </p>
+              <PrimaryButton>{bringButtonText}</PrimaryButton>
+            </Box>
+          </div>
         </div>
 
         <section>
