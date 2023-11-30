@@ -4,77 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    versioning-strategy: increase
-    groups:
-      minor-and-patch:
-        update-types:
-        - "minor"
-        - "patch"
-
-  - package-ecosystem: "npm"
-    directory: "/apps/docs"
-    schedule:
-      interval: "weekly"
-    groups:
-      minor-and-patch:
-        update-types:
-        - "minor"
-        - "patch"
-
-  - package-ecosystem: "npm"
-    directory: "/apps/example"
-    schedule:
-      interval: "weekly"
-    groups:
-      minor-and-patch:
-        update-types:
-        - "minor"
-        - "patch"
-
-  - package-ecosystem: "npm"
-    directory: "/packages/css"
-    schedule:
-      interval: "weekly"
-    groups:
-      minor-and-patch:
-        update-types:
-        - "minor"
-        - "patch"
-
-  - package-ecosystem: "npm"
-    directory: "/packages/react"
-    schedule:
-      interval: "weekly"
-    groups:
-      minor-and-patch:
-        update-types:
-        - "minor"
-        - "patch"
-
-  - package-ecosystem: "npm"
-    directory: "/packages/tokens"
-    schedule:
-      interval: "weekly"
-    groups:
-      minor-and-patch:
-        update-types:
-        - "minor"
-        - "patch"
-
-  - package-ecosystem: "npm"
-    directory: "/packages-internal/eslint-config-custom"
-    schedule:
-      interval: "weekly"
-    groups:
-      minor-and-patch:
-        update-types:
-        - "minor"
-        - "patch"
-
-  - package-ecosystem: "npm"
-    directory: "/packages-internal/tsconfig"
-    schedule:
-      interval: "weekly"
+    versioning-strategy: auto
     groups:
       minor-and-patch:
         update-types:
