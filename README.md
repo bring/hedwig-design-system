@@ -42,8 +42,13 @@ Before you begin, ensure you have the following installed:
 
 ### Install node
 
-Use [`fnm`](https://github.com/Schniz/fnm), [`asdf`](https://github.com/asdf-vm/asdf) or [`nvm`](https://github.com/nvm-sh/nvm) to ensure you have node 20.
+Check if you have node 20 or higher
 
+```bash
+node -v
+```
+
+If not you need install it. Use [`fnm`](https://github.com/Schniz/fnm), [`asdf`](https://github.com/asdf-vm/asdf) or [`nvm`](https://github.com/nvm-sh/nvm) to ensure you have node 20.
 
 ### Install pnpm
 
