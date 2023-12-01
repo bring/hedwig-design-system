@@ -14,7 +14,7 @@
     "dev": "tsup --format esm,cjs --watch --dts --external react",
     "lint": "eslint src/",
     "typecheck": "tsc --noEmit",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo node_modules dist"
   },
   "devDependencies": {
     "@types/react": "^18.2.39",

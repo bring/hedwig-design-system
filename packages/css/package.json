@@ -12,7 +12,7 @@
     "dev:typed-classname": "wait-on dist/index.css && node --watch-preserve-output --watch-path dist/index.css --watch ./typed-classname/build.mjs",
     "lint": "stylelint 'src/**/*.css' 'src/**/*.scss' --cache",
     "lint:fix": "pnpm lint -- --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "clean": "rm -rf .turbo node_modules dist",
     "show-css-size": "pnpm build:css && echo '\nSize of dist/index.css (original → gzip)' && pnpm dlx gzip-size-cli dist/index.css --include-original"
   },
   "files": [
