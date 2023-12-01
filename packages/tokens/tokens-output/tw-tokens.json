@@ -451,9 +451,9 @@
   "$description2": "Here we can add missing tokens under development",
   "micro-animation-duration": {
     "type": "time",
-    "quick": "130ms",
-    "normal": "300ms",
-    "slow": "700ms"
+    "quick": "0.130s",
+    "normal": "0.300s",
+    "slow": "0.700s"
   },
   "breakpoints": {
     "type": "dimension",
