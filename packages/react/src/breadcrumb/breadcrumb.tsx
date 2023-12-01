@@ -13,11 +13,13 @@ export interface BreadcrumbsProps extends HTMLAttributes<HTMLElement> {
   direction: "right" | "left";
 }
 
-export function Breadcrumbs(props: BreadcrumbsProps) {
+export function Breadcrumbs({ direction, className, children }: BreadcrumbsProps) {
   return (
     <nav>
-      <ol className={clsx("hds-breadcrumbs", `hds-breadcrumbs--${props.direction}`)}>
-        {props.children}
+      <ol
+        className={clsx("hds-breadcrumbs", `hds-breadcrumbs--${direction}`, className as undefined)}
+      >
+        {children}
       </ol>
     </nav>
   );
@@ -29,7 +31,7 @@ export function Breadcrumb(props: BreadcrumbProps) {
 
 export function BreadcrumbPrevious(props: BreadcrumbPreviousProps) {
   return (
-    <Breadcrumbs direction="left">
+    <Breadcrumbs className="hw-breadcrumbs-previous" direction="left">
       <Breadcrumb>{props.children}</Breadcrumb>
     </Breadcrumbs>
   );
