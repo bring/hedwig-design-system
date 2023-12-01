@@ -31,7 +31,7 @@ export function Breadcrumb(props: BreadcrumbProps) {
 
 export function BreadcrumbPrevious(props: BreadcrumbPreviousProps) {
   return (
-    <Breadcrumbs className="hw-breadcrumbs-previous" direction="left">
+    <Breadcrumbs className="hds-breadcrumbs-previous" direction="left">
       <Breadcrumb>{props.children}</Breadcrumb>
     </Breadcrumbs>
   );

@@ -4,7 +4,7 @@
 
   display: flex;
 
-  &.hw-breadcrumbs-previous {
+  &.hds-breadcrumbs-previous {
     .hds-breadcrumb::before {
       background-image: var(--hds-breadcrumb-image-left);
     }
