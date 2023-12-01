@@ -2,8 +2,7 @@
   --hds-component-button-border-width: 0px;
 
   -webkit-font-smoothing: antialiased;
-  /* stylelint-disable-next-line property-no-vendor-prefix -- Not sure if we need this or not 🤷 */
-  -webkit-appearance: button;
+  appearance: button;
   box-sizing: border-box;
   display: inline-block;
   border-style: solid;
