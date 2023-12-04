@@ -1,12 +1,8 @@
 /*
  * Based on hedwig global css
  * https://github.com/bring/hedwig/blob/master/src/shared/base/body.css
- *
- * Scoped to the theme selectors, this way the global effects are only applied
- * where they are wanted
  */
-.hds-theme-posten,
-.hds-theme-bring {
+:root {
   box-sizing: border-box;
   font: var(--hds-typography-body);
   fill: var(--hds-ui-colors-black);

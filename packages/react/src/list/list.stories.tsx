@@ -4,30 +4,64 @@ import { OrderedList, UnorderedList } from ".";
 
 type Story = StoryObj<typeof UnorderedList>;
 
-const listItems = () => (
-  <>
-    <li>Something</li>
-    <li>Some thing</li>
-    <li>Thingsome</li>
-    <li>Thing some</li>
-  </>
-);
+function HStack({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "var(--hds-spacing-small-4)",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
-export const OrderedListStory: Story = {
-  name: "Ordered List",
-  args: {
-    size: "medium",
-    children: listItems(),
-  },
-  render: (props) => <OrderedList {...props} />,
-};
+// eslint-disable-next-line react/jsx-key -- It's ok, just a demo
+const listItems = [<li>List item 1</li>, <li>List item 2</li>, <li>List item 3</li>];
 
 export const UnorderedListStory: Story = {
   name: "Unordered List",
   args: {
-    size: "medium",
-    children: listItems(),
+    children: listItems,
   },
+  render: (props) => (
+    <HStack>
+      <UnorderedList {...props} size="small" />
+      <UnorderedList {...props} size="medium" />
+      <UnorderedList {...props} size="large" />
+    </HStack>
+  ),
+};
+
+export const OrderedListStory: Story = {
+  name: "Ordered List",
+  args: {
+    children: listItems,
+  },
+  render: (props) => (
+    <HStack>
+      <OrderedList {...props} size="small" />
+      <OrderedList {...props} size="medium" />
+      <OrderedList {...props} size="large" />
+    </HStack>
+  ),
+};
+
+export const NoBulletsListStory: Story = {
+  name: "No Bullets List",
+  args: {
+    listStyle: "no-bullets",
+    children: listItems,
+  },
+  render: (props) => (
+    <HStack>
+      <UnorderedList {...props} size="small" />
+      <UnorderedList {...props} size="medium" />
+      <UnorderedList {...props} size="large" />
+    </HStack>
+  ),
 };
 
 const meta: Meta<typeof UnorderedList> = {

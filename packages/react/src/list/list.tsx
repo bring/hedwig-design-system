@@ -28,7 +28,7 @@ function BaseList({
         "hds-list",
         `hds-list--${size}`,
         {
-          "hds-list--style-hidden": listStyle === "no-bullets",
+          "hds-list--no-bullets": listStyle === "no-bullets",
         },
         className as undefined,
       )}
@@ -56,5 +56,5 @@ export function OrderedList(props: ListProps) {
 }
 
 BaseList.displayName = "BaseList";
-OrderedList.displayName = "UnorderedList";
+OrderedList.displayName = "OrderedList";
 UnorderedList.displayName = "UnorderedList";

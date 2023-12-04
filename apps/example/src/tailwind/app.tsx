@@ -3,7 +3,7 @@ import { Link } from "@postenbring/hedwig-react";
 
 export default function TailwindExample() {
   return (
-    <div className="hds-theme-posten">
+    <div>
       <div className="p-[64px]">
         <div className="bg-lighter rounded p-medium-3">
           <h2 className="text-h1 text-signature">Tittle</h2>
