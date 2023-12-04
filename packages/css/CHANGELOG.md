@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.11
+
+### Patch Changes
+
+- 2e340d0: :lipstick: update list styling
+
 ## 0.0.10
 
 ### Patch Changes
