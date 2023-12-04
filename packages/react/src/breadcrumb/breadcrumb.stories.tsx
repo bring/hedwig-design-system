@@ -16,21 +16,21 @@ const meta: Meta<typeof Breadcrumbs> = {
         </li>
         <li>
           <Breadcrumb>
-            <Link href="https://www.posten.no">First</Link>
+            <Link href="https://www.posten.no">Somewhere</Link>
           </Breadcrumb>
         </li>
         <li>
           <Breadcrumb>
-            <Link href="https://www.posten.no">Second</Link>
+            <Link href="https://www.posten.no">Deep inside</Link>
           </Breadcrumb>
         </li>
         <li>
           <Breadcrumb>
-            <Link href="https://www.posten.no">Previous page</Link>
+            <Link href="https://www.posten.no">Posten dot no</Link>
           </Breadcrumb>
         </li>
         <li>
-          <Breadcrumb>Current page</Breadcrumb>
+          <Breadcrumb>You will find this page</Breadcrumb>
         </li>
       </>
     ),
@@ -42,3 +42,20 @@ export default meta;
 type Story = StoryObj<typeof Breadcrumbs>;
 
 export const Default: Story = {};
+
+export const OnlyTwoElements: Story = {
+  args: {
+    children: (
+      <>
+        <li>
+          <Breadcrumb>
+            <Link href="https://www.posten.no">Track letters and parcels</Link>
+          </Breadcrumb>
+        </li>
+        <li>
+          <Breadcrumb>Shipment from SOMEONE YOU KNOW</Breadcrumb>
+        </li>
+      </>
+    ),
+  },
+};
