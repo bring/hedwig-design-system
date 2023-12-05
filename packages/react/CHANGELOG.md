@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.12
+
+### Patch Changes
+
+- de791ec: make children prop optional to allow for dangerouslySetInnerHTML usage
+
 ## 0.0.11
 
 ### Patch Changes
