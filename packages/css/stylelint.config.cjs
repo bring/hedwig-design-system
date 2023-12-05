@@ -21,9 +21,6 @@ module.exports = {
     // Recommended to be disabled when using a lot of nesting
     "no-descending-specificity": [null],
 
-    // Supported in chrome since 2022 - https://caniuse.com/css-media-range-syntax
-    "media-feature-range-notation": "prefix",
-
     // Disabled for now, since we use both css @import url() and scss @import "" at the same time
     "import-notation": [null],
 

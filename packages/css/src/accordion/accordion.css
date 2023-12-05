@@ -3,7 +3,7 @@
   --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-small-4);
   --hds-component-accordion-content-spacing: var(--hds-spacing-medium-3);
 
-  @media (min-width: 720px) {
+  @media (width >= 720px) {
     --hds-component-accordion-content-spacing: var(--hds-spacing-large-1);
     --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-medium-2);
   }
