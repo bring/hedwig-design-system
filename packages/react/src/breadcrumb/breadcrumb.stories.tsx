@@ -59,3 +59,13 @@ export const OnlyTwoElements: Story = {
     ),
   },
 };
+
+export const OnlyOneElement: Story = {
+  args: {
+    children: (
+      <li>
+        <Breadcrumb>Shipment from SOMEONE YOU KNOW</Breadcrumb>
+      </li>
+    ),
+  },
+};
