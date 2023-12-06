@@ -6,3 +6,4 @@ export * from "./box";
 export * from "./message";
 export * from "./accordion";
 export * from "./modal";
+export * from "./breadcrumb";

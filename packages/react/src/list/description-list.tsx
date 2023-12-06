@@ -5,14 +5,14 @@ export type DescriptionDetailsProps = DLDTProps;
 export type DescriptionTermProps = DLDTProps;
 
 interface DLDTProps extends HTMLAttributes<HTMLBaseElement> {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
   /**
    * Either `DescriptionDetails` or `DescriptionTerm` elements
    */
-  children: ReactNode;
+  children?: ReactNode;
   /**
    * Direction of the description list
    */

@@ -3,4 +3,4 @@
 "@postenbring/hedwig-css": patch
 ---
 
-:lipstick: update list styling
+Adding component for Bread > Crumbs > Are > Here

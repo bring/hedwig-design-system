@@ -1,6 +1,6 @@
 {
   "name": "@postenbring/hedwig-css",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "scripts": {
     "build": "pnpm run --sequential /^build:.*/",
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "browserslist": "4.22.1",
+    "browserslist": "4.22.2",
     "chokidar-cli": "3.0.0",
     "lightningcss": "1.22.1",
     "lightningcss-cli": "1.22.1",

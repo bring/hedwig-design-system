@@ -1,5 +1,19 @@
 # @postenbring/hedwig-react
 
+## 0.0.12
+
+### Patch Changes
+
+- de791ec: make children prop optional to allow for dangerouslySetInnerHTML usage
+
+## 0.0.11
+
+### Patch Changes
+
+- 2e340d0: :lipstick: update list styling
+- Updated dependencies [2e340d0]
+  - @postenbring/hedwig-css@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

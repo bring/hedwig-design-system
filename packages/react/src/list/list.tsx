@@ -3,7 +3,7 @@ import * as React from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
 export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListElement> {
-  children: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
+  children?: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
   /**
    * Inherit list styles or do not show these
    */
