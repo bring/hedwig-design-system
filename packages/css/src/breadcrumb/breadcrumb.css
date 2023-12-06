@@ -37,6 +37,10 @@
       }
     }
 
+    &:last-child {
+      color: var(--hds-ui-colors-dark-grey);
+    }
+
     &::before {
       align-items: flex-start;
       background-repeat: no-repeat;
