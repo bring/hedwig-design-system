@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.12
+
+### Patch Changes
+
+- 6d01b04: Adding component for Bread > Crumbs > Are > Here
+
 ## 0.0.11
 
 ### Patch Changes
