@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.14
+
+### Patch Changes
+
+- 67d4df7: :construction: add WIP modal
+- Updated dependencies [67d4df7]
+  - @postenbring/hedwig-css@0.0.13
+
 ## 0.0.13
 
 ### Patch Changes
