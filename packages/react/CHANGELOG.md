@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.13
+
+### Patch Changes
+
+- 6d01b04: Adding component for Bread > Crumbs > Are > Here
+- Updated dependencies [6d01b04]
+  - @postenbring/hedwig-css@0.0.12
+
 ## 0.0.12
 
 ### Patch Changes
