@@ -31,6 +31,10 @@ export const AccordionItem: OverridableComponent<AccordionItemProps, HTMLDivElem
     if (!context.mounted) {
       throw new Error("Context required. Did you use <AccordionItem/> outside of <Accordion/>?");
     }
+
+    // For single only variant of the accordion
+    // Close this item when another accordion is opened
+    // Ensuring only one is opend at the same time
     useEffect(() => {
       if (context.variant === "multiple") {
         return;
@@ -38,7 +42,9 @@ export const AccordionItem: OverridableComponent<AccordionItemProps, HTMLDivElem
       if (open && !context.openItems.includes(accordionItemId)) {
         setOpen(false);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps -- We know better
     }, [context.openItems]);
+
     return (
       <Component
         {...rest}
