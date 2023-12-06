@@ -16,10 +16,6 @@
   }
 
   & li {
-    display: flex;
-    align-items: flex-start;
-    flex-flow: row nowrap;
-
     /*
      * Design in Figma has an extra 2px distance between
      * the text and underline border on links
@@ -31,9 +27,7 @@
 
     &:first-child {
       &::before {
-        background-image: none;
-        margin: 0;
-        width: 0;
+        display: none;
       }
     }
 
@@ -42,12 +36,10 @@
     }
 
     &::before {
-      align-items: flex-start;
-      background-repeat: no-repeat;
-      background-color: transparent;
-      background-position: center;
+      display: inline-block;
       background-image: var(--hds-breadcrumb-image-right);
       width: 20px;
+      height: 20px;
       margin: 0 var(--hds-spacing-small-1);
     }
 
@@ -60,8 +52,8 @@
         display: inherit;
 
         &::before {
+          display: inline-block;
           margin-left: 0;
-          width: 20px;
           background-image: var(--hds-breadcrumb-image-left);
         }
       }
