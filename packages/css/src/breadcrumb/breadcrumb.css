@@ -4,8 +4,16 @@
 
   padding: 0;
   list-style-type: none;
-  font: var(--hds-typography-caption);
   display: flex;
+
+  /*
+   * Ensure the caption typography is used
+   * Override general styling for links that sets the font-size
+   */
+  &,
+  & a {
+    font: var(--hds-typography-caption);
+  }
 
   & li {
     display: flex;
