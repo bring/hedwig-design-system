@@ -22,7 +22,7 @@
   max-width: 100%;
   border-radius: 0;
 
-  @media (min-width: 720px) {
+  @media (width >= 720px) {
     min-width: 720px;
     max-width: min(720px, calc(100% - 6px - 2em));
 
