@@ -22,7 +22,7 @@
   /* Padding */
   --hds-component-box-padding: var(--hds-spacing-medium-2);
 
-  @media (min-width: 720px) {
+  @media (width >= 720px) {
     --hds-component-box-padding: var(--hds-spacing-medium-3);
   }
 

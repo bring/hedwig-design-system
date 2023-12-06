@@ -51,3 +51,28 @@ export const SingleElement: Story = {
     children: <li>Shipment from SOMEONE YOU KNOW</li>,
   },
 };
+
+export const LongContent: Story = {
+  args: {
+    children: (
+      <>
+        <li>
+          <Link href="https://www.posten.no">Home</Link>
+        </li>
+        <li>
+          <Link href="https://www.posten.no">Somewhere</Link>
+        </li>
+        <li>
+          <Link href="https://www.posten.no">Deep inside</Link>
+        </li>
+        <li>
+          <Link href="https://www.posten.no">
+            Posten dot no Posten dot no Posten dot no Posten dot no Posten dot no Posten dot no
+            Posten dot no
+          </Link>
+        </li>
+        <li>You will find this page</li>
+      </>
+    ),
+  },
+};

@@ -59,7 +59,7 @@
   &.hds-button--mobile-full {
     width: 100%;
 
-    @media (min-width: 720px) {
+    @media (width >= 720px) {
       width: unset;
     }
   }
