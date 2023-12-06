@@ -30,7 +30,7 @@
       margin: 0 var(--hds-spacing-small-1);
     }
 
-    @media (max-width: 720px) {
+    @media (width < 720px) {
       &:not(:only-child) {
         display: none;
       }
