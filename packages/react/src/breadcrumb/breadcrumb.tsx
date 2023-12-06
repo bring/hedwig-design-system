@@ -2,7 +2,7 @@ import type { HTMLAttributes, ReactElement } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
 export interface BreadcrumbsProps extends HTMLAttributes<HTMLOListElement> {
-  children: ReactElement<HTMLLIElement | string> | ReactElement<HTMLLIElement[] | string[]>;
+  children: ReactElement<HTMLLIElement> | ReactElement<HTMLLIElement>[];
 
   /**
    * Props passed to the root `nav` html element
