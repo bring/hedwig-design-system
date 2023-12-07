@@ -33,51 +33,59 @@ function expandAndPrefix(obj, prefix) {
 
 /**
  * @param {keyof typeof tokens["font-size"]} name
+ * @param {Exclude<keyof typeof tokens["typography"], "type">} typographyName
  * @returns
  */
-function fontSize(name) {
-  return [tokens["font-size"][name], tokens["line-height"][name]];
+function fontSize(name, typographyName) {
+  return [
+    tokens["font-size"][name],
+    {
+      lineHeight: tokens["line-height"][name],
+      fontWeight: tokens["typography"][typographyName].fontWeight,
+    },
+  ];
 }
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     fontFamily: {
+      default: tokens.fonts["posten-sans"],
       bold: tokens.fonts["posten-sans-bold"],
       medium: tokens.fonts["posten-sans-medium"],
       regular: tokens.fonts["posten-sans-regular"],
       light: tokens.fonts["posten-sans-light"],
     },
     fontSize: {
-      "h1-display": fontSize("posten-h1-display"),
-      "h1-display-min": fontSize("posten-h1-display-min"),
-      "h1-display-max": fontSize("posten-h1-display-max"),
+      "h1-display": fontSize("posten-h1-display", "posten-h1-display"),
+      "h1-display-min": fontSize("posten-h1-display-min", "posten-h1-display"),
+      "h1-display-max": fontSize("posten-h1-display-max", "posten-h1-display"),
 
-      h1: fontSize("posten-h1"),
-      "h1-min": fontSize("posten-h1-min"),
-      "h1-max": fontSize("posten-h1-max"),
+      h1: fontSize("posten-h1", "posten-h1"),
+      "h1-min": fontSize("posten-h1-min", "posten-h1"),
+      "h1-max": fontSize("posten-h1-max", "posten-h1"),
 
-      h2: fontSize("posten-h2"),
-      "h2-min": fontSize("posten-h2-min"),
-      "h2-max": fontSize("posten-h2-max"),
+      h2: fontSize("posten-h2", "posten-h2"),
+      "h2-min": fontSize("posten-h2-min", "posten-h2"),
+      "h2-max": fontSize("posten-h2-max", "posten-h2"),
 
-      h3: fontSize("header-h3"),
-      "h3-min": fontSize("header-h3-min"),
-      "h3-max": fontSize("header-h3-max"),
+      h3: fontSize("header-h3", "header-h3"),
+      "h3-min": fontSize("header-h3-min", "header-h3"),
+      "h3-max": fontSize("header-h3-max", "header-h3"),
 
-      body: fontSize("body"),
-      "body-min": fontSize("body-min"),
-      "body-max": fontSize("body-max"),
+      body: fontSize("body", "body"),
+      "body-min": fontSize("body-min", "body"),
+      "body-max": fontSize("body-max", "body"),
 
-      "body-small": fontSize("body small"),
-      "body-small-min": fontSize("body small-min"),
-      "body-small-max": fontSize("body small-max"),
+      "body-small": fontSize("body small", "body small"),
+      "body-small-min": fontSize("body small-min", "body small"),
+      "body-small-max": fontSize("body small-max", "body small"),
 
-      technical: fontSize("technical"),
-      "technical-min": fontSize("technical-min"),
-      "technical-max": fontSize("technical-max"),
+      technical: fontSize("technical", "technical"),
+      "technical-min": fontSize("technical-min", "technical"),
+      "technical-max": fontSize("technical-max", "technical"),
 
-      caption: fontSize("caption"),
+      caption: fontSize("caption", "caption"),
     },
     colors: {
       // The brand specifc tokens are themeable,

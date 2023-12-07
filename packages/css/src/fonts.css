@@ -65,3 +65,51 @@
     url("../assets/fonts/PostenSans-Bold.ttf") format("truetype");
   font-display: swap;
 }
+
+/*
+  Font weight with style linking
+  https://www.smashingmagazine.com/2013/02/setting-weights-and-styles-at-font-face-declaration/
+ */
+@font-face {
+  font-family: "Posten Sans";
+  src: url("../assets/fonts/PostenSans-Light.eot");
+  src:
+    url("../assets/fonts/PostenSans-Light.woff2") format("woff2"),
+    url("../assets/fonts/PostenSans-Light.woff") format("woff"),
+    url("../assets/fonts/PostenSans-Light.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Posten Sans";
+  src: url("../assets/fonts/PostenSans-Regular.eot");
+  src:
+    url("../assets/fonts/PostenSans-Regular.woff2") format("woff2"),
+    url("../assets/fonts/PostenSans-Regular.woff") format("woff"),
+    url("../assets/fonts/PostenSans-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Posten Sans";
+  src: url("../assets/fonts/PostenSans-Medium.eot");
+  src:
+    url("../assets/fonts/PostenSans-Medium.woff2") format("woff2"),
+    url("../assets/fonts/PostenSans-Medium.woff") format("woff"),
+    url("../assets/fonts/PostenSans-Medium.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Posten Sans";
+  src: url("../assets/fonts/PostenSans-Bold.eot");
+  src:
+    url("../assets/fonts/PostenSans-Bold.woff2") format("woff2"),
+    url("../assets/fonts/PostenSans-Bold.woff") format("woff"),
+    url("../assets/fonts/PostenSans-Bold.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 700;
+}

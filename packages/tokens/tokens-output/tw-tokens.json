@@ -59,6 +59,11 @@
   },
   "fonts": {
     "type": "fontFamily",
+    "posten-sans": [
+      "Posten Sans",
+      "Arial",
+      "sans-serif"
+    ],
     "posten-sans-bold": [
       "Posten Sans Bold",
       "Arial",
@@ -84,7 +89,7 @@
     "type": "typography",
     "posten-h1-display": {
       "fontFamily": [
-        "Posten Sans Bold",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -96,12 +101,12 @@
         "56px",
         "80px"
       ],
-      "fontWeight": 400,
+      "fontWeight": 700,
       "letterSpacing": "0"
     },
     "posten-h1": {
       "fontFamily": [
-        "Posten Sans Bold",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -113,12 +118,12 @@
         "40px",
         "56px"
       ],
-      "fontWeight": 400,
+      "fontWeight": 700,
       "letterSpacing": "0"
     },
     "posten-h2": {
       "fontFamily": [
-        "Posten Sans Medium",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -130,7 +135,7 @@
         "36px",
         "40px"
       ],
-      "fontWeight": 400,
+      "fontWeight": 500,
       "letterSpacing": "0"
     },
     "bring-h1-display": {
@@ -169,7 +174,7 @@
     },
     "bring-h2": {
       "fontFamily": [
-        "Posten Sans Regular",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -186,7 +191,7 @@
     },
     "header-h3": {
       "fontFamily": [
-        "Posten Sans Regular",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -203,7 +208,7 @@
     },
     "header-h3-title": {
       "fontFamily": [
-        "Posten Sans Medium",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -215,12 +220,12 @@
         "28px",
         "32px"
       ],
-      "fontWeight": 400,
+      "fontWeight": 500,
       "letterSpacing": "0"
     },
     "body": {
       "fontFamily": [
-        "Posten Sans Regular",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -237,7 +242,7 @@
     },
     "body title": {
       "fontFamily": [
-        "Posten Sans Medium",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -249,12 +254,12 @@
         "26px",
         "28px"
       ],
-      "fontWeight": 400,
+      "fontWeight": 500,
       "letterSpacing": "0"
     },
     "body small": {
       "fontFamily": [
-        "Posten Sans Regular",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -271,7 +276,7 @@
     },
     "body small title": {
       "fontFamily": [
-        "Posten Sans Medium",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -283,12 +288,12 @@
         "24px",
         "26px"
       ],
-      "fontWeight": 400,
+      "fontWeight": 500,
       "letterSpacing": "0"
     },
     "technical": {
       "fontFamily": [
-        "Posten Sans Regular",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -305,7 +310,7 @@
     },
     "technical title": {
       "fontFamily": [
-        "Posten Sans Medium",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -317,12 +322,12 @@
         "22px",
         "24px"
       ],
-      "fontWeight": 400,
+      "fontWeight": 500,
       "letterSpacing": "0"
     },
     "caption": {
       "fontFamily": [
-        "Posten Sans Regular",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
@@ -333,13 +338,13 @@
     },
     "caption title": {
       "fontFamily": [
-        "Posten Sans Medium",
+        "Posten Sans",
         "Arial",
         "sans-serif"
       ],
       "fontSize": "13px",
       "lineHeight": "18px",
-      "fontWeight": 400,
+      "fontWeight": 500,
       "letterSpacing": "0"
     }
   },

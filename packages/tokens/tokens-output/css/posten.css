@@ -11,9 +11,9 @@
   --hds-brand-link-colors-underline: #e32d22;
   --hds-brand-link-colors-hover: #e32d22;
   --hds-brand-link-colors-underline-hover: #e32d22;
-  --hds-brand-typography-h1-display: 400 calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)))/calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Bold', Arial, sans-serif;
-  --hds-brand-typography-h1: 400 calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300)))/calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Bold', Arial, sans-serif;
-  --hds-brand-typography-h2: 400 calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))/calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans Medium', Arial, sans-serif;
+  --hds-brand-typography-h1-display: 700 calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)))/calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans', Arial, sans-serif;
+  --hds-brand-typography-h1: 700 calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300)))/calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans', Arial, sans-serif;
+  --hds-brand-typography-h2: 500 calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300)))/calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))) 'Posten Sans', Arial, sans-serif;
   --hds-brand-font-size-h1-display: calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300)));
   --hds-brand-font-size-h1-display-min: 40px;
   --hds-brand-font-size-h1-display-max: 72px;

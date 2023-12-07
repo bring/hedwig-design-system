@@ -46,6 +46,7 @@ export const SpacingLarge2 : "64px";
 export const SpacingLarge3 : "80px";
 export const SpacingLarge4 : "120px";
 export const SpacingLarge5 : "160px";
+export const FontsPostenSans : string[];
 export const FontsPostenSansBold : string[];
 export const FontsPostenSansMedium : string[];
 export const FontsPostenSansRegular : string[];
