@@ -13,6 +13,24 @@ export default function TailwindExample() {
           </Link>
         </div>
       </div>
+
+      <div>
+        <p className="text-h1-display">Display</p>
+        <p className="text-h1">Heading 1</p>
+        <p className="text-h2">Heading 2</p>
+        <p className="text-h3">Heading 3</p>
+        <p className="text-body">Body</p>
+        <p className="text-body-small">Body small</p>
+        <p className="text-technical">Technical</p>
+        <p className="text-caption">Caption</p>
+      </div>
+      <div>
+        <p className="text-h3-title">Heading 3 Title</p>
+        <p className="text-body-title">Body Title</p>
+        <p className="text-body-small-title">Body small Title</p>
+        <p className="text-technical-title">Technical Title</p>
+        <p className="text-caption-title">Caption Title</p>
+      </div>
     </div>
   );
 }
