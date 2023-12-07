@@ -159,6 +159,22 @@
   --hds-line-height-technical-title-max: 24px;
   --hds-line-height-caption: 18px;
   --hds-line-height-caption-title: 18px;
+  --hds-font-weight-posten-h1-display: 700;
+  --hds-font-weight-posten-h1: 700;
+  --hds-font-weight-posten-h2: 500;
+  --hds-font-weight-bring-h1-display: 300;
+  --hds-font-weight-bring-h1: 300;
+  --hds-font-weight-bring-h2: 400;
+  --hds-font-weight-header-h3: 400;
+  --hds-font-weight-header-h3-title: 500;
+  --hds-font-weight-body: 400;
+  --hds-font-weight-body-title: 500;
+  --hds-font-weight-body-small: 400;
+  --hds-font-weight-body-small-title: 500;
+  --hds-font-weight-technical: 400;
+  --hds-font-weight-technical-title: 500;
+  --hds-font-weight-caption: 400;
+  --hds-font-weight-caption-title: 500;
   --hds-micro-animation-duration-quick: 0.130s;
   --hds-micro-animation-duration-normal: 0.300s;
   --hds-micro-animation-duration-slow: 0.700s;
@@ -203,6 +219,9 @@
   --hds-brand-line-height-h2: calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300)));
   --hds-brand-line-height-h2-min: 36px;
   --hds-brand-line-height-h2-max: 40px;
+  --hds-brand-font-weight-h1-display: 700;
+  --hds-brand-font-weight-h1: 700;
+  --hds-brand-font-weight-h2: 500;
 }
 .hds-theme-bring {
   --hds-brand-colors-signature: #7bc144;
@@ -238,4 +257,7 @@
   --hds-brand-line-height-h2: calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300)));
   --hds-brand-line-height-h2-min: 36px;
   --hds-brand-line-height-h2-max: 40px;
+  --hds-brand-font-weight-h1-display: 300;
+  --hds-brand-font-weight-h1: 300;
+  --hds-brand-font-weight-h2: 400;
 }

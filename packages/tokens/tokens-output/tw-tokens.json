@@ -452,6 +452,25 @@
     "caption": "18px",
     "caption title": "18px"
   },
+  "font-weight": {
+    "type": "number",
+    "posten-h1-display": 700,
+    "posten-h1": 700,
+    "posten-h2": 500,
+    "bring-h1-display": 300,
+    "bring-h1": 300,
+    "bring-h2": 400,
+    "header-h3": 400,
+    "header-h3-title": 500,
+    "body": 400,
+    "body title": 500,
+    "body small": 400,
+    "body small title": 500,
+    "technical": 400,
+    "technical title": 500,
+    "caption": 400,
+    "caption title": 500
+  },
   "$description1": "Tokens manually added that are not from an Figma Export",
   "$description2": "Here we can add missing tokens under development",
   "micro-animation-duration": {

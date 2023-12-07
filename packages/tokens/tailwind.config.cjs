@@ -33,15 +33,22 @@ function expandAndPrefix(obj, prefix) {
 
 /**
  * @param {keyof typeof tokens["font-size"]} name
- * @param {Exclude<keyof typeof tokens["typography"], "type">} typographyName
+ * @param {`var(--hds-${string})` | keyof typeof tokens["font-weight"]} fontWeightName
  * @returns
  */
-function fontSize(name, typographyName) {
+function fontSize(name, fontWeightName) {
+  let fontWeight;
+  if (fontWeightName.startsWith("var(--hds-")) {
+    fontWeight = fontWeightName;
+  } else {
+    // @ts-ignore -- It's ok, it's matched in the function signature
+    fontWeight = tokens["font-weight"][fontWeightName];
+  }
   return [
     tokens["font-size"][name],
     {
       lineHeight: tokens["line-height"][name],
-      fontWeight: tokens["typography"][typographyName].fontWeight,
+      fontWeight,
     },
   ];
 }
@@ -50,24 +57,32 @@ function fontSize(name, typographyName) {
 module.exports = {
   theme: {
     fontFamily: {
-      default: tokens.fonts["posten-sans"],
-      bold: tokens.fonts["posten-sans-bold"],
-      medium: tokens.fonts["posten-sans-medium"],
-      regular: tokens.fonts["posten-sans-regular"],
-      light: tokens.fonts["posten-sans-light"],
+      DEFAULT: tokens.fonts["posten-sans"],
+    },
+    fontWeight: {
+      regular: 400,
+      medium: 500,
+      bold: 700,
+      light: 300,
     },
     fontSize: {
-      "h1-display": fontSize("posten-h1-display", "posten-h1-display"),
-      "h1-display-min": fontSize("posten-h1-display-min", "posten-h1-display"),
-      "h1-display-max": fontSize("posten-h1-display-max", "posten-h1-display"),
+      "h1-display": fontSize("posten-h1-display", "var(--hds-brand-font-weight-h1-display)"),
+      "h1-display-min": fontSize(
+        "posten-h1-display-min",
+        "var(--hds-brand-font-weight-h1-display)",
+      ),
+      "h1-display-max": fontSize(
+        "posten-h1-display-max",
+        "var(--hds-brand-font-weight-h1-display)",
+      ),
 
-      h1: fontSize("posten-h1", "posten-h1"),
-      "h1-min": fontSize("posten-h1-min", "posten-h1"),
-      "h1-max": fontSize("posten-h1-max", "posten-h1"),
+      h1: fontSize("posten-h1", "var(--hds-brand-font-weight-h1)"),
+      "h1-min": fontSize("posten-h1-min", "var(--hds-brand-font-weight-h1)"),
+      "h1-max": fontSize("posten-h1-max", "var(--hds-brand-font-weight-h1)"),
 
-      h2: fontSize("posten-h2", "posten-h2"),
-      "h2-min": fontSize("posten-h2-min", "posten-h2"),
-      "h2-max": fontSize("posten-h2-max", "posten-h2"),
+      h2: fontSize("posten-h2", "var(--hds-brand-font-weight-h2)"),
+      "h2-min": fontSize("posten-h2-min", "var(--hds-brand-font-weight-h2)"),
+      "h2-max": fontSize("posten-h2-max", "var(--hds-brand-font-weight-h2)"),
 
       h3: fontSize("header-h3", "header-h3"),
       "h3-min": fontSize("header-h3-min", "header-h3"),
@@ -152,7 +167,6 @@ module.exports = {
     extend: {},
   },
   corePlugins: {
-    fontWeight: false,
     ringColor: false,
     ringOffsetColor: false,
     ringOffsetWidth: false,

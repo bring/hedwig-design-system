@@ -114,5 +114,16 @@
     "h2-max": {
       "value": "{line-height.posten-h2-max}"
     }
+  },
+  "brand-font-weight": {
+    "h1-display": {
+      "value": "{font-weight.posten-h1-display}"
+    },
+    "h1": {
+      "value": "{font-weight.posten-h1}"
+    },
+    "h2": {
+      "value": "{font-weight.posten-h2}"
+    }
   }
 }
