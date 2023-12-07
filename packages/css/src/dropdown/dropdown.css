@@ -4,7 +4,6 @@ label.hds-dropdown__label {
   font: var(--hds-typography-caption);
   color: var(--hds-ui-colors-black);
   margin-bottom: 0;
-  line-height: 2;
   display: block;
   text-align: left;
 }
@@ -59,17 +58,6 @@ select.hds-dropdown {
   background-size: var(--hds-spacing-small-4) var(--hds-spacing-small-4);
   background-position: calc(100% - var(--hds-spacing-small-4)) 45%;
   background-repeat: no-repeat;
-
-  /* Remove default down-arrow for IE */
-  &::-ms-expand {
-    display: none;
-  }
-
-  /* Color the selected option with the correct color for IE */
-  &::-ms-value {
-    color: var(--hds-ui-colors-dark-grey);
-    background: none;
-  }
 
   /* Clearfix */
   &::after {
