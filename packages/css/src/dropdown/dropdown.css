@@ -21,9 +21,9 @@ select.hds-dropdown {
   appearance: none;
   padding: var(--hds-spacing-small-4);
   transition:
-    border-color 0.3s ease,
-    max-height 0.3s ease,
-    transform 0.3s ease;
+    border-color var(--hds-micro-animation-duration-normal) var(--hds-micro-animation-easing-normal),
+    max-height var(--hds-micro-animation-duration-normal) var(--hds-micro-animation-easing-normal),
+    transform var(--hds-micro-animation-duration-normal) var(--hds-micro-animation-easing-normal);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   background-image:
