@@ -4,6 +4,7 @@ import {
   DescriptionDetails,
   DescriptionList,
   DescriptionTerm,
+  Dropdown,
   Link,
   LinkList,
   Message,
@@ -74,6 +75,33 @@ export default function KitchenSink() {
               <Message.Title>Attention, attention</Message.Title>
               <Message.Description>Will the real slim shady please stand up</Message.Description>
             </Message>
+          </div>
+        </section>
+
+        <section>
+          <h2>Dropdown</h2>
+          <div
+            style={{
+              maxWidth: 600,
+              padding: "var(--hds-spacing-medium-2)",
+            }}
+          >
+            <Dropdown label="A dropdown" variant="default">
+              <option value="" disabled selected hidden>
+                Please select
+              </option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+              <option value="3">option 3</option>
+            </Dropdown>
+            <Dropdown label="A lined dropdown" variant="lined">
+              <option value="" disabled selected hidden>
+                Please select
+              </option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+              <option value="3">option 3</option>
+            </Dropdown>
           </div>
         </section>
       </div>
