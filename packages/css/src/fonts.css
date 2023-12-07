@@ -1,70 +1,4 @@
-/*
- * http://caniuse.com/#feat=woff2
- * Firefox 39, Chrome 36, Opera 23, Android 5-6.x WebView: Chromium 46,
- * Opera 33 for Android, Chrome 47 for Android and Firefox 42 for Android
- *
- * http://caniuse.com/#feat=woff
- * IE9, Edge 12, Firefox 3.6, Chrome 5, Safari 5.1, Opera 11.5,
- * Safari & Chrome for iOS 5.0, Android 4.4 browser, Blackberry browser 7,
- * Opera Mobile 12, Chrome 47 for Android, Firefox 42 for Android, IE Mobile 10,
- * UC Browser 9.9 for Android
- *
- * http://caniuse.com/#feat=ttf
- * Partial(IE9-11), Edge 12, Firefox 3.5, Chrome 4, Safari 3.1, Opera 10.0,
- * Safari & Chrome for iOS 4.2, Android 2.2 browser, Blackberry browser 7,
- * Opera Mobile 12, Chrome 47 for Android, Firefox 42 for Android,
- * Partial(IE Mobile 10-11), UC Browser 9.9 for Android
- *
- * http://caniuse.com/#feat=svg-fonts
- * Chrome 4-37, Safari 3.2, Opera 10.0-24, Safari & Chrome for iOS 3.2,
- * Android 3-4.4.4, Blackberry browser 7, Opera Mobile 12,
- * UC Browser 9.9 for Android
- *
- * http://caniuse.com/#feat=eot
- * IE8-11 (no other browsers)
- *
- *
- */
-
-@font-face {
-  font-family: "Posten Sans Light";
-  src: url("../assets/fonts/PostenSans-Light.eot");
-  src:
-    url("../assets/fonts/PostenSans-Light.woff2") format("woff2"),
-    url("../assets/fonts/PostenSans-Light.woff") format("woff"),
-    url("../assets/fonts/PostenSans-Light.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Posten Sans Regular";
-  src: url("../assets/fonts/PostenSans-Regular.eot");
-  src:
-    url("../assets/fonts/PostenSans-Regular.woff2") format("woff2"),
-    url("../assets/fonts/PostenSans-Regular.woff") format("woff"),
-    url("../assets/fonts/PostenSans-Regular.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Posten Sans Medium";
-  src: url("../assets/fonts/PostenSans-Medium.eot");
-  src:
-    url("../assets/fonts/PostenSans-Medium.woff2") format("woff2"),
-    url("../assets/fonts/PostenSans-Medium.woff") format("woff"),
-    url("../assets/fonts/PostenSans-Medium.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Posten Sans Bold";
-  src: url("../assets/fonts/PostenSans-Bold.eot");
-  src:
-    url("../assets/fonts/PostenSans-Bold.woff2") format("woff2"),
-    url("../assets/fonts/PostenSans-Bold.woff") format("woff"),
-    url("../assets/fonts/PostenSans-Bold.ttf") format("truetype");
-  font-display: swap;
-}
+/* https://caniuse.com/woff2 */
 
 /*
   Font weight with style linking
@@ -72,44 +6,55 @@
  */
 @font-face {
   font-family: "Posten Sans";
-  src: url("../assets/fonts/PostenSans-Light.eot");
-  src:
-    url("../assets/fonts/PostenSans-Light.woff2") format("woff2"),
-    url("../assets/fonts/PostenSans-Light.woff") format("woff"),
-    url("../assets/fonts/PostenSans-Light.ttf") format("truetype");
+  src: url("../assets/fonts/PostenSans-Light.woff2") format("woff2");
   font-display: swap;
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Posten Sans";
-  src: url("../assets/fonts/PostenSans-Regular.eot");
-  src:
-    url("../assets/fonts/PostenSans-Regular.woff2") format("woff2"),
-    url("../assets/fonts/PostenSans-Regular.woff") format("woff"),
-    url("../assets/fonts/PostenSans-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/PostenSans-Regular.woff2") format("woff2");
   font-display: swap;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Posten Sans";
-  src: url("../assets/fonts/PostenSans-Medium.eot");
-  src:
-    url("../assets/fonts/PostenSans-Medium.woff2") format("woff2"),
-    url("../assets/fonts/PostenSans-Medium.woff") format("woff"),
-    url("../assets/fonts/PostenSans-Medium.ttf") format("truetype");
+  src: url("../assets/fonts/PostenSans-Medium.woff2") format("woff2");
   font-display: swap;
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Posten Sans";
-  src: url("../assets/fonts/PostenSans-Bold.eot");
-  src:
-    url("../assets/fonts/PostenSans-Bold.woff2") format("woff2"),
-    url("../assets/fonts/PostenSans-Bold.woff") format("woff"),
-    url("../assets/fonts/PostenSans-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/PostenSans-Bold.woff2") format("woff2");
   font-display: swap;
   font-weight: 700;
+}
+
+/**
+ * Legacy font-face with an own family for each font
+ */
+@font-face {
+  font-family: "Posten Sans Light";
+  src: url("../assets/fonts/PostenSans-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Posten Sans Regular";
+  src: url("../assets/fonts/PostenSans-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Posten Sans Medium";
+  src: url("../assets/fonts/PostenSans-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Posten Sans Bold";
+  src: url("../assets/fonts/PostenSans-Bold.woff2") format("woff2");
+  font-display: swap;
 }
