@@ -1,6 +1,6 @@
 {
   "name": "@postenbring/hedwig-css",
-  "version": "0.0.9",
+  "version": "0.0.13",
   "description": "",
   "scripts": {
     "build": "pnpm run --sequential /^build:.*/",
@@ -12,7 +12,7 @@
     "dev:typed-classname": "wait-on dist/index.css && node --watch-preserve-output --watch-path dist/index.css --watch ./typed-classname/build.mjs",
     "lint": "stylelint 'src/**/*.css' 'src/**/*.scss' --cache",
     "lint:fix": "pnpm lint -- --fix",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "clean": "rm -rf .turbo node_modules dist",
     "show-css-size": "pnpm build:css && echo '\nSize of dist/index.css (original → gzip)' && pnpm dlx gzip-size-cli dist/index.css --include-original"
   },
   "files": [
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "browserslist": "4.22.1",
+    "browserslist": "4.22.2",
     "chokidar-cli": "3.0.0",
     "lightningcss": "1.22.1",
     "lightningcss-cli": "1.22.1",

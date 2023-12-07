@@ -1,5 +1,6 @@
 .hds-box {
   position: relative;
+  border-radius: var(--hds-border-radius);
 
   &, /* Default */
   &.hds-box--light-grey {
@@ -22,7 +23,7 @@
   /* Padding */
   --hds-component-box-padding: var(--hds-spacing-medium-2);
 
-  @media (min-width: 720px) {
+  @media (width >= 720px) {
     --hds-component-box-padding: var(--hds-spacing-medium-3);
   }
 
@@ -61,8 +62,8 @@
     filter: invert(40%);
   }
 
-  /* Focus effect */
-  &:focus {
+  /* Active effect */
+  &:active {
     outline: none;
     box-shadow: 0 0 0 2px var(--hds-ui-colors-black-hover);
   }

@@ -14,22 +14,35 @@ This package has three packages
 
 ### Getting started
 
-The simplest way is to just install the `@postenbring/hedwig-react` package, and start using the components. The css is imported in the javascript files so a bundler that supports side effect imports are required. Vite and Remix supports this out of the box.
+The simplest way is to just install the `@postenbring/hedwig-react` package, and start using the components. The css is imported in the javascript files so a bundler that supports side effect imports is required. Vite and Remix supports this out of the box.
 
 ```tsx
-import {
-  Box,
-  PrimaryButton,
-} from "@postenbring/hedwig-react";
+import { Box, PrimaryButton } from "@postenbring/hedwig-react";
 
 export function MyComponent() {
   return (
     <Box>
       <PrimaryButton>Hello, World</PrimaryButton>
     </Box>
-  )
+  );
 }
 ```
+
+![Button inside Box with Posten theme](screenshots/box-and-button-posten-theme.png)
+
+By default you will get the Posten theme in your app. If you want to use the Bring theme, you have to apply the `hds-theme-bring` class to a wrapping element in e.g. your `index.html` or `App.tsx` file:
+
+```tsx
+function App() {
+  return (
+    <div className="hds-theme-bring">
+      <MyComponent />
+    </div>
+  );
+}
+```
+
+![Button inside Box with Bring theme](screenshots/box-and-button-bring-theme.png)
 
 ## 🧑‍💻 Contributing
 
@@ -40,10 +53,17 @@ Before you begin, ensure you have the following installed:
 - Node.js (v20 or higher)
 - pnpm (v8 or higher)
 
-### Install node
+### Check node
 
-Use [`fnm`](https://github.com/Schniz/fnm), [`asdf`](https://github.com/asdf-vm/asdf) or [`nvm`](https://github.com/nvm-sh/nvm) to ensure you have node 20.
+Check if you have node 20 or higher
 
+```bash
+node -v
+```
+
+#### Install node
+
+If node is not installed, or you don't have version 20 or higher you need to install it. Download from [nodejs.org](https://nodejs.org/en/download/), or use package manager like [`fnm`](https://github.com/Schniz/fnm), [`nvm`](https://github.com/nvm-sh/nvm), or [`asdf`](https://github.com/asdf-vm/asdf).
 
 ### Install pnpm
 
@@ -86,13 +106,3 @@ TBA
 ## Developer guide lines
 
 TBA.
-
-## Updating dependencies
-
-TODO: Setup dependabot
-
-Use [`pnpm update`](https://pnpm.io/cli/update) to interactivly upgrade dependencies
-
-```bash
-pnpm update -i --latest -r
-```

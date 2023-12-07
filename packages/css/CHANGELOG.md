@@ -1,5 +1,30 @@
 # @postenbring/hedwig-css
 
+## 0.0.13
+
+### Patch Changes
+
+- 67d4df7: :construction: add WIP modal
+
+## 0.0.12
+
+### Patch Changes
+
+- 6d01b04: Adding component for Bread > Crumbs > Are > Here
+
+## 0.0.11
+
+### Patch Changes
+
+- 2e340d0: :lipstick: update list styling
+
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies [20c62c5]
+  - @postenbring/hedwig-tokens@0.0.4
+
 ## 0.0.9
 
 ### Patch Changes

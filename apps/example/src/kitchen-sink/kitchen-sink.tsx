@@ -8,21 +8,25 @@ import {
   Link,
   LinkList,
   Message,
+  Modal,
   OrderedList,
   PrimaryButton,
   UnorderedList,
 } from "@postenbring/hedwig-react";
+import { useRef } from "react";
+
+const bringButtonText = "Bring button";
 
 export default function KitchenSink() {
   return (
     <>
-      <div className="hds-theme-posten">
-        <h1>Hei verden</h1>
+      <div>
+        <h1>Hello world</h1>
         <h2>Buttons</h2>
-        <PrimaryButton>En knapp</PrimaryButton>
+        <PrimaryButton>A button</PrimaryButton>
         <h2>Links</h2>
         <Link href="#demo-link" variant="no-underline" size="large">
-          En Link
+          A link
         </Link>
         <h2>Descriptive lists</h2>
         <DescriptionList variant="vertical">
@@ -51,6 +55,26 @@ export default function KitchenSink() {
               <Link href="https://hedwig.posten.no">Hedwig rocks 🪨</Link>
             </li>
           </LinkList>
+          <div className="hds-theme-bring">
+            <Box>
+              <p>
+                To apply Bring theme instead of Posten theme in your app, you can wrap a{" "}
+                <code>div</code> around your components:
+                <br />
+                <code>
+                  &lt;div className="hds-theme-bring"&gt;
+                  <br />
+                  &emsp;&lt;PrimaryButton&gt;
+                  {bringButtonText}&lt;/PrimaryButton&gt;
+                  <br />
+                  &lt;/div&gt;
+                </code>
+                <br />
+                Result:
+              </p>
+              <PrimaryButton>{bringButtonText}</PrimaryButton>
+            </Box>
+          </div>
         </div>
 
         <section>
@@ -103,8 +127,33 @@ export default function KitchenSink() {
               <option value="3">option 3</option>
             </Dropdown>
           </div>
+          <h2>Modal</h2>
+          <ModalExample />
         </section>
       </div>
+    </>
+  );
+}
+
+function ModalExample() {
+  const modalRef = useRef<HTMLDialogElement>(null);
+
+  return (
+    <>
+      <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
+      <Modal ref={modalRef}>
+        <Modal.Header>Dialog header</Modal.Header>
+        <p>
+          Dialog header Dialog description - a description of what is about to happen and maybe
+          something about the consequences.
+        </p>
+        <div style={{ display: "flex", gap: 16 }}>
+          <PrimaryButton>Main action</PrimaryButton>
+          <PrimaryButton fill="outlined" onClick={() => modalRef.current?.close()}>
+            Cancel
+          </PrimaryButton>
+        </div>
+      </Modal>
     </>
   );
 }

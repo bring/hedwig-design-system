@@ -1,5 +1,5 @@
 
-.hds-theme-posten, .hds-theme-bring {
+:root {
   --hds-posten-colors-signature-red: #e32d22;
   --hds-posten-colors-darker-red: #4a1011;
   --hds-posten-colors-dark-red: #980000;
@@ -169,8 +169,6 @@
   --hds-opacity-10: .1;
   --hds-opacity-20: .2;
   --hds-opacity-50: .5;
-}
-.hds-theme-posten {
   --hds-brand-colors-signature: #e32d22;
   --hds-brand-colors-darker: #4a1011;
   --hds-brand-colors-dark: #980000;

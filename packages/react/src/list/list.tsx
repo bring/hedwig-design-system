@@ -3,7 +3,7 @@ import * as React from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
 export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListElement> {
-  children: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
+  children?: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
   /**
    * Inherit list styles or do not show these
    */
@@ -28,7 +28,7 @@ function BaseList({
         "hds-list",
         `hds-list--${size}`,
         {
-          "hds-list--style-hidden": listStyle === "no-bullets",
+          "hds-list--no-bullets": listStyle === "no-bullets",
         },
         className as undefined,
       )}
@@ -56,5 +56,5 @@ export function OrderedList(props: ListProps) {
 }
 
 BaseList.displayName = "BaseList";
-OrderedList.displayName = "UnorderedList";
+OrderedList.displayName = "OrderedList";
 UnorderedList.displayName = "UnorderedList";

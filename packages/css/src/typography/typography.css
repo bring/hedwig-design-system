@@ -81,7 +81,7 @@
     margin-top: var(--hds-spacing-small-1);
   }
 
-  @media (min-width: 940px) {
+  @media (width >= 940px) {
     &.hds-typography-technical--spacing {
       margin-top: var(--hds-spacing-small-2);
     }

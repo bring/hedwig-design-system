@@ -4,7 +4,7 @@ import type { OverridableComponent } from "../utils";
 
 export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "light-grey" | "lighter" | "white" | "warning";
-  children: React.ReactNode;
+  children?: React.ReactNode;
 
   /**
    * If `true`, a close button will be shown.
