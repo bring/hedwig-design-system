@@ -50,17 +50,19 @@ export const customTokensParser: Parser = {
      * including fluid values with min-max
      * Very specialized for the current structure of the tokens
      *
-     * Creates two new token categories, `font-size` and `line-height`
+     * Creates three new token categories, `font-size`, `line-height`, and `font-weight`
      */
-    function extractFontSizeAndLineHeights(
+    function extractFontSizeAndLineHeightsAndFontWeight(
       obj: Partial<DesignTokens>,
       parentKey = "",
       extractedTokens: {
         fontSize: Record<string, { type?: string; value: string | [string, string] }>;
         lineHeight: Record<string, { type?: string; value: string | [string, string] }>;
+        fontWeight: Record<string, { type?: string; value: number }>;
       } = {
         fontSize: {},
         lineHeight: {},
+        fontWeight: {},
       },
     ) {
       const type = obj.type as string | undefined;
@@ -85,19 +87,23 @@ export const customTokensParser: Parser = {
         } else if (value.lineHeight) {
           extractedTokens.lineHeight[parentKey] = { value: value.lineHeight };
         }
+        if (value.fontWeight) {
+          extractedTokens.fontWeight[parentKey] = { value: value.fontWeight };
+        }
       }
 
       for (const [key, child] of Object.entries(obj)) {
         if (typeof child === "object") {
-          extractFontSizeAndLineHeights(child, key, extractedTokens);
+          extractFontSizeAndLineHeightsAndFontWeight(child, key, extractedTokens);
         }
       }
       return extractedTokens;
     }
-    const extractedTokens = extractFontSizeAndLineHeights(result);
+    const extractedTokens = extractFontSizeAndLineHeightsAndFontWeight(result);
     Object.assign(result, {
       "font-size": { type: "dimension", ...extractedTokens.fontSize },
       "line-height": { type: "dimension", ...extractedTokens.lineHeight },
+      "font-weight": { type: "number", ...extractedTokens.fontWeight },
     });
 
     return result;

@@ -9,7 +9,7 @@
   text-transform: uppercase;
   line-height: 1.1;
   font-size: 12px; /* For now, this might be changed later */
-  font-family: var(--hds-fonts-posten-sans-medium);
+  font-weight: 500;
   -moz-osx-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
   vertical-align: 10%;
