@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.5
+
+### Patch Changes
+
+- c5597ea: ✨ One `Posten Sans` font-family with multiple `font-weight` for choosing the correct font file to use
+
 ## 0.0.4
 
 ### Patch Changes
