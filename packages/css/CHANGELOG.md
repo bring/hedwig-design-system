@@ -1,5 +1,14 @@
 # @postenbring/hedwig-css
 
+## 0.0.14
+
+### Patch Changes
+
+- c5597ea: ✨ One `Posten Sans` font-family with multiple `font-weight` for choosing the correct font file to use
+- 5d814e8: Added dropdown component
+- Updated dependencies [c5597ea]
+  - @postenbring/hedwig-tokens@0.0.5
+
 ## 0.0.13
 
 ### Patch Changes

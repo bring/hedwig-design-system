@@ -1,5 +1,14 @@
 # @postenbring/hedwig-react
 
+## 0.0.15
+
+### Patch Changes
+
+- 5d814e8: Added dropdown component
+- Updated dependencies [c5597ea]
+- Updated dependencies [5d814e8]
+  - @postenbring/hedwig-css@0.0.14
+
 ## 0.0.14
 
 ### Patch Changes
