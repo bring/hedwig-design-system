@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.15
+
+### Patch Changes
+
+- 9dd2249: override h1,h2,h3,h4,h5,h6 font family
+
 ## 0.0.14
 
 ### Patch Changes
