@@ -1,4 +1,6 @@
 /*
+ * All element selector, and general global styles should be defined in this file
+ *
  * Based on hedwig global css
  * https://github.com/bring/hedwig/blob/master/src/shared/base/body.css
  */
@@ -12,17 +14,36 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  & body {
+  body {
     background: var(--hds-ui-colors-white);
   }
 
-  /* Override hedwig legacy typography.css */
-  & h1,
-  h2,
-  h3,
+  /**
+   * Default typography for headings
+   *
+   * Since hedwig legacy sets default font-family
+   * we need to override it to get the correct `Posten Sans`
+   */
+  h1 {
+    font: var(--hds-brand-typography-h1);
+  }
+
+  h2 {
+    font: var(--hds-brand-typography-h2);
+  }
+
+  h3 {
+    font: var(--hds-typography-header-h3);
+  }
+
+  /*
+   * Uncommon to use these levels,
+   * but default to body-title.
+   * The consumer should override to whatever fit's their need
+   */
   h4,
   h5,
   h6 {
-    font-family: var(--hds-fonts-posten-sans);
+    font: var(--hds-typography-body-title);
   }
 }
