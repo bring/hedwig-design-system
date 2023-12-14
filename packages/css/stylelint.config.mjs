@@ -2,7 +2,8 @@
  * @typedef {import('stylelint').Config} Config
  * @type {Config}
  */
-module.exports = {
+// eslint-disable-next-line import/no-default-export -- Exceptions for config files.
+export default {
   extends: [
     "stylelint-config-standard",
     "stylelint-config-standard-scss",
@@ -14,7 +15,7 @@ module.exports = {
     "csstools/value-no-unknown-custom-properties": [
       true,
       {
-        importFrom: [`${__dirname}/../tokens/tokens-output/css/tokens.css`],
+        importFrom: ['./../tokens/tokens-output/css/tokens.css'],
       },
     ],
 
