@@ -1,5 +1,6 @@
-import type { RefAttributes, FC, ElementType, ComponentPropsWithRef } from "react";
+import type { ComponentPropsWithRef, ElementType, FC, RefAttributes } from "react";
 import * as React from "react";
+import { useCallback, useEffect, useState } from "react";
 
 /**
  * OverridableComponent makes the `as` prop available,
@@ -42,4 +43,27 @@ export function useMergeRefs<Instance>(
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- It's ok
   }, refs);
+}
+
+export function useResize<Instance extends HTMLElement>(
+  ref: React.RefObject<Instance> | undefined | null,
+): { width: number; height: number } {
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
+  const handleResize = useCallback(() => {
+    if (ref?.current !== null) {
+      setWidth(ref?.current?.offsetWidth ?? 0);
+      setHeight(ref?.current?.offsetHeight ?? 0);
+    }
+  }, [ref]);
+  useEffect(() => {
+    window.addEventListener("load", handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("load", handleResize);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [ref, handleResize]);
+  handleResize();
+  return { width, height };
 }
