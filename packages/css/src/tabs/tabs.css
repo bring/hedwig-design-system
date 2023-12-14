@@ -27,7 +27,7 @@
           }
         }
       }
-      @media (width <= 720px) {
+      @media (width < 720px) {
         border-left: 1px solid var(--hds-ui-colors-light-grey-fill);
         flex-direction: column;
         padding-left: 1px;
