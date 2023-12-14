@@ -7,7 +7,7 @@ import type { TabContentsProps } from "./tabs-content";
 import type { TabListProps } from "./tabs-list";
 
 export interface TabsProps extends HTMLAttributes<HTMLElement> {
-  children: ReactElement<TabListProps> | ReactElement<TabContentsProps>;
+  children: ReactElement<TabListProps | TabContentsProps>[];
 
   /**
    * Define which tab to use as default. Must be one of the <Tab/>s identifier.
@@ -20,7 +20,7 @@ export const Tabs: OverridableComponent<TabsProps, HTMLDivElement> = forwardRef(
     const [activeTabId, toggleActiveTabId] = useState<string>(defaultTab);
     return (
       <Component className={clsx("hds-tabs")} ref={ref} {...rest}>
-        <TabsContext.Provider value={{ mounted: true, activeTabId, toggleActiveTabId }}>
+        <TabsContext.Provider value={{ activeTabId, toggleActiveTabId, mounted: true }}>
           {children}
         </TabsContext.Provider>
       </Component>
