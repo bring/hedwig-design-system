@@ -1,5 +1,5 @@
 .hds-tabs {
-  --hds-tabs-border-active-size: 2px;
+  --hds-tabs-border-active-size: var(--hds-stroke-thick);
 
   font: var(--hds-typography-body);
 
