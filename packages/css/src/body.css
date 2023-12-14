@@ -44,6 +44,6 @@
   h4,
   h5,
   h6 {
-    font: var(--hds-font-size-body-title);
+    font: var(--hds-typography-body-title);
   }
 }
