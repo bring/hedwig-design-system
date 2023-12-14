@@ -64,6 +64,8 @@ export function useResize<Instance extends HTMLElement>(
       window.removeEventListener("resize", handleResize);
     };
   }, [ref, handleResize]);
-  handleResize();
+  useEffect(() => {
+    handleResize();
+  }, []);
   return { width, height };
 }

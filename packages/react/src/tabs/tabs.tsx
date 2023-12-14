@@ -1,16 +1,22 @@
 import type { HTMLAttributes, MouseEvent, ReactElement } from "react";
 import { forwardRef, useContext, useRef, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import type { OverridableComponent } from "../utils";
+import type { OverridableComponent} from "../utils";
+import { useResize } from "../utils";
 import { TabsContext } from "./context";
 
 export interface TabsProps extends HTMLAttributes<HTMLElement> {
   children: ReactElement<TabListProps> | ReactElement<TabContentsProps>;
+
+  /**
+   * Define which tab to use as default
+   */
+  defaultTab: string;
 }
 
 export const Tabs: OverridableComponent<TabsProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", children, ...rest }, ref) => {
-    const [activeTabId, toggleActiveTabId] = useState<string>("");
+  ({ as: Component = "div", defaultTab, children, ...rest }, ref) => {
+    const [activeTabId, toggleActiveTabId] = useState<string>(defaultTab);
     return (
       <Component className={clsx("hds-tabs")} ref={ref} {...rest}>
         <TabsContext.Provider value={{ activeTabId, toggleActiveTabId }}>
@@ -25,15 +31,33 @@ Tabs.displayName = "Tabs";
 
 export interface TabListProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactElement<TabProps> | ReactElement<TabProps>[];
-  direction?: "vertical" | "horizontal" | "auto";
+
+  /**
+   * Direction of the tabs. Can either be vertical or horizontal.
+   * Horizontal breaks on window width with fallback back to vertical
+   */
+  direction?: "vertical" | "horizontal";
 }
 
-export function TabList({ children, direction = "auto", className, ...rest }: TabListProps) {
+export function TabList({ children, direction = "horizontal", className, ...rest }: TabListProps) {
   const tabsListRef = useRef<HTMLDivElement>(null);
-
+  const { width: tabsWidth } = useResize(tabsListRef);
+  const { innerWidth } = window;
+  const wideEnough = innerWidth >= tabsWidth;
   return (
     <div
-      className={clsx("hds-tabs--list", `hds-tabs--list-${direction}`, className as undefined)}
+      className={clsx(
+        "hds-tabs--list",
+        direction === "horizontal"
+          ? {
+              [`hds-tabs--list-horizontal`]: wideEnough,
+              "hds-tabs--list-vertical": !wideEnough,
+            }
+          : {
+              "hds-tabs--list-vertical": true,
+            },
+        className as undefined,
+      )}
       ref={tabsListRef}
       role="tablist"
       {...rest}
@@ -47,23 +71,15 @@ TabList.displayName = "TabList";
 
 export interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactElement<HTMLElement> | string;
+
+  /**
+   * Identifier for the tab
+   */
   tabId: string;
-  defaultActive?: boolean;
 }
 
 export const Tab: OverridableComponent<TabProps, HTMLButtonElement> = forwardRef(
-  (
-    {
-      as: Component = "button",
-      children,
-      tabId,
-      defaultActive = false,
-      className,
-      onClick,
-      ...rest
-    },
-    ref,
-  ) => {
+  ({ as: Component = "button", children, tabId, className, onClick, ...rest }, ref) => {
     const context = useContext(TabsContext);
     const toggleTab = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
@@ -74,10 +90,7 @@ export const Tab: OverridableComponent<TabProps, HTMLButtonElement> = forwardRef
       <Component
         className={clsx(
           "hds-tabs--tab",
-          {
-            "hds-tabs--tab-active":
-              context.activeTabId === tabId || (!context.activeTabId && defaultActive),
-          },
+          { "hds-tabs--tab-active": context.activeTabId === tabId },
           className as undefined,
         )}
         data-tabid={tabId}
@@ -110,14 +123,17 @@ TabContents.displayName = "TabContents";
 
 export interface TabContentProps extends HTMLAttributes<HTMLElement> {
   children: ReactElement<HTMLElement> | ReactElement<HTMLElement>[] | string;
+
+  /**
+   * Content for the referenced tabId
+   */
   forTabId: string;
-  defaultActive?: boolean;
 }
 
 export const TabContent: OverridableComponent<TabContentProps, HTMLElement> = forwardRef(
-  ({ as: Component = "div", forTabId, defaultActive = false, children, ...rest }, ref) => {
+  ({ as: Component = "div", forTabId, children, ...rest }, ref) => {
     const context = useContext(TabsContext);
-    if (context.activeTabId === forTabId || (!context.activeTabId && defaultActive)) {
+    if (context.activeTabId === forTabId) {
       return (
         <Component {...rest} ref={ref}>
           {children}

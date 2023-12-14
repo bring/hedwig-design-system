@@ -9,41 +9,67 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
 };
 
-export const Default: Story = {
+export const Horizontal: Story = {
   args: {
+    defaultTab: "first",
     children: (
       <>
         <TabList>
-          <Tab defaultActive tabId="first">
-            Remove
-          </Tab>
-          <Tab tabId="second">The</Tab>
-          <Tab tabId="third">Ones</Tab>
-          <Tab tabId="forth">You</Tab>
-          <Tab tabId="fifth">Dont</Tab>
-          <Tab tabId="sixth">Need</Tab>
+          <Tab tabId="first">First</Tab>
+          <Tab tabId="second">Second</Tab>
+          <Tab tabId="third">Third</Tab>
+          <Tab tabId="forth">Forth</Tab>
+          <Tab tabId="fifth">Fifth</Tab>
+          <Tab tabId="sixth">Sixth</Tab>
         </TabList>
         <TabContents>
-          <TabContent defaultActive forTabId="first">
-            Hello, world 1
-          </TabContent>
-          <TabContent forTabId="second">Hello, world 2</TabContent>
+          <TabContent forTabId="first">First tab</TabContent>
+          <TabContent forTabId="second">Second tab</TabContent>
+          <TabContent forTabId="third">Third tab</TabContent>
+          <TabContent forTabId="forth">Forth tab</TabContent>
+          <TabContent forTabId="fifth">Fifth tab</TabContent>
+          <TabContent forTabId="sixth">Sixth tab</TabContent>
         </TabContents>
       </>
     ),
   },
 };
 
-export const MiddleSelected: Story = {
+export const Vertical: Story = {
   args: {
+    defaultTab: "first",
+    children: (
+      <>
+        <TabList direction="vertical">
+          <Tab tabId="first">First</Tab>
+          <Tab tabId="second">Second</Tab>
+          <Tab tabId="third">Third</Tab>
+          <Tab tabId="forth">Forth</Tab>
+          <Tab tabId="fifth">Fifth</Tab>
+          <Tab tabId="sixth">Sixth</Tab>
+        </TabList>
+        <TabContents>
+          <TabContent forTabId="first">First tab</TabContent>
+          <TabContent forTabId="second">Second tab</TabContent>
+          <TabContent forTabId="third">Third tab</TabContent>
+          <TabContent forTabId="forth">Forth tab</TabContent>
+          <TabContent forTabId="fifth">Fifth tab</TabContent>
+          <TabContent forTabId="sixth">Sixth tab</TabContent>
+        </TabContents>
+      </>
+    ),
+  },
+};
+
+export const HorizontalWithMiddleSelected: Story = {
+  args: {
+    defaultTab: "second",
     children: (
       <>
         <TabList>
-          <Tab tabId="first">Pakker og gods</Tab>
-          <Tab defaultActive tabId="second">
-            Post
-          </Tab>
-          <Tab tabId="third">Bud og ekspress</Tab>
+          <Tab tabId="first">Pakker og gods for bedrift</Tab>
+          <Tab tabId="second">Post og brevpost</Tab>
+          <Tab tabId="third">Bud- og ekspress-pakker</Tab>
         </TabList>
         <TabContents>
           <TabContent forTabId="first">
@@ -57,7 +83,8 @@ export const MiddleSelected: Story = {
               <li>
                 <a
                   href="https://lovdata.no/dokument/NL/lov/1974-12-20-68?q=Lov+om+vegfraktavtaler"
-                  rel="noopener" target="_blank"
+                  rel="noopener"
+                  target="_blank"
                 >
                   Link til Lov om Vegfraktavtaler fra Lovdata
                 </a>
@@ -93,7 +120,7 @@ export const MiddleSelected: Story = {
               </li>
             </ul>
           </TabContent>
-          <TabContent defaultActive forTabId="second">
+          <TabContent forTabId="second">
             <h2>Vilkår for post med like formater</h2>
           </TabContent>
           <TabContent forTabId="third">
