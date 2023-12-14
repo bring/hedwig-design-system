@@ -55,7 +55,7 @@
   }
 
   &.hds-link--no-underline {
-    font-family: var(--hds-fonts-posten-sans-medium);
+    font-weight: 500;
     color: var(--hds-brand-colors-dark);
     text-decoration: none;
     border-bottom: none;

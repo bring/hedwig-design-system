@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - master
       - changeset-release/*
-      - dependabot/*
+      - dependabot/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

@@ -114,5 +114,16 @@
     "h2-max": {
       "value": "{line-height.bring-h2-max}"
     }
+  },
+  "brand-font-weight": {
+    "h1-display": {
+      "value": "{font-weight.bring-h1-display}"
+    },
+    "h1": {
+      "value": "{font-weight.bring-h1}"
+    },
+    "h2": {
+      "value": "{font-weight.bring-h2}"
+    }
   }
 }

@@ -150,6 +150,9 @@
   },
   "fonts": {
     "type": "fontFamily",
+    "posten-sans": {
+      "value": ["Posten Sans", "Arial", "sans-serif"]
+    },
     "posten-sans-bold": {
       "value": ["Posten Sans Bold", "Arial", "sans-serif"]
     },
@@ -167,52 +170,52 @@
     "type": "typography",
     "posten-h1-display": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-bold}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["40px", "72px"],
         "lineHeight": ["56px", "80px"],
-        "fontWeight": 400,
+        "fontWeight": 700,
         "letterSpacing": "0"
       }
     },
     "posten-h1": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-bold}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["32px", "48px"],
         "lineHeight": ["40px", "56px"],
-        "fontWeight": 400,
+        "fontWeight": 700,
         "letterSpacing": "0"
       }
     },
     "posten-h2": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-medium}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["28px", "32px"],
         "lineHeight": ["36px", "40px"],
-        "fontWeight": 400,
+        "fontWeight": 500,
         "letterSpacing": "0"
       }
     },
     "bring-h1-display": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-light}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["40px", "72px"],
         "lineHeight": ["56px", "80px"],
-        "fontWeight": 400,
+        "fontWeight": 300,
         "letterSpacing": "0"
       }
     },
     "bring-h1": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-light}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["32px", "48px"],
         "lineHeight": ["40px", "56px"],
-        "fontWeight": 400,
+        "fontWeight": 300,
         "letterSpacing": "0"
       }
     },
     "bring-h2": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-regular}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["28px", "32px"],
         "lineHeight": ["36px", "40px"],
         "fontWeight": 400,
@@ -221,7 +224,7 @@
     },
     "header-h3": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-regular}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["22px", "24px"],
         "lineHeight": ["28px", "32px"],
         "fontWeight": 400,
@@ -230,16 +233,16 @@
     },
     "header-h3-title": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-medium}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["22px", "24px"],
         "lineHeight": ["28px", "32px"],
-        "fontWeight": 400,
+        "fontWeight": 500,
         "letterSpacing": "0"
       }
     },
     "body": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-regular}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["18px", "20px"],
         "lineHeight": ["26px", "28px"],
         "fontWeight": 400,
@@ -248,16 +251,16 @@
     },
     "body title": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-medium}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["18px", "20px"],
         "lineHeight": ["26px", "28px"],
-        "fontWeight": 400,
+        "fontWeight": 500,
         "letterSpacing": "0"
       }
     },
     "body small": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-regular}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["16px", "18px"],
         "lineHeight": ["24px", "26px"],
         "fontWeight": 400,
@@ -266,16 +269,16 @@
     },
     "body small title": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-medium}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["16px", "18px"],
         "lineHeight": ["24px", "26px"],
-        "fontWeight": 400,
+        "fontWeight": 500,
         "letterSpacing": "0"
       }
     },
     "technical": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-regular}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["14px", "16px"],
         "lineHeight": ["22px", "24px"],
         "fontWeight": 400,
@@ -284,16 +287,16 @@
     },
     "technical title": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-medium}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["14px", "16px"],
         "lineHeight": ["22px", "24px"],
-        "fontWeight": 400,
+        "fontWeight": 500,
         "letterSpacing": "0"
       }
     },
     "caption": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-regular}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": "13px",
         "lineHeight": "18px",
         "fontWeight": 400,
@@ -302,10 +305,10 @@
     },
     "caption title": {
       "$value": {
-        "fontFamily": "{fonts.posten-sans-medium}",
+        "fontFamily": "{fonts.posten-sans}",
         "fontSize": "13px",
         "lineHeight": "18px",
-        "fontWeight": 400,
+        "fontWeight": 500,
         "letterSpacing": "0"
       }
     }

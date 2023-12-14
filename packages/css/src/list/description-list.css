@@ -5,7 +5,7 @@
   font: var(--hds-typography-body);
 
   & dt {
-    font-family: var(--hds-fonts-posten-sans-bold);
+    font-weight: 700;
   }
 
   & dd {

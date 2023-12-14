@@ -1,5 +1,22 @@
 # @postenbring/hedwig-react
 
+## 0.0.16
+
+### Patch Changes
+
+- 9dd2249: override h1,h2,h3,h4,h5,h6 font family
+- Updated dependencies [9dd2249]
+  - @postenbring/hedwig-css@0.0.15
+
+## 0.0.15
+
+### Patch Changes
+
+- 5d814e8: Added dropdown component
+- Updated dependencies [c5597ea]
+- Updated dependencies [5d814e8]
+  - @postenbring/hedwig-css@0.0.14
+
 ## 0.0.14
 
 ### Patch Changes
