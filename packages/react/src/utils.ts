@@ -66,6 +66,7 @@ export function useResize<Instance extends HTMLElement>(
   }, [ref, handleResize]);
   useEffect(() => {
     handleResize();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- It's ok
   }, []);
   return { width, height };
 }

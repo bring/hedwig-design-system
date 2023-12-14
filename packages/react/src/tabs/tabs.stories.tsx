@@ -5,7 +5,7 @@ import { Tab, TabContent, TabContents, TabList, Tabs } from ".";
 type Story = StoryObj<typeof Tabs>;
 
 const meta: Meta<typeof Tabs> = {
-  title: "Tabs",
+  title: "Tab",
   component: Tabs,
 };
 
