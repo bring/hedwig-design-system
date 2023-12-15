@@ -11,7 +11,12 @@ import {
   Modal,
   OrderedList,
   PrimaryButton,
+  Tabs,
   UnorderedList,
+  Tab,
+  TabContent,
+  TabContents,
+  TabList,
 } from "@postenbring/hedwig-react";
 import { useRef } from "react";
 
@@ -129,6 +134,26 @@ export default function KitchenSink() {
           </div>
           <h2>Modal</h2>
           <ModalExample />
+        </section>
+
+        <section>
+          <h2>Tabs</h2>
+          <div>
+            <Tabs defaultTab="first">
+              <TabList>
+                <Tab tabId="first">Tab</Tab>
+                <Tab tabId="second">TabTab</Tab>
+                <Tab tabId="third">TabTabTab</Tab>
+              </TabList>
+              <TabContents>
+                <TabContent forTabId="first">Single tab</TabContent>
+                <TabContent forTabId="second">Two tabs</TabContent>
+                <TabContent forTabId="third">
+                  <h3>Tabs, tabs everywhere 😱!</h3>
+                </TabContent>
+              </TabContents>
+            </Tabs>
+          </div>
         </section>
       </div>
     </>

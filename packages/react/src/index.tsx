@@ -8,3 +8,4 @@ export * from "./accordion";
 export * from "./dropdown";
 export * from "./modal";
 export * from "./breadcrumb";
+export * from "./tabs";
