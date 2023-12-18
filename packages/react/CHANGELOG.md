@@ -1,5 +1,14 @@
 # @postenbring/hedwig-react
 
+## 0.0.17
+
+### Patch Changes
+
+- 54e525a: Adding baseline component for `<Tabs/>`
+- Updated dependencies [8ff1148]
+- Updated dependencies [54e525a]
+  - @postenbring/hedwig-css@0.0.16
+
 ## 0.0.16
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @postenbring/hedwig-css
 
+## 0.0.16
+
+### Patch Changes
+
+- 8ff1148: :lipstick: default typography for h1,h2,h3,h4,h5,h6
+- 54e525a: Adding baseline component for `<Tabs/>`
+
 ## 0.0.15
 
 ### Patch Changes
