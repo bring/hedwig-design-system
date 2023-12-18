@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.17
+
+### Patch Changes
+
+- b5cc49d: :lipstick: drag element selectors out of :root
+
 ## 0.0.16
 
 ### Patch Changes
