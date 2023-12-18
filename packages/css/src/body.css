@@ -13,37 +13,37 @@
   cursor: auto;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
 
-  body {
-    background: var(--hds-ui-colors-white);
-  }
+body {
+  background: var(--hds-ui-colors-white);
+}
 
-  /**
-   * Default typography for headings
-   *
-   * Since hedwig legacy sets default font-family
-   * we need to override it to get the correct `Posten Sans`
-   */
-  h1 {
-    font: var(--hds-brand-typography-h1);
-  }
+/**
+ * Default typography for headings
+ *
+ * Since hedwig legacy sets default font-family
+ * we need to override it to get the correct `Posten Sans`
+ */
+h1 {
+  font: var(--hds-brand-typography-h1);
+}
 
-  h2 {
-    font: var(--hds-brand-typography-h2);
-  }
+h2 {
+  font: var(--hds-brand-typography-h2);
+}
 
-  h3 {
-    font: var(--hds-typography-header-h3);
-  }
+h3 {
+  font: var(--hds-typography-header-h3);
+}
 
-  /*
-   * Uncommon to use these levels,
-   * but default to body-title.
-   * The consumer should override to whatever fit's their need
-   */
-  h4,
-  h5,
-  h6 {
-    font: var(--hds-typography-body-title);
-  }
+/*
+ * Uncommon to use these levels,
+ * but default to body-title.
+ * The consumer should override to whatever fit's their need
+ */
+h4,
+h5,
+h6 {
+  font: var(--hds-typography-body-title);
 }
