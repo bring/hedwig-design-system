@@ -1,5 +1,12 @@
 # @postenbring/hedwig-css
 
+## 0.0.18
+
+### Patch Changes
+
+- Updated dependencies [5011816]
+  - @postenbring/hedwig-tokens@0.0.6
+
 ## 0.0.17
 
 ### Patch Changes
