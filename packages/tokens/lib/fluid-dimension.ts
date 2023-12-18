@@ -22,10 +22,15 @@ export function transformMaybeFluidDimension(
   const minViewPort = 300;
   const [min, max] = value;
 
+  // TODO: Simplify the calculation
   // calc(min-px + (max - min) * ((100vw - min-view-port-px) / (max-view-port - min-view-port)));
-  return `calc(${asPx(min)} + (${asNumber(max)} - ${asNumber(min)}) * ((100vw - ${asPx(
+  const calc = `calc(${asPx(min)} + (${asNumber(max)} - ${asNumber(min)}) * ((100vw - ${asPx(
     minViewPort,
   )}) / (${asNumber(maxViewPort)} - ${asNumber(minViewPort)})))`;
+
+  // Ensure the fluid typography stays within min and max bounds
+  const clamped = `clamp(${asPx(min)},${calc},${asPx(max)})`;
+  return clamped;
 }
 
 type FluidDimension = [string, string];
