@@ -31,7 +31,7 @@
   }
 
   & .hds-input__label {
-    transition: color var(--hds-micro-animation-duration-normal)
+    transition: color var(--hds-micro-animation-duration-quick)
       var(--hds-micro-animation-easing-normal);
     font: var(--hds-typography-caption);
   }
@@ -48,8 +48,8 @@
     border: var(--hds-stroke-default) solid transparent;
     border-radius: var(--hds-border-radius);
     transition:
-      border var(--hds-micro-animation-duration-normal) var(--hds-micro-animation-easing-normal),
-      margin var(--hds-micro-animation-duration-normal) var(--hds-micro-animation-easing-normal);
+      border var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal),
+      margin var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
     box-sizing: border-box;
 
     &:focus-within,
