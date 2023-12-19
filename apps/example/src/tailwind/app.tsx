@@ -30,7 +30,7 @@ export default function TailwindExample() {
     <div>
       <div className="p-large-2">
         <div className="bg-lighter rounded p-medium-3">
-          <h2 className="text-h1 text-signature">Tittle</h2>
+          <h2 className="text-h1 text-signature">Title</h2>
           <p className="text-body mb-medium-2">Inside some kinda card</p>
           <Link href="#some-link" size="small">
             With a link to somewhere
