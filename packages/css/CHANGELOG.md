@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.22
+
+### Patch Changes
+
+- a03703a: :lipstick: fix border width on button
+
 ## 0.0.21
 
 ### Patch Changes
