@@ -1,5 +1,12 @@
 # @postenbring/hedwig-react
 
+## 0.0.20
+
+### Patch Changes
+
+- Updated dependencies [4695c56]
+  - @postenbring/hedwig-css@0.0.19
+
 ## 0.0.19
 
 ### Patch Changes

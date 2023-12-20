@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.19
+
+### Patch Changes
+
+- 4695c56: :lipstick: fix description term styling
+
 ## 0.0.18
 
 ### Patch Changes
