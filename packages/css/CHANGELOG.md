@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.20
+
+### Patch Changes
+
+- 7b07be1: :lipstick: make `<a>` styled as button have centered text, as is the button style
+
 ## 0.0.19
 
 ### Patch Changes
