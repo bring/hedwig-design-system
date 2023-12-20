@@ -5,7 +5,7 @@
   font: var(--hds-typography-body);
 
   & dt {
-    font-weight: 700;
+    font: var(--hds-typography-body-title);
   }
 
   & dd {
