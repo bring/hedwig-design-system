@@ -15,6 +15,7 @@
 
   /* When used as a link (<a>) */
   text-decoration: none;
+  text-align: center;
 
   /**
    * Modifiers: sizes
