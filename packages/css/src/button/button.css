@@ -108,7 +108,7 @@
   }
 
   &.hds-button--outline-primary {
-    --hds-component-button-border-width: var(--hds-stroke-thick);
+    --hds-component-button-border-width: var(--hds-stroke-default);
 
     background-color: transparent;
     border-color: var(--hds-brand-colors-signature);
@@ -125,7 +125,7 @@
   }
 
   &.hds-button--outline-secondary {
-    --hds-component-button-border-width: var(--hds-stroke-thick);
+    --hds-component-button-border-width: var(--hds-stroke-default);
 
     background-color: transparent;
     border-color: var(--hds-brand-colors-darker);
@@ -142,7 +142,7 @@
   }
 
   &.hds-button--outline-white {
-    --hds-component-button-border-width: var(--hds-stroke-thick);
+    --hds-component-button-border-width: var(--hds-stroke-default);
 
     background-color: transparent;
     border-color: var(--hds-brand-colors-light);
