@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.21
+
+### Patch Changes
+
+- 89ca3d3: :lipstick: set `min-height` instead of `height` on buttons. The text inside might wrap, usually on smaller devices
+
 ## 0.0.20
 
 ### Patch Changes
