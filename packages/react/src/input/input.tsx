@@ -1,25 +1,32 @@
-import * as React from "react";
+import { useId, forwardRef } from "react";
+import type { ReactNode, InputHTMLAttributes, LabelHTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
-export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "children"> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "children"> {
   id?: string;
-  variant?: "default" | "white" | "lined";
-  errorMessage?: React.ReactNode;
-  labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
-  label: React.ReactNode;
+  variant?: "default" | "white";
+  errorMessage?: ReactNode;
+  labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
+  label: ReactNode;
 }
 
-export function Input({
-  variant = "default",
-  errorMessage,
-  labelProps,
-  label,
-  id,
-  className,
-  ...rest
-}: InputProps) {
-  const errorMessageId = React.useId();
-  const inputId = React.useId();
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  {
+    variant = "default",
+    errorMessage,
+    labelProps,
+    label,
+    id,
+    className,
+    disabled,
+    readOnly,
+    ...rest
+  },
+  ref,
+) {
+  const errorMessageId = useId();
+  const inputId = useId();
+
   return (
     <div
       className={clsx(
@@ -34,17 +41,26 @@ export function Input({
       <label className="hds-input__label" {...labelProps} htmlFor={id || inputId}>
         {label}
       </label>
+      <div
+        className={clsx("hds-input__input-wrapper")}
+        data-disabled={disabled}
+        data-readonly={readOnly}
+      >
+        <input
+          {...rest}
+          aria-describedby={errorMessage ? errorMessageId : undefined}
+          className="hds-input__input"
+          disabled={disabled}
+          id={id || inputId}
+          readOnly={readOnly}
+          ref={ref}
+        />
+      </div>
       {!!errorMessage && (
         <span className="hds-input__error-message" id={errorMessageId}>
           {errorMessage}
         </span>
       )}
-      <input
-        {...rest}
-        aria-describedby={errorMessageId}
-        className="hds-input__input"
-        id={id || inputId}
-      />
     </div>
   );
-}
+});

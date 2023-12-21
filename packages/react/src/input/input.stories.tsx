@@ -14,6 +14,7 @@ type Story = StoryObj<typeof Input>;
 export const PlainInput: Story = {
   args: {
     label: "Some kind of input",
+    placeholder: "I am a placeholder",
   },
 };
 
@@ -22,6 +23,40 @@ export const PlainInputWithError: Story = {
     label: "Some kind of input with error",
     errorMessage: "This is invalid",
     placeholder: "I am a placeholder",
+  },
+};
+
+export const ReadonlyInput: Story = {
+  args: {
+    label: "Some kind of readonly input",
+    readOnly: true,
+    value: "This is a read-only value",
+  },
+};
+
+export const ReadonlyInputWithError: Story = {
+  args: {
+    label: "Some kind of readonly input",
+    readOnly: true,
+    value: "This is a read-only value",
+    errorMessage: "This is invalid",
+  },
+};
+
+export const DisabledInput: Story = {
+  args: {
+    label: "Some kind of disabled input",
+    disabled: true,
+    value: "This input is disabled",
+  },
+};
+
+export const DisabledInputWithError: Story = {
+  args: {
+    label: "Some kind of disabled input",
+    disabled: true,
+    value: "This input is disabled",
+    errorMessage: "This is invalid",
   },
 };
 
@@ -52,53 +87,60 @@ export const WhiteInputWithError: Story = {
   ),
 };
 
-export const LinedInput: Story = {
-  args: {
-    label: "Some kind of lined input",
-    variant: "lined",
-    placeholder: "I am a placeholder",
-  },
-};
-
-export const LinedInputWithError: Story = {
-  args: {
-    label: "Some kind of lined input with error",
-    variant: "lined",
-    errorMessage: "This is invalid",
-    placeholder: "I am a placeholder",
-  },
-};
-
-export const ReadonlyInput: Story = {
+export const WhiteReadonlyInput: Story = {
   args: {
     label: "Some kind of readonly input",
+    variant: "white",
     readOnly: true,
-    placeholder: "I am a placeholder",
+    value: "This is a read-only value",
   },
+  render: (props) => (
+    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
+      <Input {...props} />
+    </div>
+  ),
 };
 
-export const ReadonlyInputWithError: Story = {
+export const WhiteReadonlyInputWithError: Story = {
   args: {
     label: "Some kind of readonly input",
+    variant: "white",
     readOnly: true,
-    placeholder: "I am a placeholder",
+    value: "This is a read-only value",
     errorMessage: "This is invalid",
   },
+  render: (props) => (
+    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
+      <Input {...props} />
+    </div>
+  ),
 };
 
-export const DisabledInput: Story = {
+export const WhiteDisabledInput: Story = {
   args: {
     label: "Some kind of disabled input",
+    variant: "white",
     disabled: true,
-    placeholder: "I am a placeholder",
+    value: "This input is disabled",
   },
+  render: (props) => (
+    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
+      <Input {...props} />
+    </div>
+  ),
 };
 
-export const DisabledInputWithError: Story = {
+export const WhiteDisabledInputWithError: Story = {
   args: {
     label: "Some kind of disabled input",
+    variant: "white",
     disabled: true,
-    placeholder: "I am a placeholder",
+    value: "This input is disabled",
     errorMessage: "This is invalid",
   },
+  render: (props) => (
+    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
+      <Input {...props} />
+    </div>
+  ),
 };
