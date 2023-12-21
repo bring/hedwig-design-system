@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.23
+
+### Patch Changes
+
+- 28543d9: Finished initial Input styling and component
+
 ## 0.0.22
 
 ### Patch Changes

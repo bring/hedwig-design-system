@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.24
+
+### Patch Changes
+
+- 28543d9: Finished initial Input styling and component
+- Updated dependencies [28543d9]
+  - @postenbring/hedwig-css@0.0.23
+
 ## 0.0.23
 
 ### Patch Changes
