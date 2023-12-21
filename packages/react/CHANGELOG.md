@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.25
+
+### Patch Changes
+
+- 5626c6d: Exporting input
+
 ## 0.0.24
 
 ### Patch Changes
