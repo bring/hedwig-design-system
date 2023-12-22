@@ -11,7 +11,7 @@ const meta: Meta<typeof Box> = {
     closeable: false,
     children: (
       <>
-        <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
+        <h3 className={clsx("hds-typography-h3-title")} style={{ margin: 0 }}>
           Replace me please
         </h3>
         <p>
@@ -98,7 +98,7 @@ export const Custom: Story = {
             closeTimer === null && countDownFrom(5);
           }}
         />
-        <h3 className={clsx("hds-typography-h3", "hds-typography-h3--title")} style={{ margin: 0 }}>
+        <h3 className={clsx("hds-typography-h3-title")} style={{ margin: 0 }}>
           A customomized box
           {closeTimer !== null && ` - closing in ${closeTimer} seconds`}
         </h3>
