@@ -1,0 +1,151 @@
+.hds-select {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--hds-spacing-small-1);
+
+  & label.hds-select__label {
+    transition: color var(--hds-micro-animation-duration-normal)
+      var(--hds-micro-animation-easing-normal);
+    font: var(--hds-typography-caption);
+    color: var(--hds-ui-colors-black);
+    margin-bottom: 0;
+    display: block;
+    text-align: left;
+  }
+
+  &.hds-select--error {
+    .hds-select__select-wrapper,
+    .hds-select__select-wrapper:focus-within,
+    .hds-select__select-wrapper:has(.hds-select__select:disabled),
+    .hds-select__select-wrapper[data-disabled="true"] /* Fallback for :has */ {
+      border-bottom: var(--hds-stroke-thick) solid var(--hds-ui-colors-warning-yellow);
+      margin-bottom: calc(var(--hds-stroke-thick) - var(--hds-stroke-default));
+    }
+
+    .hds-select__select-wrapper {
+      background-repeat: no-repeat;
+      background-position-x: calc(100% - var(--hds-spacing-small-4));
+      background-position-y: center;
+      padding-right: calc(var(--hds-spacing-small-4) + var(--hds-spacing-medium-2));
+
+      &::after {
+        content: url('data:image/svg+xml,<svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect fill="black" height="12" rx="3" width="6" x="9" y="7" /><path d="M22.3552 18.4687C22.998 19.5938 22.1944 21 20.8685 21H3.7123C2.38641 21 1.58283 19.5938 2.22569 18.4687L10.8239 3.84375C11.4668 2.71875 13.1141 2.71875 13.7971 3.84375L22.3552 18.4687ZM11.3462 8.46429V13.6071C11.3462 14.1696 11.8284 14.5714 12.3105 14.5714C12.8328 14.5714 13.2748 14.1696 13.2748 13.6071V8.46429C13.2748 7.94196 12.8328 7.5 12.3105 7.5C11.748 7.5 11.3462 7.94196 11.3462 8.46429ZM12.3105 18.4286C12.9935 18.4286 13.556 17.8661 13.556 17.183C13.556 16.5 12.9935 15.9375 12.3105 15.9375C11.5873 15.9375 11.0248 16.5 11.0248 17.183C11.0248 17.8661 11.5873 18.4286 12.3105 18.4286Z" fill="%23FDBB2F" /></svg>');
+        padding-top: var(--hds-spacing-small-4);
+      }
+    }
+  }
+
+  & .hds-select__select-wrapper {
+    display: flex;
+    border: var(--hds-stroke-default) solid transparent;
+    border-radius: var(--hds-border-radius);
+    font: var(--hds-typography-body-small);
+    width: 100%;
+    height: 58px; /* should this be a token? */
+    cursor: pointer;
+    transition:
+      border-color var(--hds-micro-animation-duration-normal)
+        var(--hds-micro-animation-easing-normal),
+      max-height var(--hds-micro-animation-duration-normal) var(--hds-micro-animation-easing-normal),
+      transform var(--hds-micro-animation-duration-normal) var(--hds-micro-animation-easing-normal);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      linear-gradient(45deg, transparent 74%, var(--hds-ui-colors-light-grey-fill) 0%),
+      linear-gradient(135deg, var(--hds-ui-colors-light-grey-fill) 26%, transparent 26%),
+      /* Draw the arrow */
+        linear-gradient(
+          135deg,
+          transparent 0,
+          transparent 72%,
+          var(--hds-ui-colors-light-grey-fill) 73%,
+          var(--hds-ui-colors-light-grey-fill) 100%
+        ),
+      linear-gradient(
+        45deg,
+        var(--hds-ui-colors-light-grey-fill) 0,
+        var(--hds-ui-colors-light-grey-fill) 28%,
+        var(--hds-ui-colors-dark-grey) 29%,
+        var(--hds-ui-colors-dark-grey) 37%,
+        transparent 38%,
+        transparent 100%
+      ),
+      linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 62%,
+        var(--hds-ui-colors-dark-grey) 63%,
+        var(--hds-ui-colors-dark-grey) 71%,
+        var(--hds-ui-colors-light-grey-fill) 72%,
+        var(--hds-ui-colors-light-grey-fill) 100%
+      );
+    background-size: var(--hds-spacing-small-4) var(--hds-spacing-small-4);
+    background-position: calc(100% - var(--hds-spacing-small-4)) 45%;
+    background-repeat: no-repeat;
+
+    & select.hds-select__select {
+      color: var(--hds-ui-colors-black);
+      width: 100%;
+      padding: var(--hds-spacing-small-4);
+      font: var(--hds-typography-body-small);
+      line-height: normal;
+      border: 0;
+      background: transparent;
+      appearance: none; /* Hide default arrow */
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:focus-within {
+        border-bottom: var(--hds-stroke-default) solid var(--hds-brand-colors-darker);
+      }
+    }
+  }
+
+  &.hds-select--default .hds-select__select-wrapper {
+    background-color: var(--hds-ui-colors-light-grey-fill);
+  }
+
+  &.hds-select--white .hds-select__select-wrapper {
+    background-color: var(--hds-ui-colors-white);
+    background-image:
+      /* Cut off the sharp ends of the arrow */
+      linear-gradient(45deg, transparent 74%, var(--hds-ui-colors-white) 0%),
+      linear-gradient(135deg, var(--hds-ui-colors-white) 26%, transparent 26%),
+      /* Draw the arrow */
+        linear-gradient(
+          135deg,
+          transparent 0,
+          transparent 72%,
+          var(--hds-ui-colors-white) 73%,
+          var(--hds-ui-colors-white) 100%
+        ),
+      linear-gradient(
+        45deg,
+        var(--hds-ui-colors-white) 0,
+        var(--hds-ui-colors-white) 28%,
+        var(--hds-ui-colors-dark-grey) 29%,
+        var(--hds-ui-colors-dark-grey) 37%,
+        transparent 38%,
+        transparent 100%
+      ),
+      linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 62%,
+        var(--hds-ui-colors-dark-grey) 63%,
+        var(--hds-ui-colors-dark-grey) 71%,
+        var(--hds-ui-colors-white) 72%,
+        var(--hds-ui-colors-white) 100%
+      );
+    background-size: var(--hds-spacing-small-4) var(--hds-spacing-small-4);
+    background-repeat: no-repeat;
+  }
+
+  & .hds-select__error-message {
+    font: var(--hds-typography-caption-title);
+    color: var(--hds-ui-colors-dark-grey);
+    padding: var(--hds-spacing-small-1) 0 0 var(--hds-spacing-small-4);
+  }
+}
