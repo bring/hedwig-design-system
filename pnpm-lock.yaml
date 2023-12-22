@@ -101,7 +101,7 @@ importers:
         version: 5.3.3
       vite:
         specifier: 4.5.1
-        version: 4.5.1
+        version: 4.5.1(@types/node@20.10.5)
 
   apps/example:
     dependencies:
@@ -159,7 +159,7 @@ importers:
         version: 5.3.3
       vite:
         specifier: ^5.0.6
-        version: 5.0.6
+        version: 5.0.6(@types/node@20.10.5)
       wait-on:
         specifier: ^7.2.0
         version: 7.2.0
@@ -208,15 +208,12 @@ importers:
       stylelint:
         specifier: 15.11.0
         version: 15.11.0
-      stylelint-config-prettier-scss:
-        specifier: 1.0.0
-        version: 1.0.0(stylelint@15.11.0)
+      stylelint-config-prettier:
+        specifier: 9.0.5
+        version: 9.0.5(stylelint@15.11.0)
       stylelint-config-standard:
         specifier: 35.0.0
         version: 35.0.0(stylelint@15.11.0)
-      stylelint-config-standard-scss:
-        specifier: 12.0.0
-        version: 12.0.0(postcss@8.4.32)(stylelint@15.11.0)
       stylelint-value-no-unknown-custom-properties:
         specifier: 5.0.0
         version: 5.0.0(stylelint@15.11.0)
@@ -2764,7 +2761,7 @@ packages:
       magic-string: 0.27.0
       react-docgen-typescript: 2.2.2(typescript@5.3.3)
       typescript: 5.3.3
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.5)
     dev: true
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -3840,7 +3837,7 @@ packages:
       magic-string: 0.30.5
       rollup: 3.29.4
       typescript: 5.3.3
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.5)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4203,7 +4200,7 @@ packages:
       react: 18.2.0
       react-docgen: 7.0.1
       react-dom: 18.2.0(react@18.2.0)
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.5)
     transitivePeerDependencies:
       - '@preact/preset-vite'
       - encoding
@@ -5023,7 +5020,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.6)
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5039,7 +5036,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 4.5.1
+      vite: 4.5.1(@types/node@20.10.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5055,7 +5052,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.0.6
+      vite: 5.0.6(@types/node@20.10.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -10684,10 +10681,6 @@ packages:
       yaml: 2.3.4
     dev: true
 
-  /postcss-media-query-parser@0.2.3:
-    resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
-    dev: true
-
   /postcss-nested@6.0.1(postcss@8.4.32):
     resolution: {integrity: sha512-mEp4xPMi5bSWiMbsgoPfcP74lsWLHkQbZc3sY+jWYd65CUwXrUaTp0fmNpa01ZcETKlIgUdFN/MpS2xZtqL9dQ==, tarball: https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.0.1.tgz}
     engines: {node: '>=12.0'}
@@ -10707,15 +10700,6 @@ packages:
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.3.3
-    dependencies:
-      postcss: 8.4.32
-    dev: true
-
-  /postcss-scss@4.0.9(postcss@8.4.32):
-    resolution: {integrity: sha512-AjKOeiwAitL/MXxQW2DliT28EKukvvbEWx3LBmJIRN8KfBGZbRTxNYW0kSqi1COiTZ57nZ9NW06S6ux//N1c9A==}
-    engines: {node: '>=12.0'}
-    peerDependencies:
-      postcss: ^8.4.29
     dependencies:
       postcss: 8.4.32
     dev: true
@@ -12105,31 +12089,14 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
-  /stylelint-config-prettier-scss@1.0.0(stylelint@15.11.0):
-    resolution: {integrity: sha512-Gr2qLiyvJGKeDk0E/+awNTrZB/UtNVPLqCDOr07na/sLekZwm26Br6yYIeBYz3ulsEcQgs5j+2IIMXCC+wsaQA==}
-    engines: {node: 14.* || 16.* || >= 18}
+  /stylelint-config-prettier@9.0.5(stylelint@15.11.0):
+    resolution: {integrity: sha512-U44lELgLZhbAD/xy/vncZ2Pq8sh2TnpiPvo38Ifg9+zeioR+LAkHu0i6YORIOxFafZoVg0xqQwex6e6F25S5XA==, tarball: https://registry.npmjs.org/stylelint-config-prettier/-/stylelint-config-prettier-9.0.5.tgz}
+    engines: {node: '>= 12'}
     hasBin: true
     peerDependencies:
-      stylelint: '>=15.0.0'
+      stylelint: '>= 11.x < 15'
     dependencies:
       stylelint: 15.11.0
-    dev: true
-
-  /stylelint-config-recommended-scss@14.0.0(postcss@8.4.32)(stylelint@15.11.0):
-    resolution: {integrity: sha512-HDvpoOAQ1RpF+sPbDOT2Q2/YrBDEJDnUymmVmZ7mMCeNiFSdhRdyGEimBkz06wsN+HaFwUh249gDR+I9JR7Onw==}
-    engines: {node: '>=18.12.0'}
-    peerDependencies:
-      postcss: ^8.3.3
-      stylelint: ^16.0.2
-    peerDependenciesMeta:
-      postcss:
-        optional: true
-    dependencies:
-      postcss: 8.4.32
-      postcss-scss: 4.0.9(postcss@8.4.32)
-      stylelint: 15.11.0
-      stylelint-config-recommended: 14.0.0(stylelint@15.11.0)
-      stylelint-scss: 6.0.0(stylelint@15.11.0)
     dev: true
 
   /stylelint-config-recommended@14.0.0(stylelint@15.11.0):
@@ -12141,22 +12108,6 @@ packages:
       stylelint: 15.11.0
     dev: true
 
-  /stylelint-config-standard-scss@12.0.0(postcss@8.4.32)(stylelint@15.11.0):
-    resolution: {integrity: sha512-ATh3EcEOLZq0iwlFaBdIsSavrla0lNtJ7mO7hdE7DgVT6imozRggFSqd4cFcjzVnOLKv/uJT63MmqA1acIflbw==}
-    engines: {node: '>=18.12.0'}
-    peerDependencies:
-      postcss: ^8.3.3
-      stylelint: ^16.0.2
-    peerDependenciesMeta:
-      postcss:
-        optional: true
-    dependencies:
-      postcss: 8.4.32
-      stylelint: 15.11.0
-      stylelint-config-recommended-scss: 14.0.0(postcss@8.4.32)(stylelint@15.11.0)
-      stylelint-config-standard: 35.0.0(stylelint@15.11.0)
-    dev: true
-
   /stylelint-config-standard@35.0.0(stylelint@15.11.0):
     resolution: {integrity: sha512-JyQrNZk2BZwVKFauGGxW2U6RuhIfQ4XoHHo+rBzMHcAkLnwI/knpszwXjzxiMgSfcxbZBckM7Vq4LHoANTR85g==, tarball: https://registry.npmjs.org/stylelint-config-standard/-/stylelint-config-standard-35.0.0.tgz}
     engines: {node: '>=18.12.0'}
@@ -12165,20 +12116,6 @@ packages:
     dependencies:
       stylelint: 15.11.0
       stylelint-config-recommended: 14.0.0(stylelint@15.11.0)
-    dev: true
-
-  /stylelint-scss@6.0.0(stylelint@15.11.0):
-    resolution: {integrity: sha512-N1xV/Ef5PNRQQt9E45unzGvBUN1KZxCI8B4FgN/pMfmyRYbZGVN4y9qWlvOMdScU17c8VVCnjIHTVn38Bb6qSA==}
-    engines: {node: '>=18.12.0'}
-    peerDependencies:
-      stylelint: ^16.0.2
-    dependencies:
-      known-css-properties: 0.29.0
-      postcss-media-query-parser: 0.2.3
-      postcss-resolve-nested-selector: 0.1.1
-      postcss-selector-parser: 6.0.13
-      postcss-value-parser: 4.2.0
-      stylelint: 15.11.0
     dev: true
 
   /stylelint-value-no-unknown-custom-properties@5.0.0(stylelint@15.11.0):
@@ -12664,7 +12601,7 @@ packages:
     dev: true
 
   /turbo-darwin-64@1.11.2:
-    resolution: {integrity: sha512-toFmRG/adriZY3hOps7nYCfqHAS+Ci6xqgX3fbo82kkLpC6OBzcXnleSwuPqjHVAaRNhVoB83L5njcE9Qwi2og==}
+    resolution: {integrity: sha512-toFmRG/adriZY3hOps7nYCfqHAS+Ci6xqgX3fbo82kkLpC6OBzcXnleSwuPqjHVAaRNhVoB83L5njcE9Qwi2og==, tarball: https://registry.npmjs.org/turbo-darwin-64/-/turbo-darwin-64-1.11.2.tgz}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
@@ -12672,7 +12609,7 @@ packages:
     optional: true
 
   /turbo-darwin-arm64@1.11.2:
-    resolution: {integrity: sha512-FCsEDZ8BUSFYEOSC3rrARQrj7x2VOrmVcfrMUIhexTxproRh4QyMxLfr6LALk4ymx6jbDCxWa6Szal8ckldFbA==}
+    resolution: {integrity: sha512-FCsEDZ8BUSFYEOSC3rrARQrj7x2VOrmVcfrMUIhexTxproRh4QyMxLfr6LALk4ymx6jbDCxWa6Szal8ckldFbA==, tarball: https://registry.npmjs.org/turbo-darwin-arm64/-/turbo-darwin-arm64-1.11.2.tgz}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
@@ -12680,7 +12617,7 @@ packages:
     optional: true
 
   /turbo-linux-64@1.11.2:
-    resolution: {integrity: sha512-Vzda/o/QyEske5CxLf0wcu7UUS+7zB90GgHZV4tyN+WZtoouTvbwuvZ3V6b5Wgd3OJ/JwWR0CXDK7Sf4VEMr7A==}
+    resolution: {integrity: sha512-Vzda/o/QyEske5CxLf0wcu7UUS+7zB90GgHZV4tyN+WZtoouTvbwuvZ3V6b5Wgd3OJ/JwWR0CXDK7Sf4VEMr7A==, tarball: https://registry.npmjs.org/turbo-linux-64/-/turbo-linux-64-1.11.2.tgz}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
@@ -12688,7 +12625,7 @@ packages:
     optional: true
 
   /turbo-linux-arm64@1.11.2:
-    resolution: {integrity: sha512-bRLwovQRz0yxDZrM4tQEAYV0fBHEaTzUF0JZ8RG1UmZt/CqtpnUrJpYb1VK8hj1z46z9YehARpYCwQ2K0qU4yw==}
+    resolution: {integrity: sha512-bRLwovQRz0yxDZrM4tQEAYV0fBHEaTzUF0JZ8RG1UmZt/CqtpnUrJpYb1VK8hj1z46z9YehARpYCwQ2K0qU4yw==, tarball: https://registry.npmjs.org/turbo-linux-arm64/-/turbo-linux-arm64-1.11.2.tgz}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
@@ -12696,7 +12633,7 @@ packages:
     optional: true
 
   /turbo-windows-64@1.11.2:
-    resolution: {integrity: sha512-LgTWqkHAKgyVuLYcEPxZVGPInTjjeCnN5KQMdJ4uQZ+xMDROvMFS2rM93iQl4ieDJgidwHCxxCxaU9u8c3d/Kg==}
+    resolution: {integrity: sha512-LgTWqkHAKgyVuLYcEPxZVGPInTjjeCnN5KQMdJ4uQZ+xMDROvMFS2rM93iQl4ieDJgidwHCxxCxaU9u8c3d/Kg==, tarball: https://registry.npmjs.org/turbo-windows-64/-/turbo-windows-64-1.11.2.tgz}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
@@ -12704,7 +12641,7 @@ packages:
     optional: true
 
   /turbo-windows-arm64@1.11.2:
-    resolution: {integrity: sha512-829aVBU7IX0c/B4G7g1VI8KniAGutHhIupkYMgF6xPkYVev2G3MYe6DMS/vsLt9GGM9ulDtdWxWrH5P2ngK8IQ==}
+    resolution: {integrity: sha512-829aVBU7IX0c/B4G7g1VI8KniAGutHhIupkYMgF6xPkYVev2G3MYe6DMS/vsLt9GGM9ulDtdWxWrH5P2ngK8IQ==, tarball: https://registry.npmjs.org/turbo-windows-arm64/-/turbo-windows-arm64-1.11.2.tgz}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
@@ -13193,7 +13130,7 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite@4.5.1:
+  /vite@4.5.1(@types/node@20.10.5):
     resolution: {integrity: sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -13221,6 +13158,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.10.5
       esbuild: 0.18.20
       postcss: 8.4.32
       rollup: 3.29.4
@@ -13228,7 +13166,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.0.6:
+  /vite@5.0.6(@types/node@20.10.5):
     resolution: {integrity: sha512-MD3joyAEBtV7QZPl2JVVUai6zHms3YOmLR+BpMzLlX2Yzjfcc4gTgNi09d/Rua3F4EtC8zdwPU8eQYyib4vVMQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -13256,6 +13194,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.10.5
       esbuild: 0.19.8
       postcss: 8.4.32
       rollup: 4.6.1
