@@ -11,12 +11,12 @@ import {
   Modal,
   OrderedList,
   PrimaryButton,
-  Tabs,
-  UnorderedList,
   Tab,
   TabContent,
   TabContents,
   TabList,
+  Tabs,
+  UnorderedList,
 } from "@postenbring/hedwig-react";
 import { useRef } from "react";
 
@@ -154,6 +154,9 @@ export default function KitchenSink() {
               </TabContents>
             </Tabs>
           </div>
+        </section>
+        <section>
+          <h2>Warning banner</h2>
         </section>
       </div>
     </>

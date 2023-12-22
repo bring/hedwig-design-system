@@ -1,0 +1,14 @@
+.hds-warning {
+  .hds-warning--collapsed {
+    color: red;
+  }
+
+  .hds-warning--expanded {
+    color: blue;
+  }
+
+  .hds-warning-title {
+    font: var(--hds-typography-body-small-title);
+    padding: var(--hds-spacing-small-4);
+  }
+}
