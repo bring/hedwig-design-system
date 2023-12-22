@@ -65,4 +65,19 @@ export const MultipleItems: Story = {
   },
 };
 
+export const JustOneItem: Story = {
+  name: "Just one item",
+  args: {
+    variant: "multiple",
+    children: (
+      <AccordionItem>
+        <AccordionTrigger>Professional accordion title</AccordionTrigger>
+        <AccordionContent>
+          This is the simplest form of accordion body. Can be extensive.
+        </AccordionContent>
+      </AccordionItem>
+    ),
+  },
+};
+
 export default meta;
