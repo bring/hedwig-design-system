@@ -1,16 +1,22 @@
+import * as url from "node:url";
+import stylelintValueNoUnknownCustomProperties from "stylelint-value-no-unknown-custom-properties";
+
 /**
  * @typedef {import('stylelint').Config} Config
  * @type {Config}
  */
-module.exports = {
-  extends: ["stylelint-config-standard", "stylelint-config-prettier"],
-  plugins: ["stylelint-value-no-unknown-custom-properties"],
+// eslint-disable-next-line import/no-default-export -- Config
+export default {
+  extends: ["stylelint-config-standard"],
+  plugins: [stylelintValueNoUnknownCustomProperties],
   rules: {
     // Make sure we don't misspell the tokens
     "csstools/value-no-unknown-custom-properties": [
       true,
       {
-        importFrom: [`${__dirname}/../tokens/tokens-output/css/tokens.css`],
+        importFrom: [
+          url.fileURLToPath(new URL("../tokens/tokens-output/css/tokens.css", import.meta.url)),
+        ],
       },
     ],
 
