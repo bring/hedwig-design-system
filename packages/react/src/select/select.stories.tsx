@@ -1,114 +1,75 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Dropdown } from ".";
+import { Select } from ".";
 
-const meta: Meta<typeof Dropdown> = {
-  title: "Dropdown",
-  component: Dropdown,
+const meta: Meta<typeof Select> = {
+  title: "Select",
+  component: Select,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Dropdown>;
+type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {
   args: {
-    label: "Default dropdown",
+    label: "Default select",
     variant: "default",
   },
   render: (props) => (
-    <Dropdown {...props}>
+    <Select {...props}>
       <option disabled hidden selected value="">
         Please select
       </option>
       <option value="1">option 1</option>
       <option value="2">option 2</option>
       <option value="3">option 3</option>
-    </Dropdown>
-  ),
-};
-
-export const Lined: Story = {
-  args: {
-    label: "Lined dropdown",
-    name: "name",
-    id: "someId",
-    variant: "lined",
-  },
-  render: (props) => (
-    <Dropdown {...props}>
-      <option disabled hidden selected value="">
-        Please select
-      </option>
-      <option value="1">option 1</option>
-      <option value="2">option 2</option>
-      <option value="3">option 3</option>
-    </Dropdown>
+    </Select>
   ),
 };
 
 export const White: Story = {
   args: {
-    label: "White dropdown",
+    label: "White select",
     variant: "white",
   },
   render: (props) => (
     <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Dropdown {...props}>
+      <Select {...props}>
         <option disabled hidden selected value="">
           Please select
         </option>
         <option value="1">option 1</option>
         <option value="2">option 2</option>
         <option value="3">option 3</option>
-      </Dropdown>
+      </Select>
     </div>
   ),
 };
 
 export const DefaultWithError: Story = {
   args: {
-    label: "Dropdown with error",
+    label: "select with error",
     variant: "default",
     name: "name",
     id: "someId",
     errorMessage: "Something is wrong",
   },
   render: (props) => (
-    <Dropdown {...props}>
+    <Select {...props}>
       <option disabled hidden selected value="">
         Please select
       </option>
       <option value="1">option 1</option>
       <option value="2">option 2</option>
       <option value="3">option 3</option>
-    </Dropdown>
-  ),
-};
-
-export const LinedWithError: Story = {
-  args: {
-    label: "White dropdown with error",
-    variant: "lined",
-    name: "name",
-    id: "someId",
-    errorMessage: "Something is wrong",
-  },
-  render: (props) => (
-    <Dropdown {...props}>
-      <option disabled hidden selected value="">
-        Please select
-      </option>
-      <option value="1">option 1</option>
-      <option value="2">option 2</option>
-      <option value="3">option 3</option>
-    </Dropdown>
+    </Select>
   ),
 };
 
 export const WhiteWithError: Story = {
   args: {
-    label: "White dropdown with error",
+    label: "White select with error",
     variant: "white",
     name: "name",
     id: "someId",
@@ -116,14 +77,56 @@ export const WhiteWithError: Story = {
   },
   render: (props) => (
     <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Dropdown {...props}>
+      <Select {...props}>
         <option disabled hidden selected value="">
           Please select
         </option>
         <option value="1">option 1</option>
         <option value="2">option 2</option>
         <option value="3">option 3</option>
-      </Dropdown>
+      </Select>
+    </div>
+  ),
+};
+
+export const DefaulDisabled: Story = {
+  args: {
+    label: "Default select disabled",
+    variant: "default",
+    name: "name",
+    id: "someId",
+    disabled: true,
+  },
+  render: (props) => (
+    <Select {...props}>
+      <option disabled hidden selected value="">
+        Please select
+      </option>
+      <option value="1">option 1</option>
+      <option value="2">option 2</option>
+      <option value="3">option 3</option>
+    </Select>
+  ),
+};
+
+export const WhiteDisabled: Story = {
+  args: {
+    label: "White select disabled",
+    variant: "white",
+    name: "name",
+    id: "someId",
+    disabled: true,
+  },
+  render: (props) => (
+    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
+      <Select {...props}>
+        <option disabled hidden selected value="">
+          Please select
+        </option>
+        <option value="1">option 1</option>
+        <option value="2">option 2</option>
+        <option value="3">option 3</option>
+      </Select>
     </div>
   ),
 };

@@ -5,7 +5,7 @@ export * from "./list";
 export * from "./box";
 export * from "./message";
 export * from "./accordion";
-export * from "./dropdown";
+export * from "./select";
 export * from "./modal";
 export * from "./breadcrumb";
 export * from "./tabs";
