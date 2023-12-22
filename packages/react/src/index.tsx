@@ -10,3 +10,4 @@ export * from "./modal";
 export * from "./breadcrumb";
 export * from "./tabs";
 export * from "./input";
+export * from "./textarea";
