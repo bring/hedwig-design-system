@@ -1,5 +1,4 @@
 import * as url from "node:url";
-import stylelintValueNoUnknownCustomProperties from "stylelint-value-no-unknown-custom-properties";
 
 /**
  * @typedef {import('stylelint').Config} Config
@@ -8,7 +7,7 @@ import stylelintValueNoUnknownCustomProperties from "stylelint-value-no-unknown-
 // eslint-disable-next-line import/no-default-export -- Config
 export default {
   extends: ["stylelint-config-standard"],
-  plugins: [stylelintValueNoUnknownCustomProperties],
+  plugins: ["stylelint-value-no-unknown-custom-properties"],
   rules: {
     // Make sure we don't misspell the tokens
     "csstools/value-no-unknown-custom-properties": [
