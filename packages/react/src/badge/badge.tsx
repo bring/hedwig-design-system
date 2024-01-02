@@ -16,7 +16,7 @@ function BaseBadge({
   size = "small",
   className,
   ...rest
-}: BadgeProps & { variant: "primary" | "dark" | "white" | "warning" }) {
+}: BadgeProps & { variant: "lighter" | "dark" | "white" | "warning" }) {
   return (
     <span
       className={clsx(
@@ -35,7 +35,7 @@ function BaseBadge({
 BaseBadge.displayName = "BaseBadge";
 
 export function Badge(props: BadgeProps) {
-  return <BaseBadge {...props} variant="primary" />;
+  return <BaseBadge {...props} variant="lighter" />;
 }
 
 Badge.displayName = "Badge";

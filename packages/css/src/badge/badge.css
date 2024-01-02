@@ -28,7 +28,7 @@
   /* Color variations */
 
   &, /* Default */
-  &.hds-badge--primary {
+  &.hds-badge--lighter {
     background-color: var(--hds-brand-colors-lighter);
     border-color: var(--hds-brand-colors-lighter);
     color: var(--hds-brand-colors-dark);
