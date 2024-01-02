@@ -10,7 +10,7 @@
     "dev": "pnpm run --parallel /^dev:.*/",
     "dev:css": "chokidar --initial 'src/**/*.css' '../tokens/tokens-output/**' -c 'pnpm build:css'",
     "dev:typed-classname": "wait-on dist/index.css && node --watch-preserve-output --watch-path dist/index.css --watch ./typed-classname/build.mjs",
-    "lint": "stylelint 'src/**/*.css' 'src/**/*.scss' --cache",
+    "lint": "stylelint 'src/**/*.css' --cache",
     "lint:fix": "pnpm lint -- --fix",
     "clean": "rm -rf .turbo node_modules dist",
     "show-css-size": "pnpm build:css && echo '\nSize of dist/index.css (original → gzip)' && pnpm dlx gzip-size-cli dist/index.css --include-original"
@@ -27,16 +27,14 @@
     "lightningcss": "1.22.1",
     "lightningcss-cli": "1.22.1",
     "sanitize.css": "^13.0.0",
-    "stylelint": "15.11.0",
-    "stylelint-config-prettier-scss": "1.0.0",
-    "stylelint-config-standard": "34.0.0",
-    "stylelint-config-standard-scss": "11.1.0",
-    "stylelint-value-no-unknown-custom-properties": "5.0.0",
+    "stylelint": "16.1.0",
+    "stylelint-config-standard": "36.0.0",
+    "stylelint-value-no-unknown-custom-properties": "6.0.1",
     "wait-on": "^7.2.0"
   },
   "dependencies": {
     "@postenbring/hedwig-tokens": "workspace:*",
-    "clsx": "^2.0.0"
+    "clsx": "^2.1.0"
   },
   "publishConfig": {
     "access": "public"

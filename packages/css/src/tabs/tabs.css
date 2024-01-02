@@ -10,6 +10,7 @@
 
     &.hds-tabs--list-horizontal {
       color: red;
+
       @media (width >= 720px) {
         border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-fill);
         flex-direction: row;
@@ -27,6 +28,7 @@
           }
         }
       }
+
       @media (width < 720px) {
         border-left: 1px solid var(--hds-ui-colors-light-grey-fill);
         flex-direction: column;

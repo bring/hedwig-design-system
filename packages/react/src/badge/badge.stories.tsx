@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof Badge>;
 
-export const Primary: Story = {
+export const Lighter: Story = {
   args: {
     children: "Default badge",
   },
