@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.7
+
+### Patch Changes
+
+- 2d2945d: :arrow_up: bump dependencies
+
 ## 0.0.6
 
 ### Patch Changes

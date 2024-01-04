@@ -1,5 +1,22 @@
 # @postenbring/hedwig-react
 
+## 0.0.26
+
+### Patch Changes
+
+- 7a2c020: :recycle: Rename `Dropdown` -> `Select` and rewrite to match `Input`
+- 738f520: Release Textarea styling and component
+- 8a2ea33: :truck: rename badge variant `primary` -> `lighter`
+- 08ff783: Renamed package Dropdown to Select, added some styling
+- 2d2945d: :arrow_up: bump dependencies
+- 2261893: :technologist: update accordion api
+- Updated dependencies [7a2c020]
+- Updated dependencies [738f520]
+- Updated dependencies [8a2ea33]
+- Updated dependencies [08ff783]
+- Updated dependencies [2d2945d]
+  - @postenbring/hedwig-css@0.0.24
+
 ## 0.0.25
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@postenbring/hedwig-tokens",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "sideEffects": false,
   "license": "MIT",
   "files": [
