@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.25
+
+### Patch Changes
+
+- e387d19: :lipstick: update accordion divider height and color to match figma
+
 ## 0.0.24
 
 ### Patch Changes
