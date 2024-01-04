@@ -3,8 +3,8 @@ import { forwardRef, useContext, useEffect, useId, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import { AccordionContext, AccordionItemContext } from "./context";
-import type { AccordionTriggerProps } from "./accordion-item-trigger";
-import type { AccordionContentProps } from "./accordion-item-content";
+import type { AccordionTriggerProps } from "./accordion-trigger";
+import type { AccordionContentProps } from "./accordion-content";
 
 export type AccordionItemChildrenType =
   | ReactElement<AccordionTriggerProps>
