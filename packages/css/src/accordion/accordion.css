@@ -34,7 +34,7 @@
       width: 100%;
       padding: var(--hds-component-accordion-trigger-spacing-between) 0;
       border: 0;
-      border-top: var(--hds-stroke-thick) solid var(--hds-ui-colors-light-grey-fill);
+      border-top: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-stroke);
       text-align: left;
       background-color: transparent;
       font: var(--hds-typography-body);
