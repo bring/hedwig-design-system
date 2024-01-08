@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { Box } from "../box";
 import { Badge, DarkBadge, WhiteBadge, WarningBadge } from ".";
 
 const meta: Meta<typeof Badge> = {
@@ -28,7 +29,11 @@ export const White: Story = {
   args: {
     children: "White badge",
   },
-  render: (props) => <WhiteBadge {...props} />,
+  render: (props) => (
+    <Box>
+      <WhiteBadge {...props} />
+    </Box>
+  ),
 };
 
 export const Warning: Story = {
