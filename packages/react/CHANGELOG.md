@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.30
+
+### Patch Changes
+
+- e614cc1: :lipstick: fixup spacing issues for description list
+- Updated dependencies [e614cc1]
+  - @postenbring/hedwig-css@0.0.28
+
 ## 0.0.29
 
 ### Patch Changes

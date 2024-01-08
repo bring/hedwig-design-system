@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.28
+
+### Patch Changes
+
+- e614cc1: :lipstick: fixup spacing issues for description list
+
 ## 0.0.27
 
 ### Patch Changes
