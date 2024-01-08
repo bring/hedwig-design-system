@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.29
+
+### Patch Changes
+
+- aabf5e9: :lipstick: update badge styling to match figma sketches
+
 ## 0.0.28
 
 ### Patch Changes
