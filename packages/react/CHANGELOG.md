@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.29
+
+### Patch Changes
+
+- 85d5d12: :building_construction: update to the expected prop spreading api
+- Updated dependencies [85d5d12]
+  - @postenbring/hedwig-css@0.0.27
+
 ## 0.0.28
 
 ### Patch Changes
