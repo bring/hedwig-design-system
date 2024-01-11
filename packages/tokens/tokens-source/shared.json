@@ -1,6 +1,6 @@
 {
   "posten-colors": {
-    "type": "color",
+    "$type": "color",
     "signature-red": {
       "$value": "#e32d22"
     },
@@ -24,7 +24,7 @@
     }
   },
   "bring-colors": {
-    "type": "color",
+    "$type": "color",
     "signature-green": {
       "$value": "#7bc144"
     },
@@ -48,7 +48,7 @@
     }
   },
   "ui-colors": {
-    "type": "color",
+    "$type": "color",
     "black": {
       "$value": "#000000"
     },
@@ -84,7 +84,7 @@
     }
   },
   "dark-mode-colors": {
-    "type": "color",
+    "$type": "color",
     "obsidian": {
       "$value": "#121212",
       "description": "Base color for dark mode"
@@ -107,7 +107,7 @@
     }
   },
   "spacing": {
-    "type": "dimension",
+    "$type": "dimension",
     "small-1": {
       "$value": "4px"
     },
@@ -149,7 +149,7 @@
     }
   },
   "fonts": {
-    "type": "fontFamily",
+    "$type": "fontFamily",
     "posten-sans": {
       "$value": ["Posten Sans", "Arial", "sans-serif"]
     },
@@ -167,7 +167,7 @@
     }
   },
   "typography": {
-    "type": "typography",
+    "$type": "typography",
     "posten-h1-display": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
@@ -315,15 +315,15 @@
   },
   "border-radius": {
     "$value": "2px",
-    "type": "borderRadius"
+    "$type": "borderRadius"
   },
   "stroke-default": {
     "$value": "1px",
-    "type": "borderWidth"
+    "$type": "borderWidth"
   },
   "stroke-thick": {
     "$value": "2px",
-    "type": "borderWidth"
+    "$type": "borderWidth"
   },
   "shadow-default": {
     "$type": "shadow",

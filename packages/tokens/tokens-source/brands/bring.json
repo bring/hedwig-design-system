@@ -1,6 +1,6 @@
 {
   "brand-colors": {
-    "type": "color",
+    "$type": "color",
     "signature": {
       "$value": "{bring-colors.signature-green}"
     },
@@ -25,12 +25,12 @@
   },
 
   "brand-button-colors": {
-    "type": "color",
+    "$type": "color",
     "text": { "$value": "{ui-colors.black}" }
   },
 
   "brand-link-colors": {
-    "type": "color",
+    "$type": "color",
     "text": {
       "$value": "{ui-colors.black}"
     },

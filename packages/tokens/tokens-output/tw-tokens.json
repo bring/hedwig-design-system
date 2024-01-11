@@ -1,6 +1,6 @@
 {
   "posten-colors": {
-    "type": "color",
+    "$type": "color",
     "signature-red": "#e32d22",
     "darker-red": "#4a1011",
     "dark-red": "#980000",
@@ -10,7 +10,7 @@
     "light-red-hover": "#ff7d55"
   },
   "bring-colors": {
-    "type": "color",
+    "$type": "color",
     "signature-green": "#7bc144",
     "darker-green": "#002f19",
     "dark-green": "#00643a",
@@ -20,7 +20,7 @@
     "light-green-hover": "#d3e593"
   },
   "ui-colors": {
-    "type": "color",
+    "$type": "color",
     "black": "#000000",
     "dark-grey": "#6e6e6e",
     "grey": "#d6d6d6",
@@ -34,7 +34,7 @@
     "black-hover": "#1e1e1e"
   },
   "dark-mode-colors": {
-    "type": "color",
+    "$type": "color",
     "obsidian": "#121212",
     "coal": "#252525",
     "dusk": "#2c2c2c",
@@ -42,7 +42,7 @@
     "ash": "#999999"
   },
   "spacing": {
-    "type": "dimension",
+    "$type": "dimension",
     "small-1": "4px",
     "small-2": "8px",
     "small-3": "12px",
@@ -58,7 +58,7 @@
     "large-5": "160px"
   },
   "fonts": {
-    "type": "fontFamily",
+    "$type": "fontFamily",
     "posten-sans": [
       "Posten Sans",
       "Arial",
@@ -86,7 +86,7 @@
     ]
   },
   "typography": {
-    "type": "typography",
+    "$type": "typography",
     "posten-h1-display": {
       "fontFamily": [
         "Posten Sans",
@@ -474,13 +474,13 @@
   "$description1": "Tokens manually added that are not from an Figma Export",
   "$description2": "Here we can add missing tokens under development",
   "micro-animation-duration": {
-    "type": "time",
+    "$type": "time",
     "quick": "0.130s",
     "normal": "0.300s",
     "slow": "0.700s"
   },
   "breakpoints": {
-    "type": "dimension",
+    "$type": "dimension",
     "small": "460px",
     "medium": "720px",
     "large": "940px",
