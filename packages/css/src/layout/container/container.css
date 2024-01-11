@@ -26,8 +26,6 @@
 
 .hds-container--slim {
   display: block;
-  margin: 0 auto;
-  padding: 0 var(--hds-spacing-small-4);
 }
 
 /* 720px - max-width: 590px */
