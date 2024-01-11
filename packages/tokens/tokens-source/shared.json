@@ -106,6 +106,48 @@
       "description": "Default radio buttons, checkbox, label on inputsfields, toogle off  (background)"
     }
   },
+  "breakpoints": {
+    "type": "dimension",
+    "xsmall": {
+      "description": "Most mobile phones",
+      "max-width": {
+        "$value": "461px"
+      }
+    },
+    "small": {
+      "description": "Larger mobile phones",
+      "min-width": {
+        "$value": "461px"
+      },
+      "max-width": {
+        "$value": "720px"
+      }
+    },
+    "medium": {
+      "description": "Most tablets",
+      "min-width": {
+        "$value": "421px"
+      },
+      "max-width": {
+        "$value": "940px"
+      }
+    },
+    "large": {
+      "description": "Smaller laptops and desktop monitors",
+      "min-width": {
+        "$value": "941px"
+      },
+      "max-width": {
+        "$value": "1200px"
+      }
+    },
+    "xlarge": {
+      "description": "Most modern laptops and desktop monitors",
+      "min-width": {
+        "$value": "1201px"
+      }
+    }
+  },
   "spacing": {
     "$type": "dimension",
     "small-1": {
