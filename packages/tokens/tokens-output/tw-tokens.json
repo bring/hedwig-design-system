@@ -41,6 +41,13 @@
     "spider": "#333333",
     "ash": "#999999"
   },
+  "breakpoint": {
+    "$type": "dimension",
+    "small": "460px",
+    "medium": "720px",
+    "large": "940px",
+    "xlarge": "1200px"
+  },
   "spacing": {
     "$type": "dimension",
     "small-1": "4px",
@@ -478,13 +485,6 @@
     "quick": "0.130s",
     "normal": "0.300s",
     "slow": "0.700s"
-  },
-  "breakpoints": {
-    "$type": "dimension",
-    "small": "460px",
-    "medium": "720px",
-    "large": "940px",
-    "xlarge": "1200px"
   },
   "opacity": {
     "7": ".07",

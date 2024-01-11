@@ -13,13 +13,6 @@
       "$value": "0.700s"
     }
   },
-  "breakpoints": {
-    "$type": "dimension",
-    "small": { "$value": "460px" },
-    "medium": { "$value": "720px" },
-    "large": { "$value": "940px" },
-    "xlarge": { "$value": "1200px" }
-  },
   "opacity": {
     "7": { "$value": ".07" },
     "10": { "$value": ".1" },

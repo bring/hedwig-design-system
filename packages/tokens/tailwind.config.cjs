@@ -157,7 +157,7 @@ module.exports = {
     boxShadow: {
       DEFAULT: tokens["shadow-default"],
     },
-    screens: tokens.breakpoints,
+    screens: tokens.breakpoint,
     opacity: {
       0: 0,
       ...tokens.opacity,

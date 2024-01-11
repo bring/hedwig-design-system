@@ -29,6 +29,10 @@
   --hds-dark-mode-colors-dusk: #2c2c2c; /* Fill inputfields, checkbox, radiobuttons, toogles */
   --hds-dark-mode-colors-spider: #333333; /* Clickable cards or tiles */
   --hds-dark-mode-colors-ash: #999999; /* Default radio buttons, checkbox, label on inputsfields, toogle off  (background) */
+  --hds-breakpoint-small: 460px; /* Larger mobile phones */
+  --hds-breakpoint-medium: 720px; /* Most tablets */
+  --hds-breakpoint-large: 940px; /* Smaller laptops and desktop monitors. This is where the navbar goes from the mobile version to the desktop version */
+  --hds-breakpoint-xlarge: 1200px; /* Most modern laptops and desktop monitors */
   --hds-spacing-small-1: 4px;
   --hds-spacing-small-2: 8px;
   --hds-spacing-small-3: 12px;
@@ -177,10 +181,6 @@
   --hds-micro-animation-duration-quick: 0.130s;
   --hds-micro-animation-duration-normal: 0.300s;
   --hds-micro-animation-duration-slow: 0.700s;
-  --hds-breakpoints-small: 460px;
-  --hds-breakpoints-medium: 720px;
-  --hds-breakpoints-large: 940px;
-  --hds-breakpoints-xlarge: 1200px;
   --hds-opacity-7: .07;
   --hds-opacity-10: .1;
   --hds-opacity-20: .2;
