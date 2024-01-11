@@ -2,128 +2,128 @@
   "brand-colors": {
     "type": "color",
     "signature": {
-      "value": "{bring-colors.signature-green}"
+      "$value": "{bring-colors.signature-green}"
     },
     "darker": {
-      "value": "{bring-colors.darker-green}"
+      "$value": "{bring-colors.darker-green}"
     },
     "dark": {
-      "value": "{bring-colors.dark-green}"
+      "$value": "{bring-colors.dark-green}"
     },
     "light": {
-      "value": "{bring-colors.light-green}"
+      "$value": "{bring-colors.light-green}"
     },
     "lighter": {
-      "value": "{bring-colors.lighter-green}"
+      "$value": "{bring-colors.lighter-green}"
     },
     "signature-hover": {
-      "value": "{bring-colors.signature-green-hover}"
+      "$value": "{bring-colors.signature-green-hover}"
     },
     "light-hover": {
-      "value": "{bring-colors.light-green-hover}"
+      "$value": "{bring-colors.light-green-hover}"
     }
   },
 
   "brand-button-colors": {
     "type": "color",
-    "text": { "value": "{ui-colors.black}" }
+    "text": { "$value": "{ui-colors.black}" }
   },
 
   "brand-link-colors": {
     "type": "color",
     "text": {
-      "value": "{ui-colors.black}"
+      "$value": "{ui-colors.black}"
     },
     "underline": {
-      "value": "{bring-colors.signature-green}"
+      "$value": "{bring-colors.signature-green}"
     },
     "hover": {
-      "value": "{bring-colors.dark-green}"
+      "$value": "{bring-colors.dark-green}"
     },
     "underline-hover": {
-      "value": "{bring-colors.dark-green}"
+      "$value": "{bring-colors.dark-green}"
     }
   },
 
   "brand-typography": {
     "h1-display": {
-      "value": "{typography.bring-h1-display}"
+      "$value": "{typography.bring-h1-display}"
     },
     "h1": {
-      "value": "{typography.bring-h1}"
+      "$value": "{typography.bring-h1}"
     },
     "h2": {
-      "value": "{typography.bring-h2}"
+      "$value": "{typography.bring-h2}"
     }
   },
 
   "brand-font-size": {
     "h1-display": {
-      "value": "{font-size.bring-h1-display}"
+      "$value": "{font-size.bring-h1-display}"
     },
     "h1-display-min": {
-      "value": "{font-size.bring-h1-display-min}"
+      "$value": "{font-size.bring-h1-display-min}"
     },
     "h1-display-max": {
-      "value": "{font-size.bring-h1-display-max}"
+      "$value": "{font-size.bring-h1-display-max}"
     },
     "h1": {
-      "value": "{font-size.bring-h1}"
+      "$value": "{font-size.bring-h1}"
     },
     "h1-min": {
-      "value": "{font-size.bring-h1-min}"
+      "$value": "{font-size.bring-h1-min}"
     },
     "h1-max": {
-      "value": "{font-size.bring-h1-max}"
+      "$value": "{font-size.bring-h1-max}"
     },
     "h2": {
-      "value": "{font-size.bring-h2}"
+      "$value": "{font-size.bring-h2}"
     },
     "h2-min": {
-      "value": "{font-size.bring-h2-min}"
+      "$value": "{font-size.bring-h2-min}"
     },
     "h2-max": {
-      "value": "{font-size.bring-h2-max}"
+      "$value": "{font-size.bring-h2-max}"
     }
   },
   "brand-line-height": {
     "h1-display": {
-      "value": "{line-height.bring-h1-display}"
+      "$value": "{line-height.bring-h1-display}"
     },
     "h1-display-min": {
-      "value": "{line-height.bring-h1-display-min}"
+      "$value": "{line-height.bring-h1-display-min}"
     },
     "h1-display-max": {
-      "value": "{line-height.bring-h1-display-max}"
+      "$value": "{line-height.bring-h1-display-max}"
     },
     "h1": {
-      "value": "{line-height.bring-h1}"
+      "$value": "{line-height.bring-h1}"
     },
     "h1-min": {
-      "value": "{line-height.bring-h1-min}"
+      "$value": "{line-height.bring-h1-min}"
     },
     "h1-max": {
-      "value": "{line-height.bring-h1-max}"
+      "$value": "{line-height.bring-h1-max}"
     },
     "h2": {
-      "value": "{line-height.bring-h2}"
+      "$value": "{line-height.bring-h2}"
     },
     "h2-min": {
-      "value": "{line-height.bring-h2-min}"
+      "$value": "{line-height.bring-h2-min}"
     },
     "h2-max": {
-      "value": "{line-height.bring-h2-max}"
+      "$value": "{line-height.bring-h2-max}"
     }
   },
   "brand-font-weight": {
     "h1-display": {
-      "value": "{font-weight.bring-h1-display}"
+      "$value": "{font-weight.bring-h1-display}"
     },
     "h1": {
-      "value": "{font-weight.bring-h1}"
+      "$value": "{font-weight.bring-h1}"
     },
     "h2": {
-      "value": "{font-weight.bring-h2}"
+      "$value": "{font-weight.bring-h2}"
     }
   }
 }
