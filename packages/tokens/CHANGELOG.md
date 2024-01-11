@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.8
+
+### Patch Changes
+
+- 6f1f198: update design tokens format. no change for the output
+
 ## 0.0.7
 
 ### Patch Changes
