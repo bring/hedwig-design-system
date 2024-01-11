@@ -111,7 +111,7 @@
     "xsmall": {
       "description": "Most mobile phones",
       "max-width": {
-        "$value": "461px"
+        "$value": "460px"
       }
     },
     "small": {
