@@ -1,5 +1,14 @@
 # @postenbring/hedwig-css
 
+## 0.0.30
+
+### Patch Changes
+
+- 5f8dbd4: styling for containers, and some updates to example app
+- 4e7c846: Make body font specificity align with legacy Hedwig
+- Updated dependencies [6f1f198]
+  - @postenbring/hedwig-tokens@0.0.8
+
 ## 0.0.29
 
 ### Patch Changes
