@@ -41,6 +41,13 @@
     "spider": "#333333",
     "ash": "#999999"
   },
+  "breakpoint": {
+    "$type": "dimension",
+    "small": "460px",
+    "medium": "720px",
+    "large": "940px",
+    "xlarge": "1200px"
+  },
   "spacing": {
     "$type": "dimension",
     "small-1": "4px",
@@ -358,6 +365,18 @@
     "easing-out": "cubic-bezier(0, 0.45, 0.1, 1)",
     "easing-normal": "cubic-bezier(0.45, 0.1, 0.65, 1)"
   },
+  "micro-animation-duration": {
+    "$type": "time",
+    "quick": "0.130s",
+    "normal": "0.300s",
+    "slow": "0.700s"
+  },
+  "opacity": {
+    "7": ".07",
+    "10": ".1",
+    "20": ".2",
+    "50": ".5"
+  },
   "font-size": {
     "type": "dimension",
     "posten-h1-display": "clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)",
@@ -470,26 +489,5 @@
     "technical title": 500,
     "caption": 400,
     "caption title": 500
-  },
-  "$description1": "Tokens manually added that are not from an Figma Export",
-  "$description2": "Here we can add missing tokens under development",
-  "micro-animation-duration": {
-    "$type": "time",
-    "quick": "0.130s",
-    "normal": "0.300s",
-    "slow": "0.700s"
-  },
-  "breakpoints": {
-    "$type": "dimension",
-    "small": "460px",
-    "medium": "720px",
-    "large": "940px",
-    "xlarge": "1200px"
-  },
-  "opacity": {
-    "7": ".07",
-    "10": ".1",
-    "20": ".2",
-    "50": ".5"
   }
 }

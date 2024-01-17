@@ -106,6 +106,25 @@
       "description": "Default radio buttons, checkbox, label on inputsfields, toogle off  (background)"
     }
   },
+  "breakpoint": {
+    "$type": "dimension",
+    "small": {
+      "description": "Larger mobile phones",
+      "$value": "460px"
+    },
+    "medium": {
+      "description": "Most tablets",
+      "$value": "720px"
+    },
+    "large": {
+      "description": "Smaller laptops and desktop monitors. This is where the navbar goes from the mobile version to the desktop version",
+      "$value": "940px"
+    },
+    "xlarge": {
+      "description": "Most modern laptops and desktop monitors",
+      "$value": "1200px"
+    }
+  },
   "spacing": {
     "$type": "dimension",
     "small-1": {
@@ -346,5 +365,23 @@
     "easing-normal": {
       "$value": [0.45, 0.1, 0.65, 1]
     }
+  },
+  "micro-animation-duration": {
+    "$type": "time",
+    "quick": {
+      "$value": "0.130s"
+    },
+    "normal": {
+      "$value": "0.300s"
+    },
+    "slow": {
+      "$value": "0.700s"
+    }
+  },
+  "opacity": {
+    "7": { "$value": ".07" },
+    "10": { "$value": ".1" },
+    "20": { "$value": ".2" },
+    "50": { "$value": ".5" }
   }
 }
