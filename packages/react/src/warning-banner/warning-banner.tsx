@@ -5,14 +5,19 @@ import type { OverridableComponent } from "../utils";
 import { Box } from "../box";
 
 export interface WarningBannerProps {
-  children: ReactNode;
+  title: ReactNode;
+  description?: ReactNode;
 }
 
 export const WarningBanner: OverridableComponent<WarningBannerProps, HTMLDivElement> = forwardRef(
-  ({ className, children, ...rest }, ref) => {
+  ({ title, description, className, ...rest }, ref) => {
+    const expandable = !!description;
     return (
       <Box {...rest} className={clsx("hds-warning-banner", className as undefined)} ref={ref}>
-        {children}
+        <WarningBannerTitle variant={expandable ? "expandable" : "default"}>
+          {title}
+        </WarningBannerTitle>
+        {expandable ? <WarningBannerDescription>{description}</WarningBannerDescription> : null}
       </Box>
     );
   },
@@ -24,7 +29,7 @@ interface WarningBannerTitleProps {
   children: ReactNode;
 }
 
-export const WarningBannerTitle: OverridableComponent<WarningBannerTitleProps, HTMLDivElement> =
+const WarningBannerTitle: OverridableComponent<WarningBannerTitleProps, HTMLDivElement> =
   forwardRef(
     (
       {
@@ -83,8 +88,8 @@ export const WarningBannerTitle: OverridableComponent<WarningBannerTitleProps, H
   );
 WarningBannerTitle.displayName = "WarningBannerTitle";
 
-export const WarningBannerDescription: OverridableComponent<object, HTMLParagraphElement> =
-  forwardRef(({ as: Component = "p", className, ...rest }, ref) => {
+const WarningBannerDescription: OverridableComponent<object, HTMLParagraphElement> = forwardRef(
+  ({ as: Component = "p", className, ...rest }, ref) => {
     return (
       <Component
         className={clsx("hds-warning-banner__description", className as undefined)}
@@ -92,5 +97,6 @@ export const WarningBannerDescription: OverridableComponent<object, HTMLParagrap
         {...rest}
       />
     );
-  });
+  },
+);
 WarningBannerDescription.displayName = "WarningBannerDescription";

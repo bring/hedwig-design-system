@@ -52,7 +52,7 @@
 
         & svg {
           vertical-align: baseline;
-          transform: rotate(180deg); /* Try to avoid this */
+          transform: rotate(180deg);
         }
       }
     }
