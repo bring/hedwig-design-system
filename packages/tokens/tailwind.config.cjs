@@ -9,7 +9,7 @@ const tokens = require("./tokens-output/tw-tokens.json");
 const prepare = (obj) => {
   delete obj["type"];
   delete obj["$type"];
-  for (const child in Object.values(obj)) {
+  for (const child of Object.values(obj)) {
     if (typeof child === "object") {
       prepare(child);
     }
@@ -157,7 +157,7 @@ module.exports = {
     boxShadow: {
       DEFAULT: tokens["shadow-default"],
     },
-    screens: tokens.breakpoints,
+    screens: tokens.breakpoint,
     opacity: {
       0: 0,
       ...tokens.opacity,

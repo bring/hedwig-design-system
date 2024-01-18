@@ -17,6 +17,10 @@
 
 body {
   background: var(--hds-ui-colors-white);
+
+  /* Get specificity on the same level as the font decleration in the 
+   * legacy Hedwig CSS, making it possible to override by ordering */
+  font: var(--hds-typography-body);
 }
 
 /**

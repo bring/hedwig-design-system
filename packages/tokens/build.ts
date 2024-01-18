@@ -40,7 +40,7 @@ const forTailwindTransforms = [
 function buildSharedCssVariables() {
   console.log("🤖 Building shared css variables");
   StyleDictionary.extend({
-    source: ["tokens-source/*shared*.json"],
+    source: ["tokens-source/shared.json"],
     platforms: {
       css: {
         options: {
