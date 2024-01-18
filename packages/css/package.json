@@ -1,10 +1,10 @@
 {
   "name": "@postenbring/hedwig-css",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "",
   "scripts": {
     "build": "pnpm run --sequential /^build:.*/",
-    "build:css": "mkdir -p dist && cd dist && lightningcss --minify --bundle --sourcemap --targets '>= 0.25%' ../src/*.css ../src/**/*.css -d .",
+    "build:css": "mkdir -p dist && cd dist && lightningcss --minify --bundle --sourcemap --targets '>= 0.25%' ../src/*.css ../src/**/*.css ../src/**/**/*.css -d .",
     "build:typed-classname": "node ./typed-classname/build.mjs",
     "build:scoped-css": "node ./build-scoped-css.mjs",
     "dev": "pnpm run --parallel /^dev:.*/",

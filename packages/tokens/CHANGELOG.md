@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.9
+
+### Patch Changes
+
+- 11e31f5: Rename `breakpoints` -> `breakpoint` and move all shared tokens into `shared.json`
+
 ## 0.0.8
 
 ### Patch Changes

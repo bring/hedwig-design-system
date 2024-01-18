@@ -7,6 +7,7 @@
 @import url("typography/typography.css");
 @import url("box/box.css");
 @import url("message/message.css");
+@import url("navbar/navbar.css");
 @import url("input/input.css");
 @import url("accordion/accordion.css");
 @import url("select/select.css");
@@ -15,4 +16,5 @@
 @import url("tabs/tabs.css");
 @import url("textarea/textarea.css");
 @import url("layout/container/container.css");
+@import url("layout/flex/flex.css");
 @import url("warning-banner/warning-banner.css");

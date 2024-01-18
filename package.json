@@ -33,5 +33,9 @@
   },
   "prettier": {
     "printWidth": 100
+  },
+  "engines": {
+    "node": ">=20.10.0",
+    "pnpm": ">=8"
   }
 }
