@@ -24,8 +24,8 @@
   "devDependencies": {
     "browserslist": "4.22.2",
     "chokidar-cli": "3.0.0",
-    "lightningcss": "1.22.1",
-    "lightningcss-cli": "1.22.1",
+    "lightningcss": "1.23.0",
+    "lightningcss-cli": "1.23.0",
     "sanitize.css": "^13.0.0",
     "stylelint": "16.1.0",
     "stylelint-config-standard": "36.0.0",
