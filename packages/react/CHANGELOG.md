@@ -1,5 +1,14 @@
 # @postenbring/hedwig-react
 
+## 0.0.34
+
+### Patch Changes
+
+- 9c7eafd: First version of `<Card/>` component.
+- 7346d02: :sparkles: container component in react
+- Updated dependencies [9c7eafd]
+  - @postenbring/hedwig-css@0.0.32
+
 ## 0.0.33
 
 ### Patch Changes
