@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.31
+
+### Patch Changes
+
+- 5b5676c: Added styling for flex, pretty much a copy of whats in Hedwig today
+- Updated dependencies [11e31f5]
+  - @postenbring/hedwig-tokens@0.0.9
+
 ## 0.0.30
 
 ### Patch Changes
