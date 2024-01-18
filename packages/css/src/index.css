@@ -14,4 +14,5 @@
 @import url("breadcrumb/breadcrumb.css");
 @import url("tabs/tabs.css");
 @import url("textarea/textarea.css");
-@import url("layouts/container/container.css");
+@import url("layout/container/container.css");
+@import url("layout/flex/flex.css");
