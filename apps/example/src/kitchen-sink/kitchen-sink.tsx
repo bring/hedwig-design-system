@@ -1,6 +1,7 @@
 import "@postenbring/hedwig-css/dist/reset.css";
 import {
   Box,
+  Card,
   DescriptionDetails,
   DescriptionList,
   DescriptionTerm,
@@ -20,6 +21,7 @@ import {
   WarningBanner,
 } from "@postenbring/hedwig-react";
 import { useRef } from "react";
+import postenBringImage from "../../static/posten-bring.jpg";
 
 const bringButtonText = "Bring button";
 
@@ -145,6 +147,35 @@ export default function KitchenSink() {
           </div>
           <h2>Modal</h2>
           <ModalExample />
+        </section>
+
+        <section>
+          <h2>Cards</h2>
+          <div
+            style={{
+              margin: "20px",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              columnGap: "2.5em",
+              rowGap: "2.5em",
+            }}
+          >
+            {[...Array(3)].map((_, i) => (
+              <Card key={i}>
+                <Card.Media>
+                  <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+                </Card.Media>
+                <Card.Body>
+                  <Card.Body.Overline>Theme</Card.Body.Overline>
+                  <Card.Body.Title>Article {i + 1}</Card.Body.Title>
+                  <Card.Body.Description>Read this cool new article</Card.Body.Description>
+                  <Card.Body.Action>
+                    <Link href="#">Go to article {i + 1}</Link>
+                  </Card.Body.Action>
+                </Card.Body>
+              </Card>
+            ))}
+          </div>
         </section>
 
         <section>
