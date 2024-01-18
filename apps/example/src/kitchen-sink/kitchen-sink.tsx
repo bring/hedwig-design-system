@@ -12,12 +12,13 @@ import {
   Modal,
   OrderedList,
   PrimaryButton,
-  Tabs,
-  UnorderedList,
   Tab,
   TabContent,
   TabContents,
   TabList,
+  Tabs,
+  UnorderedList,
+  WarningBanner,
 } from "@postenbring/hedwig-react";
 import { useRef } from "react";
 import postenBringImage from "../../static/posten-bring.jpg";
@@ -28,6 +29,24 @@ export default function KitchenSink() {
   return (
     <>
       <div>
+        <section>
+          <WarningBanner
+            title={"Koronasituasjonen og driften"}
+            description={
+              <>
+                Postutleveringen vil fungere som normalt i de kommunene som har fått strengere
+                koronatiltak. Posten utvider tilbudet om hjemlevering i de kommunene som nå blir
+                berørt av nedstenging på Vest- og Østlandet. For de som til vanlig har
+                kveldslevering mellom kl. 17–21, har vi utvidet kjøretidene til mellom kl. 15–22
+                pga. høyt antall pakker. For kontaktløs levering, velg at pakken settes igjen
+                utenfor. <br />{" "}
+                <Link variant="solid" href="#demo-link">
+                  Link to wherever
+                </Link>
+              </>
+            }
+          />
+        </section>
         <h1>Hello world</h1>
         <h2>Buttons</h2>
         <PrimaryButton>A button</PrimaryButton>
