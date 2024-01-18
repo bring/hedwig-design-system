@@ -3,7 +3,7 @@
   position: relative;
   background: var(--hds-brand-colors-lighter);
   border-radius: var(--hds-border-radius);
-  transition: transform 0.3s;
+  transition: transform var(--hds-micro-animation-duration-normal);
   display: flex;
   flex-direction: column;
   color: var(--hds-ui-colors-black);
