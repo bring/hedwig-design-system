@@ -8,16 +8,35 @@
     font: var(--hds-typography-body-title);
   }
 
+  /**
+   * Spacing between each item
+   * a description list can either have `div` wrapping the groups of `dt` and `dd`
+   * or just the `dt` and `dd` as a flat list next to each other
+   */
+  & :is(dt, div):not(:first-of-type) {
+    margin-top: var(--hds-spacing-small-3);
+  }
+
   & dd {
     margin-left: 0;
-    margin-bottom: var(--hds-spacing-small-3);
+  }
+
+  &, /* Default */
+  &.hds-description-list--vertical {
+    & dd {
+      margin-top: 2px;
+    }
   }
 
   &.hds-description-list--horizontal {
     & dt {
       display: inline-block;
-      margin-right: var(--hds-spacing-small-1);
-      margin-bottom: var(--hds-spacing-small-2);
+      margin-right: var(--hds-spacing-small-2);
+    }
+
+    & dd {
+      display: inline;
+      margin-top: 0;
 
       &::after {
         content: "\a";
@@ -25,13 +44,12 @@
       }
     }
 
-    & dd {
+    /**
+     * When a non-text element is inside it will mess up the layout
+     * if has `display: block` and/or some margin
+     */
+    & :is(dt, dd) * {
       display: inline;
-
-      &::after {
-        content: "\a";
-        white-space: pre;
-      }
     }
   }
 }

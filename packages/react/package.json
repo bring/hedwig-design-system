@@ -1,6 +1,6 @@
 {
   "name": "@postenbring/hedwig-react",
-  "version": "0.0.25",
+  "version": "0.0.32",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,7 @@
     "clean": "rm -rf .turbo node_modules dist"
   },
   "devDependencies": {
-    "@types/react": "^18.2.46",
+    "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",

@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Link } from "../link";
 import { UnorderedList } from "../list";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from ".";
+import { Accordion } from ".";
 
 const meta: Meta<typeof Accordion> = {
   title: "Accordion",
@@ -11,15 +11,17 @@ const meta: Meta<typeof Accordion> = {
     variant: "single",
     children: (
       <>
-        <AccordionItem>
-          <AccordionTrigger>Professional accordion title</AccordionTrigger>
-          <AccordionContent>
+        <Accordion.Item>
+          <Accordion.Trigger>Professional accordion title</Accordion.Trigger>
+          <Accordion.Content>
             This is the simplest form of accordion body. Can be extensive.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem>
-          <AccordionTrigger>Yet another POAT with &laquo;advanced&raquo; content</AccordionTrigger>
-          <AccordionContent>
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item>
+          <Accordion.Trigger>
+            Yet another POAT with &laquo;advanced&raquo; content
+          </Accordion.Trigger>
+          <Accordion.Content>
             <h4>Hello</h4>
             <div>
               <p>
@@ -34,8 +36,8 @@ const meta: Meta<typeof Accordion> = {
                 <li>Never seen</li>
               </UnorderedList>
             </div>
-          </AccordionContent>
-        </AccordionItem>
+          </Accordion.Content>
+        </Accordion.Item>
       </>
     ),
   },
@@ -70,12 +72,12 @@ export const JustOneItem: Story = {
   args: {
     variant: "multiple",
     children: (
-      <AccordionItem>
-        <AccordionTrigger>Professional accordion title</AccordionTrigger>
-        <AccordionContent>
+      <Accordion.Item>
+        <Accordion.Trigger>Professional accordion title</Accordion.Trigger>
+        <Accordion.Content>
           This is the simplest form of accordion body. Can be extensive.
-        </AccordionContent>
-      </AccordionItem>
+        </Accordion.Content>
+      </Accordion.Item>
     ),
   },
 };

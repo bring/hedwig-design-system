@@ -1,173 +1,192 @@
 {
   "posten-colors": {
-    "type": "color",
+    "$type": "color",
     "signature-red": {
-      "value": "#e32d22"
+      "$value": "#e32d22"
     },
     "darker-red": {
-      "value": "#4a1011"
+      "$value": "#4a1011"
     },
     "dark-red": {
-      "value": "#980000"
+      "$value": "#980000"
     },
     "light-red": {
-      "value": "#ff8a5f"
+      "$value": "#ff8a5f"
     },
     "lighter-red": {
-      "value": "#fff5f0"
+      "$value": "#fff5f0"
     },
     "signature-red-hover": {
-      "value": "#d62722"
+      "$value": "#d62722"
     },
     "light-red-hover": {
-      "value": "#ff7d55"
+      "$value": "#ff7d55"
     }
   },
   "bring-colors": {
-    "type": "color",
+    "$type": "color",
     "signature-green": {
-      "value": "#7bc144"
+      "$value": "#7bc144"
     },
     "darker-green": {
-      "value": "#002f19"
+      "$value": "#002f19"
     },
     "dark-green": {
-      "value": "#00643a"
+      "$value": "#00643a"
     },
     "light-green": {
-      "value": "#c8dc8c"
+      "$value": "#c8dc8c"
     },
     "lighter-green": {
-      "value": "#f1f7e9"
+      "$value": "#f1f7e9"
     },
     "signature-green-hover": {
-      "value": "#86cc4a"
+      "$value": "#86cc4a"
     },
     "light-green-hover": {
-      "value": "#d3e593"
+      "$value": "#d3e593"
     }
   },
   "ui-colors": {
-    "type": "color",
+    "$type": "color",
     "black": {
-      "value": "#000000"
+      "$value": "#000000"
     },
     "dark-grey": {
-      "value": "#6e6e6e"
+      "$value": "#6e6e6e"
     },
     "grey": {
-      "value": "#d6d6d6"
+      "$value": "#d6d6d6"
     },
     "light-grey-stroke": {
-      "value": "#e4e4e4"
+      "$value": "#e4e4e4"
     },
     "light-grey-fill": {
-      "value": "#f2f2f2"
+      "$value": "#f2f2f2"
     },
     "white": {
-      "value": "#ffffff"
+      "$value": "#ffffff"
     },
     "warning-yellow": {
-      "value": "#fdbb2f"
+      "$value": "#fdbb2f"
     },
     "warning-yellow-stroke": {
-      "value": "#d68000"
+      "$value": "#d68000"
     },
     "warning-yellow-light-fill": {
-      "value": "#fff5e0"
+      "$value": "#fff5e0"
     },
     "warning-yellow-hover": {
-      "value": "#ffc340"
+      "$value": "#ffc340"
     },
     "black-hover": {
-      "value": "#1e1e1e"
+      "$value": "#1e1e1e"
     }
   },
   "dark-mode-colors": {
-    "type": "color",
+    "$type": "color",
     "obsidian": {
-      "value": "#121212",
+      "$value": "#121212",
       "description": "Base color for dark mode"
     },
     "coal": {
-      "value": "#252525",
+      "$value": "#252525",
       "description": "Background on none-clickable cards"
     },
     "dusk": {
-      "value": "#2c2c2c",
+      "$value": "#2c2c2c",
       "description": "Fill inputfields, checkbox, radiobuttons, toogles"
     },
     "spider": {
-      "value": "#333333",
+      "$value": "#333333",
       "description": "Clickable cards or tiles"
     },
     "ash": {
-      "value": "#999999",
+      "$value": "#999999",
       "description": "Default radio buttons, checkbox, label on inputsfields, toogle off  (background)"
     }
   },
+  "breakpoint": {
+    "$type": "dimension",
+    "small": {
+      "description": "Larger mobile phones",
+      "$value": "460px"
+    },
+    "medium": {
+      "description": "Most tablets",
+      "$value": "720px"
+    },
+    "large": {
+      "description": "Smaller laptops and desktop monitors. This is where the navbar goes from the mobile version to the desktop version",
+      "$value": "940px"
+    },
+    "xlarge": {
+      "description": "Most modern laptops and desktop monitors",
+      "$value": "1200px"
+    }
+  },
   "spacing": {
-    "type": "dimension",
+    "$type": "dimension",
     "small-1": {
-      "value": "4px"
+      "$value": "4px"
     },
     "small-2": {
-      "value": "8px"
+      "$value": "8px"
     },
     "small-3": {
-      "value": "12px"
+      "$value": "12px"
     },
     "small-4": {
-      "value": "16px"
+      "$value": "16px"
     },
     "medium-1": {
-      "value": "20px"
+      "$value": "20px"
     },
     "medium-2": {
-      "value": "24px"
+      "$value": "24px"
     },
     "medium-3": {
-      "value": "32px"
+      "$value": "32px"
     },
     "medium-4": {
-      "value": "40px"
+      "$value": "40px"
     },
     "large-1": {
-      "value": "48px"
+      "$value": "48px"
     },
     "large-2": {
-      "value": "64px"
+      "$value": "64px"
     },
     "large-3": {
-      "value": "80px"
+      "$value": "80px"
     },
     "large-4": {
-      "value": "120px"
+      "$value": "120px"
     },
     "large-5": {
-      "value": "160px"
+      "$value": "160px"
     }
   },
   "fonts": {
-    "type": "fontFamily",
+    "$type": "fontFamily",
     "posten-sans": {
-      "value": ["Posten Sans", "Arial", "sans-serif"]
+      "$value": ["Posten Sans", "Arial", "sans-serif"]
     },
     "posten-sans-bold": {
-      "value": ["Posten Sans Bold", "Arial", "sans-serif"]
+      "$value": ["Posten Sans Bold", "Arial", "sans-serif"]
     },
     "posten-sans-medium": {
-      "value": ["Posten Sans Medium", "Arial", "sans-serif"]
+      "$value": ["Posten Sans Medium", "Arial", "sans-serif"]
     },
     "posten-sans-regular": {
-      "value": ["Posten Sans Regular", "Arial", "sans-serif"]
+      "$value": ["Posten Sans Regular", "Arial", "sans-serif"]
     },
     "posten-sans-light": {
-      "value": ["Posten Sans Light", "Arial", "sans-serif"]
+      "$value": ["Posten Sans Light", "Arial", "sans-serif"]
     }
   },
   "typography": {
-    "type": "typography",
+    "$type": "typography",
     "posten-h1-display": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
@@ -314,16 +333,16 @@
     }
   },
   "border-radius": {
-    "value": "2px",
-    "type": "borderRadius"
+    "$value": "2px",
+    "$type": "borderRadius"
   },
   "stroke-default": {
-    "value": "1px",
-    "type": "borderWidth"
+    "$value": "1px",
+    "$type": "borderWidth"
   },
   "stroke-thick": {
-    "value": "2px",
-    "type": "borderWidth"
+    "$value": "2px",
+    "$type": "borderWidth"
   },
   "shadow-default": {
     "$type": "shadow",
@@ -346,5 +365,23 @@
     "easing-normal": {
       "$value": [0.45, 0.1, 0.65, 1]
     }
+  },
+  "micro-animation-duration": {
+    "$type": "time",
+    "quick": {
+      "$value": "0.130s"
+    },
+    "normal": {
+      "$value": "0.300s"
+    },
+    "slow": {
+      "$value": "0.700s"
+    }
+  },
+  "opacity": {
+    "7": { "$value": ".07" },
+    "10": { "$value": ".1" },
+    "20": { "$value": ".2" },
+    "50": { "$value": ".5" }
   }
 }

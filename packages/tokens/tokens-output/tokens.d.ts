@@ -33,6 +33,14 @@ export const DarkModeColorsDusk : "#2c2c2c";
 export const DarkModeColorsSpider : "#333333";
 /** Default radio buttons, checkbox, label on inputsfields, toogle off  (background) */
 export const DarkModeColorsAsh : "#999999";
+/** Larger mobile phones */
+export const BreakpointSmall : "460px";
+/** Most tablets */
+export const BreakpointMedium : "720px";
+/** Smaller laptops and desktop monitors. This is where the navbar goes from the mobile version to the desktop version */
+export const BreakpointLarge : "940px";
+/** Most modern laptops and desktop monitors */
+export const BreakpointXlarge : "1200px";
 export const SpacingSmall1 : "4px";
 export const SpacingSmall2 : "8px";
 export const SpacingSmall3 : "12px";
@@ -74,6 +82,13 @@ export const ShadowDefault : { color: string, offsetX: string, offsetY: string, 
 export const MicroAnimationEasingIn : number[];
 export const MicroAnimationEasingOut : number[];
 export const MicroAnimationEasingNormal : number[];
+export const MicroAnimationDurationQuick : "0.130s";
+export const MicroAnimationDurationNormal : "0.300s";
+export const MicroAnimationDurationSlow : "0.700s";
+export const Opacity7 : ".07";
+export const Opacity10 : ".1";
+export const Opacity20 : ".2";
+export const Opacity50 : ".5";
 export const FontSizePostenH1Display : string[];
 export const FontSizePostenH1DisplayMin : "40px";
 export const FontSizePostenH1DisplayMax : "72px";
@@ -178,14 +193,3 @@ export const FontWeightTechnical : number;
 export const FontWeightTechnicalTitle : number;
 export const FontWeightCaption : number;
 export const FontWeightCaptionTitle : number;
-export const MicroAnimationDurationQuick : "0.130s";
-export const MicroAnimationDurationNormal : "0.300s";
-export const MicroAnimationDurationSlow : "0.700s";
-export const BreakpointsSmall : "460px";
-export const BreakpointsMedium : "720px";
-export const BreakpointsLarge : "940px";
-export const BreakpointsXlarge : "1200px";
-export const Opacity7 : ".07";
-export const Opacity10 : ".1";
-export const Opacity20 : ".2";
-export const Opacity50 : ".5";

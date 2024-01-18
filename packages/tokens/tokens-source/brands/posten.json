@@ -1,129 +1,129 @@
 {
   "brand-colors": {
-    "type": "color",
+    "$type": "color",
     "signature": {
-      "value": "{posten-colors.signature-red}"
+      "$value": "{posten-colors.signature-red}"
     },
     "darker": {
-      "value": "{posten-colors.darker-red}"
+      "$value": "{posten-colors.darker-red}"
     },
     "dark": {
-      "value": "{posten-colors.dark-red}"
+      "$value": "{posten-colors.dark-red}"
     },
     "light": {
-      "value": "{posten-colors.light-red}"
+      "$value": "{posten-colors.light-red}"
     },
     "lighter": {
-      "value": "{posten-colors.lighter-red}"
+      "$value": "{posten-colors.lighter-red}"
     },
     "signature-hover": {
-      "value": "{posten-colors.signature-red-hover}"
+      "$value": "{posten-colors.signature-red-hover}"
     },
     "light-hover": {
-      "value": "{posten-colors.light-red-hover}"
+      "$value": "{posten-colors.light-red-hover}"
     }
   },
 
   "brand-button-colors": {
-    "type": "color",
-    "text": { "value": "{ui-colors.white}" }
+    "$type": "color",
+    "text": { "$value": "{ui-colors.white}" }
   },
 
   "brand-link-colors": {
-    "type": "color",
+    "$type": "color",
     "text": {
-      "value": "{ui-colors.black}"
+      "$value": "{ui-colors.black}"
     },
     "underline": {
-      "value": "{posten-colors.signature-red}"
+      "$value": "{posten-colors.signature-red}"
     },
     "hover": {
-      "value": "{posten-colors.signature-red}"
+      "$value": "{posten-colors.signature-red}"
     },
     "underline-hover": {
-      "value": "{posten-colors.signature-red}"
+      "$value": "{posten-colors.signature-red}"
     }
   },
 
   "brand-typography": {
     "h1-display": {
-      "value": "{typography.posten-h1-display}"
+      "$value": "{typography.posten-h1-display}"
     },
     "h1": {
-      "value": "{typography.posten-h1}"
+      "$value": "{typography.posten-h1}"
     },
     "h2": {
-      "value": "{typography.posten-h2}"
+      "$value": "{typography.posten-h2}"
     }
   },
 
   "brand-font-size": {
     "h1-display": {
-      "value": "{font-size.posten-h1-display}"
+      "$value": "{font-size.posten-h1-display}"
     },
     "h1-display-min": {
-      "value": "{font-size.posten-h1-display-min}"
+      "$value": "{font-size.posten-h1-display-min}"
     },
     "h1-display-max": {
-      "value": "{font-size.posten-h1-display-max}"
+      "$value": "{font-size.posten-h1-display-max}"
     },
     "h1": {
-      "value": "{font-size.posten-h1}"
+      "$value": "{font-size.posten-h1}"
     },
     "h1-min": {
-      "value": "{font-size.posten-h1-min}"
+      "$value": "{font-size.posten-h1-min}"
     },
     "h1-max": {
-      "value": "{font-size.posten-h1-max}"
+      "$value": "{font-size.posten-h1-max}"
     },
     "h2": {
-      "value": "{font-size.posten-h2}"
+      "$value": "{font-size.posten-h2}"
     },
     "h2-min": {
-      "value": "{font-size.posten-h2-min}"
+      "$value": "{font-size.posten-h2-min}"
     },
     "h2-max": {
-      "value": "{font-size.posten-h2-max}"
+      "$value": "{font-size.posten-h2-max}"
     }
   },
   "brand-line-height": {
     "h1-display": {
-      "value": "{line-height.posten-h1-display}"
+      "$value": "{line-height.posten-h1-display}"
     },
     "h1-display-min": {
-      "value": "{line-height.posten-h1-display-min}"
+      "$value": "{line-height.posten-h1-display-min}"
     },
     "h1-display-max": {
-      "value": "{line-height.posten-h1-display-max}"
+      "$value": "{line-height.posten-h1-display-max}"
     },
     "h1": {
-      "value": "{line-height.posten-h1}"
+      "$value": "{line-height.posten-h1}"
     },
     "h1-min": {
-      "value": "{line-height.posten-h1-min}"
+      "$value": "{line-height.posten-h1-min}"
     },
     "h1-max": {
-      "value": "{line-height.posten-h1-max}"
+      "$value": "{line-height.posten-h1-max}"
     },
     "h2": {
-      "value": "{line-height.posten-h2}"
+      "$value": "{line-height.posten-h2}"
     },
     "h2-min": {
-      "value": "{line-height.posten-h2-min}"
+      "$value": "{line-height.posten-h2-min}"
     },
     "h2-max": {
-      "value": "{line-height.posten-h2-max}"
+      "$value": "{line-height.posten-h2-max}"
     }
   },
   "brand-font-weight": {
     "h1-display": {
-      "value": "{font-weight.posten-h1-display}"
+      "$value": "{font-weight.posten-h1-display}"
     },
     "h1": {
-      "value": "{font-weight.posten-h1}"
+      "$value": "{font-weight.posten-h1}"
     },
     "h2": {
-      "value": "{font-weight.posten-h2}"
+      "$value": "{font-weight.posten-h2}"
     }
   }
 }

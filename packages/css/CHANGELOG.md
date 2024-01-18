@@ -1,5 +1,56 @@
 # @postenbring/hedwig-css
 
+## 0.0.30
+
+### Patch Changes
+
+- 5f8dbd4: styling for containers, and some updates to example app
+- 4e7c846: Make body font specificity align with legacy Hedwig
+- Updated dependencies [6f1f198]
+  - @postenbring/hedwig-tokens@0.0.8
+
+## 0.0.29
+
+### Patch Changes
+
+- aabf5e9: :lipstick: update badge styling to match figma sketches
+
+## 0.0.28
+
+### Patch Changes
+
+- e614cc1: :lipstick: fixup spacing issues for description list
+
+## 0.0.27
+
+### Patch Changes
+
+- 85d5d12: :building_construction: update to the expected prop spreading api
+
+## 0.0.26
+
+### Patch Changes
+
+- d1a73c5: :lipstick: update accordion divider height and color to match figma (again)
+
+## 0.0.25
+
+### Patch Changes
+
+- e387d19: :lipstick: update accordion divider height and color to match figma
+
+## 0.0.24
+
+### Patch Changes
+
+- 7a2c020: :recycle: Rename `Dropdown` -> `Select` and rewrite to match `Input`
+- 738f520: Release Textarea styling and component
+- 8a2ea33: :truck: rename badge variant `primary` -> `lighter`
+- 08ff783: Renamed package Dropdown to Select, added some styling
+- 2d2945d: :arrow_up: bump dependencies
+- Updated dependencies [2d2945d]
+  - @postenbring/hedwig-tokens@0.0.7
+
 ## 0.0.23
 
 ### Patch Changes

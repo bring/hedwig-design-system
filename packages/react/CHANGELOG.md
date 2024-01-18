@@ -1,5 +1,68 @@
 # @postenbring/hedwig-react
 
+## 0.0.32
+
+### Patch Changes
+
+- Updated dependencies [5f8dbd4]
+- Updated dependencies [4e7c846]
+  - @postenbring/hedwig-css@0.0.30
+
+## 0.0.31
+
+### Patch Changes
+
+- aabf5e9: :lipstick: update badge styling to match figma sketches
+- Updated dependencies [aabf5e9]
+  - @postenbring/hedwig-css@0.0.29
+
+## 0.0.30
+
+### Patch Changes
+
+- e614cc1: :lipstick: fixup spacing issues for description list
+- Updated dependencies [e614cc1]
+  - @postenbring/hedwig-css@0.0.28
+
+## 0.0.29
+
+### Patch Changes
+
+- 85d5d12: :building_construction: update to the expected prop spreading api
+- Updated dependencies [85d5d12]
+  - @postenbring/hedwig-css@0.0.27
+
+## 0.0.28
+
+### Patch Changes
+
+- Updated dependencies [d1a73c5]
+  - @postenbring/hedwig-css@0.0.26
+
+## 0.0.27
+
+### Patch Changes
+
+- Updated dependencies [e387d19]
+  - @postenbring/hedwig-css@0.0.25
+
+## 0.0.26
+
+### Patch Changes
+
+- 7a2c020: :recycle: Rename `Dropdown` -> `Select` and rewrite to match `Input`
+- 738f520: Release Textarea styling and component
+- 8a2ea33: :truck: rename badge variant `primary` -> `lighter`
+- 08ff783: Renamed package Dropdown to Select, added some styling
+- 2d2945d: :arrow_up: bump dependencies
+- 2261893: :technologist: update accordion api
+- Updated dependencies [7a2c020]
+- Updated dependencies [738f520]
+- Updated dependencies [8a2ea33]
+- Updated dependencies [08ff783]
+- Updated dependencies [2d2945d]
+  - @postenbring/hedwig-css@0.0.24
+
 ## 0.0.25
 
 ### Patch Changes
