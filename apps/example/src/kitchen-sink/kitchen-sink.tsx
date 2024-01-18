@@ -129,14 +129,14 @@ export default function KitchenSink() {
         </section>
 
         <section>
-          <h2>Dropdown</h2>
+          <h2>Select</h2>
           <div
             style={{
               maxWidth: 600,
               padding: "var(--hds-spacing-medium-2)",
             }}
           >
-            <Select label="A dropdown" variant="default">
+            <Select label="A select" variant="default">
               <option value="" disabled selected hidden>
                 Please select
               </option>
