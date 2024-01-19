@@ -17,6 +17,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     labelProps,
     label,
     id,
+    style,
     className,
     disabled,
     readOnly,
@@ -37,6 +38,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         },
         className as undefined,
       )}
+      style={style}
     >
       <label className="hds-input__label" {...labelProps} htmlFor={id || inputId}>
         {label}

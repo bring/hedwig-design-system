@@ -54,6 +54,7 @@
   }
 
   & .hds-input__input-wrapper {
+    height: 58px;
     display: flex;
     flex-flow: row nowrap;
     width: 100%;

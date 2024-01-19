@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { PrimaryButton } from "../button";
 import { Input } from ".";
 
 const meta: Meta<typeof Input> = {
@@ -141,6 +142,23 @@ export const WhiteDisabledInputWithError: Story = {
   render: (props) => (
     <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
       <Input {...props} />
+    </div>
+  ),
+};
+
+export const TrackingNumberSearch: Story = {
+  render: () => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "end",
+        gap: "var(--hds-spacing-small-1)",
+        maxWidth: 556,
+      }}
+    >
+      <Input label="Sporingsnummer" style={{ width: "100%" }} />
+      <PrimaryButton size="large">Spor</PrimaryButton>
     </div>
   ),
 };
