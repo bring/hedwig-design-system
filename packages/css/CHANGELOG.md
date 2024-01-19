@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.32
+
+### Patch Changes
+
+- 9c7eafd: First version of `<Card/>` component.
+
 ## 0.0.31
 
 ### Patch Changes
