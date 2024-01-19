@@ -4,7 +4,7 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 export interface SelectProps
   extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "children"> {
   label: string;
-  variant: "default" | "white";
+  variant?: "default" | "white";
   errorMessage?: string;
   children: React.ReactNode;
 }

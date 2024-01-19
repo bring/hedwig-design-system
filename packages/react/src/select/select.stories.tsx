@@ -14,7 +14,6 @@ type Story = StoryObj<typeof Select>;
 export const Default: Story = {
   args: {
     label: "Default select",
-    variant: "default",
   },
   render: (props) => (
     <Select {...props}>
@@ -50,7 +49,6 @@ export const White: Story = {
 export const DefaultWithError: Story = {
   args: {
     label: "select with error",
-    variant: "default",
     name: "name",
     id: "someId",
     errorMessage: "Something is wrong",
@@ -92,7 +90,6 @@ export const WhiteWithError: Story = {
 export const DefaulDisabled: Story = {
   args: {
     label: "Default select disabled",
-    variant: "default",
     name: "name",
     id: "someId",
     disabled: true,

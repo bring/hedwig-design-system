@@ -103,8 +103,11 @@
     }
   }
 
-  &.hds-select--default .hds-select__select-wrapper {
-    background-color: var(--hds-ui-colors-light-grey-fill);
+  &, /* Default */
+  &.hds-select--default {
+    .hds-select__select-wrapper {
+      background-color: var(--hds-ui-colors-light-grey-fill);
+    }
   }
 
   &.hds-select--white .hds-select__select-wrapper {
