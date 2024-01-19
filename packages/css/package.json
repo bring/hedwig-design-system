@@ -1,6 +1,6 @@
 {
   "name": "@postenbring/hedwig-css",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "",
   "scripts": {
     "build": "pnpm run --sequential /^build:.*/",

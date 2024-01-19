@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.35
+
+### Patch Changes
+
+- :technologist: make select variant optional, default to the default style
+
 ## 0.0.34
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.37
+
+### Patch Changes
+
+- :technologist: make select variant optional, default to the default style
+- Updated dependencies
+  - @postenbring/hedwig-css@0.0.35
+
 ## 0.0.36
 
 ### Patch Changes
