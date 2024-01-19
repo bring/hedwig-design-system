@@ -20,8 +20,6 @@
   }
 
   &.hds-container--slim {
-    display: block;
-
     /* 720px - max-width: 590px */
     @media (width >= 720px) {
       max-width: 590px;
