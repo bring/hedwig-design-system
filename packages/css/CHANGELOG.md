@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.33
+
+### Patch Changes
+
+- 58996a7: :lipstick: make container always use 100% width
+
+  else we get into situations where the content inside get's smaller than we wish for
+
 ## 0.0.32
 
 ### Patch Changes
