@@ -1,5 +1,16 @@
 # @postenbring/hedwig-react
 
+## 0.0.36
+
+### Patch Changes
+
+- 1d0bfa4: :lipstick: update Input with fixed height `58px` to match figma sketches
+
+  support composing the tracking number search
+
+- Updated dependencies [1d0bfa4]
+  - @postenbring/hedwig-css@0.0.34
+
 ## 0.0.35
 
 ### Patch Changes

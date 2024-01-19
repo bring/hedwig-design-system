@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.34
+
+### Patch Changes
+
+- 1d0bfa4: :lipstick: update Input with fixed height `58px` to match figma sketches
+
+  support composing the tracking number search
+
 ## 0.0.33
 
 ### Patch Changes
