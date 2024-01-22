@@ -28,16 +28,18 @@
     padding: var(--hds-spacing-medium-2);
   }
 
-  .hds-card__overline {
-    font-size: var(--hds-font-size-body-small-max);
-    color: var(--hds-brand-colors-dark);
+  .hds-card__body-header {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  .hds-card__title {
-    margin-top: var(--hds-spacing-small-1);
-    margin-bottom: var(--hds-spacing-small-1);
+  .hds-card__body-header-overline {
+    display: block;
+    font-size: var(--hds-font-size-technical-title);
+    color: var(--hds-brand-colors-dark);
+  }
+
+  .hds-card__body-header-title {
     font-size: var(--hds-brand-font-size-h2-min);
     font-weight: var(--hds-font-weight-header-h3);
     line-height: var(--hds-spacing-medium-4);

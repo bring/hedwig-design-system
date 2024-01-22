@@ -160,18 +160,18 @@ export default function KitchenSink() {
               rowGap: "2.5em",
             }}
           >
-            {[...Array(3)].map((_, i) => (
+            {[...Array(10)].map((_, i) => (
               <Card key={i}>
                 <Card.Media>
                   <Card.Media.Img alt="posten-bring" src={postenBringImage} />
                 </Card.Media>
                 <Card.Body>
-                  <Card.Body.Overline>Theme</Card.Body.Overline>
-                  <Card.Body.Title>Article {i + 1}</Card.Body.Title>
-                  <Card.Body.Description>Read this cool new article</Card.Body.Description>
-                  <Card.Body.Action>
-                    <Link href="#">Go to article {i + 1}</Link>
-                  </Card.Body.Action>
+                  <Card.Body.Header>
+                    <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
+                    <Card.Body.Header.Title>Article {i + 1}</Card.Body.Header.Title>
+                  </Card.Body.Header>
+                  <Card.Body.Description>Read this cool new article.</Card.Body.Description>
+                  <Card.Body.Action.Arrow href={`#article${i + 1}`} />
                 </Card.Body>
               </Card>
             ))}
