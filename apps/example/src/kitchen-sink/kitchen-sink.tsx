@@ -136,8 +136,8 @@ export default function KitchenSink() {
               padding: "var(--hds-spacing-medium-2)",
             }}
           >
-            <Select label="A select" variant="default">
-              <option value="" disabled selected hidden>
+            <Select label="A select" variant="default" defaultValue="">
+              <option value="" disabled hidden>
                 Please select
               </option>
               <option value="1">option 1</option>
