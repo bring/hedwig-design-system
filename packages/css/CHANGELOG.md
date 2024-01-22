@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.36
+
+### Patch Changes
+
+- a1f5a96: Accessibility adjustments on Card component
+
 ## 0.0.35
 
 ### Patch Changes

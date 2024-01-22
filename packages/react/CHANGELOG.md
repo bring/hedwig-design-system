@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.38
+
+### Patch Changes
+
+- a1f5a96: Accessibility adjustments on Card component
+- Updated dependencies [a1f5a96]
+  - @postenbring/hedwig-css@0.0.36
+
 ## 0.0.37
 
 ### Patch Changes
