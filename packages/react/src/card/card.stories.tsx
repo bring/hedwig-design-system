@@ -19,11 +19,13 @@ export const Card: Story = {
         <CardComponent.Media.Img alt="posten-bring" src="./posten-bring.jpg" />
       </CardComponent.Media>
       <CardComponent.Body>
-        <CardComponent.Body.Overline>Theme</CardComponent.Body.Overline>
-        <CardComponent.Body.Title>Article title</CardComponent.Body.Title>
+        <CardComponent.Body.Header>
+          <CardComponent.Body.Header.Overline>Theme</CardComponent.Body.Header.Overline>
+          <CardComponent.Body.Header.Title>Article title</CardComponent.Body.Header.Title>
+        </CardComponent.Body.Header>
         <CardComponent.Body.Description>Read this cool new article</CardComponent.Body.Description>
-        <CardComponent.Body.Action>
-          <Link>Go to article</Link>
+        <CardComponent.Body.Action as={Link} href="#article">
+          Go to article
         </CardComponent.Body.Action>
       </CardComponent.Body>
     </CardComponent>
@@ -37,15 +39,38 @@ export const MaxWidth: Story = {
         <CardComponent.Media.Img alt="posten-bring" src="./posten-bring.jpg" />
       </CardComponent.Media>
       <CardComponent.Body>
-        <CardComponent.Body.Overline>Theme</CardComponent.Body.Overline>
-        <CardComponent.Body.Title>Max width</CardComponent.Body.Title>
+        <CardComponent.Body.Header>
+          <CardComponent.Body.Header.Overline>Theme</CardComponent.Body.Header.Overline>
+          <CardComponent.Body.Header.Title>Max width</CardComponent.Body.Header.Title>
+        </CardComponent.Body.Header>
         <CardComponent.Body.Description>
           The card will take up available space. You can limit the width if you need by providing
           your own styles.
         </CardComponent.Body.Description>
-        <CardComponent.Body.Action>
-          <Link>Go to article</Link>
+        <CardComponent.Body.Action as={Link} href="#article">
+          Go to article
         </CardComponent.Body.Action>
+      </CardComponent.Body>
+    </CardComponent>
+  ),
+};
+
+export const MaxWidthAndArrow: Story = {
+  render: (props) => (
+    <CardComponent {...props} style={{ maxWidth: "500px" }}>
+      <CardComponent.Media>
+        <CardComponent.Media.Img alt="posten-bring" src="./posten-bring.jpg" />
+      </CardComponent.Media>
+      <CardComponent.Body>
+        <CardComponent.Body.Header>
+          <CardComponent.Body.Header.Overline>Theme</CardComponent.Body.Header.Overline>
+          <CardComponent.Body.Header.Title>Max width</CardComponent.Body.Header.Title>
+        </CardComponent.Body.Header>
+        <CardComponent.Body.Description>
+          The card will take up available space. You can limit the width if you need by providing
+          your own styles.
+        </CardComponent.Body.Description>
+        <CardComponent.Body.Action.Arrow href="#article" />
       </CardComponent.Body>
     </CardComponent>
   ),

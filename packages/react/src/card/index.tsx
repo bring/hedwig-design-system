@@ -6,13 +6,15 @@ import "@postenbring/hedwig-css/dist/card.css";
 
 import {
   Card,
-  CardBody,
   CardMedia,
   CardMediaImg,
-  CardBodyOverline,
-  CardBodyTitle,
+  CardBody,
+  CardBodyHeader,
+  CardBodyHeaderOverline,
+  CardBodyHeaderTitle,
   CardBodyDescription,
   CardBodyAction,
+  CardBodyActionArrow,
 } from "./card";
 
 const CardMediaComponent = CardMedia as typeof CardMedia & {
@@ -20,16 +22,29 @@ const CardMediaComponent = CardMedia as typeof CardMedia & {
 };
 CardMediaComponent.Img = CardMediaImg;
 
-const CardBodyComponent = CardBody as typeof CardBody & {
-  Overline: typeof CardBodyOverline;
-  Title: typeof CardBodyTitle;
-  Description: typeof CardBodyDescription;
-  Action: typeof CardBodyAction;
+const CardBodyHeaderComponent = CardBodyHeader as typeof CardBodyHeader & {
+  Overline: typeof CardBodyHeaderOverline;
+  Title: typeof CardBodyHeaderTitle;
 };
-CardBodyComponent.Overline = CardBodyOverline;
-CardBodyComponent.Title = CardBodyTitle;
+CardBodyHeaderComponent.Overline = CardBodyHeaderOverline;
+CardBodyHeaderComponent.Title = CardBodyHeaderTitle;
+
+const CardBodyActionComponent = CardBodyAction as typeof CardBodyAction & {
+  Arrow: typeof CardBodyActionArrow;
+};
+CardBodyActionComponent.Arrow = CardBodyActionArrow;
+
+const CardBodyComponent = CardBody as typeof CardBody & {
+  Header: typeof CardBodyHeaderComponent;
+  Overline: typeof CardBodyHeaderOverline;
+  Title: typeof CardBodyHeaderTitle;
+  Description: typeof CardBodyDescription;
+  Action: typeof CardBodyActionComponent;
+};
+
+CardBodyComponent.Header = CardBodyHeaderComponent;
 CardBodyComponent.Description = CardBodyDescription;
-CardBodyComponent.Action = CardBodyAction;
+CardBodyComponent.Action = CardBodyActionComponent;
 
 const CardComponent = Card as typeof Card & {
   Media: typeof CardMediaComponent;

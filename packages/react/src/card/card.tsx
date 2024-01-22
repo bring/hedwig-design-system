@@ -8,7 +8,7 @@ export interface CardBaseProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", className, children, ...rest }, ref) => {
+  ({ as: Component = "section", className, children, ...rest }, ref) => {
     return (
       <Component {...rest} className={clsx("hds-card", className as undefined)} ref={ref}>
         {children}
@@ -56,27 +56,49 @@ export const CardBody: OverridableComponent<CardBaseProps, HTMLDivElement> = for
 );
 CardBody.displayName = "Card.Body";
 
-export const CardBodyOverline: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "p", className, children, ...rest }, ref) => {
-    return (
-      <Component {...rest} className={clsx("hds-card__overline", className as undefined)} ref={ref}>
-        {children}
-      </Component>
-    );
-  },
-);
-CardBodyOverline.displayName = "Card.Body.Overline";
-
-export const CardBodyTitle: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
+export const CardBodyHeader: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
   ({ as: Component = "h3", className, children, ...rest }, ref) => {
     return (
-      <Component {...rest} className={clsx("hds-card__title", className as undefined)} ref={ref}>
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-header", className as undefined)}
+        ref={ref}
+      >
         {children}
       </Component>
     );
   },
 );
-CardBodyTitle.displayName = "Card.Body.Title";
+CardBodyHeader.displayName = "Card.Body.Header";
+
+export const CardBodyHeaderOverline: OverridableComponent<CardBaseProps, HTMLDivElement> =
+  forwardRef(({ as: Component = "span", className, children, ...rest }, ref) => {
+    return (
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-header-overline", className as undefined)}
+        ref={ref}
+      >
+        {children}
+      </Component>
+    );
+  });
+CardBodyHeaderOverline.displayName = "Card.Body.Header.Overline";
+
+export const CardBodyHeaderTitle: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
+  ({ as: Component = "span", className, children, ...rest }, ref) => {
+    return (
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-header-title", className as undefined)}
+        ref={ref}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+CardBodyHeaderTitle.displayName = "Card.Body.Header.Title";
 
 export const CardBodyDescription: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
   ({ as: Component = "p", className, children, ...rest }, ref) => {
@@ -99,3 +121,17 @@ export const CardBodyAction: OverridableComponent<CardBaseProps, HTMLDivElement>
   },
 );
 CardBodyAction.displayName = "Card.Body.Action";
+
+export const CardBodyActionArrow: OverridableComponent<
+  HTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+> = forwardRef(({ as: Component = "a", className, ...rest }, ref) => {
+  return (
+    <Component
+      {...rest}
+      className={clsx("hds-card__body-action-arrow", className as undefined)}
+      ref={ref}
+    />
+  );
+});
+CardBodyActionArrow.displayName = "Card.Body.Action.Arrow";
