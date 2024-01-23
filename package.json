@@ -29,7 +29,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "packages/css/**/*.{css,scss}": "stylelint --cache --fix",
-    "*.{js,jsx,ts,tsx,css,scss,md,json}": "prettier --cache --write"
+    "*.{js,jsx,ts,tsx,css,scss,md,json,html}": "prettier --cache --write"
   },
   "prettier": {
     "printWidth": 100
