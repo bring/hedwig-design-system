@@ -1,8 +1,9 @@
-.hds-list {
-  &:where(*) {
-    margin: 0;
-  }
+/* Reset outer margin from the browser defaults, but let consumers easily override it */
+:where(.hds-list) {
+  margin: 0;
+}
 
+.hds-list {
   display: flex;
   flex-direction: column;
 

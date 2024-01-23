@@ -1,107 +1,236 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hedwig Using Only CSS and HTML</title>
+    <link rel="stylesheet" href="/src/css-only/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hedwig Using Only CSS and HTML</title>
-  <link rel="stylesheet" href="/src/css-only/index.css" />
-</head>
-
-<body>
-  <main>
-    <div class="hds-container">
-      <h2>Buttons</h2>
-      <button class="hds-button hds-button--medium hds-button--primary">Hello Button</button>
-    </div>
-    <div class="hds-container">
-      <h2>Links</h2>
-      <a href="#" class="hds-link">Hello Link</a>
-    </div>
-
-    <div class="hds-container">
-      <h2>Default container</h2>
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum</div>
-    </div>
-
-    <div class="hds-container hds-container--slim">
-      <h2>Slim container</h2>
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum</div>
-    </div>
-
-    <div class="hds-container">
-      <h2>Flex</h2>
-      <h3>3 columns, large gutter</h3>
-      <div class="hds-flex hds-flex--gutter-large-desktop hds-flex--gutter-large-mobile hds-flex--thirds">
-       <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+  <body>
+    <main>
+      <div class="hds-container">
+        <h2>Buttons</h2>
+        <button class="hds-button hds-button--medium hds-button--primary">Hello Button</button>
       </div>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      <div class="hds-container">
+        <h2>Links</h2>
+        <a href="#" class="hds-link">Hello Link</a>
       </div>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+
+      <div class="hds-container">
+        <h2>Default container</h2>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum
+        </div>
       </div>
-    </div>
-    <h3>4 columns, medium gutter</h3>
-    <div class="hds-flex hds-flex--gutter-medium-desktop hds-flex--gutter-medium-mobile hds-flex--fourths">
-     <div style="background-color: lightgray;">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-    </div>
-    <div style="background-color: lightgray;">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </div>
-    <div style="background-color: lightgray;">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-    </div>
-    <div style="background-color: lightgray;">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </div>
-  </div>
-  <h3>4 columns, variable height</h3>
-  <div class="hds-flex hds-flex--gutter-larger-desktop hds-flex--gutter-larger-mobile hds-flex--thirds hds-flex--variable-height">
-   <div style="background-color: lightgray;">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-  </div>
-  <div style="background-color: lightgray;">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  </div>
-  <div style="background-color: lightgray;">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-  </div>
-  <div style="background-color: lightgray;">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-  </div>
-  <div style="background-color: lightgray;">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-  </div>
-</div>
 
-  </div>
-
-    <div class="hds-container hds-container--slim">
-      <h2>Form elements</h2>
-      <div class="hds-select hds-select--default"><label class="hds-select__label" for=":r1u:">Default select</label>
-        <div class="hds-select__select-wrapper"><select class="hds-select__select" id=":r1u:">
-            <option disabled="" hidden="" value="">Please select</option>
-            <option value="1">option 1</option>
-            <option value="2">option 2</option>
-            <option value="3">option 3</option>
-          </select></div>
+      <div class="hds-container hds-container--slim">
+        <h2>Slim container</h2>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum
+        </div>
       </div>
-    </div>
 
+      <div class="hds-container">
+        <h2>Flex</h2>
+        <h3>3 columns, large gutter</h3>
+        <div
+          class="hds-flex hds-flex--gutter-large-desktop hds-flex--gutter-large-mobile hds-flex--thirds"
+        >
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+        </div>
+        <h3>4 columns, medium gutter</h3>
+        <div
+          class="hds-flex hds-flex--gutter-medium-desktop hds-flex--gutter-medium-mobile hds-flex--fourths"
+        >
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </div>
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </div>
+        </div>
+        <h3>4 columns, variable height</h3>
+        <div
+          class="hds-flex hds-flex--gutter-larger-desktop hds-flex--gutter-larger-mobile hds-flex--thirds hds-flex--variable-height"
+        >
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </div>
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+          <div style="background-color: lightgray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt
+          </div>
+        </div>
+      </div>
 
+      <div class="hds-container hds-container--slim">
+        <h2>Form elements</h2>
+        <div class="hds-select hds-select--default">
+          <label class="hds-select__label" for=":r1u:">Default select</label>
+          <div class="hds-select__select-wrapper">
+            <select class="hds-select__select" id=":r1u:">
+              <option disabled="" hidden="" value="">Please select</option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+              <option value="3">option 3</option>
+            </select>
+          </div>
+        </div>
+      </div>
 
-  </main>
-</body>
+      <div class="hds-container">
+        <h2>Prose</h2>
+        <div class="hds-prose">
+          <p>
+            Pakkeboksene er selvbetjente, og er plassert slik at de er mulig å bruke hele døgnet. Du
+            trenger bare mobilen din og Posten-appen for å åpne lukene.
+          </p>
 
+          <p>
+            Akkurat nå er det satt ut pakkebokser over 1800 steder i landet, og fremover vil det
+            komme enda flere.&nbsp;
+          </p>
+
+          <p>
+            <a href="/motta/fleksibelt/pakkeboks" title="Les mer og finn Pakkeboks"
+              >Her kan du finne din nærmeste Pakkeboks</a
+            >
+          </p>
+
+          <h1 class="hds-typography-h3">Slik bruker du Pakkeboks:</h1>
+
+          <p>
+            For å bruke pakkeboksene må du&nbsp;<a
+              href="/posten-app"
+              target="_blank"
+              title="Last ned Posten-appen"
+              >laste ned Posten-appen</a
+            >&nbsp;på mobilen din. Med appen kan du:
+          </p>
+
+          <ul>
+            <li>Åpne luke for å hente pakke</li>
+            <li>Reservere og åpne luke når du skal sende pakke</li>
+            <li>Velge om du vil ha pakker kun levert i de midterste lukene</li>
+            <li>Dele pakkene dine&nbsp;med andre, slik at de kan hente eller sende dem for deg</li>
+          </ul>
+
+          <h2>Hente pakker</h2>
+
+          <p>
+            Du får varsel i Posten-appen når du har en pakke som skal hentes i Pakkeboks. Slik gjør
+            du:
+          </p>
+
+          <ul>
+            <li>Stå ved pakkeboksen og åpne appen. Husk å ha på Bluetooth</li>
+            <li>Appen kobler til riktig boks, og viser hvilken luke pakken din er i</li>
+            <li>Trykk på Åpne luke, og ta ut pakken din.</li>
+            <li>Steng luken og lukk appen</li>
+          </ul>
+
+          <h2>Velge høyde på luke</h2>
+
+          <p>Slik velger du at du vil ha pakkene kun i midterste luker:</p>
+
+          <ul>
+            <li>Du må ha nyeste versjon av Posten-appen</li>
+            <li>Åpne appen, og trykk på «Profil»</li>
+            <li>Velg «Levering i Pakkeboks», deretter&nbsp;«Luker på midten»</li>
+            <li>Lagre valget ditt</li>
+          </ul>
+
+          <h2>Sende fra Pakkeboks</h2>
+
+          <p>
+            Nå kan du bruke Posten-appen for å reservere luker i pakkeboksen når du skal sende
+            <a
+              href="/sende/i-norge/norgespakke/norgespakke-0-5-kg"
+              target="_blank"
+              title="Les mer om Norgespakke™ liten"
+              >Norgespakke™ liten</a
+            >.
+          </p>
+
+          <p>Slik reserverer du luke for å sende pakke:</p>
+
+          <ul>
+            <li>
+              Du må ha Posten-appen for å bestille sending og&nbsp;holde av en&nbsp;luke i
+              pakkeboksen
+            </li>
+            <li>Velg&nbsp;Norgespakke™ liten, og følg stegene for kjøp av frakt</li>
+            <li>Velg innlevering på Posten, og fullfør kjøpet</li>
+            <li>
+              Du trenger ikke reservere luke rett etter kjøp, dette kan du gjøre innenfor 2 timer
+              før du skal sende pakken
+            </li>
+            <li>Pakken din blir hentet senest neste virkedag</li>
+          </ul>
+
+          <h2>Returnere fra Pakkeboks</h2>
+
+          <ul>
+            <li>
+              Du må ha&nbsp;<a href="https://www.posten.no/posten-app">Posten-appen</a>&nbsp;for å
+              reservere en luke.
+            </li>
+            <li>Velg retur i appen og følg stegene videre</li>
+            <li>
+              Fest&nbsp;adresselappen for retur&nbsp;midt på pakken med strekkoden godt synlig
+            </li>
+            <li>Luken holdes av i to timer fra du reserverer den.</li>
+            <li>Du kan reservere en luke&nbsp;når som helst</li>
+          </ul>
+
+          <p>Er det noe du lurer på?</p>
+
+          <p>Se flere <a href="/kundeservice/pakkeboks-hjelp">spørsmål og svar om Pakkeboks</a>.</p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

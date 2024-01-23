@@ -1,0 +1,7 @@
+/**
+ * Reusable media queries using the hedwig breakpoint
+ */
+@custom-media --small (width >= 460px);
+@custom-media --medium (width >= 720px);
+@custom-media --large (width >= 940px);
+@custom-media --xlarge (width >= 1200px);
