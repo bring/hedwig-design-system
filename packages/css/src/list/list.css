@@ -1,7 +1,16 @@
 .hds-list {
-  margin: 0;
+  &:where(*) {
+    margin: 0;
+  }
+
   display: flex;
   flex-direction: column;
+
+  /**
+   * Spacing from the left
+   * In hedwig legacy the bullets started at the content
+   * padding-left: var(--hds-spacing-small-4);
+   */
   padding-left: var(--hds-spacing-medium-3);
 
   & li {
@@ -18,6 +27,11 @@
 
   &:is(ul) {
     list-style: disc;
+  }
+
+  /* Nested unordered lists */
+  &:is(ul) ul {
+    list-style: circle;
   }
 
   /**

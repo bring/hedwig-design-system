@@ -1,6 +1,9 @@
 .hds-description-list {
+  &:where(*) {
+    margin: 0;
+  }
+
   list-style: none;
-  margin: 0;
   padding-left: 0;
   font: var(--hds-typography-body);
 
