@@ -1,3 +1,5 @@
+@import url("../_custom-media.css");
+
 .hds-box {
   position: relative;
   border-radius: var(--hds-border-radius);
@@ -23,7 +25,7 @@
   /* Padding */
   --hds-component-box-padding: var(--hds-spacing-medium-2);
 
-  @media (width >= 720px) {
+  @media (--medium) {
     --hds-component-box-padding: var(--hds-spacing-medium-3);
   }
 

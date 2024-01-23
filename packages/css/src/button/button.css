@@ -1,3 +1,5 @@
+@import url("../_custom-media.css");
+
 .hds-button {
   --hds-component-button-border-width: 0px;
 
@@ -64,10 +66,8 @@
   }
 
   &.hds-button--mobile-full {
-    width: 100%;
-
-    @media (width >= 720px) {
-      width: unset;
+    @media (--before-medium) {
+      width: 100%;
     }
   }
 

@@ -1,3 +1,5 @@
+@import url("../../_custom-media.css");
+
 .hds-container {
   display: block;
   margin: 0 auto;
@@ -7,13 +9,13 @@
   &, /* Default */
   &.hds-container--default {
     /* 720px - max-width: 590px */
-    @media (width >= 720px) {
+    @media (--medium) {
       max-width: 590px;
       padding: 0;
     }
 
     /* 940px - max-width: 1200px 36px gutters */
-    @media (width >= 940px) {
+    @media (--large) {
       max-width: 1200px;
       padding: 0 var(--hds-spacing-medium-3);
     }
@@ -21,13 +23,13 @@
 
   &.hds-container--slim {
     /* 720px - max-width: 590px */
-    @media (width >= 720px) {
+    @media (--medium) {
       max-width: 590px;
       padding: 0;
     }
 
     /* 940px - max-width: 762px 36px gutters */
-    @media (width >= 940px) {
+    @media (--large) {
       max-width: 762px;
       padding: 0 var(--hds-spacing-medium-3);
     }
@@ -55,7 +57,7 @@
   }
 
   /* 720px - max-width: 590px */
-  @media (width >= 720px) {
+  @media (--medium) {
     &.hds-container--pt {
       padding-top: var(--hds-spacing-medium-3);
     }
@@ -74,7 +76,7 @@
   }
 
   /* 940px - max-width: 762px 36px gutters */
-  @media (width >= 940px) {
+  @media (--large) {
     &.hds-container--mt {
       margin-top: var(--hds-spacing-large-1);
     }
@@ -85,7 +87,7 @@
   }
 
   /* 1200px - max-width: 762px 36px gutters */
-  @media (width >= 1200px) {
+  @media (--xlarge) {
     &.hds-container--pt {
       padding-top: var(--hds-spacing-medium-4);
     }

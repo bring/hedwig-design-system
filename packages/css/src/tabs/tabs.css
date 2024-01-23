@@ -1,3 +1,5 @@
+@import url("../_custom-media.css");
+
 .hds-tabs {
   --hds-tabs-border-active-size: var(--hds-stroke-thick);
 
@@ -11,7 +13,7 @@
     &.hds-tabs--list-horizontal {
       color: red;
 
-      @media (width >= 720px) {
+      @media (--medium) {
         border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-fill);
         flex-direction: row;
 
@@ -29,7 +31,7 @@
         }
       }
 
-      @media (width < 720px) {
+      @media (--before-medium) {
         border-left: 1px solid var(--hds-ui-colors-light-grey-fill);
         flex-direction: column;
         padding-left: 1px;

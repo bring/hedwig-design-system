@@ -1,9 +1,11 @@
+@import url("../../_custom-media.css");
+
 /* stylelint-disable length-zero-no-unit */
 .hds-flex {
   & > * {
     margin-bottom: var(--hds-spacing-small-1);
 
-    @media (width <=939px) {
+    @media (--before-large) {
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -11,7 +13,7 @@
   }
 }
 
-@media (width <=939px) {
+@media (--before-large) {
   .hds-flex--gutter-large-mobile > * {
     margin-bottom: var(--hds-spacing-small-4);
   }
@@ -25,7 +27,7 @@
   }
 }
 
-@media (width >=940px) {
+@media (--large) {
   .hds-flex {
     display: flex;
 

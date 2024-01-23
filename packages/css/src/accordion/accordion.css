@@ -1,9 +1,11 @@
+@import url("../_custom-media.css");
+
 .hds-accordion {
   --hds-accordion-icon-dimension: 24px;
   --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-small-4);
   --hds-component-accordion-content-spacing: var(--hds-spacing-medium-3);
 
-  @media (width >= 720px) {
+  @media (--medium) {
     --hds-component-accordion-content-spacing: var(--hds-spacing-large-1);
     --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-medium-2);
   }

@@ -1,7 +1,20 @@
 /**
  * Reusable media queries using the hedwig breakpoint
+ *
+ * As of writing custom-media queries are not yet supported in browsers
+ * but lightningcss transpiles them to the standard media query syntax.
+ *
+ * https://www.w3.org/TR/mediaqueries-5/#custom-mq
  */
+
+/* Mobile first */
 @custom-media --small (width >= 460px);
 @custom-media --medium (width >= 720px);
 @custom-media --large (width >= 940px);
 @custom-media --xlarge (width >= 1200px);
+
+/* Desktop first */
+@custom-media --before-small (width < 460px);
+@custom-media --before-medium (width < 720px);
+@custom-media --before-large (width < 940px);
+@custom-media --before-xlarge (width < 1200px);
