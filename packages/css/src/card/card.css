@@ -1,6 +1,8 @@
 /* stylelint-disable selector-class-pattern */
 .hds-card {
   position: relative;
+  border-bottom: initial;
+  text-decoration: initial;
   background: var(--hds-brand-colors-lighter);
   border-radius: var(--hds-border-radius);
   transition: transform var(--hds-micro-animation-duration-normal);
@@ -26,6 +28,10 @@
 
   .hds-card__body {
     padding: var(--hds-spacing-medium-2);
+
+    &:hover {
+      color: initial;
+    }
   }
 
   .hds-card__body-header {
