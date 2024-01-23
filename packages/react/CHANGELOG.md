@@ -1,5 +1,16 @@
 # @postenbring/hedwig-react
 
+## 0.0.39
+
+### Patch Changes
+
+- 67638bf: :recycle: update component exports
+- 779c39d: :sparkles::construction: implement wysiwyg/prose/richtext/dynamic-content component. using `@extend` in css to re-use styles
+- Updated dependencies [779c39d]
+- Updated dependencies [b5328a0]
+- Updated dependencies [0e936c0]
+  - @postenbring/hedwig-css@0.0.37
+
 ## 0.0.38
 
 ### Patch Changes

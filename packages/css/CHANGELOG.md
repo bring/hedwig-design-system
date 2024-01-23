@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.37
+
+### Patch Changes
+
+- 779c39d: :sparkles::construction: implement wysiwyg/prose/richtext/dynamic-content component. using `@extend` in css to re-use styles
+- b5328a0: :lipstick: support nested lists and wrap margin selector in :where(\*) to lower it's specifity, allowing it to be overridden
+- 0e936c0: :recycle: use @custom-media queries
+
 ## 0.0.36
 
 ### Patch Changes
