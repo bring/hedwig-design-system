@@ -142,36 +142,9 @@ export default function KitchenSink() {
           <h2>Modal</h2>
           <ModalExample />
         </section>
-
         <section>
-          <h2>Cards</h2>
-          <div
-            style={{
-              margin: "20px",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              columnGap: "2.5em",
-              rowGap: "2.5em",
-            }}
-          >
-            {[...Array(10)].map((_, i) => (
-              <Card key={i}>
-                <Card.Media>
-                  <Card.Media.Img alt="posten-bring" src={postenBringImage} />
-                </Card.Media>
-                <Card.Body>
-                  <Card.Body.Header>
-                    <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-                    <Card.Body.Header.Title>Article {i + 1}</Card.Body.Header.Title>
-                  </Card.Body.Header>
-                  <Card.Body.Description>Read this cool new article.</Card.Body.Description>
-                  <Card.Body.Action.Arrow href={`#article${i + 1}`} />
-                </Card.Body>
-              </Card>
-            ))}
-          </div>
+          <CardsExample />
         </section>
-
         <section>
           <h2>Tabs</h2>
           <div>
@@ -215,6 +188,84 @@ function ModalExample() {
           </PrimaryButton>
         </div>
       </Modal>
+    </>
+  );
+}
+
+function CardsExample() {
+  return (
+    <>
+      <h2>Cards</h2>
+      <div
+        style={{
+          margin: "20px",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          columnGap: "2.5em",
+          rowGap: "2.5em",
+        }}
+      >
+        <Card as="a" href="#article1">
+          <Card.Media>
+            <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+          </Card.Media>
+          <Card.Body>
+            <Card.Body.Header>
+              <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
+              <Card.Body.Header.Title>Article 1</Card.Body.Header.Title>
+            </Card.Body.Header>
+            <Card.Body.Description>
+              In this example, the whole card is an <code>&lt;a&gt;</code> tag.
+            </Card.Body.Description>
+            <Card.Body.Action.Arrow as="span" />
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Media>
+            <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+          </Card.Media>
+          <Card.Body>
+            <Card.Body.Header>
+              <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
+              <Card.Body.Header.Title>Article 2</Card.Body.Header.Title>
+            </Card.Body.Header>
+            <Card.Body.Description>
+              In this example, only the arrow below is a link.
+            </Card.Body.Description>
+            <Card.Body.Action.Arrow href="#article2" />
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Media>
+            <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+          </Card.Media>
+          <Card.Body>
+            <Card.Body.Header>
+              <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
+              <Card.Body.Header.Title>Article 3</Card.Body.Header.Title>
+            </Card.Body.Header>
+            <Card.Body.Description>
+              In this example, there is a <code>&lt;Link&gt;</code> component below.
+            </Card.Body.Description>
+            <Card.Body.Action as={Link} href="#article3">
+              Read more
+            </Card.Body.Action>
+          </Card.Body>
+        </Card>
+        <Card as="a" className="hds-theme-bring" href="#article1">
+          <Card.Media>
+            <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+          </Card.Media>
+          <Card.Body>
+            <Card.Body.Header>
+              <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
+              <Card.Body.Header.Title>Article 4</Card.Body.Header.Title>
+            </Card.Body.Header>
+            <Card.Body.Description>A Bring card.</Card.Body.Description>
+            <Card.Body.Action.Arrow as="span" />
+          </Card.Body>
+        </Card>
+      </div>
     </>
   );
 }
