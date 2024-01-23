@@ -65,4 +65,4 @@ export const AccordionItem: OverridableComponent<AccordionItemProps, HTMLDivElem
   },
 );
 
-AccordionItem.displayName = "AccordionItem";
+AccordionItem.displayName = "Accordion.Item";

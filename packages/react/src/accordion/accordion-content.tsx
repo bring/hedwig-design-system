@@ -31,4 +31,4 @@ export const AccordionContent: OverridableComponent<AccordionContentProps, HTMLD
     );
   });
 
-AccordionContent.displayName = "AccordionContent";
+AccordionContent.displayName = "Accordion.Content";

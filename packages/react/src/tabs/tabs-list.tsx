@@ -14,7 +14,7 @@ export interface TabListProps extends HTMLAttributes<HTMLDivElement> {
   direction?: "vertical" | "horizontal";
 }
 
-export function TabList({ children, direction = "horizontal", className, ...rest }: TabListProps) {
+export function TabsList({ children, direction = "horizontal", className, ...rest }: TabListProps) {
   const tabsListRef = useRef<HTMLDivElement>(null);
   const { width: tabsWidth } = useResize(tabsListRef);
   const { innerWidth } = window;
@@ -42,7 +42,7 @@ export function TabList({ children, direction = "horizontal", className, ...rest
   );
 }
 
-TabList.displayName = "TabList";
+TabsList.displayName = "Tabs.List";
 
 export interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactElement<HTMLElement> | string;
@@ -83,4 +83,4 @@ export const Tab: OverridableComponent<TabProps, HTMLButtonElement> = forwardRef
   },
 );
 
-Tab.displayName = "Tab";
+Tab.displayName = "Tabs.Tab";

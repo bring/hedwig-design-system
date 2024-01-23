@@ -15,7 +15,4 @@ const MessageComponent = Message as typeof Message & {
 MessageComponent.Title = MessageTitle;
 MessageComponent.Description = MessageDescription;
 
-MessageComponent.Title.displayName = "Message.Title";
-MessageComponent.Description.displayName = "Message.Description";
-
-export { MessageComponent as Message, MessageTitle, MessageDescription };
+export { MessageComponent as Message };

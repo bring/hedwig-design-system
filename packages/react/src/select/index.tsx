@@ -4,4 +4,5 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/select.css";
 
-export * from "./select";
+export { Select } from "./select";
+export type * from "./select";

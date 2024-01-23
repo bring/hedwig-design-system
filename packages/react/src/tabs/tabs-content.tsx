@@ -5,20 +5,19 @@ import type { OverridableComponent } from "../utils";
 import { TabsContext } from "./context";
 
 export interface TabContentsProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactElement<TabContentProps> | ReactElement<TabContentProps>[];
+  children: ReactElement<TabsContentProps> | ReactElement<TabsContentProps>[];
 }
 
-export function TabContents({ children, ...rest }: TabContentsProps) {
+export function TabsContents({ children, ...rest }: TabContentsProps) {
   return (
     <div className={clsx("hds-tabs--contents")} {...rest}>
       {children}
     </div>
   );
 }
+TabsContents.displayName = "Tabs.Contents";
 
-TabContents.displayName = "TabContents";
-
-export interface TabContentProps extends HTMLAttributes<HTMLElement> {
+export interface TabsContentProps extends HTMLAttributes<HTMLElement> {
   children: ReactElement<HTMLElement> | ReactElement<HTMLElement>[] | string;
 
   /**
@@ -27,11 +26,11 @@ export interface TabContentProps extends HTMLAttributes<HTMLElement> {
   forTabId: string;
 }
 
-export const TabContent: OverridableComponent<TabContentProps, HTMLElement> = forwardRef(
+export const TabsContent: OverridableComponent<TabsContentProps, HTMLElement> = forwardRef(
   ({ as: Component = "div", forTabId, children, ...rest }, ref) => {
     const context = useContext(TabsContext);
     if (!context.mounted) {
-      throw new Error("Context required. Did you use <TabContent/> outside of <Tabs/>?");
+      throw new Error("Context required. Did you use <Tabs.Content /> outside of <Tabs/>?");
     }
     if (context.activeTabId === forTabId) {
       return (
@@ -44,4 +43,4 @@ export const TabContent: OverridableComponent<TabContentProps, HTMLElement> = fo
   },
 );
 
-TabContent.displayName = "TabContent";
+TabsContent.displayName = "Tabs.Content";

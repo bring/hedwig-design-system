@@ -19,8 +19,9 @@ AccordionComponent.Item = AccordionItem;
 AccordionComponent.Trigger = AccordionTrigger;
 AccordionComponent.Content = AccordionContent;
 
-AccordionComponent.Item.displayName = "Accordion.Item";
-AccordionComponent.Trigger.displayName = "Accordion.Trigger";
-AccordionComponent.Content.displayName = "Accordion.Content";
+export { AccordionComponent as Accordion };
 
-export { AccordionComponent as Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export type * from "./accordion";
+export type * from "./accordion-item";
+export type * from "./accordion-trigger";
+export type * from "./accordion-content";

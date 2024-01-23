@@ -1,13 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
-export type DescriptionDetailsProps = DLDTProps;
-export type DescriptionTermProps = DLDTProps;
-
-interface DLDTProps extends HTMLAttributes<HTMLBaseElement> {
-  children?: ReactNode;
-}
-
 export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
   /**
    * Either `DescriptionDetails` or `DescriptionTerm` elements
@@ -19,14 +12,35 @@ export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
   variant?: "vertical" | "horizontal";
 }
 
-export function DescriptionDetails({ children, ...rest }: DescriptionDetailsProps) {
-  return <dd {...rest}>{children}</dd>;
-}
-
-export function DescriptionTerm({ children, ...rest }: DescriptionTermProps) {
-  return <dt {...rest}>{children}</dt>;
-}
-
+/**
+ * Uses the HTML5 `<dl>` element
+ *
+ * Pass in corresponding `<dt>` and `<dd>` elements as children
+ *
+ * ```tsx
+ * <DescriptionList>
+ *   <dt>Vekt</dt>
+ *   <dl>12 kg</dl>
+ *   <dt>Antall kolli</dt>
+ *   <dl>2</dl>
+ * </DescriptionList>
+ * ```
+ *
+ * Optionally wrap them in `<div>` elements as allowed by the HTML5 spec
+ *
+ * ```tsx
+ * <DescriptionList>
+ *   <div>
+ *     <dt>Vekt</dt>
+ *     <dl>12 kg</dl>
+ *   </div>
+ *   <div>
+ *     <dt>Antall kolli</dt>
+ *     <dl>2</dl>
+ *   </div>
+ * </DescriptionList>
+ * ```
+ */
 export function DescriptionList({
   variant = "vertical",
   className,
@@ -45,9 +59,4 @@ export function DescriptionList({
     />
   );
 }
-
 DescriptionList.displayName = "DescriptionList";
-DescriptionTerm.displayName = "DescriptionTerm";
-DescriptionDetails.displayName = "DescriptionDetails";
-
-export default DescriptionList;

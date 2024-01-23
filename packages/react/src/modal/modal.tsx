@@ -51,4 +51,4 @@ export const ModalHeader: OverridableComponent<object, HTMLParagraphElement> = f
     );
   },
 );
-ModalHeader.displayName = "ModalHeader";
+ModalHeader.displayName = "Modal.Header";

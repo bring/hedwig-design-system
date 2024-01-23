@@ -4,4 +4,5 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/textarea.css";
 
-export * from "./textarea";
+export { Textarea } from "./textarea";
+export type * from "./textarea";

@@ -4,4 +4,13 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/box.css";
 
-export * from "./box";
+import { Box, BoxCloseButton } from "./box";
+
+const BoxComponent = Box as typeof Box & {
+  CloseButton: typeof BoxCloseButton;
+};
+BoxComponent.CloseButton = BoxCloseButton;
+
+export { BoxComponent as Box };
+
+export type * from "./box";

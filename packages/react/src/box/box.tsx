@@ -97,4 +97,4 @@ export const BoxCloseButton = forwardRef<HTMLButtonElement, BoxCloseButtonProps>
     );
   },
 );
-BoxCloseButton.displayName = "BoxCloseButton";
+BoxCloseButton.displayName = "Box.CloseButton";

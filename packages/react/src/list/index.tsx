@@ -5,6 +5,11 @@ import "@postenbring/hedwig-css/dist/body.css";
 import "@postenbring/hedwig-css/dist/description-list.css";
 import "@postenbring/hedwig-css/dist/list.css";
 
-export * from "./description-list";
-export * from "./list";
-export * from "./link-list";
+export { DescriptionList } from "./description-list";
+export type * from "./description-list";
+
+export { UnorderedList, OrderedList } from "./list";
+export type * from "./list";
+
+export { LinkList } from "./link-list";
+export type * from "./link-list";

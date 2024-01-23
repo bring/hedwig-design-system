@@ -26,3 +26,4 @@ NavbarComponent.Logo = NavbarLogo;
 NavbarComponent.ExpandableMenu = NavbarExpandableMenuComponent;
 
 export { NavbarComponent as Navbar };
+export type * from "./navbar";

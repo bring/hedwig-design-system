@@ -4,4 +4,5 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/input.css";
 
-export * from "./input";
+export { Input } from "./input";
+export type * from "./input";

@@ -55,4 +55,4 @@ CardComponent.Body = CardBodyComponent;
 
 export { CardComponent as Card };
 
-export * from "./card";
+export type * from "./card";

@@ -2,9 +2,7 @@ import "@postenbring/hedwig-css/dist/reset.css";
 import {
   Box,
   Card,
-  DescriptionDetails,
   DescriptionList,
-  DescriptionTerm,
   Select,
   Link,
   LinkList,
@@ -12,10 +10,6 @@ import {
   Modal,
   OrderedList,
   PrimaryButton,
-  Tab,
-  TabContent,
-  TabContents,
-  TabList,
   Tabs,
   UnorderedList,
   WarningBanner,
@@ -56,12 +50,12 @@ export default function KitchenSink() {
         </Link>
         <h2>Descriptive lists</h2>
         <DescriptionList variant="vertical">
-          <DescriptionTerm>Something:</DescriptionTerm>
-          <DescriptionDetails>To keep your eyes on 👀, vertically</DescriptionDetails>
+          <dt>Something:</dt>
+          <dd>To keep your eyes on 👀, vertically</dd>
         </DescriptionList>
         <DescriptionList variant="horizontal">
-          <DescriptionTerm>Something:</DescriptionTerm>
-          <DescriptionDetails>To keep your eyes on 👀, horizontally</DescriptionDetails>
+          <dt>Something:</dt>
+          <dd>To keep your eyes on 👀, horizontally</dd>
         </DescriptionList>
         <div>
           <h2>Lists</h2>
@@ -182,18 +176,18 @@ export default function KitchenSink() {
           <h2>Tabs</h2>
           <div>
             <Tabs defaultTab="first">
-              <TabList>
-                <Tab tabId="first">Tab</Tab>
-                <Tab tabId="second">TabTab</Tab>
-                <Tab tabId="third">TabTabTab</Tab>
-              </TabList>
-              <TabContents>
-                <TabContent forTabId="first">Single tab</TabContent>
-                <TabContent forTabId="second">Two tabs</TabContent>
-                <TabContent forTabId="third">
+              <Tabs.List>
+                <Tabs.Tab tabId="first">Tab</Tabs.Tab>
+                <Tabs.Tab tabId="second">TabTab</Tabs.Tab>
+                <Tabs.Tab tabId="third">TabTabTab</Tabs.Tab>
+              </Tabs.List>
+              <Tabs.Contents>
+                <Tabs.Content forTabId="first">Single tab</Tabs.Content>
+                <Tabs.Content forTabId="second">Two tabs</Tabs.Content>
+                <Tabs.Content forTabId="third">
                   <h3>Tabs, tabs everywhere 😱!</h3>
-                </TabContent>
-              </TabContents>
+                </Tabs.Content>
+              </Tabs.Contents>
             </Tabs>
           </div>
         </section>

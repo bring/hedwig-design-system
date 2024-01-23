@@ -10,9 +10,7 @@ import { Modal, ModalHeader } from "./modal";
 const ModalComponent = Modal as typeof Modal & {
   Header: typeof ModalHeader;
 };
-
 ModalComponent.Header = ModalHeader;
 
-ModalComponent.Header.displayName = "Modal";
-
-export { ModalComponent as Modal, ModalHeader };
+export { ModalComponent as Modal };
+export type * from "./modal";

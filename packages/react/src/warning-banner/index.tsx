@@ -4,4 +4,5 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/warning-banner.css";
 
-export * from "./warning-banner";
+export { WarningBanner } from "./warning-banner";
+export type * from "./warning-banner";

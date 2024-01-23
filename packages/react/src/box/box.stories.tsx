@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { useState } from "react";
-import { Box, BoxCloseButton } from ".";
+import { Box } from ".";
 
 const meta: Meta<typeof Box> = {
   title: "Box",
@@ -93,7 +93,7 @@ export const Custom: Story = {
     return (
       <Box variant="lighter">
         {/* Choosing to render the close button manualy */}
-        <BoxCloseButton
+        <Box.CloseButton
           onClick={() => {
             closeTimer === null && countDownFrom(5);
           }}

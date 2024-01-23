@@ -52,4 +52,4 @@ export const AccordionTrigger: OverridableComponent<AccordionTriggerProps, HTMLB
     );
   });
 
-AccordionTrigger.displayName = "AccordionTrigger";
+AccordionTrigger.displayName = "Accordion.Trigger";
