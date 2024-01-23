@@ -12,4 +12,19 @@ export default {
       defaultTheme: "Posten",
     }),
   ],
+  parameters: {
+    backgrounds: {
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff",
+        },
+        {
+          name: "dark",
+          value: "#121212",
+        },
+      ],
+    },
+  },
 };
