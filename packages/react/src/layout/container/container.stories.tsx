@@ -50,7 +50,7 @@ function Widths() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [id]);
 
   return (
     <div id={id} ref={ref}>
