@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.40
+
+### Patch Changes
+
+- f8466dc: :lipstick: Reset Card styles when wrapped as an `<a>` or a hedwig `<Link />`.
+- Updated dependencies [f8466dc]
+  - @postenbring/hedwig-css@0.0.38
+
 ## 0.0.39
 
 ### Patch Changes
