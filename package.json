@@ -30,7 +30,7 @@
       "axios": "^1.6.5"
     }
   },
-  "packageManager": "pnpm@8.1.0",
+  "packageManager": "pnpm@8.11.0",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "packages/css/**/*.{css,scss}": "stylelint --cache --fix",
