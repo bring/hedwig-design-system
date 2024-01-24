@@ -25,6 +25,11 @@
     "stylelint": "16.1.0",
     "turbo": "latest"
   },
+  "pnpm": {
+    "overrides": {
+      "axios": "^1.6.5"
+    }
+  },
   "packageManager": "pnpm@8.10.5",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
