@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.38
+
+### Patch Changes
+
+- f8466dc: :lipstick: Reset Card styles when wrapped as an `<a>` or a hedwig `<Link />`.
+
 ## 0.0.37
 
 ### Patch Changes
