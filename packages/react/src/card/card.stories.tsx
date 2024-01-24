@@ -75,3 +75,25 @@ export const MaxWidthAndArrow: Story = {
     </CardComponent>
   ),
 };
+
+export const WholeCardAsALink: Story = {
+  render: (props) => (
+    <CardComponent {...props} as="a" href="#article" style={{ maxWidth: "500px" }}>
+      <CardComponent.Media>
+        <CardComponent.Media.Img alt="posten-bring" src="./posten-bring.jpg" />
+      </CardComponent.Media>
+      <CardComponent.Body>
+        <CardComponent.Body.Header>
+          <CardComponent.Body.Header.Overline>Theme</CardComponent.Body.Header.Overline>
+          <CardComponent.Body.Header.Title>Whole card is a link</CardComponent.Body.Header.Title>
+        </CardComponent.Body.Header>
+        <CardComponent.Body.Description>
+          In this card, the whole card is a link, using an anchor tag. You can also use the hedwig
+          provided <code>Link</code> component. As you hopefully can see the Card component provides
+          a lot of flexibility.
+        </CardComponent.Body.Description>
+        <CardComponent.Body.Action.Arrow as="span" />
+      </CardComponent.Body>
+    </CardComponent>
+  ),
+};
