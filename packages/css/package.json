@@ -41,5 +41,16 @@
   },
   "browserslist": [
     "defaults"
+  ],
+  "homepage": "https://github.com/bring/hedwig-design-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bring/hedwig-design-system"
+  },
+  "keywords": [
+    "hedwig",
+    "posten",
+    "bring",
+    "css"
   ]
 }
