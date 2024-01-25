@@ -30,15 +30,15 @@ body {
  * we need to override it to get the correct `Posten Sans`
  */
 h1 {
-  font: var(--hds-brand-typography-h1);
+  font: var(--hds-typography-h1);
 }
 
 h2 {
-  font: var(--hds-brand-typography-h2);
+  font: var(--hds-typography-h2);
 }
 
 h3 {
-  font: var(--hds-typography-header-h3);
+  font: var(--hds-typography-h3);
 }
 
 /*

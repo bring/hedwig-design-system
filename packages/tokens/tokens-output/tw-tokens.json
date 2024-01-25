@@ -196,7 +196,7 @@
       "fontWeight": 400,
       "letterSpacing": "0"
     },
-    "header-h3": {
+    "h3": {
       "fontFamily": [
         "Posten Sans",
         "Arial",
@@ -213,7 +213,7 @@
       "fontWeight": 400,
       "letterSpacing": "0"
     },
-    "header-h3-title": {
+    "h3-title": {
       "fontFamily": [
         "Posten Sans",
         "Arial",
@@ -397,12 +397,12 @@
     "bring-h2": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
     "bring-h2-min": "28px",
     "bring-h2-max": "32px",
-    "header-h3": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
-    "header-h3-min": "22px",
-    "header-h3-max": "24px",
-    "header-h3-title": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
-    "header-h3-title-min": "22px",
-    "header-h3-title-max": "24px",
+    "h3": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
+    "h3-min": "22px",
+    "h3-max": "24px",
+    "h3-title": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
+    "h3-title-min": "22px",
+    "h3-title-max": "24px",
     "body": "clamp(18px,calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))),20px)",
     "body-min": "18px",
     "body-max": "20px",
@@ -444,12 +444,12 @@
     "bring-h2": "clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px)",
     "bring-h2-min": "36px",
     "bring-h2-max": "40px",
-    "header-h3": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
-    "header-h3-min": "28px",
-    "header-h3-max": "32px",
-    "header-h3-title": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
-    "header-h3-title-min": "28px",
-    "header-h3-title-max": "32px",
+    "h3": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
+    "h3-min": "28px",
+    "h3-max": "32px",
+    "h3-title": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
+    "h3-title-min": "28px",
+    "h3-title-max": "32px",
     "body": "clamp(26px,calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))),28px)",
     "body-min": "26px",
     "body-max": "28px",
@@ -479,8 +479,8 @@
     "bring-h1-display": 300,
     "bring-h1": 300,
     "bring-h2": 400,
-    "header-h3": 400,
-    "header-h3-title": 500,
+    "h3": 400,
+    "h3-title": 500,
     "body": 400,
     "body title": 500,
     "body small": 400,

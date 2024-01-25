@@ -70,7 +70,7 @@ export const customTokensParser: Parser = {
       if (type === "typography" && typeof value !== "undefined") {
         if (Array.isArray(value.fontSize)) {
           const [min, max] = value.fontSize;
-          extractedTokens.fontSize[`${parentKey}`] = { type: "fluidDimension", value: [min, max] };
+          extractedTokens.fontSize[parentKey] = { type: "fluidDimension", value: [min, max] };
           extractedTokens.fontSize[`${parentKey}-min`] = { value: min };
           extractedTokens.fontSize[`${parentKey}-max`] = { value: max };
         } else if (value.fontSize) {
@@ -78,7 +78,7 @@ export const customTokensParser: Parser = {
         }
         if (Array.isArray(value.lineHeight)) {
           const [min, max] = value.lineHeight;
-          extractedTokens.lineHeight[`${parentKey}`] = {
+          extractedTokens.lineHeight[parentKey] = {
             type: "fluidDimension",
             value: [min, max],
           };
@@ -101,9 +101,9 @@ export const customTokensParser: Parser = {
     }
     const extractedTokens = extractFontSizeAndLineHeightsAndFontWeight(result);
     Object.assign(result, {
-      "font-size": { type: "dimension", ...extractedTokens.fontSize },
-      "line-height": { type: "dimension", ...extractedTokens.lineHeight },
-      "font-weight": { type: "number", ...extractedTokens.fontWeight },
+      "font-size": { ...result["font-size"], type: "dimension", ...extractedTokens.fontSize },
+      "line-height": { ...result["line-height"], type: "dimension", ...extractedTokens.lineHeight },
+      "font-weight": { ...result["font-weight"], type: "number", ...extractedTokens.fontWeight },
     });
 
     return result;

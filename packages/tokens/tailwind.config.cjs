@@ -66,31 +66,25 @@ module.exports = {
       light: 300,
     },
     fontSize: {
-      "h1-display": fontSize("posten-h1-display", "var(--hds-brand-font-weight-h1-display)"),
-      "h1-display-min": fontSize(
-        "posten-h1-display-min",
-        "var(--hds-brand-font-weight-h1-display)",
-      ),
-      "h1-display-max": fontSize(
-        "posten-h1-display-max",
-        "var(--hds-brand-font-weight-h1-display)",
-      ),
+      "h1-display": fontSize("posten-h1-display", "var(--hds-font-weight-h1-display)"),
+      "h1-display-min": fontSize("posten-h1-display-min", "var(--hds-font-weight-h1-display)"),
+      "h1-display-max": fontSize("posten-h1-display-max", "var(--hds-font-weight-h1-display)"),
 
-      h1: fontSize("posten-h1", "var(--hds-brand-font-weight-h1)"),
-      "h1-min": fontSize("posten-h1-min", "var(--hds-brand-font-weight-h1)"),
-      "h1-max": fontSize("posten-h1-max", "var(--hds-brand-font-weight-h1)"),
+      h1: fontSize("posten-h1", "var(--hds-font-weight-h1)"),
+      "h1-min": fontSize("posten-h1-min", "var(--hds-font-weight-h1)"),
+      "h1-max": fontSize("posten-h1-max", "var(--hds-font-weight-h1)"),
 
-      h2: fontSize("posten-h2", "var(--hds-brand-font-weight-h2)"),
-      "h2-min": fontSize("posten-h2-min", "var(--hds-brand-font-weight-h2)"),
-      "h2-max": fontSize("posten-h2-max", "var(--hds-brand-font-weight-h2)"),
+      h2: fontSize("posten-h2", "var(--hds-font-weight-h2)"),
+      "h2-min": fontSize("posten-h2-min", "var(--hds-font-weight-h2)"),
+      "h2-max": fontSize("posten-h2-max", "var(--hds-font-weight-h2)"),
 
-      h3: fontSize("header-h3", "header-h3"),
-      "h3-min": fontSize("header-h3-min", "header-h3"),
-      "h3-max": fontSize("header-h3-max", "header-h3"),
+      h3: fontSize("h3", "h3"),
+      "h3-min": fontSize("h3-min", "h3"),
+      "h3-max": fontSize("h3-max", "h3"),
 
-      "h3-title": fontSize("header-h3-title", "header-h3-title"),
-      "h3-title-min": fontSize("header-h3-title-min", "header-h3-title"),
-      "h3-title-max": fontSize("header-h3-title-max", "header-h3-title"),
+      "h3-title": fontSize("h3-title", "h3-title"),
+      "h3-title-min": fontSize("h3-title-min", "h3-title"),
+      "h3-title-max": fontSize("h3-title-max", "h3-title"),
 
       body: fontSize("body", "body"),
       "body-min": fontSize("body-min", "body"),
@@ -122,13 +116,13 @@ module.exports = {
     colors: {
       // The brand specifc tokens are themeable,
       // so they must be referneced by css variables
-      signature: "var(--hds-brand-colors-signature)",
-      darker: "var(--hds-brand-colors-darker)",
-      dark: "var(--hds-brand-colors-dark)",
-      light: "var(--hds-brand-colors-light)",
-      lighter: "var(--hds-brand-colors-lighter)",
-      "signature-hover": "var(--hds-brand-colors-signature-hover)",
-      "light-hover": "var(--hds-brand-colors-light-hover)",
+      signature: "var(--hds-colors-signature)",
+      darker: "var(--hds-colors-darker)",
+      dark: "var(--hds-colors-dark)",
+      light: "var(--hds-colors-light)",
+      lighter: "var(--hds-colors-lighter)",
+      "signature-hover": "var(--hds-colors-signature-hover)",
+      "light-hover": "var(--hds-colors-light-hover)",
 
       ...expandAndPrefix(tokens["ui-colors"], "ui-"),
       ...expandAndPrefix(tokens["dark-mode-colors"], "dm-"),

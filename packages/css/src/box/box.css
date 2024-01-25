@@ -10,7 +10,7 @@
   }
 
   &.hds-box--lighter {
-    background-color: var(--hds-brand-colors-lighter);
+    background-color: var(--hds-colors-lighter);
   }
 
   &.hds-box--white {

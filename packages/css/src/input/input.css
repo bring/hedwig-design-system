@@ -39,7 +39,7 @@
   }
 
   &:focus-within .hds-input__label {
-    color: var(--hds-brand-colors-darker);
+    color: var(--hds-colors-darker);
   }
 
   & .hds-input__label {
@@ -68,7 +68,7 @@
     &:focus-within,
     &:has(.hds-input__input:read-only):focus-within,
     &[data-readonly="true"]:focus-within /* Fallback for :has */ {
-      border-bottom: var(--hds-stroke-default) solid var(--hds-brand-colors-darker);
+      border-bottom: var(--hds-stroke-default) solid var(--hds-colors-darker);
     }
 
     &:has(.hds-input__input:read-only),

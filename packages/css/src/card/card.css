@@ -3,7 +3,7 @@
   position: relative;
   border-bottom: initial;
   text-decoration: initial;
-  background: var(--hds-brand-colors-lighter);
+  background: var(--hds-colors-lighter);
   border-radius: var(--hds-border-radius);
   transition: transform var(--hds-micro-animation-duration-normal);
   display: flex;
@@ -42,12 +42,12 @@
   .hds-card__body-header-overline {
     display: block;
     font-size: var(--hds-font-size-technical-title);
-    color: var(--hds-brand-colors-dark);
+    color: var(--hds-colors-dark);
   }
 
   .hds-card__body-header-title {
-    font-size: var(--hds-brand-font-size-h2-min);
-    font-weight: var(--hds-font-weight-header-h3);
+    font-size: var(--hds-font-size-h2-min);
+    font-weight: var(--hds-font-weight-h3);
     line-height: var(--hds-spacing-medium-4);
   }
 

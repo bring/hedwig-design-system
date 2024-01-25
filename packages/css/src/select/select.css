@@ -98,7 +98,7 @@
       }
 
       &:focus-within {
-        border-bottom: var(--hds-stroke-default) solid var(--hds-brand-colors-darker);
+        border-bottom: var(--hds-stroke-default) solid var(--hds-colors-darker);
       }
     }
   }

@@ -22,7 +22,7 @@
           border-bottom: var(--hds-tabs-border-active-size) solid transparent;
 
           &.hds-tabs--tab-active {
-            border-bottom-color: var(--hds-brand-colors-signature);
+            border-bottom-color: var(--hds-colors-signature);
           }
 
           &:not(:last-child) {
@@ -42,7 +42,7 @@
 
           &.hds-tabs--tab-active {
             margin-left: calc(var(--hds-tabs-border-active-size) * -1);
-            border-left: var(--hds-tabs-border-active-size) solid var(--hds-brand-colors-signature);
+            border-left: var(--hds-tabs-border-active-size) solid var(--hds-colors-signature);
           }
         }
       }
@@ -59,7 +59,7 @@
 
         &.hds-tabs--tab-active {
           margin-left: calc(var(--hds-tabs-border-active-size) * -1);
-          border-left: var(--hds-tabs-border-active-size) solid var(--hds-brand-colors-signature);
+          border-left: var(--hds-tabs-border-active-size) solid var(--hds-colors-signature);
         }
       }
     }
@@ -72,11 +72,11 @@
       text-align: left;
 
       &:hover {
-        color: var(--hds-brand-colors-dark);
+        color: var(--hds-colors-dark);
       }
 
       &.hds-tabs--tab-active {
-        color: var(--hds-brand-colors-dark);
+        color: var(--hds-colors-dark);
       }
     }
   }
