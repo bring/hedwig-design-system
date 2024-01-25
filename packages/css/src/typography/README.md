@@ -21,7 +21,7 @@ class="hds-text-body-title hds-text-body-title--spacing"
 class="hds-text-bodt-title hds-spacing"
 ```
 
-## Insperation
+## Inspiration
 
 - https://storybook.designsystemet.no/?path=/docs/felles-typography--docs
 - https://aksel.nav.no/komponenter/core/typography#headingdemo-xlarge
