@@ -1,52 +1,33 @@
-import { useId } from "react";
+import { forwardRef } from "react";
+import type { SelectHTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { InputGroup } from "../input-group";
+import type { InputGroupProps } from "../input-group";
 
-export interface SelectProps
-  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "children"> {
-  label: string;
-  variant?: "default" | "white";
-  errorMessage?: string;
-  children: React.ReactNode;
-}
+export type SelectProps = Omit<
+  InputGroupProps & SelectHTMLAttributes<HTMLSelectElement>,
+  "readOnly"
+>;
 
-export function Select({
-  id,
-  label,
-  variant,
-  errorMessage,
-  className,
-  disabled,
-  children,
-  ...rest
-}: SelectProps) {
-  const errorMessageId = useId();
-  const selectId = useId();
-
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
+  { variant, errorMessage, labelProps, label, id, style, disabled, children, ...rest },
+  ref,
+) {
   return (
-    <div
-      className={clsx(
-        "hds-select",
-        {
-          [`hds-select--${variant}`]: variant,
-          "hds-select--error": errorMessage,
-        },
-        className as undefined,
-      )}
+    <InputGroup
+      className={clsx("hds-select")}
+      disabled={disabled}
+      errorMessage={errorMessage}
+      id={id}
+      label={label}
+      labelProps={labelProps}
+      variant={variant}
     >
-      <label className="hds-select__label" htmlFor={selectId}>
-        {label}
-      </label>
-      <div className={clsx("hds-select__select-wrapper")} data-disabled={disabled}>
-        <select className="hds-select__select" disabled={disabled} id={id || selectId} {...rest}>
-          {children}
-        </select>
-      </div>
-      {!!errorMessage && (
-        <span className="hds-select__error-message" id={errorMessageId}>
-          {errorMessage}
-        </span>
-      )}
-    </div>
+      <select {...rest} disabled={disabled} ref={ref} style={style}>
+        {children}
+      </select>
+    </InputGroup>
   );
-}
+});
+
 Select.displayName = "Select";
