@@ -111,7 +111,7 @@ We use [changesets](https://github.com/changesets/changesets) to handle publishi
 "@postenbring/hedwig-react": patch
 ---
 
-:lipstick: Change font size on PrimaryButton component`.
+:lipstick: Change font size on PrimaryButton component.
 ```
 
 This changeset file will create patch releases of the `@postenbring/hedwig-css` and `@postenbring/hedwig-react` packages.
