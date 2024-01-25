@@ -101,8 +101,23 @@ pnpm dev
 
 ## Publishing
 
-TBA
+### Releases
 
-## Developer guide lines
+We use [changesets](https://github.com/changesets/changesets) to handle publishing of new package versions. The easiest way to publish a new version is to use the [changeset-bot](https://github.com/apps/changeset-bot)'s comments on pull requests, which will help you create and commit a new changeset file. An example of a changeset:
 
-TBA.
+```
+---
+"@postenbring/hedwig-css": patch
+"@postenbring/hedwig-react": patch
+---
+
+:lipstick: Change font size on PrimaryButton component`.
+```
+
+This changeset file will create patch releases of the `@postenbring/hedwig-css` and `@postenbring/hedwig-react` packages.
+
+You can also use `pnpm changeset` in the project root folder, which will guide you through the creation of a changeset file.
+
+### Snapshots releases
+
+Snapshots of a branch is published when a new changeset file is present in a pull request. The snapshot release version is in the format `0.0.0-${branch}-${timestamp}`, e.g. `@postenbring/hedwig-react@0.0.0-refactor-button-iSIvTK2v-20231121205134`. This way, anyone who wants to contribute or request changes can create their own branch and automatically publish a snapshot version to [npmjs](https://www.npmjs.com/) for testing purposes.
