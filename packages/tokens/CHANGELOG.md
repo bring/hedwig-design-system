@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.10
+
+### Patch Changes
+
+- 0509d61: :memo: Update docs
+
 ## 0.0.9
 
 ### Patch Changes
