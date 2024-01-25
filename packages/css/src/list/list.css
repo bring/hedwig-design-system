@@ -18,7 +18,7 @@
     padding-left: var(--hds-spacing-small-2);
 
     &::marker {
-      color: var(--hds-brand-colors-dark);
+      color: var(--hds-colors-dark);
     }
   }
 
@@ -61,7 +61,7 @@
   }
 
   &.hds-list--large {
-    font: var(--hds-typography-header-h3);
+    font: var(--hds-typography-h3);
     gap: var(--hds-spacing-small-3);
   }
 }

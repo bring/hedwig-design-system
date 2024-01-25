@@ -39,7 +39,7 @@
   }
 
   &:focus-within .hds-textarea__label {
-    color: var(--hds-brand-colors-darker);
+    color: var(--hds-colors-darker);
   }
 
   & .hds-textarea__label {
@@ -67,7 +67,7 @@
     &:focus-within,
     &:has(.hds-textarea__textarea:read-only):focus-within,
     &[data-readonly="true"]:focus-within /* Fallback for :has */ {
-      border-bottom: var(--hds-stroke-default) solid var(--hds-brand-colors-darker);
+      border-bottom: var(--hds-stroke-default) solid var(--hds-colors-darker);
     }
 
     &:has(.hds-textarea__textarea:read-only),

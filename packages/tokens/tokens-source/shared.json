@@ -241,7 +241,7 @@
         "letterSpacing": "0"
       }
     },
-    "header-h3": {
+    "h3": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["22px", "24px"],
@@ -250,7 +250,7 @@
         "letterSpacing": "0"
       }
     },
-    "header-h3-title": {
+    "h3-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["22px", "24px"],

@@ -21,7 +21,7 @@
     overflow: hidden;
 
     &.hds-accordion-item__expanded .hds-accordion-item-trigger {
-      color: var(--hds-brand-colors-dark);
+      color: var(--hds-colors-dark);
     }
 
     &:first-child .hds-accordion-item-trigger {
@@ -42,21 +42,21 @@
       font: var(--hds-typography-body);
 
       &:hover {
-        color: var(--hds-brand-colors-dark);
+        color: var(--hds-colors-dark);
         outline: 0;
       }
 
       .hds-accordion-item-trigger--icon {
         transition: all 0.05s ease;
         display: inline-block;
-        color: var(--hds-brand-colors-dark);
+        color: var(--hds-colors-dark);
         width: var(--hds-accordion-icon-dimension);
         height: var(--hds-accordion-icon-dimension);
 
         .hds-accordion-item-trigger--icon-chevron,
         .hds-accordion-item-trigger--icon-chevron-down {
-          color: var(--hds-brand-colors-dark);
-          fill: var(--hds-brand-colors-dark);
+          color: var(--hds-colors-dark);
+          fill: var(--hds-colors-dark);
         }
 
         & svg {

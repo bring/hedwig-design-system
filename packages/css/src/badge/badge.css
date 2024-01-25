@@ -31,22 +31,22 @@
 
   &, /* Default */
   &.hds-badge--lighter {
-    background-color: var(--hds-brand-colors-lighter);
-    color: var(--hds-brand-colors-dark);
+    background-color: var(--hds-colors-lighter);
+    color: var(--hds-colors-dark);
   }
 
   &.hds-badge--dark {
-    background-color: var(--hds-brand-colors-darker);
+    background-color: var(--hds-colors-darker);
     color: var(--hds-ui-colors-white);
   }
 
   &.hds-badge--white {
     background-color: var(--hds-ui-colors-white);
-    color: var(--hds-brand-colors-dark);
+    color: var(--hds-colors-dark);
   }
 
   &.hds-badge--warning {
     background-color: var(--hds-ui-colors-warning-yellow);
-    color: var(--hds-brand-link-colors-text);
+    color: var(--hds-link-colors-text);
   }
 }

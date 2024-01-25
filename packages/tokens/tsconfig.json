@@ -6,6 +6,6 @@
     "checkJs": true,
     "allowJs": true,
     "noEmit": true,
-    "resolveJsonModule": true
-  }
+    "resolveJsonModule": true,
+  },
 }
