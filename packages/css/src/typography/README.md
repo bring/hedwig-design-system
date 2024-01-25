@@ -18,13 +18,19 @@ class="hds-text-body-title hds-text-body-title--spacing"
 
 // VS
 
-class="hds-text-bodt-title hds-spacing"
+class="hds-text-body-title hds-spacing"
 ```
 
 ## Inspiration
 
 - https://storybook.designsystemet.no/?path=/docs/felles-typography--docs
 - https://aksel.nav.no/komponenter/core/typography#headingdemo-xlarge
-- https://spor.vy.no/komponenter/tekst
+- https://spor.vy.no/components/text
 - https://jokul.fremtind.no/komponenter/typography/
 - https://design.sparebank1.no/komponenter/typografi/
+- https://www.gjensidige.builders/docs/core/?path=/docs/packages-builders-components-text--about
+- https://storybook.eds.equinor.com/?path=/docs/typography-typography--docs
+
+### Global
+
+- https://mui.com/material-ui/react-typography/
