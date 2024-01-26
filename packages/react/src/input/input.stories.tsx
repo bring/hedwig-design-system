@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { PrimaryButton } from "../button";
+import { useState } from "react";
+import { PrimaryButton, SecondaryButton } from "../button";
 import { Input } from ".";
 
 const meta: Meta<typeof Input> = {
@@ -161,4 +162,53 @@ export const TrackingNumberSearch: Story = {
       <PrimaryButton size="large">Spor</PrimaryButton>
     </div>
   ),
+};
+
+export const FormWithErrorsOnSubmit: Story = {
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks -- It's ok
+    const [errors, setErrors] = useState<Record<string, string>>({});
+    return (
+      <form
+        lang="en"
+        onSubmit={(e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget);
+          const newErrors: Record<string, string> = {};
+          // @ts-expect-error -- It works
+          for (const [key, value] of formData) {
+            if (!value) {
+              newErrors[key as string] = `${key} is required`;
+            }
+          }
+          setErrors(newErrors);
+        }}
+        style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-4)" }}
+      >
+        <p>Fields without input will give an error</p>
+        <Input _unstableAriaLiveOnErrorMessage errorMessage={errors.One} label="One" name="One" />
+        <Input _unstableAriaLiveOnErrorMessage errorMessage={errors.Two} label="Two" name="Two" />
+        <Input
+          _unstableAriaLiveOnErrorMessage
+          errorMessage={errors.Three}
+          label="Three"
+          name="Three"
+        />
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-1)" }}
+        >
+          <PrimaryButton type="submit">Submit</PrimaryButton>
+          <SecondaryButton
+            fill="outlined"
+            onClick={() => {
+              setErrors({});
+            }}
+            type="reset"
+          >
+            Reset
+          </SecondaryButton>
+        </div>
+      </form>
+    );
+  },
 };

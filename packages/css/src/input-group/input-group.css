@@ -117,5 +117,10 @@
     font: var(--hds-typography-caption-title);
     color: var(--hds-ui-colors-dark-grey);
     padding: var(--hds-spacing-small-1) 0 0 var(--hds-spacing-medium-4);
+
+    /* Avoid spacing when no errors are active, but keep the element always in DOM so `aria-live` works */
+    &:empty {
+      display: none;
+    }
   }
 }

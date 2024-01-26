@@ -7,11 +7,23 @@ import type { InputGroupProps } from "../input-group";
 export type InputProps = Omit<InputGroupProps & InputHTMLAttributes<HTMLInputElement>, "children">;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { variant, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
+  {
+    variant,
+    errorMessage,
+    labelProps,
+    label,
+    id,
+    style,
+    disabled,
+    readOnly,
+    _unstableAriaLiveOnErrorMessage,
+    ...rest
+  },
   ref,
 ) {
   return (
     <InputGroup
+      _unstableAriaLiveOnErrorMessage={_unstableAriaLiveOnErrorMessage}
       className={clsx("hds-input")}
       disabled={disabled}
       errorMessage={errorMessage}
