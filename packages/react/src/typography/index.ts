@@ -4,5 +4,11 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/typography.css";
 
-export { Typography } from "./typography";
+import { Typography } from "./typography";
+
+const Text = Typography;
+Text.displayName = "Text";
+
+export { Typography, Text };
+
 export type * from "./typography";
