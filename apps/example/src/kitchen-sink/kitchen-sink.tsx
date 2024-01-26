@@ -252,7 +252,7 @@ function CardsExample() {
             </Card.Body.Action>
           </Card.Body>
         </Card>
-        <Card as="a" className="hds-theme-bring" href="#article1">
+        <Card as="a" className="hds-theme-bring" href="#article4">
           <Card.Media>
             <Card.Media.Img alt="posten-bring" src={postenBringImage} />
           </Card.Media>
