@@ -1,5 +1,13 @@
+@import url("../_custom-media.css");
+
 /**
- * Font
+ * Typography classes
+ *
+ * Sets the following values:
+ * - Font family (always "Posten Sans")
+ * - Font weight
+ * - Font size
+ * - Line height
  */
 .hds-typography-h1-display {
   font: var(--hds-typography-h1-display);
@@ -165,30 +173,44 @@
 
 /**
  * Spacing
+ * Meant for article content, ui content might need different spacing.
  */
-.hds-typography-h1.hds-typography--spacing {
-  margin-top: var(--hds-spacing-large-2);
+.hds-typography-h1,
+.hds-typography-h2 {
+  &.hds-typography--spacing {
+    margin-top: var(--hds-spacing-large-1);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-large-2);
+    }
+  }
 }
 
-.hds-typography-h2.hds-typography--spacing {
-  margin-top: var(--hds-spacing-large-2);
-}
-
-.hds-typography-h1 ~ .hds-typography-h2.hds-typography--spacing {
-  margin-top: var(--hds-spacing-medium-3);
+.hds-typography-h1 + .hds-typography-h2 {
+  &.hds-typography--spacing {
+    margin-top: var(--hds-spacing-medium-3);
+  }
 }
 
 .hds-typography-h3,
 .hds-typography-h3-title {
   &.hds-typography--spacing {
-    margin-top: var(--hds-spacing-large-2);
+    margin-top: var(--hds-spacing-medium-4);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-large-1);
+    }
   }
 }
 
 .hds-typography-body,
 .hds-typography-body-title {
   &.hds-typography--spacing {
-    margin-top: var(--hds-spacing-medium-2);
+    margin-top: var(--hds-spacing-small-4);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-medium-2);
+    }
   }
 }
 

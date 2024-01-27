@@ -22,6 +22,16 @@ class="hds-typography-body-title hds-typography--spacing"
 class="hds-typography-body-title hds-spacing"
 ```
 
+### Two types of spacing
+
+#### Articles
+
+Like on posten.no
+
+### Application / UI
+
+Seem like there are different spacing in use
+
 ## Inspiration
 
 - https://storybook.designsystemet.no/?path=/docs/felles-typography--docs
