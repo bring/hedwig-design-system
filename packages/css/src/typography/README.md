@@ -5,6 +5,7 @@ Not ready to be used, api might drasticly change.
 ## Thoughts & Ideas
 
 - use `text` prefix instead of `typography` e.g.`hds-text-body-title`
+- use `typo` prefix instead of `typography` e.g.`hds-typo-body-title`
 
 ### Spacing
 
@@ -14,11 +15,11 @@ Not ready to be used, api might drasticly change.
 Maybe if we create some spacing utilty classes, they can be used instead?
 
 ```jsx
-class="hds-text-body-title hds-text-body-title--spacing"
+class="hds-typography-body-title hds-typography--spacing"
 
 // VS
 
-class="hds-text-body-title hds-spacing"
+class="hds-typography-body-title hds-spacing"
 ```
 
 ## Inspiration
