@@ -2,12 +2,12 @@
 
 .hds-accordion {
   --hds-accordion-icon-dimension: 24px;
-  --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-small-4);
+  --hds-component-accordion-header-spacing-between: var(--hds-spacing-small-4);
   --hds-component-accordion-content-spacing: var(--hds-spacing-medium-3);
 
   @media (--medium) {
     --hds-component-accordion-content-spacing: var(--hds-spacing-large-1);
-    --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-medium-2);
+    --hds-component-accordion-header-spacing-between: var(--hds-spacing-medium-2);
   }
 
   display: block;
@@ -20,21 +20,21 @@
   .hds-accordion-item {
     overflow: hidden;
 
-    &.hds-accordion-item__expanded .hds-accordion-item-trigger {
+    &.hds-accordion-item__expanded .hds-accordion-item-header {
       color: var(--hds-colors-dark);
     }
 
-    &:first-child .hds-accordion-item-trigger {
+    &:first-child .hds-accordion-item-header {
       border: 0 none;
     }
 
-    .hds-accordion-item-trigger {
+    .hds-accordion-item-header {
       cursor: pointer;
       display: grid;
       grid-template-columns: 24px auto;
       grid-gap: var(--hds-spacing-small-4);
       width: 100%;
-      padding: var(--hds-component-accordion-trigger-spacing-between) 0;
+      padding: var(--hds-component-accordion-header-spacing-between) 0;
       border: 0;
       border-top: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-stroke);
       text-align: left;
@@ -46,15 +46,15 @@
         outline: 0;
       }
 
-      .hds-accordion-item-trigger--icon {
+      .hds-accordion-item-header--icon {
         transition: all 0.05s ease;
         display: inline-block;
         color: var(--hds-colors-dark);
         width: var(--hds-accordion-icon-dimension);
         height: var(--hds-accordion-icon-dimension);
 
-        .hds-accordion-item-trigger--icon-chevron,
-        .hds-accordion-item-trigger--icon-chevron-down {
+        .hds-accordion-item-header--icon-chevron,
+        .hds-accordion-item-header--icon-chevron-down {
           color: var(--hds-colors-dark);
           fill: var(--hds-colors-dark);
         }
@@ -64,8 +64,8 @@
         }
       }
 
-      &.hds-accordion-item-trigger--open {
-        .hds-accordion-item-trigger--icon svg {
+      &.hds-accordion-item-header--open {
+        .hds-accordion-item-header--icon svg {
           transform: rotate(180deg);
         }
       }

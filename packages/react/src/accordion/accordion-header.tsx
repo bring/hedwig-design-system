@@ -4,11 +4,11 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import { AccordionItemContext } from "./context";
 
-export interface AccordionTriggerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface AccordionHeaderProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
-export const AccordionTrigger: OverridableComponent<AccordionTriggerProps, HTMLButtonElement> =
+export const AccordionHeader: OverridableComponent<AccordionHeaderProps, HTMLButtonElement> =
   forwardRef(({ as: Component = "button", children, className, onClick, ...rest }, ref) => {
     const itemContext = useContext(AccordionItemContext);
     if (itemContext === null) {
@@ -52,4 +52,4 @@ export const AccordionTrigger: OverridableComponent<AccordionTriggerProps, HTMLB
     );
   });
 
-AccordionTrigger.displayName = "Accordion.Trigger";
+AccordionHeader.displayName = "Accordion.Header";

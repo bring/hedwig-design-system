@@ -12,15 +12,13 @@ const meta: Meta<typeof Accordion> = {
     children: (
       <>
         <Accordion.Item>
-          <Accordion.Trigger>Professional accordion title</Accordion.Trigger>
+          <Accordion.Header>Professional accordion title</Accordion.Header>
           <Accordion.Content>
             This is the simplest form of accordion body. Can be extensive.
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item>
-          <Accordion.Trigger>
-            Yet another POAT with &laquo;advanced&raquo; content
-          </Accordion.Trigger>
+          <Accordion.Header>Yet another POAT with &laquo;advanced&raquo; content</Accordion.Header>
           <Accordion.Content>
             <h4>Hello</h4>
             <div>
@@ -73,7 +71,7 @@ export const JustOneItem: Story = {
     variant: "multiple",
     children: (
       <Accordion.Item>
-        <Accordion.Trigger>Professional accordion title</Accordion.Trigger>
+        <Accordion.Header>Professional accordion title</Accordion.Header>
         <Accordion.Content>
           This is the simplest form of accordion body. Can be extensive.
         </Accordion.Content>

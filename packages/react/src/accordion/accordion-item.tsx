@@ -3,16 +3,16 @@ import { forwardRef, useContext, useEffect, useId, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import { AccordionContext, AccordionItemContext } from "./context";
-import type { AccordionTriggerProps } from "./accordion-trigger";
+import type { AccordionHeaderProps } from "./accordion-header";
 import type { AccordionContentProps } from "./accordion-content";
 
 export type AccordionItemChildrenType =
-  | ReactElement<AccordionTriggerProps>
+  | ReactElement<AccordionHeaderProps>
   | ReactElement<AccordionContentProps>;
 
 export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   /**
-   * Accepts type of <AccordionContent/> and <AccordionTrigger/>
+   * Accepts type of <AccordionContent/> and <AccordionHeader/>
    */
   children: AccordionItemChildrenType[];
 }
