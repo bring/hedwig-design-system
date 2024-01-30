@@ -8,7 +8,6 @@ const meta: Meta<typeof Accordion> = {
   title: "Accordion",
   component: Accordion,
   args: {
-    variant: "single",
     children: (
       <>
         <Accordion.Item>
@@ -39,36 +38,17 @@ const meta: Meta<typeof Accordion> = {
       </>
     ),
   },
-  argTypes: {
-    variant: {
-      options: ["multiple", "single"],
-      control: {
-        type: "radio",
-      },
-    },
-  },
 };
 
 type Story = StoryObj<typeof Accordion>;
 
-export const SingleItem: Story = {
-  name: "Single items",
-  args: {
-    variant: "single",
-  },
-};
-
 export const MultipleItems: Story = {
   name: "Multiple items",
-  args: {
-    variant: "multiple",
-  },
 };
 
 export const JustOneItem: Story = {
   name: "Just one item",
   args: {
-    variant: "multiple",
     children: (
       <Accordion.Item>
         <Accordion.Header>Professional accordion title</Accordion.Header>
@@ -76,6 +56,41 @@ export const JustOneItem: Story = {
           This is the simplest form of accordion body. Can be extensive.
         </Accordion.Content>
       </Accordion.Item>
+    ),
+  },
+};
+
+export const NoIndent: Story = {
+  args: {
+    indent: false,
+    children: (
+      <Accordion.Item>
+        <Accordion.Header>Professional accordion title</Accordion.Header>
+        <Accordion.Content>
+          This is the simplest form of accordion body. Can be extensive.
+        </Accordion.Content>
+      </Accordion.Item>
+    ),
+  },
+};
+
+export const DefaultOpen: Story = {
+  args: {
+    children: (
+      <>
+        <Accordion.Item defaultOpen>
+          <Accordion.Header>Professional accordion title</Accordion.Header>
+          <Accordion.Content>
+            This is the simplest form of accordion body. Can be extensive.
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item>
+          <Accordion.Header>Professional accordion title</Accordion.Header>
+          <Accordion.Content>
+            This is the simplest form of accordion body. Can be extensive.
+          </Accordion.Content>
+        </Accordion.Item>
+      </>
     ),
   },
 };

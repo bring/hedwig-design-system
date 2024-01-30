@@ -80,4 +80,12 @@
       }
     }
   }
+
+  &.hds-accordion--no-indent {
+    .hds-accordion-item {
+      .hds-accordion-item-content {
+        padding-left: 0;
+      }
+    }
+  }
 }
