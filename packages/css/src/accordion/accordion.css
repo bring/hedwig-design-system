@@ -50,14 +50,9 @@
         transition: all 0.05s ease;
         display: inline-block;
         color: var(--hds-colors-dark);
+        fill: var(--hds-colors-dark);
         width: var(--hds-accordion-icon-dimension);
         height: var(--hds-accordion-icon-dimension);
-
-        .hds-accordion-item-header--icon-chevron,
-        .hds-accordion-item-header--icon-chevron-down {
-          color: var(--hds-colors-dark);
-          fill: var(--hds-colors-dark);
-        }
 
         & svg {
           vertical-align: baseline;
