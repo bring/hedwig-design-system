@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.43
+
+### Patch Changes
+
+- 374ec36: For Input, Select, Textarea. Pass className and style to the InputGroup, not the inner component. This what a consumer would expect. Also what everyone else does.
+
 ## 0.0.42
 
 ### Patch Changes
