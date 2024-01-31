@@ -49,7 +49,7 @@ export const Typography: OverridableComponent<TypographyProps, HTMLDivElement> =
       <Component
         className={clsx(
           `hds-typography-${variant}`,
-          sizeModifier && `hds-typography-${variant}--${sizeModifier}`,
+          sizeModifier && `hds-typography--${sizeModifier}`,
           className as undefined,
         )}
         ref={ref}
