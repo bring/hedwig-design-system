@@ -10,20 +10,21 @@ export type SelectProps = Omit<
 >;
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
-  { variant, errorMessage, labelProps, label, id, style, disabled, children, ...rest },
+  { className, variant, errorMessage, labelProps, label, id, style, disabled, children, ...rest },
   ref,
 ) {
   return (
     <InputGroup
-      className={clsx("hds-select")}
+      className={clsx("hds-select", className as undefined)}
       disabled={disabled}
       errorMessage={errorMessage}
       id={id}
       label={label}
       labelProps={labelProps}
+      style={style}
       variant={variant}
     >
-      <select {...rest} disabled={disabled} ref={ref} style={style}>
+      <select {...rest} disabled={disabled} ref={ref}>
         {children}
       </select>
     </InputGroup>
