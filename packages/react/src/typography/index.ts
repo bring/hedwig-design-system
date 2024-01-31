@@ -6,9 +6,15 @@ import "@postenbring/hedwig-css/dist/typography.css";
 
 import { Typography } from "./typography";
 
+export { Typography };
+
+/**
+ * ## Alias to @see Typography
+ *
+ * Only one component will remain
+ */
 const Text = Typography;
 Text.displayName = "Text";
-
-export { Typography, Text };
+export { Text };
 
 export type * from "./typography";

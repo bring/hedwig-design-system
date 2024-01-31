@@ -35,6 +35,27 @@ export const PostenBringSideBySide: Story = {
   ),
 };
 
+export const MinAndMax: Story = {
+  render: () => (
+    <div
+      style={{
+        padding: "var(--hds-spacing-large-1)",
+        display: "flex",
+        gap: "var(--hds-spacing-small-4)",
+      }}
+    >
+      <div>
+        <FontGalleryHeader>Min</FontGalleryHeader>
+        <FontGallery size="min" />
+      </div>
+      <div>
+        <FontGalleryHeader>Max</FontGalleryHeader>
+        <FontGallery size="max" />
+      </div>
+    </div>
+  ),
+};
+
 function FontGalleryHeader({ children }: { children: React.ReactNode }) {
   return (
     <h2
@@ -51,25 +72,51 @@ function FontGalleryHeader({ children }: { children: React.ReactNode }) {
   );
 }
 
-function FontGallery() {
+function FontGallery({ size }: { size?: "min" | "max" | "fluid" }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-4)" }}>
       <div>
-        <Typography variant="h1-display">Display</Typography>
-        <Typography variant="h1">H1</Typography>
-        <Typography variant="h2">H2</Typography>
-        <Typography variant="h3">H3</Typography>
-        <Typography variant="body">Body</Typography>
-        <Typography variant="body-small">Body Small</Typography>
-        <Typography variant="technical">Technical</Typography>
-        <Typography variant="caption">Caption</Typography>
+        <Typography size={size} variant="h1-display">
+          Display
+        </Typography>
+        <Typography size={size} variant="h1">
+          H1
+        </Typography>
+        <Typography size={size} variant="h2">
+          H2
+        </Typography>
+        <Typography size={size} variant="h3">
+          H3
+        </Typography>
+        <Typography size={size} variant="body">
+          Body
+        </Typography>
+        <Typography size={size} variant="body-small">
+          Body Small
+        </Typography>
+        <Typography size={size} variant="technical">
+          Technical
+        </Typography>
+        <Typography size={size} variant="caption">
+          Caption
+        </Typography>
       </div>
       <div>
-        <Typography variant="h3-title">H3 Title</Typography>
-        <Typography variant="body-title">Body Title</Typography>
-        <Typography variant="body-small-title">Body Small Title</Typography>
-        <Typography variant="technical-title">Technical Title</Typography>
-        <Typography variant="caption-title">Caption Title</Typography>
+        <Typography size={size} variant="h3-title">
+          H3 Title
+        </Typography>
+        <Typography size={size} variant="body-title">
+          Body Title
+        </Typography>
+        <Typography size={size} variant="body-small-title">
+          Body Small Title
+        </Typography>
+        <Typography size={size} variant="technical-title">
+          Technical Title
+        </Typography>
+        <Typography size={size} variant="caption-title">
+          Caption Title
+        </Typography>
       </div>
     </div>
   );
