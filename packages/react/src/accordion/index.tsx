@@ -6,22 +6,22 @@ import "@postenbring/hedwig-css/dist/accordion.css";
 
 import { Accordion } from "./accordion";
 import { AccordionItem } from "./accordion-item";
-import { AccordionTrigger } from "./accordion-trigger";
+import { AccordionHeader } from "./accordion-header";
 import { AccordionContent } from "./accordion-content";
 
 const AccordionComponent = Accordion as typeof Accordion & {
   Item: typeof AccordionItem;
-  Trigger: typeof AccordionTrigger;
+  Header: typeof AccordionHeader;
   Content: typeof AccordionContent;
 };
 
 AccordionComponent.Item = AccordionItem;
-AccordionComponent.Trigger = AccordionTrigger;
+AccordionComponent.Header = AccordionHeader;
 AccordionComponent.Content = AccordionContent;
 
 export { AccordionComponent as Accordion };
 
 export type * from "./accordion";
 export type * from "./accordion-item";
-export type * from "./accordion-trigger";
+export type * from "./accordion-header";
 export type * from "./accordion-content";
