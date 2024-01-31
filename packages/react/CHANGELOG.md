@@ -1,5 +1,33 @@
 # @postenbring/hedwig-react
 
+## 0.0.42
+
+### Patch Changes
+
+- 63123e7: :recycle: wrap Input, Textarea and Select in a new common wrapper InputGroup
+- 6b8aadb: ## Accordion improvments
+
+  ### 💫 Animations
+
+  The open / close transitions are now animated. With just pure css 🎉
+
+  ### Remove `variant="single" | "multiple"` in favor of `open` & `onOpenChange`
+
+  I think a single accordion is a rare use case. In those cases it's easy enough to implement yourself, taking full control of the accordion
+
+  ### Rename `trigger` -> `header`
+
+  I saw that all the other systems called it this, so just renamed
+
+  ### Support `indent` prop
+
+  When you don't want left padding on the content. We have a case for this in `open-tracking`.
+
+- Updated dependencies [63123e7]
+- Updated dependencies [6b8aadb]
+- Updated dependencies [2cb7e81]
+  - @postenbring/hedwig-css@0.0.40
+
 ## 0.0.41
 
 ### Patch Changes
