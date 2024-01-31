@@ -11,7 +11,19 @@ export type AccordionItemChildrenType =
   | ReactElement<AccordionContentProps>;
 
 export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Control the open state of the accordion manually
+   */
   open?: boolean;
+
+  /**
+   * Use with open to control the open state of the accordion manually
+   */
+  onOpenChange?: (open: boolean) => void;
+
+  /**
+   * If the accordion should be open by default
+   */
   defaultOpen?: boolean;
 
   /**
@@ -21,10 +33,27 @@ export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const AccordionItem: OverridableComponent<AccordionItemProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", children, defaultOpen, className, ...rest }, ref) => {
-    const [open, setOpen] = useState(defaultOpen ?? false);
+  (
+    {
+      as: Component = "div",
+      children,
+      defaultOpen,
+      open: outerOpen,
+      onOpenChange,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
+    const [innerOpen, setInnerOpen] = useState(defaultOpen ?? false);
+    const open = outerOpen ?? innerOpen;
+
     const handleOpen = () => {
-      setOpen(!open);
+      if (outerOpen !== undefined) {
+        onOpenChange && onOpenChange(!open);
+      } else {
+        setInnerOpen(!open);
+      }
     };
 
     return (

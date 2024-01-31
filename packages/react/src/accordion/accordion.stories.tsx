@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { useState } from "react";
 import { Link } from "../link";
 import { UnorderedList } from "../list";
 import { Accordion } from ".";
@@ -92,6 +93,61 @@ export const DefaultOpen: Story = {
         </Accordion.Item>
       </>
     ),
+  },
+};
+
+export const SingleAccordion: Story = {
+  name: "Only one open at the same time",
+  render: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks -- it's ok
+    const [state, setState] = useState({ one: false, two: false, three: false });
+    function toggle(key: keyof typeof state) {
+      setState((prev) => {
+        return {
+          one: key === "one" ? !prev.one : false,
+          two: key === "two" ? !prev.two : false,
+          three: key === "three" ? !prev.three : false,
+        };
+      });
+    }
+
+    return (
+      <Accordion>
+        <Accordion.Item
+          onOpenChange={() => {
+            toggle("one");
+          }}
+          open={state.one}
+        >
+          <Accordion.Header>One</Accordion.Header>
+          <Accordion.Content>
+            Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item
+          onOpenChange={() => {
+            toggle("two");
+          }}
+          open={state.two}
+        >
+          <Accordion.Header>Two</Accordion.Header>
+          <Accordion.Content>
+            Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item
+          onOpenChange={() => {
+            toggle("three");
+          }}
+          open={state.three}
+        >
+          <Accordion.Header>Three</Accordion.Header>
+          <Accordion.Content>
+            Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
+          </Accordion.Content>
+        </Accordion.Item>
+      </Accordion>
+    );
   },
 };
 
