@@ -2,8 +2,8 @@
 
 .hds-accordion {
   --hds-accordion-icon-dimension: 24px;
-  --hds-component-accordion-header-spacing-between: var(--hds-spacing-small-4);
   --hds-component-accordion-content-spacing: var(--hds-spacing-medium-3);
+  --hds-component-accordion-header-spacing-between: var(--hds-spacing-small-4);
 
   @media (--medium) {
     --hds-component-accordion-content-spacing: var(--hds-spacing-large-1);
@@ -75,8 +75,23 @@
       padding: 0 0 var(--hds-component-accordion-content-spacing) var(--hds-spacing-medium-4);
       font: var(--hds-typography-body-small);
 
+      /*
+       * Animate open/close
+       * https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/
+       */
+      display: grid;
+      grid-template-rows: 1fr;
+      transition-property: grid-template-rows, padding-bottom;
+      transition-duration: var(--hds-micro-animation-duration-quick);
+      transition-timing-function: var(--hds-micro-animation-easing-normal);
+
       &.hds-accordion-item-content--closed {
-        display: none;
+        padding-bottom: 0;
+        grid-template-rows: 0fr;
+      }
+
+      .hds-accordion-item-content-inner {
+        overflow: hidden;
       }
     }
   }
