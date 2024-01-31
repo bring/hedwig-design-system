@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.11
+
+### Patch Changes
+
+- 2cb7e81: :recycle: remove `-brand` prefix from tokens and rename `header-h3` -> `h3`
+
 ## 0.0.10
 
 ### Patch Changes
