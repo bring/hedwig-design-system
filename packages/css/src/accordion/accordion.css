@@ -47,7 +47,6 @@
       }
 
       .hds-accordion-item-header--icon {
-        transition: all 0.05s ease;
         display: inline-block;
         color: var(--hds-colors-dark);
         fill: var(--hds-colors-dark);
@@ -56,6 +55,14 @@
 
         & svg {
           vertical-align: baseline;
+
+          /* Optionally animate the cheveron.
+             As of 31. jan 2024 I think it looks nicer without animation on the cheveron.
+             The height animation is sufficient to indicate open/close.
+          */
+
+          /* transition: transform var(--hds-micro-animation-duration-quick)
+            var(--hds-micro-animation-easing-normal); */
         }
       }
 
