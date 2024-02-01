@@ -19,6 +19,11 @@ export interface TypographyProps {
     | "caption"
     | "caption-title";
   size?: "min" | "max" | "fluid";
+
+  /**
+   * 🚧 Experimental spacing
+   */
+  _unstableSpacing?: boolean;
 }
 
 const defaultHTMLTag: Record<NonNullable<TypographyProps["variant"]>, `h${1 | 2 | 3}` | "p"> = {
@@ -41,7 +46,18 @@ const defaultHTMLTag: Record<NonNullable<TypographyProps["variant"]>, `h${1 | 2 
  * ## 🚨 WORK IN PROGRESS 🚨
  */
 export const Typography: OverridableComponent<TypographyProps, HTMLDivElement> = forwardRef(
-  ({ as, variant = "body", size = "fluid", children, className, ...rest }, ref) => {
+  (
+    {
+      as,
+      variant = "body",
+      size = "fluid",
+      _unstableSpacing: spacing,
+      children,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
     const Component = as ?? defaultHTMLTag[variant];
     const sizeModifier =
       size !== "fluid" && variant !== "caption" && variant !== "caption-title" && size;
@@ -50,6 +66,7 @@ export const Typography: OverridableComponent<TypographyProps, HTMLDivElement> =
         className={clsx(
           `hds-typography-${variant}`,
           sizeModifier && `hds-typography--${sizeModifier}`,
+          spacing && "hds-typography--spacing",
           className as undefined,
         )}
         ref={ref}

@@ -1,4 +1,5 @@
 @import url("../_custom-media.css");
+@import url("./spacing.css");
 
 /**
  * Typography classes
@@ -178,10 +179,8 @@
 .hds-typography-h1,
 .hds-typography-h2 {
   &.hds-typography--spacing {
-    margin-top: var(--hds-spacing-large-1);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-large-2);
+    &:not(:first-child) {
+      margin-top: var(--hds-spacing-large-1-responsive);
     }
   }
 }
@@ -195,42 +194,27 @@
 .hds-typography-h3,
 .hds-typography-h3-title {
   &.hds-typography--spacing {
-    margin-top: var(--hds-spacing-medium-4);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-large-1);
-    }
+    margin-top: var(--hds-spacing-medium-4-responsive);
   }
 }
 
 .hds-typography-body,
 .hds-typography-body-title {
   &.hds-typography--spacing {
-    margin-top: var(--hds-spacing-small-4);
+    &:not(:first-child) {
+      margin-top: var(--hds-spacing-small-4);
 
-    @media (--large) {
-      margin-top: var(--hds-spacing-medium-2);
+      @media (--large) {
+        margin-top: var(--hds-spacing-medium-2);
+      }
     }
-  }
-}
 
-.hds-typography-body-small,
-.hds-typography-body-small-title {
-  &.hds-typography--spacing {
-    margin-top: var(--hds-spacing-medium-2);
-  }
-}
+    &:not(:last-child) {
+      margin-bottom: var(--hds-spacing-small-4);
 
-.hds-typography-technical,
-.hds-typography-technical-title {
-  &.hds-typography--spacing {
-    margin-top: var(--hds-spacing-small-1);
-  }
-}
-
-.hds-typography-caption,
-.hds-typography-caption-title {
-  &.hds-typography--spacing {
-    margin-top: var(--hds-spacing-medium-2);
+      @media (--large) {
+        margin-bottom: var(--hds-spacing-medium-2);
+      }
+    }
   }
 }

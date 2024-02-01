@@ -23,7 +23,7 @@ export const PostenBringSideBySide: Story = {
         gap: "var(--hds-spacing-small-4)",
       }}
     >
-      <div>
+      <div className="hds-theme-posten">
         <FontGalleryHeader>Posten</FontGalleryHeader>
         <FontGallery />
       </div>
