@@ -1,9 +1,20 @@
+@import url("../_custom-media.css");
+
 .hds-navbar {
+  position: relative;
   background-color: var(--hds-ui-colors-white);
-  height: 112px;
+  height: var(--hds-navbar-height);
   display: flex;
   align-items: center;
   gap: var(--hds-spacing-medium-3);
+  font-family: var(--hds-fonts-posten-sans-regular);
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  padding: 0 var(--hds-spacing-medium-2);
+
+  @media (--large) {
+    padding: 0 var(--hds-spacing-medium-3);
+  }
 
   /**
    * Expandable 
@@ -19,6 +30,28 @@
 
     &[data-state="closed"] {
       display: none;
+    }
+  }
+
+  .hds-navbar__button {
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+    padding: var(--hds-spacing-small-4);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font: var(--hds-typography-body);
+    border: 0;
+
+    &:hover {
+      color: var(--hds-link-colors-hover);
+    }
+
+    svg {
+      margin-left: var(--hds-spacing-small-2);
+      width: var(--hds-spacing-medium-2);
+      height: var(--hds-spacing-medium-2);
     }
   }
 }

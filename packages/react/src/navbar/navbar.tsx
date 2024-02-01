@@ -31,3 +31,19 @@ export const NavbarLogo: OverridableComponent<NavbarLogoProps, HTMLDivElement> =
   },
 );
 NavbarLogo.displayName = "Navbar.Logo";
+
+// Navbar button
+interface NavbarButtonProps {
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+}
+export const NavbarButton: OverridableComponent<NavbarButtonProps, HTMLElement> = forwardRef(
+  ({ as: Component = "button", children, icon, className, ...rest }, ref) => {
+    return (
+      <Component className={clsx("hds-navbar__button", className as undefined)} ref={ref} {...rest}>
+        {children} {icon}
+      </Component>
+    );
+  },
+);
+NavbarButton.displayName = "Navbar.Button";

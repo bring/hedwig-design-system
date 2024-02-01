@@ -4,7 +4,7 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/navbar.css";
 
-import { Navbar, NavbarLogo } from "./navbar";
+import { Navbar, NavbarLogo, NavbarButton } from "./navbar";
 import {
   NavbarExpandableMenu,
   NavbarExpandableMenuTrigger,
@@ -21,9 +21,11 @@ NavbarExpandableMenuComponent.Content = NavbarExpandableMenuContent;
 const NavbarComponent = Navbar as typeof Navbar & {
   Logo: typeof NavbarLogo;
   ExpandableMenu: typeof NavbarExpandableMenuComponent;
+  Button: typeof NavbarButton;
 };
 NavbarComponent.Logo = NavbarLogo;
 NavbarComponent.ExpandableMenu = NavbarExpandableMenuComponent;
+NavbarComponent.Button = NavbarButton;
 
 export { NavbarComponent as Navbar };
 export type * from "./navbar";

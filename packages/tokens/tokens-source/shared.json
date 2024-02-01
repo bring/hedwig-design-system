@@ -167,6 +167,10 @@
       "$value": "160px"
     }
   },
+  "navbar-height": {
+    "$type": "dimension",
+    "$value": "112px"
+  },
   "fonts": {
     "$type": "fontFamily",
     "posten-sans": {
