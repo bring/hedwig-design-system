@@ -20,9 +20,9 @@ export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
  * ```tsx
  * <DescriptionList>
  *   <dt>Vekt</dt>
- *   <dl>12 kg</dl>
+ *   <dd>12 kg</dd>
  *   <dt>Antall kolli</dt>
- *   <dl>2</dl>
+ *   <dd>2</dd>
  * </DescriptionList>
  * ```
  *
@@ -32,11 +32,11 @@ export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
  * <DescriptionList>
  *   <div>
  *     <dt>Vekt</dt>
- *     <dl>12 kg</dl>
+ *     <dd>12 kg</dd>
  *   </div>
  *   <div>
  *     <dt>Antall kolli</dt>
- *     <dl>2</dl>
+ *     <dd>2</dd>
  *   </div>
  * </DescriptionList>
  * ```
