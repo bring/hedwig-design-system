@@ -133,7 +133,7 @@ CardBodyAction.displayName = "Card.Body.Action";
 export const CardBodyActionArrow: OverridableComponent<
   HTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
-> = forwardRef(({ as: Component = "a", className, ...rest }, ref) => {
+> = forwardRef(({ as: Component = "span", className, ...rest }, ref) => {
   return (
     <Component
       {...rest}
