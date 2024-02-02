@@ -63,7 +63,11 @@ export const NavbarExpandableMenuTrigger = forwardRef<
 
     return (
       <button
-        className={clsx("hds-navbar__expandable-menu-trigger", className as undefined)}
+        className={clsx(
+          "hds-navbar__expandable-menu-trigger",
+          "hds-navbar__button",
+          className as undefined,
+        )}
         onClick={toggleOpen}
         ref={ref}
         title={title}

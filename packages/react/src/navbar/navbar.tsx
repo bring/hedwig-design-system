@@ -47,3 +47,18 @@ export const NavbarButton: OverridableComponent<NavbarButtonProps, HTMLElement> 
   },
 );
 NavbarButton.displayName = "Navbar.Button";
+
+interface NavbarNavigationProps {
+  children: React.ReactNode;
+}
+export const NavbarNavigation: OverridableComponent<NavbarNavigationProps, HTMLElement> =
+  forwardRef(({ as: Component = "div", className, ...rest }, ref) => {
+    return (
+      <Component
+        className={clsx("hds-navbar__navigation", className as undefined)}
+        ref={ref}
+        {...rest}
+      />
+    );
+  });
+NavbarNavigation.displayName = "Navbar.Navigation";

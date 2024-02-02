@@ -39,18 +39,18 @@ export const Default: Story = {
   render: () => (
     <Navbar>
       <Navbar.Logo as="a" href="https://www.posten.no/" title="Til forsiden" />
-      <div style={{ display: "flex" }}>
+      <Navbar.Navigation>
         <Navbar.Button as="a" href="https://www.posten.no/" icon={globeIcon} title="Link">
           English
         </Navbar.Button>
         <Navbar.Button icon={userIcon} title="Link">
           Search
         </Navbar.Button>
-      </div>
-      <Navbar.ExpandableMenu>
-        <Navbar.ExpandableMenu.Trigger whenClosedText="Meny" whenOpenText="Close me" />
-        <Navbar.ExpandableMenu.Content>Hello</Navbar.ExpandableMenu.Content>
-      </Navbar.ExpandableMenu>
+        <Navbar.ExpandableMenu>
+          <Navbar.ExpandableMenu.Trigger whenClosedText="Meny" whenOpenText="Close me" />
+          <Navbar.ExpandableMenu.Content>Menu contents</Navbar.ExpandableMenu.Content>
+        </Navbar.ExpandableMenu>
+      </Navbar.Navigation>
     </Navbar>
   ),
 };

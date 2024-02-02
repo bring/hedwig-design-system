@@ -5,6 +5,7 @@
   background-color: var(--hds-ui-colors-white);
   height: var(--hds-navbar-height);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: var(--hds-spacing-medium-3);
   font-family: var(--hds-fonts-posten-sans-regular);
@@ -53,6 +54,10 @@
       width: var(--hds-spacing-medium-2);
       height: var(--hds-spacing-medium-2);
     }
+  }
+
+  .hds-navbar__navigation {
+    display: flex;
   }
 }
 
