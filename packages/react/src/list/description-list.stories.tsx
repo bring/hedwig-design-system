@@ -11,13 +11,13 @@ const meta: Meta<typeof DescriptionList> = {
     children: (
       <>
         <dt>Vekt</dt>
-        <dl>12 kg</dl>
+        <dd>12 kg</dd>
         <dt>Antall kolli</dt>
-        <dl>2</dl>
+        <dd>2</dd>
         <dt>Sendingsnummer</dt>
-        <dl>7000001</dl>
+        <dd>7000001</dd>
         <dt>Avsender</dt>
-        <dl>Fjellsport</dl>
+        <dd>Fjellsport</dd>
       </>
     ),
   },
@@ -34,19 +34,19 @@ export const WrappedInDivs: Story = {
       <>
         <div>
           <dt>Vekt</dt>
-          <dl>12 kg</dl>
+          <dd>12 kg</dd>
         </div>
         <div>
           <dt>Antall kolli</dt>
-          <dl>2</dl>
+          <dd>2</dd>
         </div>
         <div>
           <dt>Sendingsnummer</dt>
-          <dl>7000001</dl>
+          <dd>7000001</dd>
         </div>
         <div>
           <dt>Avsender</dt>
-          <dl>Fjellsport</dl>
+          <dd>Fjellsport</dd>
         </div>
       </>
     ),
@@ -60,13 +60,13 @@ export const Paragraph: Story = {
     children: (
       <>
         <dt>Vekt</dt>
-        <dl>12 kg</dl>
+        <dd>12 kg</dd>
         <dt>
           <p>Title</p>
         </dt>
-        <dl>
+        <dd>
           <p>Paragraph</p>
-        </dl>
+        </dd>
       </>
     ),
   },
@@ -78,17 +78,17 @@ export const HorizontalLongContent: Story = {
     children: (
       <>
         <dt>Vekt</dt>
-        <dl>12 kg</dl>
+        <dd>12 kg</dd>
         <dt>
           <p>Title</p>
         </dt>
-        <dl>
+        <dd>
           <p>
             ParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraph
           </p>
-        </dl>
+        </dd>
         <dt>Avsender</dt>
-        <dl>Fjellsport</dl>
+        <dd>Fjellsport</dd>
       </>
     ),
   },
