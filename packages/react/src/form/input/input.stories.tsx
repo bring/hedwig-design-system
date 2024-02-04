@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { PrimaryButton, SecondaryButton } from "../button";
+import { PrimaryButton, SecondaryButton } from "../../button";
 import { Input } from ".";
 
 const meta: Meta<typeof Input> = {
@@ -17,6 +17,13 @@ export const PlainInput: Story = {
   args: {
     label: "Some kind of input",
     placeholder: "I am a placeholder",
+    errorMessage: "",
+    readOnly: false,
+    disabled: false,
+    variant: "default",
+  },
+  argTypes: {
+    variant: { control: "inline-radio", options: ["default", "white"] },
   },
 };
 

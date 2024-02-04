@@ -1,0 +1,29 @@
+.hds-fieldset {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--hds-spacing-small-1);
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  &:focus-within .hds-fieldset__legend {
+    color: var(--hds-colors-darker);
+  }
+
+  & .hds-fieldset__legend,
+  & .hds-fieldset__legend--default {
+    padding: 0;
+    margin-bottom: var(--hds-spacing-small-1);
+    transition: color var(--hds-micro-animation-duration-quick)
+      var(--hds-micro-animation-easing-normal);
+    font: var(--hds-typography-caption);
+  }
+
+  & .hds-fieldset__legend--large {
+    font: var(--hds-typography-body-title);
+  }
+
+  & .hds-fieldset__input-wrapper {
+    opacity: 1; /* TODO do we need wrapper? Does it need styling? Adding this to make an valid, existing class for clsx() */
+  }
+}

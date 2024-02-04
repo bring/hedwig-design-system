@@ -15,6 +15,13 @@ export const PlainTextarea: Story = {
   args: {
     label: "Some kind of textarea",
     placeholder: "I am a placeholder",
+    errorMessage: "",
+    readOnly: false,
+    disabled: false,
+    variant: "default",
+  },
+  argTypes: {
+    variant: { control: "inline-radio", options: ["default", "white"] },
   },
 };
 
