@@ -24,6 +24,6 @@
   }
 
   & .hds-fieldset__input-wrapper {
-    opacity: 1; /* TODO do we need wrapper? Does it need styling? Adding this to make an valid, existing class for clsx() */
+    opacity: 1; /* TODO do we need wrapper? Does it need styling? Adding this to make a valid, existing class for clsx() */
   }
 }
