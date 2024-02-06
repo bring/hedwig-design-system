@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Fieldset } from ".";
 
 const meta: Meta<typeof Fieldset> = {
-  title: "Fieldset",
+  title: "🚧 Fieldset",
   component: Fieldset,
 };
 
