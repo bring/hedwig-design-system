@@ -61,7 +61,7 @@ Check if you have node 20 or higher
 node -v
 ```
 
-#### Install node
+### Install node
 
 If node is not installed, or you don't have version 20 or higher you need to install it. Download from [nodejs.org](https://nodejs.org/en/download/), or use package manager like [`fnm`](https://github.com/Schniz/fnm), [`nvm`](https://github.com/nvm-sh/nvm), or [`asdf`](https://github.com/asdf-vm/asdf).
 
