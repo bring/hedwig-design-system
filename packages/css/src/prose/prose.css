@@ -108,6 +108,11 @@
     }
   }
 
+  b,
+  strong {
+    font: var(--hds-typography-body-title);
+  }
+
   /**
    * Modifiers
    */
@@ -122,6 +127,11 @@
 
     & p {
       margin-top: var(--hds-spacing-small-3);
+    }
+
+    & b,
+    & strong {
+      font: var(--hds-typography-body-small-title);
     }
   }
 
