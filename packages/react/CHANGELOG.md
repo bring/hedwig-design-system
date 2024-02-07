@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.45
+
+### Patch Changes
+
+- 8605454: Add Fieldset, extract ErrorMessage and group form stuff
+- Updated dependencies [8605454]
+  - @postenbring/hedwig-css@0.0.41
+
 ## 0.0.44
 
 ### Patch Changes

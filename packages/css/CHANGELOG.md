@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.41
+
+### Patch Changes
+
+- 8605454: Add Fieldset, extract ErrorMessage and group form stuff
+
 ## 0.0.40
 
 ### Patch Changes
