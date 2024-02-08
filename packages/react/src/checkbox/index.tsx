@@ -4,5 +4,4 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/checkbox.css";
 
-export { Checkbox } from "./checkbox";
-export type * from "./checkbox";
+export * from "./checkbox";
