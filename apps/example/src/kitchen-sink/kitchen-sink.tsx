@@ -16,6 +16,7 @@ import {
 } from "@postenbring/hedwig-react";
 import { useRef } from "react";
 import postenBringImage from "../../static/posten-bring.jpg";
+import { Checkbox } from "@postenbring/hedwig-react/src/checkbox";
 
 const bringButtonText = "Bring button";
 
@@ -138,6 +139,17 @@ export default function KitchenSink() {
               <option value="2">option 2</option>
               <option value="3">option 3</option>
             </Select>
+          </div>
+          <h2>Checkbox</h2>
+          <div
+            style={{
+              maxWidth: 600,
+              padding: "var(--hds-spacing-medium-2)",
+            }}
+          >
+            <Checkbox variant="bounding-box" disabled>
+              Check this box
+            </Checkbox>
           </div>
           <h2>Modal</h2>
           <ModalExample />
