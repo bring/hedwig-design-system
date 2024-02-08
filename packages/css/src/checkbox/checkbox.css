@@ -24,7 +24,7 @@
   /**
   * Create a custom checkbox
   */
-  .hds-checkbox-checkmark {
+  .hds-checkbox--checkmark {
     margin: var(--hds-spacing-small-1);
     position: absolute;
     top: 16px;
@@ -34,11 +34,11 @@
     border: solid 2px var(--hds-colors-darker);
   }
 
-  > input[type="checkbox"]:checked ~ .hds-checkbox-checkmark::after {
+  > input[type="checkbox"]:checked ~ .hds-checkbox--checkmark::after {
     display: block;
   }
 
-  .hds-checkbox-checkmark::after {
+  .hds-checkbox--checkmark::after {
     content: "";
     position: absolute;
     display: none;
@@ -58,15 +58,34 @@
     background-color: var(--hds-colors-lighter);
 
     &.hds-checkbox--error {
-      border-color: var(--hds-ui-colors-warning-yellow);
-      border-radius: var(--hds-border-radius);
+      border: solid 1px var(--hds-ui-colors-warning-yellow);
     }
   }
 
   &.hds-checkbox--error {
-    > .hds-checkbox-checkmark,
-    .hds-checkbox-checkmark::after {
+    > .hds-checkbox--checkmark,
+    .hds-checkbox--checkmark::after {
       border-color: var(--hds-ui-colors-warning-yellow);
+    }
+  }
+
+  /**
+  * State: Disabled
+  */
+  input[type="checkbox"]:disabled {
+    ~ .hds-checkbox--checkmark,
+    ~ .hds-checkbox--checkmark::after {
+      border-color: var(--hds-ui-colors-grey);
+      cursor: default;
+    }
+  }
+
+  &.hds-checkbox:has(input:disabled) {
+    cursor: default;
+    color: var(--hds-ui-colors-dark-grey);
+
+    &.hds-checkbox--bounding-box {
+      background-color: var(--hds-ui-colors-light-grey-fill);
     }
   }
 }

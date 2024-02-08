@@ -147,9 +147,7 @@ export default function KitchenSink() {
               padding: "var(--hds-spacing-medium-2)",
             }}
           >
-            <Checkbox variant="bounding-box" disabled>
-              Check this box
-            </Checkbox>
+            <Checkbox hasError>Check this box</Checkbox>
           </div>
           <h2>Modal</h2>
           <ModalExample />
