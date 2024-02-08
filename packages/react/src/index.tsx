@@ -12,4 +12,3 @@ export * from "./message";
 export * from "./modal";
 export * from "./tabs";
 export * from "./warning-banner";
-export * from "./checkbox";

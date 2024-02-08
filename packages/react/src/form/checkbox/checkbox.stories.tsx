@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Checkbox } from ".";
+import { Checkbox } from "./index";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Checkbox",

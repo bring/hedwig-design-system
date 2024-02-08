@@ -13,10 +13,10 @@ import {
   Tabs,
   UnorderedList,
   WarningBanner,
+  Checkbox,
 } from "@postenbring/hedwig-react";
 import { useRef } from "react";
 import postenBringImage from "../../static/posten-bring.jpg";
-import { Checkbox } from "@postenbring/hedwig-react/src/checkbox";
 
 const bringButtonText = "Bring button";
 
