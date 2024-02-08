@@ -1,6 +1,7 @@
 import React, { createContext, useContext, forwardRef, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
+import { CloseIcon, MenuIcon } from "./icons";
 
 const navbarContext = createContext([
   false as boolean,
@@ -31,6 +32,7 @@ NavbarExpandableMenu.displayName = "NavbarExpandableMenu";
  * - [ ] Hide text when on mobile
  * - [ ] Open / Close icon
  */
+
 export interface NavbarExpandableMenuTriggerProps
   extends Omit<React.HTMLAttributes<HTMLButtonElement>, "children"> {
   whenClosedText: React.ReactNode;
@@ -60,6 +62,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
 
     const text = open ? whenOpenText : whenClosedText;
     const title = open ? whenOpenHelperTitle : whenClosedHelperTitle;
+    const icon = open ? <CloseIcon /> : <MenuIcon />;
 
     return (
       <button
@@ -74,7 +77,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
         type="button"
         {...rest}
       >
-        {text}
+        {text} {icon}
       </button>
     );
   },
@@ -91,7 +94,7 @@ export interface NavbarExpandableMenuContentProps {
 export const NavbarExpandableMenuContent: OverridableComponent<
   NavbarExpandableMenuContentProps,
   HTMLDivElement
-> = forwardRef(({ as: Component = "div", children, className, ...rest }, ref) => {
+> = forwardRef(({ as: Component = "section", children, className, ...rest }, ref) => {
   const [open] = useContext(navbarContext);
   return (
     <Component
