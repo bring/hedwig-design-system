@@ -45,6 +45,7 @@ export const SpacingLarge2 = "64px";
 export const SpacingLarge3 = "80px";
 export const SpacingLarge4 = "120px";
 export const SpacingLarge5 = "160px";
+export const NavbarHeight = "112px";
 export const FontsPostenSans = ["Posten Sans","Arial","sans-serif"];
 export const FontsPostenSansBold = ["Posten Sans Bold","Arial","sans-serif"];
 export const FontsPostenSansMedium = ["Posten Sans Medium","Arial","sans-serif"];

@@ -1,8 +1,9 @@
 import { useId, forwardRef, Children, isValidElement, cloneElement } from "react";
 import type { LabelHTMLAttributes, ReactNode, CSSProperties } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { ErrorMessage } from "../error-message";
 
-export interface InputProps {
+interface InputProps {
   "aria-describedby"?: string;
   "aria-invalid"?: boolean;
   id?: string;
@@ -32,7 +33,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
     style,
     variant = "default",
     errorMessage,
-    labelProps,
+    labelProps: { className: labelClassName, ...labelProps } = {},
     label,
     disabled,
     readOnly,
@@ -75,7 +76,11 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
       style={style}
       {...rest}
     >
-      <label className="hds-input-group__label" {...labelProps} htmlFor={id || inputId}>
+      <label
+        className={clsx("hds-input-group__label", labelClassName as undefined)}
+        {...labelProps}
+        htmlFor={id || inputId}
+      >
         {label}
       </label>
       <div
@@ -85,16 +90,12 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
       >
         {renderInput()}
       </div>
-      <div
-        {...(_unstableAriaLiveOnErrorMessage && {
-          "aria-live": "polite",
-          "aria-relevant": "additions removals",
-        })}
-        className="hds-input-group__error-message"
+      <ErrorMessage
+        _unstableAriaLiveOnErrorMessage={_unstableAriaLiveOnErrorMessage}
         id={errorMessageId}
       >
-        {!!errorMessage && errorMessage}
-      </div>
+        {errorMessage}
+      </ErrorMessage>
     </div>
   );
 });

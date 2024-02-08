@@ -64,6 +64,7 @@
     "large-4": "120px",
     "large-5": "160px"
   },
+  "navbar-height": "112px",
   "fonts": {
     "$type": "fontFamily",
     "posten-sans": [

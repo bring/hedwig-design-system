@@ -47,6 +47,7 @@
   --hds-spacing-large-3: 80px;
   --hds-spacing-large-4: 120px;
   --hds-spacing-large-5: 160px;
+  --hds-navbar-height: 112px;
   --hds-fonts-posten-sans: 'Posten Sans', Arial, sans-serif;
   --hds-fonts-posten-sans-bold: 'Posten Sans Bold', Arial, sans-serif;
   --hds-fonts-posten-sans-medium: 'Posten Sans Medium', Arial, sans-serif;
@@ -186,6 +187,9 @@
   --hds-font-weight-technical-title: 500;
   --hds-font-weight-caption: 400;
   --hds-font-weight-caption-title: 500;
+}
+:root, /* Default */
+.hds-theme-posten {
   --hds-typography-h1-display: 700 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-h1: 700 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;

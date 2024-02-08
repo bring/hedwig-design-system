@@ -1,5 +1,19 @@
 # @postenbring/hedwig-react
 
+## 0.0.45
+
+### Patch Changes
+
+- 8605454: Add Fieldset, extract ErrorMessage and group form stuff
+- Updated dependencies [8605454]
+  - @postenbring/hedwig-css@0.0.41
+
+## 0.0.44
+
+### Patch Changes
+
+- c95d7a7: :memo: &lt;span&gt; instead of &lt;a&gt; as default tag on card arrow, as default is that the whole card is a link.
+
 ## 0.0.43
 
 ### Patch Changes

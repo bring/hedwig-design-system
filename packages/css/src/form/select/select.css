@@ -8,6 +8,6 @@
 
   .hds-input-group__input {
     appearance: none;
-    height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-max));
+    height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
   }
 }

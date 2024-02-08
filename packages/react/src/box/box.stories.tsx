@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { useState } from "react";
+import { Typography } from "../typography";
+import { Link } from "../link";
 import { Box } from ".";
 
 const meta: Meta<typeof Box> = {
@@ -11,13 +12,11 @@ const meta: Meta<typeof Box> = {
     closeable: false,
     children: (
       <>
-        <h3 className={clsx("hds-typography-h3-title")} style={{ margin: 0 }}>
-          Replace me please
-        </h3>
-        <p>
-          Swap this content with a component whatever you like. Prefferably text, list, button and
-          simple inputs.
-        </p>
+        <Typography variant="h3-title">Box content</Typography>
+        <Typography _unstableSpacing>
+          This is some body copy in a box, but you can basically add anything you want in here.
+        </Typography>
+        <Link href="#a-link-for-whatever-reason">A link for whatever reason</Link>
       </>
     ),
   },
@@ -92,19 +91,19 @@ export const Custom: Story = {
 
     return (
       <Box variant="lighter">
-        {/* Choosing to render the close button manualy */}
+        {/* Choosing to render the close button manually */}
         <Box.CloseButton
           onClick={() => {
             closeTimer === null && countDownFrom(5);
           }}
         />
-        <h3 className={clsx("hds-typography-h3-title")} style={{ margin: 0 }}>
+        <Typography variant="h3-title">
           A customomized box
           {closeTimer !== null && ` - closing in ${closeTimer} seconds`}
-        </h3>
-        <p>
+        </Typography>
+        <Typography _unstableSpacing>
           With a custom close button, and a custom content. The content can be anything you like.
-        </p>
+        </Typography>
       </Box>
     );
   },

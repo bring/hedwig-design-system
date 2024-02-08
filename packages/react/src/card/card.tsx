@@ -103,7 +103,11 @@ CardBodyHeaderTitle.displayName = "Card.Body.Header.Title";
 export const CardBodyDescription: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
   ({ as: Component = "p", className, children, ...rest }, ref) => {
     return (
-      <Component {...rest} className={clsx(className as undefined)} ref={ref}>
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-description", className as undefined)}
+        ref={ref}
+      >
         {children}
       </Component>
     );
@@ -114,7 +118,11 @@ CardBodyDescription.displayName = "Card.Body.Description";
 export const CardBodyAction: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
   ({ as: Component = "div", className, children, ...rest }, ref) => {
     return (
-      <Component {...rest} className={className as undefined} ref={ref}>
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-action", className as undefined)}
+        ref={ref}
+      >
         {children}
       </Component>
     );
@@ -125,7 +133,7 @@ CardBodyAction.displayName = "Card.Body.Action";
 export const CardBodyActionArrow: OverridableComponent<
   HTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
-> = forwardRef(({ as: Component = "a", className, ...rest }, ref) => {
+> = forwardRef(({ as: Component = "span", className, ...rest }, ref) => {
   return (
     <Component
       {...rest}

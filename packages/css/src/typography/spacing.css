@@ -1,0 +1,136 @@
+@import url("../_custom-media.css");
+
+/**
+ * # 🚧 WORK IN PROGRESS 🚧
+ *
+ * Spacing utility classes.
+ */
+
+:root {
+  --hds-spacing-small-1-responsive: var(--hds-spacing-small-1);
+  --hds-spacing-small-2-responsive: var(--hds-spacing-small-2);
+  --hds-spacing-small-3-responsive: var(--hds-spacing-small-3);
+  --hds-spacing-small-4-responsive: var(--hds-spacing-small-4);
+  --hds-spacing-medium-1-responsive: var(--hds-spacing-medium-1);
+  --hds-spacing-medium-2-responsive: var(--hds-spacing-medium-2);
+  --hds-spacing-medium-3-responsive: var(--hds-spacing-medium-3);
+  --hds-spacing-medium-4-responsive: var(--hds-spacing-medium-4);
+  --hds-spacing-large-1-responsive: var(--hds-spacing-large-1);
+  --hds-spacing-large-2-responsive: var(--hds-spacing-large-2);
+  --hds-spacing-large-3-responsive: var(--hds-spacing-large-3);
+
+  @media (--large) {
+    --hds-spacing-small-1-responsive: var(--hds-spacing-small-2);
+    --hds-spacing-small-2-responsive: var(--hds-spacing-small-3);
+    --hds-spacing-small-3-responsive: var(--hds-spacing-small-4);
+    --hds-spacing-small-4-responsive: var(--hds-spacing-medium-1);
+    --hds-spacing-medium-1-responsive: var(--hds-spacing-medium-2);
+    --hds-spacing-medium-2-responsive: var(--hds-spacing-medium-3);
+    --hds-spacing-medium-3-responsive: var(--hds-spacing-medium-4);
+    --hds-spacing-medium-4-responsive: var(--hds-spacing-large-1);
+    --hds-spacing-large-1-responsive: var(--hds-spacing-large-2);
+    --hds-spacing-large-2-responsive: var(--hds-spacing-large-3);
+    --hds-spacing-large-3-responsive: var(--hds-spacing-large-4);
+  }
+}
+
+/* Fixed margin top */
+.hds-mt-small-1 {
+  margin-top: var(--hds-spacing-small-1);
+}
+
+.hds-mt-small-2 {
+  margin-top: var(--hds-spacing-small-2);
+}
+
+.hds-mt-small-3 {
+  margin-top: var(--hds-spacing-small-3);
+}
+
+.hds-mt-small-4 {
+  margin-top: var(--hds-spacing-small-4);
+}
+
+.hds-mt-medium-1 {
+  margin-top: var(--hds-spacing-medium-1);
+}
+
+.hds-mt-medium-2 {
+  margin-top: var(--hds-spacing-medium-2);
+}
+
+.hds-mt-medium-3 {
+  margin-top: var(--hds-spacing-medium-3);
+}
+
+.hds-mt-medium-4 {
+  margin-top: var(--hds-spacing-medium-4);
+}
+
+.hds-mt-large-1 {
+  margin-top: var(--hds-spacing-large-1);
+}
+
+.hds-mt-large-2 {
+  margin-top: var(--hds-spacing-large-2);
+}
+
+.hds-mt-large-3 {
+  margin-top: var(--hds-spacing-large-3);
+}
+
+.hds-mt-large-4 {
+  margin-top: var(--hds-spacing-large-3);
+}
+
+/* 
+ * Responsive margin top
+ * Mobile first, meaning it jumps up on larger screens
+ */
+.hds-mt-small-1-responsive {
+  margin-top: var(--hds-spacing-small-1-responsive);
+}
+
+.hds-mt-small-2-responsive {
+  margin-top: var(--hds-spacing-small-2-responsive);
+}
+
+.hds-mt-small-3-responsive {
+  margin-top: var(--hds-spacing-small-3-responsive);
+}
+
+.hds-mt-small-4-responsive {
+  margin-top: var(--hds-spacing-small-4-responsive);
+}
+
+.hds-mt-medium-1-responsive {
+  margin-top: var(--hds-spacing-medium-1-responsive);
+}
+
+.hds-mt-medium-2-responsive {
+  margin-top: var(--hds-spacing-medium-2-responsive);
+}
+
+.hds-mt-medium-3-responsive {
+  margin-top: var(--hds-spacing-medium-3-responsive);
+}
+
+.hds-mt-medium-4-responsive {
+  margin-top: var(--hds-spacing-medium-4-responsive);
+}
+
+.hds-mt-large-1-responsive {
+  margin-top: var(--hds-spacing-large-1-responsive);
+}
+
+.hds-mt-large-2-responsive {
+  margin-top: var(--hds-spacing-large-2-responsive);
+}
+
+.hds-mt-large-3-responsive {
+  margin-top: var(--hds-spacing-large-3-responsive);
+}
+
+.hds-mt-large-4-responsive {
+  margin-top: var(--hds-spacing-large-3-responsive);
+}

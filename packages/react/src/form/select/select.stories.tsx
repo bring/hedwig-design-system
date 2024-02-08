@@ -14,6 +14,12 @@ type Story = StoryObj<typeof Select>;
 export const Default: Story = {
   args: {
     label: "Default select",
+    errorMessage: "",
+    disabled: false,
+    variant: "default",
+  },
+  argTypes: {
+    variant: { control: "inline-radio", options: ["default", "white"] },
   },
   render: (props) => (
     <Select {...props}>
