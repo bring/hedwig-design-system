@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Checkbox>;
 
 export const PlainCheckbox: Story = {
   name: "Checkbox",
-  render: () => (
+  render: (_props) => (
     <div
       style={{
         display: "flex",
