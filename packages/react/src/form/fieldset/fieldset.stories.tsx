@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { Checkbox } from "../checkbox";
 import { Fieldset } from ".";
 
 const meta: Meta<typeof Fieldset> = {
@@ -22,18 +23,11 @@ export const Default: Story = {
   },
   render: (props) => (
     <Fieldset {...props}>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
+      <Checkbox defaultChecked value="Hello">
         Hello
-      </label>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
-        Hello
-      </label>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
-        Hello
-      </label>
+      </Checkbox>
+      <Checkbox value="Hello">Hello</Checkbox>
+      <Checkbox value="Hello">Hello</Checkbox>
     </Fieldset>
   ),
 };
@@ -46,18 +40,13 @@ export const LargeLegend: Story = {
   },
   render: (props) => (
     <Fieldset {...props}>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
+      <Checkbox defaultChecked value="Hello">
         Hello
-      </label>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
+      </Checkbox>
+      <Checkbox hasError value="Hello">
         Hello
-      </label>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
-        Hello
-      </label>
+      </Checkbox>
+      <Checkbox value="Hello">Hello</Checkbox>
     </Fieldset>
   ),
 };
@@ -69,18 +58,13 @@ export const FieldsetError: Story = {
   },
   render: (props) => (
     <Fieldset {...props}>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
+      <Checkbox defaultChecked value="Hello">
         Hello
-      </label>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
+      </Checkbox>
+      <Checkbox hasError value="Hello">
         Hello
-      </label>
-      <label style={{ display: "block" }}>
-        <input type="checkbox" value="Hello " />
-        Hello
-      </label>
+      </Checkbox>
+      <Checkbox value="Hello">Hello</Checkbox>
     </Fieldset>
   ),
 };
