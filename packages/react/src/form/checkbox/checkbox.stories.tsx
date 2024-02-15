@@ -30,7 +30,7 @@ export const PlainCheckbox: Story = {
 
 export const BoundedCheckbox: Story = {
   name: "Checkbox with bounding box",
-  render: () => (
+  render: (_props) => (
     <div
       style={{
         display: "flex",
