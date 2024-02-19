@@ -40,7 +40,7 @@ export const Box: OverridableComponent<BoxProps, HTMLDivElement> = forwardRef(
   (
     {
       as: Component = "div",
-      variant = "light-grey",
+      variant,
       closeable = false,
       onClose: onCloseProp,
       closed: closedProp,
@@ -69,7 +69,7 @@ export const Box: OverridableComponent<BoxProps, HTMLDivElement> = forwardRef(
       <Component
         className={clsx(
           "hds-box",
-          `hds-box--${variant}`,
+          variant && `hds-box--${variant}`,
           { "hds-box--closed": closed },
           className as undefined,
         )}
@@ -97,4 +97,4 @@ export const BoxCloseButton = forwardRef<HTMLButtonElement, BoxCloseButtonProps>
     );
   },
 );
-BoxCloseButton.displayName = "BoxCloseButton";
+BoxCloseButton.displayName = "Box.CloseButton";

@@ -1,11 +1,13 @@
+@import url("../_custom-media.css");
+
 .hds-accordion {
   --hds-accordion-icon-dimension: 24px;
-  --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-small-4);
   --hds-component-accordion-content-spacing: var(--hds-spacing-medium-3);
+  --hds-component-accordion-header-spacing-between: var(--hds-spacing-small-4);
 
-  @media (width >= 720px) {
+  @media (--medium) {
     --hds-component-accordion-content-spacing: var(--hds-spacing-large-1);
-    --hds-component-accordion-trigger-spacing-between: var(--hds-spacing-medium-2);
+    --hds-component-accordion-header-spacing-between: var(--hds-spacing-medium-2);
   }
 
   display: block;
@@ -18,21 +20,21 @@
   .hds-accordion-item {
     overflow: hidden;
 
-    &.hds-accordion-item__expanded .hds-accordion-item-trigger {
-      color: var(--hds-brand-colors-dark);
+    &.hds-accordion-item__expanded .hds-accordion-item-header {
+      color: var(--hds-colors-dark);
     }
 
-    &:first-child .hds-accordion-item-trigger {
+    &:first-child .hds-accordion-item-header {
       border: 0 none;
     }
 
-    .hds-accordion-item-trigger {
+    .hds-accordion-item-header {
       cursor: pointer;
       display: grid;
       grid-template-columns: 24px auto;
       grid-gap: var(--hds-spacing-small-4);
       width: 100%;
-      padding: var(--hds-component-accordion-trigger-spacing-between) 0;
+      padding: var(--hds-component-accordion-header-spacing-between) 0;
       border: 0;
       border-top: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-stroke);
       text-align: left;
@@ -40,30 +42,32 @@
       font: var(--hds-typography-body);
 
       &:hover {
-        color: var(--hds-brand-colors-dark);
+        color: var(--hds-colors-dark);
         outline: 0;
       }
 
-      .hds-accordion-item-trigger--icon {
-        transition: all 0.05s ease;
+      .hds-accordion-item-header--icon {
         display: inline-block;
-        color: var(--hds-brand-colors-dark);
+        color: var(--hds-colors-dark);
+        fill: var(--hds-colors-dark);
         width: var(--hds-accordion-icon-dimension);
         height: var(--hds-accordion-icon-dimension);
 
-        .hds-accordion-item-trigger--icon-chevron,
-        .hds-accordion-item-trigger--icon-chevron-down {
-          color: var(--hds-brand-colors-dark);
-          fill: var(--hds-brand-colors-dark);
-        }
-
         & svg {
           vertical-align: baseline;
+
+          /* Optionally animate the cheveron.
+             As of 31. jan 2024 I think it looks nicer without animation on the cheveron.
+             The height animation is sufficient to indicate open/close.
+          */
+
+          /* transition: transform var(--hds-micro-animation-duration-quick)
+            var(--hds-micro-animation-easing-normal); */
         }
       }
 
-      &.hds-accordion-item-trigger--open {
-        .hds-accordion-item-trigger--icon svg {
+      &.hds-accordion-item-header--open {
+        .hds-accordion-item-header--icon svg {
           transform: rotate(180deg);
         }
       }
@@ -73,8 +77,31 @@
       padding: 0 0 var(--hds-component-accordion-content-spacing) var(--hds-spacing-medium-4);
       font: var(--hds-typography-body-small);
 
+      /*
+       * Animate open/close
+       * https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/
+       */
+      display: grid;
+      grid-template-rows: 1fr;
+      transition-property: grid-template-rows, padding-bottom;
+      transition-duration: var(--hds-micro-animation-duration-quick);
+      transition-timing-function: var(--hds-micro-animation-easing-normal);
+
       &.hds-accordion-item-content--closed {
-        display: none;
+        padding-bottom: 0;
+        grid-template-rows: 0fr;
+      }
+
+      .hds-accordion-item-content-inner {
+        overflow: hidden;
+      }
+    }
+  }
+
+  &.hds-accordion--no-indent {
+    .hds-accordion-item {
+      .hds-accordion-item-content {
+        padding-left: 0;
       }
     }
   }

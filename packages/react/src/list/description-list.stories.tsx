@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { DescriptionDetails, DescriptionList, DescriptionTerm } from ".";
+import { DescriptionList } from ".";
 
 type Story = StoryObj<typeof DescriptionList>;
 
@@ -10,14 +10,14 @@ const meta: Meta<typeof DescriptionList> = {
   args: {
     children: (
       <>
-        <DescriptionTerm>Vekt</DescriptionTerm>
-        <DescriptionDetails>12 kg</DescriptionDetails>
-        <DescriptionTerm>Antall kolli</DescriptionTerm>
-        <DescriptionDetails>2</DescriptionDetails>
-        <DescriptionTerm>Sendingsnummer</DescriptionTerm>
-        <DescriptionDetails>7000001</DescriptionDetails>
-        <DescriptionTerm>Avsender</DescriptionTerm>
-        <DescriptionDetails>Fjellsport</DescriptionDetails>
+        <dt>Vekt</dt>
+        <dd>12 kg</dd>
+        <dt>Antall kolli</dt>
+        <dd>2</dd>
+        <dt>Sendingsnummer</dt>
+        <dd>7000001</dd>
+        <dt>Avsender</dt>
+        <dd>Fjellsport</dd>
       </>
     ),
   },
@@ -33,20 +33,20 @@ export const WrappedInDivs: Story = {
     children: (
       <>
         <div>
-          <DescriptionTerm>Vekt</DescriptionTerm>
-          <DescriptionDetails>12 kg</DescriptionDetails>
+          <dt>Vekt</dt>
+          <dd>12 kg</dd>
         </div>
         <div>
-          <DescriptionTerm>Antall kolli</DescriptionTerm>
-          <DescriptionDetails>2</DescriptionDetails>
+          <dt>Antall kolli</dt>
+          <dd>2</dd>
         </div>
         <div>
-          <DescriptionTerm>Sendingsnummer</DescriptionTerm>
-          <DescriptionDetails>7000001</DescriptionDetails>
+          <dt>Sendingsnummer</dt>
+          <dd>7000001</dd>
         </div>
         <div>
-          <DescriptionTerm>Avsender</DescriptionTerm>
-          <DescriptionDetails>Fjellsport</DescriptionDetails>
+          <dt>Avsender</dt>
+          <dd>Fjellsport</dd>
         </div>
       </>
     ),
@@ -59,14 +59,14 @@ export const Paragraph: Story = {
     variant: "horizontal",
     children: (
       <>
-        <DescriptionTerm>Vekt</DescriptionTerm>
-        <DescriptionDetails>12 kg</DescriptionDetails>
-        <DescriptionTerm>
+        <dt>Vekt</dt>
+        <dd>12 kg</dd>
+        <dt>
           <p>Title</p>
-        </DescriptionTerm>
-        <DescriptionDetails>
+        </dt>
+        <dd>
           <p>Paragraph</p>
-        </DescriptionDetails>
+        </dd>
       </>
     ),
   },
@@ -77,18 +77,18 @@ export const HorizontalLongContent: Story = {
     variant: "horizontal",
     children: (
       <>
-        <DescriptionTerm>Vekt</DescriptionTerm>
-        <DescriptionDetails>12 kg</DescriptionDetails>
-        <DescriptionTerm>
+        <dt>Vekt</dt>
+        <dd>12 kg</dd>
+        <dt>
           <p>Title</p>
-        </DescriptionTerm>
-        <DescriptionDetails>
+        </dt>
+        <dd>
           <p>
             ParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraphParagraph
           </p>
-        </DescriptionDetails>
-        <DescriptionTerm>Avsender</DescriptionTerm>
-        <DescriptionDetails>Fjellsport</DescriptionDetails>
+        </dd>
+        <dt>Avsender</dt>
+        <dd>Fjellsport</dd>
       </>
     ),
   },

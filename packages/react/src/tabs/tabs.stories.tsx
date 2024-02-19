@@ -1,11 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tab, TabContent, TabContents, TabList, Tabs } from ".";
+import { Tabs } from ".";
 
 type Story = StoryObj<typeof Tabs>;
 
 const meta: Meta<typeof Tabs> = {
-  title: "Tab",
+  title: "Tabs",
   component: Tabs,
 };
 
@@ -14,22 +14,22 @@ export const Horizontal: Story = {
     defaultTab: "first",
     children: (
       <>
-        <TabList>
-          <Tab tabId="first">First</Tab>
-          <Tab tabId="second">Second</Tab>
-          <Tab tabId="third">Third</Tab>
-          <Tab tabId="forth">Forth</Tab>
-          <Tab tabId="fifth">Fifth</Tab>
-          <Tab tabId="sixth">Sixth</Tab>
-        </TabList>
-        <TabContents>
-          <TabContent forTabId="first">First tab</TabContent>
-          <TabContent forTabId="second">Second tab</TabContent>
-          <TabContent forTabId="third">Third tab</TabContent>
-          <TabContent forTabId="forth">Forth tab</TabContent>
-          <TabContent forTabId="fifth">Fifth tab</TabContent>
-          <TabContent forTabId="sixth">Sixth tab</TabContent>
-        </TabContents>
+        <Tabs.List>
+          <Tabs.Tab tabId="first">First</Tabs.Tab>
+          <Tabs.Tab tabId="second">Second</Tabs.Tab>
+          <Tabs.Tab tabId="third">Third</Tabs.Tab>
+          <Tabs.Tab tabId="forth">Forth</Tabs.Tab>
+          <Tabs.Tab tabId="fifth">Fifth</Tabs.Tab>
+          <Tabs.Tab tabId="sixth">Sixth</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Contents>
+          <Tabs.Content forTabId="first">First tab</Tabs.Content>
+          <Tabs.Content forTabId="second">Second tab</Tabs.Content>
+          <Tabs.Content forTabId="third">Third tab</Tabs.Content>
+          <Tabs.Content forTabId="forth">Forth tab</Tabs.Content>
+          <Tabs.Content forTabId="fifth">Fifth tab</Tabs.Content>
+          <Tabs.Content forTabId="sixth">Sixth tab</Tabs.Content>
+        </Tabs.Contents>
       </>
     ),
   },
@@ -40,22 +40,22 @@ export const Vertical: Story = {
     defaultTab: "first",
     children: (
       <>
-        <TabList direction="vertical">
-          <Tab tabId="first">First</Tab>
-          <Tab tabId="second">Second</Tab>
-          <Tab tabId="third">Third</Tab>
-          <Tab tabId="forth">Forth</Tab>
-          <Tab tabId="fifth">Fifth</Tab>
-          <Tab tabId="sixth">Sixth</Tab>
-        </TabList>
-        <TabContents>
-          <TabContent forTabId="first">First tab</TabContent>
-          <TabContent forTabId="second">Second tab</TabContent>
-          <TabContent forTabId="third">Third tab</TabContent>
-          <TabContent forTabId="forth">Forth tab</TabContent>
-          <TabContent forTabId="fifth">Fifth tab</TabContent>
-          <TabContent forTabId="sixth">Sixth tab</TabContent>
-        </TabContents>
+        <Tabs.List direction="vertical">
+          <Tabs.Tab tabId="first">First</Tabs.Tab>
+          <Tabs.Tab tabId="second">Second</Tabs.Tab>
+          <Tabs.Tab tabId="third">Third</Tabs.Tab>
+          <Tabs.Tab tabId="forth">Forth</Tabs.Tab>
+          <Tabs.Tab tabId="fifth">Fifth</Tabs.Tab>
+          <Tabs.Tab tabId="sixth">Sixth</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Contents>
+          <Tabs.Content forTabId="first">First tab</Tabs.Content>
+          <Tabs.Content forTabId="second">Second tab</Tabs.Content>
+          <Tabs.Content forTabId="third">Third tab</Tabs.Content>
+          <Tabs.Content forTabId="forth">Forth tab</Tabs.Content>
+          <Tabs.Content forTabId="fifth">Fifth tab</Tabs.Content>
+          <Tabs.Content forTabId="sixth">Sixth tab</Tabs.Content>
+        </Tabs.Contents>
       </>
     ),
   },
@@ -66,13 +66,13 @@ export const HorizontalWithMiddleSelected: Story = {
     defaultTab: "second",
     children: (
       <>
-        <TabList>
-          <Tab tabId="first">Pakker og gods for bedrift</Tab>
-          <Tab tabId="second">Post og brevpost</Tab>
-          <Tab tabId="third">Bud- og ekspress-pakker</Tab>
-        </TabList>
-        <TabContents>
-          <TabContent forTabId="first">
+        <Tabs.List>
+          <Tabs.Tab tabId="first">Pakker og gods for bedrift</Tabs.Tab>
+          <Tabs.Tab tabId="second">Post og brevpost</Tabs.Tab>
+          <Tabs.Tab tabId="third">Bud- og ekspress-pakker</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Contents>
+          <Tabs.Content forTabId="first">
             <h2>Vilkår for transport til bedrifter nasjonalt</h2>
             <ul>
               <li>
@@ -119,14 +119,14 @@ export const HorizontalWithMiddleSelected: Story = {
                 &nbsp;
               </li>
             </ul>
-          </TabContent>
-          <TabContent forTabId="second">
+          </Tabs.Content>
+          <Tabs.Content forTabId="second">
             <h2>Vilkår for post med like formater</h2>
-          </TabContent>
-          <TabContent forTabId="third">
+          </Tabs.Content>
+          <Tabs.Content forTabId="third">
             <h2>Generelle vilkår</h2>
-          </TabContent>
-        </TabContents>
+          </Tabs.Content>
+        </Tabs.Contents>
       </>
     ),
   },

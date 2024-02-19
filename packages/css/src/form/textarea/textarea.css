@@ -1,0 +1,3 @@
+.hds-textarea .hds-input-group__input {
+  min-height: calc((var(--hds-spacing-small-4) + var(--hds-line-height-body-small-min)) * 2);
+}

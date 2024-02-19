@@ -9,6 +9,14 @@ export default {
   extends: ["stylelint-config-standard"],
   plugins: ["stylelint-value-no-unknown-custom-properties"],
   rules: {
+    // We use postcss-extend-rule to reuse classes
+    "at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: ["extend"],
+      },
+    ],
+
     // Make sure we don't misspell the tokens
     "csstools/value-no-unknown-custom-properties": [
       true,

@@ -15,23 +15,32 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "@types/node": "20.11.2",
+    "@types/node": "20.11.5",
     "eslint": "^8.56.0",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "husky": "8.0.3",
     "lint-staged": "15.2.0",
-    "prettier": "^3.2.2",
+    "prettier": "^3.2.4",
     "stylelint": "16.1.0",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.10.5",
+  "pnpm": {
+    "overrides": {
+      "axios": "^1.6.5"
+    }
+  },
+  "packageManager": "pnpm@8.11.0",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "packages/css/**/*.{css,scss}": "stylelint --cache --fix",
-    "*.{js,jsx,ts,tsx,css,scss,md,json}": "prettier --cache --write"
+    "*.{js,jsx,ts,tsx,css,scss,md,json,html}": "prettier --cache --write"
   },
   "prettier": {
     "printWidth": 100
+  },
+  "engines": {
+    "node": ">=20.10.0",
+    "pnpm": ">=8"
   }
 }

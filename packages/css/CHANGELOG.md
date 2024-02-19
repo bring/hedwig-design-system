@@ -1,5 +1,102 @@
 # @postenbring/hedwig-css
 
+## 0.0.41
+
+### Patch Changes
+
+- 8605454: Add Fieldset, extract ErrorMessage and group form stuff
+
+## 0.0.40
+
+### Patch Changes
+
+- 63123e7: :recycle: wrap Input, Textarea and Select in a new common wrapper InputGroup
+- 6b8aadb: ## Accordion improvments
+
+  ### 💫 Animations
+
+  The open / close transitions are now animated. With just pure css 🎉
+
+  ### Remove `variant="single" | "multiple"` in favor of `open` & `onOpenChange`
+
+  I think a single accordion is a rare use case. In those cases it's easy enough to implement yourself, taking full control of the accordion
+
+  ### Rename `trigger` -> `header`
+
+  I saw that all the other systems called it this, so just renamed
+
+  ### Support `indent` prop
+
+  When you don't want left padding on the content. We have a case for this in `open-tracking`.
+
+- 2cb7e81: :recycle: remove `-brand` prefix from tokens and rename `header-h3` -> `h3`
+- Updated dependencies [2cb7e81]
+  - @postenbring/hedwig-tokens@0.0.11
+
+## 0.0.39
+
+### Patch Changes
+
+- 0509d61: :memo: Update docs
+- Updated dependencies [0509d61]
+  - @postenbring/hedwig-tokens@0.0.10
+
+## 0.0.38
+
+### Patch Changes
+
+- f8466dc: :lipstick: Reset Card styles when wrapped as an `<a>` or a hedwig `<Link />`.
+
+## 0.0.37
+
+### Patch Changes
+
+- 779c39d: :sparkles::construction: implement wysiwyg/prose/richtext/dynamic-content component. using `@extend` in css to re-use styles
+- b5328a0: :lipstick: support nested lists and wrap margin selector in :where(\*) to lower it's specifity, allowing it to be overridden
+- 0e936c0: :recycle: use @custom-media queries
+
+## 0.0.36
+
+### Patch Changes
+
+- a1f5a96: Accessibility adjustments on Card component
+
+## 0.0.35
+
+### Patch Changes
+
+- :technologist: make select variant optional, default to the default style
+
+## 0.0.34
+
+### Patch Changes
+
+- 1d0bfa4: :lipstick: update Input with fixed height `58px` to match figma sketches
+
+  support composing the tracking number search
+
+## 0.0.33
+
+### Patch Changes
+
+- 58996a7: :lipstick: make container always use 100% width
+
+  else we get into situations where the content inside get's smaller than we wish for
+
+## 0.0.32
+
+### Patch Changes
+
+- 9c7eafd: First version of `<Card/>` component.
+
+## 0.0.31
+
+### Patch Changes
+
+- 5b5676c: Added styling for flex, pretty much a copy of whats in Hedwig today
+- Updated dependencies [11e31f5]
+  - @postenbring/hedwig-tokens@0.0.9
+
 ## 0.0.30
 
 ### Patch Changes

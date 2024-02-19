@@ -1,0 +1,163 @@
+@import url("../_custom-media.css");
+
+.hds-prose {
+  /* Headings
+   * h1-h6 gets styled globally in `body.css`    
+   */
+  & h1,
+  & h2 {
+    margin-top: var(--hds-spacing-large-1);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-large-2);
+    }
+  }
+
+  & h3 {
+    margin-top: var(--hds-spacing-medium-4);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-large-1);
+    }
+  }
+
+  & h4,
+  & h5 {
+    margin-top: var(--hds-spacing-medium-3);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-medium-4);
+    }
+  }
+
+  /* Link */
+  a:where(:not(.hds-button)) {
+    @extend url("./src/link/link.css:hds-link");
+  }
+
+  /* Paragraphs */
+  & p {
+    margin-top: var(--hds-spacing-small-4);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-medium-2);
+    }
+  }
+
+  /* Combinations */
+  & p + h2,
+  & p + figure {
+    margin-top: var(--hds-spacing-large-1);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-large-2);
+    }
+  }
+
+  & p + h3 {
+    margin-top: var(--hds-spacing-medium-4);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-large-1);
+    }
+  }
+
+  & p + h4,
+  & p + h5 {
+    margin-top: var(--hds-spacing-medium-3);
+
+    @media (--large) {
+      margin-top: var(--hds-spacing-medium-4);
+    }
+  }
+
+  /* Divider */
+  & hr {
+    margin-bottom: var(--hds-spacing-medium-2);
+  }
+
+  /* List */
+  & :is(ul, ol):where(:not(.hds-accordion)) {
+    @extend url("./src/list/list.css:hds-list");
+
+    margin-top: var(--hds-spacing-small-4);
+  }
+
+  /* Image */
+  & figure {
+    /* TODO: @extend .hw-figure; */
+
+    margin-top: var(--hds-spacing-medium-3);
+  }
+
+  /* Table */
+  & table {
+    & p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0;
+    }
+
+    & a {
+      border-bottom: none;
+      color: unset;
+    }
+  }
+
+  b,
+  strong {
+    font: var(--hds-typography-body-title);
+  }
+
+  /**
+   * Modifiers
+   */
+
+  /* Small version */
+  &.hds-prose--small {
+    & p,
+    & li,
+    & a {
+      font: var(--hds-typography-body-small);
+    }
+
+    & p {
+      margin-top: var(--hds-spacing-small-3);
+    }
+
+    & b,
+    & strong {
+      font: var(--hds-typography-body-small-title);
+    }
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* 🚧 Dark mode */
+  &.hds-prose--darkmode {
+    /* TODO: Do we want the background to be set? */
+
+    /* background-color: var(--hds-dark-mode-colors-obsidian); */
+
+    color: #ccc;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fafafa;
+    }
+
+    & a {
+      @extend url("./src/link/link.css:hds-link--inverted");
+    }
+  }
+}

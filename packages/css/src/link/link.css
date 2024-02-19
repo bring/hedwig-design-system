@@ -4,20 +4,20 @@
 
 .hds-link {
   text-decoration: none;
-  border-bottom: var(--hds-stroke-default) solid var(--hds-brand-link-colors-underline);
-  fill: var(--hds-brand-link-colors-text);
-  color: var(--hds-brand-link-colors-text);
+  border-bottom: var(--hds-stroke-default) solid var(--hds-link-colors-underline);
+  fill: var(--hds-link-colors-text);
+  color: var(--hds-link-colors-text);
   transition: all var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
   cursor: pointer;
 
   &:hover,
   &:active {
-    color: var(--hds-brand-link-colors-hover);
-    fill: var(--hds-brand-link-colors-hover);
-    border-color: var(--hds-brand-link-colors-underline-hover);
+    color: var(--hds-link-colors-hover);
+    fill: var(--hds-link-colors-hover);
+    border-color: var(--hds-link-colors-underline-hover);
 
     & .hds-link__text {
-      border-color: var(--hds-brand-link-colors-underline-hover);
+      border-color: var(--hds-link-colors-underline-hover);
     }
   }
 
@@ -27,12 +27,12 @@
 
   &.hds-link--inverted {
     color: var(--hds-ui-colors-white);
-    text-decoration-color: var(--hds-brand-colors-signature);
+    text-decoration-color: var(--hds-colors-signature);
     border-color: currentcolor;
 
     &:hover,
     &:active {
-      color: var(--hds-brand-colors-light);
+      color: var(--hds-colors-light);
       border-color: currentcolor;
     }
 
@@ -51,19 +51,19 @@
   }
 
   &.hds-link--large {
-    font: var(--hds-typography-header-h3);
+    font: var(--hds-typography-h3);
   }
 
   &.hds-link--no-underline {
     font-weight: 500;
-    color: var(--hds-brand-colors-dark);
+    color: var(--hds-colors-dark);
     text-decoration: none;
     border-bottom: none;
 
     &:hover {
-      color: var(--hds-brand-colors-dark);
+      color: var(--hds-colors-dark);
       text-decoration: underline;
-      text-decoration-color: var(--hds-brand-colors-dark);
+      text-decoration-color: var(--hds-colors-dark);
       border-bottom: none;
     }
   }

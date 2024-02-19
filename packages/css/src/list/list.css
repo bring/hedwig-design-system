@@ -1,14 +1,24 @@
-.hds-list {
+/* Reset outer margin from the browser defaults, but let consumers easily override it */
+:where(.hds-list) {
   margin: 0;
+}
+
+.hds-list {
   display: flex;
   flex-direction: column;
+
+  /**
+   * Spacing from the left
+   * In hedwig legacy the bullets started at the content
+   * padding-left: var(--hds-spacing-small-4);
+   */
   padding-left: var(--hds-spacing-medium-3);
 
   & li {
     padding-left: var(--hds-spacing-small-2);
 
     &::marker {
-      color: var(--hds-brand-colors-dark);
+      color: var(--hds-colors-dark);
     }
   }
 
@@ -18,6 +28,11 @@
 
   &:is(ul) {
     list-style: disc;
+  }
+
+  /* Nested unordered lists */
+  &:is(ul) ul {
+    list-style: circle;
   }
 
   /**
@@ -46,7 +61,7 @@
   }
 
   &.hds-list--large {
-    font: var(--hds-typography-header-h3);
+    font: var(--hds-typography-h3);
     gap: var(--hds-spacing-small-3);
   }
 }

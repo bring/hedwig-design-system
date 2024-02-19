@@ -1,49 +1,60 @@
 import type { HTMLAttributes, ReactElement } from "react";
-import { forwardRef, useContext, useEffect, useId, useState } from "react";
+import { forwardRef, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
-import { AccordionContext, AccordionItemContext } from "./context";
-import type { AccordionTriggerProps } from "./accordion-trigger";
+import { AccordionItemContext } from "./context";
+import type { AccordionHeaderProps } from "./accordion-header";
 import type { AccordionContentProps } from "./accordion-content";
 
 export type AccordionItemChildrenType =
-  | ReactElement<AccordionTriggerProps>
+  | ReactElement<AccordionHeaderProps>
   | ReactElement<AccordionContentProps>;
 
 export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   /**
-   * Accepts type of <AccordionContent/> and <AccordionTrigger/>
+   * Control the open state of the accordion manually
+   */
+  open?: boolean;
+
+  /**
+   * Use with open to control the open state of the accordion manually
+   */
+  onOpenChange?: (open: boolean) => void;
+
+  /**
+   * If the accordion should be open by default
+   */
+  defaultOpen?: boolean;
+
+  /**
+   * Accepts type of Accordion.Content and Accordion.Header
    */
   children: AccordionItemChildrenType[];
 }
 
 export const AccordionItem: OverridableComponent<AccordionItemProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", children, className, ...rest }, ref) => {
-    const context = useContext(AccordionContext);
-    const [open, setOpen] = useState(false);
-    const accordionItemId = useId();
+  (
+    {
+      as: Component = "div",
+      children,
+      defaultOpen,
+      open: outerOpen,
+      onOpenChange,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
+    const [innerOpen, setInnerOpen] = useState(defaultOpen ?? false);
+    const open = outerOpen ?? innerOpen;
+
     const handleOpen = () => {
-      setOpen(!open);
-      if (context.variant === "single") {
-        context.toggleOpenItem(accordionItemId);
+      if (outerOpen !== undefined) {
+        onOpenChange && onOpenChange(!open);
+      } else {
+        setInnerOpen(!open);
       }
     };
-    if (!context.mounted) {
-      throw new Error("Context required. Did you use <AccordionItem/> outside of <Accordion/>?");
-    }
-
-    // For single only variant of the accordion
-    // Close this item when another accordion is opened
-    // Ensuring only one is opend at the same time
-    useEffect(() => {
-      if (context.variant === "multiple") {
-        return;
-      }
-      if (open && !context.openItems.includes(accordionItemId)) {
-        setOpen(false);
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps -- We know better
-    }, [context.openItems]);
 
     return (
       <Component
@@ -65,4 +76,4 @@ export const AccordionItem: OverridableComponent<AccordionItemProps, HTMLDivElem
   },
 );
 
-AccordionItem.displayName = "AccordionItem";
+AccordionItem.displayName = "Accordion.Item";

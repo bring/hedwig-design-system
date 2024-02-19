@@ -1,5 +1,5 @@
 /* eslint-disable no-console -- script */
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, unlinkSync } from "node:fs";
 import StyleDictionary from "style-dictionary-utils";
 import { customTypography } from "./lib/typography";
 import { customTokensParser } from "./lib/parser";
@@ -40,7 +40,7 @@ const forTailwindTransforms = [
 function buildSharedCssVariables() {
   console.log("🤖 Building shared css variables");
   StyleDictionary.extend({
-    source: ["tokens-source/*shared*.json"],
+    source: ["tokens-source/shared.json"],
     platforms: {
       css: {
         options: {
@@ -64,7 +64,7 @@ function buildBrandCssVariables() {
   for (const brand of ["posten", "bring"]) {
     console.log(`🤖 Building ${brand} css variables`);
     StyleDictionary.extend({
-      include: ["tokens-source/*shared*.json"],
+      include: ["tokens-source/shared.json"],
       source: [`tokens-source/brands/${brand}.json`],
       platforms: {
         css: {
@@ -108,6 +108,9 @@ function buildFinalCssVariables() {
   const final = `
 :root {
 ${printVariables(extractVariables(sharedCss))}
+}
+:root, /* Default */
+.hds-theme-posten {
 ${printVariables(extractVariables(postenCss))}
 }
 .hds-theme-bring {
@@ -119,11 +122,23 @@ ${printVariables(extractVariables(bringCss))}
 }
 buildFinalCssVariables();
 
+function cssCleanup() {
+  console.log("🧹 Cleanup after css building");
+  // Delete css/bring.css, css/posten.css, css/shared.css
+  const filesToDelete = ["bring", "posten", "shared"].map(
+    (brand) => `${__dirname}/tokens-output/css/${brand}.css`,
+  );
+  for (const file of filesToDelete) {
+    unlinkSync(file);
+  }
+}
+cssCleanup();
+
 /**
  * Javascript and Json output
  */
 StyleDictionary.extend({
-  source: ["tokens-source/*shared*.json"],
+  source: ["tokens-source/shared.json"],
   platforms: {
     javascript: {
       options: {

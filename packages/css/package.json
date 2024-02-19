@@ -1,10 +1,10 @@
 {
   "name": "@postenbring/hedwig-css",
-  "version": "0.0.30",
+  "version": "0.0.41",
   "description": "",
   "scripts": {
     "build": "pnpm run --sequential /^build:.*/",
-    "build:css": "mkdir -p dist && cd dist && lightningcss --minify --bundle --sourcemap --targets '>= 0.25%' ../src/*.css ../src/**/*.css -d .",
+    "build:css": "node ./build-css.mjs",
     "build:typed-classname": "node ./typed-classname/build.mjs",
     "build:scoped-css": "node ./build-scoped-css.mjs",
     "dev": "pnpm run --parallel /^dev:.*/",
@@ -24,8 +24,8 @@
   "devDependencies": {
     "browserslist": "4.22.2",
     "chokidar-cli": "3.0.0",
+    "globby": "14.0.0",
     "lightningcss": "1.23.0",
-    "lightningcss-cli": "1.23.0",
     "sanitize.css": "^13.0.0",
     "stylelint": "16.1.0",
     "stylelint-config-standard": "36.0.0",
@@ -41,5 +41,16 @@
   },
   "browserslist": [
     "defaults"
+  ],
+  "homepage": "https://github.com/bring/hedwig-design-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bring/hedwig-design-system"
+  },
+  "keywords": [
+    "hedwig",
+    "posten",
+    "bring",
+    "css"
   ]
 }

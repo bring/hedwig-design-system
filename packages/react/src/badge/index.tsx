@@ -4,4 +4,6 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/badge.css";
 
-export * from "./badge";
+export { Badge, DarkBadge, WarningBadge, WhiteBadge } from "./badge";
+
+export type * from "./badge";

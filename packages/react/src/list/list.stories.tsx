@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
-import type { Meta, StoryObj } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 import { OrderedList, UnorderedList } from ".";
 
 type Story = StoryObj<typeof UnorderedList>;
@@ -18,8 +18,13 @@ function HStack({ children }: { children: React.ReactNode }) {
   );
 }
 
-// eslint-disable-next-line react/jsx-key -- It's ok, just a demo
-const listItems = [<li>List item 1</li>, <li>List item 2</li>, <li>List item 3</li>];
+const listItems = (
+  <>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </>
+);
 
 export const UnorderedListStory: Story = {
   name: "Unordered List",
@@ -61,6 +66,29 @@ export const NoBulletsListStory: Story = {
       <UnorderedList {...props} size="medium" />
       <UnorderedList {...props} size="large" />
     </HStack>
+  ),
+};
+
+export const NestedLists: Story = {
+  render: () => (
+    <UnorderedList>
+      <li>
+        Varer med verdi opp til 3000 kroner der mva. er betalt i utenlandsk nettbutikk
+        (VOEC-ordningen): Ingen fortolling.
+      </li>
+      <li>
+        Næringsmidler, særavgiftsvarer og restriksjonsbelagte varer uansett verdi, samt varer med
+        verdi over&nbsp;3000 kroner: Fortolling til 270&nbsp;kroner (gjelder fra 01.12.2023).
+      </li>
+      <li>
+        Andre varer med verdi mellom 0 og 3000 kroner blir fortollet basert på verdi av innholdet i
+        sendingen. Posten har satt ned prisene for å utføre fortollingen.
+        <UnorderedList style={{ marginTop: "var(--hds-spacing-small-4)" }}>
+          <li>Verdi på vare 0–500 kroner: 45 kroner</li>
+          <li>Verdi på vare&nbsp;500–3000 kroner: 75 kroner</li>
+        </UnorderedList>
+      </li>
+    </UnorderedList>
   ),
 };
 

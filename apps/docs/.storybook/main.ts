@@ -1,12 +1,13 @@
 import { dirname, join } from "path";
 import type { StorybookConfig } from "@storybook/react-vite";
 
-function getAbsolutePath(value) {
+function getAbsolutePath(value: string) {
   return dirname(require.resolve(join(value, "package.json")));
 }
 
 const config: StorybookConfig = {
   stories: ["../../../packages/react/src/**/*.stories.tsx"],
+  staticDirs: ["../public"],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),

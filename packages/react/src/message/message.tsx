@@ -48,7 +48,7 @@ export const MessageTitle: OverridableComponent<object, HTMLParagraphElement> = 
     );
   },
 );
-MessageTitle.displayName = "MessageTitle";
+MessageTitle.displayName = "Message.Title";
 
 export const MessageDescription: OverridableComponent<object, HTMLParagraphElement> = forwardRef(
   ({ as: Component = "p", className, ...rest }, ref) => {
@@ -61,4 +61,4 @@ export const MessageDescription: OverridableComponent<object, HTMLParagraphEleme
     );
   },
 );
-MessageDescription.displayName = "MessageDescription";
+MessageDescription.displayName = "Message.Description";

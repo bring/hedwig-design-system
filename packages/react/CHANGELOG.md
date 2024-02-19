@@ -1,5 +1,130 @@
 # @postenbring/hedwig-react
 
+## 0.0.45
+
+### Patch Changes
+
+- 8605454: Add Fieldset, extract ErrorMessage and group form stuff
+- Updated dependencies [8605454]
+  - @postenbring/hedwig-css@0.0.41
+
+## 0.0.44
+
+### Patch Changes
+
+- c95d7a7: :memo: &lt;span&gt; instead of &lt;a&gt; as default tag on card arrow, as default is that the whole card is a link.
+
+## 0.0.43
+
+### Patch Changes
+
+- 374ec36: For Input, Select, Textarea. Pass className and style to the InputGroup, not the inner component. This what a consumer would expect. Also what everyone else does.
+
+## 0.0.42
+
+### Patch Changes
+
+- 63123e7: :recycle: wrap Input, Textarea and Select in a new common wrapper InputGroup
+- 6b8aadb: ## Accordion improvments
+
+  ### 💫 Animations
+
+  The open / close transitions are now animated. With just pure css 🎉
+
+  ### Remove `variant="single" | "multiple"` in favor of `open` & `onOpenChange`
+
+  I think a single accordion is a rare use case. In those cases it's easy enough to implement yourself, taking full control of the accordion
+
+  ### Rename `trigger` -> `header`
+
+  I saw that all the other systems called it this, so just renamed
+
+  ### Support `indent` prop
+
+  When you don't want left padding on the content. We have a case for this in `open-tracking`.
+
+- Updated dependencies [63123e7]
+- Updated dependencies [6b8aadb]
+- Updated dependencies [2cb7e81]
+  - @postenbring/hedwig-css@0.0.40
+
+## 0.0.41
+
+### Patch Changes
+
+- 0509d61: :memo: Update docs
+- Updated dependencies [0509d61]
+  - @postenbring/hedwig-css@0.0.39
+
+## 0.0.40
+
+### Patch Changes
+
+- f8466dc: :lipstick: Reset Card styles when wrapped as an `<a>` or a hedwig `<Link />`.
+- Updated dependencies [f8466dc]
+  - @postenbring/hedwig-css@0.0.38
+
+## 0.0.39
+
+### Patch Changes
+
+- 67638bf: :recycle: update component exports
+- 779c39d: :sparkles::construction: implement wysiwyg/prose/richtext/dynamic-content component. using `@extend` in css to re-use styles
+- Updated dependencies [779c39d]
+- Updated dependencies [b5328a0]
+- Updated dependencies [0e936c0]
+  - @postenbring/hedwig-css@0.0.37
+
+## 0.0.38
+
+### Patch Changes
+
+- a1f5a96: Accessibility adjustments on Card component
+- Updated dependencies [a1f5a96]
+  - @postenbring/hedwig-css@0.0.36
+
+## 0.0.37
+
+### Patch Changes
+
+- :technologist: make select variant optional, default to the default style
+- Updated dependencies
+  - @postenbring/hedwig-css@0.0.35
+
+## 0.0.36
+
+### Patch Changes
+
+- 1d0bfa4: :lipstick: update Input with fixed height `58px` to match figma sketches
+
+  support composing the tracking number search
+
+- Updated dependencies [1d0bfa4]
+  - @postenbring/hedwig-css@0.0.34
+
+## 0.0.35
+
+### Patch Changes
+
+- Updated dependencies [58996a7]
+  - @postenbring/hedwig-css@0.0.33
+
+## 0.0.34
+
+### Patch Changes
+
+- 9c7eafd: First version of `<Card/>` component.
+- 7346d02: :sparkles: container component in react
+- Updated dependencies [9c7eafd]
+  - @postenbring/hedwig-css@0.0.32
+
+## 0.0.33
+
+### Patch Changes
+
+- Updated dependencies [5b5676c]
+  - @postenbring/hedwig-css@0.0.31
+
 ## 0.0.32
 
 ### Patch Changes

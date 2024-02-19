@@ -5,6 +5,7 @@ Not ready to be used, api might drasticly change.
 ## Thoughts & Ideas
 
 - use `text` prefix instead of `typography` e.g.`hds-text-body-title`
+- use `typo` prefix instead of `typography` e.g.`hds-typo-body-title`
 
 ### Spacing
 
@@ -14,17 +15,33 @@ Not ready to be used, api might drasticly change.
 Maybe if we create some spacing utilty classes, they can be used instead?
 
 ```jsx
-class="hds-text-body-title hds-text-body-title--spacing"
+class="hds-typography-body-title hds-typography--spacing"
 
 // VS
 
-class="hds-text-bodt-title hds-spacing"
+class="hds-typography-body-title hds-spacing"
 ```
 
-## Insperation
+### Two types of spacing
+
+#### Articles
+
+Like on posten.no
+
+### Application / UI
+
+Seem like there are different spacing in use
+
+## Inspiration
 
 - https://storybook.designsystemet.no/?path=/docs/felles-typography--docs
 - https://aksel.nav.no/komponenter/core/typography#headingdemo-xlarge
-- https://spor.vy.no/komponenter/tekst
+- https://spor.vy.no/components/text
 - https://jokul.fremtind.no/komponenter/typography/
 - https://design.sparebank1.no/komponenter/typografi/
+- https://www.gjensidige.builders/docs/core/?path=/docs/packages-builders-components-text--about
+- https://storybook.eds.equinor.com/?path=/docs/typography-typography--docs
+
+### Global
+
+- https://mui.com/material-ui/react-typography/

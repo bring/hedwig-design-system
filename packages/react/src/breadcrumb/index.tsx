@@ -4,4 +4,6 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/breadcrumb.css";
 
-export * from "./breadcrumb";
+export { Breadcrumbs } from "./breadcrumb";
+
+export type * from "./breadcrumb";

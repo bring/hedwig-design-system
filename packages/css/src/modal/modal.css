@@ -1,59 +1,88 @@
+@import url("../_custom-media.css");
+
 .hds-modal {
-  /* Reset */
+  /* Reset `dialog` element border */
   border: none;
+  max-width: var(--hds-breakpoint-medium);
+
+  /* Make the dialog appear in the middle of the viewport where the user opened the modal */
+  position: fixed;
 
   &::backdrop {
-    /* Need to hardcode values in css for now.
-      https://stackoverflow.com/questions/58818299/css-variables-not-working-in-dialogbackdrop
+    /**
+     * Cannot use css variables in ::backdrop, need to hardcode values in css for now.
+     * https://stackoverflow.com/questions/58818299/css-variables-not-working-in-dialogbackdrop
+     *
+     * See
+     * --hds-micro-animation-duration-normal
+     * --hds-micro-animation-easing-out
      */
     background-color: rgba(0 0 0 / 40%);
-    animation: hds-modal-fade-in 0.3s cubic-bezier(0.45, 0.1, 0.65, 1); /* --hds-micro-animation-duration-normal */
+    animation: hds-modal-backdrop-fade-in 0.3s cubic-bezier(0, 0.45, 0.1, 1);
   }
 
   &[open] {
     animation: hds-modal-fade-in var(--hds-micro-animation-duration-normal)
-      var(--hds-micro-animation-easing-in);
+      var(--hds-micro-animation-easing-out);
   }
 
   /**
    * Size
    */
-  min-width: 100%;
-  max-width: 100%;
-  border-radius: 0;
-
-  @media (width >= 720px) {
-    min-width: 720px;
-    max-width: min(720px, calc(100% - 6px - 2em));
-
-    /* NOTE: Re-adding border radius.
-     * We actually get the border radius from .hds-box,
-     * but since we are resetting border radius above for small screens
-     * we need to re-add it here for larger screens.
-     */
-    border-radius: var(--hds-border-radius);
+  @media (--before-medium) {
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 0;
   }
 
-  /* Reset margin */
-  & .hds-modal__header {
-    margin: 0;
-  }
-
-  /* stylelint-disable-next-line no-duplicate-selectors -- It's ok */
-  & .hds-modal__header {
+  .hds-modal__header {
     font: var(--hds-typography-body-title);
 
-    /* Offset the close button, so text is not overlapping or right next to the button */
+    /* Make sure text is not overlapping or is right next to the close (x) button */
     padding-right: 16px;
+  }
+
+  .hds-modal__content {
+    margin-top: var(--hds-spacing-medium-2);
+  }
+
+  .hds-modal__footer {
+    margin-top: var(--hds-spacing-medium-2);
   }
 }
 
-@keyframes hds-modal-fade-in {
+/*
+ * When the modal is open we don't want the rest of the page to be scrollable
+ * Apply this class to the body when the modal is open
+ */
+.hds-modal-scroll-lock {
+  overflow: hidden;
+}
+
+/**
+ * Animation
+ */
+@keyframes hds-modal-backdrop-fade-in {
   0% {
     opacity: 0;
   }
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes hds-modal-fade-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, calc(5% + 4px), 0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: none;
   }
 }

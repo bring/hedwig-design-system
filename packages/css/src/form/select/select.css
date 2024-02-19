@@ -1,0 +1,13 @@
+.hds-select {
+  .hds-input-group__input-wrapper {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="black" d="m19.629 9.656-.668-.703c-.176-.176-.457-.176-.598 0L12 15.316 5.602 8.953c-.141-.176-.422-.176-.598 0l-.668.703c-.176.14-.176.422 0 .598l7.348 7.348a.405.405 0 0 0 .597 0l7.348-7.348c.176-.176.176-.457 0-.598Z"/></svg>');
+    background-size: 24px 24px;
+    background-position: calc(100% - var(--hds-spacing-small-4)) 50%;
+    background-repeat: no-repeat;
+  }
+
+  .hds-input-group__input {
+    appearance: none;
+    height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
+  }
+}

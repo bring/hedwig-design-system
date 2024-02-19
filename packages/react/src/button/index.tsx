@@ -4,4 +4,6 @@ import "@postenbring/hedwig-css/dist/body.css";
 
 import "@postenbring/hedwig-css/dist/button.css";
 
-export * from "./button";
+export { PrimaryButton, SecondaryButton } from "./button";
+
+export type * from "./button";
