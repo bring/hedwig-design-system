@@ -16,7 +16,7 @@
     "clean": "rm -rf .turbo node_modules dist"
   },
   "devDependencies": {
-    "@types/node": "20.11.5",
+    "@types/node": "20.11.19",
     "color2k": "2.0.3",
     "eslint": "^8.56.0",
     "eslint-config-custom": "*",
