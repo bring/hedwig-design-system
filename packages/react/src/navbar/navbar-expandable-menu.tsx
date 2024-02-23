@@ -1,4 +1,6 @@
-import React, { createContext, useContext, forwardRef, useState } from "react";
+import React, { createContext, useContext, forwardRef, useState, useRef, useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import type { ClassValue } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 import { CloseIcon, MenuIcon } from "./icons";
@@ -25,12 +27,52 @@ export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
 }
 NavbarExpandableMenu.displayName = "NavbarExpandableMenu";
 
+interface ButtonInterface {
+  className?: ClassValue;
+  open?: boolean;
+  innerRef?: React.RefObject<HTMLButtonElement>;
+  ref?: React.ForwardedRef<HTMLButtonElement>;
+  text: React.ReactNode;
+  title?: string;
+  toggleOpen?: () => void;
+  width?: number;
+}
+
+function RenderButton({
+  className,
+  innerRef,
+  open = false,
+  ref,
+  text,
+  title,
+  toggleOpen,
+  width,
+  ...rest
+}: ButtonInterface) {
+  const icon = open ? <CloseIcon /> : <MenuIcon />;
+  const style = width ? { width } : {};
+  return (
+    <button
+      className={clsx("hds-navbar__button", className)}
+      onClick={toggleOpen}
+      ref={ref || innerRef}
+      style={style}
+      title={title}
+      type="button"
+      {...rest}
+    >
+      {text} {icon}
+    </button>
+  );
+}
+
 /**
  * Trigger
  *
  * ## TODO
  * - [ ] Hide text when on mobile
- * - [ ] Open / Close icon
+ * - [X] Open / Close icon
+ * - [X] Make button have consistant width
  */
 
 export interface NavbarExpandableMenuTriggerProps
@@ -59,26 +101,81 @@ export const NavbarExpandableMenuTrigger = forwardRef<
     ref,
   ) => {
     const [open, toggleOpen] = useContext(navbarContext);
+    const [width, setWidth] = useState(0);
+    const measureButtonRef = useRef<HTMLButtonElement>(null);
 
-    const text = open ? whenOpenText : whenClosedText;
+    const text: React.ReactNode = open ? whenOpenText : whenClosedText;
     const title = open ? whenOpenHelperTitle : whenClosedHelperTitle;
-    const icon = open ? <CloseIcon /> : <MenuIcon />;
+
+    /**
+     *
+     * @param element - Button to measure
+     * @param callback - report the width back
+     */
+    const measureButton = (element: React.ReactNode, callback: (width: number) => void) => {
+      // Create an empty div to render the Button in
+      const container = document.createElement("div");
+      container.style.cssText = "display: inline-block; position: absolute; visibility: hidden";
+
+      // Attach the empty div inside the navigation section
+      const c = document.getElementsByClassName("hds-navbar__navigation")[0];
+      c.appendChild(container);
+
+      // Render the Button here
+      const root = createRoot(container as HTMLElement);
+      root.render(element);
+
+      /**
+       * Get the offsetWidth now that it is rendered
+       * Also clean up after us
+       */
+      const getWidth = () => {
+        callback(measureButtonRef.current?.offsetWidth || 0);
+        root.unmount();
+        c.removeChild(container);
+      };
+      // This is instead of the callback that used to be on ReactDOM.render()
+      setTimeout(getWidth, 0);
+    };
+
+    useEffect(() => {
+      measureButton(
+        <RenderButton
+          className={(className ? className : "") as ClassValue}
+          innerRef={measureButtonRef}
+          text={whenClosedText}
+          title={title}
+          {...rest}
+        />,
+        (closedWidth: number) => {
+          measureButton(
+            <RenderButton
+              className={(className ? className : "") as ClassValue}
+              innerRef={measureButtonRef}
+              open
+              text={whenOpenText}
+              title={title}
+              {...rest}
+            />,
+            (openWidth: number) => {
+              setWidth(Math.max(openWidth, closedWidth));
+            },
+          );
+        },
+      );
+    }, [className, rest, title, whenClosedText, whenOpenText]);
 
     return (
-      <button
-        className={clsx(
-          "hds-navbar__expandable-menu-trigger",
-          "hds-navbar__button",
-          className as undefined,
-        )}
-        onClick={toggleOpen}
+      <RenderButton
+        className={(className ? className : "") as ClassValue}
+        open={open}
         ref={ref}
+        text={text as string}
         title={title}
-        type="button"
+        toggleOpen={toggleOpen}
+        width={width}
         {...rest}
-      >
-        {text} {icon}
-      </button>
+      />
     );
   },
 );

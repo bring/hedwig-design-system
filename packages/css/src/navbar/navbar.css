@@ -20,10 +20,6 @@
   /**
    * Expandable 
    */
-  .hds-navbar__expandable-menu-trigger {
-    color: red;
-  }
-
   .hds-navbar__expandable-menu-content {
     transform: rotateX(0deg);
     transform-origin: top;
