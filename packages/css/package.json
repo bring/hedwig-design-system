@@ -25,7 +25,7 @@
     "browserslist": "4.23.0",
     "chokidar-cli": "3.0.0",
     "globby": "14.0.1",
-    "lightningcss": "1.23.0",
+    "lightningcss": "1.24.0",
     "sanitize.css": "^13.0.0",
     "stylelint": "16.2.1",
     "stylelint-config-standard": "36.0.0",
