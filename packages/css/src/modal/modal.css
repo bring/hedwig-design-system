@@ -3,7 +3,7 @@
 .hds-modal {
   /* Reset `dialog` element border */
   border: none;
-  max-width: var(--hds-breakpoint-medium);
+  max-width: var(--hds-breakpoint-small);
 
   /* Make the dialog appear in the middle of the viewport where the user opened the modal */
   position: fixed;
@@ -26,13 +26,10 @@
       var(--hds-micro-animation-easing-out);
   }
 
-  /**
-   * Size
-   */
-  @media (--before-medium) {
-    min-width: 100%;
-    max-width: 100%;
-    border-radius: 0;
+  /* small (460px) + 8px + 8px = 476px */
+  @media (width < 476px) {
+    margin-left: var(--hds-spacing-small-2);
+    margin-right: var(--hds-spacing-small-2);
   }
 
   .hds-modal__header {
