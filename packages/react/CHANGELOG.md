@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.46
+
+### Patch Changes
+
+- 6af13de: :sparkles: expose Prose component
+
 ## 0.0.45
 
 ### Patch Changes
