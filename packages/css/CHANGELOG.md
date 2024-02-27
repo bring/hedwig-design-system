@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.42
+
+### Patch Changes
+
+- f5230a9: :iphone: set max width of modal to small and add some horisontal spacing when small
+
 ## 0.0.41
 
 ### Patch Changes
