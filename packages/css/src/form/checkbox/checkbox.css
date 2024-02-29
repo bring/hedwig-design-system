@@ -1,6 +1,6 @@
 .hds-checkbox {
   display: block;
-  height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
+  min-height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
   padding: var(--hds-spacing-small-4) var(--hds-spacing-small-4) var(--hds-spacing-small-4)
     calc(var(--hds-spacing-small-4) + 36px);
   border-radius: var(--hds-border-radius);

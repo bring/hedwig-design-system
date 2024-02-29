@@ -48,3 +48,29 @@ export const BoundedCheckbox: Story = {
     </div>
   ),
 };
+
+export const DetailedContentCheckbox: Story = {
+  name: "Checkbox with detailed content",
+  render: (_props) => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "var(--hds-spacing-small-4)",
+      }}
+    >
+      <Checkbox>
+        <div>
+          <p style={{ fontWeight: 500, paddingBottom: "12px" }}>Check this box</p>
+          <p>Detailed description if needed</p>
+        </div>
+      </Checkbox>
+      <Checkbox variant="bounding-box">
+        <div>
+          <p style={{ fontWeight: 500, paddingBottom: "12px" }}>Check this box</p>
+          <p>Detailed description if needed</p>
+        </div>
+      </Checkbox>
+    </div>
+  ),
+};
