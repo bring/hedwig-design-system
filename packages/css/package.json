@@ -1,6 +1,6 @@
 {
   "name": "@postenbring/hedwig-css",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "",
   "scripts": {
     "build": "pnpm run --sequential /^build:.*/",
@@ -22,12 +22,12 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "browserslist": "4.22.2",
+    "browserslist": "4.23.0",
     "chokidar-cli": "3.0.0",
-    "globby": "14.0.0",
-    "lightningcss": "1.23.0",
+    "globby": "14.0.1",
+    "lightningcss": "1.24.0",
     "sanitize.css": "^13.0.0",
-    "stylelint": "16.1.0",
+    "stylelint": "16.2.1",
     "stylelint-config-standard": "36.0.0",
     "stylelint-value-no-unknown-custom-properties": "6.0.1",
     "wait-on": "^7.2.0"

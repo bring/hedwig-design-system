@@ -43,11 +43,11 @@ export const Default: Story = {
         <Navbar.Button as="a" href="https://www.posten.no/" icon={globeIcon} title="Link">
           English
         </Navbar.Button>
-        <Navbar.Button icon={userIcon} title="Link">
+        <Navbar.Button icon={userIcon} title="Button">
           Search
         </Navbar.Button>
         <Navbar.ExpandableMenu>
-          <Navbar.ExpandableMenu.Trigger whenClosedText="Meny" whenOpenText="Close me" />
+          <Navbar.ExpandableMenu.Trigger whenClosedText="Meny" whenOpenText="Close" />
           <Navbar.ExpandableMenu.Content>Menu contents</Navbar.ExpandableMenu.Content>
         </Navbar.ExpandableMenu>
       </Navbar.Navigation>

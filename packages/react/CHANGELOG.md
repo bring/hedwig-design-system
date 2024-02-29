@@ -1,5 +1,18 @@
 # @postenbring/hedwig-react
 
+## 0.0.47
+
+### Patch Changes
+
+- Updated dependencies [f5230a9]
+  - @postenbring/hedwig-css@0.0.42
+
+## 0.0.46
+
+### Patch Changes
+
+- 6af13de: :sparkles: expose Prose component
+
 ## 0.0.45
 
 ### Patch Changes

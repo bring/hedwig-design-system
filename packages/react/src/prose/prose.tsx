@@ -3,7 +3,7 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 
 export interface ProseProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   size?: "default" | "small";
   darkmode?: boolean;
 }
