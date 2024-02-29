@@ -147,11 +147,8 @@ export default function KitchenSink() {
               padding: "var(--hds-spacing-medium-2)",
             }}
           >
-            <Checkbox variant="bounding-box">
-              <div>
-                <p style={{ fontWeight: 500, paddingBottom: "12px" }}>Check this box</p>
-                <p>Detailed description if needed</p>
-              </div>
+            <Checkbox title="Check this box" variant="bounding-box">
+              Detailed description if needed
             </Checkbox>
           </div>
           <h2>Modal</h2>

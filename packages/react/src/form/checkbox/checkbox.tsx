@@ -5,10 +5,11 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> {
   variant?: "plain" | "bounding-box";
   hasError?: boolean;
+  title?: string;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ variant = "plain", hasError, children, className, ...rest }, ref) => {
+  ({ variant = "plain", hasError, title, children, className, ...rest }, ref) => {
     return (
       <label
         className={clsx(
@@ -22,6 +23,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       >
         <input {...rest} ref={ref} type="checkbox" />
         <span className="hds-checkbox--checkmark" />
+        {title ? <p className="hds-checkbox--title">{title}</p> : null}
         {children}
       </label>
     );

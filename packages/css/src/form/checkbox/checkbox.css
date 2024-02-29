@@ -12,6 +12,11 @@
     cursor: pointer;
   }
 
+  .hds-checkbox--title {
+    font-weight: var(--hds-font-weight-body-title);
+    padding-bottom: var(--hds-spacing-small-3);
+  }
+
   /**
   * Hide the browser default checkbox
   */
