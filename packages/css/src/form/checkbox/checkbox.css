@@ -1,0 +1,114 @@
+.hds-checkbox {
+  display: block;
+  min-height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
+  padding: var(--hds-spacing-small-4) var(--hds-spacing-small-4) var(--hds-spacing-small-4)
+    calc(var(--hds-spacing-small-4) + 36px);
+  border-radius: var(--hds-border-radius);
+  font: var(--hds-typography-body-small);
+  position: relative;
+  cursor: pointer;
+
+  * {
+    cursor: pointer;
+  }
+
+  .hds-checkbox--title {
+    font-weight: var(--hds-font-weight-body-title);
+    padding-bottom: var(--hds-spacing-small-3);
+  }
+
+  /**
+  * Hide the browser default checkbox
+  */
+  > input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  /**
+  * Create a custom checkbox
+  */
+  .hds-checkbox--checkmark {
+    margin: var(--hds-spacing-small-1);
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    height: 16px;
+    width: 16px;
+    border: solid 2px var(--hds-colors-darker);
+  }
+
+  > input[type="checkbox"]:checked ~ .hds-checkbox--checkmark::after {
+    display: block;
+  }
+
+  .hds-checkbox--checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--hds-colors-dark);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /**
+  * Variant bounding-box and state error
+  */
+  &.hds-checkbox--bounding-box {
+    background-color: var(--hds-colors-lighter);
+
+    &.hds-checkbox--error {
+      border: solid 1px var(--hds-ui-colors-warning-yellow);
+    }
+  }
+
+  &.hds-checkbox--error {
+    > .hds-checkbox--checkmark,
+    .hds-checkbox--checkmark::after {
+      border-color: var(--hds-ui-colors-warning-yellow);
+    }
+  }
+
+  /**
+  * State: Disabled
+  */
+  input[type="checkbox"]:disabled {
+    ~ .hds-checkbox--checkmark,
+    ~ .hds-checkbox--checkmark::after {
+      border-color: var(--hds-ui-colors-grey);
+      cursor: default;
+    }
+  }
+
+  &.hds-checkbox:has(input:disabled) {
+    cursor: default;
+    color: var(--hds-ui-colors-dark-grey);
+
+    &.hds-checkbox--bounding-box {
+      background-color: var(--hds-ui-colors-light-grey-fill);
+    }
+  }
+
+  /* Focus effect */
+  &:focus-within {
+    &.hds-checkbox--bounding-box {
+      outline: 2px solid var(--hds-colors-dark);
+      outline-offset: 4px;
+
+      > .hds-checkbox--checkmark {
+        outline: none;
+      }
+    }
+
+    > .hds-checkbox--checkmark {
+      outline: 2px solid var(--hds-colors-dark);
+      outline-offset: 4px;
+    }
+  }
+}
