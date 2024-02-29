@@ -83,10 +83,10 @@ export const DetailedContentRadiobutton: Story = {
         gap: "var(--hds-spacing-small-4)",
       }}
     >
-      <Radiobutton name="group4" title="Check this box">
+      <Radiobutton name="group4" title="Option 1">
         Detailed description if needed
       </Radiobutton>
-      <Radiobutton hasError name="group4" title="Check box with error">
+      <Radiobutton hasError name="group4" title="Option 2">
         Detailed description if needed
       </Radiobutton>
     </div>
@@ -103,10 +103,10 @@ export const DetailedContentRadiobuttonWithBoundingBox: Story = {
         gap: "var(--hds-spacing-small-4)",
       }}
     >
-      <Radiobutton name="group5" title="Check this box" variant="bounding-box">
+      <Radiobutton name="group5" title="Option 1" variant="bounding-box">
         Detailed description if needed
       </Radiobutton>
-      <Radiobutton hasError name="group5" title="Check box with error" variant="bounding-box">
+      <Radiobutton hasError name="group5" title="Option 2" variant="bounding-box">
         Detailed description if needed
       </Radiobutton>
     </div>
