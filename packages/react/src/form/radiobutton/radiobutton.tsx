@@ -23,8 +23,8 @@ export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
         )}
       >
         <input {...rest} ref={ref} type="radio" />
-        <span className="hds-radiobutton--checkmark" />
-        {title ? <p className="hds-radiobutton--title">{title}</p> : null}
+        <span className="hds-radiobutton__checkmark" />
+        {title ? <p className="hds-radiobutton__title">{title}</p> : null}
         {children}
       </label>
     );
