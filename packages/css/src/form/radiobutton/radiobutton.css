@@ -8,6 +8,14 @@
   position: relative;
   cursor: pointer;
 
+  /**
+   * To avoid unexpected behavior of focus when clicking the radio button text
+   */
+  user-select: none;
+  user-select: none;
+  user-select: none;
+  user-select: none;
+
   * {
     cursor: pointer;
   }
@@ -109,18 +117,7 @@
 
   /* Focus effect */
   &:focus-within {
-    &.hds-radiobutton--bounding-box {
-      outline: 2px solid var(--hds-colors-dark);
-      outline-offset: 4px;
-
-      > .hds-radiobutton__checkmark {
-        outline: none;
-      }
-    }
-
-    > .hds-radiobutton__checkmark {
-      outline: 2px solid var(--hds-colors-dark);
-      outline-offset: 4px;
-    }
+    outline: 2px solid var(--hds-colors-dark);
+    outline-offset: 2px;
   }
 }
