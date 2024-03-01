@@ -21,7 +21,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           className as undefined,
         )}
       >
-        <input {...rest} ref={ref} type="checkbox" />
+        <input {...rest} aria-invalid={hasError || undefined} ref={ref} type="checkbox" />
         <span className="hds-checkbox__checkmark" />
         {title ? <p className="hds-checkbox__title">{title}</p> : null}
         {children}
