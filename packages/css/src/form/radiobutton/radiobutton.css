@@ -1,4 +1,4 @@
-.hds-checkbox {
+.hds-radiobutton {
   display: block;
   min-height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
   padding: var(--hds-spacing-small-4) var(--hds-spacing-small-4) var(--hds-spacing-small-4)
@@ -12,15 +12,15 @@
     cursor: pointer;
   }
 
-  .hds-checkbox__title {
+  .hds-radiobutton__title {
     font-weight: var(--hds-font-weight-body-title);
     padding-bottom: var(--hds-spacing-small-3);
   }
 
   /**
-  * Hide the browser default checkbox
+  * Hide the browser default radiobutton
   */
-  > input[type="checkbox"] {
+  > input[type="radio"] {
     position: absolute;
     opacity: 0;
     height: 0;
@@ -28,9 +28,9 @@
   }
 
   /**
-  * Create a custom checkbox
+  * Create a custom radiobutton
   */
-  .hds-checkbox__checkmark {
+  .hds-radiobutton__checkmark {
     margin: var(--hds-spacing-small-1);
     position: absolute;
     top: 16px;
@@ -38,75 +38,87 @@
     height: 16px;
     width: 16px;
     border: solid 2px var(--hds-colors-darker);
+    border-radius: 50%;
   }
 
-  > input[type="checkbox"]:checked ~ .hds-checkbox__checkmark::after {
+  > input[type="radio"]:checked ~ .hds-radiobutton__checkmark::after {
     display: block;
   }
 
-  .hds-checkbox__checkmark::after {
+  .hds-radiobutton__checkmark::after {
     content: "";
     position: absolute;
     display: none;
-    left: 4px;
-    top: 1px;
-    width: 4px;
-    height: 8px;
-    border: solid var(--hds-colors-dark);
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
+    top: 3px;
+    left: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--hds-colors-signature);
   }
 
   /**
   * Variant bounding-box and state error
   */
-  &.hds-checkbox--bounding-box {
+  &.hds-radiobutton--bounding-box {
     background-color: var(--hds-colors-lighter);
 
-    &.hds-checkbox--error {
+    > .hds-radiobutton__checkmark::after {
+      background: var(--hds-colors-dark);
+    }
+
+    &.hds-radiobutton--error {
       border: solid 1px var(--hds-ui-colors-warning-yellow);
     }
   }
 
-  &.hds-checkbox--error {
-    > .hds-checkbox__checkmark,
-    .hds-checkbox__checkmark::after {
+  &.hds-radiobutton--error {
+    > .hds-radiobutton__checkmark {
       border-color: var(--hds-ui-colors-warning-yellow);
+    }
+
+    .hds-radiobutton__checkmark::after {
+      background: var(--hds-ui-colors-warning-yellow);
     }
   }
 
   /**
   * State: Disabled
   */
-  input[type="checkbox"]:disabled {
-    ~ .hds-checkbox__checkmark,
-    ~ .hds-checkbox__checkmark::after {
+  input[type="radio"]:disabled {
+    ~ .hds-radiobutton__checkmark,
+    ~ .hds-radiobutton__checkmark::after {
       border-color: var(--hds-ui-colors-grey);
+      cursor: default;
+    }
+
+    ~ .hds-radiobutton__checkmark::after {
+      background: var(--hds-ui-colors-grey);
       cursor: default;
     }
   }
 
-  &.hds-checkbox:has(input:disabled) {
+  &.hds-radiobutton:has(input:disabled) {
     cursor: default;
     color: var(--hds-ui-colors-dark-grey);
 
-    &.hds-checkbox--bounding-box {
+    &.hds-radiobutton--bounding-box {
       background-color: var(--hds-ui-colors-light-grey-fill);
     }
   }
 
   /* Focus effect */
   &:focus-within {
-    &.hds-checkbox--bounding-box {
+    &.hds-radiobutton--bounding-box {
       outline: 2px solid var(--hds-colors-dark);
       outline-offset: 4px;
 
-      > .hds-checkbox__checkmark {
+      > .hds-radiobutton__checkmark {
         outline: none;
       }
     }
 
-    > .hds-checkbox__checkmark {
+    > .hds-radiobutton__checkmark {
       outline: 2px solid var(--hds-colors-dark);
       outline-offset: 4px;
     }

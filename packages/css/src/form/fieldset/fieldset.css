@@ -24,6 +24,13 @@
   }
 
   & .hds-fieldset__input-wrapper {
-    opacity: 1; /* TODO do we need wrapper? Does it need styling? Adding this to make a valid, existing class for clsx() */
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--hds-spacing-small-1);
+
+    > .hds-radiobutton--bounding-box,
+    > .hds-checkbox--bounding-box {
+      margin-bottom: var(--hds-spacing-small-1);
+    }
   }
 }
