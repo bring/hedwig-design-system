@@ -12,9 +12,6 @@
    * To avoid unexpected behavior of focus when clicking the checkbox text
    */
   user-select: none;
-  user-select: none;
-  user-select: none;
-  user-select: none;
 
   * {
     cursor: pointer;
