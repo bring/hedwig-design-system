@@ -2,7 +2,7 @@ import "@postenbring/hedwig-css/dist/fonts.css";
 import "@postenbring/hedwig-css/dist/tokens.css";
 import "@postenbring/hedwig-css/dist/body.css";
 
-import "@postenbring/hedwig-css/dist/prose.css";
+import "@postenbring/hedwig-css/dist/styled-html.css";
 
-export { Prose } from "./prose";
-export type * from "./prose";
+export { StyledHtml } from "./styled-html";
+export type * from "./styled-html";

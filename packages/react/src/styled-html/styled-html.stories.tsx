@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Prose } from ".";
+import { StyledHtml } from ".";
 
-const meta: Meta<typeof Prose> = {
-  title: "🚧 Prose",
-  component: Prose,
+const meta: Meta<typeof StyledHtml> = {
+  title: "Styled Html",
+  component: StyledHtml,
   args: {
     children: (
       <>
@@ -47,7 +47,7 @@ const meta: Meta<typeof Prose> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Prose>;
+type Story = StoryObj<typeof StyledHtml>;
 export const Default: Story = {
   args: {},
 };
