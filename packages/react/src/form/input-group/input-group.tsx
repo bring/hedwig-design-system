@@ -21,9 +21,6 @@ export interface InputGroupProps {
   disabled?: boolean;
   readOnly?: boolean;
   children: ReactNode;
-
-  // We are considering to have aria-live="polite" on field error messages by default.
-  _unstableAriaLiveOnErrorMessage?: boolean;
 }
 
 export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function InputGroup(
@@ -38,7 +35,6 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
     disabled,
     readOnly,
     children,
-    _unstableAriaLiveOnErrorMessage = false,
     ...rest
   },
   ref,
@@ -90,12 +86,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
       >
         {renderInput()}
       </div>
-      <ErrorMessage
-        _unstableAriaLiveOnErrorMessage={_unstableAriaLiveOnErrorMessage}
-        id={errorMessageId}
-      >
-        {errorMessage}
-      </ErrorMessage>
+      <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage>
     </div>
   );
 });

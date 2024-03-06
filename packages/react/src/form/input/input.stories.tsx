@@ -193,14 +193,9 @@ export const FormWithErrorsOnSubmit: Story = {
         style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-4)" }}
       >
         <p>Fields without input will give an error</p>
-        <Input _unstableAriaLiveOnErrorMessage errorMessage={errors.One} label="One" name="One" />
-        <Input _unstableAriaLiveOnErrorMessage errorMessage={errors.Two} label="Two" name="Two" />
-        <Input
-          _unstableAriaLiveOnErrorMessage
-          errorMessage={errors.Three}
-          label="Three"
-          name="Three"
-        />
+        <Input errorMessage={errors.One} label="One" name="One" />
+        <Input errorMessage={errors.Two} label="Two" name="Two" />
+        <Input errorMessage={errors.Three} label="Three" name="Three" />
         <div
           style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-1)" }}
         >
