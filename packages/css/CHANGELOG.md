@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.43
+
+### Patch Changes
+
+- b350cc2: Remove Container margin 0 top and bottom
+
 ## 0.0.42
 
 ### Patch Changes
