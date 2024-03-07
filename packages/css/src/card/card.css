@@ -16,6 +16,10 @@
   &:hover {
     box-shadow: 0 1px 3px 0 rgba(0 0 0 / 12%);
 
+    .hds-card__body-action-arrow {
+      transform: translateX(6px);
+    }
+
     &::after {
       opacity: 1;
     }
@@ -59,6 +63,17 @@
     font-size: var(--hds-font-size-h2-min);
     font-weight: var(--hds-font-weight-h3);
     line-height: var(--hds-line-height-h2-max);
+    color: var(--hds-ui-colors-black);
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
   }
 
   .hds-card__body-description {
@@ -89,5 +104,8 @@
     width: 20px;
     height: 20px;
     border-bottom: none;
+    transform: translateX(0);
+    transition: transform var(--hds-micro-animation-duration-normal)
+      var(--hds-micro-animation-easing-normal);
   }
 }
