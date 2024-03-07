@@ -19,7 +19,6 @@ export const Default: Story = {
   },
   argTypes: {
     legendProps: { if: { arg: "needThisToHidePropInStorybook", exists: true } },
-    _unstableAriaLiveOnErrorMessage: { if: { arg: "needThisToHidePropInStorybook", exists: true } },
   },
   render: (props) => (
     <Fieldset {...props}>
