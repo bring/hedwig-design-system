@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { PrimaryButton } from "../button";
 import { Link } from "../link";
 import { Message } from "../message";
-import { Prose } from "../prose";
+import { StyledHtml } from "../styled-html";
 import { Modal } from ".";
 
 const meta: Meta<typeof Modal> = {
@@ -54,14 +54,14 @@ export const ShareParcelModal = {
         <Modal ref={modalRef} {...args} closeOnBackdropClick open={open}>
           <Modal.Header>Legg til pakken</Modal.Header>
           <Modal.Content>
-            <Prose>
+            <StyledHtml>
               For å kunne hente pakken, må du legge den til i appen fra mobilen din.
               <br />
               <br />
               <strong>Viktig!</strong>
               <br />
               Appen må allerede være innstallert på mobilen før du kan legge den til
-            </Prose>
+            </StyledHtml>
           </Modal.Content>
           <Modal.Footer>
             <PrimaryButton fullWidth="mobile">Legg til pakken i Posten-appen </PrimaryButton>
@@ -110,7 +110,7 @@ export const AsAReadMore: Story = {
         <Modal ref={modalRef} {...args}>
           <Modal.Header>Kunne ikke leveres hjem til deg</Modal.Header>
 
-          <Modal.Content as={Prose}>
+          <Modal.Content as={StyledHtml}>
             <p>
               Noen ganger kan vi ikke levere pakken til postkassen din, eller utenfor døren. Det kan
               være ulike grunner til dette, for eksempel:

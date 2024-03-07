@@ -2,7 +2,8 @@
 
 .hds-container {
   display: block;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   padding: 0 var(--hds-spacing-small-4);
   width: 100%;
 

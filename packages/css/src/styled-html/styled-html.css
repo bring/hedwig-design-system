@@ -1,6 +1,6 @@
 @import url("../_custom-media.css");
 
-.hds-prose {
+.hds-styled-html {
   /* Headings
    * h1-h6 gets styled globally in `body.css`    
    */
@@ -118,7 +118,7 @@
    */
 
   /* Small version */
-  &.hds-prose--small {
+  &.hds-styled-html--small {
     & p,
     & li,
     & a {
@@ -140,7 +140,7 @@
   }
 
   /* 🚧 Dark mode */
-  &.hds-prose--darkmode {
+  &.hds-styled-html--darkmode {
     /* TODO: Do we want the background to be set? */
 
     /* background-color: var(--hds-dark-mode-colors-obsidian); */
