@@ -245,9 +245,9 @@ function CardsExample() {
                 Article 2
               </Card.Body.Header.Title>
             </Card.Body.Header>
-            <Card.Body.Description>
+            <Card.Body.Descriptions>
               In this example, only the arrow below is a link.
-            </Card.Body.Description>
+            </Card.Body.Descriptions>
             <Card.Body.Action.Arrow />
           </Card.Body>
         </Card>
