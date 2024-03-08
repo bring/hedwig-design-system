@@ -81,12 +81,6 @@ export const TitleOnly: Story = {
   },
 };
 
-export const DescriptionOnly: Story = {
-  args: {
-    children: <Message.Description>Message description</Message.Description>,
-  },
-};
-
 export const LongDescriptionOnly: Story = {
   args: {
     children: (
