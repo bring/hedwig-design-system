@@ -52,7 +52,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
     return cloneElement<InputProps>(input, {
       "aria-describedby": errorMessage ? errorMessageId : undefined,
       "aria-invalid": errorMessage ? true : undefined,
-      id: id || inputId,
+      id: id ?? inputId,
       ...input.props,
       className: clsx("hds-input-group__input", input.props.className as undefined),
     });
@@ -75,7 +75,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
       <label
         className={clsx("hds-input-group__label", labelClassName as undefined)}
         {...labelProps}
-        htmlFor={id || inputId}
+        htmlFor={id ?? inputId}
       >
         {label}
       </label>
