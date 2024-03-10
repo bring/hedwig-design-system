@@ -8,16 +8,16 @@ type Story = StoryObj<typeof LinkList>;
 const linkListItems = () => (
   <>
     <li>
-      <Link href="https://hedwig.posten.no">Link somwhere</Link>
+      <Link href="https://hedwig.posten.no">Link somewhere</Link>
     </li>
     <li>
       <Link href="https://hedwig.posten.no" target="_blank">
-        Link somwhere
+        Link somewhere
       </Link>
     </li>
     <li>
       <Link href="https://hedwig.posten.no" target="_self">
-        Link somwhere
+        Link somewhere
       </Link>
     </li>
   </>
