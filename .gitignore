@@ -17,3 +17,4 @@ storybook-static/
 .parcel-cache/
 .idea/
 .stylelintcache
+**/tsconfig.tsbuildinfo

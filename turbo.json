@@ -5,8 +5,12 @@
       "outputs": ["dist/**", "tokens-output/**", "storybook-static/**"],
       "dependsOn": ["^build"]
     },
-    "lint": {},
-    "typecheck": {},
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
     "test": {
       "dependsOn": ["^build", "lint", "typecheck"]
     },
