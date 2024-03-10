@@ -23,7 +23,7 @@ export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
         )}
       >
         <input {...rest} ref={ref} type="radio" />
-        <span className="hds-radiobutton__checkmark" />
+        <span aria-hidden className="hds-radiobutton__checkmark" />
         {title ? <p className="hds-radiobutton__title">{title}</p> : null}
         {children}
       </label>
