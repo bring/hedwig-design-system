@@ -201,7 +201,7 @@ export const FormWithErrorsOnSubmit: Story = {
         >
           <PrimaryButton type="submit">Submit</PrimaryButton>
           <SecondaryButton
-            fill="outlined"
+            fill="outline"
             onClick={() => {
               setErrors({});
             }}

@@ -195,7 +195,7 @@ function ModalExample() {
         </p>
         <div style={{ display: "flex", gap: 16 }}>
           <PrimaryButton>Main action</PrimaryButton>
-          <PrimaryButton fill="outlined" onClick={() => modalRef.current?.close()}>
+          <PrimaryButton fill="outline" onClick={() => modalRef.current?.close()}>
             Cancel
           </PrimaryButton>
         </div>

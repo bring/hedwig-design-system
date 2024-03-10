@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import type { OverridableComponent } from "../utils";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonPropsInternal extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * The height, font size and padding of the button
    */
@@ -15,17 +15,28 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   fullWidth?: boolean | "mobile";
 
   /**
-   * The background of the button.
-   */
-  fill?: "contained" | "outlined";
-
-  /**
    * Use an icon inside the button
    */
   icon?: React.ReactNode;
 
   children?: React.ReactNode;
 }
+
+export type ButtonProps = ButtonPropsInternal &
+  (
+    | {
+        /**
+         * The background fill of the button
+         */
+        fill?: "contained" | "outline";
+      }
+    | {
+        /**
+         * @deprecated use `fill='outline'` instead
+         */
+        fill?: "outlined";
+      }
+  );
 
 export const BaseButton: OverridableComponent<
   ButtonProps & { variant: "primary" | "secondary" },
@@ -45,6 +56,12 @@ export const BaseButton: OverridableComponent<
     },
     ref,
   ) => {
+    // TODO: Remove deprecated fill value name at some point
+    // Deprecated at 10. march 2024
+    if (fill === "outlined") {
+      // eslint-disable-next-line no-console -- Deprecation warning
+      console.warn("The `fill` value `outlined` is deprecated, use `fill='outline'` instead");
+    }
     return (
       <Component
         className={clsx(
@@ -52,8 +69,8 @@ export const BaseButton: OverridableComponent<
           `hds-button--${size}`,
           {
             [`hds-button--${variant}`]: fill === "contained",
-            [`hds-button--outline-${variant}`]: fill === "outlined",
-            "hds-button--full": fullWidth === true,
+            [`hds-button--outline-${variant}`]: fill === "outline" || fill === "outlined",
+            "hds-button--full": fullWidth,
             "hds-button--mobile-full": fullWidth === "mobile",
             "hds-button--icon-only": icon && !children,
           },
