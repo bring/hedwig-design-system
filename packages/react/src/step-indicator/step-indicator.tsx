@@ -3,7 +3,7 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 type TitleProps =
   | {
       /**
-       * Optional title of the current step to be shown underneath the step indicator
+       * Optional title of the active step to be shown underneath the step indicator
        *
        * Use `titleAs` to set the correct heading level
        */
@@ -17,9 +17,9 @@ type TitleProps =
 
 interface StepIndicatorProps extends React.HTMLAttributes<HTMLDivElement> {
   /*
-   * 1-indexed number of the current step
+   * 1-indexed number of the active step
    */
-  currentStep: number;
+  activeStep: number;
 
   /**
    * 1-indexed number of steps
@@ -46,10 +46,10 @@ interface StepIndicatorProps extends React.HTMLAttributes<HTMLDivElement> {
 /**
  * Indicate a step in a process.
  *
- * It does not handle step content or navigation, only the visual indication of the current step.
+ * It does not handle step content or navigation, only the visual indication of the active step.
  */
 export function StepIndicator({
-  currentStep,
+  activeStep,
   totalSteps,
   className,
   leftLabel,
@@ -64,7 +64,7 @@ export function StepIndicator({
       <div className={clsx("hds-step-indicator__header")}>
         <span className={clsx("hds-step-indicator__left-label")}>{leftLabel}</span>
         <span>
-          {rightLabel ?? stepLabelTranslations[rightLabelLang ?? "en"](currentStep, totalSteps)}
+          {rightLabel ?? stepLabelTranslations[rightLabelLang ?? "en"](activeStep, totalSteps)}
         </span>
       </div>
 
@@ -72,7 +72,7 @@ export function StepIndicator({
         {Array.from({ length: totalSteps }, (_, i) => (
           <div
             className={clsx("hds-step-indicator__step")}
-            data-state={getStepState(i + 1, currentStep)}
+            data-state={getStepState(i + 1, activeStep)}
             key={i}
           />
         ))}
@@ -91,23 +91,23 @@ export function StepIndicator({
  */
 const stepLabelTranslations: Record<
   "no" | "en" | "da" | "sv",
-  (currentStep: number, totalSteps: number) => string
+  (activeStep: number, totalSteps: number) => string
 > = {
-  no: (currentStep: number, totalSteps: number) => `steg ${currentStep} av ${totalSteps}`,
-  en: (currentStep: number, totalSteps: number) => `step ${currentStep} of ${totalSteps}`,
-  da: (currentStep: number, totalSteps: number) => `trin ${currentStep} af ${totalSteps}`,
-  sv: (currentStep: number, totalSteps: number) => `steg ${currentStep} av ${totalSteps}`,
+  no: (activeStep: number, totalSteps: number) => `steg ${activeStep} av ${totalSteps}`,
+  en: (activeStep: number, totalSteps: number) => `step ${activeStep} of ${totalSteps}`,
+  da: (activeStep: number, totalSteps: number) => `trin ${activeStep} af ${totalSteps}`,
+  sv: (activeStep: number, totalSteps: number) => `steg ${activeStep} av ${totalSteps}`,
 };
 
 /**
  * Determine the state of a step.
  * 1-indexed
  */
-function getStepState(renderedStep: number, currentStep: number) {
-  if (renderedStep < currentStep) {
+function getStepState(renderedStep: number, activeStep: number) {
+  if (renderedStep < activeStep) {
     return "previous";
   }
-  if (renderedStep === currentStep) {
+  if (renderedStep === activeStep) {
     return "active";
   }
   return "next";

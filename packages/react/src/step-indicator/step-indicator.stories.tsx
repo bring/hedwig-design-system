@@ -16,13 +16,13 @@ export const Default: Story = {
   args: {
     leftLabel: "Progress name",
     totalSteps: 5,
-    currentStep: 2,
+    activeStep: 2,
   },
 };
 
 export const TitleUnderneath: Story = {
   args: {
-    currentStep: 2,
+    activeStep: 2,
     leftLabel: "Pakke til utlandet",
     rightLabelLang: "no",
     totalSteps: 5,
@@ -33,7 +33,7 @@ export const TitleUnderneath: Story = {
 
 export const WithBadgeInLabel: Story = {
   args: {
-    currentStep: 2,
+    activeStep: 2,
     leftLabel: (
       <>
         Norgespakke™ liten
