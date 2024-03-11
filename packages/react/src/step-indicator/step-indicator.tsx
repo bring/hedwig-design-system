@@ -54,7 +54,7 @@ export function StepIndicator({
   className,
   leftLabel,
   rightLabel,
-  rightLabelLang,
+  rightLabelLang = "en",
   title,
   titleAs: TitleComponent,
   ...rest
@@ -63,8 +63,8 @@ export function StepIndicator({
     <div className={clsx("hds-step-indicator", className as undefined)} {...rest}>
       <div className={clsx("hds-step-indicator__header")}>
         <span className={clsx("hds-step-indicator__left-label")}>{leftLabel}</span>
-        <span>
-          {rightLabel ?? stepLabelTranslations[rightLabelLang ?? "en"](activeStep, totalSteps)}
+        <span lang={rightLabel ? undefined : rightLabelLang}>
+          {rightLabel ?? stepLabelTranslations[rightLabelLang](activeStep, totalSteps)}
         </span>
       </div>
 
