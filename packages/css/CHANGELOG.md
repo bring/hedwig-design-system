@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.45
+
+### Patch Changes
+
+- affbc87: :lipstick: ensure correct default font for StyledHtml
+
 ## 0.0.44
 
 ### Patch Changes
