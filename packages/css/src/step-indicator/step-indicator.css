@@ -1,0 +1,50 @@
+@import url("../_custom-media.css");
+
+.hds-step-indicator {
+  .hds-step-indicator__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hds-step-indicator__left-label {
+    color: var(--hds-colors-dark);
+  }
+
+  .hds-step-indicator__steps {
+    margin-top: var(--hds-spacing-small-2);
+    display: flex;
+    column-gap: var(--hds-spacing-small-1);
+
+    .hds-step-indicator__step {
+      width: 100%;
+      border-radius: var(--hds-border-radius);
+      height: var(--hds-spacing-small-1);
+
+      &[data-state="previous"] {
+        background-color: var(--hds-colors-signature);
+      }
+
+      &[data-state="active"] {
+        background-color: var(--hds-colors-dark);
+      }
+
+      &[data-state="next"] {
+        background-color: var(--hds-ui-colors-grey);
+      }
+    }
+  }
+
+  .hds-step-indicator__title {
+    font: var(--hds-typography-h1);
+    color: var(--hds-colors-darker);
+
+    &:not(:empty) {
+      margin-top: var(--hds-spacing-medium-2);
+
+      @media (--large) {
+        margin-top: var(--hds-spacing-medium-3);
+      }
+    }
+  }
+}
