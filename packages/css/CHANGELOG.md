@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.46
+
+### Patch Changes
+
+- 0b0d3de: :sparkles: Step indicator and Show more components
+
 ## 0.0.45
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.51
+
+### Patch Changes
+
+- 0b0d3de: :sparkles: Step indicator and Show more components
+- Updated dependencies [0b0d3de]
+  - @postenbring/hedwig-css@0.0.46
+
 ## 0.0.50
 
 ### Patch Changes
