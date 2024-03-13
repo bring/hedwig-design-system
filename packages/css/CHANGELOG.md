@@ -1,5 +1,12 @@
 # @postenbring/hedwig-css
 
+## 0.0.47
+
+### Patch Changes
+
+- 4a13d0d: :construction: implement a Skeleton component
+- 891ce74: :lipstick: reset top margin on first element in StyledHtml
+
 ## 0.0.46
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @postenbring/hedwig-react
 
+## 0.0.52
+
+### Patch Changes
+
+- 4a13d0d: :construction: implement a Skeleton component
+- 8aa8630: :fire: remove unused prop from Link component
+- Updated dependencies [4a13d0d]
+- Updated dependencies [891ce74]
+  - @postenbring/hedwig-css@0.0.47
+
 ## 0.0.51
 
 ### Patch Changes
