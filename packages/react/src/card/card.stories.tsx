@@ -14,9 +14,13 @@ type Story = StoryObj<typeof CardComponent>;
 
 export const Card: Story = {
   render: (props) => (
-    <CardComponent {...props} as="div" style={{ maxWidth: "500px" }}>
-      <CardComponent.Media>
-        <CardComponent.Media.Img alt="posten-bring" src="./posten-bring.jpg" />
+    <CardComponent {...props} as="div" style={{ maxWidth: "500px", ...props.style }}>
+      <CardComponent.Media style={{ width: "100%" }}>
+        <CardComponent.Media.Img
+          style={{ width: "100%", display: "block", aspectRatio: 16 / 9 }}
+          alt="posten-bring"
+          src="./posten-bring.jpg"
+        />
       </CardComponent.Media>
       <CardComponent.Body>
         <CardComponent.Body.Header as="h2">
