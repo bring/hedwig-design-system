@@ -18,3 +18,4 @@ storybook-static/
 .idea/
 .stylelintcache
 **/tsconfig.tsbuildinfo
+.tsup
