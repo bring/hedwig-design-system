@@ -4,6 +4,6 @@ export default defineConfig({
   entry: ["src/index.tsx", "src/**/*.tsx", "!src/**/*.stories.tsx"],
   sourcemap: true,
   format: ["cjs", "esm"],
-  dts: true,
+  experimentalDts: true,
   external: ["react", "react-dom"],
 });
