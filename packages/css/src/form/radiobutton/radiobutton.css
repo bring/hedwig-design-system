@@ -1,8 +1,6 @@
 .hds-radiobutton {
   display: block;
-  min-height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
-  padding: var(--hds-spacing-small-4) var(--hds-spacing-small-4) var(--hds-spacing-small-4)
-    calc(var(--hds-spacing-small-4) + 36px);
+  padding: 0 0 0 calc(var(--hds-spacing-small-4) + 36px);
   border-radius: var(--hds-border-radius);
   font: var(--hds-typography-body-small);
   position: relative;
@@ -22,10 +20,19 @@
     padding-bottom: var(--hds-spacing-small-3);
   }
 
+  label::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
   /**
   * Hide the browser default radiobutton
   */
-  > input[type="radio"] {
+  input[type="radio"] {
     position: absolute;
     opacity: 0;
     height: 0;
@@ -38,7 +45,6 @@
   .hds-radiobutton__checkmark {
     margin: var(--hds-spacing-small-1);
     position: absolute;
-    top: 16px;
     left: 16px;
     height: 16px;
     width: 16px;
@@ -46,7 +52,7 @@
     border-radius: 50%;
   }
 
-  > input[type="radio"]:checked ~ .hds-radiobutton__checkmark::after {
+  input[type="radio"]:checked ~ .hds-radiobutton__checkmark::after {
     display: block;
   }
 
@@ -67,8 +73,10 @@
   */
   &.hds-radiobutton--bounding-box {
     background-color: var(--hds-colors-lighter);
+    padding: var(--hds-spacing-small-4) var(--hds-spacing-small-4) var(--hds-spacing-small-4)
+      calc(var(--hds-spacing-small-4) + 36px);
 
-    > .hds-radiobutton__checkmark::after {
+    .hds-radiobutton__checkmark::after {
       background: var(--hds-colors-dark);
     }
 
@@ -78,7 +86,7 @@
   }
 
   &.hds-radiobutton--error {
-    > .hds-radiobutton__checkmark {
+    .hds-radiobutton__checkmark {
       border-color: var(--hds-ui-colors-warning-yellow);
     }
 

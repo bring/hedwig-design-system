@@ -1,8 +1,6 @@
 .hds-checkbox {
   display: block;
-  min-height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
-  padding: var(--hds-spacing-small-4) var(--hds-spacing-small-4) var(--hds-spacing-small-4)
-    calc(var(--hds-spacing-small-4) + 36px);
+  padding: 0 0 0 calc(var(--hds-spacing-small-4) + 36px);
   border-radius: var(--hds-border-radius);
   font: var(--hds-typography-body-small);
   position: relative;
@@ -22,10 +20,19 @@
     padding-bottom: var(--hds-spacing-small-3);
   }
 
+  label::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
   /**
   * Hide the browser default checkbox
   */
-  > input[type="checkbox"] {
+  input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     height: 0;
@@ -38,14 +45,13 @@
   .hds-checkbox__checkmark {
     margin: var(--hds-spacing-small-1);
     position: absolute;
-    top: 16px;
     left: 16px;
     height: 16px;
     width: 16px;
     border: solid 2px var(--hds-colors-darker);
   }
 
-  > input[type="checkbox"]:checked ~ .hds-checkbox__checkmark::after {
+  input[type="checkbox"]:checked ~ .hds-checkbox__checkmark::after {
     display: block;
   }
 
@@ -67,6 +73,8 @@
   */
   &.hds-checkbox--bounding-box {
     background-color: var(--hds-colors-lighter);
+    padding: var(--hds-spacing-small-4) var(--hds-spacing-small-4) var(--hds-spacing-small-4)
+      calc(var(--hds-spacing-small-4) + 36px);
 
     &.hds-checkbox--error {
       border: solid 1px var(--hds-ui-colors-warning-yellow);
@@ -74,7 +82,7 @@
   }
 
   &.hds-checkbox--error {
-    > .hds-checkbox__checkmark,
+    .hds-checkbox__checkmark,
     .hds-checkbox__checkmark::after {
       border-color: var(--hds-ui-colors-warning-yellow);
     }
