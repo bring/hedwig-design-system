@@ -7,13 +7,14 @@ export interface LinkListProps extends Omit<ListProps, "listStyle"> {
   children?: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
 }
 
+/**
+ * Show a list of links
+ *
+ * For other list types use `UnorderedList` and `OrderedList`, or use your own list component using the semantic `ul` and `ol` tags.
+ */
 export function LinkList({ className, ...rest }: LinkListProps) {
   return (
-    <UnorderedList
-      className={clsx("hds-list--link-list", className as undefined)}
-      listStyle="no-bullets"
-      {...rest}
-    />
+    <UnorderedList className={clsx("hds-list--link-list", className as undefined)} {...rest} />
   );
 }
 

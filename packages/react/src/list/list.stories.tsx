@@ -54,21 +54,6 @@ export const OrderedListStory: Story = {
   ),
 };
 
-export const NoBulletsListStory: Story = {
-  name: "No Bullets List",
-  args: {
-    listStyle: "no-bullets",
-    children: listItems,
-  },
-  render: (props) => (
-    <HStack>
-      <UnorderedList {...props} size="small" />
-      <UnorderedList {...props} size="medium" />
-      <UnorderedList {...props} size="large" />
-    </HStack>
-  ),
-};
-
 export const NestedLists: Story = {
   render: () => (
     <UnorderedList>

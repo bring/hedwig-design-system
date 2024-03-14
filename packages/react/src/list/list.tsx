@@ -5,10 +5,6 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListElement> {
   children?: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
   /**
-   * Inherit list styles or do not show these
-   */
-  listStyle?: "inherit" | "no-bullets";
-  /**
    * Sets the size of the items (font)
    */
   size?: "small" | "medium" | "large";
@@ -17,28 +13,22 @@ export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListEl
 function BaseList({
   as: ListTag = "ul",
   children,
-  listStyle = "inherit",
   size = "medium",
   className,
   ...rest
 }: ListProps & { as?: "ul" | "ol" }) {
   return (
-    <ListTag
-      className={clsx(
-        "hds-list",
-        `hds-list--${size}`,
-        {
-          "hds-list--no-bullets": listStyle === "no-bullets",
-        },
-        className as undefined,
-      )}
-      {...rest}
-    >
+    <ListTag className={clsx("hds-list", `hds-list--${size}`, className as undefined)} {...rest}>
       {children}
     </ListTag>
   );
 }
 
+/**
+ * An unordered list of simple items, often text. You can nest other lists inside this component.
+ *
+ * If you have other list needs build your own using the semantic `ul` and `ol` tags.
+ */
 export function UnorderedList(props: ListProps) {
   return (
     <BaseList as="ul" {...props}>
@@ -47,6 +37,11 @@ export function UnorderedList(props: ListProps) {
   );
 }
 
+/**
+ * An ordered list of simple items
+ *
+ * If you have other list needs build your own using the semantic `ul` and `ol` tags.
+ */
 export function OrderedList(props: ListProps) {
   return (
     <BaseList as="ol" {...props}>
