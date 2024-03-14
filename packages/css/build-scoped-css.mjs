@@ -8,10 +8,10 @@ const file = await readFile(new URL("./dist/index.css", import.meta.url), "utf8"
 
 // Keyframes does not support nesting
 // so we need to extract them and put them outside the scope we create
-const [fileWithoutKeyframes, keyframes] = extractKeyframes(file);
+const [fileWithoutKeyframesAndFontFace, keyframesAndFontFace] = extractKeyframes(file);
 
 // Finally write the scoped file
-const scopedFile = `.kp-decorator-header-and-footer { ${fileWithoutKeyframes} }${keyframes}`;
+const scopedFile = `.kp-decorator-header-and-footer { ${fileWithoutKeyframesAndFontFace} }${keyframesAndFontFace}`;
 const { code } = transform({
   filename: "scoped.css",
   code: Buffer.from(scopedFile),
@@ -28,9 +28,9 @@ await writeFile(new URL("./dist/scoped.css", import.meta.url), code);
  */
 function extractKeyframes(fromContent) {
   /** @param {string} content */
-  function findKeyframe(content) {
+  function findKeyframeAndFontFace(content) {
     // eslint-disable-next-line prefer-named-capture-group -- It's ok
-    const start = content.search(/(@keyframes|@-webkit-keyframes)/);
+    const start = content.search(/(@keyframes|@-webkit-keyframes|@font-face)/);
     if (start === -1) return false;
 
     let end = -1;
@@ -55,7 +55,7 @@ function extractKeyframes(fromContent) {
   let keyframes = "";
 
   let currentKeyframe;
-  while ((currentKeyframe = findKeyframe(result))) {
+  while ((currentKeyframe = findKeyframeAndFontFace(result))) {
     keyframes += result.slice(currentKeyframe[0], currentKeyframe[1] + 1);
     result = result.slice(0, currentKeyframe[0]) + result.slice(currentKeyframe[1] + 1);
   }

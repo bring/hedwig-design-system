@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "wait-on ./node_modules/@postenbring/hedwig-css/dist/index.css ./node_modules/@postenbring/hedwig-react/dist/index.mjs && vite",
+    "dev": "wait-on ./node_modules/@postenbring/hedwig-css/dist/index.css ./node_modules/@postenbring/hedwig-react/dist/index.js && vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "typecheck": "tsc --noEmit",
@@ -19,19 +19,19 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.64",
-    "@types/react-dom": "^18.2.21",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "10.4.18",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-react-refresh": "^0.4.6",
     "postcss": "8.4.35",
     "tailwindcss": "3.4.1",
     "typescript": "^5.4.2",
-    "vite": "^5.0.12",
+    "vite": "^5.1.6",
     "wait-on": "^7.2.0"
   }
 }

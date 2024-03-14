@@ -13,13 +13,14 @@
     "lint": "stylelint 'src/**/*.css' --cache",
     "lint:fix": "pnpm lint -- --fix",
     "clean": "rm -rf .turbo node_modules dist",
-    "show-css-size": "pnpm build:css && echo '\nSize of dist/all-in-one.css (original → gzip)' && pnpm dlx gzip-size-cli dist/all-in-one.css --include-original"
+    "show-css-size": "pnpm build:css && echo '\nSize of dist/index.css (original → gzip)' && pnpm dlx gzip-size-cli dist/index.css --include-original"
   },
   "files": [
     "dist/**",
     "typed-classname/**",
     "assets/**"
   ],
+  "main": "./dist/index.css",
   "license": "MIT",
   "devDependencies": {
     "browserslist": "4.23.0",

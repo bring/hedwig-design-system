@@ -1,9 +1,3 @@
-import "@postenbring/hedwig-css/dist/fonts.css";
-import "@postenbring/hedwig-css/dist/tokens.css";
-import "@postenbring/hedwig-css/dist/body.css";
-
-import "@postenbring/hedwig-css/dist/accordion.css";
-
 import { Accordion } from "./accordion";
 import { AccordionItem } from "./accordion-item";
 import { AccordionHeader } from "./accordion-header";

@@ -8,7 +8,7 @@ const animationDurationToValue = {
   slow: 700,
 };
 
-interface AutoAnimateHeightProps {
+export interface AutoAnimateHeightProps {
   /**
    * Time of the animation, using the hedwig animation tokens
    * quick: 0.1s

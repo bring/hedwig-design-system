@@ -1,6 +1,6 @@
 import { withThemeByClassName } from "@storybook/addon-themes";
 
-import "@postenbring/hedwig-css/dist/reset.css";
+import "@postenbring/hedwig-css";
 
 export default {
   decorators: [
