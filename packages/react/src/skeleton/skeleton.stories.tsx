@@ -120,7 +120,7 @@ function numberBetween(min: number, max: number) {
 export const Article: Story = {
   render: () => (
     <StyledHtml aria-hidden>
-      <Skeleton variant="text" as="h1" style={{ font: "var(--hds-typography-h1-display)" }}>
+      <Skeleton variant="text" style={{ font: "var(--hds-typography-h1-display)" }}>
         A title is loading
       </Skeleton>
       <Skeleton variant="rectangle">
