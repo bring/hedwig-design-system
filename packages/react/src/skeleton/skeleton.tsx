@@ -20,15 +20,11 @@ interface SkeletonPropsInner extends React.AnchorHTMLAttributes<HTMLDivElement> 
 export type SkeletonProps = SkeletonPropsInner & DimensionsFromWidthAndHeight;
 
 /**
- * 🚧 Work in progress
- *
- * **TODO**
- * - [ ] Tweak animation and colors
- *
- * **Description**
  * Make skeleton loading states as placeholders for your content while waiting for data to load.
  *
- * **Note:** Consider if this is really needed. The best experience is to avoid loading states altogether.
+ * **Note**
+ *
+ * Consider if this is really needed. The best experience is to avoid loading states altogether.
  * If your loading takes under 1 second, it better to not show anything at all.
  *
  * - Make your backend faster
@@ -46,7 +42,8 @@ export type SkeletonProps = SkeletonPropsInner & DimensionsFromWidthAndHeight;
  * <Skeleton variant="rectangle" width="300px" height="400px" />
  * ```
  *
- * Remember to set `aria-hidden` on the top level in your skeleton component.
+ * Remember to set `aria-hidden` on top level components you use that are not the `Skeleton` component.
+ *
  * The `Skeleton` component does this for it self, but if you are using other components higher up in the tree, it might cause problems with screen readers
  *
  * **References**

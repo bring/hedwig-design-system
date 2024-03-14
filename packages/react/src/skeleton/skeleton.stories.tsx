@@ -9,7 +9,7 @@ import { PrimaryButton } from "../button";
 import { Skeleton } from ".";
 
 const meta: Meta<typeof Skeleton> = {
-  title: "Labs/🚧 Skeleton",
+  title: "Skeleton",
   component: Skeleton,
 };
 
