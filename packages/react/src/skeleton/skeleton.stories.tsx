@@ -41,7 +41,14 @@ export const LoadingCards: Story = {
     });
 
     const skeletonCard = (
-      <Card aria-hidden as="div" style={{ width: "400px" }}>
+      <Card
+        aria-hidden
+        as="div"
+        style={{
+          width: "400px",
+          backgroundColor: "var(--hds-ui-colors-light-grey-fill)",
+        }}
+      >
         <Card.Media style={{ width: "100%", background: "white" }}>
           <Skeleton variant="rectangle" style={{ width: "100%", aspectRatio: 16 / 9 }} />
         </Card.Media>
@@ -87,6 +94,9 @@ export const LoadingCards: Story = {
         >
           Reload
         </PrimaryButton>
+        <p style={{ marginTop: "var(--hds-spacing-small-2)" }}>
+          Only use greytones, never any red or green colors.
+        </p>
         <div
           style={{
             marginTop: "var(--hds-spacing-small-4)",
