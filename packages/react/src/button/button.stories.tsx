@@ -23,8 +23,8 @@ export const Primary: Story = {
 
 export const PrimaryOutline: Story = {
   args: {
-    children: "Primary outlined button",
-    fill: "outlined",
+    children: "Primary outline button",
+    fill: "outline",
   },
 };
 
@@ -38,8 +38,8 @@ export const Secondary: Story = {
 export const SecondaryOutline: Story = {
   render: (props) => <SecondaryButton {...props} />,
   args: {
-    children: "Secondary outlined button",
-    fill: "outlined",
+    children: "Secondary outline button",
+    fill: "outline",
   },
 };
 
@@ -50,10 +50,10 @@ export const Disabled: Story = {
   },
 };
 
-export const DisabledOutlined: Story = {
+export const DisabledOutline: Story = {
   args: {
-    children: "Disabled outlined button",
-    fill: "outlined",
+    children: "Disabled outline button",
+    fill: "outline",
     disabled: true,
   },
 };
@@ -70,9 +70,9 @@ export const AsALink: Story = {
       }}
     >
       <PrimaryButton {...args} />
-      <PrimaryButton {...args} fill="outlined" />
+      <PrimaryButton {...args} fill="outline" />
       <SecondaryButton {...args} />
-      <SecondaryButton {...args} fill="outlined" />
+      <SecondaryButton {...args} fill="outline" />
     </div>
   ),
   args: {
@@ -117,11 +117,11 @@ const createIconStory = (
 });
 
 export const IconPrimary: Story = createIconStory(PrimaryButton);
-export const IconPrimaryOutline: Story = createIconStory(PrimaryButton, { fill: "outlined" });
+export const IconPrimaryOutline: Story = createIconStory(PrimaryButton, { fill: "outline" });
 export const IconSecondary: Story = createIconStory(SecondaryButton);
-export const IconSecondaryOutline: Story = createIconStory(SecondaryButton, { fill: "outlined" });
+export const IconSecondaryOutline: Story = createIconStory(SecondaryButton, { fill: "outline" });
 export const IconDisabled: Story = createIconStory(PrimaryButton, { disabled: true });
 export const IconDisabledOutline: Story = createIconStory(PrimaryButton, {
   disabled: true,
-  fill: "outlined",
+  fill: "outline",
 });

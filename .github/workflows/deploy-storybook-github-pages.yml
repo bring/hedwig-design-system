@@ -27,12 +27,12 @@ jobs:
           node-version: 20
 
       - name: Setup pnpm 8.x
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
 
       - name: Build and upload storybook
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: pnpm install
           build_command: pnpm build

@@ -195,7 +195,7 @@ function ModalExample() {
         </p>
         <div style={{ display: "flex", gap: 16 }}>
           <PrimaryButton>Main action</PrimaryButton>
-          <PrimaryButton fill="outlined" onClick={() => modalRef.current?.close()}>
+          <PrimaryButton fill="outline" onClick={() => modalRef.current?.close()}>
             Cancel
           </PrimaryButton>
         </div>
@@ -217,14 +217,16 @@ function CardsExample() {
           rowGap: "2.5em",
         }}
       >
-        <Card as="a" href="#article1">
+        <Card>
           <Card.Media>
             <Card.Media.Img alt="posten-bring" src={postenBringImage} />
           </Card.Media>
           <Card.Body>
-            <Card.Body.Header>
+            <Card.Body.Header as="h3">
               <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-              <Card.Body.Header.Title>Article 1</Card.Body.Header.Title>
+              <Card.Body.Header.Title as="a" href="#">
+                Article 1
+              </Card.Body.Header.Title>
             </Card.Body.Header>
             <Card.Body.Description>
               In this example, the whole card is an <code>&lt;a&gt;</code> tag.
@@ -237,14 +239,16 @@ function CardsExample() {
             <Card.Media.Img alt="posten-bring" src={postenBringImage} />
           </Card.Media>
           <Card.Body>
-            <Card.Body.Header>
+            <Card.Body.Header as="h3">
               <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-              <Card.Body.Header.Title>Article 2</Card.Body.Header.Title>
+              <Card.Body.Header.Title as={Link} href="#">
+                Article 2
+              </Card.Body.Header.Title>
             </Card.Body.Header>
             <Card.Body.Description>
               In this example, only the arrow below is a link.
             </Card.Body.Description>
-            <Card.Body.Action.Arrow href="#article2" />
+            <Card.Body.Action.Arrow />
           </Card.Body>
         </Card>
         <Card>
@@ -252,26 +256,28 @@ function CardsExample() {
             <Card.Media.Img alt="posten-bring" src={postenBringImage} />
           </Card.Media>
           <Card.Body>
-            <Card.Body.Header>
+            <Card.Body.Header as="h3">
               <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-              <Card.Body.Header.Title>Article 3</Card.Body.Header.Title>
+              <Card.Body.Header.Title as="a" href="#">
+                Article 3
+              </Card.Body.Header.Title>
             </Card.Body.Header>
             <Card.Body.Description>
-              In this example, there is a <code>&lt;Link&gt;</code> component below.
+              In this example, there is a <code>&lt;Link'&gt;</code> component below.
             </Card.Body.Description>
-            <Card.Body.Action as={Link} href="#article3">
-              Read more
-            </Card.Body.Action>
+            <Card.Body.Action>Read more</Card.Body.Action>
           </Card.Body>
         </Card>
-        <Card as="a" className="hds-theme-bring" href="#article4">
+        <Card className="hds-theme-bring">
           <Card.Media>
             <Card.Media.Img alt="posten-bring" src={postenBringImage} />
           </Card.Media>
           <Card.Body>
-            <Card.Body.Header>
+            <Card.Body.Header as="h3">
               <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-              <Card.Body.Header.Title>Article 4</Card.Body.Header.Title>
+              <Card.Body.Header.Title as="a" href="#">
+                Article 4
+              </Card.Body.Header.Title>
             </Card.Body.Header>
             <Card.Body.Description>A Bring card.</Card.Body.Description>
             <Card.Body.Action.Arrow as="span" />

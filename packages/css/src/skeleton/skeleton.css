@@ -1,0 +1,72 @@
+.hds-skeleton {
+  animation: hds-skeleton-animation 1.2s var(--hds-micro-animation-easing-normal) infinite alternate;
+  background-color: var(--hds-ui-colors-grey);
+  pointer-events: none;
+  user-select: none;
+
+  /**
+   * Hide children
+   */
+  color: transparent !important;
+
+  > * {
+    background-color: transparent !important;
+  }
+
+  /**
+    * Auto dimensions when not set using `style`
+    */
+  &:not(:empty) {
+    height: auto;
+    width: fit-content;
+  }
+
+  /* Ensure some content */
+  &:empty::before {
+    /* stylelint-disable-next-line no-irregular-whitespace -- We want the whitespace */
+    content: " ";
+  }
+
+  /**
+   * Variants
+   */
+  &.hds-skeleton--text {
+    border-radius: var(--hds-border-radius);
+
+    /* Emulate the whitespace in line-height */
+    transform: scale(1, 0.7);
+
+    /*
+     * Ensure only one line of text content
+     * multi-line text content does not make sense as it just becomes a block of color
+     *
+     * TODO: Figure out auto spacing between line breaks
+     */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  &.hds-skeleton--circle {
+    border-radius: 50%;
+  }
+
+  &.hds-skeleton--rectangle {
+    border-radius: 0;
+  }
+
+  &.hds-skeleton--rounded {
+    border-radius: var(--hds-border-radius);
+  }
+}
+
+@keyframes hds-skeleton-animation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}

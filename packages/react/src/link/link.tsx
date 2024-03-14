@@ -15,7 +15,6 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
   size?: "small" | "medium" | "large";
 
   children: React.ReactNode;
-  anchorRef?: React.ForwardedRef<HTMLAnchorElement>;
 }
 
 export const Link: OverridableComponent<LinkProps, HTMLAnchorElement> = forwardRef(

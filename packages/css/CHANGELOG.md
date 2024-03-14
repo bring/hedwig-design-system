@@ -1,5 +1,46 @@
 # @postenbring/hedwig-css
 
+## 0.0.47
+
+### Patch Changes
+
+- 4a13d0d: :construction: implement a Skeleton component
+- 891ce74: :lipstick: reset top margin on first element in StyledHtml
+
+## 0.0.46
+
+### Patch Changes
+
+- 0b0d3de: :sparkles: Step indicator and Show more components
+
+## 0.0.45
+
+### Patch Changes
+
+- affbc87: :lipstick: ensure correct default font for StyledHtml
+
+## 0.0.44
+
+### Patch Changes
+
+- 3dc1334: Clarify usage of Card components
+
+  The Card component should always be a clickable link, but the entire card should not be the actual link.
+  Confused? Okay. So, to make life better for users with a screen reader, we should only make the heading
+  of the card an actual link. However, we still want the entire card to be clickable for other users. We
+  achieve this with some clever CSS.
+
+  This also means the Card component can no longer have `as="a"`, and this is now prohibited through types.
+  Futhermore the Card.Body.Header.Title component now requires an `as` prop to help HDS consumers understand
+  they need to make this component a link of some sort. We also made the `as` prop required on Card.Body.Header
+  to force consumers to set an appropriate heading level.
+
+  We also made the little card arrow move on hover now :-)
+
+- 6f998d3: :truck: rename `Prose` -> `StyledHtml`
+
+  Not a perfect name, but a little better. As decided during a hedwig team meeting.
+
 ## 0.0.43
 
 ### Patch Changes

@@ -27,10 +27,5 @@
     display: flex;
     flex-flow: column nowrap;
     gap: var(--hds-spacing-small-1);
-
-    > .hds-radiobutton--bounding-box,
-    > .hds-checkbox--bounding-box {
-      margin-bottom: var(--hds-spacing-small-1);
-    }
   }
 }

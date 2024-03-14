@@ -34,7 +34,7 @@ export const Main = {
           </Modal.Content>
           <Modal.Footer style={{ display: "flex", gap: 16 }}>
             <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
-            <PrimaryButton fill="outlined" onClick={onClose}>
+            <PrimaryButton fill="outline" onClick={onClose}>
               Cancel
             </PrimaryButton>
           </Modal.Footer>

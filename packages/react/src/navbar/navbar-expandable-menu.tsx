@@ -55,7 +55,7 @@ function RenderButton({
     <button
       className={clsx("hds-navbar__button", className)}
       onClick={toggleOpen}
-      ref={ref || innerRef}
+      ref={ref ?? innerRef}
       style={style}
       title={title}
       type="button"
@@ -130,7 +130,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
        * Also clean up after us
        */
       const getWidth = () => {
-        callback(measureButtonRef.current?.offsetWidth || 0);
+        callback(measureButtonRef.current?.offsetWidth ?? 0);
         root.unmount();
         c.removeChild(container);
       };

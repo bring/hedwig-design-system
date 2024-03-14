@@ -13,7 +13,6 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("@storybook/addon-themes"),
-    getAbsolutePath("@whitespace/storybook-addon-html"),
   ],
   framework: {
     // @ts-ignore -- It expects @storybook/react-vite
@@ -25,11 +24,6 @@ const config: StorybookConfig = {
 
   docs: {
     autodocs: true,
-  },
-  typescript: {
-    reactDocgen: "react-docgen",
-    skipBabel: true,
-    check: false,
   },
 };
 

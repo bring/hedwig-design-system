@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { StyledHtml } from "../styled-html";
 import { Tabs } from ".";
 
 type Story = StoryObj<typeof Tabs>;
@@ -72,7 +73,7 @@ export const HorizontalWithMiddleSelected: Story = {
           <Tabs.Tab tabId="third">Bud- og ekspress-pakker</Tabs.Tab>
         </Tabs.List>
         <Tabs.Contents>
-          <Tabs.Content forTabId="first">
+          <Tabs.Content forTabId="first" as={StyledHtml}>
             <h2>Vilkår for transport til bedrifter nasjonalt</h2>
             <ul>
               <li>

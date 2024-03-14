@@ -64,4 +64,10 @@
     font: var(--hds-typography-h3);
     gap: var(--hds-spacing-small-3);
   }
+
+  &.hds-list--link-list {
+    li:not(:last-child) {
+      margin-bottom: var(--hds-spacing-small-2);
+    }
+  }
 }

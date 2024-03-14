@@ -1,6 +1,21 @@
 @import url("../_custom-media.css");
 
 .hds-styled-html {
+  font: var(--hds-typography-body);
+
+  /**
+   * Avoid top margin on first element and bottom margin on last element
+   * The consumer should set their own spacing to of the styled html relative to the rest of the page
+   * This component only cares about internal spacing
+   */
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
   /* Headings
    * h1-h6 gets styled globally in `body.css`    
    */
@@ -119,6 +134,8 @@
 
   /* Small version */
   &.hds-styled-html--small {
+    font: var(--hds-typography-body-small);
+
     & p,
     & li,
     & a {
@@ -133,10 +150,6 @@
     & strong {
       font: var(--hds-typography-body-small-title);
     }
-  }
-
-  & > :last-child {
-    margin-bottom: 0;
   }
 
   /* 🚧 Dark mode */
