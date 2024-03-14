@@ -36,18 +36,6 @@
   }
 
   /**
-   * Modifers: Style
-   */
-  &.hds-list--no-bullets {
-    list-style: none;
-    padding-left: 0;
-
-    & li {
-      padding-left: 0;
-    }
-  }
-
-  /**
    * Modifers: Sizes
    */
   &.hds-list--small {
@@ -65,9 +53,19 @@
     gap: var(--hds-spacing-small-3);
   }
 
+  /**
+   * Link list
+   */
   &.hds-list--link-list {
     li:not(:last-child) {
       margin-bottom: var(--hds-spacing-small-2);
+    }
+
+    list-style: none;
+    padding-left: 0;
+
+    & li {
+      padding-left: 0;
     }
   }
 }

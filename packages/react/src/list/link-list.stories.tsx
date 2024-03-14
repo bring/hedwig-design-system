@@ -32,7 +32,7 @@ export const LinkListStory: Story = {
 };
 
 const meta: Meta<typeof LinkList> = {
-  title: "List/LinkList",
+  title: "Link List",
   component: LinkList,
 };
 export default meta;
