@@ -1,7 +1,6 @@
 .hds-fieldset {
   display: flex;
   flex-flow: column nowrap;
-  gap: var(--hds-spacing-small-1);
   border: 0;
   margin: 0;
   padding: 0;
