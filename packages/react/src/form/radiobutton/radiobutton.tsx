@@ -12,7 +12,7 @@ export interface RadiobuttonProps
 export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
   ({ variant = "plain", hasError, title, children, className, ...rest }, ref) => {
     return (
-      <label
+      <div
         className={clsx(
           "hds-radiobutton",
           {
@@ -22,11 +22,13 @@ export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
           className as undefined,
         )}
       >
-        <input {...rest} ref={ref} type="radio" />
-        <span aria-hidden className="hds-radiobutton__checkmark" />
-        {title ? <p className="hds-radiobutton__title">{title}</p> : null}
-        {children}
-      </label>
+        <label>
+          <input {...rest} ref={ref} type="radio" />
+          <span aria-hidden className="hds-radiobutton__checkmark" />
+          {title ? <p className="hds-radiobutton__title">{title}</p> : children}
+        </label>
+        {title ? children : null}
+      </div>
     );
   },
 );

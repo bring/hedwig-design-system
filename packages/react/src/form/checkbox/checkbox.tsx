@@ -11,7 +11,7 @@ export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ variant = "plain", hasError, title, children, className, ...rest }, ref) => {
     return (
-      <label
+      <div
         className={clsx(
           "hds-checkbox",
           {
@@ -21,11 +21,13 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           className as undefined,
         )}
       >
-        <input {...rest} aria-invalid={hasError ? true : undefined} ref={ref} type="checkbox" />
-        <span aria-hidden className="hds-checkbox__checkmark" />
-        {title ? <p className="hds-checkbox__title">{title}</p> : null}
-        {children}
-      </label>
+        <label>
+          <input {...rest} aria-invalid={hasError ? true : undefined} ref={ref} type="checkbox" />
+          <span aria-hidden className="hds-checkbox__checkmark" />
+          {title ? <p className="hds-checkbox__title">{title}</p> : children}
+        </label>
+        {title ? children : null}
+      </div>
     );
   },
 );
