@@ -4,3 +4,4 @@ export * from "./select";
 export * from "./textarea";
 export * from "./checkbox";
 export * from "./radiobutton";
+export * from "./error-message";
