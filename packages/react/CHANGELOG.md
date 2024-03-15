@@ -1,5 +1,50 @@
 # @postenbring/hedwig-react
 
+## 0.0.54
+
+### Patch Changes
+
+- e40464f: :wrench: update StepIndicator api after feedback
+- c112dc7: :sparkles: make the posibility in show-more, to show less an explicit variant
+- 1aa4278: More spacing tweaks on radio/check, fix radio dot color, remove disabled from stories
+
+  More spacing tweaks on radiobuttons and checkboxes to make non-bounding-box variant align correctly.
+
+  Radiobutton dot color was set to Signature, just like in Figma. However, it turns out Figma was wrong.
+
+  Remove disabled variants from stories as we don't want to encourage using them.
+
+- 4be7acc: :building_construction: update bundling and exports
+
+  The css package's main entry point is now all the css we have, the
+  components and all the side effects neeeded.
+
+  if anyone has any special requirments they can still import each
+  individual file if the wish.
+
+  The react package now imports that all in one css export in a single
+  entry point. An entry point without the css import is also available
+
+- 0048318: Remove excessive padding and make radio/check label easier on screen readers
+- f47d3d9: :recycle: use css inlined cheveron icon for accordion
+- 54a0b68: :fire: remove no-bullets variant from the list component.
+
+  people should rather use the ordered or unordered list components with the visual counter or bullet points.
+
+  if the need something extra they need to style that themself using `ul`
+
+  the special link-list component does just that.
+
+  decided during hedwig meeting 14. march 2024
+
+- Updated dependencies [c112dc7]
+- Updated dependencies [1aa4278]
+- Updated dependencies [4be7acc]
+- Updated dependencies [0048318]
+- Updated dependencies [f47d3d9]
+- Updated dependencies [54a0b68]
+  - @postenbring/hedwig-css@0.0.48
+
 ## 0.0.53
 
 ### Patch Changes
