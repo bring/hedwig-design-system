@@ -1,4 +1,5 @@
 @import url("../_custom-media.css");
+@import url("../_icons.css");
 
 .hds-box.hds-warning-banner {
   --hds-warning-banner-icon-dimension: var(--hds-spacing-medium-2);
@@ -40,29 +41,20 @@
       padding: 0;
       background-color: transparent;
 
-      .hds-warning-banner__title-trigger--icon {
-        transition: all 0.05s ease;
-        display: inline-block;
-        padding-left: var(--hds-spacing-small-4);
+      &::after {
+        content: "";
         width: var(--hds-warning-banner-icon-dimension);
         height: var(--hds-warning-banner-icon-dimension);
-
-        .hds-warning-banner__title-trigger--icon-chevron {
-          color: var(--hds-ui-colors-black);
-          fill: var(--hds-ui-colors-black);
-        }
-
-        & svg {
-          vertical-align: baseline;
-          transform: rotate(180deg);
-        }
+        background-image: var(--_hds-icons-cheveron-down);
+        margin-left: var(--hds-spacing-small-4);
+        transform: rotate(180deg);
       }
     }
   }
 
   & .hds-warning-banner--closed.hds-warning-banner__title-trigger {
-    & .hds-warning-banner__title-trigger--icon svg {
-      transform: rotate(0deg);
+    &::after {
+      transform: rotate(0);
     }
   }
 
