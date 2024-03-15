@@ -14,17 +14,17 @@ type Story = StoryObj<typeof StepIndicator>;
 
 export const Default: Story = {
   args: {
-    leftLabel: "Progress name",
+    label: "Progress name",
     totalSteps: 5,
     activeStep: 2,
   },
 };
 
-export const TitleUnderneath: Story = {
+export const Title: Story = {
   args: {
     activeStep: 2,
-    leftLabel: "Pakke til utlandet",
-    rightLabelLang: "no",
+    label: "Pakke til utlandet",
+    lang: "no",
     totalSteps: 5,
     title: "Hvem sender pakken?",
     titleAs: "h2",
@@ -34,7 +34,7 @@ export const TitleUnderneath: Story = {
 export const WithBadgeInLabel: Story = {
   args: {
     activeStep: 2,
-    leftLabel: (
+    label: (
       <>
         Norgespakke™ liten
         <Badge size="smaller" style={{ marginLeft: "var(--hds-spacing-small-3)" }}>
@@ -42,7 +42,7 @@ export const WithBadgeInLabel: Story = {
         </Badge>
       </>
     ),
-    rightLabelLang: "no",
+    lang: "no",
     totalSteps: 5,
     title: "Størrelse og vekt",
     titleAs: "h2",

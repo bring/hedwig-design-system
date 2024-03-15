@@ -29,18 +29,12 @@ interface StepIndicatorProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Label on the left side above the steps
    */
-  leftLabel: React.ReactNode;
-
-  /**
-   * Override the label on the right side above the steps
-   * Default is "step x of y". use {@link rightLabelLang} to change language
-   */
-  rightLabel?: React.ReactNode;
+  label: React.ReactNode;
 
   /**
    * Language for the "step x of y" label, default is "en"
    */
-  rightLabelLang?: "no" | "en" | "da" | "sv";
+  lang?: "no" | "en" | "da" | "sv";
 }
 
 /**
@@ -52,20 +46,17 @@ export function StepIndicator({
   activeStep,
   totalSteps,
   className,
-  leftLabel,
-  rightLabel,
-  rightLabelLang = "en",
+  label,
+  lang = "en",
   title,
   titleAs: TitleComponent,
   ...rest
 }: StepIndicatorProps & TitleProps) {
   return (
-    <div className={clsx("hds-step-indicator", className as undefined)} {...rest}>
+    <div className={clsx("hds-step-indicator", className as undefined)} lang={lang} {...rest}>
       <div className={clsx("hds-step-indicator__header")}>
-        <span className={clsx("hds-step-indicator__left-label")}>{leftLabel}</span>
-        <span lang={rightLabel ? undefined : rightLabelLang}>
-          {rightLabel ?? stepLabelTranslations[rightLabelLang](activeStep, totalSteps)}
-        </span>
+        <span className={clsx("hds-step-indicator__left-label")}>{label}</span>
+        <span>{stepLabelTranslations[lang](activeStep, totalSteps)}</span>
       </div>
 
       <div className={clsx("hds-step-indicator__steps")}>
@@ -86,8 +77,7 @@ export function StepIndicator({
 }
 
 /**
- * Default translated text for the right label.
- * This is probably a common use case, so we provide it as a default, with to use with the most common languages.
+ * Translated texts for the `step x of y` label.
  */
 const stepLabelTranslations: Record<
   "no" | "en" | "da" | "sv",
