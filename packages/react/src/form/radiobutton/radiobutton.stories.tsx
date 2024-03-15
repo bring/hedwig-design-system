@@ -26,9 +26,6 @@ export const PlainRadiobutton: Story = {
       <Radiobutton hasError name="group1">
         This is a radiobutton with error
       </Radiobutton>
-      <Radiobutton disabled name="group1">
-        This is a disabled radiobutton
-      </Radiobutton>
     </div>
   ),
 };
@@ -48,9 +45,6 @@ export const BoundedRadiobutton: Story = {
       </Radiobutton>
       <Radiobutton hasError name="group2" variant="bounding-box">
         This is a radiobutton with bounding box and error
-      </Radiobutton>
-      <Radiobutton disabled name="group2" variant="bounding-box">
-        This is a disabled radiobutton with bounding box
       </Radiobutton>
     </div>
   ),

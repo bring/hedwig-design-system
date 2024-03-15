@@ -23,7 +23,6 @@ export const PlainCheckbox: Story = {
     >
       <Checkbox>This is a checkbox</Checkbox>
       <Checkbox hasError>This is a checkbox with error</Checkbox>
-      <Checkbox disabled>This is a disabled checkbox</Checkbox>
     </div>
   ),
 };
@@ -41,9 +40,6 @@ export const BoundedCheckbox: Story = {
       <Checkbox variant="bounding-box">This is a checkbox with bounding box</Checkbox>
       <Checkbox hasError variant="bounding-box">
         This is a checkbox with bounding box and error
-      </Checkbox>
-      <Checkbox disabled variant="bounding-box">
-        This is a disabled checkbox with bounding box
       </Checkbox>
     </div>
   ),
