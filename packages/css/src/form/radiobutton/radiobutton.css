@@ -1,6 +1,10 @@
 .hds-radiobutton {
+  --checkmark-width: 16px;
+  --checkmark-margin: var(--hds-spacing-small-1);
+
   display: block;
-  padding: 0 0 0 calc(var(--hds-spacing-small-4) + 36px);
+  padding: 0 0 0
+    calc(var(--checkmark-width) + (var(--checkmark-margin) * 2) + var(--hds-spacing-small-3));
   border-radius: var(--hds-border-radius);
   font: var(--hds-typography-body-small);
   position: relative;
@@ -45,9 +49,9 @@
   .hds-radiobutton__checkmark {
     margin: var(--hds-spacing-small-1);
     position: absolute;
-    left: 16px;
-    height: 16px;
-    width: 16px;
+    left: 0;
+    height: var(--checkmark-width);
+    width: var(--checkmark-width);
     border: solid 2px var(--hds-colors-darker);
     border-radius: 50%;
   }
@@ -65,7 +69,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--hds-colors-signature);
+    background: var(--hds-colors-dark);
   }
 
   /**
@@ -73,11 +77,14 @@
   */
   &.hds-radiobutton--bounding-box {
     background-color: var(--hds-colors-lighter);
-    padding: var(--hds-spacing-small-4) var(--hds-spacing-small-4) var(--hds-spacing-small-4)
-      calc(var(--hds-spacing-small-4) + 36px);
+    padding: var(--hds-spacing-small-4) var(--hds-spacing-medium-3) var(--hds-spacing-small-4)
+      calc(
+        var(--hds-spacing-small-4) + var(--checkmark-width) + (var(--checkmark-margin) * 2) +
+          var(--hds-spacing-small-3)
+      );
 
-    .hds-radiobutton__checkmark::after {
-      background: var(--hds-colors-dark);
+    .hds-radiobutton__checkmark {
+      left: var(--hds-spacing-small-4);
     }
 
     &.hds-radiobutton--error {
