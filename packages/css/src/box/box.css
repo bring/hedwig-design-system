@@ -1,4 +1,5 @@
 @import url("../_custom-media.css");
+@import url("../_icons.css");
 
 .hds-box {
   position: relative;
@@ -48,7 +49,7 @@
   width: calc(24px + var(--hds-close-button-padding));
   height: calc(24px + var(--hds-close-button-padding));
   background-color: transparent;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13.1602 12.25L16.7812 8.66406L17.5195 7.92578C17.625 7.82031 17.625 7.64453 17.5195 7.50391L16.7461 6.73047C16.6055 6.625 16.4297 6.625 16.3242 6.73047L12 11.0898L7.64062 6.73047C7.53516 6.625 7.35938 6.625 7.21875 6.73047L6.44531 7.50391C6.33984 7.64453 6.33984 7.82031 6.44531 7.92578L10.8047 12.25L6.44531 16.6094C6.33984 16.7148 6.33984 16.8906 6.44531 17.0312L7.21875 17.8047C7.35938 17.9102 7.53516 17.9102 7.64062 17.8047L12 13.4453L15.5859 17.0664L16.3242 17.8047C16.4297 17.9102 16.6055 17.9102 16.7461 17.8047L17.5195 17.0312C17.625 16.8906 17.625 16.7148 17.5195 16.6094L13.1602 12.25Z" fill="black"/></svg>');
+  background-image: var(--_hds-icons-times);
   background-position: center;
 
   /* Positioning */

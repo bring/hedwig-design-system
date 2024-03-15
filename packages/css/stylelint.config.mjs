@@ -9,6 +9,14 @@ export default {
   extends: ["stylelint-config-standard"],
   plugins: ["stylelint-value-no-unknown-custom-properties"],
   rules: {
+    // Custom property pattern kebab-case, with optional underscore prefix for internal use
+    "custom-property-pattern": [
+      "^([a-z_][a-z0-9]*)(-[a-z0-9]+)*$",
+      {
+        message: "Expected custom property name to be kebab-case",
+        severity: "warning",
+      },
+    ],
     // We use postcss-extend-rule to reuse classes
     "at-rule-no-unknown": [
       true,
