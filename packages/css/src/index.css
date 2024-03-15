@@ -1,6 +1,12 @@
+/* Global effects */
+@import url("reset.css");
+@import url("body.css");
+@import url("tokens.css");
+@import url("fonts.css");
+
+/* All components */
 @import url("accordion/accordion.css");
 @import url("badge/badge.css");
-@import url("body.css");
 @import url("box/box.css");
 @import url("breadcrumb/breadcrumb.css");
 @import url("button/button.css");

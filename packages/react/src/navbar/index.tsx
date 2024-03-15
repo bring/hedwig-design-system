@@ -1,9 +1,3 @@
-import "@postenbring/hedwig-css/dist/fonts.css";
-import "@postenbring/hedwig-css/dist/tokens.css";
-import "@postenbring/hedwig-css/dist/body.css";
-
-import "@postenbring/hedwig-css/dist/navbar.css";
-
 import { Navbar, NavbarLogo, NavbarButton, NavbarNavigation } from "./navbar";
 import {
   NavbarExpandableMenu,

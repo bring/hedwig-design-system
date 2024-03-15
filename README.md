@@ -44,6 +44,13 @@ function App() {
 
 ![Button inside Box with Bring theme](screenshots/box-and-button-bring-theme.png)
 
+### Custom css loading
+
+The `@postenbring/hedwig-react` entrypoint automaticly imports `@postenbring/hedwig-css`, ensuring all the needed css is loaded.
+For most projects and bundlers this just works.
+
+If you need to handle css loading yourself you can you import the react packages from `@postenbring/hedwig-react/dist/index-no-css`.
+
 ## 🧑‍💻 Contributing
 
 ### Prerequisites

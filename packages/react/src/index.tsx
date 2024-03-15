@@ -1,18 +1,3 @@
-export * from "./accordion";
-export * from "./badge";
-export * from "./box";
-export * from "./breadcrumb";
-export * from "./button";
-export * from "./card";
-export * from "./form";
-export * from "./layout";
-export * from "./link";
-export * from "./list";
-export * from "./message";
-export * from "./modal";
-export * from "./tabs";
-export * from "./warning-banner";
-export * from "./styled-html";
-export * from "./show-more";
-export * from "./step-indicator";
-export * from "./skeleton";
+import "@postenbring/hedwig-css";
+
+export * from "./index-no-css";

@@ -4,7 +4,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "sideEffects": true,
+  "sideEffects": [
+    "@postenbring/hedwig-css"
+  ],
   "license": "MIT",
   "files": [
     "dist/**"
@@ -18,8 +20,8 @@
   },
   "devDependencies": {
     "@microsoft/api-extractor": "7.42.3",
-    "@types/react": "^18.2.64",
-    "@types/react-dom": "^18.2.21",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "react": "^18.2.0",
@@ -28,8 +30,10 @@
     "typescript": "^5.4.2"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "@types/react-dom": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
     "@postenbring/hedwig-css": "workspace:*"

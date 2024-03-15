@@ -1,9 +1,3 @@
-import "@postenbring/hedwig-css/dist/fonts.css";
-import "@postenbring/hedwig-css/dist/tokens.css";
-import "@postenbring/hedwig-css/dist/body.css";
-
-import "@postenbring/hedwig-css/dist/tabs.css";
-
 import { Tabs } from "./tabs";
 import { TabsList, Tab } from "./tabs-list";
 import { TabsContents, TabsContent } from "./tabs-content";
