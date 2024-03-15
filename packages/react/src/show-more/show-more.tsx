@@ -1,9 +1,18 @@
 import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 
-interface ShowMoreProps extends React.HTMLAttributes<HTMLButtonElement> {
+type Variant =
+  | {
+      variant?: "show-more";
+      expanded?: never;
+    }
+  | {
+      variant: "show-more-show-less";
+      expanded: boolean;
+    };
+
+export type ShowMoreProps = React.HTMLAttributes<HTMLButtonElement> & {
   text: React.ReactNode;
-  expanded?: boolean;
-}
+} & Variant;
 
 /**
  * Simple button for triggering more content.
@@ -34,10 +43,14 @@ interface ShowMoreProps extends React.HTMLAttributes<HTMLButtonElement> {
  * }
  * ```
  */
-export function ShowMoreButton({ text, expanded = false, className, ...rest }: ShowMoreProps) {
+export function ShowMoreButton({ text, variant, expanded, className, ...rest }: ShowMoreProps) {
   return (
     <button
-      className={clsx("hds-show-more", className as undefined)}
+      className={clsx(
+        "hds-show-more",
+        variant === "show-more-show-less" && "hds-show-more--show-less",
+        className as undefined,
+      )}
       data-state={expanded ? "expanded" : undefined}
       type="button"
       {...rest}
