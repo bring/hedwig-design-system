@@ -37,7 +37,7 @@
 
     &::before {
       display: inline-block;
-      background-image: var(--_hds-icons-cheveron-right);
+      background-image: var(--_hds-icons-cheveron-right-dark-grey);
       width: 20px;
       height: 20px;
       margin: 0 var(--hds-spacing-small-1);
@@ -54,7 +54,7 @@
         &::before {
           display: inline-block;
           margin-left: 0;
-          background-image: var(--_hds-icons-cheveron-left);
+          background-image: var(--_hds-icons-cheveron-left-black);
         }
       }
     }
