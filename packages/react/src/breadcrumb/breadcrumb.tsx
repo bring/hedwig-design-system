@@ -18,7 +18,7 @@ export interface BreadcrumbsProps extends HTMLAttributes<HTMLOListElement> {
  * ```tsx
  * <Breadcrumbs data-testid="breadcrumbs">
  *   <li><Link href="../">Previous page</Link></li>
- *   <li>Current page</li>
+ *   <li aria-current="page">Current page</li>
  * </Breadcrumbs>
  * ```
  *
@@ -28,7 +28,7 @@ export interface BreadcrumbsProps extends HTMLAttributes<HTMLOListElement> {
  * <nav data-testid="breadcrumbs">
  *   <ol>
  *     <li><a href="../">Previous page</a></li>
- *     <li>Current page</li>
+ *     <li aria-current="page">Current page</li>
  *   </ol>
  * </nav>
  * ```
