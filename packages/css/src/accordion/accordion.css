@@ -1,4 +1,5 @@
 @import url("../_custom-media.css");
+@import url("../_icons.css");
 
 .hds-accordion {
   --hds-accordion-icon-dimension: 24px;
@@ -46,30 +47,23 @@
         outline: 0;
       }
 
-      .hds-accordion-item-header--icon {
-        display: inline-block;
-        color: var(--hds-colors-dark);
-        fill: var(--hds-colors-dark);
+      &::before {
+        content: "";
         width: var(--hds-accordion-icon-dimension);
         height: var(--hds-accordion-icon-dimension);
+        background-image: var(--_hds-icons-cheveron-down-dark);
 
-        & svg {
-          vertical-align: baseline;
+        /* Optionally animate the cheveron.
+           As of 31. jan 2024 I think it looks nicer without animation on the cheveron.
+           The height animation is sufficient to indicate open/close.
+         */
 
-          /* Optionally animate the cheveron.
-             As of 31. jan 2024 I think it looks nicer without animation on the cheveron.
-             The height animation is sufficient to indicate open/close.
-          */
-
-          /* transition: transform var(--hds-micro-animation-duration-quick)
+        /* transition: transform var(--hds-micro-animation-duration-quick)
             var(--hds-micro-animation-easing-normal); */
-        }
       }
 
-      &.hds-accordion-item-header--open {
-        .hds-accordion-item-header--icon svg {
-          transform: rotate(180deg);
-        }
+      &.hds-accordion-item-header--open::before {
+        transform: rotate(180deg);
       }
     }
 
