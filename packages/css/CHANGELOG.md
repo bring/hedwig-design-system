@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.49
+
+### Patch Changes
+
+- 8e87e04: :recycle: use css icons for warning-banner
+
 ## 0.0.48
 
 ### Patch Changes

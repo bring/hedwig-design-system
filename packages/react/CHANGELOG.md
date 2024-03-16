@@ -1,5 +1,14 @@
 # @postenbring/hedwig-react
 
+## 0.0.55
+
+### Patch Changes
+
+- 3766818: :adhesive_bandage: fix css not loading when using `@postenbring/hedwig-react` during development in a fresh vite project
+- 8e87e04: :recycle: use css icons for warning-banner
+- Updated dependencies [8e87e04]
+  - @postenbring/hedwig-css@0.0.49
+
 ## 0.0.54
 
 ### Patch Changes
