@@ -50,7 +50,7 @@
   "ui-colors": {
     "$type": "color",
     "black": {
-      "$value": "#000000"
+      "$value": "blue"
     },
     "dark-grey": {
       "$value": "#6e6e6e"

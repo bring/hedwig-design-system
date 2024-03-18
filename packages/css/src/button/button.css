@@ -76,7 +76,7 @@
    */
 
   &.hds-button--primary {
-    background-color: var(--hds-colors-signature);
+    background-color: var(--hds-ui-colors-black);
     color: var(--hds-button-colors-text);
     fill: var(--hds-button-colors-text);
 

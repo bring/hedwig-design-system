@@ -21,7 +21,7 @@
   },
   "ui-colors": {
     "$type": "color",
-    "black": "#000000",
+    "black": "blue",
     "dark-grey": "#6e6e6e",
     "grey": "#d6d6d6",
     "light-grey-stroke": "#e4e4e4",

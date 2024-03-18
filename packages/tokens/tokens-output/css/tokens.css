@@ -14,7 +14,7 @@
   --hds-bring-colors-lighter-green: #f1f7e9;
   --hds-bring-colors-signature-green-hover: #86cc4a;
   --hds-bring-colors-light-green-hover: #d3e593;
-  --hds-ui-colors-black: #000000;
+  --hds-ui-colors-black: blue;
   --hds-ui-colors-dark-grey: #6e6e6e;
   --hds-ui-colors-grey: #d6d6d6;
   --hds-ui-colors-light-grey-stroke: #e4e4e4;
@@ -222,7 +222,7 @@
   --hds-colors-signature-hover: #d62722;
   --hds-colors-light-hover: #ff7d55;
   --hds-button-colors-text: #ffffff;
-  --hds-link-colors-text: #000000;
+  --hds-link-colors-text: blue;
   --hds-link-colors-underline: #e32d22;
   --hds-link-colors-hover: #e32d22;
   --hds-link-colors-underline-hover: #e32d22;
@@ -259,8 +259,8 @@
   --hds-colors-lighter: #f1f7e9;
   --hds-colors-signature-hover: #86cc4a;
   --hds-colors-light-hover: #d3e593;
-  --hds-button-colors-text: #000000;
-  --hds-link-colors-text: #000000;
+  --hds-button-colors-text: blue;
+  --hds-link-colors-text: blue;
   --hds-link-colors-underline: #7bc144;
   --hds-link-colors-hover: #00643a;
   --hds-link-colors-underline-hover: #00643a;
