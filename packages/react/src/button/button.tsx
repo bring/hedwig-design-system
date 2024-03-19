@@ -70,7 +70,7 @@ export const BaseButton: OverridableComponent<
           {
             [`hds-button--${variant}`]: fill === "contained",
             [`hds-button--outline-${variant}`]: fill === "outline" || fill === "outlined",
-            "hds-button--full": fullWidth,
+            "hds-button--full": fullWidth === true,
             "hds-button--mobile-full": fullWidth === "mobile",
             "hds-button--icon-only": icon && !children,
           },
