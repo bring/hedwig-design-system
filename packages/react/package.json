@@ -19,7 +19,7 @@
     "clean": "rm -rf .turbo node_modules dist"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "7.42.3",
+    "@microsoft/api-extractor": "7.43.0",
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
     "eslint-config-custom": "workspace:*",
