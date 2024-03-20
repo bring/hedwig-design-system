@@ -129,7 +129,7 @@ You can also use `pnpm changeset` in the project root folder, which will guide y
 
 ### Snapshots releases
 
-Snapshots of a branch is published when a new changeset file is present in a pull request. The snapshot release version is in the format `0.0.0-${branch}-${timestamp}`, e.g. `@postenbring/hedwig-react@0.0.0-refactor-button-iSIvTK2v-20231121205134`. This way, anyone who wants to contribute or request changes can create their own branch and automatically publish a snapshot version to the [npm registry](https://www.npmjs.com/package/@postenbring/) for testing purposes. Snapshot versions can be found here:
+Snapshots of a branch is published when a new changeset file is present in a pull request. The snapshot release version is in the format `0.0.0-${branch}-${timestamp}`, e.g. `@postenbring/hedwig-react@0.0.0-refactor-button-iSIvTK2v-20231121205134`. This way, anyone who wants to contribute or request changes can create their own branch and automatically publish a snapshot version to the [npm registry](https://www.npmjs.com/search?q=%40postenbring%2Fhedwig) for testing purposes. Snapshot versions can be found here:
 
 - [hedwig-react](https://www.npmjs.com/package/@postenbring/hedwig-react?activeTab=versions)
 - [hedwig-css](https://www.npmjs.com/package/@postenbring/hedwig-css?activeTab=versions)
