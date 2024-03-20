@@ -53,6 +53,8 @@ If you need to handle css loading yourself you can you import the react packages
 
 ## 🧑‍💻 Contributing
 
+We welcome anyone who would like to contribute to improving the Hedwig Design System. The core team is responsible for maintaining this repository. However, anyone seeking changes is encouraged to submit a pull request.
+
 ### Prerequisites
 
 Before you begin, ensure you have the following installed:
@@ -127,4 +129,8 @@ You can also use `pnpm changeset` in the project root folder, which will guide y
 
 ### Snapshots releases
 
-Snapshots of a branch is published when a new changeset file is present in a pull request. The snapshot release version is in the format `0.0.0-${branch}-${timestamp}`, e.g. `@postenbring/hedwig-react@0.0.0-refactor-button-iSIvTK2v-20231121205134`. This way, anyone who wants to contribute or request changes can create their own branch and automatically publish a snapshot version to [npmjs](https://www.npmjs.com/) for testing purposes.
+Snapshots of a branch is published when a new changeset file is present in a pull request. The snapshot release version is in the format `0.0.0-${branch}-${timestamp}`, e.g. `@postenbring/hedwig-react@0.0.0-refactor-button-iSIvTK2v-20231121205134`. This way, anyone who wants to contribute or request changes can create their own branch and automatically publish a snapshot version to the [npm registry](https://www.npmjs.com/package/@postenbring/) for testing purposes before merging publishing a new stable release. Snapshot versions can be found here:
+
+- [hedwig-react](https://www.npmjs.com/package/@postenbring/hedwig-react?activeTab=versions)
+- [hedwig-css](https://www.npmjs.com/package/@postenbring/hedwig-css?activeTab=versions)
+- [hedwig-tokens](https://www.npmjs.com/package/@postenbring/hedwig-tokens?activeTab=versions)
