@@ -130,26 +130,26 @@ export const Article: Story = {
         A subtitle with some more text is loading
       </Skeleton>
       <p>
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(25, 60)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(45, 80)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
+        <Skeleton variant="text" width={numberBetween(25, 60)} />
+        <Skeleton variant="text" width={numberBetween(45, 80)} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
       </p>
 
       <Skeleton variant="text" as="h2">
         Another piece of text
       </Skeleton>
       <p>
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(25, 60)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(45, 80)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
-        <Skeleton variant="text" width={`${numberBetween(75, 90)}%`} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
+        <Skeleton variant="text" width={numberBetween(25, 60)} />
+        <Skeleton variant="text" width={numberBetween(45, 80)} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
+        <Skeleton variant="text" width={numberBetween(75, 90)} />
       </p>
     </StyledHtml>
   ),
