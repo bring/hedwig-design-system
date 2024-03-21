@@ -1,5 +1,6 @@
 @import url("../_custom-media.css");
 @import url("../_icons.css");
+@import url("../spacing/spacing.css");
 
 .hds-box.hds-warning-banner {
   --hds-warning-banner-icon-dimension: var(--hds-spacing-24);
@@ -21,11 +22,7 @@
 
   /* Spacing between title and description */
   & .hds-warning-banner__title ~ .hds-warning-banner__description {
-    margin-top: var(--hds-spacing-12);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-16);
-    }
+    margin-top: var(--hds-spacing-12-16);
   }
 
   .hds-warning-banner__title {

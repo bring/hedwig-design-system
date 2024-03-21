@@ -1,5 +1,6 @@
 @import url("../_custom-media.css");
 @import url("../_icons.css");
+@import url("../spacing/spacing.css");
 
 .hds-box {
   position: relative;
@@ -24,11 +25,7 @@
   }
 
   /* Padding */
-  --hds-component-box-padding: var(--hds-spacing-24);
-
-  @media (--medium) {
-    --hds-component-box-padding: var(--hds-spacing-32);
-  }
+  --hds-component-box-padding: var(--hds-spacing-24-32);
 
   padding: var(--hds-component-box-padding);
 

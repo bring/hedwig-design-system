@@ -1,4 +1,5 @@
 @import url("../_custom-media.css");
+@import url("../spacing/spacing.css");
 
 .hds-styled-html {
   font: var(--hds-typography-body);
@@ -21,28 +22,16 @@
    */
   & h1,
   & h2 {
-    margin-top: var(--hds-spacing-48);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-64);
-    }
+    margin-top: var(--hds-spacing-48-64);
   }
 
   & h3 {
-    margin-top: var(--hds-spacing-40);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-48);
-    }
+    margin-top: var(--hds-spacing-40-48);
   }
 
   & h4,
   & h5 {
-    margin-top: var(--hds-spacing-32);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-40);
-    }
+    margin-top: var(--hds-spacing-32-40);
   }
 
   /* Link */
@@ -62,28 +51,16 @@
   /* Combinations */
   & p + h2,
   & p + figure {
-    margin-top: var(--hds-spacing-48);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-64);
-    }
+    margin-top: var(--hds-spacing-48-64);
   }
 
   & p + h3 {
-    margin-top: var(--hds-spacing-40);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-48);
-    }
+    margin-top: var(--hds-spacing-40-48);
   }
 
   & p + h4,
   & p + h5 {
-    margin-top: var(--hds-spacing-32);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-40);
-    }
+    margin-top: var(--hds-spacing-32-40);
   }
 
   /* Divider */

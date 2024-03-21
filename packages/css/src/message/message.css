@@ -1,5 +1,6 @@
 @import url("../_custom-media.css");
 @import url("../_icons.css");
+@import url("../spacing/spacing.css");
 
 .hds-box.hds-message {
   --hds-component-message-icon-width: var(--hds-spacing-32);
@@ -79,10 +80,6 @@
   }
 
   & .hds-message__title ~ .hds-message__description {
-    margin-top: var(--hds-spacing-12);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-16);
-    }
+    margin-top: var(--hds-spacing-12-16);
   }
 }

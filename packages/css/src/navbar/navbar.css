@@ -1,4 +1,5 @@
 @import url("../_custom-media.css");
+@import url("../spacing/spacing.css");
 
 .hds-navbar {
   position: relative;
@@ -11,11 +12,7 @@
   font-family: var(--hds-fonts-posten-sans-regular);
   text-align: left;
   -webkit-font-smoothing: antialiased;
-  padding: 0 var(--hds-spacing-24);
-
-  @media (--large) {
-    padding: 0 var(--hds-spacing-32);
-  }
+  padding: 0 var(--hds-spacing-24-32);
 
   /**
    * Expandable 

@@ -1,5 +1,6 @@
 @import url("../_custom-media.css");
 @import url("../_icons.css");
+@import url("../spacing/spacing.css");
 
 /* stylelint-disable selector-class-pattern */
 .hds-card {
@@ -35,11 +36,7 @@
   }
 
   .hds-card__body {
-    padding: var(--hds-spacing-24);
-
-    @media (--large) {
-      padding: var(--hds-spacing-32);
-    }
+    padding: var(--hds-spacing-24-32);
 
     &:hover {
       color: initial;
@@ -78,12 +75,7 @@
   }
 
   .hds-card__body-description {
-    margin-top: var(--hds-spacing-16);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-20);
-    }
-
+    margin-top: var(--hds-spacing-16-20);
     font-family: var(--hds-fonts-posten-sans);
     font-size: var(--hds-font-size-technical-max);
     font-weight: var(--hds-font-weight-technical);
@@ -93,11 +85,7 @@
   .hds-card__body-action,
   .hds-card__body-action-arrow {
     display: inline-block;
-    margin-top: var(--hds-spacing-16);
-
-    @media (--large) {
-      margin-top: var(--hds-spacing-20);
-    }
+    margin-top: var(--hds-spacing-16-20);
   }
 
   .hds-card__body-action-arrow {
