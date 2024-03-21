@@ -1,5 +1,13 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.12
+
+### Patch Changes
+
+- 16137bd: new spacing token names
+
+  added in this commit https://github.com/bring/hedwig-design-system/commit/b39cd4fbcd71c6f8a1cffdad16e53558e2932a6d
+
 ## 0.0.11
 
 ### Patch Changes

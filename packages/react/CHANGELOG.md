@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.57
+
+### Patch Changes
+
+- @postenbring/hedwig-css@0.0.51
+
 ## 0.0.56
 
 ### Patch Changes
