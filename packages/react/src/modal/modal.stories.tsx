@@ -8,7 +8,7 @@ import { StyledHtml } from "../styled-html";
 import { Modal } from ".";
 
 const meta: Meta<typeof Modal> = {
-  title: "🚧 Modal",
+  title: "Modal",
   component: Modal,
 };
 
