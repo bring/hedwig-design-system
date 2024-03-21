@@ -1,6 +1,6 @@
 import { useId, forwardRef } from "react";
 import type { FieldsetHTMLAttributes, HTMLAttributes, ReactNode, CSSProperties } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { ErrorMessage } from "../error-message";
 
 export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {

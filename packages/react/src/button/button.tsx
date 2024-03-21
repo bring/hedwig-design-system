@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import type { OverridableComponent } from "../utils";
 
 interface ButtonPropsInternal extends React.ButtonHTMLAttributes<HTMLButtonElement> {

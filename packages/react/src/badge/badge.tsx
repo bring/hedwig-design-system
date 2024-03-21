@@ -1,5 +1,5 @@
 import * as React from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> {
   /**

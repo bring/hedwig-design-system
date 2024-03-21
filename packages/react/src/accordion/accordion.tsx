@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactElement } from "react";
 import { forwardRef } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import type { OverridableComponent } from "../utils";
 import type { AccordionItemProps } from "./accordion-item";
 

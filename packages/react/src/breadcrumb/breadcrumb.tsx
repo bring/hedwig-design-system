@@ -1,5 +1,5 @@
 import type { HTMLAttributes, ReactElement } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface BreadcrumbsProps extends HTMLAttributes<HTMLOListElement> {
   children: ReactElement<HTMLLIElement> | ReactElement<HTMLLIElement>[];

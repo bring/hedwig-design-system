@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactElement, MouseEvent } from "react";
 import { forwardRef, useContext, useRef } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { type OverridableComponent, useResize } from "../utils";
 import { TabsContext } from "./context";
 

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, forwardRef, useState, useRef, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import type { ClassValue } from "@postenbring/hedwig-css/typed-classname/index.mjs";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import type { OverridableComponent } from "../utils";
 import { CloseIcon, MenuIcon } from "./icons";
 

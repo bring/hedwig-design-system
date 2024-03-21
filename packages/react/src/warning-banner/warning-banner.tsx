@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { forwardRef, useState } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import type { OverridableComponent } from "../utils";
 import { Box } from "../box";
 

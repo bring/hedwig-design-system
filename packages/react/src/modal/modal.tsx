@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useRef } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Box } from "../box/box";
 import type { OverridableComponent } from "../utils";
 import { useMergeRefs } from "../utils";
