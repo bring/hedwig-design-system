@@ -1,5 +1,14 @@
 # @postenbring/hedwig-react
 
+## 0.0.56
+
+### Patch Changes
+
+- 9f8b884: :recycle::sparkles: `hds-text` utility classes for the typography styles
+- f5889f1: :sparkles: `Text` component
+- Updated dependencies [9f8b884]
+  - @postenbring/hedwig-css@0.0.50
+
 ## 0.0.55
 
 ### Patch Changes
