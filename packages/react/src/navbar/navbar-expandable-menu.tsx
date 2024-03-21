@@ -21,12 +21,38 @@ export interface NavbarExpandableMenuProps {
 export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => {
-    setOpen((currentOpen) => !currentOpen);
+    const nextOpenState = !open;
+    setOpen(nextOpenState);
+    if (nextOpenState) {
+      window.scrollTo(0, 0);
+      //hideAllOtherElements();
+      document.body.classList.add(clsx("hds-navbar-scroll-lock"));
+    } else {
+      document.body.classList.remove(clsx("hds-navbar-scroll-lock"));
+    }
   };
   return <navbarContext.Provider value={[open, toggleOpen]}>{children}</navbarContext.Provider>;
 }
 NavbarExpandableMenu.displayName = "NavbarExpandableMenu";
+/*
+function hideAllOtherElements() {
+  //const elements = document.querySelectorAll("body > *");
+  const navbarElement = document.getElementsByClassName(clsx("hds-navbar"))[0];
+  const siblings = getAllSiblings(navbarElement);
+  console.log(siblings);
+}
 
+function getAllSiblings(elem: Element) {
+  const sibs = [];
+  let element = elem.parentNode?.firstChild;
+  do {
+    console.log(element);
+    if (element === elem) continue;
+    sibs.push(element);
+  } while ((element = element?.nextSibling));
+  return sibs;
+}
+*/
 interface ButtonInterface {
   className?: ClassValue;
   open?: boolean;
@@ -200,7 +226,7 @@ export const NavbarExpandableMenuContent: OverridableComponent<
       data-state={open ? "open" : "closed"}
       ref={ref}
     >
-      {children}
+      <div className={clsx("hds-navbar__expandable-menu-content-inner")}>{children}</div>
     </Component>
   );
 });

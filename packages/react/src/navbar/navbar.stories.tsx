@@ -1,10 +1,18 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { Accordion } from "../accordion";
+import { Link } from "../link";
+import { LinkList } from "../list";
+import { ArticleContent } from "../styled-html/styled-html.stories";
+import { Container } from "../layout";
 import { Navbar } from ".";
 
 const meta: Meta<typeof Navbar> = {
   title: "🚧 Navbar",
   component: Navbar,
+  parameters: {
+    layout: "fullscreen",
+  },
 };
 
 export default meta;
@@ -37,20 +45,52 @@ const userIcon = (
 type Story = StoryObj<typeof Navbar>;
 export const Default: Story = {
   render: () => (
-    <Navbar>
-      <Navbar.Logo as="a" href="https://www.posten.no/" title="Til forsiden" />
-      <Navbar.Navigation>
-        <Navbar.Button as="a" href="https://www.posten.no/" icon={globeIcon} title="Link">
-          English
-        </Navbar.Button>
-        <Navbar.Button icon={userIcon} title="Button">
-          Search
-        </Navbar.Button>
-        <Navbar.ExpandableMenu>
-          <Navbar.ExpandableMenu.Trigger whenClosedText="Meny" whenOpenText="Close" />
-          <Navbar.ExpandableMenu.Content>Menu contents</Navbar.ExpandableMenu.Content>
-        </Navbar.ExpandableMenu>
-      </Navbar.Navigation>
-    </Navbar>
+    <>
+      <Navbar>
+        <Navbar.Logo as="a" href="https://www.posten.no/" title="Til forsiden" />
+        <Navbar.Navigation>
+          <Navbar.Button as="a" href="https://www.posten.no/" icon={globeIcon} title="Link">
+            English
+          </Navbar.Button>
+          <Navbar.Button icon={userIcon} title="Button">
+            Search
+          </Navbar.Button>
+          <Navbar.ExpandableMenu>
+            <Navbar.ExpandableMenu.Trigger whenClosedText="Meny" whenOpenText="Close" />
+            <Navbar.ExpandableMenu.Content>
+              <Container>
+                <h2>Menu contents</h2>
+                <Accordion>
+                  <Accordion.Item>
+                    <Accordion.Header>Tjenester</Accordion.Header>
+                    <Accordion.Content>
+                      <LinkList>
+                        <li>
+                          <Link href="#">Post</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Pakker og gods</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                      </LinkList>
+                    </Accordion.Content>
+                  </Accordion.Item>
+                </Accordion>
+              </Container>
+            </Navbar.ExpandableMenu.Content>
+          </Navbar.ExpandableMenu>
+        </Navbar.Navigation>
+      </Navbar>
+      <Container as="main">
+        <h1>Some content to be hidden when the menu opens</h1>
+        {
+          // @ts-expect-error -- It's ok
+
+          ArticleContent.render({})
+        }
+      </Container>
+    </>
   ),
 };
