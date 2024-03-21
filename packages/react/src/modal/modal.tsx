@@ -19,14 +19,35 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
 }
 
 /**
- * # 🚨 WORK IN PROGRESS 🚨
+ * A modal dialog is a window that forces the user to interact with it before they can return to other parts of the application.
  *
- * ## TODO
+ * Uses the native [`dialog`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) element.
  *
- * - [ ] polyfill the dialog element for the %0.2 users that don't have it yet.
- * - [x] Open the modal where there user is, not top of the page
- * - [x] Support the `open` prop
- * - [x] Support click outside to close
+ * Example
+ * ```
+    const modalRef = useRef<HTMLDialogElement>(null);
+    const onClose = () => modalRef.current?.close();
+
+    return (
+      <>
+        <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
+        <Modal ref={modalRef}>
+          <Modal.Header>Dialog header</Modal.Header>
+          <Modal.Content>
+            <p>
+              Dialog header Dialog description - a description of what is about to happen and maybe
+              something about the consequences.
+            </p>
+          </Modal.Content>
+          <Modal.Footer style={{ display: "flex", gap: 16 }}>
+            <PrimaryButton fill="outline" onClick={onClose}>
+              Close
+            </PrimaryButton>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+ * ```
  */
 export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
   ({ children, className, open, closeOnBackdropClick, onClick, ...rest }, ref) => {
