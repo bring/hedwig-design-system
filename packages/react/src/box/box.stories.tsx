@@ -12,7 +12,9 @@ const meta: Meta<typeof Box> = {
     closeable: false,
     children: (
       <>
-        <Text variant="h3-title">Box content</Text>
+        <Text variant="h3-title" as="h2">
+          Box content
+        </Text>
         <Text _unstableSpacing>
           This is some body copy in a box, but you can basically add anything you want in here.
         </Text>
@@ -97,7 +99,7 @@ export const Custom: Story = {
             closeTimer === null && countDownFrom(5);
           }}
         />
-        <Text variant="h3-title">
+        <Text variant="h3-title" as="h2">
           A customomized box
           {closeTimer !== null && ` - closing in ${closeTimer} seconds`}
         </Text>

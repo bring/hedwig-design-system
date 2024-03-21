@@ -76,16 +76,16 @@ function FontGallery({ size }: { size?: "min" | "max" | "fluid" }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-16)" }}>
       <div>
-        <Text size={size} variant="h1-display">
+        <Text size={size} variant="h1-display" as="p">
           Display
         </Text>
-        <Text size={size} variant="h1">
+        <Text size={size} variant="h1" as="p">
           H1
         </Text>
-        <Text size={size} variant="h2">
+        <Text size={size} variant="h2" as="p">
           H2
         </Text>
-        <Text size={size} variant="h3">
+        <Text size={size} variant="h3" as="p">
           H3
         </Text>
         <Text size={size} variant="body">
@@ -102,7 +102,7 @@ function FontGallery({ size }: { size?: "min" | "max" | "fluid" }) {
         </Text>
       </div>
       <div>
-        <Text size={size} variant="h3-title">
+        <Text size={size} variant="h3-title" as="p">
           H3 Title
         </Text>
         <Text size={size} variant="body-title">
