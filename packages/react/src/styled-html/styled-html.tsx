@@ -47,4 +47,4 @@ export const StyledHtml: OverridableComponent<StyledHtmlProps, HTMLDivElement> =
     );
   },
 );
-StyledHtml.displayName = "Prose";
+StyledHtml.displayName = "StyledHtml";
