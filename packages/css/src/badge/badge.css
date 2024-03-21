@@ -20,7 +20,7 @@
 
   &, /* Default */
   &.hds-badge--small {
-    padding: var(--hds-spacing-small-1) var(--hds-spacing-small-2);
+    padding: var(--hds-spacing-4) var(--hds-spacing-8);
   }
 
   &.hds-badge--smaller {

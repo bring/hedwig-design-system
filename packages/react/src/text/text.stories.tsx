@@ -18,9 +18,9 @@ export const PostenBringSideBySide: Story = {
   render: () => (
     <div
       style={{
-        padding: "var(--hds-spacing-large-1)",
+        padding: "var(--hds-spacing-48)",
         display: "flex",
-        gap: "var(--hds-spacing-small-4)",
+        gap: "var(--hds-spacing-16)",
       }}
     >
       <div className="hds-theme-posten">
@@ -39,9 +39,9 @@ export const MinAndMax: Story = {
   render: () => (
     <div
       style={{
-        padding: "var(--hds-spacing-large-1)",
+        padding: "var(--hds-spacing-48)",
         display: "flex",
-        gap: "var(--hds-spacing-small-4)",
+        gap: "var(--hds-spacing-16)",
       }}
     >
       <div>
@@ -60,7 +60,7 @@ function FontGalleryHeader({ children }: { children: React.ReactNode }) {
   return (
     <h2
       style={{
-        padding: "var(--hds-spacing-small-2)",
+        padding: "var(--hds-spacing-8)",
         background: "var(--hds-colors-signature)",
         color: "var(--hds-button-colors-text)",
         fontWeight: 500,
@@ -74,7 +74,7 @@ function FontGalleryHeader({ children }: { children: React.ReactNode }) {
 
 function FontGallery({ size }: { size?: "min" | "max" | "fluid" }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-4)" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-16)" }}>
       <div>
         <Text size={size} variant="h1-display">
           Display

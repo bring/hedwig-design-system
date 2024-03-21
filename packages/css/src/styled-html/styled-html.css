@@ -21,27 +21,27 @@
    */
   & h1,
   & h2 {
-    margin-top: var(--hds-spacing-large-1);
+    margin-top: var(--hds-spacing-48);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-large-2);
+      margin-top: var(--hds-spacing-64);
     }
   }
 
   & h3 {
-    margin-top: var(--hds-spacing-medium-4);
+    margin-top: var(--hds-spacing-40);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-large-1);
+      margin-top: var(--hds-spacing-48);
     }
   }
 
   & h4,
   & h5 {
-    margin-top: var(--hds-spacing-medium-3);
+    margin-top: var(--hds-spacing-32);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-medium-4);
+      margin-top: var(--hds-spacing-40);
     }
   }
 
@@ -52,57 +52,57 @@
 
   /* Paragraphs */
   & p {
-    margin-top: var(--hds-spacing-small-4);
+    margin-top: var(--hds-spacing-16);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-medium-2);
+      margin-top: var(--hds-spacing-24);
     }
   }
 
   /* Combinations */
   & p + h2,
   & p + figure {
-    margin-top: var(--hds-spacing-large-1);
+    margin-top: var(--hds-spacing-48);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-large-2);
+      margin-top: var(--hds-spacing-64);
     }
   }
 
   & p + h3 {
-    margin-top: var(--hds-spacing-medium-4);
+    margin-top: var(--hds-spacing-40);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-large-1);
+      margin-top: var(--hds-spacing-48);
     }
   }
 
   & p + h4,
   & p + h5 {
-    margin-top: var(--hds-spacing-medium-3);
+    margin-top: var(--hds-spacing-32);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-medium-4);
+      margin-top: var(--hds-spacing-40);
     }
   }
 
   /* Divider */
   & hr {
-    margin-bottom: var(--hds-spacing-medium-2);
+    margin-bottom: var(--hds-spacing-24);
   }
 
   /* List */
   & :is(ul, ol):where(:not(.hds-accordion)) {
     @extend url("./src/list/list.css:hds-list");
 
-    margin-top: var(--hds-spacing-small-4);
+    margin-top: var(--hds-spacing-16);
   }
 
   /* Image */
   & figure {
     /* TODO: @extend .hw-figure; */
 
-    margin-top: var(--hds-spacing-medium-3);
+    margin-top: var(--hds-spacing-32);
   }
 
   /* Table */
@@ -143,7 +143,7 @@
     }
 
     & p {
-      margin-top: var(--hds-spacing-small-3);
+      margin-top: var(--hds-spacing-12);
     }
 
     & b,

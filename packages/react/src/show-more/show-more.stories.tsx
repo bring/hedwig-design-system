@@ -61,7 +61,7 @@ export const SimpleShowMoreShowLess: Story = {
           onClick={() => {
             setExpanded((prev) => !prev);
           }}
-          style={{ marginTop: "var(--hds-spacing-medium-2)" }}
+          style={{ marginTop: "var(--hds-spacing-24)" }}
           text={expanded ? "Vis færre hendelser" : "Vis flere hendelser"}
         />
       </>
@@ -104,7 +104,7 @@ export const CompleteShowMoreShowLess: Story = {
               }, 300); // Wait for the animation to finish
             }
           }}
-          style={{ marginTop: "var(--hds-spacing-medium-2)" }}
+          style={{ marginTop: "var(--hds-spacing-24)" }}
           text={expanded ? "Vis færre hendelser" : "Vis flere hendelser"}
         />
         <div

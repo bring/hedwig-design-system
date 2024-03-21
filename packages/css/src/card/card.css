@@ -35,10 +35,10 @@
   }
 
   .hds-card__body {
-    padding: var(--hds-spacing-medium-2);
+    padding: var(--hds-spacing-24);
 
     @media (--large) {
-      padding: var(--hds-spacing-medium-3);
+      padding: var(--hds-spacing-32);
     }
 
     &:hover {
@@ -78,10 +78,10 @@
   }
 
   .hds-card__body-description {
-    margin-top: var(--hds-spacing-small-4);
+    margin-top: var(--hds-spacing-16);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-medium-1);
+      margin-top: var(--hds-spacing-20);
     }
 
     font-family: var(--hds-fonts-posten-sans);
@@ -93,10 +93,10 @@
   .hds-card__body-action,
   .hds-card__body-action-arrow {
     display: inline-block;
-    margin-top: var(--hds-spacing-small-4);
+    margin-top: var(--hds-spacing-16);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-medium-1);
+      margin-top: var(--hds-spacing-20);
     }
   }
 

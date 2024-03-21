@@ -24,10 +24,10 @@
   }
 
   /* Padding */
-  --hds-component-box-padding: var(--hds-spacing-medium-2);
+  --hds-component-box-padding: var(--hds-spacing-24);
 
   @media (--medium) {
-    --hds-component-box-padding: var(--hds-spacing-medium-3);
+    --hds-component-box-padding: var(--hds-spacing-32);
   }
 
   padding: var(--hds-component-box-padding);
@@ -43,7 +43,7 @@
  * TODO: Styling for the hover and focus effect can be improved upon
  */
 .hds-box .hds-box__close-button {
-  --hds-close-button-padding: var(--hds-spacing-small-2);
+  --hds-close-button-padding: var(--hds-spacing-8);
 
   /* Icon */
   width: calc(24px + var(--hds-close-button-padding));
@@ -54,8 +54,8 @@
 
   /* Positioning */
   position: absolute;
-  top: calc(var(--hds-spacing-small-4) - var(--hds-close-button-padding) / 2);
-  right: calc(var(--hds-spacing-small-4) - var(--hds-close-button-padding) / 2);
+  top: calc(var(--hds-spacing-16) - var(--hds-close-button-padding) / 2);
+  right: calc(var(--hds-spacing-16) - var(--hds-close-button-padding) / 2);
   padding: 0;
   border: none;
   border-radius: var(--hds-border-radius);

@@ -19,7 +19,7 @@ export const PlainRadiobutton: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-small-2)",
+        gap: "var(--hds-spacing-8)",
       }}
     >
       <Radiobutton name="group1">This is a radiobutton</Radiobutton>
@@ -37,7 +37,7 @@ export const BoundedRadiobutton: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-small-2)",
+        gap: "var(--hds-spacing-8)",
       }}
     >
       <Radiobutton name="group2" variant="bounding-box">
@@ -74,7 +74,7 @@ export const DetailedContentRadiobutton: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-small-2)",
+        gap: "var(--hds-spacing-8)",
       }}
     >
       <Radiobutton name="group4" title="Option 1">
@@ -94,7 +94,7 @@ export const DetailedContentRadiobuttonWithBoundingBox: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-small-2)",
+        gap: "var(--hds-spacing-8)",
       }}
     >
       <Radiobutton name="group5" title="Option 1" variant="bounding-box">

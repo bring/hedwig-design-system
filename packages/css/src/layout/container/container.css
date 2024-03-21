@@ -4,7 +4,7 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 var(--hds-spacing-small-4);
+  padding: 0 var(--hds-spacing-16);
   width: 100%;
 
   &, /* Default */
@@ -18,7 +18,7 @@
     /* 940px - max-width: 1200px 36px gutters */
     @media (--large) {
       max-width: 1200px;
-      padding: 0 var(--hds-spacing-medium-3);
+      padding: 0 var(--hds-spacing-32);
     }
   }
 
@@ -32,7 +32,7 @@
     /* 940px - max-width: 762px 36px gutters */
     @media (--large) {
       max-width: 762px;
-      padding: 0 var(--hds-spacing-medium-3);
+      padding: 0 var(--hds-spacing-32);
     }
   }
 
@@ -42,59 +42,59 @@
    */
 
   &.hds-container--pt {
-    padding-top: var(--hds-spacing-small-3);
+    padding-top: var(--hds-spacing-12);
   }
 
   &.hds-container--pb {
-    padding-bottom: var(--hds-spacing-small-3);
+    padding-bottom: var(--hds-spacing-12);
   }
 
   &.hds-container--mt {
-    margin-top: var(--hds-spacing-small-3);
+    margin-top: var(--hds-spacing-12);
   }
 
   &.hds-container--mb {
-    margin-bottom: var(--hds-spacing-small-3);
+    margin-bottom: var(--hds-spacing-12);
   }
 
   /* 720px - max-width: 590px */
   @media (--medium) {
     &.hds-container--pt {
-      padding-top: var(--hds-spacing-medium-3);
+      padding-top: var(--hds-spacing-32);
     }
 
     &.hds-container--pb {
-      padding-bottom: var(--hds-spacing-medium-3);
+      padding-bottom: var(--hds-spacing-32);
     }
 
     &.hds-container--mt {
-      margin-top: var(--hds-spacing-medium-3);
+      margin-top: var(--hds-spacing-32);
     }
 
     &.hds-container--mb {
-      margin-bottom: var(--hds-spacing-medium-3);
+      margin-bottom: var(--hds-spacing-32);
     }
   }
 
   /* 940px - max-width: 762px 36px gutters */
   @media (--large) {
     &.hds-container--mt {
-      margin-top: var(--hds-spacing-large-1);
+      margin-top: var(--hds-spacing-48);
     }
 
     &.hds-container--mb {
-      margin-bottom: var(--hds-spacing-large-1);
+      margin-bottom: var(--hds-spacing-48);
     }
   }
 
   /* 1200px - max-width: 762px 36px gutters */
   @media (--xlarge) {
     &.hds-container--pt {
-      padding-top: var(--hds-spacing-medium-4);
+      padding-top: var(--hds-spacing-40);
     }
 
     &.hds-container--pb {
-      padding-bottom: var(--hds-spacing-medium-4);
+      padding-bottom: var(--hds-spacing-40);
     }
   }
 }

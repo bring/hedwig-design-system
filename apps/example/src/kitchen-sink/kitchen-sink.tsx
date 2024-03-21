@@ -104,14 +104,14 @@ export default function KitchenSink() {
             style={{
               display: "flex",
               maxWidth: 600,
-              padding: "var(--hds-spacing-medium-2)",
+              padding: "var(--hds-spacing-24)",
               flexDirection: "column",
-              gap: "var(--hds-spacing-medium-2)",
+              gap: "var(--hds-spacing-24)",
             }}
           >
             <Box variant="lighter">
               <h3 style={{ margin: 0, font: "var(--hds-typography-body-title)" }}>This is box</h3>
-              <p style={{ marginTop: "var(--hds-spacing-small-2)" }}>With some content and stuff</p>
+              <p style={{ marginTop: "var(--hds-spacing-8)" }}>With some content and stuff</p>
             </Box>
             <Message closeable>
               <Message.Title>This is a message</Message.Title>
@@ -128,7 +128,7 @@ export default function KitchenSink() {
           <div
             style={{
               maxWidth: 600,
-              padding: "var(--hds-spacing-medium-2)",
+              padding: "var(--hds-spacing-24)",
             }}
           >
             <Select label="A select" variant="default" defaultValue="">
@@ -144,7 +144,7 @@ export default function KitchenSink() {
           <div
             style={{
               maxWidth: 600,
-              padding: "var(--hds-spacing-medium-2)",
+              padding: "var(--hds-spacing-24)",
             }}
           >
             <Checkbox title="Check this box" variant="bounding-box">

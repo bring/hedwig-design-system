@@ -4,133 +4,143 @@
  * # 🚧 WORK IN PROGRESS 🚧
  *
  * Spacing utility classes.
+ * TODO
+ * - margin-bottom
+ * - left/right?
+ * - padding?
  */
 
 :root {
-  --hds-spacing-small-1-responsive: var(--hds-spacing-small-1);
-  --hds-spacing-small-2-responsive: var(--hds-spacing-small-2);
-  --hds-spacing-small-3-responsive: var(--hds-spacing-small-3);
-  --hds-spacing-small-4-responsive: var(--hds-spacing-small-4);
-  --hds-spacing-medium-1-responsive: var(--hds-spacing-medium-1);
-  --hds-spacing-medium-2-responsive: var(--hds-spacing-medium-2);
-  --hds-spacing-medium-3-responsive: var(--hds-spacing-medium-3);
-  --hds-spacing-medium-4-responsive: var(--hds-spacing-medium-4);
-  --hds-spacing-large-1-responsive: var(--hds-spacing-large-1);
-  --hds-spacing-large-2-responsive: var(--hds-spacing-large-2);
-  --hds-spacing-large-3-responsive: var(--hds-spacing-large-3);
+  --hds-spacing-4-8: var(--hds-spacing-4);
+  --hds-spacing-8-12: var(--hds-spacing-8);
+  --hds-spacing-12-16: var(--hds-spacing-12);
+  --hds-spacing-16-20: var(--hds-spacing-16);
+  --hds-spacing-20-24: var(--hds-spacing-20);
+  --hds-spacing-24-32: var(--hds-spacing-24);
+  --hds-spacing-32-40: var(--hds-spacing-32);
+  --hds-spacing-40-48: var(--hds-spacing-40);
+  --hds-spacing-48-64: var(--hds-spacing-48);
+  --hds-spacing-64-80: var(--hds-spacing-64);
+  --hds-spacing-80-120: var(--hds-spacing-80);
+  --hds-spacing-120-160: var(--hds-spacing-120);
 
   @media (--large) {
-    --hds-spacing-small-1-responsive: var(--hds-spacing-small-2);
-    --hds-spacing-small-2-responsive: var(--hds-spacing-small-3);
-    --hds-spacing-small-3-responsive: var(--hds-spacing-small-4);
-    --hds-spacing-small-4-responsive: var(--hds-spacing-medium-1);
-    --hds-spacing-medium-1-responsive: var(--hds-spacing-medium-2);
-    --hds-spacing-medium-2-responsive: var(--hds-spacing-medium-3);
-    --hds-spacing-medium-3-responsive: var(--hds-spacing-medium-4);
-    --hds-spacing-medium-4-responsive: var(--hds-spacing-large-1);
-    --hds-spacing-large-1-responsive: var(--hds-spacing-large-2);
-    --hds-spacing-large-2-responsive: var(--hds-spacing-large-3);
-    --hds-spacing-large-3-responsive: var(--hds-spacing-large-4);
+    --hds-spacing-4-8: var(--hds-spacing-8);
+    --hds-spacing-8-12: var(--hds-spacing-12);
+    --hds-spacing-12-16: var(--hds-spacing-16);
+    --hds-spacing-16-20: var(--hds-spacing-20);
+    --hds-spacing-20-24: var(--hds-spacing-24);
+    --hds-spacing-24-32: var(--hds-spacing-32);
+    --hds-spacing-32-40: var(--hds-spacing-40);
+    --hds-spacing-40-48: var(--hds-spacing-48);
+    --hds-spacing-48-64: var(--hds-spacing-64);
+    --hds-spacing-64-80: var(--hds-spacing-80);
+    --hds-spacing-80-120: var(--hds-spacing-120);
+    --hds-spacing-120-160: var(--hds-spacing-160);
   }
 }
 
 /* Fixed margin top */
-.hds-mt-small-1 {
-  margin-top: var(--hds-spacing-small-1);
+.hds-mt-4 {
+  margin-top: var(--hds-spacing-4);
 }
 
-.hds-mt-small-2 {
-  margin-top: var(--hds-spacing-small-2);
+.hds-mt-8 {
+  margin-top: var(--hds-spacing-8);
 }
 
-.hds-mt-small-3 {
-  margin-top: var(--hds-spacing-small-3);
+.hds-mt-12 {
+  margin-top: var(--hds-spacing-12);
 }
 
-.hds-mt-small-4 {
-  margin-top: var(--hds-spacing-small-4);
+.hds-mt-16 {
+  margin-top: var(--hds-spacing-16);
 }
 
-.hds-mt-medium-1 {
-  margin-top: var(--hds-spacing-medium-1);
+.hds-mt-20 {
+  margin-top: var(--hds-spacing-20);
 }
 
-.hds-mt-medium-2 {
-  margin-top: var(--hds-spacing-medium-2);
+.hds-mt-24 {
+  margin-top: var(--hds-spacing-24);
 }
 
-.hds-mt-medium-3 {
-  margin-top: var(--hds-spacing-medium-3);
+.hds-mt-32 {
+  margin-top: var(--hds-spacing-32);
 }
 
-.hds-mt-medium-4 {
-  margin-top: var(--hds-spacing-medium-4);
+.hds-mt-40 {
+  margin-top: var(--hds-spacing-40);
 }
 
-.hds-mt-large-1 {
-  margin-top: var(--hds-spacing-large-1);
+.hds-mt-48 {
+  margin-top: var(--hds-spacing-48);
 }
 
-.hds-mt-large-2 {
-  margin-top: var(--hds-spacing-large-2);
+.hds-mt-64 {
+  margin-top: var(--hds-spacing-64);
 }
 
-.hds-mt-large-3 {
-  margin-top: var(--hds-spacing-large-3);
+.hds-mt-80 {
+  margin-top: var(--hds-spacing-80);
 }
 
-.hds-mt-large-4 {
-  margin-top: var(--hds-spacing-large-3);
+.hds-mt-120 {
+  margin-top: var(--hds-spacing-120);
+}
+
+.hds-mt-160 {
+  margin-top: var(--hds-spacing-160);
 }
 
 /* 
  * Responsive margin top
  * Mobile first, meaning it jumps up on larger screens
  */
-.hds-mt-small-1-responsive {
-  margin-top: var(--hds-spacing-small-1-responsive);
+.hds-mt-4-8 {
+  margin-top: var(--hds-spacing-4-8);
 }
 
-.hds-mt-small-2-responsive {
-  margin-top: var(--hds-spacing-small-2-responsive);
+.hds-mt-8-12 {
+  margin-top: var(--hds-spacing-8-12);
 }
 
-.hds-mt-small-3-responsive {
-  margin-top: var(--hds-spacing-small-3-responsive);
+.hds-mt-12-16 {
+  margin-top: var(--hds-spacing-12-16);
 }
 
-.hds-mt-small-4-responsive {
-  margin-top: var(--hds-spacing-small-4-responsive);
+.hds-mt-16-20 {
+  margin-top: var(--hds-spacing-16-20);
 }
 
-.hds-mt-medium-1-responsive {
-  margin-top: var(--hds-spacing-medium-1-responsive);
+.hds-mt-20-24 {
+  margin-top: var(--hds-spacing-20-24);
 }
 
-.hds-mt-medium-2-responsive {
-  margin-top: var(--hds-spacing-medium-2-responsive);
+.hds-mt-24-32 {
+  margin-top: var(--hds-spacing-24-32);
 }
 
-.hds-mt-medium-3-responsive {
-  margin-top: var(--hds-spacing-medium-3-responsive);
+.hds-mt-32-40 {
+  margin-top: var(--hds-spacing-32-40);
 }
 
-.hds-mt-medium-4-responsive {
-  margin-top: var(--hds-spacing-medium-4-responsive);
+.hds-mt-40-48 {
+  margin-top: var(--hds-spacing-40-48);
 }
 
-.hds-mt-large-1-responsive {
-  margin-top: var(--hds-spacing-large-1-responsive);
+.hds-mt-48-64 {
+  margin-top: var(--hds-spacing-48-64);
 }
 
-.hds-mt-large-2-responsive {
-  margin-top: var(--hds-spacing-large-2-responsive);
+.hds-mt-64-80 {
+  margin-top: var(--hds-spacing-64-80);
 }
 
-.hds-mt-large-3-responsive {
-  margin-top: var(--hds-spacing-large-3-responsive);
+.hds-mt-80-120 {
+  margin-top: var(--hds-spacing-80-120);
 }
 
-.hds-mt-large-4-responsive {
-  margin-top: var(--hds-spacing-large-3-responsive);
+.hds-mt-120-160 {
+  margin-top: var(--hds-spacing-120-160);
 }

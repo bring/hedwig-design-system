@@ -12,14 +12,14 @@
   }
 
   .hds-step-indicator__steps {
-    margin-top: var(--hds-spacing-small-2);
+    margin-top: var(--hds-spacing-8);
     display: flex;
-    column-gap: var(--hds-spacing-small-1);
+    column-gap: var(--hds-spacing-4);
 
     .hds-step-indicator__step {
       width: 100%;
       border-radius: var(--hds-border-radius);
-      height: var(--hds-spacing-small-1);
+      height: var(--hds-spacing-4);
 
       &[data-state="previous"] {
         background-color: var(--hds-colors-signature);
@@ -40,10 +40,10 @@
     color: var(--hds-colors-darker);
 
     &:not(:empty) {
-      margin-top: var(--hds-spacing-medium-2);
+      margin-top: var(--hds-spacing-24);
 
       @media (--large) {
-        margin-top: var(--hds-spacing-medium-3);
+        margin-top: var(--hds-spacing-32);
       }
     }
   }

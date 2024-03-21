@@ -18,7 +18,7 @@
         flex-direction: row;
 
         .hds-tabs--tab {
-          padding: var(--hds-spacing-small-3) 0;
+          padding: var(--hds-spacing-12) 0;
           border-bottom: var(--hds-tabs-border-active-size) solid transparent;
 
           &.hds-tabs--tab-active {
@@ -26,7 +26,7 @@
           }
 
           &:not(:last-child) {
-            margin-right: var(--hds-spacing-medium-3);
+            margin-right: var(--hds-spacing-32);
           }
         }
       }
@@ -38,7 +38,7 @@
 
         .hds-tabs--tab {
           width: auto;
-          padding: var(--hds-spacing-small-2) var(--hds-spacing-small-3);
+          padding: var(--hds-spacing-8) var(--hds-spacing-12);
 
           &.hds-tabs--tab-active {
             margin-left: calc(var(--hds-tabs-border-active-size) * -1);
@@ -55,7 +55,7 @@
 
       .hds-tabs--tab {
         width: auto;
-        padding: var(--hds-spacing-small-2) var(--hds-spacing-small-3);
+        padding: var(--hds-spacing-8) var(--hds-spacing-12);
 
         &.hds-tabs--tab-active {
           margin-left: calc(var(--hds-tabs-border-active-size) * -1);
@@ -82,6 +82,6 @@
   }
 
   .hds-tabs--contents {
-    margin-top: var(--hds-spacing-large-2);
+    margin-top: var(--hds-spacing-64);
   }
 }

@@ -1,7 +1,7 @@
 .hds-input-group {
   display: flex;
   flex-flow: column nowrap;
-  gap: var(--hds-spacing-small-1);
+  gap: var(--hds-spacing-4);
 
   &.hds-input-group--error {
     .hds-input-group__input-wrapper,
@@ -81,7 +81,7 @@
   & .hds-input-group__input {
     color: var(--hds-ui-colors-black);
     width: 100%;
-    padding: var(--hds-spacing-small-4);
+    padding: var(--hds-spacing-16);
     font: var(--hds-typography-body-small);
     line-height: normal;
     border: 0;

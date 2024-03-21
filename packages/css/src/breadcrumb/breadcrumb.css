@@ -40,7 +40,7 @@
       background-image: var(--_hds-icons-cheveron-right-dark-grey);
       width: 20px;
       height: 20px;
-      margin: 0 var(--hds-spacing-small-1);
+      margin: 0 var(--hds-spacing-4);
     }
 
     @media (--before-medium) {

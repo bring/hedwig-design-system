@@ -35,7 +35,7 @@ export type ShowMoreProps = React.HTMLAttributes<HTMLButtonElement> & {
  *         ))}
  *       </ul>
  *       {moreItemsAvailable ?
- *         <ShowMoreButton className="mt-small-2" onClick={onShowMoreItems} lang="en" /> :
+ *         <ShowMoreButton className="mt-8" onClick={onShowMoreItems} lang="en" /> :
  *         null
  *       }
  *     </>

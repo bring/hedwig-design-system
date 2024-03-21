@@ -127,43 +127,43 @@
   },
   "spacing": {
     "$type": "dimension",
-    "small-1": {
+    "4": {
       "$value": "4px"
     },
-    "small-2": {
+    "8": {
       "$value": "8px"
     },
-    "small-3": {
+    "12": {
       "$value": "12px"
     },
-    "small-4": {
+    "16": {
       "$value": "16px"
     },
-    "medium-1": {
+    "20": {
       "$value": "20px"
     },
-    "medium-2": {
+    "24": {
       "$value": "24px"
     },
-    "medium-3": {
+    "32": {
       "$value": "32px"
     },
-    "medium-4": {
+    "40": {
       "$value": "40px"
     },
-    "large-1": {
+    "48": {
       "$value": "48px"
     },
-    "large-2": {
+    "64": {
       "$value": "64px"
     },
-    "large-3": {
+    "80": {
       "$value": "80px"
     },
-    "large-4": {
+    "120": {
       "$value": "120px"
     },
-    "large-5": {
+    "160": {
       "$value": "160px"
     }
   },

@@ -161,7 +161,7 @@ export const TrackingNumberSearch: Story = {
         display: "flex",
         flexDirection: "row",
         alignItems: "end",
-        gap: "var(--hds-spacing-small-1)",
+        gap: "var(--hds-spacing-4)",
         maxWidth: 556,
       }}
     >
@@ -190,15 +190,13 @@ export const FormWithErrorsOnSubmit: Story = {
           }
           setErrors(newErrors);
         }}
-        style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-4)" }}
+        style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-16)" }}
       >
         <p>Fields without input will give an error</p>
         <Input errorMessage={errors.One} label="One" name="One" />
         <Input errorMessage={errors.Two} label="Two" name="Two" />
         <Input errorMessage={errors.Three} label="Three" name="Three" />
-        <div
-          style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-1)" }}
-        >
+        <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-4)" }}>
           <PrimaryButton type="submit">Submit</PrimaryButton>
           <SecondaryButton
             fill="outline"

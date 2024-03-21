@@ -10,12 +10,12 @@
   /**
    * Spacing from the left
    * In hedwig legacy the bullets started at the content
-   * padding-left: var(--hds-spacing-small-4);
+   * padding-left: var(--hds-spacing-16);
    */
-  padding-left: var(--hds-spacing-medium-3);
+  padding-left: var(--hds-spacing-32);
 
   & li {
-    padding-left: var(--hds-spacing-small-2);
+    padding-left: var(--hds-spacing-8);
 
     &::marker {
       color: var(--hds-colors-dark);
@@ -40,17 +40,17 @@
    */
   &.hds-list--small {
     font: var(--hds-typography-body-small);
-    gap: var(--hds-spacing-small-1);
+    gap: var(--hds-spacing-4);
   }
 
   &, /* Default */
   &.hds-list--medium {
-    gap: var(--hds-spacing-small-2);
+    gap: var(--hds-spacing-8);
   }
 
   &.hds-list--large {
     font: var(--hds-typography-h3);
-    gap: var(--hds-spacing-small-3);
+    gap: var(--hds-spacing-12);
   }
 
   /**
@@ -58,7 +58,7 @@
    */
   &.hds-list--link-list {
     li:not(:last-child) {
-      margin-bottom: var(--hds-spacing-small-2);
+      margin-bottom: var(--hds-spacing-8);
     }
 
     list-style: none;

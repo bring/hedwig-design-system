@@ -18,7 +18,7 @@
    * or just the `dt` and `dd` as a flat list next to each other
    */
   & :is(dt, div):not(:first-of-type) {
-    margin-top: var(--hds-spacing-small-3);
+    margin-top: var(--hds-spacing-12);
   }
 
   & dd {
@@ -35,7 +35,7 @@
   &.hds-description-list--horizontal {
     & dt {
       display: inline-block;
-      margin-right: var(--hds-spacing-small-2);
+      margin-right: var(--hds-spacing-8);
     }
 
     & dd {

@@ -130,7 +130,7 @@ module.exports = {
     spacing: {
       0: 0,
       ...tokens.spacing,
-      DEFAULT: tokens.spacing["medium-2"],
+      DEFAULT: tokens.spacing["24"],
     },
     listStyleType: {
       none: "none",

@@ -37,7 +37,7 @@ export const WithBadgeInLabel: Story = {
     label: (
       <>
         Norgespakke™ liten
-        <Badge size="smaller" style={{ marginLeft: "var(--hds-spacing-small-3)" }}>
+        <Badge size="smaller" style={{ marginLeft: "var(--hds-spacing-12)" }}>
           73,-
         </Badge>
       </>

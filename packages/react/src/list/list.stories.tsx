@@ -10,7 +10,7 @@ function HStack({ children }: { children: React.ReactNode }) {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-small-4)",
+        gap: "var(--hds-spacing-16)",
       }}
     >
       {children}
@@ -68,7 +68,7 @@ export const NestedLists: Story = {
       <li>
         Andre varer med verdi mellom 0 og 3000 kroner blir fortollet basert på verdi av innholdet i
         sendingen. Posten har satt ned prisene for å utføre fortollingen.
-        <UnorderedList style={{ marginTop: "var(--hds-spacing-small-4)" }}>
+        <UnorderedList style={{ marginTop: "var(--hds-spacing-16)" }}>
           <li>Verdi på vare 0–500 kroner: 45 kroner</li>
           <li>Verdi på vare&nbsp;500–3000 kroner: 75 kroner</li>
         </UnorderedList>

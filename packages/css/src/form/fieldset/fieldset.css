@@ -12,7 +12,7 @@
   & .hds-fieldset__legend,
   & .hds-fieldset__legend--default {
     padding: 0;
-    margin-bottom: var(--hds-spacing-small-1);
+    margin-bottom: var(--hds-spacing-4);
     transition: color var(--hds-micro-animation-duration-quick)
       var(--hds-micro-animation-easing-normal);
     font: var(--hds-typography-caption);
@@ -25,6 +25,6 @@
   & .hds-fieldset__input-wrapper {
     display: flex;
     flex-flow: column nowrap;
-    gap: var(--hds-spacing-small-1);
+    gap: var(--hds-spacing-4);
   }
 }

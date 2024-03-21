@@ -31,7 +31,7 @@
     padding: calc(
         var(--hds-component-button-small-y-padding) - var(--hds-component-button-border-width)
       )
-      calc(var(--hds-spacing-small-4) - var(--hds-component-button-border-width));
+      calc(var(--hds-spacing-16) - var(--hds-component-button-border-width));
 
     /* The height can be more if the text inside the button wraps */
     min-height: 44px;
@@ -40,8 +40,8 @@
   &.hds-button--medium {
     font-size: var(--hds-font-size-body-small-title-max);
     line-height: var(--hds-line-height-body-small-title-max);
-    padding: calc(var(--hds-spacing-small-3) - var(--hds-component-button-border-width))
-      calc(var(--hds-spacing-medium-1) - var(--hds-component-button-border-width));
+    padding: calc(var(--hds-spacing-12) - var(--hds-component-button-border-width))
+      calc(var(--hds-spacing-20) - var(--hds-component-button-border-width));
 
     /* The height can be more if the text inside the button wraps */
     min-height: 50px;
@@ -50,8 +50,8 @@
   &.hds-button--large {
     font-size: var(--hds-font-size-body-small-title-max);
     line-height: var(--hds-line-height-body-small-title-max);
-    padding: calc(var(--hds-spacing-small-4) - var(--hds-component-button-border-width))
-      calc(var(--hds-spacing-medium-2) - var(--hds-component-button-border-width));
+    padding: calc(var(--hds-spacing-16) - var(--hds-component-button-border-width))
+      calc(var(--hds-spacing-24) - var(--hds-component-button-border-width));
 
     /* The height can be more if the text inside the button wraps */
     min-height: 58px;

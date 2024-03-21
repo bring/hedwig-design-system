@@ -3,7 +3,7 @@ import { Link } from "@postenbring/hedwig-react";
 
 function FontGallery() {
   return (
-    <div className="flex flex-col gap-small-4">
+    <div className="flex flex-col gap-16">
       <div>
         <p className="text-h1-display">Display</p>
         <p className="text-h1">Heading 1</p>
@@ -28,23 +28,23 @@ function FontGallery() {
 export default function TailwindExample() {
   return (
     <div>
-      <div className="p-large-2">
-        <div className="bg-lighter rounded p-medium-3">
+      <div className="p-64">
+        <div className="bg-lighter rounded p-32">
           <h2 className="text-h1 text-signature">Title</h2>
-          <p className="text-body mb-medium-2">Inside some kinda card</p>
+          <p className="text-body mb-24">Inside some kinda card</p>
           <Link href="#some-link" size="small">
             With a link to somewhere
           </Link>
         </div>
       </div>
 
-      <div className="p-large-1 flex flex-row gap-small-4">
+      <div className="p-48 flex flex-row gap-16">
         <div>
-          <h2 className="bg-signature text-ui-white p-small-2 font-medium">Posten</h2>
+          <h2 className="bg-signature text-ui-white p-8 font-medium">Posten</h2>
           <FontGallery />
         </div>
         <div className="hds-theme-bring">
-          <h2 className="bg-signature text-ui-black p-small-2 font-medium">Bring</h2>
+          <h2 className="bg-signature text-ui-black p-8 font-medium">Bring</h2>
           <FontGallery />
         </div>
       </div>

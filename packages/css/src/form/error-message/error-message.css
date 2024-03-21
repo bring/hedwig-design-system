@@ -3,7 +3,7 @@
 .hds-error-message {
   font: var(--hds-typography-caption-title);
   color: var(--hds-ui-colors-dark-grey);
-  padding: var(--hds-spacing-small-2) 0 0 var(--hds-spacing-medium-4);
+  padding: var(--hds-spacing-8) 0 0 var(--hds-spacing-40);
 
   /* Avoid spacing when no errors are active, but keep the element always in DOM so `aria-live` works */
   &:empty {
@@ -13,7 +13,7 @@
   &:not(:empty) {
     background-image: var(--_hds-warning-yellow);
     background-repeat: no-repeat;
-    background-position-x: var(--hds-spacing-small-2);
-    background-position-y: var(--hds-spacing-small-1);
+    background-position-x: var(--hds-spacing-8);
+    background-position-y: var(--hds-spacing-4);
   }
 }

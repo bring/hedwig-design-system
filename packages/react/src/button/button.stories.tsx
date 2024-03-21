@@ -66,7 +66,7 @@ export const AsALink: Story = {
         display: "flex",
         flexWrap: "wrap",
         alignItems: "flex-end",
-        gap: "var(--hds-spacing-small-4)",
+        gap: "var(--hds-spacing-16)",
       }}
     >
       <PrimaryButton {...args} />
@@ -88,7 +88,7 @@ const createIconStory = (
   extraArgs: Partial<ButtonProps> = {},
 ): Story => ({
   render: (args) => (
-    <div style={{ display: "flex", alignItems: "flex-end", gap: "var(--hds-spacing-small-4)" }}>
+    <div style={{ display: "flex", alignItems: "flex-end", gap: "var(--hds-spacing-16)" }}>
       <Component {...args} size="small" />
       <Component {...args} size="medium" />
       <Component {...args} size="large" />

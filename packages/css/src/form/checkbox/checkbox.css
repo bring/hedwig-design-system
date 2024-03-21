@@ -1,10 +1,10 @@
 .hds-checkbox {
   --checkmark-width: 16px;
-  --checkmark-margin: var(--hds-spacing-small-1);
+  --checkmark-margin: var(--hds-spacing-4);
 
   display: block;
   padding: 0 0 0
-    calc(var(--checkmark-width) + (var(--checkmark-margin) * 2) + var(--hds-spacing-small-3));
+    calc(var(--checkmark-width) + (var(--checkmark-margin) * 2) + var(--hds-spacing-12));
   border-radius: var(--hds-border-radius);
   font: var(--hds-typography-body-small);
   position: relative;
@@ -21,7 +21,7 @@
 
   .hds-checkbox__title {
     font-weight: var(--hds-font-weight-body-title);
-    padding-bottom: var(--hds-spacing-small-3);
+    padding-bottom: var(--hds-spacing-12);
   }
 
   label::after {
@@ -77,14 +77,14 @@
   */
   &.hds-checkbox--bounding-box {
     background-color: var(--hds-colors-lighter);
-    padding: var(--hds-spacing-small-4) var(--hds-spacing-medium-3) var(--hds-spacing-small-4)
+    padding: var(--hds-spacing-16) var(--hds-spacing-32) var(--hds-spacing-16)
       calc(
-        var(--hds-spacing-small-4) + var(--checkmark-width) + (var(--checkmark-margin) * 2) +
-          var(--hds-spacing-small-3)
+        var(--hds-spacing-16) + var(--checkmark-width) + (var(--checkmark-margin) * 2) +
+          var(--hds-spacing-12)
       );
 
     .hds-checkbox__checkmark {
-      left: var(--hds-spacing-small-4);
+      left: var(--hds-spacing-16);
     }
 
     &.hds-checkbox--error {

@@ -2,11 +2,11 @@
 @import url("../_icons.css");
 
 .hds-box.hds-warning-banner {
-  --hds-warning-banner-icon-dimension: var(--hds-spacing-medium-2);
+  --hds-warning-banner-icon-dimension: var(--hds-spacing-24);
 
   width: 100%;
   background-color: var(--hds-ui-colors-warning-yellow);
-  padding: var(--hds-spacing-small-4);
+  padding: var(--hds-spacing-16);
   text-align: center;
 
   & .hds-warning-banner__description {
@@ -21,10 +21,10 @@
 
   /* Spacing between title and description */
   & .hds-warning-banner__title ~ .hds-warning-banner__description {
-    margin-top: var(--hds-spacing-small-3);
+    margin-top: var(--hds-spacing-12);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-small-4);
+      margin-top: var(--hds-spacing-16);
     }
   }
 
@@ -46,7 +46,7 @@
         width: var(--hds-warning-banner-icon-dimension);
         height: var(--hds-warning-banner-icon-dimension);
         background-image: var(--_hds-icons-cheveron-down);
-        margin-left: var(--hds-spacing-small-4);
+        margin-left: var(--hds-spacing-16);
         transform: rotate(180deg);
       }
     }

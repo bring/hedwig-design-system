@@ -181,21 +181,21 @@
 .hds-text-h2 {
   &.hds-text--spacing {
     &:not(:first-child) {
-      margin-top: var(--hds-spacing-large-1-responsive);
+      margin-top: var(--hds-spacing-48-64);
     }
   }
 }
 
 .hds-text-h1 + .hds-text-h2 {
   &.hds-text--spacing {
-    margin-top: var(--hds-spacing-medium-3);
+    margin-top: var(--hds-spacing-32);
   }
 }
 
 .hds-text-h3,
 .hds-text-h3-title {
   &.hds-text--spacing {
-    margin-top: var(--hds-spacing-medium-4-responsive);
+    margin-top: var(--hds-spacing-40-48);
   }
 }
 
@@ -203,18 +203,18 @@
 .hds-text-body-title {
   &.hds-text--spacing {
     &:not(:first-child) {
-      margin-top: var(--hds-spacing-small-4);
+      margin-top: var(--hds-spacing-16);
 
       @media (--large) {
-        margin-top: var(--hds-spacing-medium-2);
+        margin-top: var(--hds-spacing-24);
       }
     }
 
     &:not(:last-child) {
-      margin-bottom: var(--hds-spacing-small-4);
+      margin-bottom: var(--hds-spacing-16);
 
       @media (--large) {
-        margin-bottom: var(--hds-spacing-medium-2);
+        margin-bottom: var(--hds-spacing-24);
       }
     }
   }

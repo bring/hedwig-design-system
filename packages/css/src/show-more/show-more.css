@@ -24,15 +24,15 @@
   }
 
   &::before {
-    margin-right: var(--hds-spacing-medium-2);
+    margin-right: var(--hds-spacing-24);
   }
 
   &::after {
-    margin-left: var(--hds-spacing-medium-2);
+    margin-left: var(--hds-spacing-24);
   }
 
   .hds-show-more__icon {
-    margin-left: var(--hds-spacing-small-2);
+    margin-left: var(--hds-spacing-8);
     width: 24px;
     height: 24px;
     background-image: var(--_hds-plus-dark);

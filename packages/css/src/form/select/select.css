@@ -4,12 +4,12 @@
   .hds-input-group__input-wrapper {
     background-image: var(--_hds-icons-cheveron-down);
     background-size: 24px 24px;
-    background-position: calc(100% - var(--hds-spacing-small-4)) 50%;
+    background-position: calc(100% - var(--hds-spacing-16)) 50%;
     background-repeat: no-repeat;
   }
 
   .hds-input-group__input {
     appearance: none;
-    height: calc(var(--hds-spacing-small-4) * 2 + var(--hds-line-height-body-small-min));
+    height: calc(var(--hds-spacing-16) * 2 + var(--hds-line-height-body-small-min));
   }
 }

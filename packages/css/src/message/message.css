@@ -2,11 +2,11 @@
 @import url("../_icons.css");
 
 .hds-box.hds-message {
-  --hds-component-message-icon-width: var(--hds-spacing-medium-3);
-  --hds-component-message-spacing-between: var(--hds-spacing-small-4);
+  --hds-component-message-icon-width: var(--hds-spacing-32);
+  --hds-component-message-spacing-between: var(--hds-spacing-16);
 
   @media (--medium) {
-    --hds-component-message-spacing-between: var(--hds-spacing-medium-2);
+    --hds-component-message-spacing-between: var(--hds-spacing-24);
   }
 
   /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- Comes from `box.css` */
@@ -79,10 +79,10 @@
   }
 
   & .hds-message__title ~ .hds-message__description {
-    margin-top: var(--hds-spacing-small-3);
+    margin-top: var(--hds-spacing-12);
 
     @media (--large) {
-      margin-top: var(--hds-spacing-small-4);
+      margin-top: var(--hds-spacing-16);
     }
   }
 }
