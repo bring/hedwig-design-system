@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.50
+
+### Patch Changes
+
+- 9f8b884: :recycle::sparkles: `hds-text` utility classes for the typography styles
+
 ## 0.0.49
 
 ### Patch Changes
