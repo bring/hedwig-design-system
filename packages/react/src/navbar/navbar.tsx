@@ -1,5 +1,5 @@
 import React, { forwardRef, type HTMLAttributes } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import type { OverridableComponent } from "../utils";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {

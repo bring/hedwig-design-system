@@ -1,6 +1,6 @@
 import { useId, forwardRef, Children, isValidElement, cloneElement } from "react";
 import type { LabelHTMLAttributes, ReactNode, CSSProperties } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { ErrorMessage } from "../error-message";
 
 interface InputProps {

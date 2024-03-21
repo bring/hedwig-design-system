@@ -1,4 +1,4 @@
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 type TitleProps =
   | {

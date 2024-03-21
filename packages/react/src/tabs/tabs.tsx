@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactElement } from "react";
 import { forwardRef, useState } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import type { OverridableComponent } from "../utils";
 import { TabsContext } from "./context";
 import type { TabContentsProps } from "./tabs-content";

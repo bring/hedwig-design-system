@@ -1,6 +1,6 @@
 import type { InputHTMLAttributes } from "react";
 import React, { forwardRef } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> {
   variant?: "plain" | "bounding-box";

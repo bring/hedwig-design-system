@@ -1,5 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
-import { clsx } from "@postenbring/hedwig-css/typed-classname/index.mjs";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
   /**
