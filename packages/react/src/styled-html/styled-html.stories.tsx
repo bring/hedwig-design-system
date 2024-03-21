@@ -96,7 +96,7 @@ export const ArticleContent: Story = {
         </a>
       </p>
 
-      <h1 className="hds-typography-h3">Slik bruker du Pakkeboks:</h1>
+      <h1 className="hds-text-h3">Slik bruker du Pakkeboks:</h1>
 
       <p>
         For å bruke pakkeboksene må du&nbsp;

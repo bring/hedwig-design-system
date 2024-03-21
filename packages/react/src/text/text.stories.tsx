@@ -1,15 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Typography } from ".";
+import { Text } from ".";
 
-const meta: Meta<typeof Typography> = {
+const meta: Meta<typeof Text> = {
   title: "🚧 Typography",
-  component: Typography,
+  component: Text,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Typography>;
+type Story = StoryObj<typeof Text>;
 export const Default: Story = {
   render: FontGallery,
 };
@@ -76,47 +76,47 @@ function FontGallery({ size }: { size?: "min" | "max" | "fluid" }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-small-4)" }}>
       <div>
-        <Typography size={size} variant="h1-display">
+        <Text size={size} variant="h1-display">
           Display
-        </Typography>
-        <Typography size={size} variant="h1">
+        </Text>
+        <Text size={size} variant="h1">
           H1
-        </Typography>
-        <Typography size={size} variant="h2">
+        </Text>
+        <Text size={size} variant="h2">
           H2
-        </Typography>
-        <Typography size={size} variant="h3">
+        </Text>
+        <Text size={size} variant="h3">
           H3
-        </Typography>
-        <Typography size={size} variant="body">
+        </Text>
+        <Text size={size} variant="body">
           Body
-        </Typography>
-        <Typography size={size} variant="body-small">
+        </Text>
+        <Text size={size} variant="body-small">
           Body Small
-        </Typography>
-        <Typography size={size} variant="technical">
+        </Text>
+        <Text size={size} variant="technical">
           Technical
-        </Typography>
-        <Typography size={size} variant="caption">
+        </Text>
+        <Text size={size} variant="caption">
           Caption
-        </Typography>
+        </Text>
       </div>
       <div>
-        <Typography size={size} variant="h3-title">
+        <Text size={size} variant="h3-title">
           H3 Title
-        </Typography>
-        <Typography size={size} variant="body-title">
+        </Text>
+        <Text size={size} variant="body-title">
           Body Title
-        </Typography>
-        <Typography size={size} variant="body-small-title">
+        </Text>
+        <Text size={size} variant="body-small-title">
           Body Small Title
-        </Typography>
-        <Typography size={size} variant="technical-title">
+        </Text>
+        <Text size={size} variant="technical-title">
           Technical Title
-        </Typography>
-        <Typography size={size} variant="caption-title">
+        </Text>
+        <Text size={size} variant="caption-title">
           Caption Title
-        </Typography>
+        </Text>
       </div>
     </div>
   );

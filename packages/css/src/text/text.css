@@ -2,7 +2,7 @@
 @import url("./spacing.css");
 
 /**
- * Typography classes
+ * Text utility classes
  *
  * Sets the following values:
  * - Font family (always "Posten Sans")
@@ -10,197 +10,198 @@
  * - Font size
  * - Line height
  */
-.hds-typography-h1-display {
+.hds-text-h1-display {
   font: var(--hds-typography-h1-display);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-h1-display-min);
     line-height: var(--hds-line-height-h1-display-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-h1-display-max);
     line-height: var(--hds-line-height-h1-display-max);
   }
 }
 
-.hds-typography-h1 {
+.hds-text-h1 {
   font: var(--hds-typography-h1);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-h1-min);
     line-height: var(--hds-line-height-h1-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-h1-max);
     line-height: var(--hds-line-height-h1-max);
   }
 }
 
-.hds-typography-h2 {
+.hds-text-h2 {
   font: var(--hds-typography-h2);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-h2-min);
     line-height: var(--hds-line-height-h2-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-h2-max);
     line-height: var(--hds-line-height-h2-max);
   }
 }
 
-.hds-typography-h3 {
+.hds-text-h3 {
   font: var(--hds-typography-h3);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-h3-min);
     line-height: var(--hds-line-height-h3-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-h3-max);
     line-height: var(--hds-line-height-h3-max);
   }
 }
 
-.hds-typography-h3-title {
+.hds-text-h3-title {
   font: var(--hds-typography-h3-title);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-h3-title-min);
     line-height: var(--hds-line-height-h3-title-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-h3-title-max);
     line-height: var(--hds-line-height-h3-title-max);
   }
 }
 
-.hds-typography-body {
+.hds-text-body {
   font: var(--hds-typography-body);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-body-min);
     line-height: var(--hds-line-height-body-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-body-max);
     line-height: var(--hds-line-height-body-max);
   }
 }
 
-.hds-typography-body-title {
+.hds-text-body-title {
   font: var(--hds-typography-body-title);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-body-title-min);
     line-height: var(--hds-line-height-body-title-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-body-title-max);
     line-height: var(--hds-line-height-body-title-max);
   }
 }
 
-.hds-typography-body-small {
+.hds-text-body-small {
   font: var(--hds-typography-body-small);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-body-small-min);
     line-height: var(--hds-line-height-body-small-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-body-small-max);
     line-height: var(--hds-line-height-body-small-max);
   }
 }
 
-.hds-typography-body-small-title {
+.hds-text-body-small-title {
   font: var(--hds-typography-body-small-title);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-body-small-title-min);
     line-height: var(--hds-line-height-body-small-title-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-body-small-title-max);
     line-height: var(--hds-line-height-body-small-title-max);
   }
 }
 
-.hds-typography-technical {
+.hds-text-technical {
   font: var(--hds-typography-technical);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-technical-min);
     line-height: var(--hds-line-height-technical-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-technical-max);
     line-height: var(--hds-line-height-technical-max);
   }
 }
 
-.hds-typography-technical-title {
+.hds-text-technical-title {
   font: var(--hds-typography-technical-title);
 
-  &.hds-typography--min {
+  &.hds-text--min {
     font-size: var(--hds-font-size-technical-title-min);
     line-height: var(--hds-line-height-technical-title-min);
   }
 
-  &.hds-typography--max {
+  &.hds-text--max {
     font-size: var(--hds-font-size-technical-title-max);
     line-height: var(--hds-line-height-technical-title-max);
   }
 }
 
-.hds-typography-caption {
+.hds-text-caption {
   font: var(--hds-typography-caption);
 }
 
-.hds-typography-caption-title {
+.hds-text-caption-title {
   font: var(--hds-typography-caption-title);
 }
 
 /**
  * 🚧 Spacing
+ * 🚨 WORK IN PROGRESS - MIGHT BREAK 🚨
  * Meant for article content, ui content might need different spacing.
  */
-.hds-typography-h1,
-.hds-typography-h2 {
-  &.hds-typography--spacing {
+.hds-text-h1,
+.hds-text-h2 {
+  &.hds-text--spacing {
     &:not(:first-child) {
       margin-top: var(--hds-spacing-large-1-responsive);
     }
   }
 }
 
-.hds-typography-h1 + .hds-typography-h2 {
-  &.hds-typography--spacing {
+.hds-text-h1 + .hds-text-h2 {
+  &.hds-text--spacing {
     margin-top: var(--hds-spacing-medium-3);
   }
 }
 
-.hds-typography-h3,
-.hds-typography-h3-title {
-  &.hds-typography--spacing {
+.hds-text-h3,
+.hds-text-h3-title {
+  &.hds-text--spacing {
     margin-top: var(--hds-spacing-medium-4-responsive);
   }
 }
 
-.hds-typography-body,
-.hds-typography-body-title {
-  &.hds-typography--spacing {
+.hds-text-body,
+.hds-text-body-title {
+  &.hds-text--spacing {
     &:not(:first-child) {
       margin-top: var(--hds-spacing-small-4);
 

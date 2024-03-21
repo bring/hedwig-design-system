@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { Typography } from "../typography";
+import { Text } from "../text";
 import { Link } from "../link";
 import { Box } from ".";
 
@@ -12,10 +12,10 @@ const meta: Meta<typeof Box> = {
     closeable: false,
     children: (
       <>
-        <Typography variant="h3-title">Box content</Typography>
-        <Typography _unstableSpacing>
+        <Text variant="h3-title">Box content</Text>
+        <Text _unstableSpacing>
           This is some body copy in a box, but you can basically add anything you want in here.
-        </Typography>
+        </Text>
         <Link href="#a-link-for-whatever-reason">A link for whatever reason</Link>
       </>
     ),
@@ -97,13 +97,13 @@ export const Custom: Story = {
             closeTimer === null && countDownFrom(5);
           }}
         />
-        <Typography variant="h3-title">
+        <Text variant="h3-title">
           A customomized box
           {closeTimer !== null && ` - closing in ${closeTimer} seconds`}
-        </Typography>
-        <Typography _unstableSpacing>
+        </Text>
+        <Text _unstableSpacing>
           With a custom close button, and a custom content. The content can be anything you like.
-        </Typography>
+        </Text>
       </Box>
     );
   },

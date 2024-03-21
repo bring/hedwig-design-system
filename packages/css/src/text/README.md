@@ -1,13 +1,6 @@
 # 🚨 WORK IN PROGRESS 🚨
 
-Not ready to be used, api might drasticly change.
-
-## Thoughts & Ideas
-
-- use `text` prefix instead of `typography` e.g.`hds-text-body-title`
-- use `typo` prefix instead of `typography` e.g.`hds-typo-body-title`
-
-### Spacing
+### Thoughts about spacing
 
 - Opt-in spacing prop that adds margin-bottom or margin-top, or both
 - Responsive spacing
@@ -15,11 +8,11 @@ Not ready to be used, api might drasticly change.
 Maybe if we create some spacing utilty classes, they can be used instead?
 
 ```jsx
-class="hds-typography-body-title hds-typography--spacing"
+class="hds-text-body-title hds-text--spacing"
 
 // VS
 
-class="hds-typography-body-title hds-spacing"
+class="hds-text-body-title hds-spacing"
 ```
 
 ### Two types of spacing

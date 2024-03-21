@@ -16,5 +16,5 @@ export * from "./skeleton";
 export * from "./step-indicator";
 export * from "./styled-html";
 export * from "./tabs";
-export * from "./typography";
+export * from "./text";
 export * from "./warning-banner";

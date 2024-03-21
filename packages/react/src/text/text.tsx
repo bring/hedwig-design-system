@@ -45,7 +45,7 @@ const defaultHTMLTag: Record<NonNullable<TypographyProps["variant"]>, `h${1 | 2 
 /**
  * ## 🚨 WORK IN PROGRESS 🚨
  */
-export const Typography: OverridableComponent<TypographyProps, HTMLDivElement> = forwardRef(
+export const Text: OverridableComponent<TypographyProps, HTMLDivElement> = forwardRef(
   (
     {
       as,
@@ -64,9 +64,9 @@ export const Typography: OverridableComponent<TypographyProps, HTMLDivElement> =
     return (
       <Component
         className={clsx(
-          `hds-typography-${variant}`,
-          sizeModifier && `hds-typography--${sizeModifier}`,
-          spacing && "hds-typography--spacing",
+          `hds-text-${variant}`,
+          sizeModifier && `hds-text--${sizeModifier}`,
+          spacing && "hds-text--spacing",
           className as undefined,
         )}
         ref={ref}
@@ -77,4 +77,4 @@ export const Typography: OverridableComponent<TypographyProps, HTMLDivElement> =
     );
   },
 );
-Typography.displayName = "Typography";
+Text.displayName = "Typography";
