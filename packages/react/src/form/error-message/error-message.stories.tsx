@@ -4,7 +4,7 @@ import { Checkbox } from "../checkbox";
 import { ErrorMessage } from ".";
 
 const meta: Meta<typeof ErrorMessage> = {
-  title: "ErrorMessage",
+  title: "Form/ErrorMessage",
   component: ErrorMessage,
 };
 
