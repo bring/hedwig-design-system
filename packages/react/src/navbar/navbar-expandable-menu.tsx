@@ -2,6 +2,7 @@ import React, { createContext, useContext, forwardRef, useState, useRef, useEffe
 import { createRoot } from "react-dom/client";
 import type { ClassValue } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import FocusTrap from "focus-trap-react";
 import type { OverridableComponent } from "../utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
@@ -25,34 +26,21 @@ export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
     setOpen(nextOpenState);
     if (nextOpenState) {
       window.scrollTo(0, 0);
-      //hideAllOtherElements();
       document.body.classList.add(clsx("hds-navbar-scroll-lock"));
     } else {
       document.body.classList.remove(clsx("hds-navbar-scroll-lock"));
     }
   };
-  return <navbarContext.Provider value={[open, toggleOpen]}>{children}</navbarContext.Provider>;
+  const navbarElement = document.getElementsByClassName(clsx("hds-navbar"))[0];
+  return (
+    <navbarContext.Provider value={[open, toggleOpen]}>
+      {open ? <FocusTrap containerElements={[navbarElement as HTMLElement]} /> : false}
+      {children}
+    </navbarContext.Provider>
+  );
 }
 NavbarExpandableMenu.displayName = "NavbarExpandableMenu";
-/*
-function hideAllOtherElements() {
-  //const elements = document.querySelectorAll("body > *");
-  const navbarElement = document.getElementsByClassName(clsx("hds-navbar"))[0];
-  const siblings = getAllSiblings(navbarElement);
-  console.log(siblings);
-}
 
-function getAllSiblings(elem: Element) {
-  const sibs = [];
-  let element = elem.parentNode?.firstChild;
-  do {
-    console.log(element);
-    if (element === elem) continue;
-    sibs.push(element);
-  } while ((element = element?.nextSibling));
-  return sibs;
-}
-*/
 interface ButtonInterface {
   className?: ClassValue;
   open?: boolean;
