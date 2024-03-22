@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.59
+
+### Patch Changes
+
+- 7e3fdb6: Lower specificity on fieldset margin and bring component out of WIP status
+- Updated dependencies [7e3fdb6]
+  - @postenbring/hedwig-css@0.0.53
+
 ## 0.0.58
 
 ### Patch Changes
