@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.53
+
+### Patch Changes
+
+- 7e3fdb6: Lower specificity on fieldset margin and bring component out of WIP status
+
 ## 0.0.52
 
 ### Patch Changes
