@@ -12,9 +12,6 @@ export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElemen
   children: ReactNode;
 }
 
-/**
- * 🚨 WORK IN PROGRESS 🚨
- */
 export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function Fieldset(
   {
     className,

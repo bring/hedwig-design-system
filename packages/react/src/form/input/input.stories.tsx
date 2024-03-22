@@ -5,7 +5,7 @@ import { PrimaryButton, SecondaryButton } from "../../button";
 import { Input } from ".";
 
 const meta: Meta<typeof Input> = {
-  title: "Input",
+  title: "Form/Input",
   component: Input,
 };
 

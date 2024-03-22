@@ -4,7 +4,7 @@ import { Fieldset } from "../fieldset";
 import { Radiobutton } from "./index";
 
 const meta: Meta<typeof Radiobutton> = {
-  title: "Radiobutton",
+  title: "Form/Radiobutton",
   component: Radiobutton,
 };
 

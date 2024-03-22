@@ -1,6 +1,3 @@
-export { DescriptionList } from "./description-list";
-export type * from "./description-list";
-
 export { UnorderedList, OrderedList } from "./list";
 export type * from "./list";
 
