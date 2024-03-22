@@ -34,7 +34,7 @@ export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
   const navbarElement = document.getElementsByClassName(clsx("hds-navbar"))[0];
   return (
     <navbarContext.Provider value={[open, toggleOpen]}>
-      {open ? <FocusTrap containerElements={[navbarElement as HTMLElement]} /> : false}
+      {open ? <FocusTrap containerElements={[navbarElement as HTMLElement]} /> : null}
       {children}
     </navbarContext.Provider>
   );
