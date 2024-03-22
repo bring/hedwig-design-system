@@ -87,7 +87,6 @@ export const Default: Story = {
         <h1>Some content to be hidden when the menu opens</h1>
         {
           // @ts-expect-error -- It's ok
-
           ArticleContent.render({})
         }
       </Container>

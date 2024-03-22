@@ -36,7 +36,8 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@postenbring/hedwig-css": "workspace:*"
+    "@postenbring/hedwig-css": "workspace:*",
+    "focus-trap-react": "10.2.3"
   },
   "publishConfig": {
     "access": "public"
