@@ -18,4 +18,5 @@ export * from "./step-indicator";
 export * from "./styled-html";
 export * from "./tabs";
 export * from "./text";
+export * from "./utilities";
 export * from "./warning-banner";

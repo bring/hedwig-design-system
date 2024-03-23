@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { StyledHtml } from "../styled-html";
-import { AutoAnimateHeight } from "./auto-animate-height";
+import { AutoAnimateHeight } from "../utilities/auto-animate-height";
 import { ShowMoreButton } from ".";
 
 const meta: Meta<typeof ShowMoreButton> = {

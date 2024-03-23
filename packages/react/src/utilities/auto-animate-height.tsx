@@ -15,7 +15,7 @@ export interface AutoAnimateHeightProps {
    * normal: 0.3s
    * slow: 0.7s
    *
-   * default is "normal"
+   * default is "quick"
    */
   animationDuration?: "quick" | "normal" | "slow";
 
@@ -41,7 +41,7 @@ export const AutoAnimateHeight: OverridableComponent<AutoAnimateHeightProps, HTM
         as: Component = "div",
         children,
         style,
-        animationDuration = "normal",
+        animationDuration = "quick",
         animationEasing = "normal",
         ...rest
       },

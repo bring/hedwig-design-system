@@ -1,0 +1,20 @@
+.hds-unstable-chip {
+  display: inline-block;
+  cursor: pointer;
+  border: solid var(--hds-stroke-default) var(--hds-colors-darker);
+
+  /* Chip specific values */
+  border-radius: 15px;
+  padding: 3px 12px;
+
+  &:is(a) {
+    text-decoration: none;
+  }
+
+  color: var(--hds-ui-colors-black);
+
+  &[data-state="active"] {
+    background-color: var(--hds-colors-darker);
+    color: var(--hds-ui-colors-white);
+  }
+}
