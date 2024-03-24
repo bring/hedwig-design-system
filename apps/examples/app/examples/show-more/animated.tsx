@@ -1,6 +1,5 @@
 import { AutoAnimateHeight, ShowMoreButton } from "@postenbring/hedwig-react";
 import { useRef, useState } from "react";
-import { flushSync } from "react-dom";
 
 function Example() {
   const [expanded, setExpanded] = useState(false);
@@ -20,9 +19,7 @@ function Example() {
         variant="show-more-show-less"
         expanded={expanded}
         onClick={() => {
-          flushSync(() => {
-            setExpanded((prev) => !prev);
-          });
+          setExpanded((prev) => !prev);
 
           if (expanded) {
             setTimeout(() => {
