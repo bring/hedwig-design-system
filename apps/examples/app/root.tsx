@@ -1,6 +1,24 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "@remix-run/react";
 import styles from "./root.module.css";
 
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
 const layoutClassNames = {
   centered: styles.layoutCentered,
   "centered-fullwidth": styles.layoutCenteredFullwidth,
@@ -26,7 +44,7 @@ function parseViewOptions(search: string, isExample: boolean): ViewOptions & Exa
   };
 }
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export default function App() {
   const location = useLocation();
 
   // The rendered examples are served two levels deep
@@ -35,29 +53,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const viewOptions = parseViewOptions(location.search, isExample);
 
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body
-        className={[
-          viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
-          isExample && viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",
-        ].join(" ")}
-      >
-        {isExample ? <main>{children}</main> : children}
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
+    <div
+      className={[
+        viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
+        isExample && viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",
+      ].join(" ")}
+    >
+      {isExample ? (
+        <main>
+          <Outlet />
+        </main>
+      ) : (
+        <Outlet />
+      )}
+    </div>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }
 
 export function HydrateFallback() {
