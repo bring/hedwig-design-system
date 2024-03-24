@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
-import { Fieldset } from "../fieldset";
 import { Radiobutton } from "./index";
 
 const meta: Meta<typeof Radiobutton> = {
@@ -12,6 +11,19 @@ export default meta;
 
 type Story = StoryObj<typeof Radiobutton>;
 
+export const JustARadiobutton: Story = {
+  args: {
+    title: "",
+    children: "Just a radio button",
+    checked: true,
+    hasError: false,
+    variant: "plain",
+  },
+  argTypes: {
+    variant: { control: "inline-radio", options: ["plain", "bounding-box"] },
+  },
+};
+
 export const PlainRadiobutton: Story = {
   name: "Radio buttons",
   render: (_props) => (
@@ -19,8 +31,9 @@ export const PlainRadiobutton: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
+        gap: "var(--hds-spacing-4)",
       }}
+      role="radiogroup"
     >
       <Radiobutton name="group1">This is a radiobutton</Radiobutton>
       <Radiobutton hasError name="group1">
@@ -37,8 +50,9 @@ export const BoundedRadiobutton: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
+        gap: "var(--hds-spacing-4)",
       }}
+      role="radiogroup"
     >
       <Radiobutton name="group2" variant="bounding-box">
         This is a radiobutton with bounding box
@@ -50,23 +64,6 @@ export const BoundedRadiobutton: Story = {
   ),
 };
 
-export const RadiobuttonInFieldset: Story = {
-  name: "Radio buttons in a field set",
-  render: (_props) => (
-    <Fieldset legend="Radio buttons in a field set">
-      <Radiobutton name="group3" variant="bounding-box">
-        First option
-      </Radiobutton>
-      <Radiobutton name="group3" variant="bounding-box">
-        Second option
-      </Radiobutton>
-      <Radiobutton name="group3" variant="bounding-box">
-        Third option
-      </Radiobutton>
-    </Fieldset>
-  ),
-};
-
 export const DetailedContentRadiobutton: Story = {
   name: "Radio buttons with title",
   render: (_props) => (
@@ -74,8 +71,9 @@ export const DetailedContentRadiobutton: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
+        gap: "var(--hds-spacing-4)",
       }}
+      role="radiogroup"
     >
       <Radiobutton name="group4" title="Option 1">
         Detailed description if needed
@@ -94,8 +92,9 @@ export const DetailedContentRadiobuttonWithBoundingBox: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
+        gap: "var(--hds-spacing-4)",
       }}
+      role="radiogroup"
     >
       <Radiobutton name="group5" title="Option 1" variant="bounding-box">
         Detailed description if needed
