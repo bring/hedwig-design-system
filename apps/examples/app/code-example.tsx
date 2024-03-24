@@ -28,16 +28,17 @@ const highlighter = await getHighlighter({
 export function CodeExample({ example }: { example: Example }) {
   const [search] = useSearchParams();
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
 
   const code = useMemo(() => {
     return highlighter.codeToHtml(example.exampleSourceNeat, {
       lang: "tsx",
 
       // @ts-expect-error -- It's ok, checked above
-      theme: search.get("theme") === "bring" ? codeThemes.bring : codeThemes.posten,
+      theme: activeTheme === "bring" ? codeThemes.bring : codeThemes.posten,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only run once
-  }, [example.exampleName]);
+  }, [activeTheme, example.exampleName]);
 
   const iframeViewOptions = new URLSearchParams();
   if (example.config?.layout) {
