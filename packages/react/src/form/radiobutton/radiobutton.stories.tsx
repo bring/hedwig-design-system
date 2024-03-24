@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Radiobutton } from "./index";
 
 const meta: Meta<typeof Radiobutton> = {
-  title: "Form/Radiobutton",
+  title: "Form/Radiobutton/Radiobutton",
   component: Radiobutton,
 };
 
@@ -12,6 +12,7 @@ export default meta;
 type Story = StoryObj<typeof Radiobutton>;
 
 export const JustARadiobutton: Story = {
+  name: "Just a radio button",
   args: {
     title: "",
     children: "Just a radio button",
