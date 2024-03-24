@@ -7,6 +7,7 @@ import fs from "node:fs/promises";
 export default defineConfig({
   build: {
     target: "es2022",
+    sourcemap: true,
   },
   base: "/hedwig-design-system/examples/",
   plugins: [
