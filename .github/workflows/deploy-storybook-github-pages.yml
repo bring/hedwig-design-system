@@ -43,6 +43,7 @@ jobs:
       - name: "Move examples app build into storybook-static"
         run: |
           mv apps/examples/build/client/ apps/docs/storybook-static/examples
+          cp apps/docs/storybook-static/examples/index.html apps/docs/storybook-static/examples/404.html
 
       - name: "upload"
         uses: actions/upload-pages-artifact@v3
