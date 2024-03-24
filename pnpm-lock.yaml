@@ -60,6 +60,9 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@storybook/addon-a11y':
+        specifier: 8.0.4
+        version: 8.0.4
       '@storybook/addon-actions':
         specifier: 8.0.4
         version: 8.0.4
@@ -3587,6 +3590,13 @@ packages:
   /@sindresorhus/merge-streams@2.3.0:
     resolution: {integrity: sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==}
     engines: {node: '>=18'}
+    dev: true
+
+  /@storybook/addon-a11y@8.0.4:
+    resolution: {integrity: sha512-5OyZNzjNXjNUD9vBfjxFnJjMMcBFYWyI4zy5qmJcbAvBv/COiXNfNg2cr2YPNtU5WfA6nsaIESfHFGBHI3GDAg==, tarball: https://registry.npmjs.org/@storybook/addon-a11y/-/addon-a11y-8.0.4.tgz}
+    dependencies:
+      '@storybook/addon-highlight': 8.0.4
+      axe-core: 4.7.0
     dev: true
 
   /@storybook/addon-actions@8.0.4:
