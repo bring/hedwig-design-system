@@ -77,18 +77,20 @@
   */
   &.hds-checkbox--bounding-box {
     background-color: var(--hds-colors-lighter);
-    padding: var(--hds-spacing-16) var(--hds-spacing-32) var(--hds-spacing-16)
+    padding: calc(var(--hds-spacing-16) - 1px) var(--hds-spacing-32)
+      calc(var(--hds-spacing-16) - 1px)
       calc(
         var(--hds-spacing-16) + var(--checkmark-width) + (var(--checkmark-margin) * 2) +
           var(--hds-spacing-12)
       );
+    border: solid var(--hds-stroke-default) var(--hds-colors-lighter);
 
     .hds-checkbox__checkmark {
       left: var(--hds-spacing-16);
     }
 
     &.hds-checkbox--error {
-      border: solid 1px var(--hds-ui-colors-warning-yellow);
+      border: solid var(--hds-stroke-default) var(--hds-ui-colors-warning-yellow);
     }
   }
 

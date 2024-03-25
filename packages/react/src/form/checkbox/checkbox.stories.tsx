@@ -11,14 +11,27 @@ export default meta;
 
 type Story = StoryObj<typeof Checkbox>;
 
+export const JustACheckbox: Story = {
+  args: {
+    title: "",
+    children: "Just a checkbox",
+    checked: true,
+    hasError: false,
+    variant: "plain",
+  },
+  argTypes: {
+    variant: { control: "inline-radio", options: ["plain", "bounding-box"] },
+  },
+};
+
 export const PlainCheckbox: Story = {
-  name: "Checkbox",
+  name: "Checkboxes",
   render: (_props) => (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
+        gap: "var(--hds-spacing-4)",
       }}
     >
       <Checkbox>This is a checkbox</Checkbox>
@@ -34,7 +47,7 @@ export const BoundedCheckbox: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
+        gap: "var(--hds-spacing-4)",
       }}
     >
       <Checkbox variant="bounding-box">This is a checkbox with bounding box</Checkbox>
@@ -52,7 +65,7 @@ export const DetailedContentCheckbox: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
+        gap: "var(--hds-spacing-4)",
       }}
     >
       <Checkbox title="Check this box">Detailed description if needed</Checkbox>
@@ -70,7 +83,7 @@ export const DetailedContentCheckboxWithBoundingBox: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
+        gap: "var(--hds-spacing-4)",
       }}
     >
       <Checkbox title="Check this box" variant="bounding-box">
