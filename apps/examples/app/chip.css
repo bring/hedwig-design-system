@@ -1,20 +1,30 @@
 .hds-unstable-chip {
   display: inline-block;
   cursor: pointer;
-  border: solid var(--hds-stroke-default) var(--hds-colors-darker);
+  border: solid var(--hds-stroke-default) var(--hds-colors-darker) !important;
 
   /* Chip specific values */
   border-radius: 15px;
   padding: 3px 12px;
 
   &:is(a) {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
   color: var(--hds-ui-colors-black);
 
+  &:hover:not([data-state="active"]) {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
   &[data-state="active"] {
     background-color: var(--hds-colors-darker);
     color: var(--hds-ui-colors-white);
+  }
+  &:hover {
+    color: var(--hds-ui-colors-black) !important;
+  }
+  &[data-state="active"]:hover {
+    color: var(--hds-ui-colors-white) !important;
   }
 }

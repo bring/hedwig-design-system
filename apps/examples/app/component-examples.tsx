@@ -1,9 +1,23 @@
 import { useSearchParams, Link } from "@remix-run/react";
 import { Chip } from "./chip";
 import { CodeExample } from "./code-example";
-import { Example } from "./examples";
+import { Example, examplesByComponent } from "./examples";
 
-export function ComponentCodeExamples({ examples }: { examples: Example[] }) {
+export function Examples({ name }: { name: string }) {
+  if (!(name in examplesByComponent)) {
+    return null;
+  }
+
+  return <ComponentCodeExamples examples={examplesByComponent[name]!} hideTitle />;
+}
+
+export function ComponentCodeExamples({
+  examples,
+  hideTitle = false,
+}: {
+  examples: Example[];
+  hideTitle?: boolean;
+}) {
   const [search] = useSearchParams();
 
   const componentName = examples[0].componentName;
@@ -19,7 +33,7 @@ export function ComponentCodeExamples({ examples }: { examples: Example[] }) {
         flexWrap: "wrap",
       }}
     >
-      <h2>{kebabCaseToFirstLetterUpperCase(componentName)}</h2>
+      {!hideTitle && <h2>{kebabCaseToFirstLetterUpperCase(componentName)}</h2>}
       <div
         style={{
           display: "flex",
