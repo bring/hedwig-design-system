@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.63
+
+### Patch Changes
+
+- add forwardRef to ShowMoreButton and StepIndicator
+
 ## 0.0.62
 
 ### Patch Changes
