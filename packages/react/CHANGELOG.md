@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.62
+
+### Patch Changes
+
+- d7d14a8: :bug: fix auto-animate-height not showing the latest children if triggered again during an animation
+
 ## 0.0.61
 
 ### Patch Changes
