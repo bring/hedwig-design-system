@@ -12,6 +12,7 @@ export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
 export const JustACheckbox: Story = {
+  name: "Just a checkbox",
   args: {
     title: "",
     children: "Just a checkbox",
