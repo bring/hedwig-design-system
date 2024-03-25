@@ -24,7 +24,7 @@ function Example() {
           if (expanded) {
             setTimeout(() => {
               contentRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-            }, 130); // Wait for the animation to finish
+            }, 130 + 50); // Wait for the animation to finish
           }
         }}
         text={expanded ? "Vis færre hendelser" : "Vis flere hendelser"}
