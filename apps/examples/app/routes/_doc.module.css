@@ -1,6 +1,7 @@
 .doc {
   p {
     max-width: 60ch;
+    text-wrap: balance;
   }
   figure {
     margin-left: 0;
