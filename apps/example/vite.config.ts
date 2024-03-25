@@ -15,4 +15,12 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: [
+      {
+        find: "@postenbring/hedwig-react",
+        replacement: new URL("../../packages/react/src", import.meta.url).pathname,
+      },
+    ],
+  },
 });
