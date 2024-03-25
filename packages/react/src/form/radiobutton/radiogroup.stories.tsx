@@ -33,7 +33,7 @@ export const PlainRadioGroup: Story = {
   render: (props) => (
     <RadioGroup {...props}>
       <Radiobutton value="First radiobutton">This is a radiobutton</Radiobutton>
-      <Radiobutton value="Second radiobutton">This is a radiobutton with error</Radiobutton>
+      <Radiobutton value="Second radiobutton">This is another radiobutton</Radiobutton>
     </RadioGroup>
   ),
 };
