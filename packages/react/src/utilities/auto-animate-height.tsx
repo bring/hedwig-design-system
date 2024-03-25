@@ -47,6 +47,7 @@ export const AutoAnimateHeight: OverridableComponent<AutoAnimateHeightProps, HTM
       },
       ref,
     ) => {
+      const timeoutRef = useRef<NodeJS.Timeout | null>(null);
       const measurementRef = useRef<HTMLDivElement>(null);
       const [height, setHeight] = useState<number | undefined>(undefined);
       const [clonedChildren, setClonedChildren] = useState<React.ReactNode>(() =>
@@ -56,15 +57,20 @@ export const AutoAnimateHeight: OverridableComponent<AutoAnimateHeightProps, HTM
         if (measurementRef.current) {
           const { height: newHeight } = measurementRef.current.getBoundingClientRect();
 
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
           if (newHeight < (height ?? 0)) {
             // If the children are shrinking, hold off on replacing until the animation is done
             // This way we don't get a sudden flash of empty content
-            flushSync(() => {
-              setHeight(newHeight);
-            });
             setTimeout(() => {
-              setClonedChildren(cloneElement(<>{children}</>, {}));
-            }, animationDurationToValue[animationDuration]);
+              flushSync(() => {
+                setHeight(newHeight);
+              });
+              timeoutRef.current = setTimeout(() => {
+                setClonedChildren(cloneElement(<>{children}</>, {}));
+              }, animationDurationToValue[animationDuration]);
+            });
           } else {
             setHeight(newHeight);
             setClonedChildren(cloneElement(<>{children}</>, {}));

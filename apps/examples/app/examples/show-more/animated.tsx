@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 
 function Example() {
   const [expanded, setExpanded] = useState(false);
-  const contentRef = useRef<HTMLUListElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const elements = Array.from({ length: expanded ? 15 : 3 }, (_, i) => (
     <li key={i}>Hallo {Math.random()}</li>
@@ -11,16 +11,18 @@ function Example() {
 
   return (
     <>
-      <AutoAnimateHeight animationDuration="quick">
-        <ul ref={contentRef}>{elements}</ul>
+      <AutoAnimateHeight ref={contentRef} animationDuration="quick">
+        <ul>{elements}</ul>
       </AutoAnimateHeight>
 
       <ShowMoreButton
+        className="hds-mt-12-16"
         variant="show-more-show-less"
         expanded={expanded}
         onClick={() => {
           setExpanded((prev) => !prev);
 
+          // Ensure the content is still in view after the amount shown is reduced
           if (expanded) {
             setTimeout(() => {
               contentRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -28,7 +30,6 @@ function Example() {
           }
         }}
         text={expanded ? "Vis færre hendelser" : "Vis flere hendelser"}
-        className="hds-mt-12-16"
       />
 
       <div
