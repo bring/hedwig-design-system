@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.61
+
+### Patch Changes
+
+- f4fff54: Add component RadioGroup to wrap around Radiobuttons, making life a bit easier
+
 ## 0.0.60
 
 ### Patch Changes
