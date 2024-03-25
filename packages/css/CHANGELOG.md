@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.54
+
+### Patch Changes
+
+- da7ef96: Fix visual bug causing radiobutton and checkbox with bounding box to increase height when they have error state
+
 ## 0.0.53
 
 ### Patch Changes
