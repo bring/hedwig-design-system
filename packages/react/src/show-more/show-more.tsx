@@ -1,4 +1,5 @@
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { forwardRef } from "react";
 
 type Variant =
   | {
@@ -43,20 +44,24 @@ export type ShowMoreProps = React.HTMLAttributes<HTMLButtonElement> & {
  * }
  * ```
  */
-export function ShowMoreButton({ text, variant, expanded, className, ...rest }: ShowMoreProps) {
-  return (
-    <button
-      className={clsx(
-        "hds-show-more",
-        variant === "show-more-show-less" && "hds-show-more--show-less",
-        className as undefined,
-      )}
-      data-state={expanded ? "expanded" : undefined}
-      type="button"
-      {...rest}
-    >
-      {text}
-      <span className={clsx("hds-show-more__icon")} />
-    </button>
-  );
-}
+export const ShowMoreButton = forwardRef<HTMLButtonElement, ShowMoreProps>(
+  ({ text, variant, expanded, className, ...rest }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={clsx(
+          "hds-show-more",
+          variant === "show-more-show-less" && "hds-show-more--show-less",
+          className as undefined,
+        )}
+        data-state={expanded ? "expanded" : undefined}
+        type="button"
+        {...rest}
+      >
+        {text}
+        <span className={clsx("hds-show-more__icon")} />
+      </button>
+    );
+  },
+);
+ShowMoreButton.displayName = "ShowMoreButton";

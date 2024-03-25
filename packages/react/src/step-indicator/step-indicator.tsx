@@ -1,4 +1,5 @@
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { forwardRef } from "react";
 
 type TitleProps =
   | {
@@ -42,39 +43,50 @@ interface StepIndicatorProps extends React.HTMLAttributes<HTMLDivElement> {
  *
  * It does not handle step content or navigation, only the visual indication of the active step.
  */
-export function StepIndicator({
-  activeStep,
-  totalSteps,
-  className,
-  label,
-  lang = "en",
-  title,
-  titleAs: TitleComponent,
-  ...rest
-}: StepIndicatorProps & TitleProps) {
-  return (
-    <div className={clsx("hds-step-indicator", className as undefined)} lang={lang} {...rest}>
-      <div className={clsx("hds-step-indicator__header")}>
-        <span className={clsx("hds-step-indicator__left-label")}>{label}</span>
-        <span>{stepLabelTranslations[lang](activeStep, totalSteps)}</span>
-      </div>
+export const StepIndicator = forwardRef<HTMLDivElement, StepIndicatorProps & TitleProps>(
+  (
+    {
+      activeStep,
+      totalSteps,
+      className,
+      label,
+      lang = "en",
+      title,
+      titleAs: TitleComponent,
+      ...rest
+    },
+    ref,
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className={clsx("hds-step-indicator", className as undefined)}
+        lang={lang}
+        {...rest}
+      >
+        <div className={clsx("hds-step-indicator__header")}>
+          <span className={clsx("hds-step-indicator__left-label")}>{label}</span>
+          <span>{stepLabelTranslations[lang](activeStep, totalSteps)}</span>
+        </div>
 
-      <div className={clsx("hds-step-indicator__steps")}>
-        {Array.from({ length: totalSteps }, (_, i) => (
-          <div
-            className={clsx("hds-step-indicator__step")}
-            data-state={getStepState(i + 1, activeStep)}
-            key={i}
-          />
-        ))}
-      </div>
+        <div className={clsx("hds-step-indicator__steps")}>
+          {Array.from({ length: totalSteps }, (_, i) => (
+            <div
+              className={clsx("hds-step-indicator__step")}
+              data-state={getStepState(i + 1, activeStep)}
+              key={i}
+            />
+          ))}
+        </div>
 
-      {title ? (
-        <TitleComponent className={clsx("hds-step-indicator__title")}>{title}</TitleComponent>
-      ) : null}
-    </div>
-  );
-}
+        {title ? (
+          <TitleComponent className={clsx("hds-step-indicator__title")}>{title}</TitleComponent>
+        ) : null}
+      </div>
+    );
+  },
+);
+StepIndicator.displayName = "StepIndicator";
 
 /**
  * Translated texts for the `step x of y` label.
