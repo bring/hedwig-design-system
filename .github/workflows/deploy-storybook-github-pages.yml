@@ -31,9 +31,26 @@ jobs:
         with:
           version: 8
 
-      - name: Build and upload storybook
-        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+      - name: "Build"
+        shell: bash
+        run: |
+          echo "::group::Build"
+          pnpm install
+          pnpm build
+          echo "::endgroup::"
+
+      - name: "Move examples app build into storybook-static"
+        run: |
+          mv apps/examples/build/client/ apps/docs/storybook-static/examples
+          cp apps/docs/storybook-static/examples/index.html apps/docs/storybook-static/404.html
+
+      - name: "upload"
+        uses: actions/upload-pages-artifact@v3
         with:
-          install_command: pnpm install
-          build_command: pnpm build
           path: apps/docs/storybook-static
+
+      - id: deploy
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ github.token }}
