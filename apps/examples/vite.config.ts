@@ -8,6 +8,9 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import fs from "node:fs/promises";
 
 export default defineConfig({
+  server: {
+    port: 6007,
+  },
   build: {
     target: "es2022",
     sourcemap: true,

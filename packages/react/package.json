@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@postenbring/hedwig-css": "workspace:*",
+    "@radix-ui/react-slot": "1.0.2",
     "focus-trap-react": "10.2.3"
   },
   "publishConfig": {

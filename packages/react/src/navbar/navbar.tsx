@@ -1,5 +1,6 @@
 import React, { forwardRef, type HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { Slot } from "@radix-ui/react-slot";
 import type { OverridableComponent } from "../utils";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
@@ -62,3 +63,42 @@ export const NavbarNavigation: OverridableComponent<NavbarNavigationProps, HTMLE
     );
   });
 NavbarNavigation.displayName = "Navbar.Navigation";
+
+interface NavbarLogoAndTextProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * The text display next to the logo
+   */
+  children: React.ReactNode;
+
+  /**
+   * The text variant
+   *
+   * Use `service` for internal applications
+   * Use `flagship` for public facing applications
+   */
+  variant: "service" | "flagship";
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   */
+  asChild?: boolean;
+}
+export const NavbarLogoAndText = forwardRef<HTMLDivElement, NavbarLogoAndTextProps>(
+  ({ children, asChild, variant, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
+    return (
+      <Component
+        ref={ref}
+        className={clsx(
+          "hds-navbar__logo-and-text",
+          `hds-navbar__logo-and-text--${variant}`,
+          className as undefined,
+        )}
+        {...rest}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+NavbarLogoAndText.displayName = "Navbar.NavbarLogoAndText";

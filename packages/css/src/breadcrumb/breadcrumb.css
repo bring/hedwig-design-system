@@ -13,6 +13,8 @@
   &,
   & a {
     font: var(--hds-typography-caption);
+    text-decoration: none;
+    color: inherit;
   }
 
   & li {

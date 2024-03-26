@@ -5,7 +5,7 @@ import "@postenbring/hedwig-css";
 import styles from "./code-example.module.css";
 
 import { Example } from "./examples";
-import { SecondaryButton, Text } from "@postenbring/hedwig-react";
+import { SecondaryButton, StyledHtml } from "@postenbring/hedwig-react";
 import { openExampleInCodeSandbox } from "./codesandbox";
 import { useSearchParams } from "@remix-run/react";
 
@@ -53,7 +53,7 @@ export function CodeExample({ example }: { example: Example }) {
   return (
     <div className={styles.codeExample}>
       {example.config?.description && (
-        <Text variant="body-small">{example.config.description}</Text>
+        <StyledHtml size="small" dangerouslySetInnerHTML={{ __html: example.config.description }} />
       )}
       <div className="iframe-wrapper">
         {/* Demo */}
@@ -91,7 +91,7 @@ export function CodeExample({ example }: { example: Example }) {
           <div style={{ flexGrow: 1 }} />
 
           <SecondaryButton
-            title="Open example in CodeSandbox"
+            title="Open in CodeSandbox"
             size="small"
             onClick={() => openExampleInCodeSandbox(example)}
             icon={
@@ -102,7 +102,7 @@ export function CodeExample({ example }: { example: Example }) {
           />
 
           <SecondaryButton
-            title="Open example demo standalone"
+            title="Open standalone"
             size="small"
             as="a"
             href={iframeUrl}

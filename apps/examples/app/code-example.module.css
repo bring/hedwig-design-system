@@ -1,6 +1,10 @@
 .codeExample {
   max-width: 100%;
 
+  * ~ div:has(> iframe) {
+    margin-top: var(--hds-spacing-16-20);
+  }
+
   div:has(> iframe) {
     border: 1px solid var(--hds-ui-colors-grey);
     border-radius: var(--hds-border-radius);
