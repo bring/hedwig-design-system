@@ -83,6 +83,7 @@ export const AutoAnimateHeight: OverridableComponent<AutoAnimateHeightProps, HTM
         <Component
           ref={ref}
           style={{
+            position: "relative",
             overflow: "hidden",
             height,
             transitionProperty: "height",
