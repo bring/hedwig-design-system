@@ -112,8 +112,11 @@
     flex-direction: row-reverse;
 
     /* When used as link */
-    text-decoration: none;
-    color: inherit;
+    &,
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     /* Logo */
     &::before {

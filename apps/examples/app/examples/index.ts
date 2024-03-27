@@ -1,6 +1,6 @@
 import type { ExampleViewOptions } from "../root";
 
-const modules = import.meta.glob("./examples/*/*.tsx", {
+const modules = import.meta.glob("./*/*.tsx", {
   query: "?raw",
   import: "default",
 
@@ -11,7 +11,7 @@ const modules = import.meta.glob("./examples/*/*.tsx", {
 
 export const examples = Object.keys(modules).map((filePath) => {
   const [componentName, exampleName] = filePath
-    .replace("./examples/", "")
+    .replace("./", "")
     .replace(/\.tsx$/, "")
     .split("/");
 

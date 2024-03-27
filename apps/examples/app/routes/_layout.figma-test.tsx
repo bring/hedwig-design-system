@@ -1,4 +1,4 @@
-import { Container, StyledHtml, Text } from "@postenbring/hedwig-react";
+import { StyledHtml, Text } from "@postenbring/hedwig-react";
 import styles from "./figma-test.module.css";
 import { useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
@@ -19,7 +19,7 @@ export default function Component() {
   const data = useLoaderData<typeof clientLoader>();
 
   return (
-    <Container>
+    <>
       <div className="hds-mt-48-64" />
 
       <StyledHtml style={{ maxWidth: "60ch" }}>
@@ -49,7 +49,7 @@ export default function Component() {
         width="80%"
         hideBottomBar
       />
-    </Container>
+    </>
   );
 }
 
