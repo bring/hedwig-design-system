@@ -102,9 +102,12 @@
    * Logo and text
    */
   .hds-navbar__logo-and-text {
-    height: 45px;
+    align-self: flex-start;
+    margin-top: calc(32px / 1.3333);
+    height: calc(60px / 1.3333);
 
     @media (--large) {
+      margin-top: 32px;
       height: 60px;
     }
 
@@ -151,7 +154,7 @@
       order: 1;
       content: "";
       align-self: stretch;
-      border: 1px solid var(--hds-ui-colors-grey);
+      border-right: 1px solid var(--hds-ui-colors-grey);
       margin-left: var(--hds-spacing-24);
       margin-right: var(--hds-spacing-24);
     }
