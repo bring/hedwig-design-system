@@ -18,6 +18,7 @@
    * Expandable 
    */
   .hds-navbar__expandable-menu-content {
+    z-index: 1;
     min-height: 0;
     width: 100%;
     position: absolute;
