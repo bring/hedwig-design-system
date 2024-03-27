@@ -19,3 +19,41 @@
     width: 100%;
   }
 }
+
+.breakpointIndicator {
+  &::before {
+    z-index: 1;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: block;
+
+    font: var(--hds-typography-technical);
+    font-size: var(--hds-font-size-technical-max);
+    content: "📱 small";
+  }
+  @media (min-width: 720px) {
+    &::before {
+      content: "📺 medium";
+    }
+  }
+
+  @media (min-width: 940px) {
+    &::before {
+      content: "💻 large";
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &::before {
+      content: "🖥️ xlarge";
+    }
+  }
+
+  &.breakpointIndicatorBottom {
+    &::before {
+      top: auto;
+      bottom: 8px;
+    }
+  }
+}

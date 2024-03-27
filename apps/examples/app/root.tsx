@@ -23,23 +23,39 @@ const layoutClassNames = {
   centered: styles.layoutCentered,
   "centered-fullwidth": styles.layoutCenteredFullwidth,
   none: "",
-};
+} as const;
+
+const breakpointIndicatorValues = {
+  true: true,
+  top: "top",
+  bottom: "bottom",
+} as const;
 
 export interface ViewOptions {
   theme?: "posten" | "bring";
 }
 export interface ExampleViewOptions {
   layout?: keyof typeof layoutClassNames;
+
+  /**
+   * Display a visual indicator of the current breakpoint in example
+   * @default false
+   */
+  breakpointIndicator?: boolean | "top" | "bottom";
 }
 
 function parseViewOptions(search: string, isExample: boolean): ViewOptions & ExampleViewOptions {
-  const { theme, layout } = Object.fromEntries(new URLSearchParams(search)) as ViewOptions &
-    ExampleViewOptions;
+  const { theme, layout, breakpointIndicator } = Object.fromEntries(
+    new URLSearchParams(search),
+  ) as ViewOptions & ExampleViewOptions;
 
   return {
-    theme: ["posten", "bring"].includes(theme!) ? theme : "posten",
+    theme: theme === "bring" ? theme : "posten",
     ...(isExample && {
       layout: layout! in layoutClassNames ? layout : "centered",
+      breakpointIndicator:
+        breakpointIndicatorValues[breakpointIndicator as keyof typeof breakpointIndicatorValues] ??
+        false,
     }),
   };
 }
@@ -57,6 +73,10 @@ export default function App() {
       className={[
         viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
         isExample && viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",
+        isExample && viewOptions?.breakpointIndicator ? styles.breakpointIndicator : "",
+        isExample && viewOptions?.breakpointIndicator === "bottom"
+          ? styles.breakpointIndicatorBottom
+          : "",
       ].join(" ")}
     >
       {isExample ? (

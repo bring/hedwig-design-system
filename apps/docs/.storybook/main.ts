@@ -66,13 +66,21 @@ function exampleLoader() {
     async load(id) {
       if (id.match(exampleFilenameRegex)) {
         const { exampleName } = parseExampleFilename(id);
-        const file = await fs.readFile(id, "utf-8");
+        const exampleSource = await fs.readFile(id, "utf-8");
 
-        const exampleSourceNeat = file.replace(/export default.+/g, "");
+        const exampleSourceNeat = exampleSource.replace(/\s*export default \w+;[\s\S]*/, "");
         const storyCode = `
         ${exampleSourceNeat}
         export const Example${kebabCaseToPascalCase(exampleName)} = {
-          render: Example
+          render: Example,
+          parameters: {
+            docs: {
+              source: {
+                language: "tsx",
+                code: decodeURIComponent("${encodeURIComponent(exampleSourceNeat)}"),
+              },
+            },
+          },
         }
         export default {}
         `;

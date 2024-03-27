@@ -6,6 +6,7 @@
   }
 
   div:has(> iframe) {
+    position: relative;
     border: 1px solid var(--hds-ui-colors-grey);
     border-radius: var(--hds-border-radius);
     background-color: var(--hds-ui-colors-light-grey-fill);
@@ -23,7 +24,7 @@
     }
 
     /* Action row */
-    div {
+    div:last-child {
       display: flex;
       gap: var(--hds-spacing-4-8);
       padding: var(--hds-spacing-8);
@@ -39,7 +40,13 @@
     }
   }
 
+  div:has(pre) {
+    position: relative;
+    margin-top: var(--hds-spacing-8-12);
+  }
+
   pre {
+    margin: 0;
     padding: var(--hds-spacing-20-24);
     border-radius: var(--hds-border-radius);
 

@@ -2,7 +2,7 @@ import { PrimaryButton } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--hds-spacing-8-12)" }}>
       <PrimaryButton size="large">Primary</PrimaryButton>
       <PrimaryButton size="large" fill="outline">
         Outline

@@ -37,5 +37,6 @@ export default Example;
 
 import type { ExampleConfig } from "../../examples";
 export const config: ExampleConfig = {
+  breakpointIndicator: "bottom",
   layout: "none",
 };
