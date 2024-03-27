@@ -80,9 +80,9 @@ export default function App() {
       ].join(" ")}
     >
       {isExample ? (
-        <main>
+        <div>
           <Outlet />
-        </main>
+        </div>
       ) : (
         <Outlet />
       )}
