@@ -1,7 +1,10 @@
 import type { MetaFunction } from "@remix-run/node";
 import { examplesByComponent } from "../examples";
 import { Breadcrumbs, Container, Link, Navbar, PrimaryButton } from "@postenbring/hedwig-react";
-import { ComponentCodeExamples, kebabCaseToFirstLetterUpperCase } from "../component-examples";
+import {
+  ComponentCodeExamples,
+  kebabCaseToFirstLetterUpperCase,
+} from "../components/component-examples";
 import { Link as RemixLink, useSearchParams } from "@remix-run/react";
 
 import "./_index.css";

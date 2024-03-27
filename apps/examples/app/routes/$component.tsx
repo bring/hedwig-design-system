@@ -5,7 +5,7 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import { examplesByComponent } from "../examples";
-import { ComponentCodeExamples } from "../component-examples";
+import { ComponentCodeExamples } from "../components/component-examples";
 import { Container } from "@postenbring/hedwig-react";
 
 export async function clientLoader({ params: { component } }: ClientLoaderFunctionArgs) {

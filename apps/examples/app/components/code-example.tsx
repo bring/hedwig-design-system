@@ -4,7 +4,7 @@ import "@postenbring/hedwig-css";
 
 import styles from "./code-example.module.css";
 
-import { Example } from "./examples";
+import { Example } from "../examples";
 import { SecondaryButton, StyledHtml, type ButtonProps } from "@postenbring/hedwig-react";
 import { openExampleInCodeSandbox } from "./codesandbox";
 import { useSearchParams } from "@remix-run/react";

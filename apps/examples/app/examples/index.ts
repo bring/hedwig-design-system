@@ -1,4 +1,4 @@
-import type { ExampleViewOptions } from "./root";
+import type { ExampleViewOptions } from "../root";
 
 const modules = import.meta.glob("./examples/*/*.tsx", {
   query: "?raw",

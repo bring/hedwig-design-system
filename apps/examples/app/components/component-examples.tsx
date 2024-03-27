@@ -1,7 +1,7 @@
 import { useSearchParams, Link } from "@remix-run/react";
 import { Chip } from "./chip";
 import { CodeExample } from "./code-example";
-import { Example, examplesByComponent } from "./examples";
+import { Example, examplesByComponent } from "../examples";
 
 export function Examples({ name }: { name: string }) {
   if (!(name in examplesByComponent)) {

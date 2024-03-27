@@ -1,4 +1,4 @@
-import { Example } from "./examples";
+import { Example } from "../examples";
 
 const html = '<div id="root"></div>';
 const indexTsx = `import React from "react";
