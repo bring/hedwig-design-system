@@ -5,6 +5,18 @@
     margin-top: var(--hds-spacing-16-20);
   }
 
+  /* Description */
+  :not(pre) > code {
+    &::before {
+      content: "`";
+    }
+    &::after {
+      content: "`";
+    }
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+
   div:has(> iframe) {
     position: relative;
     border: 1px solid var(--hds-ui-colors-grey);

@@ -4,6 +4,11 @@
   grid-template-columns: repeat(3, 1fr);
 
   gap: var(--hds-spacing-16);
+
+  a {
+    text-align: center;
+    border: 0;
+  }
 }
 .figmaButton {
   position: relative;

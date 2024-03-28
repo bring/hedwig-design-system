@@ -1,18 +1,29 @@
-import { AutoAnimateHeight, ShowMoreButton } from "@postenbring/hedwig-react";
+import { AutoAnimateHeight, Box, ShowMoreButton } from "@postenbring/hedwig-react";
 import { useRef, useState } from "react";
 
 function Example() {
   const [expanded, setExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const elements = Array.from({ length: expanded ? 15 : 3 }, (_, i) => (
-    <li key={i}>Hallo {Math.random()}</li>
-  ));
+  const showCount = expanded ? 15 : 3;
 
   return (
     <>
       <AutoAnimateHeight ref={contentRef} animationDuration="quick">
-        <ul>{elements}</ul>
+        <ul
+          style={{
+            padding: 0,
+            display: "grid",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gap: "var(--hds-spacing-12-16)",
+          }}
+        >
+          {Array.from({ length: showCount }).map((_, i) => (
+            <li key={i} style={{ listStyle: "none" }}>
+              <Box>#{i}</Box>
+            </li>
+          ))}
+        </ul>
       </AutoAnimateHeight>
 
       <ShowMoreButton
@@ -29,7 +40,7 @@ function Example() {
             }, 130 + 50); // Wait for the animation to finish
           }
         }}
-        text={expanded ? "Vis færre hendelser" : "Vis flere hendelser"}
+        text={expanded ? "Show fewer boxes" : "Show more boxes"}
       />
 
       <div

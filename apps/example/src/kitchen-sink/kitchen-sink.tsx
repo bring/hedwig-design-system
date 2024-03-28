@@ -25,6 +25,7 @@ export default function KitchenSink() {
     <>
       <div>
         <section>
+          {/** @deprecated moved to `examples` app */}
           <WarningBanner
             title={"Koronasituasjonen og driften"}
             description={
@@ -44,8 +45,11 @@ export default function KitchenSink() {
         </section>
         <h1>Hello world</h1>
         <h2>Buttons</h2>
+        {/** @deprecated moved to `examples` app */}
         <PrimaryButton>A button</PrimaryButton>
         <h2>Links</h2>
+
+        {/** @deprecated moved to `examples` app */}
         <Link href="#demo-link" variant="no-underline" size="large">
           A link
         </Link>
@@ -98,6 +102,7 @@ export default function KitchenSink() {
           </div>
         </div>
 
+        {/** @deprecated moved to `examples` app */}
         <section>
           <h2>Box and Message</h2>
           <div
@@ -157,6 +162,8 @@ export default function KitchenSink() {
         <section>
           <CardsExample />
         </section>
+
+        {/** @deprecated moved to `examples` app */}
         <section>
           <h2>Tabs</h2>
           <div>
@@ -181,6 +188,7 @@ export default function KitchenSink() {
   );
 }
 
+/** @deprecated moved to `examples` app */
 function ModalExample() {
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -204,6 +212,7 @@ function ModalExample() {
   );
 }
 
+/** @deprecated moved to `examples` app */
 function CardsExample() {
   return (
     <>

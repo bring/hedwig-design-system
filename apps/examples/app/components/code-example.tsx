@@ -25,20 +25,16 @@ const highlighter = await getHighlighter({
 /**
  * A single code example
  */
-export function CodeExample({ example }: { example: Example }) {
+export function CodeExample({
+  example,
+  defaultShowCode = true,
+}: {
+  example: Example;
+  defaultShowCode?: boolean;
+}) {
   const [search] = useSearchParams();
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
-  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
-
-  const code = useMemo(() => {
-    return highlighter.codeToHtml(example.exampleSourceNeat, {
-      lang: "tsx",
-
-      // @ts-expect-error -- It's ok, checked above
-      theme: activeTheme === "bring" ? codeThemes.bring : codeThemes.posten,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- only run once
-  }, [activeTheme, example.exampleName]);
+  const [showCode, setShowCode] = useState(defaultShowCode);
 
   const iframeViewOptions = new URLSearchParams();
   if (example.config?.layout) {
@@ -93,8 +89,11 @@ export function CodeExample({ example }: { example: Example }) {
             size="small"
             icon={"🖥️"}
           />
-
           <div style={{ flexGrow: 1 }} />
+
+          <SecondaryButton fill="outline" size="small" onClick={() => setShowCode((prev) => !prev)}>
+            {showCode ? "Hide code" : "Show code"}
+          </SecondaryButton>
 
           <SecondaryButton
             title="Open in CodeSandbox"
@@ -106,7 +105,6 @@ export function CodeExample({ example }: { example: Example }) {
               </svg>
             }
           />
-
           <SecondaryButton
             title="Open standalone"
             size="small"
@@ -135,14 +133,9 @@ export function CodeExample({ example }: { example: Example }) {
       </div>
 
       {/* Code */}
-      <div>
-        {/* TODO: This copy button can definitely be styled better */}
-        <CopyButton
-          code={example.exampleSourceNeat}
-          style={{ position: "absolute", bottom: 12, right: 12 }}
-        />
-        <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: code }} />
-      </div>
+      {showCode && (
+        <Code code={example.exampleSourceNeat} id={example.componentName + example.exampleName} />
+      )}
     </div>
   );
 }
@@ -167,5 +160,28 @@ function CopyButton({
     >
       {copied ? "Copied" : "Copy"}
     </SecondaryButton>
+  );
+}
+
+function Code({ code, id }: { code: string; id: string }) {
+  const [search] = useSearchParams();
+  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
+
+  const formattedCode = useMemo(() => {
+    return highlighter.codeToHtml(code, {
+      lang: "tsx",
+
+      // @ts-expect-error -- It's ok, checked above
+      theme: activeTheme === "bring" ? codeThemes.bring : codeThemes.posten,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only run once
+  }, [activeTheme, id]);
+
+  return (
+    <div>
+      {/* TODO: This copy button can definitely be styled better */}
+      <CopyButton code={code} style={{ position: "absolute", bottom: 12, right: 12 }} />
+      <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: formattedCode }} />
+    </div>
   );
 }

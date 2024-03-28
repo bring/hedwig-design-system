@@ -12,7 +12,7 @@ import {
   ComponentCodeExamples,
   kebabCaseToFirstLetterUpperCase,
 } from "../components/component-examples";
-import { Breadcrumbs, Link } from "@postenbring/hedwig-react";
+import { Breadcrumbs, Link, Text } from "@postenbring/hedwig-react";
 
 export async function clientLoader({ params: { component } }: ClientLoaderFunctionArgs) {
   if (!component || !(component in examplesByComponent)) {
@@ -25,11 +25,19 @@ export async function clientLoader({ params: { component } }: ClientLoaderFuncti
   };
 }
 
-export const meta: MetaFunction = ({ data }) => {
+export const meta: MetaFunction<typeof clientLoader> = ({ data, error }) => {
+  if (error) {
+    return [
+      {
+        title: `404 - Hedwig Design System`,
+      },
+    ];
+  }
+
   const { component } = data as ReturnType<typeof useLoaderData<typeof clientLoader>>;
   return [
     {
-      title: `${kebabCaseToFirstLetterUpperCase(component ?? "404")} - Hedwig Design System`,
+      title: `${kebabCaseToFirstLetterUpperCase(component)} - Hedwig Design System`,
     },
   ];
 };
@@ -56,6 +64,10 @@ export default function Component() {
         <li aria-current="page">{kebabCaseToFirstLetterUpperCase(component)}</li>
       </Breadcrumbs>
       <div className="hds-mt-24-32" />
+      <Text as="h1" variant="h2">
+        {kebabCaseToFirstLetterUpperCase(component)}
+      </Text>
+      <div className="hds-mt-12-16" />
       <ComponentCodeExamples examples={examples} />
     </>
   );
@@ -65,7 +77,7 @@ export function ErrorBoundary() {
   const error = useRouteError();
 
   if (isRouteErrorResponse(error)) {
-    return <div>{error.status === 404 ? "Component" : "An error occurred"}</div>;
+    return <div>{error.status === 404 ? "Component not found" : "An error occurred"}</div>;
   }
 
   return <div>Something went wrong</div>;

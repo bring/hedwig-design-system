@@ -8,19 +8,18 @@ export function Examples({ name }: { name: string }) {
     return null;
   }
 
-  return <ComponentCodeExamples examples={examplesByComponent[name]!} hideTitle />;
+  return <ComponentCodeExamples examples={examplesByComponent[name]!} />;
 }
 
 export function ComponentCodeExamples({
   examples,
-  hideTitle = false,
+  defaultShowCode,
 }: {
   examples: Example[];
-  hideTitle?: boolean;
+  defaultShowCode?: boolean;
 }) {
   const [search] = useSearchParams();
 
-  const componentName = examples[0].componentName;
   const activeExample =
     examples.find((example) => example.exampleName === search.get("example")) ?? examples[0];
 
@@ -30,10 +29,8 @@ export function ComponentCodeExamples({
         display: "flex",
         flexDirection: "column",
         gap: "var(--hds-spacing-16)",
-        flexWrap: "wrap",
       }}
     >
-      {!hideTitle && <h2>{kebabCaseToFirstLetterUpperCase(componentName)}</h2>}
       <div
         style={{
           display: "flex",
@@ -65,7 +62,7 @@ export function ComponentCodeExamples({
         ))}
       </div>
 
-      <CodeExample example={activeExample} />
+      <CodeExample example={activeExample} defaultShowCode={defaultShowCode} />
     </div>
   );
 }

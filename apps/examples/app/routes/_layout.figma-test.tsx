@@ -202,12 +202,21 @@ async function getFigmaPreviewImages(urls: string[]) {
 
   // Get figma token from url, just for now while testing
   const shortLivedFigmaToken = new URLSearchParams(window.location.search).get("figma_token") ?? "";
+  if (!shortLivedFigmaToken) {
+    console.warn("Missing `figma_token` query parameter or invalid Figma URL");
+    return [];
+  }
 
   const response = await fetch(url, {
     headers: {
       "X-FIGMA-TOKEN": shortLivedFigmaToken,
     },
   });
+  if (!response.ok) {
+    console.warn("Error when fetching figma images", response.status);
+    return [];
+  }
+
   const json = await response.json();
 
   const figmaUrlsWithImages = parsedFigmaUrls.map((figmaUrl) => {

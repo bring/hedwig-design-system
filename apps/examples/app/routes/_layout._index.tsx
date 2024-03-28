@@ -1,7 +1,12 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link as RemixLink } from "@remix-run/react";
 
-import { ComponentCodeExamples } from "../components/component-examples";
+import {
+  ComponentCodeExamples,
+  kebabCaseToFirstLetterUpperCase,
+} from "../components/component-examples";
 import { examplesByComponent } from "../examples";
+import styles from "./_layout._index.module.css";
 
 export const meta: MetaFunction = () => {
   return [
@@ -15,19 +20,24 @@ export default function Index() {
     <>
       <div className="hds-mt-24-32" />
       <h1 style={{ flexGrow: 1 }}>Examples</h1>
+      <div className="hds-mt-24-32" />
       <ul
+        className={styles.examplesList}
         style={{
           listStyle: "none",
           padding: 0,
-          display: "flex",
-          flexDirection: "column",
-          marginTop: "var(--hds-spacing-32-40)",
-          gap: "var(--hds-spacing-32-40)",
+          margin: 0,
         }}
       >
         {Object.entries(examplesByComponent).map(([componentName, examples]) => (
           <li key={componentName}>
-            <ComponentCodeExamples examples={examples ?? []} />
+            <h2 id={`examples-${componentName}`}>
+              <RemixLink className={styles.exampleLink} to={componentName}>
+                {kebabCaseToFirstLetterUpperCase(componentName)}
+              </RemixLink>
+            </h2>
+            <div className="hds-mt-12-16" />
+            <ComponentCodeExamples examples={examples ?? []} defaultShowCode={false} />
           </li>
         ))}
       </ul>
