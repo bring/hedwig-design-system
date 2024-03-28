@@ -1,12 +1,29 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "@remix-run/react";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLocation,
+  useSearchParams,
+} from "@remix-run/react";
+import bringFavicon from "./assets/bring-favicon.png?url";
+import postenFavicon from "./assets/posten-favicon.png?url";
+
 import styles from "./root.module.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const [search] = useSearchParams();
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="icon"
+          type="image/png"
+          href={search.get("theme") === "bring" ? bringFavicon : postenFavicon}
+        />
         <Meta />
         <Links />
       </head>
