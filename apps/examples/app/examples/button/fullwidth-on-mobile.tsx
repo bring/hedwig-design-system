@@ -6,9 +6,10 @@ function Example() {
 
 export default Example;
 
-import type { ExampleConfig } from "../../examples";
+import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
+  index: 2,
   layout: "centered-fullwidth",
   breakpointIndicator: true,
-  description: `Button will be fullwidth on mobile devices when <code>fullWidth="mobile"</code> is set`,
+  description: `Button will be fullwidth on mobile screens when <code>fullWidth="mobile"</code> is set`,
 };

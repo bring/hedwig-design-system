@@ -101,7 +101,7 @@ export function CodeExample({ example }: { example: Example }) {
             size="small"
             onClick={() => openExampleInCodeSandbox(example)}
             icon={
-              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 24H24V0H0V2.45455H21.5455V21.5455H2.45455V0H0Z" />
               </svg>
             }
@@ -113,7 +113,23 @@ export function CodeExample({ example }: { example: Example }) {
             as="a"
             href={iframeUrl}
             target="_blank"
-            icon={"↗"}
+            icon={
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                style={{ height: 24, width: 24 }}
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"
+                />
+              </svg>
+            }
           />
         </div>
       </div>
@@ -122,7 +138,7 @@ export function CodeExample({ example }: { example: Example }) {
       <div>
         {/* TODO: This copy button can definitely be styled better */}
         <CopyButton
-          code={example.exampleSourceComplete}
+          code={example.exampleSourceNeat}
           style={{ position: "absolute", bottom: 12, right: 12 }}
         />
         <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: code }} />

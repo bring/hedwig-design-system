@@ -17,7 +17,7 @@ function Example() {
 
 export default Example;
 
-import type { ExampleConfig } from "../../examples";
+import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   breakpointIndicator: "bottom",
   layout: "none",
