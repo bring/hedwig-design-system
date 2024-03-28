@@ -14,7 +14,6 @@ export default function Index() {
   return (
     <>
       <div className="hds-mt-24-32" />
-
       <h1 style={{ flexGrow: 1 }}>Examples</h1>
       <ul
         style={{
