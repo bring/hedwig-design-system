@@ -4,15 +4,28 @@ import { Slot } from "@radix-ui/react-slot";
 import type { OverridableComponent } from "../utils";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
+  /**
+   * Navbar variant
+   *
+   * By default the `posten.no` variant is used which has a fixed logo and a fixed height of 112px
+   *
+   * For internal services or flagship services use the `service` should be used
+   */
+  variant?: "default" | "service";
   children: React.ReactNode;
 }
+
 /**
  * 🚨 WORK IN PROGRESS 🚨
  */
 export const Navbar = forwardRef<HTMLElement, NavbarProps>(
-  ({ children, className, ...rest }, ref) => {
+  ({ children, className, variant, ...rest }, ref) => {
     return (
-      <header className={clsx("hds-navbar", className as undefined)} ref={ref} {...rest}>
+      <header
+        className={clsx("hds-navbar", variant && `hds-navbar--${variant}`, className as undefined)}
+        ref={ref}
+        {...rest}
+      >
         {children}
       </header>
     );
@@ -20,10 +33,15 @@ export const Navbar = forwardRef<HTMLElement, NavbarProps>(
 );
 Navbar.displayName = "Navbar";
 
-// Navbar logo
 interface NavbarLogoProps {
   children?: never;
 }
+
+/**
+ * A fixed Posten or Bring logo.
+ *
+ * The logo follows the brand theme, so if the class `hds-theme-bring` is set the Bring logo will be shown instead of the Posten logo
+ */
 export const NavbarLogo: OverridableComponent<NavbarLogoProps, HTMLDivElement> = forwardRef(
   ({ as: Component = "div", className, ...rest }, ref) => {
     return (
@@ -32,6 +50,50 @@ export const NavbarLogo: OverridableComponent<NavbarLogoProps, HTMLDivElement> =
   },
 );
 NavbarLogo.displayName = "Navbar.Logo";
+
+interface NavbarLogoAndServiceText extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * The text display next to the logo
+   */
+  children: React.ReactNode;
+
+  /**
+   * The text variant
+   *
+   * Use `service` for internal applications
+   * Use `flagship` for public facing applications
+   */
+  variant: "service" | "flagship";
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   */
+  asChild?: boolean;
+}
+/**
+ * Internal service or flagship text next to either the Posten or Bring logo
+ *
+ * The logo follows the brand theme, so if the class `hds-theme-bring` is set the Bring logo will be shown instead of the Posten logo
+ */
+export const NavbarLogoAndServiceText = forwardRef<HTMLDivElement, NavbarLogoAndServiceText>(
+  ({ children, asChild, variant, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
+    return (
+      <Component
+        ref={ref}
+        className={clsx(
+          "hds-navbar__logo-and-service-text",
+          `hds-navbar__logo-and-service-text--${variant}`,
+          className as undefined,
+        )}
+        {...rest}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+NavbarLogoAndServiceText.displayName = "Navbar.NavbarLogoAndText";
 
 // Navbar button
 interface NavbarButtonProps {
@@ -63,42 +125,3 @@ export const NavbarNavigation: OverridableComponent<NavbarNavigationProps, HTMLE
     );
   });
 NavbarNavigation.displayName = "Navbar.Navigation";
-
-interface NavbarLogoAndTextProps extends HTMLAttributes<HTMLDivElement> {
-  /**
-   * The text display next to the logo
-   */
-  children: React.ReactNode;
-
-  /**
-   * The text variant
-   *
-   * Use `service` for internal applications
-   * Use `flagship` for public facing applications
-   */
-  variant: "service" | "flagship";
-
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   */
-  asChild?: boolean;
-}
-export const NavbarLogoAndText = forwardRef<HTMLDivElement, NavbarLogoAndTextProps>(
-  ({ children, asChild, variant, className, ...rest }, ref) => {
-    const Component = asChild ? Slot : "div";
-    return (
-      <Component
-        ref={ref}
-        className={clsx(
-          "hds-navbar__logo-and-text",
-          `hds-navbar__logo-and-text--${variant}`,
-          className as undefined,
-        )}
-        {...rest}
-      >
-        {children}
-      </Component>
-    );
-  },
-);
-NavbarLogoAndText.displayName = "Navbar.NavbarLogoAndText";

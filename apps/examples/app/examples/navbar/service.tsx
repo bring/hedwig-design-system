@@ -2,18 +2,16 @@ import { Link, Navbar } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <>
-      <Navbar>
-        <Navbar.LogoAndText variant="service" asChild>
-          <a href="/" aria-label="To the front page">
-            Notifications admin
-          </a>
-        </Navbar.LogoAndText>
-        <Navbar.Navigation>
-          <Link href="#login">Login</Link>
-        </Navbar.Navigation>
-      </Navbar>
-    </>
+    <Navbar variant="service">
+      <Navbar.LogoAndServiceText variant="service" asChild>
+        <a href="/" aria-label="To the front page">
+          Notifications admin
+        </a>
+      </Navbar.LogoAndServiceText>
+      <Navbar.Navigation>
+        <Link href="#login">Login</Link>
+      </Navbar.Navigation>
+    </Navbar>
   );
 }
 

@@ -39,10 +39,27 @@ function Example() {
         </Navbar.Navigation>
       </Navbar>
 
+      {/* Hero illustration */}
+      <div
+        style={{
+          height: "55vh",
+          width: "100%",
+          background:
+            "url('https://www.posten.no/_/image/24de2334-84c9-46e4-b3c3-bba51753d0b4:e26630321db9d6cd94d9b5b384c3a9638963dab1/width-2500/posten-desktop.png?quality=70')",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "50% 50%",
+        }}
+      />
+
       <Container as="main">
         {/* Some filler content */}
-        {Array.from({ length: 50 }).map((_, i) => (
-          <Skeleton key={i} animation={false} width={i % 4 === 0 ? "75%" : "100%"} />
+        {Array.from({ length: 15 }).map((_, i) => (
+          <Skeleton
+            key={i}
+            animation={false}
+            width={i % 3 === 0 ? "100%" : `${((i % 3) + 0) * 30}%`}
+          />
         ))}
       </Container>
     </>

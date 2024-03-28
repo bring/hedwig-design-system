@@ -11,8 +11,8 @@ export default function Layout() {
 
   return (
     <div>
-      <Navbar>
-        <Navbar.LogoAndText variant="flagship" asChild>
+      <Navbar variant="service">
+        <Navbar.LogoAndServiceText variant="flagship" asChild>
           <RemixLink
             to={{
               pathname: "/",
@@ -20,11 +20,11 @@ export default function Layout() {
             }}
             aria-label="To the front page"
           >
-            <span>
+            <div>
               Hedwig <span className="hidden-on-mobile">Design System</span>
-            </span>
+            </div>
           </RemixLink>
-        </Navbar.LogoAndText>
+        </Navbar.LogoAndServiceText>
         <Navbar.Navigation>
           <Navbar.Button
             icon={

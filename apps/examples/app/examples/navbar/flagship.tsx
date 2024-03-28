@@ -2,12 +2,12 @@ import { Navbar } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Navbar>
-      <Navbar.LogoAndText variant="flagship" asChild>
+    <Navbar variant="service">
+      <Navbar.LogoAndServiceText variant="flagship" asChild>
         <a href="/" aria-label="To the front page">
-          Flagship service
+          Flagship
         </a>
-      </Navbar.LogoAndText>
+      </Navbar.LogoAndServiceText>
       <Navbar.Navigation>
         <Navbar.Button>Search</Navbar.Button>
       </Navbar.Navigation>
