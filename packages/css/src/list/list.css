@@ -35,22 +35,46 @@
     list-style: circle;
   }
 
+  /* Nested ordered lists */
+  &:is(ol) ol {
+    list-style: decimal;
+
+    /* TODO: Consider variant for a, b, c list style when nested */
+
+    /* list-style: lower-alpha; */
+  }
+
   /**
    * Modifers: Sizes
    */
   &.hds-list--small {
     font: var(--hds-typography-body-small);
     gap: var(--hds-spacing-4);
+
+    & ul,
+    & ol {
+      margin-top: var(--hds-spacing-4);
+    }
   }
 
   &, /* Default */
   &.hds-list--medium {
     gap: var(--hds-spacing-8);
+
+    & ul,
+    & ol {
+      margin-top: var(--hds-spacing-8);
+    }
   }
 
   &.hds-list--large {
     font: var(--hds-typography-h3);
     gap: var(--hds-spacing-12);
+
+    & ul,
+    & ol {
+      margin-top: var(--hds-spacing-12);
+    }
   }
 
   /**
