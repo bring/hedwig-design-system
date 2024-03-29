@@ -308,6 +308,9 @@ importers:
       '@postenbring/hedwig-css':
         specifier: workspace:*
         version: link:../css
+      '@radix-ui/react-slot':
+        specifier: 1.0.2
+        version: 1.0.2(@types/react@18.2.69)(react@18.2.0)
       focus-trap-react:
         specifier: 10.2.3
         version: 10.2.3(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)

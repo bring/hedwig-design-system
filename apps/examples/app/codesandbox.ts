@@ -31,7 +31,8 @@ const packageJson = `{
     "react": "latest",
     "react-dom": "latest",
     "@types/react": "latest",
-    "@types/react-dom": "latest"
+    "@types/react-dom": "latest",
+    "prop-types": "latest"
   }
 }`;
 
