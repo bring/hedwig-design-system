@@ -2,6 +2,7 @@ import { Container, Navbar, PrimaryButton } from "@postenbring/hedwig-react";
 import { Outlet, useSearchParams, Link as RemixLink } from "@remix-run/react";
 
 import { kebabCaseToFirstLetterUpperCase } from "../components/component-examples";
+import "./_layout.css";
 
 export default function Layout() {
   const [search] = useSearchParams();
