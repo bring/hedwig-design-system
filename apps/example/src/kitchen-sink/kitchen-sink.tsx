@@ -53,6 +53,8 @@ export default function KitchenSink() {
         <Link href="#demo-link" variant="no-underline" size="large">
           A link
         </Link>
+
+        {/** @deprecated moved to `examples` app */}
         <h2>Descriptive lists</h2>
         <DescriptionList variant="vertical">
           <dt>Something:</dt>
@@ -63,6 +65,7 @@ export default function KitchenSink() {
           <dd>To keep your eyes on 👀, horizontally</dd>
         </DescriptionList>
         <div>
+          {/** @deprecated moved to `examples` app */}
           <h2>Lists</h2>
           <UnorderedList>
             <li>Hello</li>

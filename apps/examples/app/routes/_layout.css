@@ -3,3 +3,9 @@
     display: none;
   }
 }
+
+@media (max-width: 939.999px) {
+  .hidden-before-large {
+    display: none;
+  }
+}

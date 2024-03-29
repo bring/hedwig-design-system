@@ -21,7 +21,7 @@ export default function Layout() {
             aria-label="To the front page"
           >
             <div>
-              Hedwig <span className="hidden-on-mobile">Design System</span>
+              Hedwig <span className="hidden-before-large">Design System</span>
             </div>
           </RemixLink>
         </Navbar.LogoAndServiceText>
@@ -55,7 +55,7 @@ export default function Layout() {
             fill="outline"
             size="small"
             as={RemixLink}
-            style={{ alignSelf: "center" }}
+            style={{ marginLeft: "var(--hds-spacing-16)", alignSelf: "center" }}
             to={{
               search:
                 "?" +
