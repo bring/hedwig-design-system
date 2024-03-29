@@ -1,5 +1,15 @@
 # @postenbring/hedwig-react
 
+## 0.0.64
+
+### Patch Changes
+
+- fbc1166: :dizzy: add `animation` prop to `Skeleton`, allowing for no animation
+- Updated dependencies [fbc1166]
+- Updated dependencies [c20703b]
+- Updated dependencies [22abb03]
+  - @postenbring/hedwig-css@0.0.55
+
 ## 0.0.63
 
 ### Patch Changes
