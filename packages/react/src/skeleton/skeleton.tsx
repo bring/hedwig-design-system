@@ -14,6 +14,14 @@ interface SkeletonPropsInner extends React.AnchorHTMLAttributes<HTMLDivElement> 
    */
   variant?: "text" | "circle" | "rectangle" | "rounded";
 
+  /**
+   * Whether to show animation or not
+   * In the future the animation effect might become configurable
+   *
+   * default true
+   */
+  animation?: boolean;
+
   children?: React.ReactNode;
 }
 
@@ -53,12 +61,27 @@ export type SkeletonProps = SkeletonPropsInner & DimensionsFromWidthAndHeight;
  */
 export const Skeleton: OverridableComponent<SkeletonProps, HTMLDivElement> = forwardRef(
   (
-    { as: Component = "div", children, variant = "text", width, height, className, style, ...rest },
+    {
+      as: Component = "div",
+      children,
+      animation,
+      variant = "text",
+      width,
+      height,
+      className,
+      style,
+      ...rest
+    },
     ref,
   ) => {
     return (
       <Component
-        className={clsx("hds-skeleton", `hds-skeleton--${variant}`, className as undefined)}
+        className={clsx(
+          "hds-skeleton",
+          `hds-skeleton--${variant}`,
+          !animation && `hds-skeleton--no-animation`,
+          className as undefined,
+        )}
         style={{ ...style, width, height }}
         ref={ref}
         aria-hidden
