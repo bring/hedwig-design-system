@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.55
+
+### Patch Changes
+
+- fbc1166: :dizzy: add `animation` prop to `Skeleton`, allowing for no animation
+- c20703b: :lipstick: style `a` tags automaticly in the `LinkList` component
+- 22abb03: :lipstick: add some top margin of nested lists
+
 ## 0.0.54
 
 ### Patch Changes
