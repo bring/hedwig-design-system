@@ -91,5 +91,10 @@
     & li {
       padding-left: 0;
     }
+
+    /* Auto style `a` tags */
+    a:where(:not(.hds-link)) {
+      @extend url("./src/link/link.css:hds-link");
+    }
   }
 }
