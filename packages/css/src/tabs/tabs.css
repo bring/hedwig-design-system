@@ -25,8 +25,12 @@
             border-bottom-color: var(--hds-colors-signature);
           }
 
+          &:not(:first-child) {
+            padding-left: var(--hds-spacing-16);
+          }
+
           &:not(:last-child) {
-            margin-right: var(--hds-spacing-32);
+            padding-right: var(--hds-spacing-16);
           }
         }
       }
