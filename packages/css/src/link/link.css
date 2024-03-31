@@ -3,22 +3,20 @@
  */
 
 .hds-link {
-  text-decoration: none;
-  border-bottom: var(--hds-stroke-default) solid var(--hds-link-colors-underline);
-  fill: var(--hds-link-colors-text);
   color: var(--hds-link-colors-text);
+  fill: currentcolor;
   transition: all var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
   cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--hds-stroke-default);
+  text-decoration-color: var(--hds-link-colors-underline);
+  text-underline-offset: 0.25em;
 
   &:hover,
   &:active {
     color: var(--hds-link-colors-hover);
-    fill: var(--hds-link-colors-hover);
-    border-color: var(--hds-link-colors-underline-hover);
-
-    & .hds-link__text {
-      border-color: var(--hds-link-colors-underline-hover);
-    }
+    fill: currentcolor;
+    text-decoration-color: var(--hds-link-colors-underline-hover);
   }
 
   /**
@@ -27,25 +25,51 @@
 
   &.hds-link--inverted {
     color: var(--hds-ui-colors-white);
-    text-decoration-color: var(--hds-colors-signature);
-    border-color: currentcolor;
+    text-decoration-color: currentcolor;
 
     &:hover,
     &:active {
       color: var(--hds-colors-light);
-      border-color: currentcolor;
+      text-decoration-color: currentcolor;
     }
 
     &:disabled {
       color: var(--hds-ui-colors-dark-grey);
       fill: currentcolor;
-      border-color: currentcolor;
+      text-decoration-color: currentcolor;
       outline: 0 !important;
       box-shadow: none !important;
       cursor: default;
     }
   }
 
+  &.hds-link--no-underline {
+    font-weight: 500;
+    color: var(--hds-colors-dark);
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: var(--hds-colors-dark);
+      text-decoration: underline;
+      text-decoration-color: currentcolor;
+    }
+  }
+
+  &.hds-link--solid {
+    color: var(--hds-ui-colors-black);
+    text-decoration-color: currentcolor;
+
+    &:hover,
+    &:active {
+      color: var(--hds-ui-colors-black-hover);
+      text-decoration-color: currentcolor;
+    }
+  }
+
+  /**
+   * Sizes
+   */
   &.hds-link--small {
     font: var(--hds-typography-body-small);
   }
@@ -54,37 +78,13 @@
     font: var(--hds-typography-h3);
   }
 
-  &.hds-link--no-underline {
-    font-weight: 500;
-    color: var(--hds-colors-dark);
-    text-decoration: none;
-    border-bottom: none;
-
-    &:hover {
-      color: var(--hds-colors-dark);
-      text-decoration: underline;
-      text-decoration-color: var(--hds-colors-dark);
-      border-bottom: none;
-    }
-  }
-
-  &.hds-link--solid {
-    color: var(--hds-ui-colors-black);
-    border-color: var(--hds-ui-colors-black);
-
-    &:hover,
-    &:active {
-      color: var(--hds-ui-colors-black-hover);
-      border-color: var(--hds-ui-colors-black-hover);
-    }
-  }
-
+  /**
+   * When styling a button as a link
+   */
   &:is(button) {
     padding: 0;
     background: none;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
+    border: 0;
 
     /* Button inherits the font size from the user agent by default  */
     &:not(.hds-link--small, .hds-link--large) {

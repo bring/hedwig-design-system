@@ -19,10 +19,10 @@
     /*
      * Design in Figma has an extra 2px distance between
      * the text and underline border on links
-     * making the total height 21px
+     * This calculation is a best effort attempt to match that
      */
     .hds-link {
-      padding-bottom: 2px;
+      text-underline-offset: calc(0.25em + 3px);
     }
 
     &:first-child {
