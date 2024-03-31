@@ -17,6 +17,7 @@ export const AccordionContent: OverridableComponent<AccordionContentProps, HTMLD
     return (
       <Component
         aria-hidden={!context.open}
+        inert={context.open ? undefined : "true"}
         {...rest}
         className={clsx(
           "hds-accordion-item-content",
