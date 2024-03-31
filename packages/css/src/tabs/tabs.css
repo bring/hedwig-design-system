@@ -14,14 +14,14 @@
 
   font: var(--hds-typography-body);
 
-  .hds-tabs--list {
+  .hds-tabs__list {
     padding-left: 0;
     display: inline-flex;
     width: auto;
     position: relative;
 
     /* Tab button */
-    .hds-tabs--tab {
+    .hds-tabs__tab {
       cursor: pointer;
       font: var(--hds-typography-body);
       background: transparent;
@@ -32,23 +32,23 @@
         color: var(--hds-colors-dark);
       }
 
-      &.hds-tabs--tab-active {
+      &.hds-tabs__tab--active {
         color: var(--hds-colors-dark);
       }
     }
 
     /* List styling */
     &, /* Default */
-    &.hds-tabs--list-vertical {
+    &.hds-tabs__list--vertical {
       border-left: 1px solid var(--hds-ui-colors-light-grey-fill);
       flex-direction: column;
 
-      .hds-tabs--tab {
+      .hds-tabs__tab {
         width: auto;
         padding: var(--hds-spacing-8) var(--hds-spacing-16);
         border-left: var(--_hds-tabs-border-active-size) solid transparent;
 
-        &.hds-tabs--tab-active {
+        &.hds-tabs__tab--active {
           border-color: var(
             --_hds-tabs-marker-border-fallback-color,
             var(--_hds-tabs-marker-color)
@@ -77,17 +77,17 @@
 
     /* Horizontal list styling. Only available for medium screen sizes and up */
     @media (--medium) {
-      &.hds-tabs--list-horizontal {
+      &.hds-tabs__list--horizontal {
         border-left: 0;
         border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-fill);
         flex-direction: row;
 
-        .hds-tabs--tab {
+        .hds-tabs__tab {
           padding: var(--hds-spacing-12) 0;
           border-bottom: var(--_hds-tabs-border-active-size) solid transparent;
           border-left: 0;
 
-          &.hds-tabs--tab-active {
+          &.hds-tabs__tab--active {
             border-color: var(
               --_hds-tabs-marker-border-fallback-color,
               var(--_hds-tabs-marker-color)
@@ -126,7 +126,7 @@
   }
 
   /* Tab contents */
-  .hds-tabs--contents {
+  .hds-tabs__contents {
     margin-top: var(--hds-spacing-64);
   }
 }

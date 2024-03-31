@@ -10,7 +10,7 @@ export interface TabContentsProps extends HTMLAttributes<HTMLDivElement> {
 
 export function TabsContents({ children, ...rest }: TabContentsProps) {
   return (
-    <div className={clsx("hds-tabs--contents")} {...rest}>
+    <div className={clsx("hds-tabs__contents")} {...rest}>
       {children}
     </div>
   );

@@ -61,14 +61,14 @@ export function TabsList({ children, direction = "horizontal", className, ...res
   return (
     <div
       className={clsx(
-        "hds-tabs--list",
+        "hds-tabs__list",
         direction === "horizontal"
           ? {
-              "hds-tabs--list-horizontal": wideEnough,
-              "hds-tabs--list-vertical": !wideEnough,
+              "hds-tabs__list--horizontal": wideEnough,
+              "hds-tabs__list--vertical": !wideEnough,
             }
           : {
-              "hds-tabs--list-vertical": true,
+              "hds-tabs__list--vertical": true,
             },
         className as undefined,
       )}
@@ -104,8 +104,8 @@ export const Tab: OverridableComponent<TabProps, HTMLButtonElement> = forwardRef
     return (
       <Component
         className={clsx(
-          "hds-tabs--tab",
-          { "hds-tabs--tab-active": context.activeTabId === tabId },
+          "hds-tabs__tab",
+          { "hds-tabs__tab--active": context.activeTabId === tabId },
           className as undefined,
         )}
         data-tabid={tabId}
