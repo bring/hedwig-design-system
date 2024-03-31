@@ -20,9 +20,7 @@ export const Tabs: OverridableComponent<TabsProps, HTMLDivElement> = forwardRef(
     const [activeTabId, setActiveTabId] = useState<string>(defaultTab);
     return (
       <Component className={clsx("hds-tabs")} ref={ref} {...rest}>
-        <TabsContext.Provider
-          value={{ activeTabId, toggleActiveTabId: setActiveTabId, mounted: true }}
-        >
+        <TabsContext.Provider value={{ activeTabId, toggleActiveTabId: setActiveTabId }}>
           {children}
         </TabsContext.Provider>
       </Component>

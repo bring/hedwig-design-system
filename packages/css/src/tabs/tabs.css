@@ -1,7 +1,16 @@
 @import url("../_custom-media.css");
 
 .hds-tabs {
-  --hds-tabs-border-active-size: var(--hds-stroke-thick);
+  --_hds-tabs-border-active-size: var(--hds-stroke-thick);
+  --_hds-tabs-marker-color: var(--hds-colors-signature);
+
+  /* Set by javascript. Controlles the animation of the tab marker */
+  --_hds-tabs-marker-border-fallback-color: var(--_hds-tabs-marker-color);
+  --_hds-tabs-marker-animated-color: transparent;
+  --_hds-tabs-marker-top: 0;
+  --_hds-tabs-marker-left: 0;
+  --_hds-tabs-marker-height: 0;
+  --_hds-tabs-marker-width: 0;
 
   font: var(--hds-typography-body);
 
@@ -9,70 +18,14 @@
     padding-left: 0;
     display: inline-flex;
     width: auto;
+    position: relative;
 
-    &.hds-tabs--list-horizontal {
-      color: red;
-
-      @media (--medium) {
-        border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-fill);
-        flex-direction: row;
-
-        .hds-tabs--tab {
-          padding: var(--hds-spacing-12) 0;
-          border-bottom: var(--hds-tabs-border-active-size) solid transparent;
-
-          &.hds-tabs--tab-active {
-            border-bottom-color: var(--hds-colors-signature);
-          }
-
-          &:not(:first-child) {
-            padding-left: var(--hds-spacing-16);
-          }
-
-          &:not(:last-child) {
-            padding-right: var(--hds-spacing-16);
-          }
-        }
-      }
-
-      @media (--before-medium) {
-        border-left: 1px solid var(--hds-ui-colors-light-grey-fill);
-        flex-direction: column;
-        padding-left: 1px;
-
-        .hds-tabs--tab {
-          width: auto;
-          padding: var(--hds-spacing-8) var(--hds-spacing-12);
-
-          &.hds-tabs--tab-active {
-            margin-left: calc(var(--hds-tabs-border-active-size) * -1);
-            border-left: var(--hds-tabs-border-active-size) solid var(--hds-colors-signature);
-          }
-        }
-      }
-    }
-
-    &.hds-tabs--list-vertical {
-      border-left: 1px solid var(--hds-ui-colors-light-grey-fill);
-      flex-direction: column;
-      padding-left: 1px;
-
-      .hds-tabs--tab {
-        width: auto;
-        padding: var(--hds-spacing-8) var(--hds-spacing-12);
-
-        &.hds-tabs--tab-active {
-          margin-left: calc(var(--hds-tabs-border-active-size) * -1);
-          border-left: var(--hds-tabs-border-active-size) solid var(--hds-colors-signature);
-        }
-      }
-    }
-
+    /* Tab button */
     .hds-tabs--tab {
       cursor: pointer;
       font: var(--hds-typography-body);
       background: transparent;
-      border: 0 none;
+      border: 0;
       text-align: left;
 
       &:hover {
@@ -83,8 +36,96 @@
         color: var(--hds-colors-dark);
       }
     }
+
+    /* List styling */
+    &, /* Default */
+    &.hds-tabs--list-vertical {
+      border-left: 1px solid var(--hds-ui-colors-light-grey-fill);
+      flex-direction: column;
+
+      .hds-tabs--tab {
+        width: auto;
+        padding: var(--hds-spacing-8) var(--hds-spacing-16);
+        border-left: var(--_hds-tabs-border-active-size) solid transparent;
+
+        &.hds-tabs--tab-active {
+          border-color: var(
+            --_hds-tabs-marker-border-fallback-color,
+            var(--_hds-tabs-marker-color)
+          );
+        }
+      }
+
+      /* Marker animation */
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: var(--_hds-tabs-border-active-size);
+        scale: 1 var(--_hds-tabs-marker-height);
+        translate: 0 var(--_hds-tabs-marker-top);
+        transform-origin: top left;
+        transition-property: scale, translate;
+        transition-duration: var(--hds-micro-animation-duration-quick);
+        transition-timing-function: var(--hds-micro-animation-easing-out);
+        background-color: var(--_hds-tabs-marker-animated-color);
+      }
+    }
+
+    /* Horizontal list styling. Only available for medium screen sizes and up */
+    @media (--medium) {
+      &.hds-tabs--list-horizontal {
+        border-left: 0;
+        border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-fill);
+        flex-direction: row;
+
+        .hds-tabs--tab {
+          padding: var(--hds-spacing-12) 0;
+          border-bottom: var(--_hds-tabs-border-active-size) solid transparent;
+          border-left: 0;
+
+          &.hds-tabs--tab-active {
+            border-color: var(
+              --_hds-tabs-marker-border-fallback-color,
+              var(--_hds-tabs-marker-color)
+            );
+          }
+
+          &:not(:first-child) {
+            margin-left: var(--hds-spacing-16);
+          }
+
+          &:not(:last-child) {
+            margin-right: var(--hds-spacing-16);
+          }
+        }
+
+        /* Marker animation */
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: unset;
+          width: unset;
+          height: var(--_hds-tabs-border-active-size);
+          scale: var(--_hds-tabs-marker-width) 1;
+          translate: var(--_hds-tabs-marker-left) 0;
+          transform-origin: left;
+          transition-property: scale, translate;
+          transition-duration: var(--hds-micro-animation-duration-quick);
+          transition-timing-function: var(--hds-micro-animation-easing-out);
+          background-color: var(--_hds-tabs-marker-animated-color);
+        }
+      }
+    }
   }
 
+  /* Tab contents */
   .hds-tabs--contents {
     margin-top: var(--hds-spacing-64);
   }

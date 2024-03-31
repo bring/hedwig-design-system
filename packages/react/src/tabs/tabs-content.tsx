@@ -1,8 +1,8 @@
 import type { HTMLAttributes, ReactElement } from "react";
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import type { OverridableComponent } from "../utils";
-import { TabsContext } from "./context";
+import { useTabsContext } from "./context";
 
 export interface TabContentsProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactElement<TabsContentProps> | ReactElement<TabsContentProps>[];
@@ -28,10 +28,8 @@ export interface TabsContentProps extends HTMLAttributes<HTMLElement> {
 
 export const TabsContent: OverridableComponent<TabsContentProps, HTMLElement> = forwardRef(
   ({ as: Component = "div", forTabId, children, ...rest }, ref) => {
-    const context = useContext(TabsContext);
-    if (!context.mounted) {
-      throw new Error("Context required. Did you use <Tabs.Content /> outside of <Tabs/>?");
-    }
+    const context = useTabsContext();
+
     if (context.activeTabId === forTabId) {
       return (
         <Component {...rest} ref={ref}>

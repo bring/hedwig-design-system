@@ -1,16 +1,18 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export interface TabsContextProps {
-  mounted: boolean;
-  activeTabId?: string;
+  activeTabId: string;
   toggleActiveTabId: (tabId: string) => void;
 }
 
-export const TabsContext = createContext<TabsContextProps>({
-  mounted: false,
-  activeTabId: undefined,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- Added default section, without handling
-  toggleActiveTabId: (tabId: string) => {
-    // default
-  },
-});
+export const TabsContext = createContext<TabsContextProps | null>(null);
+
+export function useTabsContext() {
+  const context = useContext(TabsContext);
+  if (!context) {
+    throw new Error(
+      "Tabs context required. Did you use `<Tabs.List />`, `<Tabs.Tab />`, or `<Tabs.Content />` outside of <Tabs/>?",
+    );
+  }
+  return context;
+}
