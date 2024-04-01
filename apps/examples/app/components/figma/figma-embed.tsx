@@ -13,6 +13,7 @@ export function FigmaEmbed({ urlToEmbed, hideBottomBar = false, width, height }:
       }}
     >
       <iframe
+        loading="lazy"
         title="Figma embed"
         style={{
           width,

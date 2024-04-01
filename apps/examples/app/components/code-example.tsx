@@ -59,6 +59,7 @@ export function CodeExample({
       {/* Iframed demo */}
       <div>
         <iframe
+          loading="lazy"
           ref={iframeRef}
           title={`Example ${example.componentName}/${example.exampleName}`}
           src={iframeUrl}
