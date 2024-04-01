@@ -64,7 +64,7 @@ export const Skeleton: OverridableComponent<SkeletonProps, HTMLDivElement> = for
     {
       as: Component = "div",
       children,
-      animation,
+      animation = true,
       variant = "text",
       width,
       height,
