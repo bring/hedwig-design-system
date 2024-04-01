@@ -59,13 +59,8 @@ export const AccordionItem: OverridableComponent<AccordionItemProps, HTMLDivElem
     return (
       <Component
         {...rest}
-        className={clsx(
-          "hds-accordion-item",
-          {
-            "hds-accordion-item__expanded": open,
-          },
-          className as undefined,
-        )}
+        data-state={open ? "open" : "closed"}
+        className={clsx("hds-accordion-item", className as undefined)}
         ref={ref}
       >
         <AccordionItemContext.Provider value={{ open, setOpen: handleOpen }}>

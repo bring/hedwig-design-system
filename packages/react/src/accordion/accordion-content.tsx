@@ -17,16 +17,11 @@ export const AccordionContent: OverridableComponent<AccordionContentProps, HTMLD
     return (
       <Component
         aria-hidden={!context.open}
+        data-state={context.open ? "open" : "closed"}
         inert={context.open ? undefined : "true"}
-        {...rest}
-        className={clsx(
-          "hds-accordion-item-content",
-          {
-            "hds-accordion-item-content--closed": !context.open,
-          },
-          className as undefined,
-        )}
+        className={clsx("hds-accordion-item-content", className as undefined)}
         ref={ref}
+        {...rest}
       >
         <div className={clsx("hds-accordion-item-content-inner")}>{children}</div>
       </Component>

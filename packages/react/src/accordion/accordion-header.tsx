@@ -10,23 +10,20 @@ export interface AccordionHeaderProps extends ButtonHTMLAttributes<HTMLButtonEle
 
 export const AccordionHeader: OverridableComponent<AccordionHeaderProps, HTMLButtonElement> =
   forwardRef(({ as: Component = "button", children, className, onClick, ...rest }, ref) => {
-    const itemContext = useContext(AccordionItemContext);
-    if (itemContext === null) {
+    const context = useContext(AccordionItemContext);
+    if (context === null) {
       return null;
     }
     const expandOrCollapse = (e: MouseEvent<HTMLButtonElement>) => {
-      itemContext.setOpen(!itemContext.open);
+      context.setOpen(!context.open);
       onClick && onClick(e);
     };
     return (
       <Component
         {...rest}
-        aria-expanded={itemContext.open}
-        className={clsx(
-          "hds-accordion-item-header",
-          { "hds-accordion-item-header--open": itemContext.open },
-          className as undefined,
-        )}
+        aria-expanded={context.open}
+        data-state={context.open ? "open" : "closed"}
+        className={clsx("hds-accordion-item-header", className as undefined)}
         onClick={expandOrCollapse}
         ref={ref}
         type="button"
