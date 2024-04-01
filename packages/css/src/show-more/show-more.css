@@ -6,6 +6,7 @@
   width: 100%;
   align-items: center;
   background: transparent;
+  color: inherit;
   border: 0;
   cursor: pointer;
   transition: color var(--hds-micro-animation-duration-quick)

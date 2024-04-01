@@ -25,6 +25,7 @@
       cursor: pointer;
       font: var(--hds-typography-body);
       background: transparent;
+      color: inherit;
       border: 0;
       text-align: left;
 

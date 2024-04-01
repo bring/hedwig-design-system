@@ -36,6 +36,7 @@
       border-top: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-stroke);
       text-align: left;
       background-color: transparent;
+      color: inherit;
       font: var(--hds-typography-body);
 
       &:hover {
