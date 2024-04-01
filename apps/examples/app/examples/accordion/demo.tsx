@@ -10,7 +10,7 @@ function Example() {
           personal challenges and sacrifices along the way.
         </Accordion.Content>
       </Accordion.Item>
-      <Accordion.Item>
+      <Accordion.Item defaultOpen>
         <Accordion.Header>Looper</Accordion.Header>
         <Accordion.Content>
           Hitman goes back in time to kill people, but chokes it out when he is sent back to kill
@@ -31,4 +31,6 @@ function Example() {
 export default Example;
 
 import type { ExampleConfig } from "..";
-export const config: ExampleConfig = {};
+export const config: ExampleConfig = {
+  index: 0,
+};
