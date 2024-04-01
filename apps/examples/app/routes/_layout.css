@@ -9,3 +9,15 @@
     display: none !important;
   }
 }
+
+@media (max-width: 719.999px) {
+  .hidden-before-medium {
+    display: none !important;
+  }
+}
+
+@media (min-width: 720px) {
+  .hidden-after-medium {
+    display: none !important;
+  }
+}

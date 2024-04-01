@@ -102,7 +102,7 @@ export default function Layout() {
         </Navbar.LogoAndServiceText>
 
         {/* Mobile */}
-        <Navbar.Navigation className="hidden-after-large">
+        <Navbar.Navigation className="hidden-after-medium">
           <Navbar.ExpandableMenu>
             <Navbar.ExpandableMenu.Trigger
               whenClosedText="Meny"
@@ -130,7 +130,7 @@ export default function Layout() {
         </Navbar.Navigation>
 
         {/* Desktop */}
-        <Navbar.Navigation className="hidden-before-large">
+        <Navbar.Navigation className="hidden-before-medium">
           <NavbarMenuItems />
         </Navbar.Navigation>
       </Navbar>
