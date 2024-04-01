@@ -12,7 +12,7 @@ function Example() {
             })
           }
         >
-          Scroll to navbar
+          Scroll to footer
         </Link>
       </div>
       <div style={{ minHeight: "100vh", flexGrow: 1 }} />

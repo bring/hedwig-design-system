@@ -6,6 +6,7 @@ import {
   NavbarLogoAndServiceText,
 } from "./navbar";
 import {
+  useNavbarExpendableMenuContext,
   NavbarExpandableMenu,
   NavbarExpandableMenuTrigger,
   NavbarExpandableMenuContent,
@@ -31,5 +32,5 @@ NavbarComponent.ExpandableMenu = NavbarExpandableMenuComponent;
 NavbarComponent.Button = NavbarButton;
 NavbarComponent.Navigation = NavbarNavigation;
 
-export { NavbarComponent as Navbar };
+export { NavbarComponent as Navbar, useNavbarExpendableMenuContext };
 export type * from "./navbar";

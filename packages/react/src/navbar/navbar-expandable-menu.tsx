@@ -6,12 +6,13 @@ import FocusTrap from "focus-trap-react";
 import type { OverridableComponent } from "../utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
-const navbarContext = createContext([
+const expandableMenuContext = createContext([
   false as boolean,
   () => {
     // Empty
   },
 ] as const);
+export const useNavbarExpendableMenuContext = () => useContext(expandableMenuContext);
 
 /**
  * Root
@@ -33,10 +34,10 @@ export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
   };
   const navbarElement = document.getElementsByClassName(clsx("hds-navbar"))[0];
   return (
-    <navbarContext.Provider value={[open, toggleOpen]}>
+    <expandableMenuContext.Provider value={[open, toggleOpen]}>
       {open ? <FocusTrap containerElements={[navbarElement as HTMLElement]} /> : null}
       {children}
-    </navbarContext.Provider>
+    </expandableMenuContext.Provider>
   );
 }
 NavbarExpandableMenu.displayName = "NavbarExpandableMenu";
@@ -75,7 +76,7 @@ function RenderButton({
       type="button"
       {...rest}
     >
-      {text} {icon}
+      <span className={clsx("hds-navbar__button-responsive-text")}>{text}</span> {icon}
     </button>
   );
 }
@@ -84,7 +85,7 @@ function RenderButton({
  * Trigger
  *
  * ## TODO
- * - [ ] Hide text when on mobile
+ * - [x] Hide text when on mobile
  * - [X] Open / Close icon
  * - [X] Make button have consistant width
  */
@@ -114,7 +115,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
     },
     ref,
   ) => {
-    const [open, toggleOpen] = useContext(navbarContext);
+    const [open, toggleOpen] = useNavbarExpendableMenuContext();
     const [width, setWidth] = useState(0);
     const measureButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -206,7 +207,7 @@ export const NavbarExpandableMenuContent: OverridableComponent<
   NavbarExpandableMenuContentProps,
   HTMLDivElement
 > = forwardRef(({ as: Component = "section", children, className, ...rest }, ref) => {
-  const [open] = useContext(navbarContext);
+  const [open] = useNavbarExpendableMenuContext();
   return (
     <Component
       {...rest}

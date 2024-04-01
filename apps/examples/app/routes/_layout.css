@@ -1,11 +1,11 @@
-@media (max-width: 719.999px) {
-  .hidden-on-mobile {
-    display: none;
+@media (max-width: 939.999px) {
+  .hidden-before-large {
+    display: none !important;
   }
 }
 
-@media (max-width: 939.999px) {
-  .hidden-before-large {
-    display: none;
+@media (min-width: 940px) {
+  .hidden-after-large {
+    display: none !important;
   }
 }
