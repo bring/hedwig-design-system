@@ -41,13 +41,13 @@
     display: grid;
     background-color: white;
 
-    --animation-time: var(--hds-micro-animation-duration-quick);
+    --_animation-time: var(--hds-micro-animation-duration-quick);
 
     &[data-state="open"] {
       grid-template-rows: 1fr;
       transition:
-        grid-template-rows var(--animation-time) var(--hds-micro-animation-easing-normal),
-        min-height var(--animation-time) var(--hds-micro-animation-easing-normal);
+        grid-template-rows var(--_animation-time) var(--hds-micro-animation-easing-out),
+        min-height var(--_animation-time) var(--hds-micro-animation-easing-out);
 
       &, /* Default */
         .hds-navbar__expandable-menu-content--fullscreen {
@@ -56,22 +56,22 @@
 
       .hds-navbar__expandable-menu-content-inner {
         opacity: 1;
-        transition: opacity var(--animation-time) var(--hds-micro-animation-easing-normal)
-          var(--animation-time);
+        transition: opacity var(--_animation-time) var(--hds-micro-animation-easing-normal)
+          var(--_animation-time);
       }
     }
 
     &[data-state="closed"] {
       grid-template-rows: 0fr;
       transition:
-        grid-template-rows var(--animation-time) var(--hds-micro-animation-easing-normal)
-          var(--animation-time),
-        min-height var(--animation-time) var(--hds-micro-animation-easing-normal)
-          var(--animation-time);
+        grid-template-rows var(--_animation-time) var(--hds-micro-animation-easing-in)
+          var(--_animation-time),
+        min-height var(--_animation-time) var(--hds-micro-animation-easing-in)
+          var(--_animation-time);
 
       .hds-navbar__expandable-menu-content-inner {
         opacity: 0;
-        transition: opacity var(--animation-time) var(--hds-micro-animation-easing-normal);
+        transition: opacity var(--_animation-time) var(--hds-micro-animation-easing-normal);
       }
     }
 
@@ -96,9 +96,18 @@
     }
 
     svg {
-      margin-left: var(--hds-spacing-8);
+      &:not(:first-child) {
+        margin-left: var(--hds-spacing-8);
+      }
+
       width: var(--hds-spacing-24);
       height: var(--hds-spacing-24);
+    }
+
+    @media (--before-large) {
+      .hds-navbar__button-responsive-text {
+        display: none;
+      }
     }
   }
 
