@@ -32,7 +32,7 @@ export default function Index() {
         {Object.entries(examplesByComponent).map(([componentName, examples]) => (
           <li key={componentName}>
             <h2 id={`examples-${componentName}`}>
-              <RemixLink className={styles.exampleLink} to={componentName}>
+              <RemixLink className={styles.exampleHeadingLink} to={componentName}>
                 {kebabCaseToFirstLetterUpperCase(componentName)}
               </RemixLink>
             </h2>
