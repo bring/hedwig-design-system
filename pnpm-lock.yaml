@@ -245,6 +245,9 @@ importers:
       vite:
         specifier: ^5.2.7
         version: 5.2.7(@types/node@20.11.30)
+      wait-on:
+        specifier: ^7.2.0
+        version: 7.2.0
 
   packages-internal/eslint-config-custom:
     devDependencies:
@@ -9323,7 +9326,7 @@ packages:
     dev: true
 
   /joi@17.11.0:
-    resolution: {integrity: sha512-NgB+lZLNoqISVy1rZocE9PZI36bL/77ie924Ri43yEvi9GUUMPeyVIr8KdFTMUlby1p0PBYMk9spIxEUQYqrJQ==}
+    resolution: {integrity: sha512-NgB+lZLNoqISVy1rZocE9PZI36bL/77ie924Ri43yEvi9GUUMPeyVIr8KdFTMUlby1p0PBYMk9spIxEUQYqrJQ==, tarball: https://registry.npmjs.org/joi/-/joi-17.11.0.tgz}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
