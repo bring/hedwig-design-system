@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link as RemixLink } from "@remix-run/react";
+import { Link as RemixLink, useSearchParams } from "@remix-run/react";
 
 import {
   ComponentCodeExamples,
@@ -16,6 +16,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const [search] = useSearchParams();
   return (
     <>
       <div className="hds-mt-24-32" />
@@ -32,7 +33,13 @@ export default function Index() {
         {Object.entries(examplesByComponent).map(([componentName, examples]) => (
           <li key={componentName}>
             <h2 id={`examples-${componentName}`}>
-              <RemixLink className={styles.exampleHeadingLink} to={componentName}>
+              <RemixLink
+                className={styles.exampleHeadingLink}
+                to={{
+                  pathname: componentName,
+                  search: search.toString(),
+                }}
+              >
                 {kebabCaseToFirstLetterUpperCase(componentName)}
               </RemixLink>
             </h2>

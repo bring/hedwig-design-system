@@ -48,7 +48,10 @@ export default function Layout() {
             </svg>
           }
           as={RemixLink}
-          to="/mdx-test"
+          to={{
+            pathname: "/mdx-test",
+            search: activeTheme === "bring" ? "?theme=bring" : "",
+          }}
         >
           Docs
         </Navbar.Button>
@@ -59,7 +62,10 @@ export default function Layout() {
             </svg>
           }
           as={RemixLink}
-          to="/figma-test"
+          to={{
+            pathname: "/figma-test",
+            search: activeTheme === "bring" ? "?theme=bring" : "",
+          }}
         >
           Figma
         </Navbar.Button>
