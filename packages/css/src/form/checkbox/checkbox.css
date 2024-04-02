@@ -1,3 +1,9 @@
+.hds-checkbox-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--hds-spacing-8);
+}
+
 .hds-checkbox {
   --checkmark-width: 16px;
   --checkmark-margin: var(--hds-spacing-4);
