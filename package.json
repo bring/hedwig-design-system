@@ -27,7 +27,7 @@
   },
   "pnpm": {
     "overrides": {
-      "axios": "^1.6.5"
+      "express": "^4.19.2"
     }
   },
   "packageManager": "pnpm@8.15.1",
