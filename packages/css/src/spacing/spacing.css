@@ -1,15 +1,8 @@
 @import url("../_custom-media.css");
 
 /**
- * # 🚧 WORK IN PROGRESS 🚧
- *
- * Spacing utility classes.
- * TODO
- * - margin-bottom
- * - left/right?
- * - padding?
+ * Responsive extension of the spacing css variables
  */
-
 :root {
   --hds-spacing-4-8: var(--hds-spacing-4);
   --hds-spacing-8-12: var(--hds-spacing-8);
@@ -40,7 +33,18 @@
   }
 }
 
-/* Fixed margin top */
+/**
+ * Utility classes for margin top and bottom
+ * Based upon [tailwind](https://tailwindcss.com/docs/margin)
+ * 
+ * We start of by just adding the margin top and bottom classes.
+ * we will see if there becomes a need for left and right. X, Y axis, padding etc...
+ *
+ * If the consumer wish to primarly use utility classes, the recommended approach is to use tailwind with the
+ * provided tailwind configuration file.
+ */
+
+/* Margin top */
 .hds-mt-4 {
   margin-top: var(--hds-spacing-4);
 }
@@ -93,10 +97,7 @@
   margin-top: var(--hds-spacing-160);
 }
 
-/* 
- * Responsive margin top
- * Mobile first, meaning it jumps up on larger screens
- */
+/* Responsive margin top. Mobile first, meaning it jumps up on larger screens */
 .hds-mt-4-8 {
   margin-top: var(--hds-spacing-4-8);
 }
@@ -143,4 +144,106 @@
 
 .hds-mt-120-160 {
   margin-top: var(--hds-spacing-120-160);
+}
+
+/* Margin bottom */
+.hds-mb-4 {
+  margin-bottom: var(--hds-spacing-4);
+}
+
+.hds-mb-8 {
+  margin-bottom: var(--hds-spacing-8);
+}
+
+.hds-mb-12 {
+  margin-bottom: var(--hds-spacing-12);
+}
+
+.hds-mb-16 {
+  margin-bottom: var(--hds-spacing-16);
+}
+
+.hds-mb-20 {
+  margin-bottom: var(--hds-spacing-20);
+}
+
+.hds-mb-24 {
+  margin-bottom: var(--hds-spacing-24);
+}
+
+.hds-mb-32 {
+  margin-bottom: var(--hds-spacing-32);
+}
+
+.hds-mb-40 {
+  margin-bottom: var(--hds-spacing-40);
+}
+
+.hds-mb-48 {
+  margin-bottom: var(--hds-spacing-48);
+}
+
+.hds-mb-64 {
+  margin-bottom: var(--hds-spacing-64);
+}
+
+.hds-mb-80 {
+  margin-bottom: var(--hds-spacing-80);
+}
+
+.hds-mb-120 {
+  margin-bottom: var(--hds-spacing-120);
+}
+
+.hds-mb-160 {
+  margin-bottom: var(--hds-spacing-160);
+}
+
+/* Responsive margin bottom. Mobile first, meaning it jumps up on larger screens */
+.hds-mb-4-8 {
+  margin-bottom: var(--hds-spacing-4-8);
+}
+
+.hds-mb-8-12 {
+  margin-bottom: var(--hds-spacing-8-12);
+}
+
+.hds-mb-12-16 {
+  margin-bottom: var(--hds-spacing-12-16);
+}
+
+.hds-mb-16-20 {
+  margin-bottom: var(--hds-spacing-16-20);
+}
+
+.hds-mb-20-24 {
+  margin-bottom: var(--hds-spacing-20-24);
+}
+
+.hds-mb-24-32 {
+  margin-bottom: var(--hds-spacing-24-32);
+}
+
+.hds-mb-32-40 {
+  margin-bottom: var(--hds-spacing-32-40);
+}
+
+.hds-mb-40-48 {
+  margin-bottom: var(--hds-spacing-40-48);
+}
+
+.hds-mb-48-64 {
+  margin-bottom: var(--hds-spacing-48-64);
+}
+
+.hds-mb-64-80 {
+  margin-bottom: var(--hds-spacing-64-80);
+}
+
+.hds-mb-80-120 {
+  margin-bottom: var(--hds-spacing-80-120);
+}
+
+.hds-mb-120-160 {
+  margin-bottom: var(--hds-spacing-120-160);
 }
