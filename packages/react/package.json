@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@microsoft/api-extractor": "7.43.0",
-    "@types/react": "^18.2.73",
+    "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.23",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
