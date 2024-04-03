@@ -1,5 +1,57 @@
 # @postenbring/hedwig-react
 
+## 0.0.65
+
+### Patch Changes
+
+- c1a572c: Add capability to Checkbox to display error message
+
+  This change adds the prop `errorMessage` which takes a `ReactNode`.
+  You should now only use `hasError` when your checkbox is part of a fieldset which will show the error message.
+  Use `errorMessage` when your checkbox is standalone (not part of a fieldset). Doing this will add error styling,
+  and display the error message. The component will take care of aria to connect the error message to the checkbox.
+
+- be80492: Radiobutton and RadioGroup should require prop children
+- 4065b13: :construction: implement PoC/WIP footer
+- 81a33b2: :recycle: accordion: use `data-state="open"` and `data-state="closed"` for managing open/close state.
+
+  [same as radix-ui](https://www.radix-ui.com/primitives/docs/components/accordion#item)
+
+  gets rid of three classnames with three different conventions
+
+  - `hds-accordion-item__expanded`
+  - `hds-accordion-item-header--open`
+  - `hds-accordion-item-content--closed`
+
+- 8ec9588: :dizzy: animate the `tabs` marker
+
+  using pseudo selector for the animation, with `border-bottom` and `border-top` as the fallback and default.
+
+  This way we avoid any initial jittering while still getting the animation when the user clicks. The selected tab will be marked correctly while js waits to load. This is called progressive enhancement.
+
+  Animation technique inspired by Kevin Powell https://www.youtube.com/watch?v=h2AOXBeVrgI
+
+- c3625fe: Add context in Fieldset to give error state to contained components
+
+  Providing an errorMessage to Fieldset will now also give contained Checkboxes or Radiobuttons
+  error styling and aria to indicate invalid state.
+
+  For Radiobuttons you are even better off using the already existing RadioGroup.
+
+- Updated dependencies [c1a572c]
+- Updated dependencies [4065b13]
+- Updated dependencies [ed15248]
+- Updated dependencies [935159b]
+- Updated dependencies [81a33b2]
+- Updated dependencies [acbd14d]
+- Updated dependencies [2a45026]
+- Updated dependencies [8ec9588]
+- Updated dependencies [7926d76]
+- Updated dependencies [6fb32cc]
+- Updated dependencies [2e7e983]
+- Updated dependencies [218f2b9]
+  - @postenbring/hedwig-css@0.0.56
+
 ## 0.0.64
 
 ### Patch Changes

@@ -1,5 +1,49 @@
 # @postenbring/hedwig-css
 
+## 0.0.56
+
+### Patch Changes
+
+- c1a572c: Add capability to Checkbox to display error message
+
+  This change adds the prop `errorMessage` which takes a `ReactNode`.
+  You should now only use `hasError` when your checkbox is part of a fieldset which will show the error message.
+  Use `errorMessage` when your checkbox is standalone (not part of a fieldset). Doing this will add error styling,
+  and display the error message. The component will take care of aria to connect the error message to the checkbox.
+
+- 4065b13: :construction: implement PoC/WIP footer
+- ed15248: :lipstick: fix button color for warning banner on iOS
+- 935159b: :children_crossing: increase click area on tabs, making the easier to hit
+- 81a33b2: :recycle: accordion: use `data-state="open"` and `data-state="closed"` for managing open/close state.
+
+  [same as radix-ui](https://www.radix-ui.com/primitives/docs/components/accordion#item)
+
+  gets rid of three classnames with three different conventions
+
+  - `hds-accordion-item__expanded`
+  - `hds-accordion-item-header--open`
+  - `hds-accordion-item-content--closed`
+
+- acbd14d: Fix Fieldset spacing to push error message a bit down
+- 2a45026: Make spacings in Fieldset easily overridable
+- 8ec9588: :dizzy: animate the `tabs` marker
+
+  using pseudo selector for the animation, with `border-bottom` and `border-top` as the fallback and default.
+
+  This way we avoid any initial jittering while still getting the animation when the user clicks. The selected tab will be marked correctly while js waits to load. This is called progressive enhancement.
+
+  Animation technique inspired by Kevin Powell https://www.youtube.com/watch?v=h2AOXBeVrgI
+
+- 7926d76: :lipstick::recycle: use native `text-decoration` for link underlines
+
+  using `text-decoration-thickness` and `text-underline-offset`, two properties that where not supported when the link component in hedwig legacy was originally made.
+
+- 6fb32cc: :sparkles: add margin-bottom utility classes, e.g. `hds-mb-24` and `hds-mb-24-32`
+- 2e7e983: :lipstick: set `button` color explicitlly to fix blue colored buttons on ios.
+- 218f2b9: :children_crossing: use the `inert` property to disable tabbing a disabled accordion's content
+
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inert
+
 ## 0.0.55
 
 ### Patch Changes
