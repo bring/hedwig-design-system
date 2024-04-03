@@ -1,12 +1,20 @@
 /* Reset outer margin from the browser defaults, but let consumers easily override it */
 :where(.hds-fieldset) {
   margin: 0;
+  gap: var(--hds-spacing-8);
+
+  & .hds-fieldset__legend {
+    margin-bottom: var(--hds-spacing-8);
+  }
+
+  & .hds-fieldset__input-wrapper {
+    gap: var(--hds-spacing-8);
+  }
 }
 
 .hds-fieldset {
   display: flex;
   flex-flow: column nowrap;
-  gap: var(--hds-spacing-8);
   border: 0;
   padding: 0;
 
@@ -17,7 +25,6 @@
   & .hds-fieldset__legend,
   & .hds-fieldset__legend--default {
     padding: 0;
-    margin-bottom: var(--hds-spacing-8);
     transition: color var(--hds-micro-animation-duration-quick)
       var(--hds-micro-animation-easing-normal);
     font: var(--hds-typography-caption);
@@ -30,6 +37,5 @@
   & .hds-fieldset__input-wrapper {
     display: flex;
     flex-flow: column nowrap;
-    gap: var(--hds-spacing-8);
   }
 }
