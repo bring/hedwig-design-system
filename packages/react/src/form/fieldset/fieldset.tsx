@@ -55,11 +55,9 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       >
         {legend}
       </legend>
-      <div className={clsx("hds-fieldset__input-wrapper")}>
-        <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage) }}>
-          {children}
-        </FieldsetContext.Provider>
-      </div>
+      <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage) }}>
+        {children}
+      </FieldsetContext.Provider>
       <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage>
     </fieldset>
   );

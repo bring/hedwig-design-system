@@ -1,15 +1,8 @@
-/* Reset outer margin from the browser defaults, but let consumers easily override it */
 :where(.hds-fieldset) {
+  /* Reset outer margin from the browser defaults, but let consumers easily override it */
   margin: 0;
-  gap: var(--hds-spacing-8);
 
-  & .hds-fieldset__legend {
-    margin-bottom: var(--hds-spacing-8);
-  }
-
-  & .hds-fieldset__input-wrapper {
-    gap: var(--hds-spacing-8);
-  }
+  --hds-fieldset-spacing: var(--hds-spacing-8);
 }
 
 .hds-fieldset {
@@ -17,6 +10,7 @@
   flex-flow: column nowrap;
   border: 0;
   padding: 0;
+  gap: var(--hds-fieldset-spacing);
 
   &:focus-within .hds-fieldset__legend {
     color: var(--hds-colors-darker);
@@ -25,6 +19,7 @@
   & .hds-fieldset__legend,
   & .hds-fieldset__legend--default {
     padding: 0;
+    margin-bottom: var(--hds-fieldset-spacing);
     transition: color var(--hds-micro-animation-duration-quick)
       var(--hds-micro-animation-easing-normal);
     font: var(--hds-typography-caption);
@@ -32,10 +27,5 @@
 
   & .hds-fieldset__legend--large {
     font: var(--hds-typography-body-title);
-  }
-
-  & .hds-fieldset__input-wrapper {
-    display: flex;
-    flex-flow: column nowrap;
   }
 }
