@@ -9,6 +9,7 @@ import { Fieldset, type FieldsetProps } from "../fieldset";
 import type { RadiobuttonProps } from "./radiobutton";
 
 export interface RadioGroupProps extends Omit<FieldsetProps, "onChange"> {
+  children: ReactNode;
   /** Will be passed to all Radiobuttons within the radio group */
   name?: RadiobuttonProps["name"];
   /** If you want the group to be controlled, you can pass the selected value here */

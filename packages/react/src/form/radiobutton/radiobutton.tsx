@@ -1,10 +1,10 @@
-import type { InputHTMLAttributes } from "react";
-import React, { forwardRef } from "react";
+import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { type RadioGroupProps, useRadioGroupContext } from "./radiogroup";
 
 export interface RadiobuttonProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> {
+  children: ReactNode;
   variant?: "plain" | "bounding-box";
   hasError?: boolean;
   title?: string;
