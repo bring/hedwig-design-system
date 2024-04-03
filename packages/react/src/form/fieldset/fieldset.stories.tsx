@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import { Checkbox } from "../checkbox";
+import { Radiobutton } from "../radiobutton";
 import { Fieldset } from ".";
 
 const meta: Meta<typeof Fieldset> = {
@@ -44,22 +45,42 @@ export const LargeLegend: Story = {
   ),
 };
 
-export const FieldsetError: Story = {
+export const FieldsetErrorCheckboxes: Story = {
   args: {
-    legend: "Fieldset with error message",
+    legend: "Checkboxes wrapped in Fieldset will get error styling when Fieldset has errorMessage",
     errorMessage: "Something's wrong",
   },
   render: (props) => (
     <Fieldset {...props}>
-      <Checkbox hasError value="Hello">
+      <Checkbox value="Hello">Hello</Checkbox>
+      <Checkbox value="Hello">Hello</Checkbox>
+      <Checkbox value="Hello">Hello</Checkbox>
+    </Fieldset>
+  ),
+};
+
+export const FieldsetErrorRadiobuttons: Story = {
+  args: {
+    legend: (
+      <>
+        Radiobuttons wrapped in Fieldset will get error styling when Fieldset has errorMessage
+        <br />
+        However, you should probably use RadioGroup instead of Fieldset for Radiobuttons
+      </>
+    ),
+    errorMessage: "Something's wrong",
+  },
+  render: (props) => (
+    <Fieldset {...props}>
+      <Radiobutton value="Hello" name="radiogroup">
         Hello
-      </Checkbox>
-      <Checkbox hasError value="Hello">
+      </Radiobutton>
+      <Radiobutton value="Hello" name="radiogroup">
         Hello
-      </Checkbox>
-      <Checkbox hasError value="Hello">
+      </Radiobutton>
+      <Radiobutton value="Hello" name="radiogroup">
         Hello
-      </Checkbox>
+      </Radiobutton>
     </Fieldset>
   ),
 };

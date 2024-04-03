@@ -1,6 +1,7 @@
 import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { ErrorMessage } from "../error-message";
+import { useFieldsetContext } from "../fieldset";
 
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> & {
   children: ReactNode;
@@ -11,7 +12,10 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "default
         /**
          * Set to `true` to add error styling. The component will take care of aria to indicate invalid state.
          *
-         * Use this when your checkbox is part of a fieldset which shows an error message.
+         * Normally you don't need this, as you should wrap your Checkboxes in the Fieldset component.
+         * When providing an errorMessage to Fieldset, all contained Checkboxes will get correct hasError state.
+         *
+         * You can use this when your checkbox is part of a non-HDS fieldset which shows an error message.
          */
         hasError?: boolean;
         errorMessage?: never;
@@ -29,8 +33,21 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "default
   );
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ variant = "plain", hasError, errorMessage, title, children, className, ...rest }, ref) => {
+  (
+    {
+      variant = "plain",
+      hasError: hasErrorProp,
+      errorMessage,
+      title,
+      children,
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
     const errorMessageId = useId();
+    const { errorMessage: errorMessageContext } = useFieldsetContext();
+    const hasError = !!errorMessage || !!errorMessageContext || hasErrorProp;
 
     return (
       <div className={clsx("hds-checkbox-wrapper")}>
@@ -39,7 +56,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             "hds-checkbox",
             {
               [`hds-checkbox--${variant}`]: variant === "bounding-box",
-              "hds-checkbox--error": hasError ?? errorMessage,
+              "hds-checkbox--error": hasError,
             },
             className as undefined,
           )}
@@ -47,7 +64,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           <label>
             <input
               {...rest}
-              aria-invalid={hasError ?? errorMessage ? true : undefined}
+              aria-invalid={hasError ? true : undefined}
               aria-describedby={errorMessage ? errorMessageId : undefined}
               ref={ref}
               type="checkbox"

@@ -1,11 +1,20 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { useFieldsetContext } from "../fieldset";
 import { type RadioGroupProps, useRadioGroupContext } from "./radiogroup";
 
 export interface RadiobuttonProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> {
   children: ReactNode;
   variant?: "plain" | "bounding-box";
+  /**
+   * Set to `true` to add error styling. The component will take care of aria to indicate invalid state.
+   *
+   * Normally you don't need this, as you should wrap your Radiobuttons in the RadioGroup component.
+   * When providing an errorMessage to RadioGroup, all contained Radiobuttons will get correct hasError state.
+   *
+   * You can use this when your Radiobutton is part of a non-HDS fieldset which shows an error message.
+   */
   hasError?: boolean;
   title?: string;
 }
@@ -37,7 +46,9 @@ export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
     ref,
   ) => {
     const { value: selectedValue, hasError: hasErrorContext, ...context } = useRadioGroupContext();
-    const hasError = hasErrorContext || hasErrorProp;
+    const { errorMessage: errorMessageContext } = useFieldsetContext();
+    const hasError = !!errorMessageContext || hasErrorContext || hasErrorProp;
+
     return (
       <div
         className={clsx(

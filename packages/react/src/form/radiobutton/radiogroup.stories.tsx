@@ -13,9 +13,9 @@ export default meta;
 type Story = StoryObj<typeof RadioGroup>;
 
 export const PlainRadioGroup: Story = {
-  name: "Radio group with radio buttons",
+  name: "Radio group with radiobuttons",
   args: {
-    legend: "Radio group with radio buttons",
+    legend: "Radio group with radiobuttons",
     errorMessage: "",
     name: "group1",
     value: undefined,
