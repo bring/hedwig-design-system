@@ -46,8 +46,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     ref,
   ) => {
     const errorMessageId = useId();
-    const { errorMessage: errorMessageContext } = useFieldsetContext();
-    const hasError = !!errorMessage || !!errorMessageContext || hasErrorProp;
+    const { hasError: hasFieldsetError } = useFieldsetContext();
+    const hasError = !!errorMessage || hasFieldsetError || hasErrorProp;
 
     return (
       <div className={clsx("hds-checkbox-wrapper")}>

@@ -45,9 +45,13 @@ export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
     },
     ref,
   ) => {
-    const { value: selectedValue, hasError: hasErrorContext, ...context } = useRadioGroupContext();
-    const { errorMessage: errorMessageContext } = useFieldsetContext();
-    const hasError = !!errorMessageContext || hasErrorContext || hasErrorProp;
+    const {
+      value: selectedValue,
+      hasError: hasRadioGroupError,
+      ...context
+    } = useRadioGroupContext();
+    const { hasError: hasFieldsetError } = useFieldsetContext();
+    const hasError = hasFieldsetError || hasRadioGroupError || hasErrorProp;
 
     return (
       <div

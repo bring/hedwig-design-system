@@ -18,7 +18,7 @@ export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElemen
   children: ReactNode;
 }
 
-const FieldsetContext = createContext<{ errorMessage?: ReactNode }>({});
+const FieldsetContext = createContext<{ hasError: boolean }>({ hasError: false });
 
 export const useFieldsetContext = () => useContext(FieldsetContext);
 
@@ -56,7 +56,9 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
         {legend}
       </legend>
       <div className={clsx("hds-fieldset__input-wrapper")}>
-        <FieldsetContext.Provider value={{ errorMessage }}>{children}</FieldsetContext.Provider>
+        <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage) }}>
+          {children}
+        </FieldsetContext.Provider>
       </div>
       <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage>
     </fieldset>
