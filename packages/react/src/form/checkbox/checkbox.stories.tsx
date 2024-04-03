@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { Fieldset } from "../fieldset";
 import { Checkbox } from "./index";
 
 const meta: Meta<typeof Checkbox> = {
@@ -28,23 +29,35 @@ export const JustACheckbox: Story = {
   },
 };
 
-export const PlainCheckbox: Story = {
+export const PlainCheckboxes: Story = {
   name: "Checkboxes",
   render: (_props) => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-4)",
-      }}
+    <Fieldset legend="Checkboxes should be grouped in a Fieldset">
+      <Checkbox>This is a checkbox</Checkbox>
+      <Checkbox>This is another checkbox</Checkbox>
+    </Fieldset>
+  ),
+};
+
+export const PlainCheckboxesWithError: Story = {
+  name: "Checkboxes with error",
+  render: (_props) => (
+    <Fieldset
+      legend="Fieldset will aid you with styling and aria when it is provided an error message"
+      errorMessage="Something is wrong"
     >
       <Checkbox>This is a checkbox</Checkbox>
-      <Checkbox hasError>This is a checkbox with error</Checkbox>
-      <Checkbox errorMessage="Something is wrong">
-        This is a checkbox with an error message
-      </Checkbox>
-    </div>
+      <Checkbox>This is another checkbox</Checkbox>
+    </Fieldset>
   ),
+};
+
+export const PlainCheckboxeWithError: Story = {
+  name: "Standalone checkbox with error message",
+  args: {
+    errorMessage: "Something is wrong",
+    children: "This is a checkbox with an error message",
+  },
 };
 
 export const BoundedCheckbox: Story = {
@@ -54,7 +67,7 @@ export const BoundedCheckbox: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-4)",
+        gap: "var(--hds-spacing-8)",
       }}
     >
       <Checkbox variant="bounding-box">This is a checkbox with bounding box</Checkbox>
@@ -72,7 +85,7 @@ export const DetailedContentCheckbox: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-4)",
+        gap: "var(--hds-spacing-8)",
       }}
     >
       <Checkbox title="Check this box">Detailed description if needed</Checkbox>
@@ -90,7 +103,7 @@ export const DetailedContentCheckboxWithBoundingBox: Story = {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "var(--hds-spacing-4)",
+        gap: "var(--hds-spacing-8)",
       }}
     >
       <Checkbox title="Check this box" variant="bounding-box">

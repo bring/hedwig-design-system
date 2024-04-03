@@ -1,4 +1,4 @@
-import { useId, forwardRef } from "react";
+import { useId, forwardRef, createContext, useContext } from "react";
 import type { FieldsetHTMLAttributes, HTMLAttributes, ReactNode, CSSProperties } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { ErrorMessage } from "../error-message";
@@ -6,11 +6,21 @@ import { ErrorMessage } from "../error-message";
 export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
   className?: string;
   style?: CSSProperties;
+  /**
+   * Providing an errorMessage will also give contained Checkboxes or Radiobuttons
+   * error styling and aria to indicate invalid state.
+   *
+   * For Radiobuttons you are even better off using RadioGroup.
+   */
   errorMessage?: ReactNode;
   legendProps?: HTMLAttributes<HTMLElement> & { size: "default" | "large" };
   legend: ReactNode;
   children: ReactNode;
 }
+
+const FieldsetContext = createContext<{ hasError: boolean }>({ hasError: false });
+
+export const useFieldsetContext = () => useContext(FieldsetContext);
 
 export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function Fieldset(
   {
@@ -45,7 +55,11 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       >
         {legend}
       </legend>
-      <div className={clsx("hds-fieldset__input-wrapper")}>{children}</div>
+      <div className={clsx("hds-fieldset__input-wrapper")}>
+        <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage) }}>
+          {children}
+        </FieldsetContext.Provider>
+      </div>
       <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage>
     </fieldset>
   );

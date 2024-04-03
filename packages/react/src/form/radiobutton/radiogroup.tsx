@@ -15,8 +15,8 @@ export interface RadioGroupProps extends Omit<FieldsetProps, "onChange"> {
   /** If you want the group to be controlled, you can pass the selected value here */
   value?: RadiobuttonProps["value"];
   /**
-   * Error message is passed to the internal Fieldset,
-   * and also marks all radiobuttons as invalid
+   * Error message is passed to the internal Fieldset, and will also give contained Radiobuttons
+   * error styling and aria to indicate invalid state.
    */
   errorMessage?: ReactNode;
   /** Will be passed to all Radiobuttons within the radio group */
