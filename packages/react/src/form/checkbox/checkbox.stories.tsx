@@ -17,8 +17,11 @@ export const JustACheckbox: Story = {
     title: "",
     children: "Just a checkbox",
     checked: true,
-    hasError: false,
+    errorMessage: "",
     variant: "plain",
+    onChange: () => {
+      /**/
+    },
   },
   argTypes: {
     variant: { control: "inline-radio", options: ["plain", "bounding-box"] },
@@ -37,6 +40,9 @@ export const PlainCheckbox: Story = {
     >
       <Checkbox>This is a checkbox</Checkbox>
       <Checkbox hasError>This is a checkbox with error</Checkbox>
+      <Checkbox errorMessage="Something is wrong">
+        This is a checkbox with an error message
+      </Checkbox>
     </div>
   ),
 };
@@ -52,7 +58,7 @@ export const BoundedCheckbox: Story = {
       }}
     >
       <Checkbox variant="bounding-box">This is a checkbox with bounding box</Checkbox>
-      <Checkbox hasError variant="bounding-box">
+      <Checkbox errorMessage="Something is wrong" variant="bounding-box">
         This is a checkbox with bounding box and error
       </Checkbox>
     </div>
@@ -70,7 +76,7 @@ export const DetailedContentCheckbox: Story = {
       }}
     >
       <Checkbox title="Check this box">Detailed description if needed</Checkbox>
-      <Checkbox hasError title="Check box with error">
+      <Checkbox errorMessage="Something is wrong" title="Checkbox with error">
         Detailed description if needed
       </Checkbox>
     </div>
@@ -90,7 +96,11 @@ export const DetailedContentCheckboxWithBoundingBox: Story = {
       <Checkbox title="Check this box" variant="bounding-box">
         Detailed description if needed
       </Checkbox>
-      <Checkbox hasError title="Check box with error" variant="bounding-box">
+      <Checkbox
+        errorMessage="Something is wrong"
+        title="Checkbox with error"
+        variant="bounding-box"
+      >
         Detailed description if needed
       </Checkbox>
     </div>
