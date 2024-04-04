@@ -17,7 +17,6 @@ export const PlainTextarea: Story = {
     placeholder: "I am a placeholder",
     errorMessage: "",
     readOnly: false,
-    disabled: false,
     variant: "default",
   },
   argTypes: {
@@ -46,23 +45,6 @@ export const ReadonlyTextareaWithError: Story = {
     label: "Some kind of readonly textarea",
     readOnly: true,
     value: "This is a read-only value",
-    errorMessage: "This is invalid",
-  },
-};
-
-export const DisabledTextarea: Story = {
-  args: {
-    label: "Some kind of disabled textarea",
-    disabled: true,
-    value: "This textarea is disabled",
-  },
-};
-
-export const DisabledTextareaWithError: Story = {
-  args: {
-    label: "Some kind of disabled textarea",
-    disabled: true,
-    value: "This textarea is disabled",
     errorMessage: "This is invalid",
   },
 };
@@ -114,35 +96,6 @@ export const WhiteReadonlyTextareaWithError: Story = {
     variant: "white",
     readOnly: true,
     value: "This is a read-only value",
-    errorMessage: "This is invalid",
-  },
-  render: (props) => (
-    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Textarea {...props} />
-    </div>
-  ),
-};
-
-export const WhiteDisabledTextarea: Story = {
-  args: {
-    label: "Some kind of disabled textarea",
-    variant: "white",
-    disabled: true,
-    value: "This textarea is disabled",
-  },
-  render: (props) => (
-    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Textarea {...props} />
-    </div>
-  ),
-};
-
-export const WhiteDisabledTextareaWithError: Story = {
-  args: {
-    label: "Some kind of disabled textarea",
-    variant: "white",
-    disabled: true,
-    value: "This textarea is disabled",
     errorMessage: "This is invalid",
   },
   render: (props) => (

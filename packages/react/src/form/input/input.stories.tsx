@@ -19,7 +19,6 @@ export const PlainInput: Story = {
     placeholder: "I am a placeholder",
     errorMessage: "",
     readOnly: false,
-    disabled: false,
     variant: "default",
   },
   argTypes: {
@@ -48,23 +47,6 @@ export const ReadonlyInputWithError: Story = {
     label: "Some kind of readonly input",
     readOnly: true,
     value: "This is a read-only value",
-    errorMessage: "This is invalid",
-  },
-};
-
-export const DisabledInput: Story = {
-  args: {
-    label: "Some kind of disabled input",
-    disabled: true,
-    value: "This input is disabled",
-  },
-};
-
-export const DisabledInputWithError: Story = {
-  args: {
-    label: "Some kind of disabled input",
-    disabled: true,
-    value: "This input is disabled",
     errorMessage: "This is invalid",
   },
 };
@@ -116,35 +98,6 @@ export const WhiteReadonlyInputWithError: Story = {
     variant: "white",
     readOnly: true,
     value: "This is a read-only value",
-    errorMessage: "This is invalid",
-  },
-  render: (props) => (
-    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Input {...props} />
-    </div>
-  ),
-};
-
-export const WhiteDisabledInput: Story = {
-  args: {
-    label: "Some kind of disabled input",
-    variant: "white",
-    disabled: true,
-    value: "This input is disabled",
-  },
-  render: (props) => (
-    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Input {...props} />
-    </div>
-  ),
-};
-
-export const WhiteDisabledInputWithError: Story = {
-  args: {
-    label: "Some kind of disabled input",
-    variant: "white",
-    disabled: true,
-    value: "This input is disabled",
     errorMessage: "This is invalid",
   },
   render: (props) => (

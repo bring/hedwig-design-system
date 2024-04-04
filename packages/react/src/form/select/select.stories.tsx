@@ -15,7 +15,6 @@ export const Default: Story = {
   args: {
     label: "Default select",
     errorMessage: "",
-    disabled: false,
     variant: "default",
   },
   argTypes: {
@@ -78,47 +77,6 @@ export const WhiteWithError: Story = {
     name: "name",
     id: "someId",
     errorMessage: "Something is wrong",
-  },
-  render: (props) => (
-    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Select {...props}>
-        <option disabled hidden selected value="">
-          Please select
-        </option>
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-      </Select>
-    </div>
-  ),
-};
-
-export const DefaulDisabled: Story = {
-  args: {
-    label: "Default select disabled",
-    name: "name",
-    id: "someId",
-    disabled: true,
-  },
-  render: (props) => (
-    <Select {...props}>
-      <option disabled hidden selected value="">
-        Please select
-      </option>
-      <option value="1">option 1</option>
-      <option value="2">option 2</option>
-      <option value="3">option 3</option>
-    </Select>
-  ),
-};
-
-export const WhiteDisabled: Story = {
-  args: {
-    label: "White select disabled",
-    variant: "white",
-    name: "name",
-    id: "someId",
-    disabled: true,
   },
   render: (props) => (
     <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>

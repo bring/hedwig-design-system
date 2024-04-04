@@ -43,21 +43,6 @@ export const SecondaryOutline: Story = {
   },
 };
 
-export const Disabled: Story = {
-  args: {
-    children: "Disabled button",
-    disabled: true,
-  },
-};
-
-export const DisabledOutline: Story = {
-  args: {
-    children: "Disabled outline button",
-    fill: "outline",
-    disabled: true,
-  },
-};
-
 export const AsALink: Story = {
   name: "As a link",
   render: (args) => (
@@ -120,8 +105,3 @@ export const IconPrimary: Story = createIconStory(PrimaryButton);
 export const IconPrimaryOutline: Story = createIconStory(PrimaryButton, { fill: "outline" });
 export const IconSecondary: Story = createIconStory(SecondaryButton);
 export const IconSecondaryOutline: Story = createIconStory(SecondaryButton, { fill: "outline" });
-export const IconDisabled: Story = createIconStory(PrimaryButton, { disabled: true });
-export const IconDisabledOutline: Story = createIconStory(PrimaryButton, {
-  disabled: true,
-  fill: "outline",
-});
