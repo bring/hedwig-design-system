@@ -2,6 +2,7 @@ import { useSearchParams, Link } from "@remix-run/react";
 import { Chip } from "./chip";
 import { CodeExample } from "./code-example";
 import { Example, examplesByComponent } from "../examples";
+import { HStack, VStack } from "@postenbring/hedwig-react";
 
 export function Examples({ name }: { name: string }) {
   if (!(name in examplesByComponent)) {
@@ -24,20 +25,8 @@ export function ComponentCodeExamples({
     examples.find((example) => example.exampleName === search.get("example")) ?? examples[0];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-16)",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          gap: "var(--hds-spacing-8)",
-          flexWrap: "wrap",
-        }}
-      >
+    <VStack gap="16">
+      <HStack wrap gap="8">
         {examples?.map((example) => (
           <Chip
             key={example.exampleName}
@@ -60,10 +49,10 @@ export function ComponentCodeExamples({
             </Link>
           </Chip>
         ))}
-      </div>
+      </HStack>
 
       <CodeExample example={activeExample} defaultShowCode={defaultShowCode} />
-    </div>
+    </VStack>
   );
 }
 

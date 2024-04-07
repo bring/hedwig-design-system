@@ -1,19 +1,13 @@
-import { PrimaryButton } from "@postenbring/hedwig-react";
+import { PrimaryButton, HStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "var(--hds-spacing-8)",
-      }}
-    >
+    <HStack gap="8" wrap>
       <PrimaryButton fullWidth="mobile">Main action</PrimaryButton>
       <PrimaryButton fill="outline" fullWidth="mobile">
         Alternative action
       </PrimaryButton>
-    </div>
+    </HStack>
   );
 }
 

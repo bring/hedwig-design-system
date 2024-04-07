@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Modal, PrimaryButton } from "@postenbring/hedwig-react";
+import { HStack, Modal, PrimaryButton } from "@postenbring/hedwig-react";
 
 function Example() {
   const modalRef = useRef<HTMLDialogElement>(null);
@@ -17,11 +17,13 @@ function Example() {
             something about the consequences.
           </p>
         </Modal.Content>
-        <Modal.Footer style={{ display: "flex", gap: "var(--hds-spacing-16)" }}>
-          <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
-          <PrimaryButton fill="outline" onClick={onClose}>
-            Cancel
-          </PrimaryButton>
+        <Modal.Footer>
+          <HStack gap="16" wrap>
+            <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
+            <PrimaryButton fill="outline" onClick={onClose}>
+              Cancel
+            </PrimaryButton>
+          </HStack>
         </Modal.Footer>
       </Modal>
     </>

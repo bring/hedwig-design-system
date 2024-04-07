@@ -1,11 +1,11 @@
-import { WarningBadge } from "@postenbring/hedwig-react";
+import { HStack, WarningBadge } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div style={{ display: "flex", alignItems: "flex-end", gap: "var(--hds-spacing-8)" }}>
+    <HStack gap="8" align="end">
       <WarningBadge>Warning</WarningBadge>
       <WarningBadge size="smaller">Warning</WarningBadge>
-    </div>
+    </HStack>
   );
 }
 

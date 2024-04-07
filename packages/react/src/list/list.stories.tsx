@@ -1,22 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { StoryObj, Meta } from "@storybook/react";
+import { HStack } from "../layout";
 import { OrderedList, UnorderedList } from ".";
 
 type Story = StoryObj<typeof UnorderedList>;
-
-function HStack({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-16)",
-      }}
-    >
-      {children}
-    </div>
-  );
-}
 
 const listItems = (
   <>
@@ -32,7 +19,7 @@ export const UnorderedListStory: Story = {
     children: listItems,
   },
   render: (props) => (
-    <HStack>
+    <HStack gap="16">
       <UnorderedList {...props} size="small" />
       <UnorderedList {...props} size="medium" />
       <UnorderedList {...props} size="large" />
@@ -46,7 +33,7 @@ export const OrderedListStory: Story = {
     children: listItems,
   },
   render: (props) => (
-    <HStack>
+    <HStack gap="16">
       <OrderedList {...props} size="small" />
       <OrderedList {...props} size="medium" />
       <OrderedList {...props} size="large" />

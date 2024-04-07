@@ -1,28 +1,14 @@
-import { SecondaryButton } from "@postenbring/hedwig-react";
+import { HStack, SecondaryButton, VStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-24)" }}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-end",
-          flexWrap: "wrap",
-          gap: "var(--hds-spacing-24)",
-        }}
-      >
+    <VStack gap="24">
+      <HStack gap="24" wrap align="end">
         <SecondaryButton size="large">Call to action</SecondaryButton>
         <SecondaryButton size="medium">Call to action</SecondaryButton>
         <SecondaryButton size="small">Call to action</SecondaryButton>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-end",
-          flexWrap: "wrap",
-          gap: "var(--hds-spacing-24)",
-        }}
-      >
+      </HStack>
+      <HStack gap="24" wrap align="end">
         <SecondaryButton fill="outline" size="large">
           Call to action
         </SecondaryButton>
@@ -32,8 +18,8 @@ function Example() {
         <SecondaryButton fill="outline" size="small">
           Call to action
         </SecondaryButton>
-      </div>
-    </div>
+      </HStack>
+    </VStack>
   );
 }
 

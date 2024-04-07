@@ -1,11 +1,11 @@
-import { DarkBadge } from "@postenbring/hedwig-react";
+import { DarkBadge, HStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div style={{ display: "flex", alignItems: "flex-end", gap: "var(--hds-spacing-8)" }}>
+    <HStack gap="8" align="end">
       <DarkBadge>Dark</DarkBadge>
       <DarkBadge size="smaller">Dark</DarkBadge>
-    </div>
+    </HStack>
   );
 }
 
