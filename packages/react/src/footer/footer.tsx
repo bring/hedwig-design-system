@@ -106,7 +106,7 @@ export const FooterLinkSections = forwardRef<HTMLDivElement, FooterLinkSectionsP
   ({ children, className, ...rest }, ref) => {
     return (
       <>
-        {/* Mobile */}
+        {/* Mobile and Desktop. The accordion styling gets removed on desktop */}
         <Accordion
           className={clsx("hds-footer__link-sections", className as undefined)}
           ref={ref}
@@ -115,11 +115,6 @@ export const FooterLinkSections = forwardRef<HTMLDivElement, FooterLinkSectionsP
           {/* @ts-expect-error -- It's ok */}
           {children}
         </Accordion>
-
-        {/* Desktop */}
-        <div className={clsx("hds-footer__link-sections", className as undefined)} {...rest}>
-          {children}
-        </div>
       </>
     );
   },

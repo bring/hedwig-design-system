@@ -51,7 +51,8 @@
   }
 
   /**
-   * Links on mobile
+   * Links
+   * Accordions on mobile and heading sections on desktop
    */
   .hds-footer__link-sections.hds-accordion {
     .hds-footer__link-section.hds-accordion-item {
@@ -66,29 +67,20 @@
     }
 
     @media (--large) {
-      display: none;
+      display: contents;
+
+      .hds-footer__link-section {
+        h2 {
+          font: var(--hds-typography-body-title);
+          color: var(--footer-color);
+          margin-bottom: var(--hds-spacing-16);
+        }
+      }
     }
   }
 
   .hds-footer__link-section.hds-accordion-item {
     @media (--large) {
-      display: none;
-    }
-  }
-
-  /* Links on desktop */
-  .hds-footer__link-sections:not(.hds-accordion) {
-    .hds-footer__link-section {
-      h2 {
-        font: var(--hds-typography-body-title);
-        color: var(--footer-color);
-        margin-bottom: var(--hds-spacing-16);
-      }
-    }
-
-    display: contents;
-
-    @media (--before-large) {
       display: none;
     }
   }
