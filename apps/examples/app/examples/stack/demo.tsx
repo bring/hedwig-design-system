@@ -2,7 +2,7 @@ import { Stack, Box } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Stack gap="12-16" direction={{ xsmall: "column", small: "row" }}>
+    <Stack gap="12-16" direction={{ initial: "column", small: "row" }}>
       <Box>1</Box>
       <Box>2</Box>
       <Box>3</Box>

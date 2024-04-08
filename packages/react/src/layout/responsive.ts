@@ -1,4 +1,4 @@
-type Breakpoints = "xsmall" | "small" | "medium" | "large" | "xlarge";
+type Breakpoints = "initial" | "small" | "medium" | "large" | "xlarge";
 
 type ResponsiveValues<T> = {
   [Breakpoint in Breakpoints]?: T;
@@ -14,7 +14,7 @@ export function getResponsiveProps<T>(
   if (!inputValues) return {};
 
   if (typeof inputValues !== "object") {
-    return { [`${variable}-xsmall`]: valueTransformer(inputValues) };
+    return { [`${variable}-initial`]: valueTransformer(inputValues) };
   }
 
   const result: Record<string, string> = {};
