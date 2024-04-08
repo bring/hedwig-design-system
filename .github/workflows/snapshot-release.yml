@@ -32,12 +32,10 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      - name: Set snapshot version
-        run: pnpm changeset version --snapshot ${GITHUB_REF##*/}
-
-      - name: Publish snapshot versions to npm registry
+      - name: Set and publish snapshot versions to npm registry
         run: |
           SANITIZED_REF=$(echo ${GITHUB_REF##*/} | sed 's/[^0-9a-z.-]/-/g')
+          pnpm changeset version --snapshot $SANITIZED_REF
           pnpm turbo run build --filter=docs^... && pnpm changeset publish --no-git-tag --tag $SANITIZED_REF
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
