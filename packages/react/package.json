@@ -21,13 +21,13 @@
   "devDependencies": {
     "@microsoft/api-extractor": "7.43.0",
     "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.23",
+    "@types/react-dom": "^18.2.24",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
     "tsup": "^8.0.1",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.4"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
