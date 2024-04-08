@@ -28,6 +28,14 @@ export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
 }
 
+/**
+ * 🚨 WORK IN PROGRESS 🚨
+ *
+ * TODO
+ * - [ ] Add more examples
+ * - [ ] Document usage
+ * - [ ] Document props
+ */
 export const Stack = forwardRef<HTMLDivElement, StackProps>(
   (
     { children, asChild, className, style: _style, gap, direction, wrap, align, justify, ...rest },
@@ -57,7 +65,12 @@ export const Stack = forwardRef<HTMLDivElement, StackProps>(
 Stack.displayName = "Stack";
 
 /**
- * A stack that aligns its children horizontally.
+ * 🚨 WORK IN PROGRESS 🚨
+ *
+ * TODO
+ * - [ ] Add more examples
+ * - [ ] Document usage
+ * - [ ] Document props
  */
 export const HStack = forwardRef<HTMLDivElement, Omit<StackProps, "direction">>((props, ref) => {
   return <Stack ref={ref} {...props} direction="row" />;
@@ -65,7 +78,12 @@ export const HStack = forwardRef<HTMLDivElement, Omit<StackProps, "direction">>(
 HStack.displayName = "HStack";
 
 /**
- * A stack that aligns its children vertically.
+ * 🚨 WORK IN PROGRESS 🚨
+ *
+ * TODO
+ * - [ ] Add more examples
+ * - [ ] Document usage
+ * - [ ] Document props
  */
 export const VStack = forwardRef<HTMLDivElement, Omit<StackProps, "direction">>((props, ref) => {
   return <Stack ref={ref} {...props} direction="column" />;
