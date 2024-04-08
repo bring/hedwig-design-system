@@ -5,7 +5,7 @@ import { type OverridableComponent, useResize } from "../utils";
 import { useTabsContext } from "./context";
 
 export interface TabListProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactElement<TabProps> | ReactElement<TabProps>[];
+  children: ReactElement<TabsTabProps> | ReactElement<TabsTabProps>[];
 
   /**
    * Direction of the tabs. Can either be vertical or horizontal.
@@ -83,7 +83,7 @@ export function TabsList({ children, direction = "horizontal", className, ...res
 
 TabsList.displayName = "Tabs.List";
 
-export interface TabProps extends HTMLAttributes<HTMLButtonElement> {
+export interface TabsTabProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactElement<HTMLElement> | string;
 
   /**
@@ -92,7 +92,7 @@ export interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   tabId: string;
 }
 
-export const Tab: OverridableComponent<TabProps, HTMLButtonElement> = forwardRef(
+export const TabsTab: OverridableComponent<TabsTabProps, HTMLButtonElement> = forwardRef(
   ({ as: Component = "button", children, tabId, className, onClick, ...rest }, ref) => {
     const context = useTabsContext();
 
@@ -120,4 +120,4 @@ export const Tab: OverridableComponent<TabProps, HTMLButtonElement> = forwardRef
   },
 );
 
-Tab.displayName = "Tabs.Tab";
+TabsTab.displayName = "Tabs.Tab";
