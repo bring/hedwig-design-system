@@ -98,15 +98,12 @@ interface FooterLinkSectionsProps extends HTMLAttributes<HTMLDivElement> {
  * Responsive sections of links. Will become an accordion on mobile.
  *
  * Use with `Footer.LinkSection` for each section.
- *
- * TODO:
- * - [ ] Decrease number of DOM elements rendered. We should not rely on conditional rendering as that will make server-side rendering harder.
  */
 export const FooterLinkSections = forwardRef<HTMLDivElement, FooterLinkSectionsProps>(
   ({ children, className, ...rest }, ref) => {
     return (
       <>
-        {/* Mobile */}
+        {/* Mobile and Desktop. The accordion styling gets removed on desktop */}
         <Accordion
           className={clsx("hds-footer__link-sections", className as undefined)}
           ref={ref}
@@ -115,11 +112,6 @@ export const FooterLinkSections = forwardRef<HTMLDivElement, FooterLinkSectionsP
           {/* @ts-expect-error -- It's ok */}
           {children}
         </Accordion>
-
-        {/* Desktop */}
-        <div className={clsx("hds-footer__link-sections", className as undefined)} {...rest}>
-          {children}
-        </div>
       </>
     );
   },

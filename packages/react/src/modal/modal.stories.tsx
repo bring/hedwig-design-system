@@ -5,6 +5,7 @@ import { PrimaryButton } from "../button";
 import { Link } from "../link";
 import { Message } from "../message";
 import { StyledHtml } from "../styled-html";
+import { HStack } from "../layout";
 import { Modal } from ".";
 
 const meta: Meta<typeof Modal> = {
@@ -32,11 +33,13 @@ export const Main = {
               something about the consequences.
             </p>
           </Modal.Content>
-          <Modal.Footer style={{ display: "flex", gap: 16 }}>
-            <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
-            <PrimaryButton fill="outline" onClick={onClose}>
-              Cancel
-            </PrimaryButton>
+          <Modal.Footer>
+            <HStack gap="16" wrap>
+              <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
+              <PrimaryButton fill="outline" onClick={onClose}>
+                Cancel
+              </PrimaryButton>
+            </HStack>
           </Modal.Footer>
         </Modal>
       </>

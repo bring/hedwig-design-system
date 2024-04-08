@@ -2,6 +2,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { PrimaryButton, SecondaryButton } from "../../button";
+import { HStack, VStack } from "../../layout";
 import { Input } from ".";
 
 const meta: Meta<typeof Input> = {
@@ -109,18 +110,16 @@ export const WhiteReadonlyInputWithError: Story = {
 
 export const TrackingNumberSearch: Story = {
   render: () => (
-    <div
+    <HStack
+      gap="4"
+      align="end"
       style={{
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "end",
-        gap: "var(--hds-spacing-4)",
         maxWidth: 556,
       }}
     >
       <Input label="Sporingsnummer" style={{ width: "100%" }} />
       <PrimaryButton size="large">Spor</PrimaryButton>
-    </div>
+    </HStack>
   ),
 };
 
@@ -129,39 +128,40 @@ export const FormWithErrorsOnSubmit: Story = {
     // eslint-disable-next-line react-hooks/rules-of-hooks -- It's ok
     const [errors, setErrors] = useState<Record<string, string>>({});
     return (
-      <form
-        lang="en"
-        onSubmit={(e) => {
-          e.preventDefault();
-          const formData = new FormData(e.currentTarget);
-          const newErrors: Record<string, string> = {};
-          // @ts-expect-error -- It works
-          for (const [key, value] of formData) {
-            if (!value) {
-              newErrors[key as string] = `${key as string} is required`;
+      <VStack gap="16" asChild>
+        <form
+          lang="en"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
+            const newErrors: Record<string, string> = {};
+            // @ts-expect-error -- It works
+            for (const [key, value] of formData) {
+              if (!value) {
+                newErrors[key as string] = `${key as string} is required`;
+              }
             }
-          }
-          setErrors(newErrors);
-        }}
-        style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-16)" }}
-      >
-        <p>Fields without input will give an error</p>
-        <Input errorMessage={errors.One} label="One" name="One" />
-        <Input errorMessage={errors.Two} label="Two" name="Two" />
-        <Input errorMessage={errors.Three} label="Three" name="Three" />
-        <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-4)" }}>
-          <PrimaryButton type="submit">Submit</PrimaryButton>
-          <SecondaryButton
-            fill="outline"
-            onClick={() => {
-              setErrors({});
-            }}
-            type="reset"
-          >
-            Reset
-          </SecondaryButton>
-        </div>
-      </form>
+            setErrors(newErrors);
+          }}
+        >
+          <p>Fields without input will give an error</p>
+          <Input errorMessage={errors.One} label="One" name="One" />
+          <Input errorMessage={errors.Two} label="Two" name="Two" />
+          <Input errorMessage={errors.Three} label="Three" name="Three" />
+          <VStack gap="4">
+            <PrimaryButton type="submit">Submit</PrimaryButton>
+            <SecondaryButton
+              fill="outline"
+              onClick={() => {
+                setErrors({});
+              }}
+              type="reset"
+            >
+              Reset
+            </SecondaryButton>
+          </VStack>
+        </form>
+      </VStack>
     );
   },
 };

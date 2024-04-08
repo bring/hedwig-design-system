@@ -1,15 +1,8 @@
-import { Link } from "@postenbring/hedwig-react";
+import { Link, VStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "var(--hds-spacing-40)",
-      }}
-    >
+    <VStack gap="40" align="center">
       <Link href="#demo-link" variant="no-underline" size="medium">
         Call to action
       </Link>
@@ -19,7 +12,7 @@ function Example() {
       <Link href="#demo-link" variant="no-underline" size="large">
         Call to action
       </Link>
-    </div>
+    </VStack>
   );
 }
 

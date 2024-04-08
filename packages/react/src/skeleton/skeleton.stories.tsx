@@ -6,6 +6,7 @@ import { StyledHtml } from "../styled-html";
 import { Card } from "../card";
 import { Card as CardStory } from "../card/card.stories";
 import { PrimaryButton } from "../button";
+import { HStack, VStack } from "../layout";
 import { Skeleton } from ".";
 
 const meta: Meta<typeof Skeleton> = {
@@ -19,7 +20,7 @@ type Story = StoryObj<typeof Skeleton>;
 
 export const Default: Story = {
   render: () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-8)" }}>
+    <VStack gap="8">
       <Skeleton variant="circle">
         <div style={{ height: "6rem", width: "6rem", background: "deeppink" }}>Avatar</div>
       </Skeleton>
@@ -28,7 +29,7 @@ export const Default: Story = {
         <Skeleton variant="text" />
         <Skeleton variant="text" width="80%" />
       </div>
-    </div>
+    </VStack>
   ),
 };
 
@@ -94,21 +95,12 @@ export const LoadingCards: Story = {
         >
           Reload
         </PrimaryButton>
-        <p style={{ marginTop: "var(--hds-spacing-8)" }}>
-          Only use greytones, never any red or green colors.
-        </p>
-        <div
-          style={{
-            marginTop: "var(--hds-spacing-16)",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "var(--hds-spacing-24)",
-          }}
-        >
+        <p className="hds-mt-8">Only use greytones, never any red or green colors.</p>
+        <HStack className="hds-mt-16" wrap gap="24">
           {card}
           {card}
           {card}
-        </div>
+        </HStack>
       </div>
     );
   },

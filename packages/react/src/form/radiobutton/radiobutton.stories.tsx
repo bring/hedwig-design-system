@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { VStack } from "../../layout";
 import { Radiobutton, RadioGroup } from "./index";
 
 const meta: Meta<typeof Radiobutton> = {
@@ -52,62 +53,41 @@ export const PlainRadiobuttonsWithError: Story = {
 export const BoundedRadiobutton: Story = {
   name: "Radiobuttons with bounding box",
   render: (_props) => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
-      }}
-      role="radiogroup"
-    >
+    <VStack gap="8" role="radiogroup">
       <Radiobutton name="group2" variant="bounding-box">
         This is a radiobutton with bounding box
       </Radiobutton>
       <Radiobutton hasError name="group2" variant="bounding-box">
         This is a radiobutton with bounding box and error
       </Radiobutton>
-    </div>
+    </VStack>
   ),
 };
 
 export const DetailedContentRadiobutton: Story = {
   name: "Radiobuttons with title",
   render: (_props) => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
-      }}
-      role="radiogroup"
-    >
+    <VStack gap="8" role="radiogroup">
       <Radiobutton name="group4" title="Option 1">
         Detailed description if needed
       </Radiobutton>
       <Radiobutton hasError name="group4" title="Option 2">
         Detailed description if needed
       </Radiobutton>
-    </div>
+    </VStack>
   ),
 };
 
 export const DetailedContentRadiobuttonWithBoundingBox: Story = {
   name: "Radiobuttons with bounding box and title",
   render: (_props) => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
-      }}
-      role="radiogroup"
-    >
+    <VStack gap="8" role="radiogroup">
       <Radiobutton name="group5" title="Option 1" variant="bounding-box">
         Detailed description if needed
       </Radiobutton>
       <Radiobutton hasError name="group5" title="Option 2" variant="bounding-box">
         Detailed description if needed
       </Radiobutton>
-    </div>
+    </VStack>
   ),
 };

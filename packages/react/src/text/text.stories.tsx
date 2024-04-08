@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { HStack, VStack } from "../layout";
 import { Text } from ".";
 
 const meta: Meta<typeof Text> = {
@@ -16,13 +17,7 @@ export const Default: Story = {
 
 export const PostenBringSideBySide: Story = {
   render: () => (
-    <div
-      style={{
-        padding: "var(--hds-spacing-48)",
-        display: "flex",
-        gap: "var(--hds-spacing-16)",
-      }}
-    >
+    <HStack gap="16">
       <div className="hds-theme-posten">
         <FontGalleryHeader>Posten</FontGalleryHeader>
         <FontGallery />
@@ -31,19 +26,13 @@ export const PostenBringSideBySide: Story = {
         <FontGalleryHeader>Bring</FontGalleryHeader>
         <FontGallery />
       </div>
-    </div>
+    </HStack>
   ),
 };
 
 export const MinAndMax: Story = {
   render: () => (
-    <div
-      style={{
-        padding: "var(--hds-spacing-48)",
-        display: "flex",
-        gap: "var(--hds-spacing-16)",
-      }}
-    >
+    <HStack gap="16">
       <div>
         <FontGalleryHeader>Min</FontGalleryHeader>
         <FontGallery size="min" />
@@ -52,7 +41,7 @@ export const MinAndMax: Story = {
         <FontGalleryHeader>Max</FontGalleryHeader>
         <FontGallery size="max" />
       </div>
-    </div>
+    </HStack>
   ),
 };
 
@@ -74,7 +63,7 @@ function FontGalleryHeader({ children }: { children: React.ReactNode }) {
 
 function FontGallery({ size }: { size?: "min" | "max" | "fluid" }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--hds-spacing-16)" }}>
+    <VStack gap="16">
       <div>
         <Text size={size} variant="h1-display" as="p">
           Display
@@ -118,6 +107,6 @@ function FontGallery({ size }: { size?: "min" | "max" | "fluid" }) {
           Caption Title
         </Text>
       </div>
-    </div>
+    </VStack>
   );
 }

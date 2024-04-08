@@ -1,11 +1,11 @@
-import { Box, WhiteBadge } from "@postenbring/hedwig-react";
+import { HStack, WhiteBadge } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Box style={{ display: "flex", alignItems: "flex-end", gap: "var(--hds-spacing-8)" }}>
+    <HStack gap="8" align="end">
       <WhiteBadge>White</WhiteBadge>
       <WhiteBadge size="smaller">White</WhiteBadge>
-    </Box>
+    </HStack>
   );
 }
 

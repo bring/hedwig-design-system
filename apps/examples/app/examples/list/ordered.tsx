@@ -1,8 +1,8 @@
-import { OrderedList } from "@postenbring/hedwig-react";
+import { HStack, OrderedList } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div style={{ display: "flex", gap: "var(--hds-spacing-20)" }}>
+    <HStack gap="20" wrap>
       <OrderedList size="large">
         <li>List item</li>
         <li>List item</li>
@@ -18,7 +18,7 @@ function Example() {
         <li>List item</li>
         <li>List item</li>
       </OrderedList>
-    </div>
+    </HStack>
   );
 }
 
