@@ -39,10 +39,13 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
               something about the consequences.
             </p>
           </Modal.Content>
-          <Modal.Footer style={{ display: "flex", gap: 16 }}>
-            <PrimaryButton fill="outline" onClick={onClose}>
-              Close
-            </PrimaryButton>
+          <Modal.Footer>
+            <HStack gap="16" wrap>
+              <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
+              <PrimaryButton fill="outline" onClick={onClose}>
+                Cancel
+              </PrimaryButton>
+            </HStack>
           </Modal.Footer>
         </Modal>
       </>

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import { Fieldset } from "../fieldset";
+import { VStack } from "../../layout";
 import { Checkbox } from "./index";
 
 const meta: Meta<typeof Checkbox> = {
@@ -63,49 +64,31 @@ export const PlainCheckboxeWithError: Story = {
 export const BoundedCheckbox: Story = {
   name: "Checkbox with bounding box",
   render: (_props) => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
-      }}
-    >
+    <VStack gap="8">
       <Checkbox variant="bounding-box">This is a checkbox with bounding box</Checkbox>
       <Checkbox errorMessage="Something is wrong" variant="bounding-box">
         This is a checkbox with bounding box and error
       </Checkbox>
-    </div>
+    </VStack>
   ),
 };
 
 export const DetailedContentCheckbox: Story = {
   name: "Checkbox with title",
   render: (_props) => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
-      }}
-    >
+    <VStack gap="8">
       <Checkbox title="Check this box">Detailed description if needed</Checkbox>
       <Checkbox errorMessage="Something is wrong" title="Checkbox with error">
         Detailed description if needed
       </Checkbox>
-    </div>
+    </VStack>
   ),
 };
 
 export const DetailedContentCheckboxWithBoundingBox: Story = {
   name: "Checkbox with bounding box and title",
   render: (_props) => (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "var(--hds-spacing-8)",
-      }}
-    >
+    <VStack gap="8">
       <Checkbox title="Check this box" variant="bounding-box">
         Detailed description if needed
       </Checkbox>
@@ -116,6 +99,6 @@ export const DetailedContentCheckboxWithBoundingBox: Story = {
       >
         Detailed description if needed
       </Checkbox>
-    </div>
+    </VStack>
   ),
 };

@@ -13,12 +13,12 @@ export function getResponsiveProps<T>(
 ) {
   if (!inputValues) return {};
 
-  if (typeof inputValues === "string") {
+  if (typeof inputValues !== "object") {
     return { [`${variable}-xsmall`]: valueTransformer(inputValues) };
   }
 
   const result: Record<string, string> = {};
-  for (const [key, value] of Object.entries(inputValues)) {
+  for (const [key, value] of Object.entries(inputValues as ResponsiveValues<T>)) {
     result[`${variable}-${key}`] = valueTransformer(value);
   }
 

@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
+import { HStack } from "../layout";
 import type { ButtonProps } from ".";
 import { PrimaryButton, SecondaryButton } from ".";
 
@@ -46,19 +47,12 @@ export const SecondaryOutline: Story = {
 export const AsALink: Story = {
   name: "As a link",
   render: (args) => (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "flex-end",
-        gap: "var(--hds-spacing-16)",
-      }}
-    >
+    <HStack gap="16" wrap>
       <PrimaryButton {...args} />
       <PrimaryButton {...args} fill="outline" />
       <SecondaryButton {...args} />
       <SecondaryButton {...args} fill="outline" />
-    </div>
+    </HStack>
   ),
   args: {
     children: "Link button",
@@ -73,11 +67,11 @@ const createIconStory = (
   extraArgs: Partial<ButtonProps> = {},
 ): Story => ({
   render: (args) => (
-    <div style={{ display: "flex", alignItems: "flex-end", gap: "var(--hds-spacing-16)" }}>
+    <HStack gap="16" wrap align="end">
       <Component {...args} size="small" />
       <Component {...args} size="medium" />
       <Component {...args} size="large" />
-    </div>
+    </HStack>
   ),
   args: {
     lang: "en",
