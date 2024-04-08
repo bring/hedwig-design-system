@@ -1,5 +1,12 @@
 # @postenbring/hedwig-css
 
+## 0.0.57
+
+### Patch Changes
+
+- 4c41daa: :sparkles::construction: new `HStack`, `VStack` and `Stack` component
+- 68d6d96: Remove internal wrapper in Fieldset and add CSS variable to adjust spacing
+
 ## 0.0.56
 
 ### Patch Changes

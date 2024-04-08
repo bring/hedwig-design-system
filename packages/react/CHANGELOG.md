@@ -1,5 +1,15 @@
 # @postenbring/hedwig-react
 
+## 0.0.66
+
+### Patch Changes
+
+- 4c41daa: :sparkles::construction: new `HStack`, `VStack` and `Stack` component
+- 68d6d96: Remove internal wrapper in Fieldset and add CSS variable to adjust spacing
+- Updated dependencies [4c41daa]
+- Updated dependencies [68d6d96]
+  - @postenbring/hedwig-css@0.0.57
+
 ## 0.0.65
 
 ### Patch Changes
