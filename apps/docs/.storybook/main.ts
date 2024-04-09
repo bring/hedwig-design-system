@@ -9,7 +9,11 @@ function getAbsolutePath(value: string) {
 }
 
 const config: StorybookConfig = {
-  stories: ["../../../packages/react/src/**/*.stories.tsx", "../../examples/app/examples/*/*.tsx"],
+  stories: [
+    "../../../packages/react/src/**/*.stories.tsx",
+    "../../examples/app/examples/*/*/*.tsx",
+    "../../examples/app/examples/*/*.tsx",
+  ],
 
   // Include the examples in storybook
   // They need a little transformation to work
@@ -46,14 +50,16 @@ const exampleFilenameRegex = /examples\/app\/examples\/.+\.tsx$/;
 const exampleIndexer: Indexer = {
   test: exampleFilenameRegex,
   createIndex: async (fileName) => {
-    const { componentName, exampleName } = parseExampleFilename(fileName);
+    const { groupName, componentName, exampleName } = parseExampleFilename(fileName);
     return [
       {
         type: "story",
         exportName: "default",
         name: `Example: ${kebabCaseToFirstLetterUpperCase(exampleName)}`,
-        __id: `${componentName}--example-${exampleName}`,
-        title: kebabCaseToFirstLetterUpperCase(componentName),
+        __id: `${groupName ? `${groupName}-` : ""}${componentName}--example-${exampleName}`,
+        title:
+          (groupName ? kebabCaseToFirstLetterUpperCase(groupName) + "/" : "") +
+          kebabCaseToFirstLetterUpperCase(componentName),
         importPath: fileName,
       },
     ];
@@ -99,9 +105,13 @@ function kebabCaseToPascalCase(kebabCase: string) {
   return kebabCase.replace(/(^\w|-\w)/g, (g) => g.replace("-", "").toUpperCase());
 }
 
-function parseExampleFilename(fileName: string) {
-  const titleMatch = fileName.match(/([\w-]+)\/([\w-]+)\.tsx$/);
-  if (!titleMatch) throw new Error(`invalid file name ${fileName}`);
-  const [, componentName, exampleName] = titleMatch;
-  return { componentName, exampleName };
+function parseExampleFilename(filePath: string) {
+  filePath = filePath.replace(/^.+\/app\/examples/, "");
+  const titleMatch = filePath.match(
+    /((?<groupName>[\w-]+)\/)?(?<componentName>[\w-]+)\/(?<exampleName>[\w-]+)\.tsx$/,
+  );
+  if (!titleMatch?.groups) throw new Error(`invalid file name ${filePath}`);
+
+  const { groupName, componentName, exampleName } = titleMatch.groups;
+  return { groupName, componentName, exampleName };
 }

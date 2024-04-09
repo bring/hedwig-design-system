@@ -24,6 +24,7 @@
 @import url("form/textarea/textarea.css");
 @import url("layout/container/container.css");
 @import url("layout/flex/flex.css");
+@import url("layout/grid/grid.css");
 @import url("layout/stack/stack.css");
 @import url("link/link.css");
 @import url("list/list.css");

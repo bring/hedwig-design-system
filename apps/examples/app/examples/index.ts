@@ -1,6 +1,6 @@
 import type { ExampleViewOptions } from "../root";
 
-const modules = import.meta.glob("./*/*.tsx", {
+const modules = import.meta.glob(["./*/*/*.tsx", "./*/*.tsx"], {
   query: "?raw",
   import: "default",
 
@@ -9,13 +9,24 @@ const modules = import.meta.glob("./*/*.tsx", {
   eager: true,
 });
 
-export const examples = Object.keys(modules).map((filePath) => {
-  const [componentName, exampleName] = filePath
-    .replace("./", "")
-    .replace(/\.tsx$/, "")
-    .split("/");
+function parseExampleFilename(fileName: string): {
+  groupName?: string;
+  componentName: string;
+  exampleName: string;
+} {
+  const titleMatch = fileName.match(
+    /((?<groupName>[\w-]+)\/)?(?<componentName>[\w-]+)\/(?<exampleName>[\w-]+)\.tsx$/u,
+  );
+  if (!titleMatch?.groups) throw new Error(`invalid file name ${fileName}`);
 
-  const urlPath = `${import.meta.env.BASE_URL}${componentName}/${exampleName}`;
+  const { groupName, componentName, exampleName } = titleMatch.groups;
+  return { groupName, componentName, exampleName };
+}
+
+export const examples = Object.keys(modules).map((filePath) => {
+  const { groupName, componentName, exampleName } = parseExampleFilename(filePath);
+
+  const urlPath = `${import.meta.env.BASE_URL}${groupName ? `${groupName}/` : ""}${componentName}/${exampleName}`;
   const exampleSource = modules[filePath] as string;
 
   // Used in the code preview
@@ -35,6 +46,7 @@ export const examples = Object.keys(modules).map((filePath) => {
   return {
     filePath,
     urlPath,
+    groupName,
     componentName,
     exampleName,
     exampleSource,
@@ -61,6 +73,19 @@ for (const [componentName, examples] of Object.entries(examplesByComponent)) {
       (a.config?.index ?? Number.MAX_SAFE_INTEGER) - (b.config?.index ?? Number.MAX_SAFE_INTEGER),
   );
 }
+
+export const componentsByGroup = Object.entries(examplesByComponent).reduce(
+  (acc, [componentName, examples]) => {
+    const group = examples?.[0].groupName ?? "default";
+    if (!acc[group]) {
+      acc[group] = [];
+    }
+
+    acc[group]?.push(componentName);
+    return acc;
+  },
+  {} as Record<string, string[] | undefined>,
+);
 
 // Types
 export type Example = (typeof examples)[number];

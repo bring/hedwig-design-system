@@ -30,8 +30,15 @@
 
     font: var(--hds-typography-technical);
     font-size: var(--hds-font-size-technical-max);
-    content: "📱 small";
+    content: "▮ initial";
   }
+
+  @media (min-width: 460px) {
+    &::before {
+      content: "📱 small";
+    }
+  }
+
   @media (min-width: 720px) {
     &::before {
       content: "📺 medium";
