@@ -1,0 +1,52 @@
+@import url("../../_icons.css");
+@import url("../input-group/input-group.css");
+
+.hds-date-picker {
+  --hds-date-picker-background-size: 24px;
+
+  .hds-input-group__input-wrapper {
+    position: relative;
+
+    .hds-date-picker__calendar-button {
+      display: none;
+
+      @supports selector(::-webkit-calendar-picker-indicator) {
+        display: block;
+      }
+
+      opacity: 0.75;
+      height: calc(var(--hds-date-picker-background-size) + var(--hds-spacing-20));
+      width: calc(var(--hds-date-picker-background-size) + var(--hds-spacing-20));
+      background-color: var(--hds-input-group-background-color);
+      background-image: var(--_hds-icons-calendar-days);
+      background-size: var(--hds-date-picker-background-size);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      border: 0;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &:has(.hds-input-group__input:read-only) {
+      .hds-date-picker__calendar-button {
+        display: none;
+      }
+    }
+  }
+
+  .hds-input-group__input {
+    padding-right: calc(var(--hds-date-picker-background-size) + var(--hds-spacing-16));
+    height: calc(var(--hds-spacing-16) * 2 + var(--hds-line-height-body-small-min));
+    cursor: text;
+
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+}
