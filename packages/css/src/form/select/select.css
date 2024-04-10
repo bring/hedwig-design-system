@@ -1,15 +1,18 @@
 @import url("../../_icons.css");
 
 .hds-select {
+  --hds-select-background-size: 24px;
+
   .hds-input-group__input-wrapper {
     background-image: var(--_hds-icons-cheveron-down);
-    background-size: 24px 24px;
+    background-size: var(--hds-select-background-size);
     background-position: calc(100% - var(--hds-spacing-16)) 50%;
     background-repeat: no-repeat;
   }
 
   .hds-input-group__input {
     appearance: none;
+    padding-right: calc(var(--hds-select-background-size) + var(--hds-spacing-16));
     height: calc(var(--hds-spacing-16) * 2 + var(--hds-line-height-body-small-min));
   }
 }

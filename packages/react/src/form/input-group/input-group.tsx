@@ -20,7 +20,12 @@ export interface InputGroupProps {
   label: ReactNode;
   disabled?: boolean;
   readOnly?: boolean;
-  children: ReactNode;
+  /**
+   * `children` must be either a single input element or a render function.
+   *
+   * If you use a render function, make sure you spread the input props to the appropriate element.
+   */
+  children: Exclude<ReactNode, Iterable<ReactNode>> | ((inputProps: InputProps) => ReactNode);
 }
 
 export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function InputGroup(
@@ -43,18 +48,27 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
   const inputId = useId();
 
   const renderInput = () => {
-    const input = Children.toArray(children)[0];
+    const inputProps: InputProps = {
+      "aria-describedby": errorMessage ? errorMessageId : undefined,
+      "aria-invalid": errorMessage ? true : undefined,
+      id: id ?? inputId,
+      className: clsx("hds-input-group__input"),
+    };
+
+    if (typeof children === "function") {
+      return children(inputProps);
+    }
+
+    const input: ReactNode = Children.toArray(children)[0];
 
     if (!isValidElement<InputProps>(input)) {
       return;
     }
 
     return cloneElement<InputProps>(input, {
-      "aria-describedby": errorMessage ? errorMessageId : undefined,
-      "aria-invalid": errorMessage ? true : undefined,
-      id: id ?? inputId,
+      ...inputProps,
       ...input.props,
-      className: clsx("hds-input-group__input", input.props.className as undefined),
+      className: `${inputProps.className} ${input.props.className ?? ""}`,
     });
   };
 
