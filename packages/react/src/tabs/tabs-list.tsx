@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactElement, MouseEvent } from "react";
 import { forwardRef, useEffect, useRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { type OverridableComponent, useResize } from "../utils";
+import { type OverridableComponent, useResize, useHydrated } from "../utils";
 import { useTabsContext } from "./context";
 
 export interface TabListProps extends HTMLAttributes<HTMLDivElement> {
@@ -18,7 +18,9 @@ export function TabsList({ children, direction = "horizontal", className, ...res
   const { activeTabId } = useTabsContext();
   const tabsListRef = useRef<HTMLDivElement>(null);
   const { width: tabsWidth } = useResize(tabsListRef);
-  const { innerWidth } = window;
+
+  const isClientSide = useHydrated();
+  const { innerWidth } = isClientSide ? window : { innerWidth: 1000 };
   const wideEnough = innerWidth >= tabsWidth;
 
   const previousTabId = useRef(activeTabId);
