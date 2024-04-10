@@ -70,3 +70,16 @@ export function useResize<Instance extends HTMLElement>(
   }, []);
   return { width, height };
 }
+
+function subscribe() {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function -- It's ok
+  return () => {};
+}
+
+export function useHydrated() {
+  return React.useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
+}
