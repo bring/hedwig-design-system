@@ -1,5 +1,15 @@
 # @postenbring/hedwig-react
 
+## 0.0.67
+
+### Patch Changes
+
+- 93bf245: Add DatePicker component
+- 32e4bbf: Add another export option for components
+- Updated dependencies [93bf245]
+- Updated dependencies [36c3b52]
+  - @postenbring/hedwig-css@0.0.58
+
 ## 0.0.66
 
 ### Patch Changes
