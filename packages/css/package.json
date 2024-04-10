@@ -20,7 +20,22 @@
     "typed-classname/**",
     "assets/**"
   ],
-  "main": "./dist/index.css",
+  "exports": {
+    ".": "./dist/index.css",
+    "./dist/*.css": "./dist/*.css",
+    "./typed-classname": {
+      "import": {
+        "types": "./typed-classname/index.d.mts",
+        "default": "./typed-classname/index.mjs"
+      },
+      "require": {
+        "types": "./typed-classname/index.d.ts",
+        "default": "./typed-classname/index.js"
+      }
+    },
+    "./typed-classname/index.js": "./typed-classname/index.js",
+    "./package.json": "./package.json"
+  },
   "license": "MIT",
   "devDependencies": {
     "browserslist": "4.23.0",
