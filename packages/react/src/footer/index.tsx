@@ -17,5 +17,11 @@ FooterComponent.ButtonLink = FooterButtonLink;
 FooterComponent.LinkSections = FooterLinkSections;
 FooterComponent.LinkSection = FooterLinkSection;
 
-export { FooterComponent as Footer };
+export {
+  FooterComponent as Footer,
+  FooterLogo,
+  FooterButtonLink,
+  FooterLinkSections,
+  FooterLinkSection,
+};
 export type * from "./footer";

@@ -13,7 +13,7 @@ AccordionComponent.Item = AccordionItem;
 AccordionComponent.Header = AccordionHeader;
 AccordionComponent.Content = AccordionContent;
 
-export { AccordionComponent as Accordion };
+export { AccordionComponent as Accordion, AccordionItem, AccordionHeader, AccordionContent };
 
 export type * from "./accordion";
 export type * from "./accordion-item";

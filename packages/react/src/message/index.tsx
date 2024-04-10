@@ -8,4 +8,4 @@ const MessageComponent = Message as typeof Message & {
 MessageComponent.Title = MessageTitle;
 MessageComponent.Description = MessageDescription;
 
-export { MessageComponent as Message };
+export { MessageComponent as Message, MessageTitle, MessageDescription };

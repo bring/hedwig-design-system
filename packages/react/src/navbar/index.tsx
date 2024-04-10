@@ -32,5 +32,12 @@ NavbarComponent.ExpandableMenu = NavbarExpandableMenuComponent;
 NavbarComponent.Button = NavbarButton;
 NavbarComponent.Navigation = NavbarNavigation;
 
-export { NavbarComponent as Navbar, useNavbarExpendableMenuContext };
+export {
+  NavbarComponent as Navbar,
+  NavbarLogo,
+  NavbarButton,
+  NavbarNavigation,
+  NavbarLogoAndServiceText,
+  useNavbarExpendableMenuContext,
+};
 export type * from "./navbar";
