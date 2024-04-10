@@ -1,4 +1,10 @@
 .hds-input-group {
+  --hds-input-group-background-color: var(--hds-ui-colors-light-grey-fill);
+
+  &.hds-input-group--white {
+    --hds-input-group-background-color: var(--hds-ui-colors-white);
+  }
+
   display: flex;
   flex-flow: column nowrap;
   gap: var(--hds-spacing-4);
@@ -13,19 +19,6 @@
     .hds-input-group__input-wrapper:has(.hds-input-group__input:disabled),
     .hds-input-group__input-wrapper[data-disabled="true"] /* Fallback for :has */ {
       border-bottom: var(--hds-stroke-thick) solid var(--hds-ui-colors-warning-yellow);
-    }
-  }
-
-  &, /* Default */
-  &.hds-input-group--default {
-    .hds-input-group__input-wrapper {
-      background-color: var(--hds-ui-colors-light-grey-fill);
-    }
-  }
-
-  &.hds-input-group--white {
-    .hds-input-group__input-wrapper {
-      background-color: var(--hds-ui-colors-white);
     }
   }
 
@@ -49,6 +42,7 @@
   }
 
   & .hds-input-group__input-wrapper {
+    background-color: var(--hds-input-group-background-color);
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
