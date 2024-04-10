@@ -68,7 +68,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
     return cloneElement<InputProps>(input, {
       ...inputProps,
       ...input.props,
-      className: `${inputProps.className} ${input.props.className}`,
+      className: `${inputProps.className} ${input.props.className ?? ""}`,
     });
   };
 
