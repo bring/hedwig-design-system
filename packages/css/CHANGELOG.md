@@ -1,5 +1,12 @@
 # @postenbring/hedwig-css
 
+## 0.0.58
+
+### Patch Changes
+
+- 93bf245: Add DatePicker component
+- 36c3b52: :wrench: use `exports` in css package.json to fix some import issues
+
 ## 0.0.57
 
 ### Patch Changes
