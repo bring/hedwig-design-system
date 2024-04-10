@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import type { ClassValue } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import FocusTrap from "focus-trap-react";
-import type { OverridableComponent } from "../utils";
+import { useHydrated, type OverridableComponent } from "../utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
 const expandableMenuContext = createContext([
@@ -22,6 +22,7 @@ export interface NavbarExpandableMenuProps {
 }
 export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
   const [open, setOpen] = useState(false);
+  const isClientSide = useHydrated();
   const toggleOpen = () => {
     const nextOpenState = !open;
     setOpen(nextOpenState);
@@ -32,10 +33,15 @@ export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
       document.body.classList.remove(clsx("hds-navbar-scroll-lock"));
     }
   };
-  const navbarElement = document.getElementsByClassName(clsx("hds-navbar"))[0];
   return (
     <expandableMenuContext.Provider value={[open, toggleOpen]}>
-      {open ? <FocusTrap containerElements={[navbarElement as HTMLElement]} /> : null}
+      {open && isClientSide ? (
+        <FocusTrap
+          containerElements={[
+            document.getElementsByClassName(clsx("hds-navbar"))[0] as HTMLElement,
+          ]}
+        />
+      ) : null}
       {children}
     </expandableMenuContext.Provider>
   );

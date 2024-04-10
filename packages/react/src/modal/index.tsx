@@ -9,5 +9,5 @@ ModalComponent.Header = ModalHeader;
 ModalComponent.Content = ModalContent;
 ModalComponent.Footer = ModalFooter;
 
-export { ModalComponent as Modal };
+export { ModalComponent as Modal, ModalHeader, ModalContent, ModalFooter };
 export type * from "./modal";

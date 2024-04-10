@@ -47,6 +47,13 @@ const CardComponent = Card as typeof Card & {
 CardComponent.Media = CardMediaComponent;
 CardComponent.Body = CardBodyComponent;
 
-export { CardComponent as Card };
+export {
+  CardComponent as Card,
+  CardMedia,
+  CardMediaImg,
+  CardBody,
+  CardBodyHeader,
+  CardBodyHeaderOverline,
+};
 
 export type * from "./card";

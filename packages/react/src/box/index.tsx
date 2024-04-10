@@ -5,6 +5,6 @@ const BoxComponent = Box as typeof Box & {
 };
 BoxComponent.CloseButton = BoxCloseButton;
 
-export { BoxComponent as Box };
+export { BoxComponent as Box, BoxCloseButton };
 
 export type * from "./box";
