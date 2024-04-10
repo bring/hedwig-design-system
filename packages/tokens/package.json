@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/node": "20.12.5",
     "color2k": "2.0.3",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "eslint-config-custom": "*",
     "hedwig-tsconfig": "workspace:*",
     "style-dictionary": "3.9.2",
