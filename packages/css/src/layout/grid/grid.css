@@ -1,0 +1,108 @@
+@import url("../../_custom-media.css");
+
+.hds-grid {
+  --hds-grid-gap-initial: initial;
+  --hds-grid-gap-small: var(--hds-grid-gap-initial);
+  --hds-grid-gap-medium: var(--hds-grid-gap-small);
+  --hds-grid-gap-large: var(--hds-grid-gap-medium);
+  --hds-grid-gap-xlarge: var(--hds-grid-gap-large);
+  --hds-grid-gap: var(--hds-grid-gap-initial);
+  --hds-grid-span-initial: 12;
+  --hds-grid-span-small: var(--hds-grid-span-initial);
+  --hds-grid-span-medium: var(--hds-grid-span-small);
+  --hds-grid-span-large: var(--hds-grid-span-medium);
+  --hds-grid-span-xlarge: var(--hds-grid-span-large);
+  --hds-grid-span: var(--hds-grid-span-initial);
+  --hds-grid-center-initial: 0;
+  --hds-grid-center-small: var(--hds-grid-center-initial);
+  --hds-grid-center-medium: var(--hds-grid-center-small);
+  --hds-grid-center-large: var(--hds-grid-center-medium);
+  --hds-grid-center-xlarge: var(--hds-grid-center-large);
+  --hds-grid-center: var(--hds-grid-center-initial);
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--hds-grid-gap);
+
+  /**
+   * Set the grid start, allowing for centering by setting a start position relative to the column span
+   * Abuses the fact that `0` is an invalid start value, so we can toggle this behaviour by including `--hds-grid-center` in the calculation.
+   * Assumes a span of 2, 4, 6, 8, or 10 for the centering be correct.
+   */
+  --hds-grid-start: calc(var(--hds-grid-center) * ((12 - var(--hds-grid-span)) / 2 + 1));
+
+  /* Set values for grid items */
+  > * {
+    grid-column: span var(--hds-grid-span) / span var(--hds-grid-span);
+    grid-column-start: var(--hds-grid-start);
+  }
+
+  /* Responsive */
+  @media (--small) {
+    --hds-grid-gap: var(--hds-grid-gap-small);
+    --hds-grid-span: var(--hds-grid-span-small);
+    --hds-grid-center: var(--hds-grid-center-small);
+  }
+
+  @media (--medium) {
+    --hds-grid-gap: var(--hds-grid-gap-medium);
+    --hds-grid-span: var(--hds-grid-span-medium);
+    --hds-grid-center: var(--hds-grid-center-medium);
+  }
+
+  @media (--large) {
+    --hds-grid-gap: var(--hds-grid-gap-large);
+    --hds-grid-span: var(--hds-grid-span-large);
+    --hds-grid-center: var(--hds-grid-center-large);
+  }
+
+  @media (--xlarge) {
+    --hds-grid-gap: var(--hds-grid-gap-xlarge);
+    --hds-grid-span: var(--hds-grid-span-xlarge);
+    --hds-grid-center: var(--hds-grid-center-xlarge);
+  }
+
+  > .hds-grid__item {
+    --hds-grid-item-span-initial: var(--hds-grid-span);
+    --hds-grid-item-span-small: var(--hds-grid-item-span-initial);
+    --hds-grid-item-span-medium: var(--hds-grid-item-span-small);
+    --hds-grid-item-span-large: var(--hds-grid-item-span-medium);
+    --hds-grid-item-span-xlarge: var(--hds-grid-item-span-large);
+    --hds-grid-item-span: var(--hds-grid-item-span-initial);
+    --hds-grid-item-center-initial: var(--hds-grid-center);
+    --hds-grid-item-center-small: var(--hds-grid-item-center-initial);
+    --hds-grid-item-center-medium: var(--hds-grid-item-center-small);
+    --hds-grid-item-center-large: var(--hds-grid-item-center-medium);
+    --hds-grid-item-center-xlarge: var(--hds-grid-item-center-large);
+    --hds-grid-item-center: var(--hds-grid-item-center-initial);
+
+    /* Assumes a span of 2, 4, 6, 8, or 10 */
+    --hds-grid-item-start: calc(
+      var(--hds-grid-item-center) * ((12 - var(--hds-grid-item-span)) / 2 + 1)
+    );
+
+    grid-column: span var(--hds-grid-item-span) / span var(--hds-grid-item-span);
+    grid-column-start: var(--hds-grid-item-start);
+
+    /* Responsive */
+    @media (--small) {
+      --hds-grid-item-span: var(--hds-grid-item-span-small);
+      --hds-grid-item-center: var(--hds-grid-item-center-small);
+    }
+
+    @media (--medium) {
+      --hds-grid-item-span: var(--hds-grid-item-span-medium);
+      --hds-grid-item-center: var(--hds-grid-item-center-medium);
+    }
+
+    @media (--large) {
+      --hds-grid-item-span: var(--hds-grid-item-span-large);
+      --hds-grid-item-center: var(--hds-grid-item-center-large);
+    }
+
+    @media (--xlarge) {
+      --hds-grid-item-span: var(--hds-grid-item-span-xlarge);
+      --hds-grid-item-center: var(--hds-grid-item-center-xlarge);
+    }
+  }
+}
