@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.68
+
+### Patch Changes
+
+- adbf63b: :sparkles::construction: `Grid` component
+- Updated dependencies [adbf63b]
+  - @postenbring/hedwig-css@0.0.59
+
 ## 0.0.67
 
 ### Patch Changes
