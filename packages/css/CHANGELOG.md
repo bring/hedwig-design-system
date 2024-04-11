@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.59
+
+### Patch Changes
+
+- adbf63b: :sparkles::construction: `Grid` component
+
 ## 0.0.58
 
 ### Patch Changes
