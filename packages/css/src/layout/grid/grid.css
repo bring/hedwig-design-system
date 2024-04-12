@@ -1,18 +1,35 @@
 @import url("../../_custom-media.css");
 
 .hds-grid {
+  /* Gap */
   --hds-grid-gap-initial: initial;
   --hds-grid-gap-small: var(--hds-grid-gap-initial);
   --hds-grid-gap-medium: var(--hds-grid-gap-small);
   --hds-grid-gap-large: var(--hds-grid-gap-medium);
   --hds-grid-gap-xlarge: var(--hds-grid-gap-large);
   --hds-grid-gap: var(--hds-grid-gap-initial);
+  --hds-grid-gap-x-initial: var(--hds-grid-gap);
+  --hds-grid-gap-x-small: var(--hds-grid-gap-x-initial);
+  --hds-grid-gap-x-medium: var(--hds-grid-gap-x-small);
+  --hds-grid-gap-x-large: var(--hds-grid-gap-x-medium);
+  --hds-grid-gap-x-xlarge: var(--hds-grid-gap-x-large);
+  --hds-grid-gap-x: var(--hds-grid-gap-x-initial);
+  --hds-grid-gap-y-initial: var(--hds-grid-gap);
+  --hds-grid-gap-y-small: var(--hds-grid-gap-y-initial);
+  --hds-grid-gap-y-medium: var(--hds-grid-gap-y-small);
+  --hds-grid-gap-y-large: var(--hds-grid-gap-y-medium);
+  --hds-grid-gap-y-xlarge: var(--hds-grid-gap-y-large);
+  --hds-grid-gap-y: var(--hds-grid-gap-y-initial);
+
+  /* Column span */
   --hds-grid-span-initial: 12;
   --hds-grid-span-small: var(--hds-grid-span-initial);
   --hds-grid-span-medium: var(--hds-grid-span-small);
   --hds-grid-span-large: var(--hds-grid-span-medium);
   --hds-grid-span-xlarge: var(--hds-grid-span-large);
   --hds-grid-span: var(--hds-grid-span-initial);
+
+  /* Center */
   --hds-grid-center-initial: 0;
   --hds-grid-center-small: var(--hds-grid-center-initial);
   --hds-grid-center-medium: var(--hds-grid-center-small);
@@ -22,7 +39,9 @@
 
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--hds-grid-gap);
+  column-gap: var(--hds-grid-gap-x);
+  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties -- cannot use shorthand as `initial` is an invalid value in shorthand */
+  row-gap: var(--hds-grid-gap-y);
 
   /**
    * Set the grid start, allowing for centering by setting a start position relative to the column span
@@ -40,24 +59,32 @@
   /* Responsive */
   @media (--small) {
     --hds-grid-gap: var(--hds-grid-gap-small);
+    --hds-grid-gap-x: var(--hds-grid-gap-x-small);
+    --hds-grid-gap-y: var(--hds-grid-gap-y-small);
     --hds-grid-span: var(--hds-grid-span-small);
     --hds-grid-center: var(--hds-grid-center-small);
   }
 
   @media (--medium) {
     --hds-grid-gap: var(--hds-grid-gap-medium);
+    --hds-grid-gap-x: var(--hds-grid-gap-x-medium);
+    --hds-grid-gap-y: var(--hds-grid-gap-y-medium);
     --hds-grid-span: var(--hds-grid-span-medium);
     --hds-grid-center: var(--hds-grid-center-medium);
   }
 
   @media (--large) {
     --hds-grid-gap: var(--hds-grid-gap-large);
+    --hds-grid-gap-x: var(--hds-grid-gap-x-large);
+    --hds-grid-gap-y: var(--hds-grid-gap-y-large);
     --hds-grid-span: var(--hds-grid-span-large);
     --hds-grid-center: var(--hds-grid-center-large);
   }
 
   @media (--xlarge) {
     --hds-grid-gap: var(--hds-grid-gap-xlarge);
+    --hds-grid-gap-x: var(--hds-grid-gap-x-xlarge);
+    --hds-grid-gap-y: var(--hds-grid-gap-y-xlarge);
     --hds-grid-span: var(--hds-grid-span-xlarge);
     --hds-grid-center: var(--hds-grid-center-xlarge);
   }

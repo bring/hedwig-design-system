@@ -2,7 +2,7 @@ import { Grid, Box } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Grid gap="12-16" span={{ initial: 4, small: 6 }} center={{ small: true }}>
+    <Grid gapY="12-16" span={{ small: 8 }} center={{ small: true }}>
       <Box>1</Box>
       <Box>2</Box>
       <Box>3</Box>

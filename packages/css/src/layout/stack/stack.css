@@ -2,30 +2,51 @@
 @import url("../../_custom-media.css");
 
 .hds-stack {
+  /* Gap */
   --hds-stack-gap-initial: initial;
   --hds-stack-gap-small: var(--hds-stack-gap-initial);
   --hds-stack-gap-medium: var(--hds-stack-gap-small);
   --hds-stack-gap-large: var(--hds-stack-gap-medium);
   --hds-stack-gap-xlarge: var(--hds-stack-gap-large);
   --hds-stack-gap: var(--hds-stack-gap-initial);
+  --hds-stack-gap-x-initial: var(--hds-stack-gap);
+  --hds-stack-gap-x-small: var(--hds-stack-gap-x-initial);
+  --hds-stack-gap-x-medium: var(--hds-stack-gap-x-small);
+  --hds-stack-gap-x-large: var(--hds-stack-gap-x-medium);
+  --hds-stack-gap-x-xlarge: var(--hds-stack-gap-x-large);
+  --hds-stack-gap-x: var(--hds-stack-gap-x-initial);
+  --hds-stack-gap-y-initial: var(--hds-stack-gap);
+  --hds-stack-gap-y-small: var(--hds-stack-gap-y-initial);
+  --hds-stack-gap-y-medium: var(--hds-stack-gap-y-small);
+  --hds-stack-gap-y-large: var(--hds-stack-gap-y-medium);
+  --hds-stack-gap-y-xlarge: var(--hds-stack-gap-y-large);
+  --hds-stack-gap-y: var(--hds-stack-gap-y-initial);
+
+  /* Direction */
   --hds-stack-direction-initial: initial;
   --hds-stack-direction-small: var(--hds-stack-direction-initial);
   --hds-stack-direction-medium: var(--hds-stack-direction-small);
   --hds-stack-direction-large: var(--hds-stack-direction-medium);
   --hds-stack-direction-xlarge: var(--hds-stack-direction-large);
   --hds-stack-direction: var(--hds-stack-direction-initial);
+
+  /* Wrap */
   --hds-stack-wrap-initial: nowrap;
   --hds-stack-wrap-small: var(--hds-stack-wrap-initial);
   --hds-stack-wrap-medium: var(--hds-stack-wrap-small);
   --hds-stack-wrap-large: var(--hds-stack-wrap-medium);
   --hds-stack-wrap-xlarge: var(--hds-stack-wrap-large);
   --hds-stack-wrap: var(--hds-stack-wrap-initial);
+
+  /* Item align */
   --hds-stack-align-initial: initial;
   --hds-stack-align-small: var(--hds-stack-align-initial);
   --hds-stack-align-medium: var(--hds-stack-align-small);
   --hds-stack-align-large: var(--hds-stack-align-medium);
   --hds-stack-align-xlarge: var(--hds-stack-align-large);
   --hds-stack-align: var(--hds-stack-align-initial);
+
+  /* Justify */
   --hds-stack-justify-initial: initial;
   --hds-stack-justify-small: var(--hds-stack-justify-initial);
   --hds-stack-justify-medium: var(--hds-stack-justify-small);
@@ -33,7 +54,8 @@
   --hds-stack-justify-xlarge: var(--hds-stack-justify-large);
 
   display: flex;
-  gap: var(--hds-stack-gap);
+  column-gap: var(--hds-stack-gap-x);
+  row-gap: var(--hds-stack-gap-y);
   flex-direction: var(--hds-stack-direction);
   flex-wrap: var(--hds-stack-wrap);
   align-items: var(--hds-stack-align);
@@ -42,6 +64,8 @@
   /* Responsive */
   @media (--small) {
     --hds-stack-gap: var(--hds-stack-gap-small);
+    --hds-stack-gap-x: var(--hds-stack-gap-x-small);
+    --hds-stack-gap-y: var(--hds-stack-gap-y-small);
     --hds-stack-direction: var(--hds-stack-direction-small);
     --hds-stack-wrap: var(--hds-stack-wrap-small);
     --hds-stack-align: var(--hds-stack-align-small);
@@ -50,6 +74,8 @@
 
   @media (--medium) {
     --hds-stack-gap: var(--hds-stack-gap-medium);
+    --hds-stack-gap-x: var(--hds-stack-gap-x-medium);
+    --hds-stack-gap-y: var(--hds-stack-gap-y-medium);
     --hds-stack-direction: var(--hds-stack-direction-medium);
     --hds-stack-wrap: var(--hds-stack-wrap-medium);
     --hds-stack-align: var(--hds-stack-align-medium);
@@ -58,6 +84,8 @@
 
   @media (--large) {
     --hds-stack-gap: var(--hds-stack-gap-large);
+    --hds-stack-gap-x: var(--hds-stack-gap-x-large);
+    --hds-stack-gap-y: var(--hds-stack-gap-y-large);
     --hds-stack-direction: var(--hds-stack-direction-large);
     --hds-stack-wrap: var(--hds-stack-wrap-large);
     --hds-stack-align: var(--hds-stack-align-large);
@@ -66,6 +94,8 @@
 
   @media (--xlarge) {
     --hds-stack-gap: var(--hds-stack-gap-xlarge);
+    --hds-stack-gap-x: var(--hds-stack-gap-x-xlarge);
+    --hds-stack-gap-y: var(--hds-stack-gap-y-xlarge);
     --hds-stack-direction: var(--hds-stack-direction-xlarge);
     --hds-stack-wrap: var(--hds-stack-wrap-xlarge);
     --hds-stack-align: var(--hds-stack-align-xlarge);

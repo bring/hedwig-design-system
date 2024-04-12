@@ -16,7 +16,27 @@ type CSSPropertiesWithVar = React.CSSProperties & {
 export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 
+  /**
+   * Space between items. Both horizontal and vertical.
+   *
+   * Use the responsive shorthand `12-16` to jump a level at the `large` breakpoint.
+   *
+   * Or use the responsive object `{ initial: 40, large: 64 }` to set different values at different breakpoints.
+   *
+   * Use `gapX` and `gapY` to set different values for horizontal and vertical spacing.
+   */
   gap?: ResponsiveProp<SpacingSizes> | ResponsiveSpacingSizes;
+
+  /**
+   * Space between items horizontally
+   */
+  gapX?: ResponsiveProp<SpacingSizes> | ResponsiveSpacingSizes;
+
+  /**
+   * Space between items vertically
+   */
+  gapY?: ResponsiveProp<SpacingSizes> | ResponsiveSpacingSizes;
+
   direction?: ResponsiveProp<React.CSSProperties["flexDirection"]>;
   wrap?: ResponsiveProp<boolean>;
   align?: ResponsiveProp<React.CSSProperties["alignItems"]>;
@@ -38,13 +58,28 @@ export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 export const Stack = forwardRef<HTMLDivElement, StackProps>(
   (
-    { children, asChild, className, style: _style, gap, direction, wrap, align, justify, ...rest },
+    {
+      children,
+      asChild,
+      className,
+      style: _style,
+      gap,
+      gapX,
+      gapY,
+      direction,
+      wrap,
+      align,
+      justify,
+      ...rest
+    },
     ref,
   ) => {
     const Component = asChild ? Slot : "div";
     const style: CSSPropertiesWithVar = {
       ..._style,
       ...getResponsiveProps("--hds-stack-gap", gap, getSpacingVariable),
+      ...getResponsiveProps("--hds-stack-gap-x", gapX, getSpacingVariable),
+      ...getResponsiveProps("--hds-stack-gap-y", gapY, getSpacingVariable),
       ...getResponsiveProps("--hds-stack-direction", direction),
       ...getResponsiveProps("--hds-stack-wrap", wrap, (value) => (value ? "wrap" : "nowrap")),
       ...getResponsiveProps("--hds-stack-align", align),

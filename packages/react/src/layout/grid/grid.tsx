@@ -13,8 +13,20 @@ export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
    * Use the responsive shorthand `12-16` to jump a level at the `large` breakpoint.
    *
    * Or use the responsive object `{ initial: 40, large: 64 }` to set different values at different breakpoints.
+   *
+   * Use `gapX` and `gapY` to set different values for horizontal and vertical spacing.
    */
   gap?: ResponsiveProp<SpacingSizes> | ResponsiveSpacingSizes;
+
+  /**
+   * Space between grid items horizontally
+   */
+  gapX?: ResponsiveProp<SpacingSizes> | ResponsiveSpacingSizes;
+
+  /**
+   * Space between grid items vertically
+   */
+  gapY?: ResponsiveProp<SpacingSizes> | ResponsiveSpacingSizes;
 
   /**
    * Column span for the grid items
@@ -59,11 +71,16 @@ export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
  * ```
  */
 export const Grid = forwardRef<HTMLDivElement, GridProps>(
-  ({ children, asChild, className, span, center, style: _style, gap, ...rest }, ref) => {
+  (
+    { children, asChild, className, span, center, style: _style, gap, gapX, gapY, ...rest },
+    ref,
+  ) => {
     const Component = asChild ? Slot : "div";
     const style: React.CSSProperties = {
       ..._style,
       ...getResponsiveProps("--hds-grid-gap", gap, getSpacingVariable),
+      ...getResponsiveProps("--hds-grid-gap-x", gapX, getSpacingVariable),
+      ...getResponsiveProps("--hds-grid-gap-y", gapY, getSpacingVariable),
       ...getResponsiveProps("--hds-grid-span", span),
       ...getResponsiveProps("--hds-grid-center", center, (value) => (value ? "1" : "0")),
     };
