@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.69
+
+### Patch Changes
+
+- 21c8a0b: :sparkles: support gapX and gapY in Grid and Stack components
+- Updated dependencies [21c8a0b]
+  - @postenbring/hedwig-css@0.0.60
+
 ## 0.0.68
 
 ### Patch Changes
