@@ -81,10 +81,6 @@
    * Link list
    */
   &.hds-list--link-list {
-    li:not(:last-child) {
-      margin-bottom: var(--hds-spacing-8);
-    }
-
     list-style: none;
     padding-left: 0;
 
