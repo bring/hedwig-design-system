@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.61
+
+### Patch Changes
+
+- 11f5aad: :bug: fix building nested `@extend`'s
+
+  when extending a class that where also extending something else, it did not follow the path. Leading to the final bundle having `@extend` references.
+
 ## 0.0.60
 
 ### Patch Changes
