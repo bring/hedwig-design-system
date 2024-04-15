@@ -26,18 +26,24 @@ const customExtend = {
             filename: file,
             minify: false,
             visitor: {
-              Rule(rule) {
-                if (rule.type !== "style") return;
-                const selectors = rule.value.selectors.flat(2);
+              Rule: {
+                style(rule) {
+                  const selectors = rule.value.selectors.flat(2);
 
-                if (!result && selectors.some((s) => s.type === "class" && s.name === className)) {
-                  result = {
-                    ...rule,
-                    value: { ...rule.value, selectors: [[{ type: "nesting" }]] },
-                  };
-                }
+                  if (
+                    !result &&
+                    selectors.some((s) => s.type === "class" && s.name === className)
+                  ) {
+                    result = {
+                      ...rule,
+                      value: { ...rule.value, selectors: [[{ type: "nesting" }]] },
+                    };
+                  }
+                },
+                ...customExtend.visitor?.Rule,
               },
             },
+            customAtRules: { ...customExtend.customAtRules },
           });
 
           if (!result) throw new Error(`Could not find ${className} in ${file}`);
