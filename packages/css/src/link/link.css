@@ -5,7 +5,9 @@
 .hds-link {
   color: var(--hds-link-colors-text);
   fill: currentcolor;
-  transition: all var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
+  transition-duration: var(--hds-micro-animation-duration-quick);
+  transition-timing-function: var(--hds-micro-animation-easing-normal);
+  transition-property: color, fill, text-decoration-color;
   cursor: pointer;
   text-decoration-line: underline;
   text-decoration-thickness: var(--hds-stroke-default);
