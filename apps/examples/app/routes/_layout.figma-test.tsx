@@ -20,7 +20,7 @@ export default function Component() {
   const data = useLoaderData<typeof clientLoader>();
 
   return (
-    <>
+    <div>
       <div className="hds-mt-48-64" />
 
       <StyledHtml style={{ maxWidth: "60ch" }}>
@@ -50,6 +50,6 @@ export default function Component() {
         width="80%"
         hideBottomBar
       />
-    </>
+    </div>
   );
 }

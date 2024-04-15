@@ -65,7 +65,7 @@ export const examplesByComponent = examples.reduce(
     acc[example.componentName]?.push(example);
     return acc;
   },
-  {} as Record<string, Example[] | undefined>,
+  {} as Record<string, Example[]>,
 );
 for (const [componentName, examples] of Object.entries(examplesByComponent)) {
   examplesByComponent[componentName] = examples?.sort(
@@ -78,13 +78,13 @@ export const componentsByGroup = Object.entries(examplesByComponent).reduce(
   (acc, [componentName, examples]) => {
     const group = examples?.[0].groupName ?? "default";
     if (!acc[group]) {
-      acc[group] = [];
+      acc[group] = {};
     }
 
-    acc[group]?.push(componentName);
+    acc[group]![componentName] = examples;
     return acc;
   },
-  {} as Record<string, string[] | undefined>,
+  {} as Record<string, typeof examplesByComponent>,
 );
 
 // Types

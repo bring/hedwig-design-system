@@ -3,6 +3,7 @@ import { Chip } from "./chip";
 import { CodeExample } from "./code-example";
 import { Example, examplesByComponent } from "../examples";
 import { HStack, VStack } from "@postenbring/hedwig-react";
+import { useState } from "react";
 
 export function Examples({ name }: { name: string }) {
   if (!(name in examplesByComponent)) {
@@ -20,9 +21,9 @@ export function ComponentCodeExamples({
   defaultShowCode?: boolean;
 }) {
   const [search] = useSearchParams();
-
-  const activeExample =
-    examples.find((example) => example.exampleName === search.get("example")) ?? examples[0];
+  const [activeExample, setActiveExample] = useState(
+    () => examples.find((example) => example.exampleName === search.get("example")) ?? examples[0],
+  );
 
   return (
     <VStack gap="16">
@@ -43,6 +44,9 @@ export function ComponentCodeExamples({
                     ...Object.fromEntries(search),
                     example: example.exampleName,
                   }).toString(),
+              }}
+              onClick={() => {
+                setActiveExample(example);
               }}
             >
               {kebabCaseToFirstLetterUpperCase(example.exampleName)}

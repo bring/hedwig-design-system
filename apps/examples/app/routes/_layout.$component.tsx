@@ -46,9 +46,8 @@ export default function Component() {
   const { component, examples } = useLoaderData<typeof clientLoader>();
   const [search] = useSearchParams();
   return (
-    <>
-      <div className="hds-mt-24-32" />
-      <Breadcrumbs>
+    <div>
+      <Breadcrumbs className="hds-mt-24-32 hds-mb-24-32">
         <li>
           <Link
             as={RemixLink}
@@ -63,13 +62,12 @@ export default function Component() {
 
         <li aria-current="page">{kebabCaseToFirstLetterUpperCase(component)}</li>
       </Breadcrumbs>
-      <div className="hds-mt-24-32" />
       <Text as="h1" variant="h2">
         {kebabCaseToFirstLetterUpperCase(component)}
       </Text>
       <div className="hds-mt-12-16" />
       <ComponentCodeExamples examples={examples} />
-    </>
+    </div>
   );
 }
 

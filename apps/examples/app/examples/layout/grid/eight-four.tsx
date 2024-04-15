@@ -21,7 +21,7 @@ import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   breakpointIndicator: "top",
   description:
-    "A layout where one item is twice as wide as the other. Also called a <code>2/3</code> layout.",
+    "A layout where one item is twice as wide as the other. Also called a <code>2/3 + 1/3</code> layout.",
   layout: "centered-fullwidth",
   index: 4,
 };

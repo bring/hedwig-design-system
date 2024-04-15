@@ -135,12 +135,9 @@ export default function Layout() {
         </Navbar.Navigation>
       </Navbar>
 
-      <main style={{ flexGrow: 1 }}>
-        {/* TODO: Sidebar */}
-        <Container>
-          <Outlet />
-        </Container>
-      </main>
+      <div style={{ flexGrow: 1 }} className="docs-container">
+        <Outlet />
+      </div>
 
       <div className="hds-mt-80-120" />
 
