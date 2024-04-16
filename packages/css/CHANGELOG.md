@@ -1,5 +1,16 @@
 # @postenbring/hedwig-css
 
+## 0.0.62
+
+### Patch Changes
+
+- 4e993e8: :dizzy: button: only transition the color values
+- 96af4b1: :dizzy: only transition the color properties
+
+  this fixes the flickering behaviour of font's suddenly scaling down or up when multiple css's are competing.
+
+- 3d68008: :lipstick: remove double spacing on link lists
+
 ## 0.0.61
 
 ### Patch Changes
