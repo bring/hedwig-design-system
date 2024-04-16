@@ -1,8 +1,8 @@
-import type { HTMLAttributes, ReactElement } from "react";
+import type { HTMLAttributes, ReactElement, ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface BreadcrumbsProps extends HTMLAttributes<HTMLOListElement> {
-  children: ReactElement<HTMLLIElement> | ReactElement<HTMLLIElement>[];
+  children: ReactNode | ReactElement<HTMLLIElement> | ReactElement<HTMLLIElement>[];
 
   /**
    * Props passed to the `ol` html element
