@@ -87,6 +87,10 @@ export const componentsByGroup = Object.entries(examplesByComponent).reduce(
   {} as Record<string, typeof examplesByComponent>,
 );
 
+export function isPathInExamples(path: string) {
+  return examples.some((example) => example.urlPath.endsWith(path));
+}
+
 // Types
 export type Example = (typeof examples)[number];
 

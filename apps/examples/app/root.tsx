@@ -11,6 +11,7 @@ import bringFavicon from "./assets/bring-favicon.png?url";
 import postenFavicon from "./assets/posten-favicon.png?url";
 
 import styles from "./root.module.css";
+import { isPathInExamples } from "./examples";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [search] = useSearchParams();
@@ -80,9 +81,7 @@ function parseViewOptions(search: string, isExample: boolean): ViewOptions & Exa
 export default function App() {
   const location = useLocation();
 
-  // The rendered examples are served two levels deep
-  // E.g. /button/fullwidth-on-mobile
-  const isExample = Boolean(location.pathname.match(`^/[\\w-]+/\\w+`));
+  const isExample = isPathInExamples(location.pathname);
   const viewOptions = parseViewOptions(location.search, isExample);
 
   return (

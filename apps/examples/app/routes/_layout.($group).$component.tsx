@@ -14,12 +14,13 @@ import {
 } from "../components/component-examples";
 import { Breadcrumbs, Link, Text } from "@postenbring/hedwig-react";
 
-export async function clientLoader({ params: { component } }: ClientLoaderFunctionArgs) {
+export async function clientLoader({ params: { group, component } }: ClientLoaderFunctionArgs) {
   if (!component || !(component in examplesByComponent)) {
     throw new Response("Example component not found", { status: 404 });
   }
 
   return {
+    group,
     component,
     examples: examplesByComponent[component]!,
   };
@@ -43,7 +44,7 @@ export const meta: MetaFunction<typeof clientLoader> = ({ data, error }) => {
 };
 
 export default function Component() {
-  const { component, examples } = useLoaderData<typeof clientLoader>();
+  const { group, component, examples } = useLoaderData<typeof clientLoader>();
   const [search] = useSearchParams();
   return (
     <div>
@@ -59,6 +60,8 @@ export default function Component() {
             Examples
           </Link>
         </li>
+
+        {group && <li>{kebabCaseToFirstLetterUpperCase(group)}</li>}
 
         <li aria-current="page">{kebabCaseToFirstLetterUpperCase(component)}</li>
       </Breadcrumbs>

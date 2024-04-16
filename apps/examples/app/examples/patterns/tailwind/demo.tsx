@@ -1,0 +1,20 @@
+import "@postenbring/hedwig-css";
+import "./tailwind.css";
+
+function Example() {
+  return (
+    <div className="flex gap-12 large:gap-16">
+      <div className="transition-all rounded size-48 hover:scale-125 bg-signature hover:bg-darker" />
+      <div className="transition-all rounded size-48 hover:scale-125 bg-signature hover:bg-darker" />
+      <div className="transition-all rounded size-48 hover:scale-125 bg-signature hover:bg-darker" />
+    </div>
+  );
+}
+
+export default Example;
+
+import type { ExampleConfig } from "../..";
+export const config: ExampleConfig = {
+  description: "Use as a supplement to css package",
+  layout: "centered",
+};
