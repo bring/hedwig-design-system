@@ -10,7 +10,9 @@
   border-style: solid;
   border-radius: var(--hds-border-radius);
   border-width: var(--hds-component-button-border-width);
-  transition: all var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
+  transition-duration: var(--hds-micro-animation-duration-quick);
+  transition-timing-function: var(--hds-micro-animation-easing-normal);
+  transition-property: color, background-color, border-color, fill, outline;
   cursor: pointer;
   word-break: normal;
   font: var(--hds-typography-body-small-title);
