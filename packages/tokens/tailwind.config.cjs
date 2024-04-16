@@ -156,8 +156,14 @@ module.exports = {
       0: 0,
       ...tokens.opacity,
     },
-    transitionTimingFunction: tokens["micro-animation"],
-    transitionDuration: tokens["micro-animation-duration"],
+    transitionTimingFunction: {
+      DEFAULT: tokens["micro-animation"]["easing-normal"],
+      ...tokens["micro-animation"],
+    },
+    transitionDuration: {
+      DEFAULT: tokens["micro-animation-duration"].normal,
+      ...tokens["micro-animation-duration"],
+    },
     extend: {},
   },
   corePlugins: {
