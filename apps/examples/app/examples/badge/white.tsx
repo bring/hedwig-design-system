@@ -1,11 +1,13 @@
-import { HStack, WhiteBadge } from "@postenbring/hedwig-react";
+import { Box, HStack, WhiteBadge } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <HStack gap="8" align="end">
-      <WhiteBadge>White</WhiteBadge>
-      <WhiteBadge size="smaller">White</WhiteBadge>
-    </HStack>
+    <Box>
+      <HStack gap="8" align="end">
+        <WhiteBadge>White</WhiteBadge>
+        <WhiteBadge size="smaller">White</WhiteBadge>
+      </HStack>
+    </Box>
   );
 }
 
