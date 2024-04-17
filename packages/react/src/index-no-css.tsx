@@ -7,6 +7,7 @@ export * from "./card";
 export * from "./description-list";
 export * from "./form";
 export * from "./footer";
+export * from "./help-text";
 export * from "./layout";
 export * from "./link";
 export * from "./list";

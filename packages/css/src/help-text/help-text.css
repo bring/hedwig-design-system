@@ -1,0 +1,88 @@
+@import url("../_icons.css");
+
+.hds-help-text-button {
+  /* Button reset */
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+
+  /* Spacing */
+  padding: 0 2px 2px;
+
+  /* Border */
+  border-bottom: var(--hds-stroke-default) dashed var(--hds-ui-colors-black);
+
+  &[data-state="open"] {
+    background-color: var(--hds-ui-colors-light-grey-fill);
+  }
+
+  /* Info icon */
+  &::after {
+    display: inline-block;
+    content: "";
+    background-image: var(--_hds-info-square);
+    width: 24px;
+    height: 24px;
+    vertical-align: bottom;
+  }
+
+  &:not(:empty)::after {
+    margin-left: var(--hds-spacing-4);
+  }
+}
+
+.hds-help-text-box {
+  min-width: var(--hds-spacing-160);
+  max-width: min(100vw, 400px);
+
+  /* Animation */
+  animation-duration: var(--hds-micro-animation-duration-normal);
+  animation-timing-function: var(--hds-micro-animation-easing-out);
+  will-change: transform, opacity;
+
+  &[data-state="open"][data-side="top"] {
+    animation-name: hds-slide-down-and-fade;
+  }
+
+  &[data-state="open"][data-side="right"] {
+    animation-name: hds-slide-left-and-fade;
+  }
+
+  &[data-state="open"][data-side="bottom"] {
+    animation-name: hds-slide-up-and-fade;
+  }
+
+  &[data-state="open"][data-side="left"] {
+    animation-name: hds-slide-right-and-fade;
+  }
+}
+
+@keyframes hds-slide-up-and-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes hds-slide-right-and-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+
+@keyframes hds-slide-down-and-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes hds-slide-left-and-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}

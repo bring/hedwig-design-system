@@ -22,6 +22,7 @@
 @import url("form/radiobutton/radiobutton.css");
 @import url("form/select/select.css");
 @import url("form/textarea/textarea.css");
+@import url("help-text/help-text.css");
 @import url("layout/container/container.css");
 @import url("layout/flex/flex.css");
 @import url("layout/grid/grid.css");
