@@ -101,8 +101,6 @@ async function validateCss(url) {
 
   const css = readFileSync(new URL(filename, OUTDIR), "utf8");
 
-  if (!css) return true
-
   const result = await cssValidator.validateText(`${css}`, {
     medium: "print",
     warningLevel: 3,
