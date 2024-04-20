@@ -19,6 +19,7 @@ export const meta: MetaFunction = () => {
 
 function ExamplesMenu() {
   const location = useLocation();
+  const [search] = useSearchParams();
 
   useEffect(() => {
     if (location.hash) {
@@ -44,7 +45,9 @@ function ExamplesMenu() {
                 <Link
                   as={RemixLink}
                   to={{
-                    hash: `examples-${componentName}`,
+                    pathname:
+                      groupName !== "default" ? `${groupName}/${componentName}` : componentName,
+                    search: search.toString(),
                   }}
                   variant="underline"
                 >
@@ -88,7 +91,10 @@ export default function Index() {
                       <RemixLink
                         className={styles.exampleHeadingLink}
                         to={{
-                          pathname: componentName,
+                          pathname:
+                            groupName !== "default"
+                              ? `${groupName}/${componentName}`
+                              : componentName,
                           search: search.toString(),
                         }}
                       >
