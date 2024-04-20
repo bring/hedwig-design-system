@@ -18,6 +18,7 @@ export * from "./show-more";
 export * from "./skeleton";
 export * from "./step-indicator";
 export * from "./styled-html";
+export * from "./table";
 export * from "./tabs";
 export * from "./text";
 export * from "./utilities";
