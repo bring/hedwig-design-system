@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
@@ -41,22 +41,21 @@ export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
  * </DescriptionList>
  * ```
  */
-export function DescriptionList({
-  variant = "vertical",
-  className,
-  ...rest
-}: DescriptionListProps) {
-  return (
-    <dl
-      className={clsx(
-        "hds-description-list",
-        {
-          "hds-description-list--horizontal": variant === "horizontal",
-        },
-        className as undefined,
-      )}
-      {...rest}
-    />
-  );
-}
+export const DescriptionList = forwardRef<HTMLDListElement, DescriptionListProps>(
+  ({ variant = "vertical", className, ...rest }, ref) => {
+    return (
+      <dl
+        ref={ref}
+        className={clsx(
+          "hds-description-list",
+          {
+            "hds-description-list--horizontal": variant === "horizontal",
+          },
+          className as undefined,
+        )}
+        {...rest}
+      />
+    );
+  },
+);
 DescriptionList.displayName = "DescriptionList";
