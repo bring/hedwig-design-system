@@ -69,7 +69,7 @@ export default function Component() {
         {kebabCaseToFirstLetterUpperCase(component)}
       </Text>
       <div className="hds-mt-12-16" />
-      <ComponentCodeExamples examples={examples} />
+      <ComponentCodeExamples examples={examples} preload="render" />
     </div>
   );
 }

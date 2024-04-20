@@ -102,7 +102,11 @@ export default function Index() {
                       </RemixLink>
                     </h2>
                     <div className="hds-mt-12-16" />
-                    <ComponentCodeExamples examples={examples ?? []} defaultShowCode={false} />
+                    <ComponentCodeExamples
+                      examples={examples ?? []}
+                      defaultShowCode={false}
+                      preload="intent"
+                    />
                   </li>
                 ))}
               </ul>

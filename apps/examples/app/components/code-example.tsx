@@ -26,45 +26,64 @@ const highlighter = await getHighlighter({
  * A single code example
  */
 export function CodeExample({
-  example,
+  activeExample,
+  allExamples,
   defaultShowCode = true,
+  shouldPreload = false,
 }: {
-  example: Example;
+  activeExample: Example;
+  allExamples?: Example[];
   defaultShowCode?: boolean;
+  shouldPreload?: boolean;
 }) {
   const [search] = useSearchParams();
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [showCode, setShowCode] = useState(defaultShowCode);
 
-  const iframeViewOptions = new URLSearchParams();
-  if (example.config?.layout) {
-    iframeViewOptions.set("layout", example.config.layout);
-  }
-  if (search.get("theme")) {
-    iframeViewOptions.set("theme", search.get("theme")!);
-  }
-  if (example.config?.breakpointIndicator) {
-    iframeViewOptions.set("breakpointIndicator", String(example.config?.breakpointIndicator));
+  function iframeUrl(example: Example) {
+    const iframeViewOptions = new URLSearchParams();
+    if (example.config?.layout) {
+      iframeViewOptions.set("layout", example.config.layout);
+    }
+    if (search.get("theme")) {
+      iframeViewOptions.set("theme", search.get("theme")!);
+    }
+    if (example.config?.breakpointIndicator) {
+      iframeViewOptions.set("breakpointIndicator", String(example.config?.breakpointIndicator));
+    }
+    return `${example.urlPath}?${iframeViewOptions.toString()}`;
   }
 
-  const iframeUrl = example.urlPath + "?" + iframeViewOptions.toString();
+  if (!allExamples) allExamples = [activeExample];
 
   return (
     <div className={styles.codeExample}>
       {/* Description */}
-      {example.config?.description && (
-        <StyledHtml size="small" dangerouslySetInnerHTML={{ __html: example.config.description }} />
+      {activeExample.config?.description && (
+        <StyledHtml
+          size="small"
+          dangerouslySetInnerHTML={{ __html: activeExample.config.description }}
+        />
       )}
 
       {/* Iframed demo */}
       <div>
-        <iframe
-          loading="lazy"
-          ref={iframeRef}
-          title={`Example ${example.componentName}/${example.exampleName}`}
-          src={iframeUrl}
-          // TODO: Dynamic height between 300-900 based on content
-        />
+        {allExamples.map((example) => {
+          const isActive = example.exampleName === activeExample.exampleName;
+          return (
+            <iframe
+              key={example.exampleName}
+              title={`Example ${activeExample.componentName}/${activeExample.exampleName}`}
+              src={iframeUrl(example)}
+              ref={isActive ? iframeRef : null}
+              loading={shouldPreload ? "eager" : "lazy"}
+              style={{
+                display: isActive ? "block" : "none",
+              }}
+              // TODO: Dynamic height between 300-900 based on content
+            />
+          );
+        })}
 
         {/* Actions row */}
         <div>
@@ -99,7 +118,7 @@ export function CodeExample({
           <SecondaryButton
             title="Open in CodeSandbox"
             size="small"
-            onClick={() => openExampleInCodeSandbox(example)}
+            onClick={() => openExampleInCodeSandbox(activeExample)}
             icon={
               <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 24H24V0H0V2.45455H21.5455V21.5455H2.45455V0H0Z" />
@@ -110,7 +129,7 @@ export function CodeExample({
             title="Open standalone"
             size="small"
             as="a"
-            href={iframeUrl}
+            href={iframeUrl(activeExample)}
             target="_blank"
             icon={
               <svg
@@ -135,7 +154,10 @@ export function CodeExample({
 
       {/* Code */}
       {showCode && (
-        <Code code={example.exampleSourceNeat} id={example.componentName + example.exampleName} />
+        <Code
+          code={activeExample.exampleSourceNeat}
+          id={activeExample.componentName + activeExample.exampleName}
+        />
       )}
     </div>
   );
