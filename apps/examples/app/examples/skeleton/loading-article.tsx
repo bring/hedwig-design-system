@@ -7,7 +7,7 @@ function Example() {
         A title is loading
       </Skeleton>
       <Skeleton variant="rectangle">
-        <figure style={{ height: 300, aspectRatio: 16 / 9 }} />
+        <figure style={{ height: 200, aspectRatio: 16 / 9 }} />
       </Skeleton>
       <Skeleton variant="text" as="h2">
         A subtitle with some more text is loading

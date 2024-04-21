@@ -36,6 +36,7 @@ export function CodeExample({
   defaultShowCode?: boolean;
   shouldPreload?: boolean;
 }) {
+  if (!allExamples) allExamples = [activeExample];
   const [search] = useSearchParams();
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [showCode, setShowCode] = useState(defaultShowCode);
@@ -54,8 +55,6 @@ export function CodeExample({
     return `${example.urlPath}?${iframeViewOptions.toString()}`;
   }
 
-  if (!allExamples) allExamples = [activeExample];
-
   return (
     <div className={styles.codeExample}>
       {/* Description */}
@@ -69,10 +68,15 @@ export function CodeExample({
       {/* Iframed demo */}
       <div>
         {allExamples.map(function Iframe(example) {
+          const isActive = example.exampleName === activeExample.exampleName;
           const src = iframeUrl(example);
 
           // Set height based on content after it has been loaded
+          const [hasLoaded, setHasLoaded] = useState(false);
+          const [hasResized, setHasResized] = useState(false);
           const [height, setHeight] = useState(300);
+
+          // Register loaded
           useEffect(() => {
             function receiveMessage(event: MessageEvent) {
               if (event.data !== "example-loaded" || height !== 300) return;
@@ -81,8 +85,7 @@ export function CodeExample({
               const sourcePathAndSearch =
                 sourceWindow?.location.pathname + (sourceWindow?.location.search || "?");
               if (sourcePathAndSearch === src) {
-                const scrollHeight = sourceWindow.document.body.scrollHeight;
-                setHeight(Math.min(Math.max(scrollHeight, 300), 900));
+                setHasLoaded(true);
               }
             }
             window.addEventListener("message", receiveMessage, false);
@@ -92,7 +95,17 @@ export function CodeExample({
             // eslint-disable-next-line react-hooks/exhaustive-deps -- I know better
           }, [src]);
 
-          const isActive = example.exampleName === activeExample.exampleName;
+          // Resize iframe after it's been fully loaded (react rendered)
+          useEffect(() => {
+            if (!isActive || !hasLoaded || hasResized) return;
+            if (!iframeRef.current) return;
+            const scrollHeight = iframeRef.current.contentWindow?.document.body.scrollHeight;
+            if (scrollHeight) {
+              setHasResized(true);
+              setHeight(Math.min(Math.max(scrollHeight, 300), 900));
+            }
+          }, [isActive, hasLoaded, hasResized]);
+
           return (
             <iframe
               key={example.exampleName}
