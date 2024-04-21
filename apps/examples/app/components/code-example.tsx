@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { getHighlighter } from "shiki";
 import "@postenbring/hedwig-css";
 
@@ -68,19 +68,42 @@ export function CodeExample({
 
       {/* Iframed demo */}
       <div>
-        {allExamples.map((example) => {
+        {allExamples.map(function Iframe(example) {
+          const src = iframeUrl(example);
+
+          // Set height based on content after it has been loaded
+          const [height, setHeight] = useState(300);
+          useEffect(() => {
+            function receiveMessage(event: MessageEvent) {
+              if (event.data !== "example-loaded" || height !== 300) return;
+
+              const sourceWindow = event.source as Window;
+              const sourcePathAndSearch =
+                sourceWindow?.location.pathname + (sourceWindow?.location.search || "?");
+              if (sourcePathAndSearch === src) {
+                const scrollHeight = sourceWindow.document.body.scrollHeight;
+                setHeight(Math.min(Math.max(scrollHeight, 300), 900));
+              }
+            }
+            window.addEventListener("message", receiveMessage, false);
+            return () => {
+              window.removeEventListener("message", receiveMessage);
+            };
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- I know better
+          }, [src]);
+
           const isActive = example.exampleName === activeExample.exampleName;
           return (
             <iframe
               key={example.exampleName}
               title={`Example ${activeExample.componentName}/${activeExample.exampleName}`}
-              src={iframeUrl(example)}
+              src={src}
               ref={isActive ? iframeRef : null}
               loading={shouldPreload ? "eager" : "lazy"}
               style={{
                 display: isActive ? "block" : "none",
               }}
-              // TODO: Dynamic height between 300-900 based on content
+              height={height}
             />
           );
         })}
