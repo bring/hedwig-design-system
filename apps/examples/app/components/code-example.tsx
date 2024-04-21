@@ -114,13 +114,26 @@ export function CodeExample({
             };
           }, [isActive, hasLoaded, hasResized]);
 
+          // Bug in Firefox causes flickering when switching between "lazy" and "eager" loading
+          // Chrome and safari does not have this problem
+          // Solution is to only flip from "lazy" to "eager" once
+          const [loading, setLoading] = useState<"eager" | "lazy">(
+            shouldPreload ? "eager" : "lazy",
+          );
+          useEffect(() => {
+            if (shouldPreload && loading === "lazy") {
+              setLoading("eager");
+            }
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- I know better
+          }, [shouldPreload]);
+
           return (
             <iframe
               key={example.exampleName}
               title={`Example ${activeExample.componentName}/${activeExample.exampleName}`}
               src={src}
               ref={isActive ? iframeRef : null}
-              loading={shouldPreload ? "eager" : "lazy"}
+              loading={loading}
               style={{
                 display: isActive ? "block" : "none",
               }}
