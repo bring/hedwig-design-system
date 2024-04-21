@@ -97,13 +97,21 @@ export function CodeExample({
 
           // Resize iframe after it's been fully loaded (react rendered)
           useEffect(() => {
-            if (!isActive || !hasLoaded || hasResized) return;
-            if (!iframeRef.current) return;
-            const scrollHeight = iframeRef.current.contentWindow?.document.body.scrollHeight;
-            if (scrollHeight) {
-              setHasResized(true);
-              setHeight(Math.min(Math.max(scrollHeight, 300), 900));
+            if (!hasResized) resize();
+            function resize() {
+              if (!isActive || !hasLoaded) return;
+              const scrollHeight = iframeRef.current?.contentWindow?.document.body.scrollHeight;
+              if (scrollHeight) {
+                setHasResized(true);
+                setHeight(Math.min(Math.max(scrollHeight, 300), 900));
+              }
             }
+
+            // Content of examples might change on window resizing
+            window.addEventListener("resize", resize);
+            return () => {
+              window.removeEventListener("resize", resize);
+            };
           }, [isActive, hasLoaded, hasResized]);
 
           return (
