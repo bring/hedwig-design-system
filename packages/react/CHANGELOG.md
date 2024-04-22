@@ -1,5 +1,28 @@
 # @postenbring/hedwig-react
 
+## 0.0.72
+
+### Patch Changes
+
+- d15f6f8: :recycle: auto-animate-height: use transitionend event to handle callbacks after transition is done
+- 294d77b: :label: allow non `li` react types in the `Breadcrumbs` component
+
+  Needed when using abstractions upon `li` or doing conditional rendering
+
+- 6cb8ac8: :sparkles: HelpText component
+
+  Implementation inspired by the HelpText components from [NAV's Aksel](https://aksel.nav.no/komponenter/core/helptext) and [Digidir's Designsystemet](https://storybook.designsystemet.no/?path=/docs/komponenter-helptext--docs)
+
+  And behaviour from NRK's help text component found in articles, e.g. [this one](https://www.nrk.no/tromsogfinnmark/legger-frem-dokumentasjon-som-skal-vise-kommunistisk-kupp-i-rod-ungdom-1.16845270)
+
+- e361dc3: :adhesive_bandage: description-list: fix missing forwardRef
+- 3887615: :fire: remove deprecated fill value `outlined` in favour of `outline`
+- 2a66e3e: :truck: rename `Breadcrumb` folder to `Breadcrumbs` to match component name
+- Updated dependencies [b0da455]
+- Updated dependencies [6cb8ac8]
+- Updated dependencies [2a66e3e]
+  - @postenbring/hedwig-css@0.0.63
+
 ## 0.0.71
 
 ### Patch Changes
