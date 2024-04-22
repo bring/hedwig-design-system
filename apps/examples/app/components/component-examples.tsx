@@ -4,6 +4,7 @@ import { CodeExample } from "./code-example";
 import { Example, examplesByComponent } from "../examples";
 import { HStack, VStack } from "@postenbring/hedwig-react";
 import { useState } from "react";
+import { PrefetchBehavior, usePrefetchBehavior } from "./use-prefetch-behaviour";
 
 export function Examples({ name }: { name: string }) {
   if (!(name in examplesByComponent)) {
@@ -16,17 +17,23 @@ export function Examples({ name }: { name: string }) {
 export function ComponentCodeExamples({
   examples,
   defaultShowCode,
+  preload = "none",
 }: {
   examples: Example[];
   defaultShowCode?: boolean;
+  preload?: PrefetchBehavior;
 }) {
   const [search] = useSearchParams();
   const [activeExample, setActiveExample] = useState(
     () => examples.find((example) => example.exampleName === search.get("example")) ?? examples[0],
   );
+  const [shouldPreload, preloadRef, preloadHandlers] = usePrefetchBehavior<HTMLDivElement>(
+    preload,
+    {},
+  );
 
   return (
-    <VStack gap="16">
+    <VStack gap="16" ref={preloadRef} {...preloadHandlers}>
       <HStack wrap gap="8">
         {examples?.map((example) => (
           <Chip
@@ -55,12 +62,17 @@ export function ComponentCodeExamples({
         ))}
       </HStack>
 
-      <CodeExample example={activeExample} defaultShowCode={defaultShowCode} />
+      <CodeExample
+        activeExample={activeExample}
+        defaultShowCode={defaultShowCode}
+        allExamples={examples}
+        shouldPreload={shouldPreload}
+      />
     </VStack>
   );
 }
 
 export function kebabCaseToFirstLetterUpperCase(kebabCase: string) {
   const s = kebabCase.replaceAll("-", " ");
-  return s[0].toUpperCase() + s.slice(1);
+  return (s.at(0)?.toUpperCase() ?? "") + s.slice(1);
 }

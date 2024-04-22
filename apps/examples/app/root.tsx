@@ -12,6 +12,7 @@ import postenFavicon from "./assets/posten-favicon.png?url";
 
 import styles from "./root.module.css";
 import { isPathInExamples } from "./examples";
+import { useEffect } from "react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [search] = useSearchParams();
@@ -83,6 +84,12 @@ export default function App() {
 
   const isExample = isPathInExamples(location.pathname);
   const viewOptions = parseViewOptions(location.search, isExample);
+
+  useEffect(() => {
+    if (isExample) {
+      window.parent.postMessage("example-loaded", "*");
+    }
+  }, [isExample]);
 
   return (
     <div

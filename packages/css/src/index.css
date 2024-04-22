@@ -8,7 +8,7 @@
 @import url("accordion/accordion.css");
 @import url("badge/badge.css");
 @import url("box/box.css");
-@import url("breadcrumb/breadcrumb.css");
+@import url("breadcrumbs/breadcrumbs.css");
 @import url("button/button.css");
 @import url("card/card.css");
 @import url("description-list/description-list.css");
@@ -37,6 +37,7 @@
 @import url("spacing/spacing.css");
 @import url("step-indicator/step-indicator.css");
 @import url("styled-html/styled-html.css");
+@import url("table/table.css");
 @import url("tabs/tabs.css");
 @import url("text/text.css");
 @import url("warning-banner/warning-banner.css");

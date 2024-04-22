@@ -1,7 +1,7 @@
 export * from "./accordion";
 export * from "./badge";
 export * from "./box";
-export * from "./breadcrumb";
+export * from "./breadcrumbs";
 export * from "./button";
 export * from "./card";
 export * from "./description-list";
@@ -18,6 +18,7 @@ export * from "./show-more";
 export * from "./skeleton";
 export * from "./step-indicator";
 export * from "./styled-html";
+export * from "./table";
 export * from "./tabs";
 export * from "./text";
 export * from "./utilities";

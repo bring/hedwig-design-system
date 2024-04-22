@@ -15,6 +15,7 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
+  index: 0,
   description: "Use as a supplement to css package",
   layout: "centered",
 };

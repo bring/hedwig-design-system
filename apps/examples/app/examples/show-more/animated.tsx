@@ -1,4 +1,4 @@
-import { AutoAnimateHeight, Box, ShowMoreButton } from "@postenbring/hedwig-react";
+import { AutoAnimateHeight, Box, Grid, ShowMoreButton } from "@postenbring/hedwig-react";
 import { useRef, useState } from "react";
 
 function Example() {
@@ -9,37 +9,37 @@ function Example() {
 
   return (
     <>
-      <AutoAnimateHeight ref={contentRef} animationDuration="quick">
-        <ul
-          style={{
-            padding: 0,
-            display: "grid",
-            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-            gap: "var(--hds-spacing-12-16)",
-          }}
-        >
-          {Array.from({ length: showCount }).map((_, i) => (
-            <li key={i} style={{ listStyle: "none" }}>
-              <Box>#{i}</Box>
-            </li>
-          ))}
-        </ul>
+      <AutoAnimateHeight
+        className="hds-mt-24"
+        ref={contentRef}
+        animationDuration="quick"
+        // Ensure the content is still in view after the amount shown is reduced
+        onTransitionEnd={() => {
+          contentRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }}
+      >
+        <Grid asChild span={{ small: 4 }} gap="12-16">
+          <ul
+            style={{
+              margin: 0,
+              padding: 0,
+              listStyle: "none",
+            }}
+          >
+            {Array.from({ length: showCount }).map((_, i) => (
+              <li key={i}>
+                <Box>#{i}</Box>
+              </li>
+            ))}
+          </ul>
+        </Grid>
       </AutoAnimateHeight>
 
       <ShowMoreButton
         className="hds-mt-12-16"
         variant="show-more-show-less"
         expanded={expanded}
-        onClick={() => {
-          setExpanded((prev) => !prev);
-
-          // Ensure the content is still in view after the amount shown is reduced
-          if (expanded) {
-            setTimeout(() => {
-              contentRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-            }, 130 + 50); // Wait for the animation to finish
-          }
-        }}
+        onClick={() => setExpanded((prev) => !prev)}
         text={expanded ? "Show fewer boxes" : "Show more boxes"}
       />
 

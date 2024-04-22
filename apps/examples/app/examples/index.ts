@@ -23,38 +23,40 @@ function parseExampleFilename(fileName: string): {
   return { groupName, componentName, exampleName };
 }
 
-export const examples = Object.keys(modules).map((filePath) => {
-  const { groupName, componentName, exampleName } = parseExampleFilename(filePath);
+export const examples = Object.keys(modules)
+  .map((filePath) => {
+    const { groupName, componentName, exampleName } = parseExampleFilename(filePath);
 
-  const urlPath = `${import.meta.env.BASE_URL}${groupName ? `${groupName}/` : ""}${componentName}/${exampleName}`;
-  const exampleSource = modules[filePath] as string;
+    const urlPath = `${import.meta.env.BASE_URL}${groupName ? `${groupName}/` : ""}${componentName}/${exampleName}`;
+    const exampleSource = modules[filePath] as string;
 
-  // Used in the code preview
-  const exampleSourceNeat = exampleSource.replace(/\s*export default \w+;[\s\S]*/, "");
+    // Used in the code preview
+    const exampleSourceNeat = exampleSource.replace(/\s*export default \w+;[\s\S]*/, "");
 
-  // Used for Code Sandbox. Includes the default export
-  const exampleSourceComplete = exampleSource.replace(/(\s*export default \w+;)[\s\S]*/, "$1");
+    // Used for Code Sandbox. Includes the default export
+    const exampleSourceComplete = exampleSource.replace(/(\s*export default \w+;)[\s\S]*/, "$1");
 
-  const configSource = exampleSource.match(/export const config.+({[\s\S]+?});/)?.[1];
+    const configSource = exampleSource.match(/export const config.+({[\s\S]+?});/)?.[1];
 
-  // NOTE: Using `eval` here is safe because it just executes the static code defined in the `examples` folder.
-  //
-  // This is a exception to make the config more convenient to write. Do not use `eval` if you can avoid it.
-  // Especially when the input can come from an untrusted source, like user input.
-  const config = eval(`(${configSource})`) as ExampleConfig | undefined;
+    // NOTE: Using `eval` here is safe because it just executes the static code defined in the `examples` folder.
+    //
+    // This is a exception to make the config more convenient to write. Do not use `eval` if you can avoid it.
+    // Especially when the input can come from an untrusted source, like user input.
+    const config = eval(`(${configSource})`) as ExampleConfig | undefined;
 
-  return {
-    filePath,
-    urlPath,
-    groupName,
-    componentName,
-    exampleName,
-    exampleSource,
-    exampleSourceNeat,
-    exampleSourceComplete,
-    config,
-  };
-});
+    return {
+      filePath,
+      urlPath,
+      groupName,
+      componentName,
+      exampleName,
+      exampleSource,
+      exampleSourceNeat,
+      exampleSourceComplete,
+      config,
+    };
+  })
+  .sort((a, b) => a.componentName.localeCompare(b.componentName));
 
 export const examplesByComponent = examples.reduce(
   (acc, example) => {

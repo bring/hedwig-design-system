@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactElement, ReactNode } from "react";
+import { forwardRef, type HTMLAttributes, type ReactElement, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface BreadcrumbsProps extends HTMLAttributes<HTMLOListElement> {
@@ -33,14 +33,15 @@ export interface BreadcrumbsProps extends HTMLAttributes<HTMLOListElement> {
  * </nav>
  * ```
  */
-export function Breadcrumbs({ olProps, children, ...rest }: BreadcrumbsProps) {
-  return (
-    <nav {...rest}>
-      <ol {...olProps} className={clsx("hds-breadcrumbs", olProps?.className as undefined)}>
-        {children}
-      </ol>
-    </nav>
-  );
-}
-
+export const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
+  ({ olProps, children, ...rest }, ref) => {
+    return (
+      <nav ref={ref} {...rest}>
+        <ol {...olProps} className={clsx("hds-breadcrumbs", olProps?.className as undefined)}>
+          {children}
+        </ol>
+      </nav>
+    );
+  },
+);
 Breadcrumbs.displayName = "Breadcrumbs";

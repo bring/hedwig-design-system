@@ -1,12 +1,5 @@
 import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
-import { flushSync } from "react-dom";
-import type { OverridableComponent } from "../utils";
-
-const animationDurationToValue = {
-  quick: 100,
-  normal: 300,
-  slow: 700,
-};
+import { useMergeRefs, type OverridableComponent } from "../utils";
 
 export interface AutoAnimateHeightProps {
   /**
@@ -18,6 +11,13 @@ export interface AutoAnimateHeightProps {
    * default is "quick"
    */
   animationDuration?: "quick" | "normal" | "slow";
+
+  /**
+   * Callback fired when animiation transition ends
+   * Use this to do effects after resizing is done, e.g. scrolling to the element
+   * using `element.scrollIntoView()`
+   */
+  onTransitionEnd?: () => void;
 
   /**
    * Which hedwig easing function to use, default is "normal"
@@ -43,52 +43,81 @@ export const AutoAnimateHeight: OverridableComponent<AutoAnimateHeightProps, HTM
         style,
         animationDuration = "quick",
         animationEasing = "normal",
+        onTransitionEnd,
         ...rest
       },
       ref,
     ) => {
-      const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+      const rootRef = useRef<HTMLDivElement>(null);
+      const mergedRef = useMergeRefs([rootRef, ref]);
       const measurementRef = useRef<HTMLDivElement>(null);
-      const [height, setHeight] = useState<number | undefined>(undefined);
+      const [height, setHeight] = useState<{ height: number; shouldAnimate: boolean } | undefined>(
+        undefined,
+      );
       const [clonedChildren, setClonedChildren] = useState<React.ReactNode>(() =>
         cloneElement(<>{children}</>, {}),
       );
-      useEffect(() => {
-        if (measurementRef.current) {
-          const { height: newHeight } = measurementRef.current.getBoundingClientRect();
 
-          if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-          }
-          if (newHeight < (height ?? 0)) {
-            // If the children are shrinking, hold off on replacing until the animation is done
-            // This way we don't get a sudden flash of empty content
-            setTimeout(() => {
-              flushSync(() => {
-                setHeight(newHeight);
-              });
-              timeoutRef.current = setTimeout(() => {
-                setClonedChildren(cloneElement(<>{children}</>, {}));
-              }, animationDurationToValue[animationDuration]);
-            });
-          } else {
-            setHeight(newHeight);
-            setClonedChildren(cloneElement(<>{children}</>, {}));
-          }
+      useEffect(() => {
+        if (!rootRef.current) return;
+        if (!measurementRef.current) return;
+        if (document.body.scrollHeight === 0) return;
+        const currentMeasurement = measurementRef.current;
+        const { height: newHeight } = currentMeasurement.getBoundingClientRect();
+
+        // Listen for resize events on the measurement element
+        // Keep the children in sync with the height
+        // But don't animate it.
+        let previouslyObservedHeight = newHeight;
+        const resizeObserver = new ResizeObserver(() => {
+          const { height: resizedHeight } = currentMeasurement.getBoundingClientRect();
+          if (resizedHeight === previouslyObservedHeight) return;
+          previouslyObservedHeight = resizedHeight;
+          setHeight({ height: resizedHeight, shouldAnimate: false });
+        });
+        resizeObserver.observe(currentMeasurement); // This is cleaned up down below in the return functions
+
+        // Set the new height when children changes
+        setHeight({ height: newHeight, shouldAnimate: true });
+
+        // Update children
+        const nextClonedChildren = cloneElement(<>{children}</>, {});
+
+        // When increasing in height update immediately so the new content is shown during the animation
+        if (newHeight >= (height?.height ?? 0)) {
+          setClonedChildren(nextClonedChildren);
+          return () => {
+            resizeObserver.disconnect();
+          };
         }
+
+        // When decreasing in height, wait until the animation is done so that we don't get a sudden flash of empty content
+        const currentRoot = rootRef.current;
+        function onTransitionEndHandler(e: TransitionEvent) {
+          if (e.propertyName !== "height") return;
+          setClonedChildren(nextClonedChildren);
+        }
+        currentRoot.addEventListener("transitionend", onTransitionEndHandler);
+        return () => {
+          resizeObserver.disconnect();
+          currentRoot.removeEventListener("transitionend", onTransitionEndHandler);
+        };
+
         // eslint-disable-next-line react-hooks/exhaustive-deps -- I know better
       }, [children]);
 
       return (
         <Component
-          ref={ref}
+          ref={mergedRef}
+          onTransitionEnd={onTransitionEnd}
           style={{
             position: "relative",
             overflow: "hidden",
-            height,
-            transitionProperty: "height",
+            height: height?.height ?? measurementRef.current?.getBoundingClientRect().height,
+            transitionProperty: height?.shouldAnimate ? "height" : "none",
             transitionDuration: `var(--hds-micro-animation-duration-${animationDuration})`,
             transitionTimingFunction: `var(--hds-micro-animation-easing-${animationEasing})`,
+            willChange: "height",
             ...style,
           }}
           {...rest}

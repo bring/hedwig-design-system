@@ -33,7 +33,7 @@ export default function Component() {
 
         <p>
           Primary buttons should be used for all primary call-to-actions and main interactions, e.g.
-          confirmations, in our services. In case of multiple click options use the outlined version
+          confirmations, in our services. In case of multiple click options use the outline version
           for the other option(s).
         </p>
       </StyledHtml>
