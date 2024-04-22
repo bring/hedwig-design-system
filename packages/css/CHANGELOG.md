@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.64
+
+### Patch Changes
+
+- f79bce1: :lipstick: body.css: add some reset's/overrides for some more html elements
+
+  hedwig legacy also sets these, so we need to set them to able to live side-by-side hedwig legacy for some time
+
 ## 0.0.63
 
 ### Patch Changes

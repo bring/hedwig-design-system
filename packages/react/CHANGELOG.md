@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.73
+
+### Patch Changes
+
+- befdf94: :wrench: update HelpText api
+- Updated dependencies [f79bce1]
+  - @postenbring/hedwig-css@0.0.64
+
 ## 0.0.72
 
 ### Patch Changes
