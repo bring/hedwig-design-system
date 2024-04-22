@@ -10,21 +10,34 @@ function Example() {
         <dl>
           <HStack justify="space-between">
             <dt>
-              <HelpText word="Toll (10,7 %)">Toll</HelpText>
+              <HelpText helpText="Toll er en avgift på importerte varer som beløper seg til 10,7 % av vareverdien.">
+                Toll (10,7 %)
+              </HelpText>
             </dt>
             <dd>62,58 NOK</dd>
           </HStack>
 
           <HStack justify="space-between">
             <dt>
-              <HelpText word="Mva (25 %)">Mva (25 %)</HelpText>
+              <HelpText
+                helpText="Merverdiavgift (MVA) er en skatt på verdien som legges til varer og tjenester i
+                Norge med en sats på 25 %."
+              >
+                Mva (25 %)
+              </HelpText>
             </dt>
             <dd>161,87 NOK</dd>
           </HStack>
 
           <HStack justify="space-between">
             <dt>
-              <HelpText word="Forenklet fortolling">Forenklet fortolling</HelpText>
+              <HelpText
+                helpText="Forenklet fortolling er en enkel og rask tollklarering prosess for importerte varer.
+                Den reduserer byråkrati og tid, og sparer importører både penger og administrativt
+                arbeid."
+              >
+                Forenklet fortolling
+              </HelpText>
             </dt>
             <dd>149,00 NOK</dd>
           </HStack>

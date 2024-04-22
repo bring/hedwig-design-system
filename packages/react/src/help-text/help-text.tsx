@@ -7,14 +7,14 @@ interface HelpTextProps extends React.HTMLAttributes<HTMLButtonElement> {
   className?: string;
 
   /**
-   * The content of the help text
+   * The content of the help text, often a word or phrase that could use some explanation
    */
   children: React.ReactNode;
 
   /**
-   * The word that should be clickable to show the help text
+   * The help text that will be shown when the user clicks the trigger
    */
-  word?: React.ReactNode;
+  helpText: React.ReactNode;
 
   /**
    * The title of the help text. Used by screen readers and if the user hover over the help text
@@ -44,10 +44,23 @@ interface HelpTextProps extends React.HTMLAttributes<HTMLButtonElement> {
 /**
  * Show a help text for a word or phrase when clicked
  *
- * Useful for providing explanations for domain-specific terms or acronyms
+ * Useful for providing explanations for domain-specific terms, acronyms or phrases that could do with further elaboration
+ *
+ * **Usage**
+ * ```tsx
+ * <p>
+ *   En annen avgjørende faktor for avgifter er om nettbutikken er registrert i{" "}
+ *   <HelpText helpText={`VOEC er en forkortelse for "VAT on E-commerce" (mva. på e-handel).`}>
+ *    VOEC
+ *   </HelpText>
+ * </p>
+ * ```
  */
 export const HelpText = forwardRef<HTMLButtonElement, HelpTextProps>(
-  ({ children, className, word, title, side = "top", align = "start", boxProps, ...rest }, ref) => {
+  (
+    { children, className, helpText, title, side = "top", align = "start", boxProps, ...rest },
+    ref,
+  ) => {
     return (
       // NOTE: Using radix's [Popover component](https://www.radix-ui.com/primitives/docs/components/popover)
       // In the future we can use the native popover api, but as of writing, though all browsers support it
@@ -62,7 +75,7 @@ export const HelpText = forwardRef<HTMLButtonElement, HelpTextProps>(
             type="button"
             {...rest}
           >
-            {word}
+            {children}
           </button>
         </Popover.Trigger>
         <Popover.Portal>
@@ -74,7 +87,7 @@ export const HelpText = forwardRef<HTMLButtonElement, HelpTextProps>(
               <Popover.Close asChild>
                 <Box.CloseButton />
               </Popover.Close>
-              {children}
+              {helpText}
             </Box>
           </Popover.Content>
         </Popover.Portal>

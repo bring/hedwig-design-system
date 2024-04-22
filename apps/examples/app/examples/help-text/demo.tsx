@@ -4,8 +4,8 @@ function Example() {
   return (
     <p>
       En annen avgjørende faktor for avgifter er om nettbutikken er registrert i{" "}
-      <HelpText word="VOEC">
-        VOEC er en forkortelse for &quot;VAT on E-commerce&quot; (mva. på e-handel).
+      <HelpText helpText={`VOEC er en forkortelse for "VAT on E-commerce" (mva. på e-handel).`}>
+        VOEC
       </HelpText>
     </p>
   );
