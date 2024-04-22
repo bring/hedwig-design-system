@@ -59,3 +59,21 @@ h6 {
   padding: 0;
   margin: 0;
 }
+
+/**
+ * Override hedwig legacy font-family
+ */
+input,
+textarea,
+select,
+button {
+  font-family: var(--hds-fonts-posten-sans);
+  font-size: var(--hds-font-size-body);
+  line-height: var(--hds-line-height-body);
+}
+
+b,
+strong {
+  font-family: var(--hds-fonts-posten-sans);
+  font-weight: 500;
+}
