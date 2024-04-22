@@ -1,5 +1,20 @@
 # @postenbring/hedwig-css
 
+## 0.0.63
+
+### Patch Changes
+
+- b0da455: :adhesive_bandage: stack: fix missing initial justify
+- 6cb8ac8: :sparkles: HelpText component
+
+  Implementation inspired by the HelpText components from [NAV's Aksel](https://aksel.nav.no/komponenter/core/helptext) and [Digidir's Designsystemet](https://storybook.designsystemet.no/?path=/docs/komponenter-helptext--docs)
+
+  And behaviour from NRK's help text component found in articles, e.g. [this one](https://www.nrk.no/tromsogfinnmark/legger-frem-dokumentasjon-som-skal-vise-kommunistisk-kupp-i-rod-ungdom-1.16845270)
+
+- 2a66e3e: :truck: rename `Breadcrumb` folder to `Breadcrumbs` to match component name
+- Updated dependencies [3956336]
+  - @postenbring/hedwig-tokens@0.0.13
+
 ## 0.0.62
 
 ### Patch Changes

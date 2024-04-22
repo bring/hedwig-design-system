@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.13
+
+### Patch Changes
+
+- 3956336: :wrench: add default animation duration and ease function for the tailwind config
+
 ## 0.0.12
 
 ### Patch Changes
