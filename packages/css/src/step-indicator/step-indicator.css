@@ -27,7 +27,7 @@
       }
 
       &[data-state="active"] {
-        background-color: var(--hds-colors-dark);
+        background-color: var(--hds-colors-signature);
       }
 
       &[data-state="next"] {
