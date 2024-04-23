@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.65
+
+### Patch Changes
+
+- ec0c2b1: :lipstick: step-indicator: Set active step color to `signature`. This matches the posten app and is less confusing when there are less steps.
+
 ## 0.0.64
 
 ### Patch Changes
