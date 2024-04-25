@@ -1,6 +1,7 @@
 .hds-input-group {
   --hds-input-group-background-color: var(--hds-ui-colors-light-grey-fill);
 
+  /* Modifier: White */
   &.hds-input-group--white {
     --hds-input-group-background-color: var(--hds-ui-colors-white);
   }
@@ -9,6 +10,7 @@
   flex-flow: column nowrap;
   gap: var(--hds-spacing-4);
 
+  /* State: Error */
   &.hds-input-group--error {
     .hds-input-group__input-wrapper,
     .hds-input-group__input-wrapper:focus-within,
@@ -19,11 +21,13 @@
     .hds-input-group__input-wrapper:has(.hds-input-group__input:disabled),
     .hds-input-group__input-wrapper[data-disabled="true"] /* Fallback for :has */ {
       border-bottom: var(--hds-stroke-thick) solid var(--hds-ui-colors-warning-yellow);
+      margin-bottom: calc(-1 * var(--hds-stroke-default));
     }
   }
 
+  /* State: Focus */
   &:focus-within .hds-input-group__label {
-    color: var(--hds-colors-darker);
+    color: var(--hds-colors-dark);
   }
 
   & .hds-input-group__label {
@@ -32,6 +36,7 @@
     font: var(--hds-typography-caption);
   }
 
+  /* State: Read only, no focus */
   &:has(
       input.hds-input-group__input:read-only,
       textarea.hds-input-group__input:read-only,
@@ -47,18 +52,24 @@
     flex-flow: row nowrap;
     width: 100%;
     border: var(--hds-stroke-default) solid transparent;
+    border-bottom-color: var(--hds-ui-colors-dark-grey);
     border-radius: var(--hds-border-radius);
-    transition:
-      border var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal),
-      margin var(--hds-micro-animation-duration-quick) var(--hds-micro-animation-easing-normal);
+    transition-duration: var(--hds-micro-animation-duration-quick);
+    transition-timing-function: var(--hds-micro-animation-easing-normal);
+    transition-property: border, margin;
     box-sizing: border-box;
 
+    /* State: Focus */
     &:focus-within,
     &:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only):focus-within,
     &[data-readonly="true"]:focus-within /* Fallback for :has */ {
-      border-bottom: var(--hds-stroke-default) solid var(--hds-colors-darker);
+      border-bottom: var(--hds-stroke-thick) solid var(--hds-colors-dark);
+
+      /* Since the border size increases when focused, we offset the added height by decreasing the margin */
+      margin-bottom: calc(-1 * var(--hds-stroke-default));
     }
 
+    /* State: Read only */
     &:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only),
     &[data-readonly="true"] /* Fallback for :has */,
     &:has(.hds-input-group__input:disabled),
