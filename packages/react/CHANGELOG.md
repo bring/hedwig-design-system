@@ -1,5 +1,18 @@
 # @postenbring/hedwig-react
 
+## 0.0.75
+
+### Patch Changes
+
+- 0a13d64: :zap::heavy_minus_sign: navbar: remove `focus-trap-react` in favor of small inline utility using the `inert` property
+
+  the `focus-trap-react` package increased the bundle by whopping `25kb` gzipped. Good ridance...
+
+  `inert` has 96% coverage in norway as of writing, more than good enough.
+
+- Updated dependencies [5da92eb]
+  - @postenbring/hedwig-css@0.0.66
+
 ## 0.0.74
 
 ### Patch Changes

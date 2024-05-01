@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.66
+
+### Patch Changes
+
+- 5da92eb: :wheelchair: increase contrast on input focused state
+
 ## 0.0.65
 
 ### Patch Changes

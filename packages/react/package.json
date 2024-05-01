@@ -1,6 +1,6 @@
 {
   "name": "@postenbring/hedwig-react",
-  "version": "0.0.74",
+  "version": "0.0.75",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
