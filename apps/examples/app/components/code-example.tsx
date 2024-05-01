@@ -1,5 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { getHighlighter } from "shiki";
+import { type ThemeRegistrationRaw, getHighlighterCore } from "shiki/core";
+import langsTsx from "shiki/langs/tsx.mjs";
+import getWasm from "shiki/wasm";
+import vesper from "shiki/themes/vesper.mjs";
+import poimandres from "shiki/themes/poimandres.mjs";
+
 import "@postenbring/hedwig-css";
 
 import styles from "./code-example.module.css";
@@ -9,17 +14,15 @@ import { SecondaryButton, StyledHtml, type ButtonProps } from "@postenbring/hedw
 import { openExampleInCodeSandbox } from "./codesandbox";
 import { useSearchParams } from "@remix-run/react";
 
-const codeThemes: Record<
-  "posten" | "bring",
-  Parameters<typeof getHighlighter>["0"]["themes"][number]
-> = {
-  posten: "vesper",
-  bring: "poimandres",
+const codeThemes: Record<"posten" | "bring", ThemeRegistrationRaw> = {
+  posten: vesper,
+  bring: poimandres,
 } as const;
 
-const highlighter = await getHighlighter({
+const highlighter = await getHighlighterCore({
   themes: [codeThemes.posten, codeThemes.bring],
-  langs: ["tsx"],
+  langs: [langsTsx],
+  loadWasm: getWasm,
 });
 
 /**
@@ -250,8 +253,6 @@ function Code({ code, id }: { code: string; id: string }) {
   const formattedCode = useMemo(() => {
     return highlighter.codeToHtml(code, {
       lang: "tsx",
-
-      // @ts-expect-error -- It's ok, checked above
       theme: activeTheme === "bring" ? codeThemes.bring : codeThemes.posten,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only run once
