@@ -15,8 +15,8 @@
     "@postenbring/hedwig-css": "workspace:*",
     "@postenbring/hedwig-react": "workspace:*",
     "@postenbring/hedwig-tokens": "workspace:*",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "8.0.9",
@@ -30,9 +30,9 @@
     "@vitejs/plugin-react": "4.2.1",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
-    "serve": "14.2.2",
+    "serve": "14.2.3",
     "storybook": "8.0.9",
     "typescript": "5.4.5",
-    "vite": "5.2.7"
+    "vite": "5.2.10"
   }
 }
