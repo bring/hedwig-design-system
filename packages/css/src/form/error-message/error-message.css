@@ -2,7 +2,7 @@
 
 .hds-error-message {
   font: var(--hds-typography-caption-title);
-  color: var(--hds-ui-colors-dark-grey);
+  color: var(--hds-ui-colors-black);
   padding: var(--hds-spacing-8) 0 0 var(--hds-spacing-40);
 
   /* Avoid spacing when no errors are active, but keep the element always in DOM so `aria-live` works */

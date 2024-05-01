@@ -13,14 +13,17 @@
   /* State: Error */
   &.hds-input-group--error {
     .hds-input-group__input-wrapper,
-    .hds-input-group__input-wrapper:focus-within,
     .hds-input-group__input-wrapper:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only),
     .hds-input-group__input-wrapper[data-readonly="true"] /* Fallback for :has */,
     .hds-input-group__input-wrapper:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only):focus-within,
-    .hds-input-group__input-wrapper[data-readonly="true"]:focus-within /* Fallback for :has */,
     .hds-input-group__input-wrapper:has(.hds-input-group__input:disabled),
     .hds-input-group__input-wrapper[data-disabled="true"] /* Fallback for :has */ {
-      border-bottom: var(--hds-stroke-thick) solid var(--hds-ui-colors-warning-yellow);
+      background-color: var(--hds-ui-colors-warning-yellow-light-fill);
+
+      &:not(:focus-within) {
+        border-bottom: var(--hds-stroke-thick) solid var(--hds-ui-colors-warning-yellow);
+      }
+
       margin-bottom: calc(-1 * var(--hds-stroke-default));
     }
   }
@@ -51,12 +54,13 @@
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    border: var(--hds-stroke-default) solid transparent;
-    border-bottom-color: var(--hds-ui-colors-dark-grey);
-    border-radius: var(--hds-border-radius);
+    border: 0;
+    border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-dark-grey);
+    border-top-left-radius: var(--hds-border-radius);
+    border-top-right-radius: var(--hds-border-radius);
     transition-duration: var(--hds-micro-animation-duration-quick);
     transition-timing-function: var(--hds-micro-animation-easing-normal);
-    transition-property: border, margin;
+    transition-property: border-color;
     box-sizing: border-box;
 
     /* State: Focus */
@@ -79,7 +83,7 @@
       }
 
       background-color: var(--hds-ui-colors-grey);
-      border: var(--hds-stroke-default) solid var(--hds-ui-colors-grey);
+      border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-grey);
     }
   }
 
