@@ -55,6 +55,10 @@
    * Accordions on mobile and heading sections on desktop
    */
   .hds-footer__link-sections.hds-accordion {
+    &:empty {
+      display: none;
+    }
+
     .hds-footer__link-section.hds-accordion-item {
       .hds-accordion-item-header {
         &::before {
