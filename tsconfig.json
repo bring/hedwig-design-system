@@ -1,3 +1,3 @@
 {
-  "extends": "hedwig-tsconfig/base.json"
+  "extends": "hedwig-tsconfig/react-library.json"
 }

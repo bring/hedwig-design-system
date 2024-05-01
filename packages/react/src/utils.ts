@@ -83,3 +83,47 @@ export function useHydrated() {
     () => false,
   );
 }
+
+/**
+ * Trap focus inside an element using the `inert` attribute.
+ *
+ * Adds `inert` to all siblings of the given element, and all their ancestors up to the body.
+ * Returns a cleanup function which removes the `inert` property from the elements, effectively giving focus back to rest of the document.
+ *
+ * NOTE: Does not support portals, i.e. elements outside the DOM hierarchy of the given element.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert
+ * @see https://web.dev/articles/inert
+ */
+export function focusTrap(element: HTMLElement) {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function -- NOP on focus trapping the body element
+  if (element === document.body) return () => {};
+
+  let inertElements: HTMLElement[] = [];
+  for (let el: HTMLElement | null = element; el; el = el.parentElement) {
+    if (el === document.body) break;
+
+    for (const sibling of el.parentElement?.children ?? []) {
+      if (sibling === el) continue;
+      if (!(sibling instanceof HTMLElement)) continue;
+      if (sibling.hasAttribute("inert")) continue;
+
+      sibling.setAttribute("inert", "true");
+      inertElements.push(sibling);
+    }
+  }
+
+  return () => {
+    releaseFocusTrap(inertElements);
+    inertElements = [];
+  };
+}
+
+/**
+ * Unset the `inert` attribute on all elements given
+ */
+export function releaseFocusTrap(inertElements: Iterable<HTMLElement>) {
+  for (const el of inertElements) {
+    el.removeAttribute("inert");
+  }
+}

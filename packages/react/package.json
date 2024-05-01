@@ -38,8 +38,7 @@
   "dependencies": {
     "@postenbring/hedwig-css": "workspace:*",
     "@radix-ui/react-popover": "1.0.7",
-    "@radix-ui/react-slot": "1.0.2",
-    "focus-trap-react": "10.2.3"
+    "@radix-ui/react-slot": "1.0.2"
   },
   "publishConfig": {
     "access": "public"

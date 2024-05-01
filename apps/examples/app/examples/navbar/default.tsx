@@ -52,7 +52,7 @@ function Example() {
         }}
       />
 
-      <Container as="main">
+      <Container as="main" id="container">
         {/* Some filler content */}
         {Array.from({ length: 15 }).map((_, i) => (
           <Skeleton
@@ -61,6 +61,9 @@ function Example() {
             width={i % 3 === 0 ? "100%" : `${((i % 3) + 0) * 30}%`}
           />
         ))}
+        <Link href="#some-link">
+          This link should not be targetable while the expandable menu is open
+        </Link>
       </Container>
     </>
   );

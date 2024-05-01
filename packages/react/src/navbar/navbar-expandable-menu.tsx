@@ -2,8 +2,7 @@ import React, { createContext, useContext, forwardRef, useState, useRef, useEffe
 import { createRoot } from "react-dom/client";
 import type { ClassValue } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import FocusTrap from "focus-trap-react";
-import { useHydrated, type OverridableComponent } from "../utils";
+import { focusTrap, type OverridableComponent } from "../utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
 const expandableMenuContext = createContext([
@@ -14,34 +13,40 @@ const expandableMenuContext = createContext([
 ] as const);
 export const useNavbarExpendableMenuContext = () => useContext(expandableMenuContext);
 
-/**
- * Root
- */
 export interface NavbarExpandableMenuProps {
   children: React.ReactNode;
 }
+
+/**
+ * Expandable Menu Provider
+ * Handles scroll and focus locking,
+ * as well as scrolling the user to the top of the page.
+ *
+ * If we want a sticky header in the future the scrolling should be configurable
+ */
 export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
   const [open, setOpen] = useState(false);
-  const isClientSide = useHydrated();
-  const toggleOpen = () => {
-    const nextOpenState = !open;
-    setOpen(nextOpenState);
-    if (nextOpenState) {
+  function toggleOpen() {
+    setOpen((prev) => !prev);
+  }
+
+  useEffect(() => {
+    if (open) {
       window.scrollTo(0, 0);
       document.body.classList.add(clsx("hds-navbar-scroll-lock"));
-    } else {
-      document.body.classList.remove(clsx("hds-navbar-scroll-lock"));
+      const releaseFocusTrap = focusTrap(
+        document.getElementsByClassName(clsx("hds-navbar"))[0] as HTMLElement,
+      );
+
+      return () => {
+        document.body.classList.remove(clsx("hds-navbar-scroll-lock"));
+        releaseFocusTrap();
+      };
     }
-  };
+  }, [open]);
+
   return (
     <expandableMenuContext.Provider value={[open, toggleOpen]}>
-      {open && isClientSide ? (
-        <FocusTrap
-          containerElements={[
-            document.getElementsByClassName(clsx("hds-navbar"))[0] as HTMLElement,
-          ]}
-        />
-      ) : null}
       {children}
     </expandableMenuContext.Provider>
   );
@@ -89,13 +94,7 @@ function RenderButton({
 
 /**
  * Trigger
- *
- * ## TODO
- * - [x] Hide text when on mobile
- * - [X] Open / Close icon
- * - [X] Make button have consistant width
  */
-
 export interface NavbarExpandableMenuTriggerProps
   extends Omit<React.HTMLAttributes<HTMLButtonElement>, "children"> {
   whenClosedText: React.ReactNode;

@@ -135,10 +135,9 @@ export const FormWithErrorsOnSubmit: Story = {
             e.preventDefault();
             const formData = new FormData(e.currentTarget);
             const newErrors: Record<string, string> = {};
-            // @ts-expect-error -- It works
             for (const [key, value] of formData) {
               if (!value) {
-                newErrors[key as string] = `${key as string} is required`;
+                newErrors[key] = `${key} is required`;
               }
             }
             setErrors(newErrors);
