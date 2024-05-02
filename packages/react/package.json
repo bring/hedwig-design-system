@@ -5,7 +5,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "sideEffects": [
-    "@postenbring/hedwig-css"
+    "@postenbring/hedwig-css/dist/index.css"
   ],
   "license": "MIT",
   "files": [
