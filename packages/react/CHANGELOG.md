@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.76
+
+### Patch Changes
+
+- 6ad0d21: :wrench: react: set a more explicit side-effects definition
+- Updated dependencies [1c0978b]
+  - @postenbring/hedwig-css@0.0.67
+
 ## 0.0.75
 
 ### Patch Changes
