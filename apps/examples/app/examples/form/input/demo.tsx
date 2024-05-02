@@ -24,8 +24,8 @@ function Example() {
             placeholder="At least 6 characters"
           />
           <Textarea label="Profile bio (optional)" />
-          <Select label="Preferred animal">
-            <option disabled selected value="">
+          <Select label="Preferred animal" defaultValue="">
+            <option disabled value="">
               Choose an animal
             </option>
             <option value="dog">Dog</option>
