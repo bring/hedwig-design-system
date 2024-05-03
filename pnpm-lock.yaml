@@ -106,67 +106,6 @@ importers:
         specifier: 5.2.10
         version: 5.2.10(@types/node@20.12.8)
 
-  apps/example:
-    dependencies:
-      '@postenbring/hedwig-css':
-        specifier: workspace:*
-        version: link:../../packages/css
-      '@postenbring/hedwig-react':
-        specifier: workspace:*
-        version: link:../../packages/react
-      '@postenbring/hedwig-tokens':
-        specifier: workspace:*
-        version: link:../../packages/tokens
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
-    devDependencies:
-      '@types/react':
-        specifier: ^18.3.1
-        version: 18.3.1
-      '@types/react-dom':
-        specifier: ^18.3.0
-        version: 18.3.0
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^7.8.0
-        version: 7.8.0(@typescript-eslint/parser@7.8.0)(eslint@8.57.0)(typescript@5.4.5)
-      '@typescript-eslint/parser':
-        specifier: ^7.8.0
-        version: 7.8.0(eslint@8.57.0)(typescript@5.4.5)
-      '@vitejs/plugin-react':
-        specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.10)
-      autoprefixer:
-        specifier: 10.4.19
-        version: 10.4.19(postcss@8.4.38)
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
-      eslint-plugin-react-hooks:
-        specifier: ^4.6.2
-        version: 4.6.2(eslint@8.57.0)
-      eslint-plugin-react-refresh:
-        specifier: ^0.4.6
-        version: 0.4.6(eslint@8.57.0)
-      postcss:
-        specifier: 8.4.38
-        version: 8.4.38
-      tailwindcss:
-        specifier: 3.4.3
-        version: 3.4.3
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-      vite:
-        specifier: ^5.2.10
-        version: 5.2.10(@types/node@20.12.8)
-      wait-on:
-        specifier: ^7.2.0
-        version: 7.2.0
-
   apps/examples:
     dependencies:
       '@postenbring/hedwig-css':
@@ -5469,7 +5408,7 @@ packages:
       '@babel/plugin-syntax-typescript': 7.24.1(@babel/core@7.24.5)
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.5
       '@vanilla-extract/css': 1.15.1
-      esbuild: 0.17.6
+      esbuild: 0.19.12
       eval: 0.1.8
       find-up: 5.0.0
       javascript-stringify: 2.1.0
@@ -7829,14 +7768,6 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
-    dependencies:
-      eslint: 8.57.0
-    dev: true
-
-  /eslint-plugin-react-refresh@0.4.6(eslint@8.57.0):
-    resolution: {integrity: sha512-NjGXdm7zgcKRkKMua34qVO9doI7VOxZ6ancSvBELJSSoX97jyndXcSoa8XBh69JoB31dNz3EEzlMcizZl7LaMA==}
-    peerDependencies:
-      eslint: '>=7'
     dependencies:
       eslint: 8.57.0
     dev: true
@@ -13288,7 +13219,7 @@ packages:
       source-map: 0.6.1
 
   /source-map@0.6.1:
-    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==, tarball: https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz}
     engines: {node: '>=0.10.0'}
 
   /source-map@0.7.4:

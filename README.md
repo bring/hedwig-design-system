@@ -106,7 +106,7 @@ To start the development server:
 pnpm dev
 ```
 
-[Storybook](https://storybook.js.org/) should now be available at [`localhost:6006`](http://localhost:6006). The [example app](apps/example/) should be available at [`localhost:5173`](http://localhost:5173).
+[Storybook](https://storybook.js.org/) should now be available at [`localhost:6006`](http://localhost:6006). The [examples app](apps/examples/) should be available at [`localhost:6007`](http://localhost:6007).
 
 ## Publishing
 
