@@ -51,6 +51,10 @@ For most projects and bundlers this just works.
 
 If you need to handle css loading yourself you can you import the react packages from `@postenbring/hedwig-react/dist/index-no-css`.
 
+### Inspiration
+
+Check out our component overview in [Storybook](https://bring.github.io/hedwig-design-system/) or the [example implementations](https://bring.github.io/hedwig-design-system/examples). Note that these are examples and not necessarily the correct or optimal implementation for your project. It is meant to demonstratet the capabilities of Hedwig.
+
 ## 🧑‍💻 Contributing
 
 We welcome anyone who would like to contribute to improving the Hedwig Design System. The core team is responsible for maintaining this repository. However, anyone seeking changes is encouraged to submit a pull request.
