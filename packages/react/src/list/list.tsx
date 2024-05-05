@@ -1,55 +1,65 @@
-import type { HTMLAttributes } from "react";
-import * as React from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListElement> {
-  children?: React.ReactElement<HTMLLIElement> | React.ReactElement<HTMLLIElement>[];
   /**
    * Sets the size of the items (font)
+   *
+   * @default "medium"
    */
   size?: "small" | "medium" | "large";
-}
-
-function BaseList({
-  as: ListTag = "ul",
-  children,
-  size = "medium",
-  className,
-  ...rest
-}: ListProps & { as?: "ul" | "ol" }) {
-  return (
-    <ListTag className={clsx("hds-list", `hds-list--${size}`, className as undefined)} {...rest}>
-      {children}
-    </ListTag>
-  );
 }
 
 /**
  * An unordered list of simple items, often text. You can nest other lists inside this component.
  *
- * If you have other list needs build your own using the semantic `ul` and `ol` tags.
+ * If you have other list needs, you can build your own using the semantic `ul` and `ol` tags.
+ *
+ * @example
+ * ```tsx
+ * <UnorderedList>
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ *  <li>Item 3</li>
+ * </UnorderedList>
+ * ```
  */
-export function UnorderedList(props: ListProps) {
-  return (
-    <BaseList as="ul" {...props}>
-      {props.children}
-    </BaseList>
-  );
-}
+export const UnorderedList = forwardRef<HTMLUListElement, ListProps>(
+  ({ size = "medium", className, ...rest }, ref) => {
+    return (
+      <ul
+        ref={ref}
+        className={clsx("hds-list", `hds-list--${size}`, className as undefined)}
+        {...rest}
+      />
+    );
+  },
+);
+UnorderedList.displayName = "UnorderedList";
 
 /**
  * An ordered list of simple items
  *
- * If you have other list needs build your own using the semantic `ul` and `ol` tags.
+ * If you have other list needs, you can build your own using the semantic `ul` and `ol` tags.
+ *
+ * @example
+ * ```tsx
+ * <OrderedList>
+ *  <li>Item 1</li>
+ *  <li>Item 2</li>
+ *  <li>Item 3</li>
+ * </OrderedList>
+ * ```
  */
-export function OrderedList(props: ListProps) {
-  return (
-    <BaseList as="ol" {...props}>
-      {props.children}
-    </BaseList>
-  );
-}
-
-BaseList.displayName = "BaseList";
+export const OrderedList = forwardRef<HTMLOListElement, ListProps>(
+  ({ size = "medium", className, ...rest }, ref) => {
+    return (
+      <ol
+        ref={ref}
+        className={clsx("hds-list", `hds-list--${size}`, className as undefined)}
+        {...rest}
+      />
+    );
+  },
+);
 OrderedList.displayName = "OrderedList";
-UnorderedList.displayName = "UnorderedList";

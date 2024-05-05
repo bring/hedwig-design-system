@@ -11,41 +11,26 @@ import {
   CardBodyActionArrow,
 } from "./card";
 
-const CardMediaComponent = CardMedia as typeof CardMedia & {
-  Img: typeof CardMediaImg;
-};
-CardMediaComponent.Img = CardMediaImg;
-
-const CardBodyHeaderComponent = CardBodyHeader as typeof CardBodyHeader & {
-  Overline: typeof CardBodyHeaderOverline;
-  Title: typeof CardBodyHeaderTitle;
-};
-CardBodyHeaderComponent.Overline = CardBodyHeaderOverline;
-CardBodyHeaderComponent.Title = CardBodyHeaderTitle;
-
-const CardBodyActionComponent = CardBodyAction as typeof CardBodyAction & {
-  Arrow: typeof CardBodyActionArrow;
-};
-CardBodyActionComponent.Arrow = CardBodyActionArrow;
-
-const CardBodyComponent = CardBody as typeof CardBody & {
-  Header: typeof CardBodyHeaderComponent;
-  Overline: typeof CardBodyHeaderOverline;
-  Title: typeof CardBodyHeaderTitle;
-  Description: typeof CardBodyDescription;
-  Action: typeof CardBodyActionComponent;
-};
-
-CardBodyComponent.Header = CardBodyHeaderComponent;
-CardBodyComponent.Description = CardBodyDescription;
-CardBodyComponent.Action = CardBodyActionComponent;
-
 const CardComponent = Card as typeof Card & {
-  Media: typeof CardMediaComponent;
-  Body: typeof CardBodyComponent;
+  Media: typeof CardMedia;
+  MediaImg: typeof CardMediaImg;
+  Body: typeof CardBody;
+  BodyHeader: typeof CardBodyHeader;
+  BodyHeaderOverline: typeof CardBodyHeaderOverline;
+  BodyHeaderTitle: typeof CardBodyHeaderTitle;
+  BodyDescription: typeof CardBodyDescription;
+  BodyAction: typeof CardBodyAction;
+  BodyActionArrow: typeof CardBodyActionArrow;
 };
-CardComponent.Media = CardMediaComponent;
-CardComponent.Body = CardBodyComponent;
+CardComponent.Media = CardMedia;
+CardComponent.MediaImg = CardMediaImg;
+CardComponent.Body = CardBody;
+CardComponent.BodyHeader = CardBodyHeader;
+CardComponent.BodyHeaderOverline = CardBodyHeaderOverline;
+CardComponent.BodyHeaderTitle = CardBodyHeaderTitle;
+CardComponent.BodyDescription = CardBodyDescription;
+CardComponent.BodyAction = CardBodyAction;
+CardComponent.BodyActionArrow = CardBodyActionArrow;
 
 export {
   CardComponent as Card,
@@ -54,6 +39,10 @@ export {
   CardBody,
   CardBodyHeader,
   CardBodyHeaderOverline,
+  CardBodyHeaderTitle,
+  CardBodyDescription,
+  CardBodyAction,
+  CardBodyActionArrow,
 };
 
 export type * from "./card";

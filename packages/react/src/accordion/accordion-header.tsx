@@ -1,25 +1,24 @@
-import type { ButtonHTMLAttributes, MouseEvent, ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import { forwardRef, useContext } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import type { OverridableComponent } from "../utils";
 import { AccordionItemContext } from "./context";
 
-export interface AccordionHeaderProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface AccordionHeaderProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
-export const AccordionHeader: OverridableComponent<AccordionHeaderProps, HTMLButtonElement> =
-  forwardRef(({ as: Component = "button", children, className, onClick, ...rest }, ref) => {
+export const AccordionHeader = forwardRef<HTMLButtonElement, AccordionHeaderProps>(
+  ({ children, className, onClick, ...rest }, ref) => {
     const context = useContext(AccordionItemContext);
     if (context === null) {
       return null;
     }
     const expandOrCollapse = (e: MouseEvent<HTMLButtonElement>) => {
       context.setOpen(!context.open);
-      onClick && onClick(e);
+      onClick?.(e);
     };
     return (
-      <Component
+      <button
         {...rest}
         aria-expanded={context.open}
         data-state={context.open ? "open" : "closed"}
@@ -29,8 +28,9 @@ export const AccordionHeader: OverridableComponent<AccordionHeaderProps, HTMLBut
         type="button"
       >
         <span>{children}</span>
-      </Component>
+      </button>
     );
-  });
+  },
+);
 
 AccordionHeader.displayName = "Accordion.Header";

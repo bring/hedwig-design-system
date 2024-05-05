@@ -9,7 +9,7 @@ function Example() {
         </a>
       </Navbar.LogoAndServiceText>
       <Navbar.Navigation>
-        <Navbar.Button>Search</Navbar.Button>
+        <Navbar.ButtonItem>Search</Navbar.ButtonItem>
       </Navbar.Navigation>
     </Navbar>
   );

@@ -1,13 +1,21 @@
-import type { HTMLAttributes, ReactNode, ElementType } from "react";
+import type { ReactNode } from "react";
 import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import type { OverridableComponent } from "../utils";
+import { Slot } from "@radix-ui/react-slot";
 
-export interface CardBaseProps extends HTMLAttributes<HTMLDivElement> {
+export interface CardBaseProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
 
-export const Card: OverridableComponent<
+export const Card = forwardRef<
+  HTMLDivElement,
   CardBaseProps & {
     /**
      * A Card should in most cases appear as a big link,
@@ -16,10 +24,10 @@ export const Card: OverridableComponent<
      * the entire card a link, as that would cause the entire card to be read
      * as a link to the user. That would be perceived as information overload.
      */
-    as?: Exclude<ElementType, "a">;
-  },
-  HTMLDivElement
-> = forwardRef(({ as: Component = "section", className, children, ...rest }, ref) => {
+    as?: "section" | "div" | "article" | "aside";
+  }
+>(({ as: Tag = "section", asChild, className, children, ...rest }, ref) => {
+  const Component = asChild ? Slot : Tag;
   return (
     <Component {...rest} className={clsx("hds-card", className as undefined)} ref={ref}>
       {children}
@@ -28,8 +36,9 @@ export const Card: OverridableComponent<
 });
 Card.displayName = "Card";
 
-export const CardMedia: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", className, children, ...rest }, ref) => {
+export const CardMedia = forwardRef<HTMLDivElement, CardBaseProps>(
+  ({ asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
     return (
       <Component {...rest} className={clsx("hds-card__media", className as undefined)} ref={ref}>
         {children}
@@ -39,11 +48,17 @@ export const CardMedia: OverridableComponent<CardBaseProps, HTMLDivElement> = fo
 );
 CardMedia.displayName = "Card.Media";
 
-export interface CardImageMediaProps extends HTMLAttributes<HTMLDivElement> {
-  aspectRatio?: string;
+export interface CardImageMediaProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
-export const CardMediaImg: OverridableComponent<CardImageMediaProps, HTMLImageElement> = forwardRef(
-  ({ as: Component = "img", className, ...rest }, ref) => {
+export const CardMediaImg = forwardRef<HTMLImageElement, CardImageMediaProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "img";
     return (
       <Component
         {...rest}
@@ -53,10 +68,11 @@ export const CardMediaImg: OverridableComponent<CardImageMediaProps, HTMLImageEl
     );
   },
 );
-CardMediaImg.displayName = "Card.Media.Img";
+CardMediaImg.displayName = "Card.MediaImg";
 
-export const CardBody: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", className, children, ...rest }, ref) => {
+export const CardBody = forwardRef<HTMLDivElement, CardBaseProps>(
+  ({ asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
     return (
       <Component {...rest} className={clsx("hds-card__body", className as undefined)} ref={ref}>
         {children}
@@ -68,13 +84,22 @@ CardBody.displayName = "Card.Body";
 
 export const CardBodyHeader = forwardRef<
   HTMLHeadingElement,
-  CardBaseProps & {
-    /**
-     * Heading level of the card heading
-     */
-    as: "h2" | "h3" | "h4" | "h5" | "h6";
-  }
->(({ as: Component, className, children, ...rest }, ref) => {
+  CardBaseProps &
+    (
+      | {
+          /**
+           * Heading level of the card heading
+           */
+          as: "h2" | "h3" | "h4" | "h5" | "h6";
+          asChild?: never;
+        }
+      | {
+          asChild: true;
+          as?: never;
+        }
+    )
+>(({ as: Tag, asChild, className, children, ...rest }, ref) => {
+  const Component = asChild ? Slot : Tag;
   return (
     <Component
       {...rest}
@@ -85,10 +110,11 @@ export const CardBodyHeader = forwardRef<
     </Component>
   );
 });
-CardBodyHeader.displayName = "Card.Body.Header";
+CardBodyHeader.displayName = "Card.BodyHeader";
 
-export const CardBodyHeaderOverline: OverridableComponent<CardBaseProps, HTMLDivElement> =
-  forwardRef(({ as: Component = "span", className, children, ...rest }, ref) => {
+export const CardBodyHeaderOverline = forwardRef<HTMLDivElement, CardBaseProps>(
+  ({ asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "span";
     return (
       <Component
         {...rest}
@@ -98,36 +124,29 @@ export const CardBodyHeaderOverline: OverridableComponent<CardBaseProps, HTMLDiv
         {children}
       </Component>
     );
-  });
-CardBodyHeaderOverline.displayName = "Card.Body.Header.Overline";
-
-export const CardBodyHeaderTitle: OverridableComponent<
-  CardBaseProps & {
-    /**
-     * A Card should in most cases appear as a big link,
-     * but the actual link should just be this header title.
-     * To make life better for those with screen readers we should not make
-     * the entire card a link, as that would cause the entire card to be read
-     * as a link to the user. That would be perceived as information overload.
-     */
-    as: ElementType;
   },
-  HTMLDivElement
-> = forwardRef(({ as: Component, className, children, ...rest }, ref) => {
-  return (
-    <Component
-      {...rest}
-      className={clsx("hds-card__body-header-title", className as undefined)}
-      ref={ref}
-    >
-      {children}
-    </Component>
-  );
-});
-CardBodyHeaderTitle.displayName = "Card.Body.Header.Title";
+);
+CardBodyHeaderOverline.displayName = "Card.BodyHeaderOverline";
 
-export const CardBodyDescription: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "p", className, children, ...rest }, ref) => {
+export const CardBodyHeaderTitle = forwardRef<HTMLDivElement, CardBaseProps>(
+  ({ asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
+    return (
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-header-title", className as undefined)}
+        ref={ref}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+CardBodyHeaderTitle.displayName = "Card.BodyHeaderTitle";
+
+export const CardBodyDescription = forwardRef<HTMLParagraphElement, CardBaseProps>(
+  ({ asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "p";
     return (
       <Component
         {...rest}
@@ -139,10 +158,11 @@ export const CardBodyDescription: OverridableComponent<CardBaseProps, HTMLDivEle
     );
   },
 );
-CardBodyDescription.displayName = "Card.Body.Description";
+CardBodyDescription.displayName = "Card.BodyDescription";
 
-export const CardBodyAction: OverridableComponent<CardBaseProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", className, children, ...rest }, ref) => {
+export const CardBodyAction = forwardRef<HTMLDivElement, CardBaseProps>(
+  ({ asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
     return (
       <Component
         {...rest}
@@ -154,18 +174,26 @@ export const CardBodyAction: OverridableComponent<CardBaseProps, HTMLDivElement>
     );
   },
 );
-CardBodyAction.displayName = "Card.Body.Action";
+CardBodyAction.displayName = "Card.BodyAction";
 
-export const CardBodyActionArrow: OverridableComponent<
-  HTMLAttributes<HTMLSpanElement>,
-  HTMLSpanElement
-> = forwardRef(({ as: Component = "span", className, ...rest }, ref) => {
-  return (
-    <Component
-      {...rest}
-      className={clsx("hds-card__body-action-arrow", className as undefined)}
-      ref={ref}
-    />
-  );
-});
-CardBodyActionArrow.displayName = "Card.Body.Action.Arrow";
+interface CardBodyActionArrowProps extends React.HTMLAttributes<HTMLSpanElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+export const CardBodyActionArrow = forwardRef<HTMLSpanElement, CardBodyActionArrowProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "span";
+    return (
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-action-arrow", className as undefined)}
+        ref={ref}
+      />
+    );
+  },
+);
+CardBodyActionArrow.displayName = "Card.BodyActionArrow";

@@ -1,24 +1,33 @@
-import * as React from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { Slot } from "@radix-ui/react-slot";
+import { forwardRef } from "react";
 
 export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> {
+  children: React.ReactNode;
+
   /**
    * Font size of the badge
+   *
+   * @default "small"
    */
   size?: "small" | "smaller";
 
-  children: React.ReactNode;
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
 
-function BaseBadge({
-  children,
-  variant,
-  size = "small",
-  className,
-  ...rest
-}: BadgeProps & { variant: "lighter" | "dark" | "white" | "warning" }) {
+const Badge = forwardRef<
+  HTMLSpanElement,
+  BadgeProps & { variant: "lighter" | "dark" | "white" | "warning" }
+>(({ children, asChild, variant, size = "small", className, ...rest }, ref) => {
+  const Component = asChild ? Slot : "span";
   return (
-    <span
+    <Component
+      ref={ref}
       className={clsx(
         "hds-badge",
         `hds-badge--${size}`,
@@ -28,32 +37,27 @@ function BaseBadge({
       {...rest}
     >
       {children}
-    </span>
+    </Component>
   );
-}
-
-BaseBadge.displayName = "BaseBadge";
-
-export function Badge(props: BadgeProps) {
-  return <BaseBadge {...props} variant="lighter" />;
-}
-
+});
 Badge.displayName = "Badge";
 
-export function DarkBadge(props: BadgeProps) {
-  return <BaseBadge {...props} variant="dark" />;
-}
+export const LighterBadge = forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
+  return <Badge {...props} ref={ref} variant="lighter" />;
+});
+LighterBadge.displayName = "LighterBadge";
 
+export const DarkBadge = forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
+  return <Badge {...props} ref={ref} variant="dark" />;
+});
 DarkBadge.displayName = "DarkBadge";
 
-export function WhiteBadge(props: BadgeProps) {
-  return <BaseBadge {...props} variant="white" />;
-}
-
+export const WhiteBadge = forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
+  return <Badge {...props} ref={ref} variant="white" />;
+});
 WhiteBadge.displayName = "WhiteBadge";
 
-export function WarningBadge(props: BadgeProps) {
-  return <BaseBadge {...props} variant="warning" />;
-}
-
+export const WarningBadge = forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
+  return <Badge {...props} ref={ref} variant="warning" />;
+});
 WarningBadge.displayName = "WarningBadge";

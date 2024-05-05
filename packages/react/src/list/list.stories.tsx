@@ -34,9 +34,9 @@ export const OrderedListStory: Story = {
   },
   render: (props) => (
     <HStack gap="16">
-      <OrderedList {...props} size="small" />
-      <OrderedList {...props} size="medium" />
-      <OrderedList {...props} size="large" />
+      <OrderedList {...(props as React.HTMLAttributes<HTMLOListElement>)} size="small" />
+      <OrderedList {...(props as React.HTMLAttributes<HTMLOListElement>)} size="medium" />
+      <OrderedList {...(props as React.HTMLAttributes<HTMLOListElement>)} size="large" />
     </HStack>
   ),
 };

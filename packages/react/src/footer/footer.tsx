@@ -6,10 +6,17 @@ import { LinkList } from "../list/link-list";
 import { PrimaryButton } from "../button";
 
 export interface FooterProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Footer variant
+   *
+   * @default "default"
+   */
   variant?: "default" | "slim";
 
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
    */
   asChild?: boolean;
 }
@@ -37,38 +44,11 @@ export const Footer = forwardRef<HTMLDivElement, FooterProps>(
 );
 Footer.displayName = "Footer";
 
-export interface FooterButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   */
-  asChild?: boolean;
-}
-
-/**
- * 🚨 WORK IN PROGRESS 🚨
- */
-export const FooterButtonLink = forwardRef<HTMLAnchorElement, FooterButtonLinkProps>(
-  ({ children, className, asChild, ...rest }, ref) => {
-    const Component = asChild ? Slot : "a";
-    return (
-      // @ts-expect-error -- It's ok, types are a bit off
-      <PrimaryButton
-        as={Component}
-        fill="outline"
-        className={clsx(className as undefined)}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </PrimaryButton>
-    );
-  },
-);
-FooterButtonLink.displayName = "FooterButton";
-
 interface FooterLogoProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
    */
   asChild?: boolean;
 }
@@ -90,6 +70,32 @@ export const FooterLogo = forwardRef<HTMLDivElement, FooterLogoProps>(
 );
 FooterLogo.displayName = "Footer.Logo";
 
+export interface FooterButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+
+/**
+ * 🚨 WORK IN PROGRESS 🚨
+ */
+export const FooterButtonLink = forwardRef<HTMLAnchorElement, FooterButtonLinkProps>(
+  ({ children, className, asChild, ...rest }, ref) => {
+    const Component = asChild ? Slot : "a";
+    return (
+      <PrimaryButton asChild fill="outline" className={clsx(className as undefined)}>
+        <Component ref={ref} {...rest}>
+          {children}
+        </Component>
+      </PrimaryButton>
+    );
+  },
+);
+FooterButtonLink.displayName = "FooterButton";
+
 interface FooterLinkSectionsProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactElement<FooterLinkSectionProps> | ReactElement<FooterLinkSectionProps>[];
 }
@@ -97,7 +103,7 @@ interface FooterLinkSectionsProps extends HTMLAttributes<HTMLDivElement> {
 /**
  * Responsive sections of links. Will become an accordion on mobile.
  *
- * Use with `Footer.LinkSection` for each section.
+ * Use with {@link FooterLinkSection} for each section.
  */
 export const FooterLinkSections = forwardRef<HTMLDivElement, FooterLinkSectionsProps>(
   ({ children, className, ...rest }, ref) => {

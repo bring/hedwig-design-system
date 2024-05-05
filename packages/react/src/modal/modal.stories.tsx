@@ -104,8 +104,10 @@ export const AsAReadMore: Story = {
           <Message.Description>
             Vi møtte på utfordringer da vi skulle levere pakken hjem til deg. Derfor har vi sendt
             den til ditt nærmeste hentested.{" "}
-            <Link as="button" onClick={() => modalRef.current?.showModal()} variant="solid">
-              Les mer
+            <Link variant="solid" asChild>
+              <button type="button" onClick={() => modalRef.current?.showModal()}>
+                Les mer
+              </button>
             </Link>
           </Message.Description>
         </Message>
@@ -113,22 +115,24 @@ export const AsAReadMore: Story = {
         <Modal ref={modalRef} {...args}>
           <Modal.Header>Kunne ikke leveres hjem til deg</Modal.Header>
 
-          <Modal.Content as={StyledHtml}>
-            <p>
-              Noen ganger kan vi ikke levere pakken til postkassen din, eller utenfor døren. Det kan
-              være ulike grunner til dette, for eksempel:
-            </p>
-            <ul>
-              <li>Pakken var for stor for postkassen din</li>
-              <li>Det var ikke mulig å sette den utenfor døren din</li>
-              <li>Ingen var hjemme</li>
-              <li>Døren var ikke merket med navn</li>
-              <li>Andre årsaker</li>
-            </ul>
-            <p>
-              Pakken blir videresendt til ditt nærmeste hentested når den ikke kan leveres hjem. Den
-              vil vanligvis være klar til henting der etter én til to virkedager.
-            </p>
+          <Modal.Content asChild>
+            <StyledHtml>
+              <p>
+                Noen ganger kan vi ikke levere pakken til postkassen din, eller utenfor døren. Det
+                kan være ulike grunner til dette, for eksempel:
+              </p>
+              <ul>
+                <li>Pakken var for stor for postkassen din</li>
+                <li>Det var ikke mulig å sette den utenfor døren din</li>
+                <li>Ingen var hjemme</li>
+                <li>Døren var ikke merket med navn</li>
+                <li>Andre årsaker</li>
+              </ul>
+              <p>
+                Pakken blir videresendt til ditt nærmeste hentested når den ikke kan leveres hjem.
+                Den vil vanligvis være klar til henting der etter én til to virkedager.
+              </p>
+            </StyledHtml>
           </Modal.Content>
 
           <Modal.Footer>

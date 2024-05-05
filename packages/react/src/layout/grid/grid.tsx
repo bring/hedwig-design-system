@@ -50,16 +50,18 @@ export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
 
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
    */
   asChild?: boolean;
 }
 
 /**
- * 🚧 A simple opionated abstraction over CSS Grid.
+ * A simple opionated abstraction over CSS Grid.
  *
  * The grid is always a 12 column grid.
  *
- * example
+ * @example
  * ```tsx
  * <Grid gap="12-16" span={{ small: 6 }}>
  *   <div>6/12</div>

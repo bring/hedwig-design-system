@@ -1,15 +1,14 @@
 import type { ReactNode } from "react";
-import { forwardRef, useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import type { OverridableComponent } from "../utils";
 import { Box } from "../box";
 
-export interface WarningBannerProps {
+export interface WarningBannerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   title: ReactNode;
   description?: ReactNode;
 }
 
-export const WarningBanner: OverridableComponent<WarningBannerProps, HTMLDivElement> = forwardRef(
+export const WarningBanner = forwardRef<HTMLDivElement, WarningBannerProps>(
   ({ title, description, className, ...rest }, ref) => {
     const expandable = !!description;
     return (
@@ -24,61 +23,52 @@ export const WarningBanner: OverridableComponent<WarningBannerProps, HTMLDivElem
 );
 WarningBanner.displayName = "WarningBanner";
 
-interface WarningBannerTitleProps {
-  variant: "expandable" | "default";
-  children: ReactNode;
-}
+type WarningBannerTitleProps =
+  | ({ variant: "expandable" } & React.ButtonHTMLAttributes<HTMLButtonElement>)
+  | ({ variant: "default" } & React.HTMLAttributes<HTMLParagraphElement>);
 
-const WarningBannerTitle: OverridableComponent<WarningBannerTitleProps, HTMLDivElement> =
-  forwardRef(
-    (
-      {
-        variant,
-        as: Component = variant === "expandable" ? "button" : "p",
-        children,
-        className,
-        ...rest
-      },
-      ref,
-    ) => {
-      const [open, setOpen] = useState<boolean>(false);
-      if (variant === "expandable") {
-        return (
-          <Component
-            className={clsx(
-              "hds-warning-banner__title",
-              "hds-warning-banner__title-trigger",
-              { "hds-warning-banner--closed": !open },
-              className as undefined,
-            )}
-            onClick={() => {
-              setOpen(!open);
-            }}
-            ref={ref}
-            type="button"
-            {...rest}
-          >
-            <span>{children}</span>
-          </Component>
-        );
-      }
-      return (
-        <Component
-          className={clsx("hds-warning-banner__title", className as undefined)}
-          ref={ref}
-          {...rest}
-        >
-          {children}
-        </Component>
-      );
-    },
+const WarningBannerTitle = forwardRef<
+  HTMLButtonElement | HTMLParagraphElement,
+  WarningBannerTitleProps
+>(({ variant, children, className, ...rest }, ref) => {
+  const [open, setOpen] = useState<boolean>(false);
+  if (variant === "expandable") {
+    return (
+      <button
+        {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+        className={clsx(
+          "hds-warning-banner__title",
+          "hds-warning-banner__title-trigger",
+          { "hds-warning-banner--closed": !open },
+          className as undefined,
+        )}
+        onClick={() => {
+          setOpen((prev) => !prev);
+        }}
+        ref={ref as React.Ref<HTMLButtonElement>}
+        type="button"
+      >
+        <span>{children}</span>
+      </button>
+    );
+  }
+  return (
+    <p
+      {...(rest as React.HTMLAttributes<HTMLParagraphElement>)}
+      className={clsx("hds-warning-banner__title", className as undefined)}
+      ref={ref as React.Ref<HTMLParagraphElement>}
+    >
+      {children}
+    </p>
   );
+});
 WarningBannerTitle.displayName = "WarningBannerTitle";
 
-const WarningBannerDescription: OverridableComponent<object, HTMLParagraphElement> = forwardRef(
-  ({ as: Component = "p", className, ...rest }, ref) => {
+type WarningBannerDescriptionProps = React.HTMLAttributes<HTMLParagraphElement>;
+const WarningBannerDescription = forwardRef<HTMLParagraphElement, WarningBannerDescriptionProps>(
+  ({ className, ...rest }, ref) => {
     return (
-      <Component
+      <p
         className={clsx("hds-warning-banner__description", className as undefined)}
         ref={ref}
         {...rest}

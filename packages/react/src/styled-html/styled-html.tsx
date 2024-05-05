@@ -1,11 +1,18 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import type { OverridableComponent } from "../utils";
+import { Slot } from "@radix-ui/react-slot";
 
-export interface StyledHtmlProps {
+export interface StyledHtmlProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   size?: "default" | "small";
   darkmode?: boolean;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
 
 /**
@@ -16,6 +23,7 @@ export interface StyledHtmlProps {
  *
  * Previously known as `hw-wysiwyg` in hedwig legacy. In tailwind this kind of component it is known as `prose`.
  *
+ * @example
  * ```tsx
  * <StyledHtml>
  *   <h1>Heading 1</h1>
@@ -29,8 +37,9 @@ export interface StyledHtmlProps {
  * </StyledHtml>
  * ```
  */
-export const StyledHtml: OverridableComponent<StyledHtmlProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", children, size, darkmode = false, className, ...rest }, ref) => {
+export const StyledHtml = forwardRef<HTMLDivElement, StyledHtmlProps>(
+  ({ asChild, children, size, darkmode = false, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
     return (
       <Component
         className={clsx(

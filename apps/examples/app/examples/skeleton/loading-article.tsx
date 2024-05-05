@@ -12,7 +12,7 @@ function Example() {
       <Skeleton variant="text" as="h2">
         A subtitle with some more text is loading
       </Skeleton>
-      <p>
+      <div>
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
         <Skeleton variant="text" width={`${randomNumberBetween(25, 60)}%`} />
@@ -20,12 +20,12 @@ function Example() {
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
-      </p>
+      </div>
 
       <Skeleton variant="text" as="h2">
         Another piece of text
       </Skeleton>
-      <p>
+      <div>
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
         <Skeleton variant="text" width={`${randomNumberBetween(25, 60)}%`} />
@@ -33,7 +33,7 @@ function Example() {
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
         <Skeleton variant="text" width={`${randomNumberBetween(75, 90)}%`} />
-      </p>
+      </div>
     </StyledHtml>
   );
 }

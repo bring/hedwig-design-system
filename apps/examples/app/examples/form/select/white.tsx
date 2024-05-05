@@ -3,8 +3,8 @@ import { Box, Select } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <Box>
-      <Select label="Label" variant="white">
-        <option disabled hidden selected value="">
+      <Select label="Label" variant="white" defaultValue="">
+        <option disabled hidden value="">
           Please select
         </option>
         <option value="1">Option 1</option>

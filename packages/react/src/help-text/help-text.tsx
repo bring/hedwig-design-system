@@ -29,14 +29,14 @@ interface HelpTextProps extends React.HTMLAttributes<HTMLButtonElement> {
   /**
    * The side of the trigger the popover should be attached to
    *
-   * default is `top`
+   * @default "top"
    */
   side?: "top" | "right" | "bottom" | "left";
 
   /**
    * The alignment of the popover content
    *
-   * default is `start`
+   * @default "start"
    */
   align?: "center" | "end" | "start";
 }
@@ -46,7 +46,7 @@ interface HelpTextProps extends React.HTMLAttributes<HTMLButtonElement> {
  *
  * Useful for providing explanations for domain-specific terms, acronyms or phrases that could do with further elaboration
  *
- * **Usage**
+ * @example
  * ```tsx
  * <p>
  *   En annen avgjørende faktor for avgifter er om nettbutikken er registrert i{" "}

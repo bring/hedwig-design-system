@@ -44,4 +44,5 @@ export const config: ExampleConfig = {
   description:
     "To only allow one accordion to be open at the time, you need to control the <code>open</code> prop. Use the <code>onOpenChange</code> prop to toggle the state of the accordion items.",
   index: 1,
+  layout: "padding-only",
 };

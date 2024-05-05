@@ -1,7 +1,6 @@
-import React, { forwardRef, type HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
-import type { OverridableComponent } from "../utils";
 
 export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   /**
@@ -10,31 +9,45 @@ export interface NavbarProps extends HTMLAttributes<HTMLElement> {
    * By default the `posten.no` variant is used which has a fixed logo and a fixed height of 112px
    *
    * For internal services or flagship services use the `service` should be used
+   *
+   * @default "default"
    */
   variant?: "default" | "service";
-  children: React.ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
 
 /**
  * 🚨 WORK IN PROGRESS 🚨
  */
 export const Navbar = forwardRef<HTMLElement, NavbarProps>(
-  ({ children, className, variant, ...rest }, ref) => {
+  ({ asChild, children, className, variant, ...rest }, ref) => {
+    const Component = asChild ? Slot : "header";
     return (
-      <header
+      <Component
         className={clsx("hds-navbar", variant && `hds-navbar--${variant}`, className as undefined)}
         ref={ref}
         {...rest}
       >
         {children}
-      </header>
+      </Component>
     );
   },
 );
 Navbar.displayName = "Navbar";
 
-interface NavbarLogoProps {
-  children?: never;
+interface NavbarLogoProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
 
 /**
@@ -42,10 +55,13 @@ interface NavbarLogoProps {
  *
  * The logo follows the brand theme, so if the class `hds-theme-bring` is set the Bring logo will be shown instead of the Posten logo
  */
-export const NavbarLogo: OverridableComponent<NavbarLogoProps, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", className, ...rest }, ref) => {
+export const NavbarLogo = forwardRef<HTMLDivElement, NavbarLogoProps>(
+  ({ children, className, asChild, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
     return (
-      <Component className={clsx("hds-navbar__logo", className as undefined)} ref={ref} {...rest} />
+      <Component className={clsx(`hds-navbar__logo`, className as undefined)} ref={ref} {...rest}>
+        {children}
+      </Component>
     );
   },
 );
@@ -61,15 +77,19 @@ interface NavbarLogoAndServiceText extends HTMLAttributes<HTMLDivElement> {
    * The text variant
    *
    * Use `service` for internal applications
+   *
    * Use `flagship` for public facing applications
    */
   variant: "service" | "flagship";
 
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
    */
   asChild?: boolean;
 }
+
 /**
  * Internal service or flagship text next to either the Posten or Bring logo
  *
@@ -95,27 +115,114 @@ export const NavbarLogoAndServiceText = forwardRef<HTMLDivElement, NavbarLogoAnd
 );
 NavbarLogoAndServiceText.displayName = "Navbar.NavbarLogoAndText";
 
-// Navbar button
-interface NavbarButtonProps {
-  icon?: React.ReactNode;
+interface NavbarItemIconProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
-export const NavbarButton: OverridableComponent<NavbarButtonProps, HTMLElement> = forwardRef(
-  ({ as: Component = "button", children, icon, className, ...rest }, ref) => {
+/**
+ * Icon to be used inside a `Navbar.Item`, `Navbar.ButtonItem`, or `Navbar.LinkItem`
+ */
+export const NavbarItemIcon = forwardRef<HTMLDivElement, NavbarItemIconProps>(
+  ({ children, className, ...rest }, ref) => {
     return (
-      <Component className={clsx("hds-navbar__button", className as undefined)} ref={ref} {...rest}>
-        {children} {icon}
+      <Slot className={clsx("hds-navbar__item-icon", className as undefined)} ref={ref} {...rest}>
+        {children}
+      </Slot>
+    );
+  },
+);
+NavbarItemIcon.displayName = "Navbar.ItemIcon";
+
+interface NavbarItemProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+
+/**
+ * Generic Navbar item
+ *
+ * Use `Navbar.ButtonItem` or `Navbar.LinkItem` for links and buttons
+ */
+export const NavbarItem = forwardRef<HTMLDivElement, NavbarItemProps>(
+  ({ asChild, children, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
+    return (
+      <Component className={clsx("hds-navbar__item", className as undefined)} ref={ref} {...rest}>
+        {children}
       </Component>
     );
   },
 );
-NavbarButton.displayName = "Navbar.Button";
+NavbarItem.displayName = "Navbar.Item";
 
-interface NavbarNavigationProps {
+interface NavbarButtonItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
-export const NavbarNavigation: OverridableComponent<NavbarNavigationProps, HTMLElement> =
-  forwardRef(({ as: Component = "div", className, ...rest }, ref) => {
+export const NavbarButtonItem = forwardRef<HTMLButtonElement, NavbarButtonItemProps>(
+  ({ asChild, children, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "button";
+    return (
+      <Component
+        className={clsx("hds-navbar__item", className as undefined)}
+        ref={ref}
+        type="button"
+        {...rest}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+NavbarButtonItem.displayName = "Navbar.ButtonItem";
+
+interface NavbarLinkItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: React.ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+
+export const NavbarLinkItem = forwardRef<HTMLAnchorElement, NavbarLinkItemProps>(
+  ({ asChild, children, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "a";
+    return (
+      <Component className={clsx("hds-navbar__item", className as undefined)} ref={ref} {...rest}>
+        {children}
+      </Component>
+    );
+  },
+);
+NavbarLinkItem.displayName = "Navbar.LinkItem";
+
+interface NavbarNavigationProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+export const NavbarNavigation = forwardRef<HTMLDivElement, NavbarNavigationProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
     return (
       <Component
         className={clsx("hds-navbar__navigation", className as undefined)}
@@ -123,5 +230,6 @@ export const NavbarNavigation: OverridableComponent<NavbarNavigationProps, HTMLE
         {...rest}
       />
     );
-  });
+  },
+);
 NavbarNavigation.displayName = "Navbar.Navigation";

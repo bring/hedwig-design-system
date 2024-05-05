@@ -20,6 +20,11 @@
   }
 }
 
+.layoutPaddingOnly {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .breakpointIndicator {
   &::before {
     z-index: 1;

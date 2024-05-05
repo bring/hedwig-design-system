@@ -156,8 +156,10 @@ export function CodeExample({
             title="Mobile"
             fill="outline"
             size="small"
-            icon={"📱"}
-          />
+            icon
+          >
+            📱
+          </SecondaryButton>
           <SecondaryButton
             onClick={() => {
               if (iframeRef.current) {
@@ -167,8 +169,9 @@ export function CodeExample({
             title="Desktop"
             fill="outline"
             size="small"
-            icon={"🖥️"}
-          />
+          >
+            🖥️
+          </SecondaryButton>
           <div style={{ flexGrow: 1 }} />
 
           <SecondaryButton fill="outline" size="small" onClick={() => setShowCode((prev) => !prev)}>
@@ -179,19 +182,19 @@ export function CodeExample({
             title="Open in CodeSandbox"
             size="small"
             onClick={() => openExampleInCodeSandbox(activeExample)}
-            icon={
-              <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 24H24V0H0V2.45455H21.5455V21.5455H2.45455V0H0Z" />
-              </svg>
-            }
-          />
-          <SecondaryButton
-            title="Open standalone"
-            size="small"
-            as="a"
-            href={iframeUrl(activeExample)}
-            target="_blank"
-            icon={
+            icon
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 24H24V0H0V2.45455H21.5455V21.5455H2.45455V0H0Z" />
+            </svg>
+          </SecondaryButton>
+          <SecondaryButton size="small" icon asChild>
+            <a
+              href={iframeUrl(activeExample)}
+              target="_blank"
+              rel="noreferrer"
+              title="Open standalone"
+            >
               <svg
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -207,8 +210,8 @@ export function CodeExample({
                   d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"
                 />
               </svg>
-            }
-          />
+            </a>
+          </SecondaryButton>
         </div>
       </div>
 

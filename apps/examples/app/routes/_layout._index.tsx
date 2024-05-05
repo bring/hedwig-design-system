@@ -42,16 +42,16 @@ function ExamplesMenu() {
           <LinkList>
             {Object.keys(components).map((componentName) => (
               <li key={componentName}>
-                <Link
-                  as={RemixLink}
-                  to={{
-                    pathname:
-                      groupName !== "default" ? `${groupName}/${componentName}` : componentName,
-                    search: search.toString(),
-                  }}
-                  variant="underline"
-                >
-                  {kebabCaseToFirstLetterUpperCase(componentName)}
+                <Link variant="underline" asChild>
+                  <RemixLink
+                    to={{
+                      pathname:
+                        groupName !== "default" ? `${groupName}/${componentName}` : componentName,
+                      search: search.toString(),
+                    }}
+                  >
+                    {kebabCaseToFirstLetterUpperCase(componentName)}
+                  </RemixLink>
                 </Link>
               </li>
             ))}

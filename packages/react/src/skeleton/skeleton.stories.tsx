@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
 import { StyledHtml } from "../styled-html";
 import { Card } from "../card";
-import { Card as CardStory } from "../card/card.stories";
+import { CardStory } from "../card/card.stories";
 import { PrimaryButton } from "../button";
 import { HStack, VStack } from "../layout";
 import { Skeleton } from ".";
@@ -54,20 +54,24 @@ export const LoadingCards: Story = {
           <Skeleton variant="rectangle" style={{ width: "100%", aspectRatio: 16 / 9 }} />
         </Card.Media>
         <Card.Body>
-          <Card.Body.Header as="h2">
-            <Card.Body.Header.Overline as={Skeleton}>Theme</Card.Body.Header.Overline>
-            <Card.Body.Header.Title as={Skeleton}>Cool article</Card.Body.Header.Title>
-          </Card.Body.Header>
-          <Card.Body.Description>
+          <Card.BodyHeader as="h2">
+            <Card.BodyHeaderOverline asChild>
+              <Skeleton>Theme</Skeleton>
+            </Card.BodyHeaderOverline>
+            <Card.BodyHeaderTitle asChild>
+              <Skeleton>Cool article</Skeleton>
+            </Card.BodyHeaderTitle>
+          </Card.BodyHeader>
+          <Card.BodyDescription>
             <Skeleton variant="text" />
             <Skeleton variant="text" />
             <Skeleton variant="text" />
             <Skeleton variant="text" />
             <Skeleton variant="text" width="80%" />
-          </Card.Body.Description>
-          <Card.Body.Action>
+          </Card.BodyDescription>
+          <Card.BodyAction>
             <Skeleton variant="rectangle" height="1em" width="1em" />
-          </Card.Body.Action>
+          </Card.BodyAction>
         </Card.Body>
       </Card>
     );
