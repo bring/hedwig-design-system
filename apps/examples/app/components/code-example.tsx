@@ -169,6 +169,7 @@ export function CodeExample({
             title="Desktop"
             fill="outline"
             size="small"
+            icon
           >
             🖥️
           </SecondaryButton>
