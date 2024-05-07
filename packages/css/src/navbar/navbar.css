@@ -83,21 +83,26 @@
     color: inherit;
     background-color: transparent;
     text-decoration: none;
-    padding: var(--hds-spacing-16);
     display: inline-flex;
     column-gap: var(--hds-spacing-8);
     justify-content: center;
     align-items: center;
     font: var(--hds-typography-body);
     border: 0;
+    padding: var(--hds-spacing-16);
+
+    &:last-child,
+    &:not(:has(~ .hds-navbar__item)) {
+      padding-right: 0;
+    }
 
     &:hover {
       color: var(--hds-link-colors-hover);
     }
 
     .hds-navbar__item-icon {
-      width: var(--hds-spacing-24);
-      height: var(--hds-spacing-24);
+      width: var(--hds-spacing-32);
+      height: var(--hds-spacing-32);
     }
 
     @media (--before-large) {

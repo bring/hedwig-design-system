@@ -126,6 +126,7 @@ export const AutoAnimateHeight = forwardRef<HTMLDivElement, AutoAnimateHeightPro
           style={{
             position: "absolute",
             visibility: "hidden",
+            pointerEvents: "none",
           }}
         >
           {children}
