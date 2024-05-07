@@ -3,7 +3,7 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
   /**
-   * Either `DescriptionDetails` or `DescriptionTerm` elements
+   * Either `dt`, `dl`, or `div` elements
    */
   children?: ReactNode;
   /**

@@ -53,8 +53,8 @@ export const NoUnderline: Story = {
 export const ButtonAsLink: Story = {
   name: "Button as a link",
   args: {
-    as: "button",
-    children: "Les mer",
+    asChild: true,
+    children: <button type="button">Les mer</button>,
     href: undefined,
     onClick: () => {
       // eslint-disable-next-line no-alert -- Story

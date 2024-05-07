@@ -20,8 +20,7 @@ export type ShowMoreProps = React.HTMLAttributes<HTMLButtonElement> & {
  *
  * You have to add the logic for what happens when the button is clicked yourself.
  *
- * **Example**
- *
+ * @example
  * ```tsx
  * function Content() {
  *   const [items, fetchMoreItems, moreItemsAvailable] = useYourData();

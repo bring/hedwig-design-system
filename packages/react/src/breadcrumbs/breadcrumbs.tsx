@@ -13,7 +13,7 @@ export interface BreadcrumbsProps extends HTMLAttributes<HTMLOListElement> {
 /**
  * A breadcrumbs navigation menu
  *
- * **Usage**
+ * @example
  *
  * ```tsx
  * <Breadcrumbs data-testid="breadcrumbs">

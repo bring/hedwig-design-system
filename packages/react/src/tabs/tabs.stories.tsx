@@ -73,53 +73,55 @@ export const HorizontalWithMiddleSelected: Story = {
           <Tabs.Tab tabId="third">Bud- og ekspress-pakker</Tabs.Tab>
         </Tabs.List>
         <Tabs.Contents>
-          <Tabs.Content forTabId="first" as={StyledHtml}>
-            <h2>Vilkår for transport til bedrifter nasjonalt</h2>
-            <ul>
-              <li>
-                <a href="/tjenester/pakker-og-gods/Transportguiden_01122023.pdf">
-                  Transportguiden fra 01.12.2023 (pdf)
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://lovdata.no/dokument/NL/lov/1974-12-20-68?q=Lov+om+vegfraktavtaler"
-                  rel="noopener"
-                  target="_blank"
-                >
-                  Link til Lov om Vegfraktavtaler fra Lovdata
-                </a>
-              </li>
-              <li>
-                <a href="/vilkar/nsab-2000.pdf">NSAB 2000 (pdf)</a>
-              </li>
-              <li>
-                <a href="/vilkar/nsab-2015.pdf">NSAB 2015 (pdf)</a>
-              </li>
-              <li>
-                <a href="/vilkar/pakker-til-bedrifter-i-utlandet-pakker-og-gods-sikkerhetsbestemmelser">
-                  Pakker og gods - sikkerhetsbestemmelser
-                </a>
-              </li>
-              <li>
-                <a href="/vilkar/vilkar-for-pakke-til-bedrift">Vilkår for Pakke til bedrift</a>
-              </li>
-              <li>
-                <a href="/vilkar/vilkar-for-ekspress-neste-dag">Vilkår for Ekspress neste dag</a>
-              </li>
-              <li>
-                <a href="/vilkar/Betingelser%20Oljeekspressen.pdf">
-                  Betingelser Oljeekspressen (pdf)
-                </a>
-                &nbsp;
-              </li>
-              <li>
-                <a href="/tjenester/pakker-og-gods/Transportguiden_01122023.pdf">
-                  Vilkår for godstjenester fra 01.12.2023 (pdf)
-                </a>
-                &nbsp;
-              </li>
-            </ul>
+          <Tabs.Content forTabId="first" asChild>
+            <StyledHtml>
+              <h2>Vilkår for transport til bedrifter nasjonalt</h2>
+              <ul>
+                <li>
+                  <a href="/tjenester/pakker-og-gods/Transportguiden_01122023.pdf">
+                    Transportguiden fra 01.12.2023 (pdf)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://lovdata.no/dokument/NL/lov/1974-12-20-68?q=Lov+om+vegfraktavtaler"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Link til Lov om Vegfraktavtaler fra Lovdata
+                  </a>
+                </li>
+                <li>
+                  <a href="/vilkar/nsab-2000.pdf">NSAB 2000 (pdf)</a>
+                </li>
+                <li>
+                  <a href="/vilkar/nsab-2015.pdf">NSAB 2015 (pdf)</a>
+                </li>
+                <li>
+                  <a href="/vilkar/pakker-til-bedrifter-i-utlandet-pakker-og-gods-sikkerhetsbestemmelser">
+                    Pakker og gods - sikkerhetsbestemmelser
+                  </a>
+                </li>
+                <li>
+                  <a href="/vilkar/vilkar-for-pakke-til-bedrift">Vilkår for Pakke til bedrift</a>
+                </li>
+                <li>
+                  <a href="/vilkar/vilkar-for-ekspress-neste-dag">Vilkår for Ekspress neste dag</a>
+                </li>
+                <li>
+                  <a href="/vilkar/Betingelser%20Oljeekspressen.pdf">
+                    Betingelser Oljeekspressen (pdf)
+                  </a>
+                  &nbsp;
+                </li>
+                <li>
+                  <a href="/tjenester/pakker-og-gods/Transportguiden_01122023.pdf">
+                    Vilkår for godstjenester fra 01.12.2023 (pdf)
+                  </a>
+                  &nbsp;
+                </li>
+              </ul>
+            </StyledHtml>
           </Tabs.Content>
           <Tabs.Content forTabId="second">
             <h2>Vilkår for post med like formater</h2>

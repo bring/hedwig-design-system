@@ -79,12 +79,13 @@
     }
   }
 
-  .hds-navbar__button {
+  .hds-navbar__item {
     color: inherit;
     background-color: transparent;
     text-decoration: none;
     padding: var(--hds-spacing-16);
     display: inline-flex;
+    column-gap: var(--hds-spacing-8);
     justify-content: center;
     align-items: center;
     font: var(--hds-typography-body);
@@ -94,17 +95,13 @@
       color: var(--hds-link-colors-hover);
     }
 
-    svg {
-      &:not(:first-child) {
-        margin-left: var(--hds-spacing-8);
-      }
-
+    .hds-navbar__item-icon {
       width: var(--hds-spacing-24);
       height: var(--hds-spacing-24);
     }
 
     @media (--before-large) {
-      .hds-navbar__button-responsive-text {
+      .hds-navbar__item-responsive-text {
         display: none;
       }
     }

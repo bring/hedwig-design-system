@@ -2,8 +2,8 @@ import { Select } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Select label="Label">
-      <option disabled hidden selected value="">
+    <Select label="Label" defaultValue="">
+      <option disabled hidden value="">
         Please select
       </option>
       <option value="1">Option 1</option>

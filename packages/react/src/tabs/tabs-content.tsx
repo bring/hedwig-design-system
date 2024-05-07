@@ -1,20 +1,30 @@
 import type { HTMLAttributes, ReactElement } from "react";
 import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import type { OverridableComponent } from "../utils";
+import { Slot } from "@radix-ui/react-slot";
 import { useTabsContext } from "./context";
 
-export interface TabContentsProps extends HTMLAttributes<HTMLDivElement> {
+export interface TabsContentsProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactElement<TabsContentProps> | ReactElement<TabsContentProps>[];
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
 
-export function TabsContents({ children, ...rest }: TabContentsProps) {
-  return (
-    <div className={clsx("hds-tabs__contents")} {...rest}>
-      {children}
-    </div>
-  );
-}
+export const TabsContents = forwardRef<HTMLDivElement, TabsContentsProps>(
+  ({ asChild, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
+    return (
+      <Component ref={ref} className={clsx("hds-tabs__contents")} {...rest}>
+        {children}
+      </Component>
+    );
+  },
+);
 TabsContents.displayName = "Tabs.Contents";
 
 export interface TabsContentProps extends HTMLAttributes<HTMLElement> {
@@ -24,11 +34,19 @@ export interface TabsContentProps extends HTMLAttributes<HTMLElement> {
    * Content for the referenced tabId
    */
   forTabId: string;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
 
-export const TabsContent: OverridableComponent<TabsContentProps, HTMLElement> = forwardRef(
-  ({ as: Component = "div", forTabId, children, ...rest }, ref) => {
+export const TabsContent = forwardRef<HTMLDivElement, TabsContentProps>(
+  ({ asChild, forTabId, children, ...rest }, ref) => {
     const context = useTabsContext();
+    const Component = asChild ? Slot : "div";
 
     if (context.activeTabId === forTabId) {
       return (

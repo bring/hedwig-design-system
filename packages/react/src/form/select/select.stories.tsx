@@ -21,8 +21,8 @@ export const Default: Story = {
     variant: { control: "inline-radio", options: ["default", "white"] },
   },
   render: (props) => (
-    <Select {...props}>
-      <option disabled hidden selected value="">
+    <Select {...props} defaultValue="">
+      <option disabled hidden value="">
         Please select
       </option>
       <option value="1">option 1</option>
@@ -39,8 +39,8 @@ export const White: Story = {
   },
   render: (props) => (
     <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Select {...props}>
-        <option disabled hidden selected value="">
+      <Select {...props} defaultValue="">
+        <option disabled hidden value="">
           Please select
         </option>
         <option value="1">option 1</option>
@@ -59,8 +59,8 @@ export const DefaultWithError: Story = {
     errorMessage: "Something is wrong",
   },
   render: (props) => (
-    <Select {...props}>
-      <option disabled hidden selected value="">
+    <Select {...props} defaultValue="">
+      <option disabled hidden value="">
         Please select
       </option>
       <option value="1">option 1</option>
@@ -80,8 +80,8 @@ export const WhiteWithError: Story = {
   },
   render: (props) => (
     <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Select {...props}>
-        <option disabled hidden selected value="">
+      <Select {...props} defaultValue="">
+        <option disabled hidden value="">
           Please select
         </option>
         <option value="1">option 1</option>

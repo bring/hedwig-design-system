@@ -41,6 +41,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 const layoutClassNames = {
   centered: styles.layoutCentered,
   "centered-fullwidth": styles.layoutCenteredFullwidth,
+  "padding-only": styles.layoutPaddingOnly,
   none: "",
 } as const;
 

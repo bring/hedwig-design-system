@@ -1,7 +1,10 @@
 import {
   Navbar,
   NavbarLogo,
-  NavbarButton,
+  NavbarItem,
+  NavbarButtonItem,
+  NavbarLinkItem,
+  NavbarItemIcon,
   NavbarNavigation,
   NavbarLogoAndServiceText,
 } from "./navbar";
@@ -12,32 +15,41 @@ import {
   NavbarExpandableMenuContent,
 } from "./navbar-expandable-menu";
 
-const NavbarExpandableMenuComponent = NavbarExpandableMenu as typeof NavbarExpandableMenu & {
-  Trigger: typeof NavbarExpandableMenuTrigger;
-  Content: typeof NavbarExpandableMenuContent;
-};
-NavbarExpandableMenuComponent.Trigger = NavbarExpandableMenuTrigger;
-NavbarExpandableMenuComponent.Content = NavbarExpandableMenuContent;
-
 const NavbarComponent = Navbar as typeof Navbar & {
   Logo: typeof NavbarLogo;
   LogoAndServiceText: typeof NavbarLogoAndServiceText;
-  ExpandableMenu: typeof NavbarExpandableMenuComponent;
-  Button: typeof NavbarButton;
+  ExpandableMenu: typeof NavbarExpandableMenu;
+  ExpandableMenuTrigger: typeof NavbarExpandableMenuTrigger;
+  ExpandableMenuContent: typeof NavbarExpandableMenuContent;
+  Item: typeof NavbarItem;
+  ButtonItem: typeof NavbarButtonItem;
+  LinkItem: typeof NavbarLinkItem;
+  ItemIcon: typeof NavbarItemIcon;
   Navigation: typeof NavbarNavigation;
 };
 NavbarComponent.Logo = NavbarLogo;
 NavbarComponent.LogoAndServiceText = NavbarLogoAndServiceText;
-NavbarComponent.ExpandableMenu = NavbarExpandableMenuComponent;
-NavbarComponent.Button = NavbarButton;
+NavbarComponent.ExpandableMenu = NavbarExpandableMenu;
+NavbarComponent.ExpandableMenuTrigger = NavbarExpandableMenuTrigger;
+NavbarComponent.ExpandableMenuContent = NavbarExpandableMenuContent;
+NavbarComponent.Item = NavbarItem;
+NavbarComponent.ButtonItem = NavbarButtonItem;
+NavbarComponent.LinkItem = NavbarLinkItem;
+NavbarComponent.ItemIcon = NavbarItemIcon;
 NavbarComponent.Navigation = NavbarNavigation;
 
 export {
   NavbarComponent as Navbar,
   NavbarLogo,
-  NavbarButton,
+  NavbarItem,
+  NavbarButtonItem,
+  NavbarLinkItem,
+  NavbarItemIcon,
   NavbarNavigation,
   NavbarLogoAndServiceText,
   useNavbarExpendableMenuContext,
+  NavbarExpandableMenu,
+  NavbarExpandableMenuTrigger,
+  NavbarExpandableMenuContent,
 };
 export type * from "./navbar";

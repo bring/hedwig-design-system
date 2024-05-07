@@ -1,7 +1,7 @@
 import { forwardRef, useEffect, useRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { Slot } from "@radix-ui/react-slot";
 import { Box } from "../box/box";
-import type { OverridableComponent } from "../utils";
 import { useMergeRefs } from "../utils";
 
 export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
@@ -23,33 +23,33 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
  *
  * Uses the native [`dialog`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) element.
  *
- * Example
- * ```
-    const modalRef = useRef<HTMLDialogElement>(null);
-    const onClose = () => modalRef.current?.close();
-
-    return (
-      <>
-        <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
-        <Modal ref={modalRef}>
-          <Modal.Header>Dialog header</Modal.Header>
-          <Modal.Content>
-            <p>
-              Dialog header Dialog description - a description of what is about to happen and maybe
-              something about the consequences.
-            </p>
-          </Modal.Content>
-          <Modal.Footer>
-            <HStack gap="16" wrap>
-              <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
-              <PrimaryButton fill="outline" onClick={onClose}>
-                Cancel
-              </PrimaryButton>
-            </HStack>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
+ * @example
+ * ```tsx
+ *   const modalRef = useRef<HTMLDialogElement>(null);
+ *   const onClose = () => modalRef.current?.close();
+ *
+ *   return (
+ *     <>
+ *       <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
+ *       <Modal ref={modalRef}>
+ *         <Modal.Header>Dialog header</Modal.Header>
+ *         <Modal.Content>
+ *           <p>
+ *             Dialog header Dialog description - a description of what is about to happen and maybe
+ *             something about the consequences.
+ *           </p>
+ *         </Modal.Content>
+ *         <Modal.Footer>
+ *           <HStack gap="16" wrap>
+ *             <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
+ *             <PrimaryButton fill="outline" onClick={onClose}>
+ *               Cancel
+ *             </PrimaryButton>
+ *           </HStack>
+ *         </Modal.Footer>
+ *       </Modal>
+ *     </>
+ *   );
  * ```
  */
 export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
@@ -86,26 +86,33 @@ export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
 
     return (
       <Box
-        as="dialog"
+        asChild
         className={clsx("hds-modal", className as undefined)}
         closeable
         onClick={onDialogClick}
         onClose={onCloseButtonClick}
-        ref={mergedRef}
         variant="white"
-        {
-          ...(rest as object) /* TODO remove type casting */
-        }
       >
-        {children}
+        <dialog ref={mergedRef} {...rest}>
+          {children}
+        </dialog>
       </Box>
     );
   },
 );
 Modal.displayName = "Modal";
 
-export const ModalHeader: OverridableComponent<object, HTMLHeadingElement> = forwardRef(
-  ({ as: Component = "h1", className, ...rest }, ref) => {
+interface ModalHeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+export const ModalHeader = forwardRef<HTMLHeadingElement, ModalHeaderProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "h1";
     return (
       <Component
         className={clsx("hds-modal__header", className as undefined)}
@@ -117,8 +124,17 @@ export const ModalHeader: OverridableComponent<object, HTMLHeadingElement> = for
 );
 ModalHeader.displayName = "Modal.Header";
 
-export const ModalContent: OverridableComponent<object, HTMLDivElement> = forwardRef(
-  ({ as: Component = "div", className, ...rest }, ref) => {
+interface ModalContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+export const ModalContent = forwardRef<HTMLDivElement, ModalContentProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
     return (
       <Component
         className={clsx("hds-modal__content", className as undefined)}
@@ -130,8 +146,17 @@ export const ModalContent: OverridableComponent<object, HTMLDivElement> = forwar
 );
 ModalContent.displayName = "Modal.Content";
 
-export const ModalFooter: OverridableComponent<object, HTMLDivElement> = forwardRef(
-  ({ as: Component = "footer", className, ...rest }, ref) => {
+interface ModalFooterProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+export const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "footer";
     return (
       <Component
         className={clsx("hds-modal__footer", className as undefined)}
@@ -143,7 +168,7 @@ export const ModalFooter: OverridableComponent<object, HTMLDivElement> = forward
 );
 ModalFooter.displayName = "Modal.Footer";
 
-export function useScrollLock(modalRef: React.RefObject<HTMLDialogElement>, bodyClass: string) {
+function useScrollLock(modalRef: React.RefObject<HTMLDialogElement>, bodyClass: string) {
   useEffect(() => {
     if (!modalRef.current) return;
     if (modalRef.current.open) document.body.classList.add(bodyClass);

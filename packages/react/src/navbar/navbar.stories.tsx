@@ -47,17 +47,21 @@ export const Default: Story = {
   render: () => (
     <>
       <Navbar>
-        <Navbar.Logo as="a" href="https://www.posten.no/" title="Til forsiden" />
+        <Navbar.Logo asChild>
+          <a href="https://www.posten.no/" title="Til forsiden" />
+        </Navbar.Logo>
         <Navbar.Navigation>
-          <Navbar.Button as="a" href="https://www.posten.no/" icon={globeIcon} title="Link">
+          <Navbar.LinkItem title="Link" href="https://www.posten.no/">
             English
-          </Navbar.Button>
-          <Navbar.Button icon={userIcon} title="Button">
+            <Navbar.ItemIcon>{globeIcon}</Navbar.ItemIcon>
+          </Navbar.LinkItem>
+          <Navbar.ButtonItem title="Button">
             Search
-          </Navbar.Button>
+            <Navbar.ItemIcon>{userIcon}</Navbar.ItemIcon>
+          </Navbar.ButtonItem>
           <Navbar.ExpandableMenu>
-            <Navbar.ExpandableMenu.Trigger whenClosedText="Meny" whenOpenText="Close" />
-            <Navbar.ExpandableMenu.Content>
+            <Navbar.ExpandableMenuTrigger whenClosedText="Meny" whenOpenText="Close" />
+            <Navbar.ExpandableMenuContent>
               <Container>
                 <h2>Menu contents</h2>
                 <Accordion>
@@ -79,7 +83,7 @@ export const Default: Story = {
                   </Accordion.Item>
                 </Accordion>
               </Container>
-            </Navbar.ExpandableMenu.Content>
+            </Navbar.ExpandableMenuContent>
           </Navbar.ExpandableMenu>
         </Navbar.Navigation>
       </Navbar>

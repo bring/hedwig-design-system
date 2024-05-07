@@ -55,10 +55,12 @@ export const AsALink: Story = {
     </HStack>
   ),
   args: {
-    children: "Link button",
-    as: "a",
-    href: "https://www.posten.no",
-    target: "_blank",
+    children: (
+      <a href="https://www.posten.no" target="_blank" rel="noopener">
+        Link button
+      </a>
+    ),
+    asChild: true,
   },
 };
 
@@ -76,7 +78,8 @@ const createIconStory = (
   args: {
     lang: "en",
     "aria-label": "Choose language",
-    icon: (
+    icon: true,
+    children: (
       <svg
         aria-hidden
         fill="none"

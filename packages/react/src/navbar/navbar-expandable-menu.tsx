@@ -2,7 +2,7 @@ import React, { createContext, useContext, forwardRef, useState, useRef, useEffe
 import { createRoot } from "react-dom/client";
 import type { ClassValue } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { focusTrap, type OverridableComponent } from "../utils";
+import { focusTrap } from "../utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
 const expandableMenuContext = createContext([
@@ -79,7 +79,7 @@ function RenderButton({
   const style = width ? { width } : {};
   return (
     <button
-      className={clsx("hds-navbar__button", className)}
+      className={clsx("hds-navbar__item", className)}
       onClick={toggleOpen}
       ref={ref ?? innerRef}
       style={style}
@@ -87,7 +87,7 @@ function RenderButton({
       type="button"
       {...rest}
     >
-      <span className={clsx("hds-navbar__button-responsive-text")}>{text}</span> {icon}
+      <span className={clsx("hds-navbar__item-responsive-text")}>{text}</span> {icon}
     </button>
   );
 }
@@ -199,7 +199,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
     );
   },
 );
-NavbarExpandableMenuTrigger.displayName = "Navbar.ExpandableMenu.Trigger";
+NavbarExpandableMenuTrigger.displayName = "Navbar.ExpandableMenuTrigger";
 
 /**
  * Content
@@ -208,21 +208,21 @@ export interface NavbarExpandableMenuContentProps {
   children: React.ReactNode;
   className?: string;
 }
-export const NavbarExpandableMenuContent: OverridableComponent<
-  NavbarExpandableMenuContentProps,
-  HTMLDivElement
-> = forwardRef(({ as: Component = "section", children, className, ...rest }, ref) => {
+export const NavbarExpandableMenuContent = forwardRef<
+  HTMLDivElement,
+  NavbarExpandableMenuContentProps
+>(({ children, className, ...rest }, ref) => {
   const [open] = useNavbarExpendableMenuContext();
   return (
-    <Component
+    <section
       {...rest}
       className={clsx("hds-navbar__expandable-menu-content", className as undefined)}
       data-state={open ? "open" : "closed"}
-      inert={open ? undefined : "true"}
+      {...{ inert: open ? "true" : undefined }}
       ref={ref}
     >
       <div className={clsx("hds-navbar__expandable-menu-content-inner")}>{children}</div>
-    </Component>
+    </section>
   );
 });
-NavbarExpandableMenuContent.displayName = "Navbar.ExpandableMenu.Content";
+NavbarExpandableMenuContent.displayName = "Navbar.ExpandableMenuContent";

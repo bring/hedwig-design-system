@@ -1,4 +1,4 @@
-function CloseIcon() {
+export function CloseIcon() {
   return (
     <svg aria-hidden viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -9,7 +9,7 @@ function CloseIcon() {
   );
 }
 
-function MenuIcon() {
+export function MenuIcon() {
   return (
     <svg role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -19,5 +19,3 @@ function MenuIcon() {
     </svg>
   );
 }
-
-export { CloseIcon, MenuIcon };

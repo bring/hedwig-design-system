@@ -13,68 +13,68 @@ function Example() {
     >
       <Card>
         <Card.Media>
-          <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+          <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
         <Card.Body>
-          <Card.Body.Header as="h3">
-            <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-            <Card.Body.Header.Title as="a" href="#">
-              Article 1
-            </Card.Body.Header.Title>
-          </Card.Body.Header>
-          <Card.Body.Description>
+          <Card.BodyHeader as="h3">
+            <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
+            <Card.BodyHeaderTitle asChild>
+              <a href="#article-1">Article 1</a>
+            </Card.BodyHeaderTitle>
+          </Card.BodyHeader>
+          <Card.BodyDescription>
             In this example, the whole card is an <code>&lt;a&gt;</code> tag.
-          </Card.Body.Description>
-          <Card.Body.Action.Arrow as="span" />
+          </Card.BodyDescription>
+          <Card.BodyActionArrow />
         </Card.Body>
       </Card>
       <Card>
         <Card.Media>
-          <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+          <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
         <Card.Body>
-          <Card.Body.Header as="h3">
-            <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-            <Card.Body.Header.Title as="a" href="#">
-              Article 2
-            </Card.Body.Header.Title>
-          </Card.Body.Header>
-          <Card.Body.Description>
+          <Card.BodyHeader as="h3">
+            <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
+            <Card.BodyHeaderTitle asChild>
+              <a href="#article-2">Article 2</a>
+            </Card.BodyHeaderTitle>
+          </Card.BodyHeader>
+          <Card.BodyDescription>
             In this example, only the arrow below is a link.
-          </Card.Body.Description>
-          <Card.Body.Action.Arrow />
+          </Card.BodyDescription>
+          <Card.BodyActionArrow />
         </Card.Body>
       </Card>
       <Card>
         <Card.Media>
-          <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+          <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
         <Card.Body>
-          <Card.Body.Header as="h3">
-            <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-            <Card.Body.Header.Title as={Link} href="#">
-              Article 3
-            </Card.Body.Header.Title>
-          </Card.Body.Header>
-          <Card.Body.Description>
+          <Card.BodyHeader as="h3">
+            <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
+            <Card.BodyHeaderTitle asChild>
+              <Link href="#article-3">Article 3</Link>
+            </Card.BodyHeaderTitle>
+          </Card.BodyHeader>
+          <Card.BodyDescription>
             In this example, there is a <code>&lt;Link&gt;</code> component below.
-          </Card.Body.Description>
-          <Card.Body.Action>Read more</Card.Body.Action>
+          </Card.BodyDescription>
+          <Card.BodyAction>Read more</Card.BodyAction>
         </Card.Body>
       </Card>
       <Card className="hds-theme-bring">
         <Card.Media>
-          <Card.Media.Img alt="posten-bring" src={postenBringImage} />
+          <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
         <Card.Body>
-          <Card.Body.Header as="h3">
-            <Card.Body.Header.Overline>Theme</Card.Body.Header.Overline>
-            <Card.Body.Header.Title as="a" href="#">
-              Article 4
-            </Card.Body.Header.Title>
-          </Card.Body.Header>
-          <Card.Body.Description>A Bring card.</Card.Body.Description>
-          <Card.Body.Action.Arrow as="span" />
+          <Card.BodyHeader as="h3">
+            <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
+            <Card.BodyHeaderTitle asChild>
+              <a href="#article-4">Article 4</a>
+            </Card.BodyHeaderTitle>
+          </Card.BodyHeader>
+          <Card.BodyDescription>A Bring card.</Card.BodyDescription>
+          <Card.BodyActionArrow />
         </Card.Body>
       </Card>
     </div>

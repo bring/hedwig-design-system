@@ -50,14 +50,15 @@ export default function Component() {
     <div>
       <Breadcrumbs className="hds-mt-24-32 hds-mb-24-32">
         <li>
-          <Link
-            as={RemixLink}
-            to={{
-              pathname: "../",
-              search: search.toString(),
-            }}
-          >
-            Examples
+          <Link asChild>
+            <RemixLink
+              to={{
+                pathname: "../",
+                search: search.toString(),
+              }}
+            >
+              Examples
+            </RemixLink>
           </Link>
         </li>
 

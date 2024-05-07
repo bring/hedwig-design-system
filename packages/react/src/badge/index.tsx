@@ -1,3 +1,3 @@
-export { Badge, DarkBadge, WarningBadge, WhiteBadge } from "./badge";
+export { LighterBadge as Badge, DarkBadge, WarningBadge, WhiteBadge } from "./badge";
 
 export type * from "./badge";

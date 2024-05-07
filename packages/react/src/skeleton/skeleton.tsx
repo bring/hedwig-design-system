@@ -1,14 +1,16 @@
-import * as React from "react";
+/* eslint-disable @typescript-eslint/no-unsafe-assignment -- Typings for the differnt html elements */
+/* eslint-disable @typescript-eslint/no-explicit-any -- Typings for the differnt html elements */
+
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { Slot } from "@radix-ui/react-slot";
 import { forwardRef } from "react";
-import type { OverridableComponent } from "../utils";
 
 interface DimensionsFromWidthAndHeight {
   height?: number | string;
   width?: number | string;
 }
 
-interface SkeletonPropsInner extends React.AnchorHTMLAttributes<HTMLDivElement> {
+interface SkeletonPropsInner extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * The visual style of the Skeleton
    */
@@ -23,6 +25,20 @@ interface SkeletonPropsInner extends React.AnchorHTMLAttributes<HTMLDivElement> 
   animation?: boolean;
 
   children?: React.ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+
+  /**
+   * Convienence prop to change the rendered element.
+   *
+   * Use {@link SkeletonProps.asChild} if you need more control of the rendered element.
+   */
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "div" | "label" | "p";
 }
 
 export type SkeletonProps = SkeletonPropsInner & DimensionsFromWidthAndHeight;
@@ -59,10 +75,11 @@ export type SkeletonProps = SkeletonPropsInner & DimensionsFromWidthAndHeight;
  * - https://chakra-ui.com/docs/components/skeleton
  * - https://mui.com/material-ui/react-skeleton/
  */
-export const Skeleton: OverridableComponent<SkeletonProps, HTMLDivElement> = forwardRef(
+export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
   (
     {
-      as: Component = "div",
+      as: Tag = "div",
+      asChild,
       children,
       animation = true,
       variant = "text",
@@ -74,6 +91,7 @@ export const Skeleton: OverridableComponent<SkeletonProps, HTMLDivElement> = for
     },
     ref,
   ) => {
+    const Component = asChild ? Slot : Tag;
     return (
       <Component
         className={clsx(
@@ -83,9 +101,10 @@ export const Skeleton: OverridableComponent<SkeletonProps, HTMLDivElement> = for
           className as undefined,
         )}
         style={{ ...style, width, height }}
-        ref={ref}
         aria-hidden
-        {...rest}
+        {...{ inert: "true" }}
+        ref={ref as any}
+        {...(rest as any)}
       >
         {children}
       </Component>

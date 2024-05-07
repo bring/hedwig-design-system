@@ -7,5 +7,6 @@ module.exports = {
         allowNumber: true,
       },
     ],
+    "tsdoc/syntax": 0,
   },
 };

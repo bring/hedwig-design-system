@@ -1,14 +1,22 @@
 import { forwardRef, useCallback, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import type { OverridableComponent } from "../utils";
+import { Slot, Slottable } from "@radix-ui/react-slot";
 
 export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "light-grey" | "lighter" | "white" | "warning";
   children?: React.ReactNode;
+
+  /**
+   * Color variant of the box
+   *
+   * @default "light-grey"
+   */
+  variant?: "light-grey" | "lighter" | "white" | "warning";
 
   /**
    * If `true`, a close button will be shown.
    * Use when you want to control the close button using the BoxCloseButton component.
+   *
+   * @default false
    */
   closeable?: boolean;
 
@@ -34,12 +42,19 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
    * Props applied to the close button element.
    */
   closeButtonProps?: BoxCloseButtonProps;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
 }
 
-export const Box: OverridableComponent<BoxProps, HTMLDivElement> = forwardRef(
+export const Box = forwardRef<HTMLDivElement, BoxProps>(
   (
     {
-      as: Component = "div",
+      asChild,
       variant,
       closeable = false,
       onClose: onCloseProp,
@@ -64,6 +79,7 @@ export const Box: OverridableComponent<BoxProps, HTMLDivElement> = forwardRef(
       // eslint-disable-next-line react-hooks/exhaustive-deps -- I know better
     }, []);
     const closed = closedProp ?? closedState;
+    const Component = asChild ? Slot : "div";
 
     return (
       <Component
@@ -77,7 +93,7 @@ export const Box: OverridableComponent<BoxProps, HTMLDivElement> = forwardRef(
         {...rest}
       >
         {closeable ? <BoxCloseButton onClick={onClose} {...closeButtonProps} /> : null}
-        {children}
+        <Slottable>{children}</Slottable>
       </Component>
     );
   },
