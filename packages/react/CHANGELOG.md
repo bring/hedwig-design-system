@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.81
+
+### Patch Changes
+
+- :bug: accordion: fix regression with the `inert` state being toggled the wrong way
+
 ## 0.0.80
 
 ### Patch Changes
