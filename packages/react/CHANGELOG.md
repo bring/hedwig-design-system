@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.78
+
+### Patch Changes
+
+- 6572d8d: :construction::recycle: navbar: fix types
+
 ## 0.0.77
 
 ### Patch Changes
