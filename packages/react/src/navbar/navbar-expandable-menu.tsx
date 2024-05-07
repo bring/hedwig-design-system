@@ -1,6 +1,5 @@
-import React, { createContext, useContext, forwardRef, useState, useRef, useEffect } from "react";
+import { createContext, useContext, forwardRef, useState, useRef, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import type { ClassValue } from "@postenbring/hedwig-css/typed-classname/index.mjs";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { focusTrap } from "../utils";
 import { CloseIcon, MenuIcon } from "./icons";
@@ -53,44 +52,35 @@ export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
 }
 NavbarExpandableMenu.displayName = "NavbarExpandableMenu";
 
-interface ButtonInterface {
-  className?: ClassValue;
+interface ButtonInterface extends React.HTMLAttributes<HTMLButtonElement> {
   open?: boolean;
   innerRef?: React.RefObject<HTMLButtonElement>;
-  ref?: React.ForwardedRef<HTMLButtonElement>;
   text: React.ReactNode;
   title?: string;
   toggleOpen?: () => void;
   width?: number;
 }
 
-function RenderButton({
-  className,
-  innerRef,
-  open = false,
-  ref,
-  text,
-  title,
-  toggleOpen,
-  width,
-  ...rest
-}: ButtonInterface) {
-  const icon = open ? <CloseIcon /> : <MenuIcon />;
-  const style = width ? { width } : {};
-  return (
-    <button
-      className={clsx("hds-navbar__item", className)}
-      onClick={toggleOpen}
-      ref={ref ?? innerRef}
-      style={style}
-      title={title}
-      type="button"
-      {...rest}
-    >
-      <span className={clsx("hds-navbar__item-responsive-text")}>{text}</span> {icon}
-    </button>
-  );
-}
+const RenderButton = forwardRef<HTMLButtonElement, ButtonInterface>(
+  ({ className, innerRef, open = false, text, title, toggleOpen, width, ...rest }, ref) => {
+    const icon = open ? <CloseIcon /> : <MenuIcon />;
+    const style = width ? { width } : {};
+    return (
+      <button
+        className={clsx("hds-navbar__item", className as undefined)}
+        onClick={toggleOpen}
+        ref={ref ?? innerRef}
+        style={style}
+        title={title}
+        type="button"
+        {...rest}
+      >
+        <span className={clsx("hds-navbar__item-responsive-text")}>{text}</span> {icon}
+      </button>
+    );
+  },
+);
+RenderButton.displayName = "Navbar.RenderButton";
 
 /**
  * Trigger
@@ -161,7 +151,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
     useEffect(() => {
       measureButton(
         <RenderButton
-          className={(className ? className : "") as ClassValue}
+          className={className}
           innerRef={measureButtonRef}
           text={whenClosedText}
           title={title}
@@ -170,7 +160,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
         (closedWidth: number) => {
           measureButton(
             <RenderButton
-              className={(className ? className : "") as ClassValue}
+              className={className}
               innerRef={measureButtonRef}
               open
               text={whenOpenText}
@@ -187,7 +177,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
 
     return (
       <RenderButton
-        className={(className ? className : "") as ClassValue}
+        className={className}
         open={open}
         ref={ref}
         text={text as string}
