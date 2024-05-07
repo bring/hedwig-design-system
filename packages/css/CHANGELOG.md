@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.69
+
+### Patch Changes
+
+- 696c023: :recycle: navbar: update measurement code
+
 ## 0.0.68
 
 ### Patch Changes

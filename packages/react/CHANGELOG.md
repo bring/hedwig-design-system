@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.80
+
+### Patch Changes
+
+- 696c023: :recycle: navbar: update measurement code
+- Updated dependencies [696c023]
+  - @postenbring/hedwig-css@0.0.69
+
 ## 0.0.79
 
 ### Patch Changes
