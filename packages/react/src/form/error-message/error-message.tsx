@@ -8,12 +8,13 @@ export interface ErrorMessageProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 
 export const ErrorMessage = forwardRef<HTMLDivElement, ErrorMessageProps>(
-  ({ children, id, className, ...rest }) => {
+  ({ children, id, className, ...rest }, ref) => {
     return (
       <div
         aria-live="assertive"
         className={clsx("hds-error-message", className as undefined)}
         id={id}
+        ref={ref}
         {...rest}
       >
         {children}

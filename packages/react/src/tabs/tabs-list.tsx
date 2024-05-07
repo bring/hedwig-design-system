@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactElement, MouseEvent } from "react";
 import { forwardRef, useEffect, useRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { useResize, useHydrated } from "../utils";
+import { useResize, useHydrated, useMergeRefs } from "../utils";
 import { useTabsContext } from "./context";
 
 export interface TabsListProps extends HTMLAttributes<HTMLDivElement> {
@@ -17,9 +17,10 @@ export interface TabsListProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const TabsList = forwardRef<HTMLDivElement, TabsListProps>(
-  ({ children, direction = "horizontal", className, ...rest }) => {
+  ({ children, direction = "horizontal", className, ...rest }, ref) => {
     const { activeTabId } = useTabsContext();
     const tabsListRef = useRef<HTMLDivElement>(null);
+    const mergedRef = useMergeRefs([tabsListRef, ref]);
     const { width: tabsWidth } = useResize(tabsListRef);
 
     const isClientSide = useHydrated();
@@ -77,7 +78,7 @@ export const TabsList = forwardRef<HTMLDivElement, TabsListProps>(
               },
           className as undefined,
         )}
-        ref={tabsListRef}
+        ref={mergedRef}
         role="tablist"
         {...rest}
       >
