@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.79
+
+### Patch Changes
+
+- 6439979: :adhesive_bandage: fix missing ref wiring
+
 ## 0.0.78
 
 ### Patch Changes
