@@ -7,6 +7,6 @@ export default defineConfig({
   sourcemap: true,
   bundle: true,
   format: ["esm", "cjs"],
-  experimentalDts: true,
+  dts: false,
   external: ["react", "react-dom"],
 });

@@ -1,0 +1,12 @@
+{
+  "extends": "hedwig-tsconfig/react-library.json",
+  "include": ["src/"],
+  "exclude": ["src/**/*.stories.ts", "src/**/*.stories.tsx"],
+  "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true
+  }
+}
