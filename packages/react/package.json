@@ -16,7 +16,9 @@
     "build": "pnpm run --sequential /^build:.*/",
     "build:bundle": "tsup",
     "build:types": "tsc -p tsconfig.types.json",
-    "dev": "tsup --watch",
+    "dev": "pnpm run --parallel /^dev:.*/",
+    "dev:bundle": "tsup --watch",
+    "dev:types": "tsc -p tsconfig.types.json --watch",
     "lint": "eslint src/",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .turbo node_modules dist"
