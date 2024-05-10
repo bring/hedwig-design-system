@@ -1,9 +1,11 @@
-import type { HTMLAttributes, ReactElement } from "react";
+import type { ReactElement } from "react";
 import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import type { AccordionItemProps } from "./accordion-item";
+import { AccordionItem, type AccordionItemProps } from "./accordion-item";
+import { AccordionHeader } from "./accordion-header";
+import { AccordionContent } from "./accordion-content";
 
-export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Accepts type of <AccordionItem/>
    */
@@ -15,6 +17,27 @@ export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   indent?: boolean;
 }
 
+/**
+ * Displays collapsible content sections
+ *
+ * @example
+ * ```tsx
+ * <Accordion>
+ *   <Accordion.Item defaultOpen>
+ *     <Accordion.Header>Item one</Accordion.Header>
+ *     <Accordion.Content>
+ *       Some content
+ *     </Accordion.Content>
+ *   </Accordion.Item>
+ *   <Accordion.Item>
+ *     <Accordion.Header>Item two</Accordion.Header>
+ *     <Accordion.Content>
+ *       Some more content
+ *     </Accordion.Content>
+ *   </Accordion.Item>
+ * </Accordion>
+ * ```
+ */
 export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
   ({ children, className, indent = true, ...rest }, ref) => {
     return (
@@ -31,6 +54,15 @@ export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
       </div>
     );
   },
-);
-
+) as AccordionType;
 Accordion.displayName = "Accordion";
+
+Accordion.Item = AccordionItem;
+Accordion.Header = AccordionHeader;
+Accordion.Content = AccordionContent;
+
+type AccordionType = ReturnType<typeof forwardRef<HTMLDivElement, AccordionProps>> & {
+  Item: typeof AccordionItem;
+  Header: typeof AccordionHeader;
+  Content: typeof AccordionContent;
+};

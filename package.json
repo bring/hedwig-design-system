@@ -30,7 +30,7 @@
       "express": "^4.19.2"
     }
   },
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.1.0",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "packages/css/**/*.{css,scss}": "stylelint --cache --fix",

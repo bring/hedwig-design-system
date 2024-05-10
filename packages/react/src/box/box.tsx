@@ -2,6 +2,21 @@ import { forwardRef, useCallback, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 
+export type BoxCloseButtonProps = Omit<React.HTMLAttributes<HTMLButtonElement>, "children">;
+export const BoxCloseButton = forwardRef<HTMLButtonElement, BoxCloseButtonProps>(
+  ({ className, ...rest }, ref) => {
+    return (
+      <button
+        className={clsx("hds-box__close-button", className as undefined)}
+        ref={ref}
+        type="button"
+        {...rest}
+      />
+    );
+  },
+);
+BoxCloseButton.displayName = "Box.CloseButton";
+
 export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 
@@ -97,20 +112,11 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
       </Component>
     );
   },
-);
+) as BoxType;
 Box.displayName = "Box";
 
-export type BoxCloseButtonProps = Omit<React.HTMLAttributes<HTMLButtonElement>, "children">;
-export const BoxCloseButton = forwardRef<HTMLButtonElement, BoxCloseButtonProps>(
-  ({ className, ...rest }, ref) => {
-    return (
-      <button
-        className={clsx("hds-box__close-button", className as undefined)}
-        ref={ref}
-        type="button"
-        {...rest}
-      />
-    );
-  },
-);
-BoxCloseButton.displayName = "Box.CloseButton";
+Box.CloseButton = BoxCloseButton;
+
+type BoxType = ReturnType<typeof forwardRef<HTMLDivElement, BoxProps>> & {
+  CloseButton: typeof BoxCloseButton;
+};
