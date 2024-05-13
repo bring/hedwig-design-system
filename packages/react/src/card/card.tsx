@@ -3,39 +3,6 @@ import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 
-export interface CardBaseProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: ReactNode;
-
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   *
-   * @default false
-   */
-  asChild?: boolean;
-}
-
-export const Card = forwardRef<
-  HTMLDivElement,
-  CardBaseProps & {
-    /**
-     * A Card should in most cases appear as a big link,
-     * but the actual link should just be the header title.
-     * To make life better for those with screen readers we should not make
-     * the entire card a link, as that would cause the entire card to be read
-     * as a link to the user. That would be perceived as information overload.
-     */
-    as?: "section" | "div" | "article" | "aside";
-  }
->(({ as: Tag = "section", asChild, className, children, ...rest }, ref) => {
-  const Component = asChild ? Slot : Tag;
-  return (
-    <Component {...rest} className={clsx("hds-card", className as undefined)} ref={ref}>
-      {children}
-    </Component>
-  );
-});
-Card.displayName = "Card";
-
 export const CardMedia = forwardRef<HTMLDivElement, CardBaseProps>(
   ({ asChild, className, children, ...rest }, ref) => {
     const Component = asChild ? Slot : "div";
@@ -197,3 +164,59 @@ export const CardBodyActionArrow = forwardRef<HTMLSpanElement, CardBodyActionArr
   },
 );
 CardBodyActionArrow.displayName = "Card.BodyActionArrow";
+
+export interface CardBaseProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+
+export interface CardProps extends CardBaseProps {
+  /**
+   * A Card should in most cases appear as a big link,
+   * but the actual link should just be the header title.
+   * To make life better for those with screen readers we should not make
+   * the entire card a link, as that would cause the entire card to be read
+   * as a link to the user. That would be perceived as information overload.
+   */
+  as?: "section" | "div" | "article" | "aside";
+}
+
+export const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ as: Tag = "section", asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : Tag;
+    return (
+      <Component {...rest} className={clsx("hds-card", className as undefined)} ref={ref}>
+        {children}
+      </Component>
+    );
+  },
+) as CardType;
+Card.displayName = "Card";
+
+Card.Media = CardMedia;
+Card.MediaImg = CardMediaImg;
+Card.Body = CardBody;
+Card.BodyHeader = CardBodyHeader;
+Card.BodyHeaderOverline = CardBodyHeaderOverline;
+Card.BodyHeaderTitle = CardBodyHeaderTitle;
+Card.BodyDescription = CardBodyDescription;
+Card.BodyAction = CardBodyAction;
+Card.BodyActionArrow = CardBodyActionArrow;
+
+type CardType = ReturnType<typeof forwardRef<HTMLDivElement, CardProps>> & {
+  Media: typeof CardMedia;
+  MediaImg: typeof CardMediaImg;
+  Body: typeof CardBody;
+  BodyHeader: typeof CardBodyHeader;
+  BodyHeaderOverline: typeof CardBodyHeaderOverline;
+  BodyHeaderTitle: typeof CardBodyHeaderTitle;
+  BodyDescription: typeof CardBodyDescription;
+  BodyAction: typeof CardBodyAction;
+  BodyActionArrow: typeof CardBodyActionArrow;
+};

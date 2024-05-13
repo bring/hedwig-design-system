@@ -5,45 +5,6 @@ import { Accordion } from "../accordion";
 import { LinkList } from "../list/link-list";
 import { PrimaryButton } from "../button";
 
-export interface FooterProps extends HTMLAttributes<HTMLDivElement> {
-  /**
-   * Footer variant
-   *
-   * @default "default"
-   */
-  variant?: "default" | "slim";
-
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   *
-   * @default false
-   */
-  asChild?: boolean;
-}
-
-/**
- * 🚨 WORK IN PROGRESS 🚨
- */
-export const Footer = forwardRef<HTMLDivElement, FooterProps>(
-  ({ children, className, variant, asChild, ...rest }, ref) => {
-    const Component = asChild ? Slot : "footer";
-    return (
-      <Component
-        className={clsx(
-          `hds-footer`,
-          variant === "slim" && "hds-footer--slim",
-          className as undefined,
-        )}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </Component>
-    );
-  },
-);
-Footer.displayName = "Footer";
-
 interface FooterLogoProps extends HTMLAttributes<HTMLDivElement> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
@@ -155,3 +116,54 @@ export const FooterLinkSection = forwardRef<HTMLDivElement, FooterLinkSectionPro
   },
 );
 FooterLinkSection.displayName = "Footer.LinkSection";
+
+export interface FooterProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Footer variant
+   *
+   * @default "default"
+   */
+  variant?: "default" | "slim";
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+
+/**
+ * 🚨 WORK IN PROGRESS 🚨
+ */
+export const Footer = forwardRef<HTMLDivElement, FooterProps>(
+  ({ children, className, variant, asChild, ...rest }, ref) => {
+    const Component = asChild ? Slot : "footer";
+    return (
+      <Component
+        className={clsx(
+          `hds-footer`,
+          variant === "slim" && "hds-footer--slim",
+          className as undefined,
+        )}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </Component>
+    );
+  },
+) as FooterType;
+Footer.displayName = "Footer";
+
+type FooterType = ReturnType<typeof forwardRef<HTMLDivElement, FooterProps>> & {
+  Logo: typeof FooterLogo;
+  ButtonLink: typeof FooterButtonLink;
+  LinkSections: typeof FooterLinkSections;
+  LinkSection: typeof FooterLinkSection;
+};
+
+Footer.Logo = FooterLogo;
+Footer.ButtonLink = FooterButtonLink;
+Footer.LinkSections = FooterLinkSections;
+Footer.LinkSection = FooterLinkSection;

@@ -1,19 +1,7 @@
-import { Accordion } from "./accordion";
-import { AccordionItem } from "./accordion-item";
-import { AccordionHeader } from "./accordion-header";
-import { AccordionContent } from "./accordion-content";
-
-const AccordionComponent = Accordion as typeof Accordion & {
-  Item: typeof AccordionItem;
-  Header: typeof AccordionHeader;
-  Content: typeof AccordionContent;
-};
-
-AccordionComponent.Item = AccordionItem;
-AccordionComponent.Header = AccordionHeader;
-AccordionComponent.Content = AccordionContent;
-
-export { AccordionComponent as Accordion, AccordionItem, AccordionHeader, AccordionContent };
+export { Accordion } from "./accordion";
+export { AccordionItem } from "./accordion-item";
+export { AccordionHeader } from "./accordion-header";
+export { AccordionContent } from "./accordion-content";
 
 export type * from "./accordion";
 export type * from "./accordion-item";

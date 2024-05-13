@@ -4,6 +4,72 @@ import { Slot } from "@radix-ui/react-slot";
 import { Box } from "../box/box";
 import { useMergeRefs } from "../utils";
 
+interface ModalHeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+export const ModalHeader = forwardRef<HTMLHeadingElement, ModalHeaderProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "h1";
+    return (
+      <Component
+        className={clsx("hds-modal__header", className as undefined)}
+        ref={ref}
+        {...rest}
+      />
+    );
+  },
+);
+ModalHeader.displayName = "Modal.Header";
+
+interface ModalContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+export const ModalContent = forwardRef<HTMLDivElement, ModalContentProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
+    return (
+      <Component
+        className={clsx("hds-modal__content", className as undefined)}
+        ref={ref}
+        {...rest}
+      />
+    );
+  },
+);
+ModalContent.displayName = "Modal.Content";
+
+interface ModalFooterProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+export const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>(
+  ({ asChild, className, ...rest }, ref) => {
+    const Component = asChild ? Slot : "footer";
+    return (
+      <Component
+        className={clsx("hds-modal__footer", className as undefined)}
+        ref={ref}
+        {...rest}
+      />
+    );
+  },
+);
+ModalFooter.displayName = "Modal.Footer";
+
 export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
   children: React.ReactNode;
 
@@ -99,74 +165,18 @@ export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
       </Box>
     );
   },
-);
+) as ModalType;
 Modal.displayName = "Modal";
 
-interface ModalHeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   *
-   * @default false
-   */
-  asChild?: boolean;
-}
-export const ModalHeader = forwardRef<HTMLHeadingElement, ModalHeaderProps>(
-  ({ asChild, className, ...rest }, ref) => {
-    const Component = asChild ? Slot : "h1";
-    return (
-      <Component
-        className={clsx("hds-modal__header", className as undefined)}
-        ref={ref}
-        {...rest}
-      />
-    );
-  },
-);
-ModalHeader.displayName = "Modal.Header";
+type ModalType = ReturnType<typeof forwardRef<HTMLDialogElement, ModalProps>> & {
+  Header: typeof ModalHeader;
+  Content: typeof ModalContent;
+  Footer: typeof ModalFooter;
+};
 
-interface ModalContentProps extends React.HTMLAttributes<HTMLDivElement> {
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   *
-   * @default false
-   */
-  asChild?: boolean;
-}
-export const ModalContent = forwardRef<HTMLDivElement, ModalContentProps>(
-  ({ asChild, className, ...rest }, ref) => {
-    const Component = asChild ? Slot : "div";
-    return (
-      <Component
-        className={clsx("hds-modal__content", className as undefined)}
-        ref={ref}
-        {...rest}
-      />
-    );
-  },
-);
-ModalContent.displayName = "Modal.Content";
-
-interface ModalFooterProps extends React.HTMLAttributes<HTMLDivElement> {
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   *
-   * @default false
-   */
-  asChild?: boolean;
-}
-export const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>(
-  ({ asChild, className, ...rest }, ref) => {
-    const Component = asChild ? Slot : "footer";
-    return (
-      <Component
-        className={clsx("hds-modal__footer", className as undefined)}
-        ref={ref}
-        {...rest}
-      />
-    );
-  },
-);
-ModalFooter.displayName = "Modal.Footer";
+Modal.Header = ModalHeader;
+Modal.Content = ModalContent;
+Modal.Footer = ModalFooter;
 
 function useScrollLock(modalRef: React.RefObject<HTMLDialogElement>, bodyClass: string) {
   useEffect(() => {

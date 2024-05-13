@@ -1,45 +1,11 @@
 import { forwardRef, type HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
-
-export interface NavbarProps extends HTMLAttributes<HTMLElement> {
-  /**
-   * Navbar variant
-   *
-   * By default the `posten.no` variant is used which has a fixed logo and a fixed height of 112px
-   *
-   * For internal services or flagship services use the `service` should be used
-   *
-   * @default "default"
-   */
-  variant?: "default" | "service";
-
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   *
-   * @default false
-   */
-  asChild?: boolean;
-}
-
-/**
- * 🚨 WORK IN PROGRESS 🚨
- */
-export const Navbar = forwardRef<HTMLElement, NavbarProps>(
-  ({ asChild, children, className, variant, ...rest }, ref) => {
-    const Component = asChild ? Slot : "header";
-    return (
-      <Component
-        className={clsx("hds-navbar", variant && `hds-navbar--${variant}`, className as undefined)}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </Component>
-    );
-  },
-);
-Navbar.displayName = "Navbar";
+import {
+  NavbarExpandableMenu,
+  NavbarExpandableMenuContent,
+  NavbarExpandableMenuTrigger,
+} from "./navbar-expandable-menu";
 
 interface NavbarLogoProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -233,3 +199,66 @@ export const NavbarNavigation = forwardRef<HTMLDivElement, NavbarNavigationProps
   },
 );
 NavbarNavigation.displayName = "Navbar.Navigation";
+
+export interface NavbarProps extends HTMLAttributes<HTMLElement> {
+  /**
+   * Navbar variant
+   *
+   * By default the `posten.no` variant is used which has a fixed logo and a fixed height of 112px
+   *
+   * For internal services or flagship services use the `service` should be used
+   *
+   * @default "default"
+   */
+  variant?: "default" | "service";
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+}
+
+/**
+ * 🚨 WORK IN PROGRESS 🚨
+ */
+export const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
+  ({ asChild, children, className, variant, ...rest }, ref) => {
+    const Component = asChild ? Slot : "header";
+    return (
+      <Component
+        className={clsx("hds-navbar", variant && `hds-navbar--${variant}`, className as undefined)}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </Component>
+    );
+  },
+) as NavbarType;
+Navbar.displayName = "Navbar";
+
+type NavbarType = ReturnType<typeof forwardRef<HTMLDivElement, NavbarProps>> & {
+  Logo: typeof NavbarLogo;
+  LogoAndServiceText: typeof NavbarLogoAndServiceText;
+  ExpandableMenu: typeof NavbarExpandableMenu;
+  ExpandableMenuTrigger: typeof NavbarExpandableMenuTrigger;
+  ExpandableMenuContent: typeof NavbarExpandableMenuContent;
+  Item: typeof NavbarItem;
+  ButtonItem: typeof NavbarButtonItem;
+  LinkItem: typeof NavbarLinkItem;
+  ItemIcon: typeof NavbarItemIcon;
+  Navigation: typeof NavbarNavigation;
+};
+
+Navbar.Logo = NavbarLogo;
+Navbar.LogoAndServiceText = NavbarLogoAndServiceText;
+Navbar.ExpandableMenu = NavbarExpandableMenu;
+Navbar.ExpandableMenuTrigger = NavbarExpandableMenuTrigger;
+Navbar.ExpandableMenuContent = NavbarExpandableMenuContent;
+Navbar.Item = NavbarItem;
+Navbar.ButtonItem = NavbarButtonItem;
+Navbar.LinkItem = NavbarLinkItem;
+Navbar.ItemIcon = NavbarItemIcon;
+Navbar.Navigation = NavbarNavigation;

@@ -4,6 +4,62 @@ import { forwardRef } from "react";
 import { getResponsiveProps, type ResponsiveProp } from "../responsive";
 import { type SpacingSizes, type ResponsiveSpacingSizes, getSpacingVariable } from "../spacing";
 
+export interface GridItemProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+
+  /**
+   * Column span for the grid item
+   *
+   * `default` is `12`
+   */
+  span?: ResponsiveProp<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12>;
+
+  /**
+   * Center the grid item horizontally
+   *
+   * Offsets the start position of the grid item relative to it's span so that it appears centered.
+   *
+   * assumes a span of 2, 4, 6, 8, or 10
+   *
+   * a span of `12` is 100% width and centering has no effect
+   *
+   * `default` is `false`
+   */
+  center?: ResponsiveProp<boolean>;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   */
+  asChild?: boolean;
+}
+
+/**
+ * 🚧 Grid.Item
+ *
+ * Use as the direct child of a `Grid` to override `span` and `center` for individual items.
+ */
+export const GridItem = forwardRef<HTMLDivElement, GridItemProps>(
+  ({ children, asChild, className, span, center, style: _style, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
+    const style: React.CSSProperties = {
+      ..._style,
+      ...getResponsiveProps("--hds-grid-item-span", span),
+      ...getResponsiveProps("--hds-grid-item-center", center, (value) => (value ? "1" : "0")),
+    };
+    return (
+      <Component
+        style={style}
+        className={clsx("hds-grid__item", className as undefined)}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+GridItem.displayName = "Grid.Item";
+
 export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 
@@ -97,61 +153,11 @@ export const Grid = forwardRef<HTMLDivElement, GridProps>(
       </Component>
     );
   },
-);
+) as GridType;
 Grid.displayName = "Grid";
 
-export interface GridItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
+type GridType = ReturnType<typeof forwardRef<HTMLDivElement, GridProps>> & {
+  Item: typeof GridItem;
+};
 
-  /**
-   * Column span for the grid item
-   *
-   * `default` is `12`
-   */
-  span?: ResponsiveProp<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12>;
-
-  /**
-   * Center the grid item horizontally
-   *
-   * Offsets the start position of the grid item relative to it's span so that it appears centered.
-   *
-   * assumes a span of 2, 4, 6, 8, or 10
-   *
-   * a span of `12` is 100% width and centering has no effect
-   *
-   * `default` is `false`
-   */
-  center?: ResponsiveProp<boolean>;
-
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   */
-  asChild?: boolean;
-}
-
-/**
- * 🚧 Grid.Item
- *
- * Use as the direct child of a `Grid` to override `span` and `center` for individual items.
- */
-export const GridItem = forwardRef<HTMLDivElement, GridItemProps>(
-  ({ children, asChild, className, span, center, style: _style, ...rest }, ref) => {
-    const Component = asChild ? Slot : "div";
-    const style: React.CSSProperties = {
-      ..._style,
-      ...getResponsiveProps("--hds-grid-item-span", span),
-      ...getResponsiveProps("--hds-grid-item-center", center, (value) => (value ? "1" : "0")),
-    };
-    return (
-      <Component
-        style={style}
-        className={clsx("hds-grid__item", className as undefined)}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </Component>
-    );
-  },
-);
-GridItem.displayName = "Grid.Item";
+Grid.Item = GridItem;
