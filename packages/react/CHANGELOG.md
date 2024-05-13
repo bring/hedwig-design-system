@@ -1,5 +1,14 @@
 # @postenbring/hedwig-react
 
+## 0.0.82
+
+### Patch Changes
+
+- 4b3cb5f: :label: react: generate types using tsc complete with decleration maps, including `src/` folder
+
+  - Faster type generation
+  - Makes go to decleration nicer, same as in java/intellij when you get the actual source code
+
 ## 0.0.81
 
 ### Patch Changes
