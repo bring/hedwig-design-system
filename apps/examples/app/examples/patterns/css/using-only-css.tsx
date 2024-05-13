@@ -178,7 +178,7 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  index: 0,
+  index: 1,
   layout: "none",
   description:
     "It's possible to use Hedwig Design System without using the React components. Useful if using just pure html, or another frontend framework.",
