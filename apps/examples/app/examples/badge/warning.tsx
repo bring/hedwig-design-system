@@ -1,10 +1,10 @@
-import { HStack, WarningBadge } from "@postenbring/hedwig-react";
+import { HStack, Badge } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
     <HStack gap="8" align="end">
-      <WarningBadge>Warning</WarningBadge>
-      <WarningBadge size="smaller">Warning</WarningBadge>
+      <Badge variant="warning">Warning</Badge>
+      <Badge size="smaller">Warning</Badge>
     </HStack>
   );
 }
