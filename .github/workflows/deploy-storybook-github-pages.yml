@@ -26,10 +26,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Setup pnpm 8.x
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 8
 
       - name: "Build"
         shell: bash
