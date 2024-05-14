@@ -1,6 +1,6 @@
 import { createContext, useContext, forwardRef, useState, useEffect, useId } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { focusTrap } from "../utils";
+import { focusTrap } from "../utils/utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
 const expandableMenuContext = createContext([

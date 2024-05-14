@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactElement, MouseEvent } from "react";
 import { forwardRef, useEffect, useRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { useResize, useHydrated, useMergeRefs } from "../utils";
+import { useResize, useHydrated, useMergeRefs } from "../utils/utils";
 import { useTabsContext } from "./context";
 
 export interface TabsListProps extends HTMLAttributes<HTMLDivElement> {

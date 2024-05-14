@@ -21,5 +21,5 @@ export * from "./styled-html";
 export * from "./table";
 export * from "./tabs";
 export * from "./text";
-export * from "./utilities";
+export * from "./utils";
 export * from "./warning-banner";

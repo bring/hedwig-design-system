@@ -1,5 +1,5 @@
 import { cloneElement, forwardRef, useEffect, useRef, useState } from "react";
-import { useMergeRefs } from "../utils";
+import { useMergeRefs } from "./utils";
 
 export interface AutoAnimateHeightProps extends React.HTMLAttributes<HTMLDivElement> {
   /**

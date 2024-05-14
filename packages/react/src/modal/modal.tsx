@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 import { Box } from "../box/box";
-import { useMergeRefs } from "../utils";
+import { useMergeRefs } from "../utils/utils";
 
 interface ModalHeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /**

@@ -103,7 +103,7 @@ export function focusTrap(element: HTMLElement) {
 /**
  * Unset the `inert` attribute on all elements given
  */
-export function releaseFocusTrap(inertElements: Iterable<HTMLElement>) {
+function releaseFocusTrap(inertElements: Iterable<HTMLElement>) {
   for (const el of inertElements) {
     el.removeAttribute("inert");
   }
