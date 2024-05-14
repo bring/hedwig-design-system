@@ -21,6 +21,7 @@ export const AccordionHeader = forwardRef<HTMLButtonElement, AccordionHeaderProp
       <button
         {...rest}
         aria-expanded={context.open}
+        aria-controls={context.contentId}
         data-state={context.open ? "open" : "closed"}
         className={clsx("hds-accordion-item-header", className as undefined)}
         onClick={expandOrCollapse}

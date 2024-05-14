@@ -25,11 +25,11 @@ export default function Layout() {
    */
   function CloseExpandableMenuOnNavigation() {
     const location = useLocation();
-    const [menuOpen, toggleMenu] = useNavbarExpendableMenuContext();
+    const { open, setOpen } = useNavbarExpendableMenuContext();
 
     useEffect(() => {
-      if (menuOpen) {
-        toggleMenu();
+      if (open) {
+        setOpen(false);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps -- I know better
     }, [location.key]);

@@ -3,13 +3,19 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { focusTrap } from "../utils/utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
-const expandableMenuContext = createContext([
-  false as boolean,
-  () => {
-    // Empty
-  },
-] as const);
-export const useNavbarExpendableMenuContext = () => useContext(expandableMenuContext);
+interface ExpandableMenuContextProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  contentId: string;
+}
+const ExpandableMenuContext = createContext<ExpandableMenuContextProps | null>(null);
+export const useNavbarExpendableMenuContext = () => {
+  const value = useContext(ExpandableMenuContext);
+  if (value === null) {
+    throw new Error("useNavbarExpendableMenuContext must be used within a Navbar.ExpandableMenu");
+  }
+  return value;
+};
 
 export interface NavbarExpandableMenuProps {
   children: React.ReactNode;
@@ -23,10 +29,8 @@ export interface NavbarExpandableMenuProps {
  * If we want a sticky header in the future the scrolling should be configurable
  */
 export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
+  const contentId = useId();
   const [open, setOpen] = useState(false);
-  function toggleOpen() {
-    setOpen((prev) => !prev);
-  }
 
   useEffect(() => {
     if (open) {
@@ -44,9 +48,9 @@ export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
   }, [open]);
 
   return (
-    <expandableMenuContext.Provider value={[open, toggleOpen]}>
+    <ExpandableMenuContext.Provider value={{ contentId, open, setOpen }}>
       {children}
-    </expandableMenuContext.Provider>
+    </ExpandableMenuContext.Provider>
   );
 }
 NavbarExpandableMenu.displayName = "NavbarExpandableMenu";
@@ -80,7 +84,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
     },
     ref,
   ) => {
-    const [open, toggleOpen] = useNavbarExpendableMenuContext();
+    const { contentId, open, setOpen } = useNavbarExpendableMenuContext();
 
     // Measure the width of the text when open and closed and choose the widest one
     // This is to ensure that the button doesn't change size when the text changes
@@ -99,8 +103,14 @@ export const NavbarExpandableMenuTrigger = forwardRef<
     const title = open ? whenOpenHelperTitle : whenClosedHelperTitle;
     const icon = open ? <CloseIcon /> : <MenuIcon />;
 
+    function toggleOpen() {
+      setOpen(!open);
+    }
+
     return (
       <button
+        aria-expanded={open}
+        aria-controls={contentId}
         className={clsx("hds-navbar__item", className as undefined)}
         onClick={toggleOpen}
         ref={ref}
@@ -160,10 +170,11 @@ export const NavbarExpandableMenuContent = forwardRef<
   HTMLDivElement,
   NavbarExpandableMenuContentProps
 >(({ children, className, ...rest }, ref) => {
-  const [open] = useNavbarExpendableMenuContext();
+  const { contentId, open } = useNavbarExpendableMenuContext();
   return (
     <section
       {...rest}
+      id={contentId}
       className={clsx("hds-navbar__expandable-menu-content", className as undefined)}
       data-state={open ? "open" : "closed"}
       {...{ inert: open ? undefined : "true" }}

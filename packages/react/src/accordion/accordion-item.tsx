@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { forwardRef, useState } from "react";
+import { forwardRef, useId, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { AccordionItemContext } from "./context";
 import type { AccordionHeaderProps } from "./accordion-header";
@@ -33,6 +33,7 @@ export interface AccordionItemProps extends React.HTMLAttributes<HTMLDivElement>
 
 export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
   ({ children, defaultOpen, open: outerOpen, onOpenChange, className, ...rest }, ref) => {
+    const contentId = useId();
     const [innerOpen, setInnerOpen] = useState(defaultOpen ?? false);
     const open = outerOpen ?? innerOpen;
 
@@ -51,7 +52,7 @@ export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
         className={clsx("hds-accordion-item", className as undefined)}
         ref={ref}
       >
-        <AccordionItemContext.Provider value={{ open, setOpen: handleOpen }}>
+        <AccordionItemContext.Provider value={{ contentId, open, setOpen: handleOpen }}>
           {children}
         </AccordionItemContext.Provider>
       </div>
