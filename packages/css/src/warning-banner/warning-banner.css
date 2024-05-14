@@ -2,31 +2,36 @@
 @import url("../_icons.css");
 @import url("../spacing/spacing.css");
 
-.hds-box.hds-warning-banner {
+.hds-warning-banner {
   --hds-warning-banner-icon-dimension: var(--hds-spacing-24);
 
+  position: relative;
   width: 100%;
   background-color: var(--hds-ui-colors-warning-yellow);
-  padding: var(--hds-spacing-16);
   text-align: center;
 
-  & .hds-warning-banner__description {
+  .hds-warning-banner__title > *,
+  .hds-warning-banner__description {
+    /* Max width text. Copied from slim container */
+    @media (--medium) {
+      max-width: 590px;
+    }
+
+    @media (--large) {
+      max-width: 762px;
+    }
+  }
+
+  .hds-warning-banner__description {
+    margin: 0 auto;
     font: var(--hds-typography-body-small);
-  }
-
-  /* Reset margin */
-  & .hds-warning-banner__title,
-  & .hds-warning-banner__description {
-    margin: 0;
-  }
-
-  /* Spacing between title and description */
-  & .hds-warning-banner__title ~ .hds-warning-banner__description {
-    margin-top: var(--hds-spacing-12-16);
+    padding: 0 var(--hds-spacing-16) var(--hds-spacing-32);
   }
 
   .hds-warning-banner__title {
+    margin: 0;
     font: var(--hds-typography-body-small-title);
+    padding: var(--hds-spacing-16);
 
     &.hds-warning-banner__title-trigger {
       display: flex;
@@ -35,7 +40,6 @@
       cursor: pointer;
       width: 100%;
       border: 0;
-      padding: 0;
       background-color: transparent;
       color: inherit;
 
@@ -50,13 +54,13 @@
     }
   }
 
-  & .hds-warning-banner--closed.hds-warning-banner__title-trigger {
+  .hds-warning-banner__title-trigger[data-state="closed"] {
     &::after {
       transform: rotate(0);
     }
   }
 
-  & .hds-warning-banner--closed ~ .hds-warning-banner__description {
+  .hds-warning-banner__title-trigger[data-state="closed"] ~ .hds-warning-banner__description {
     display: none;
   }
 }
