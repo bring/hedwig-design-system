@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 0.0.83
+
+### Patch Changes
+
+- 7564a24: :sparkles: react: expose utils
+
 ## 0.0.82
 
 ### Patch Changes
