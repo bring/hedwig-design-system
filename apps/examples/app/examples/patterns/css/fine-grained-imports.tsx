@@ -7,7 +7,7 @@ import "@postenbring/hedwig-css/dist/box.css";
 import "@postenbring/hedwig-css/dist/button.css";
 import "@postenbring/hedwig-css/dist/text.css";
 
-import { Box, PrimaryButton, Text } from "@postenbring/hedwig-react/dist/index-no-css";
+import { Box, Button, Text } from "@postenbring/hedwig-react/dist/index-no-css";
 
 function Example() {
   return (
@@ -15,7 +15,7 @@ function Example() {
       <Text as="h1" variant="body-title">
         A button
       </Text>
-      <PrimaryButton>Submit</PrimaryButton>
+      <Button>Submit</Button>
     </Box>
   );
 }

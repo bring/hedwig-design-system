@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import { useRef } from "react";
-import { PrimaryButton } from "../button";
+import { Button } from "../button";
 import { Link } from "../link";
 import { Message } from "../message";
 import { StyledHtml } from "../styled-html";
@@ -24,7 +24,7 @@ export const Main = {
 
     return (
       <>
-        <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
+        <Button onClick={() => modalRef.current?.showModal()}>Open Modal</Button>
         <Modal ref={modalRef} {...args}>
           <Modal.Header>Dialog header</Modal.Header>
           <Modal.Content>
@@ -35,10 +35,10 @@ export const Main = {
           </Modal.Content>
           <Modal.Footer>
             <HStack gap="16" wrap>
-              <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
-              <PrimaryButton fill="outline" onClick={onClose}>
+              <Button onClick={onMainAction}>Main action</Button>
+              <Button variant="primary-outline" onClick={onClose}>
                 Cancel
-              </PrimaryButton>
+              </Button>
             </HStack>
           </Modal.Footer>
         </Modal>
@@ -53,7 +53,7 @@ export const ShareParcelModal = {
     const open = window.location.search.includes("viewMode=story");
     return (
       <>
-        <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
+        <Button onClick={() => modalRef.current?.showModal()}>Open Modal</Button>
         <Modal ref={modalRef} {...args} closeOnBackdropClick open={open}>
           <Modal.Header>Legg til pakken</Modal.Header>
           <Modal.Content>
@@ -67,7 +67,7 @@ export const ShareParcelModal = {
             </StyledHtml>
           </Modal.Content>
           <Modal.Footer>
-            <PrimaryButton fullWidth="mobile">Legg til pakken i Posten-appen </PrimaryButton>
+            <Button fullWidth="mobile">Legg til pakken i Posten-appen </Button>
           </Modal.Footer>
         </Modal>
       </>
@@ -136,9 +136,9 @@ export const AsAReadMore: Story = {
           </Modal.Content>
 
           <Modal.Footer>
-            <PrimaryButton fullWidth="mobile" onClick={() => modalRef.current?.close()}>
+            <Button fullWidth="mobile" onClick={() => modalRef.current?.close()}>
               Lukk
-            </PrimaryButton>
+            </Button>
           </Modal.Footer>
         </Modal>
       </>

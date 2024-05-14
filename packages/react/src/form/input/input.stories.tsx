@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
-import { PrimaryButton, SecondaryButton } from "../../button";
+import { Button } from "../../button";
 import { HStack, VStack } from "../../layout";
 import { Input } from ".";
 
@@ -118,7 +118,7 @@ export const TrackingNumberSearch: Story = {
       }}
     >
       <Input label="Sporingsnummer" style={{ width: "100%" }} />
-      <PrimaryButton size="large">Spor</PrimaryButton>
+      <Button size="large">Spor</Button>
     </HStack>
   ),
 };
@@ -148,16 +148,16 @@ export const FormWithErrorsOnSubmit: Story = {
           <Input errorMessage={errors.Two} label="Two" name="Two" />
           <Input errorMessage={errors.Three} label="Three" name="Three" />
           <VStack gap="4">
-            <PrimaryButton type="submit">Submit</PrimaryButton>
-            <SecondaryButton
-              fill="outline"
+            <Button type="submit">Submit</Button>
+            <Button
+              variant="secondary-outline"
               onClick={() => {
                 setErrors({});
               }}
               type="reset"
             >
               Reset
-            </SecondaryButton>
+            </Button>
           </VStack>
         </form>
       </VStack>

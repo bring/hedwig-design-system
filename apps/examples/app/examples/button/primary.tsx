@@ -1,23 +1,23 @@
-import { PrimaryButton, HStack, VStack } from "@postenbring/hedwig-react";
+import { Button, HStack, VStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
     <VStack gap="24">
       <HStack gap="24" wrap align="end">
-        <PrimaryButton size="large">Call to action</PrimaryButton>
-        <PrimaryButton size="medium">Call to action</PrimaryButton>
-        <PrimaryButton size="small">Call to action</PrimaryButton>
+        <Button size="large">Call to action</Button>
+        <Button size="medium">Call to action</Button>
+        <Button size="small">Call to action</Button>
       </HStack>
       <HStack gap="24" wrap align="end">
-        <PrimaryButton fill="outline" size="large">
+        <Button variant="primary-outline" size="large">
           Call to action
-        </PrimaryButton>
-        <PrimaryButton fill="outline" size="medium">
+        </Button>
+        <Button variant="primary-outline" size="medium">
           Call to action
-        </PrimaryButton>
-        <PrimaryButton fill="outline" size="small">
+        </Button>
+        <Button variant="primary-outline" size="small">
           Call to action
-        </PrimaryButton>
+        </Button>
       </HStack>
     </VStack>
   );

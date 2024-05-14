@@ -4,7 +4,7 @@ import {
   Footer,
   HStack,
   Navbar,
-  PrimaryButton,
+  Button,
   VStack,
   useNavbarExpendableMenuContext,
 } from "@postenbring/hedwig-react";
@@ -74,7 +74,7 @@ export default function Layout() {
           </RemixLink>
         </Navbar.LinkItem>
         <Navbar.Item>
-          <PrimaryButton fill="outline" size="small" asChild>
+          <Button variant="primary-outline" size="small" asChild>
             <RemixLink
               to={{
                 search:
@@ -87,7 +87,7 @@ export default function Layout() {
             >
               {kebabCaseToFirstLetterUpperCase(activeTheme)}
             </RemixLink>
-          </PrimaryButton>
+          </Button>
         </Navbar.Item>
       </>
     );

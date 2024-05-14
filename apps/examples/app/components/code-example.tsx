@@ -10,7 +10,7 @@ import "@postenbring/hedwig-css";
 import styles from "./code-example.module.css";
 
 import { Example } from "../examples";
-import { SecondaryButton, StyledHtml, type ButtonProps } from "@postenbring/hedwig-react";
+import { Button, StyledHtml, type ButtonProps } from "@postenbring/hedwig-react";
 import { openExampleInCodeSandbox } from "./codesandbox";
 import { useSearchParams } from "@remix-run/react";
 
@@ -147,39 +147,44 @@ export function CodeExample({
 
         {/* Actions row */}
         <div>
-          <SecondaryButton
+          <Button
+            variant="secondary-outline"
             onClick={() => {
               if (iframeRef.current) {
                 iframeRef.current.style.width = "360px";
               }
             }}
             title="Mobile"
-            fill="outline"
             size="small"
             icon
           >
             📱
-          </SecondaryButton>
-          <SecondaryButton
+          </Button>
+          <Button
+            variant="secondary-outline"
             onClick={() => {
               if (iframeRef.current) {
                 iframeRef.current.style.width = "";
               }
             }}
             title="Desktop"
-            fill="outline"
             size="small"
             icon
           >
             🖥️
-          </SecondaryButton>
+          </Button>
           <div style={{ flexGrow: 1 }} />
 
-          <SecondaryButton fill="outline" size="small" onClick={() => setShowCode((prev) => !prev)}>
+          <Button
+            variant="secondary-outline"
+            size="small"
+            onClick={() => setShowCode((prev) => !prev)}
+          >
             {showCode ? "Hide code" : "Show code"}
-          </SecondaryButton>
+          </Button>
 
-          <SecondaryButton
+          <Button
+            variant="secondary"
             title="Open in CodeSandbox"
             size="small"
             onClick={() => openExampleInCodeSandbox(activeExample)}
@@ -188,8 +193,8 @@ export function CodeExample({
             <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 24H24V0H0V2.45455H21.5455V21.5455H2.45455V0H0Z" />
             </svg>
-          </SecondaryButton>
-          <SecondaryButton size="small" icon asChild>
+          </Button>
+          <Button variant="secondary" size="small" icon asChild>
             <a
               href={iframeUrl(activeExample)}
               target="_blank"
@@ -212,7 +217,7 @@ export function CodeExample({
                 />
               </svg>
             </a>
-          </SecondaryButton>
+          </Button>
         </div>
       </div>
 
@@ -235,7 +240,8 @@ function CopyButton({
 }) {
   const [copied, setCopied] = useState(false);
   return (
-    <SecondaryButton
+    <Button
+      variant="secondary"
       onClick={async () => {
         navigator.clipboard.writeText(code);
         setCopied(true);
@@ -246,7 +252,7 @@ function CopyButton({
       {...rest}
     >
       {copied ? "Copied" : "Copy"}
-    </SecondaryButton>
+    </Button>
   );
 }
 

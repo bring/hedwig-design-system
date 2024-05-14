@@ -1,11 +1,4 @@
-import {
-  Container,
-  Input,
-  PrimaryButton,
-  Select,
-  Textarea,
-  VStack,
-} from "@postenbring/hedwig-react";
+import { Container, Input, Button, Select, Textarea, VStack } from "@postenbring/hedwig-react";
 
 function Example() {
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -32,7 +25,7 @@ function Example() {
             <option value="cat">Cat</option>
             <option value="other">Other</option>
           </Select>
-          <PrimaryButton>Submit</PrimaryButton>
+          <Button>Submit</Button>
         </VStack>
       </form>
     </Container>

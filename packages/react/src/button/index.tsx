@@ -1,3 +1,3 @@
-export { PrimaryButton, SecondaryButton } from "./button";
+export { Button } from "./button";
 
 export type * from "./button";

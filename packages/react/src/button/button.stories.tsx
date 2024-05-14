@@ -2,11 +2,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { HStack } from "../layout";
 import type { ButtonProps } from ".";
-import { PrimaryButton, SecondaryButton } from ".";
+import { Button } from ".";
 
-const meta: Meta<typeof PrimaryButton> = {
+const meta: Meta<typeof Button> = {
   title: "Button",
-  component: PrimaryButton,
+  component: Button,
   argTypes: {
     fullWidth: { control: "radio", options: [false, true, "mobile"] },
   },
@@ -14,33 +14,33 @@ const meta: Meta<typeof PrimaryButton> = {
 
 export default meta;
 
-type Story = StoryObj<typeof PrimaryButton>;
+type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
+    variant: "primary",
     children: "Primary button",
   },
 };
 
 export const PrimaryOutline: Story = {
   args: {
+    variant: "primary-outline",
     children: "Primary outline button",
-    fill: "outline",
   },
 };
 
 export const Secondary: Story = {
   args: {
+    variant: "secondary",
     children: "Secondary button",
   },
-  render: (props) => <SecondaryButton {...props} />,
 };
 
 export const SecondaryOutline: Story = {
-  render: (props) => <SecondaryButton {...props} />,
   args: {
+    variant: "secondary-outline",
     children: "Secondary outline button",
-    fill: "outline",
   },
 };
 
@@ -48,10 +48,10 @@ export const AsALink: Story = {
   name: "As a link",
   render: (args) => (
     <HStack gap="16" wrap>
-      <PrimaryButton {...args} />
-      <PrimaryButton {...args} fill="outline" />
-      <SecondaryButton {...args} />
-      <SecondaryButton {...args} fill="outline" />
+      <Button {...args} variant="primary" />
+      <Button {...args} variant="primary-outline" />
+      <Button {...args} variant="secondary" />
+      <Button {...args} variant="secondary-outline" />
     </HStack>
   ),
   args: {
@@ -65,7 +65,7 @@ export const AsALink: Story = {
 };
 
 const createIconStory = (
-  Component: typeof PrimaryButton,
+  Component: typeof Button,
   extraArgs: Partial<ButtonProps> = {},
 ): Story => ({
   render: (args) => (
@@ -98,7 +98,9 @@ const createIconStory = (
   },
 });
 
-export const IconPrimary: Story = createIconStory(PrimaryButton);
-export const IconPrimaryOutline: Story = createIconStory(PrimaryButton, { fill: "outline" });
-export const IconSecondary: Story = createIconStory(SecondaryButton);
-export const IconSecondaryOutline: Story = createIconStory(SecondaryButton, { fill: "outline" });
+export const IconPrimary: Story = createIconStory(Button, { variant: "secondary" });
+export const IconPrimaryOutline: Story = createIconStory(Button, { variant: "primary-outline" });
+export const IconSecondary: Story = createIconStory(Button, { variant: "secondary" });
+export const IconSecondaryOutline: Story = createIconStory(Button, {
+  variant: "secondary-outline",
+});

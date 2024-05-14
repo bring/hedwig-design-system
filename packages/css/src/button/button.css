@@ -109,7 +109,7 @@
     }
   }
 
-  &.hds-button--outline-primary {
+  &.hds-button--primary-outline {
     --hds-component-button-border-width: var(--hds-stroke-default);
 
     background-color: transparent;
@@ -126,7 +126,7 @@
     }
   }
 
-  &.hds-button--outline-secondary {
+  &.hds-button--secondary-outline {
     --hds-component-button-border-width: var(--hds-stroke-default);
 
     background-color: transparent;
@@ -143,7 +143,7 @@
     }
   }
 
-  &.hds-button--outline-white {
+  &.hds-button--white-outline {
     --hds-component-button-border-width: var(--hds-stroke-default);
 
     background-color: transparent;
@@ -177,8 +177,8 @@
       cursor: default;
     }
 
-    &.hds-button--outline-primary,
-    &.hds-button--outline-secondary {
+    &.hds-button--primary-outline,
+    &.hds-button--secondary-outline {
       border-color: var(--hds-ui-colors-grey);
       color: var(--hds-ui-colors-dark-grey);
       fill: var(--hds-ui-colors-dark-grey);

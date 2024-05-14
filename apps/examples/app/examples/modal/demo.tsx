@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { HStack, Modal, PrimaryButton } from "@postenbring/hedwig-react";
+import { HStack, Modal, Button } from "@postenbring/hedwig-react";
 
 function Example() {
   const modalRef = useRef<HTMLDialogElement>(null);
@@ -8,7 +8,7 @@ function Example() {
 
   return (
     <>
-      <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
+      <Button onClick={() => modalRef.current?.showModal()}>Open Modal</Button>
       <Modal ref={modalRef}>
         <Modal.Header>Dialog header</Modal.Header>
         <Modal.Content>
@@ -19,10 +19,10 @@ function Example() {
         </Modal.Content>
         <Modal.Footer>
           <HStack gap="16" wrap>
-            <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
-            <PrimaryButton fill="outline" onClick={onClose}>
+            <Button onClick={onMainAction}>Main action</Button>
+            <Button variant="primary-outline" onClick={onClose}>
               Cancel
-            </PrimaryButton>
+            </Button>
           </HStack>
         </Modal.Footer>
       </Modal>

@@ -1,12 +1,12 @@
-import { PrimaryButton, HStack } from "@postenbring/hedwig-react";
+import { Button, HStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
     <HStack gap="8" wrap>
-      <PrimaryButton fullWidth="mobile">Main action</PrimaryButton>
-      <PrimaryButton fill="outline" fullWidth="mobile">
+      <Button fullWidth="mobile">Main action</Button>
+      <Button variant="primary-outline" fullWidth="mobile">
         Alternative action
-      </PrimaryButton>
+      </Button>
     </HStack>
   );
 }

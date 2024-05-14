@@ -1,13 +1,13 @@
-import { Link, PrimaryButton, VStack } from "@postenbring/hedwig-react";
+import { Link, Button, VStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
     <VStack gap="24">
-      <PrimaryButton asChild>
+      <Button asChild>
         <a href="https://www.posten.no" target="_blank" rel="noopener noreferrer">
           A link that looks like a button
         </a>
-      </PrimaryButton>
+      </Button>
       <Link asChild>
         <button onClick={() => alert("Button clicked!")}>A button that looks like a link</button>
       </Link>
