@@ -63,8 +63,8 @@ We welcome anyone who would like to contribute to improving the Hedwig Design Sy
 
 Before you begin, ensure you have the following installed:
 
-- Node.js (v20 or higher)
-- pnpm (v8 or higher)
+- Node.js (version 20 or higher)
+- pnpm (version 9 or higher)
 
 ### Check node
 
