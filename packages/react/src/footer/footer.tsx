@@ -3,7 +3,7 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 import { Accordion } from "../accordion";
 import { LinkList } from "../list/link-list";
-import { PrimaryButton } from "../button";
+import { Button } from "../button";
 
 interface FooterLogoProps extends HTMLAttributes<HTMLDivElement> {
   /**
@@ -47,11 +47,11 @@ export const FooterButtonLink = forwardRef<HTMLAnchorElement, FooterButtonLinkPr
   ({ children, className, asChild, ...rest }, ref) => {
     const Component = asChild ? Slot : "a";
     return (
-      <PrimaryButton asChild fill="outline" className={clsx(className as undefined)}>
+      <Button asChild variant="primary-outline" className={clsx(className as undefined)}>
         <Component ref={ref} {...rest}>
           {children}
         </Component>
-      </PrimaryButton>
+      </Button>
     );
   },
 );

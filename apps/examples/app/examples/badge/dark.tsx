@@ -1,10 +1,12 @@
-import { DarkBadge, HStack } from "@postenbring/hedwig-react";
+import { Badge, HStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
     <HStack gap="8" align="end">
-      <DarkBadge>Dark</DarkBadge>
-      <DarkBadge size="smaller">Dark</DarkBadge>
+      <Badge variant="dark">Dark</Badge>
+      <Badge variant="dark" size="smaller">
+        Dark
+      </Badge>
     </HStack>
   );
 }

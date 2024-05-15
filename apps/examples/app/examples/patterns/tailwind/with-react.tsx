@@ -1,4 +1,4 @@
-import { PrimaryButton } from "@postenbring/hedwig-react";
+import { Button } from "@postenbring/hedwig-react";
 import "./tailwind.css";
 
 function Example() {
@@ -10,7 +10,7 @@ function Example() {
         <div className="transition-all rounded size-48 hover:scale-125 bg-signature hover:bg-darker" />
       </div>
       <div>
-        <PrimaryButton>Primary Button</PrimaryButton>
+        <Button>Primary Button</Button>
       </div>
     </div>
   );

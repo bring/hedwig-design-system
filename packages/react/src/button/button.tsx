@@ -9,11 +9,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   size?: "small" | "medium" | "large";
 
   /**
-   * The background fill of the button
+   * The background and fill of the button
    *
-   * @default "contained"
+   * @default "primary"
    */
-  fill?: "contained" | "outline";
+  variant?: "primary" | "secondary" | "primary-outline" | "secondary-outline";
 
   /**
    * Make the button use 100% width available.
@@ -36,15 +36,27 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   asChild?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps & { variant: "primary" | "secondary" }>(
+/**
+ * Button component
+ *
+ * @example
+ * <Button variant="primary">Primary</Button>
+ * <Button variant="secondary" size="large">Secondary</Button>
+ * <Button variant="primary-outline">Primary Outline</Button>
+ * <Button variant="secondary-outline" fullWidth="mobile">Secondary Outline</Button>
+ *
+ * @example
+ * // If used for navigation use the `asChild` prop with a anchor element as a child.
+ * <Button asChild><a href="/home">Home</a></Button>
+ */
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       asChild,
       children,
-      variant,
+      variant = "primary",
       size = "medium",
       fullWidth = false,
-      fill = "contained",
       icon,
       className,
       ...rest
@@ -57,9 +69,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & { variant: "primary" 
         className={clsx(
           "hds-button",
           `hds-button--${size}`,
+          `hds-button--${variant}`,
           {
-            [`hds-button--${variant}`]: fill === "contained",
-            [`hds-button--outline-${variant}`]: fill === "outline",
             "hds-button--full": fullWidth === true,
             "hds-button--mobile-full": fullWidth === "mobile",
             "hds-button--icon-only": icon,
@@ -75,13 +86,3 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps & { variant: "primary" 
   },
 );
 Button.displayName = "Button";
-
-export const PrimaryButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  return <Button {...props} ref={ref} variant="primary" />;
-});
-PrimaryButton.displayName = "PrimaryButton";
-
-export const SecondaryButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  return <Button {...props} ref={ref} variant="secondary" />;
-});
-SecondaryButton.displayName = "SecondaryButton";

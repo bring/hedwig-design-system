@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HStack, StepIndicator, PrimaryButton, VStack, Skeleton } from "@postenbring/hedwig-react";
+import { HStack, StepIndicator, Button, VStack, Skeleton } from "@postenbring/hedwig-react";
 
 const steps = ["Size and weight", "Sender", "Recipient", "Summary"];
 function Example() {
@@ -21,24 +21,25 @@ function Example() {
         </div>
         <HStack gap="12">
           {activeStep > 1 && (
-            <PrimaryButton fill="outline" onClick={() => setActiveStep((current) => current - 1)}>
+            <Button
+              variant="primary-outline"
+              onClick={() => setActiveStep((current) => current - 1)}
+            >
               Back
-            </PrimaryButton>
+            </Button>
           )}
           {activeStep < steps.length && (
-            <PrimaryButton onClick={() => setActiveStep((current) => current + 1)}>
-              Continue
-            </PrimaryButton>
+            <Button onClick={() => setActiveStep((current) => current + 1)}>Continue</Button>
           )}
 
           {activeStep === steps.length && (
-            <PrimaryButton
+            <Button
               onClick={() => {
                 //
               }}
             >
               Submit order
-            </PrimaryButton>
+            </Button>
           )}
         </HStack>
       </VStack>

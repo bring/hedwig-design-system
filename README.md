@@ -17,12 +17,12 @@ This package has three packages
 The simplest way is to just install the `@postenbring/hedwig-react` package, and start using the components. The css is imported in the javascript files so a bundler that supports side effect imports is required. Vite and Remix supports this out of the box.
 
 ```tsx
-import { Box, PrimaryButton } from "@postenbring/hedwig-react";
+import { Box, Button } from "@postenbring/hedwig-react";
 
 export function MyComponent() {
   return (
     <Box>
-      <PrimaryButton>Hello, World</PrimaryButton>
+      <Button>Hello, World</Button>
     </Box>
   );
 }
@@ -124,7 +124,7 @@ We use [changesets](https://github.com/changesets/changesets) to handle publishi
 "@postenbring/hedwig-react": patch
 ---
 
-:lipstick: Change font size on PrimaryButton component.
+:lipstick: Change font size on Button component.
 ```
 
 This changeset file will create patch releases of the `@postenbring/hedwig-css` and `@postenbring/hedwig-react` packages.

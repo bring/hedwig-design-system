@@ -1,7 +1,7 @@
-import { PrimaryButton } from "@postenbring/hedwig-react";
+import { Button } from "@postenbring/hedwig-react";
 
 function Example() {
-  return <PrimaryButton fullWidth="mobile">Submit</PrimaryButton>;
+  return <Button fullWidth="mobile">Submit</Button>;
 }
 
 export default Example;

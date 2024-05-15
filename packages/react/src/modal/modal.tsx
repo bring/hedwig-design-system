@@ -96,7 +96,7 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
  *
  *   return (
  *     <>
- *       <PrimaryButton onClick={() => modalRef.current?.showModal()}>Open Modal</PrimaryButton>
+ *       <Button onClick={() => modalRef.current?.showModal()}>Open Modal</Button>
  *       <Modal ref={modalRef}>
  *         <Modal.Header>Dialog header</Modal.Header>
  *         <Modal.Content>
@@ -107,10 +107,10 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
  *         </Modal.Content>
  *         <Modal.Footer>
  *           <HStack gap="16" wrap>
- *             <PrimaryButton onClick={onMainAction}>Main action</PrimaryButton>
- *             <PrimaryButton fill="outline" onClick={onClose}>
+ *             <Button onClick={onMainAction}>Main action</Button>
+ *             <Button variant="primary-outline" onClick={onClose}>
  *               Cancel
- *             </PrimaryButton>
+ *             </Button>
  *           </HStack>
  *         </Modal.Footer>
  *       </Modal>

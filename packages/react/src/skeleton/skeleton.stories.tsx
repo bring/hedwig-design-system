@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { StyledHtml } from "../styled-html";
 import { Card } from "../card";
 import { CardStory } from "../card/card.stories";
-import { PrimaryButton } from "../button";
+import { Button } from "../button";
 import { HStack, VStack } from "../layout";
 import { Skeleton } from ".";
 
@@ -91,14 +91,14 @@ export const LoadingCards: Story = {
     const card = isLoading ? skeletonCard : realCard;
     return (
       <div>
-        <PrimaryButton
+        <Button
           size="small"
           onClick={() => {
             setIsLoading(true);
           }}
         >
           Reload
-        </PrimaryButton>
+        </Button>
         <p className="hds-mt-8">Only use greytones, never any red or green colors.</p>
         <HStack className="hds-mt-16" wrap gap="24">
           {card}
