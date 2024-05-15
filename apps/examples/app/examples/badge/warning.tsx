@@ -4,7 +4,9 @@ function Example() {
   return (
     <HStack gap="8" align="end">
       <Badge variant="warning">Warning</Badge>
-      <Badge size="smaller">Warning</Badge>
+      <Badge variant="warning" size="smaller">
+        Warning
+      </Badge>
     </HStack>
   );
 }
