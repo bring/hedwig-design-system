@@ -1,5 +1,18 @@
 # @postenbring/hedwig-react
 
+## 0.0.84
+
+### Patch Changes
+
+- 82a533f: :children_crossing: warning-banner: make the clickable area bigger and set a max-width for the text
+- 8b53fef: :recycle: badge: make badge variant as props, not prefix in component name
+- 9c24e2b: :recycle: button: make button variants as props, not prefix in component name
+- bbafdbd: :wheelchair: set aria-expanded with aria-controls on accordion and navbar
+- Updated dependencies [82a533f]
+- Updated dependencies [8b53fef]
+- Updated dependencies [9c24e2b]
+  - @postenbring/hedwig-css@0.0.70
+
 ## 0.0.83
 
 ### Patch Changes

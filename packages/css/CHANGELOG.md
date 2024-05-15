@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.70
+
+### Patch Changes
+
+- 82a533f: :children_crossing: warning-banner: make the clickable area bigger and set a max-width for the text
+- 8b53fef: :recycle: badge: make badge variant as props, not prefix in component name
+- 9c24e2b: :recycle: button: make button variants as props, not prefix in component name
+
 ## 0.0.69
 
 ### Patch Changes
