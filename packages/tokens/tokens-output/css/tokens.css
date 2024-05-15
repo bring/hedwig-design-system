@@ -52,13 +52,12 @@
   --hds-fonts-posten-sans-bold: 'Posten Sans Bold', Arial, sans-serif;
   --hds-fonts-posten-sans-medium: 'Posten Sans Medium', Arial, sans-serif;
   --hds-fonts-posten-sans-regular: 'Posten Sans Regular', Arial, sans-serif;
-  --hds-fonts-posten-sans-light: 'Posten Sans Light', Arial, sans-serif;
   --hds-typography-posten-h1-display: 700 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-posten-h1: 700 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-posten-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-bring-h1-display: 300 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-bring-h1: 300 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-bring-h2: 400 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-bring-h1-display: 500 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-bring-h1: 500 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-bring-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-h3: 400 clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)/clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-h3-title: 500 clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)/clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-body: 400 clamp(18px,calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))),20px)/clamp(26px,calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))),28px) 'Posten Sans', Arial, sans-serif;
@@ -174,9 +173,9 @@
   --hds-font-weight-posten-h1-display: 700;
   --hds-font-weight-posten-h1: 700;
   --hds-font-weight-posten-h2: 500;
-  --hds-font-weight-bring-h1-display: 300;
-  --hds-font-weight-bring-h1: 300;
-  --hds-font-weight-bring-h2: 400;
+  --hds-font-weight-bring-h1-display: 500;
+  --hds-font-weight-bring-h1: 500;
+  --hds-font-weight-bring-h2: 500;
   --hds-font-weight-h3: 400;
   --hds-font-weight-h3-title: 500;
   --hds-font-weight-body: 400;
@@ -228,9 +227,9 @@
   --hds-link-colors-underline-hover: #e32d22;
 }
 .hds-theme-bring {
-  --hds-typography-h1-display: 300 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-h1: 300 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-h2: 400 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h1-display: 500 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h1: 500 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
   --hds-font-size-h1-display: clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px);
   --hds-font-size-h1-display-min: 40px;
   --hds-font-size-h1-display-max: 72px;
@@ -249,9 +248,9 @@
   --hds-line-height-h2: clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px);
   --hds-line-height-h2-min: 36px;
   --hds-line-height-h2-max: 40px;
-  --hds-font-weight-h1-display: 300;
-  --hds-font-weight-h1: 300;
-  --hds-font-weight-h2: 400;
+  --hds-font-weight-h1-display: 500;
+  --hds-font-weight-h1: 500;
+  --hds-font-weight-h2: 500;
   --hds-colors-signature: #7bc144;
   --hds-colors-darker: #002f19;
   --hds-colors-dark: #00643a;

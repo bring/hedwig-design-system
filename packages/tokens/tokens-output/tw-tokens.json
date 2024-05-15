@@ -86,11 +86,6 @@
       "Posten Sans Regular",
       "Arial",
       "sans-serif"
-    ],
-    "posten-sans-light": [
-      "Posten Sans Light",
-      "Arial",
-      "sans-serif"
     ]
   },
   "typography": {
@@ -160,7 +155,7 @@
         "56px",
         "80px"
       ],
-      "fontWeight": 300,
+      "fontWeight": 500,
       "letterSpacing": "0"
     },
     "bring-h1": {
@@ -177,7 +172,7 @@
         "40px",
         "56px"
       ],
-      "fontWeight": 300,
+      "fontWeight": 500,
       "letterSpacing": "0"
     },
     "bring-h2": {
@@ -194,7 +189,7 @@
         "36px",
         "40px"
       ],
-      "fontWeight": 400,
+      "fontWeight": 500,
       "letterSpacing": "0"
     },
     "h3": {
@@ -477,9 +472,9 @@
     "posten-h1-display": 700,
     "posten-h1": 700,
     "posten-h2": 500,
-    "bring-h1-display": 300,
-    "bring-h1": 300,
-    "bring-h2": 400,
+    "bring-h1-display": 500,
+    "bring-h1": 500,
+    "bring-h2": 500,
     "h3": 400,
     "h3-title": 500,
     "body": 400,
