@@ -63,7 +63,6 @@ module.exports = {
       regular: 400,
       medium: 500,
       bold: 700,
-      light: 300,
     },
     fontSize: {
       "h1-display": fontSize("posten-h1-display", "var(--hds-font-weight-h1-display)"),

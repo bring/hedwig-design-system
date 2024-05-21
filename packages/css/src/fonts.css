@@ -6,13 +6,6 @@
  */
 @font-face {
   font-family: "Posten Sans";
-  src: url("../assets/fonts/PostenSans-Light.woff2") format("woff2");
-  font-display: swap;
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Posten Sans";
   src: url("../assets/fonts/PostenSans-Regular.woff2") format("woff2");
   font-display: swap;
   font-weight: 400;
@@ -33,14 +26,8 @@
 }
 
 /**
- * Legacy font-face with an own family for each font
+ * Legacy font-face with their own family for each font
  */
-@font-face {
-  font-family: "Posten Sans Light";
-  src: url("../assets/fonts/PostenSans-Light.woff2") format("woff2");
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Posten Sans Regular";
   src: url("../assets/fonts/PostenSans-Regular.woff2") format("woff2");
