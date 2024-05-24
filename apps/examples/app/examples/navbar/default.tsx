@@ -35,6 +35,102 @@ function Example() {
                     </Accordion.Content>
                   </Accordion.Item>
                 </Accordion>
+                <Accordion>
+                  <Accordion.Item>
+                    <Accordion.Header>A lot of items</Accordion.Header>
+                    <Accordion.Content>
+                      <LinkList>
+                        <li>
+                          <Link href="#">Post</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Pakker og gods</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Lorem Ipsum</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Dolor Sit</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Amet Consectetur</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Adipiscing Elit</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Sed Do</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Eiusmod Tempor</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Incididunt Ut</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Labore Et</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Dolore Magna</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Aliqua Ut</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Enim Ad</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Minim Veniam</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Quis Nostrud</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Exercitation Ullamco</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Laboris Nisi</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Ut Aliquip</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Ex Ea</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Commodo Consequat</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Duis Aute</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Irure Dolor</Link>
+                        </li>
+                        <li>
+                          <Link href="#">In Reprehenderit</Link>
+                        </li>
+                        <li>
+                          <Link href="#">In Voluptate</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Velit Esse</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Cillum Dolore</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Eu Fugiat</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Nulla Pariatur</Link>
+                        </li>
+                      </LinkList>
+                    </Accordion.Content>
+                  </Accordion.Item>
+                </Accordion>
               </Container>
             </Navbar.ExpandableMenuContent>
           </Navbar.ExpandableMenu>
