@@ -60,11 +60,13 @@
       &, /* Default */
      .hds-navbar__expandable-menu-content--fullscreen {
         min-height: calc(100vh - var(--hds-navbar-height));
+        max-height: calc(100vh - var(--hds-navbar-height));
       }
 
       .hds-navbar__expandable-menu-content-inner {
         opacity: 1;
         transition-delay: var(--_animation-time);
+        overflow-y: auto;
       }
     }
 

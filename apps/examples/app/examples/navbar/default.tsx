@@ -35,6 +35,99 @@ function Example() {
                     </Accordion.Content>
                   </Accordion.Item>
                 </Accordion>
+                <Accordion>
+                  <Accordion.Item>
+                    <Accordion.Header>A lot of items</Accordion.Header>
+                    <Accordion.Content>
+                      <LinkList>
+                        <li>
+                          <Link href="#">Post</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Pakker og gods</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                        <li>
+                          <Link href="#">Bud og ekspress</Link>
+                        </li>
+                      </LinkList>
+                    </Accordion.Content>
+                  </Accordion.Item>
+                </Accordion>
               </Container>
             </Navbar.ExpandableMenuContent>
           </Navbar.ExpandableMenu>
