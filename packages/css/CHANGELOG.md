@@ -1,5 +1,14 @@
 # @postenbring/hedwig-css
 
+## 0.0.71
+
+### Patch Changes
+
+- 7daed23: Make menu contents scrollable when content is longer than screen
+- f635eed: :fire: typography: Posten Sans Light for Bring brand is deprecated and replaced with Posten Sans Medium
+- Updated dependencies [f635eed]
+  - @postenbring/hedwig-tokens@0.0.14
+
 ## 0.0.70
 
 ### Patch Changes

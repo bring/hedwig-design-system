@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.14
+
+### Patch Changes
+
+- f635eed: :fire: typography: Posten Sans Light for Bring brand is deprecated and replaced with Posten Sans Medium
+
 ## 0.0.13
 
 ### Patch Changes
