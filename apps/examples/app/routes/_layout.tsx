@@ -1,3 +1,6 @@
+import "@postenbring/hedwig-css";
+import "./_layout.css";
+
 import { useEffect } from "react";
 import {
   Container,
@@ -11,8 +14,6 @@ import {
 import { Outlet, useSearchParams, Link as RemixLink, useLocation } from "@remix-run/react";
 
 import { kebabCaseToFirstLetterUpperCase } from "../components/component-examples";
-
-import "./_layout.css";
 
 export default function Layout() {
   const [search] = useSearchParams();

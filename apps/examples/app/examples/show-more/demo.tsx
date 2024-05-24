@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { useState } from "react";
 import { Box, Grid, ShowMoreButton } from "@postenbring/hedwig-react";
 

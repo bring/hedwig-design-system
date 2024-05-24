@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { useState } from "react";
 import { HStack, StepIndicator, Button, VStack, Skeleton } from "@postenbring/hedwig-react";
 

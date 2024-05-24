@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Accordion, Container, Link, LinkList, Navbar, Skeleton } from "@postenbring/hedwig-react";
 
 function Example() {

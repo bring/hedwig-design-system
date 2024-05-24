@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { AutoAnimateHeight, Box, Grid, ShowMoreButton } from "@postenbring/hedwig-react";
 import { useRef, useState } from "react";
 

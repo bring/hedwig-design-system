@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Container, Input, Button, Select, Textarea, VStack } from "@postenbring/hedwig-react";
 
 function Example() {

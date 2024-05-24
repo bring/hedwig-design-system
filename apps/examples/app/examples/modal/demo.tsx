@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { useRef } from "react";
 import { HStack, Modal, Button } from "@postenbring/hedwig-react";
 

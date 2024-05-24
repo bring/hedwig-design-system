@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { DescriptionList } from "@postenbring/hedwig-react";
 
 function Example() {

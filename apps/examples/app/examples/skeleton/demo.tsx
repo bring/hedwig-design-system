@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Skeleton, VStack } from "@postenbring/hedwig-react";
 
 function Example() {

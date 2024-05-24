@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Card, Link } from "@postenbring/hedwig-react";
 import postenBringImage from "../../assets/posten-bring.avif";
 

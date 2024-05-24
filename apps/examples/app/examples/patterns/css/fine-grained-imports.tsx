@@ -7,7 +7,7 @@ import "@postenbring/hedwig-css/dist/box.css";
 import "@postenbring/hedwig-css/dist/button.css";
 import "@postenbring/hedwig-css/dist/text.css";
 
-import { Box, Button, Text } from "@postenbring/hedwig-react/dist/index-no-css";
+import { Box, Button, Text } from "@postenbring/hedwig-react";
 
 function Example() {
   return (

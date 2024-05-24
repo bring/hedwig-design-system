@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Link, Navbar } from "@postenbring/hedwig-react";
 
 function Example() {

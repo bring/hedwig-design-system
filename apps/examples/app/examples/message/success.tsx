@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Message } from "@postenbring/hedwig-react";
 
 function Example() {

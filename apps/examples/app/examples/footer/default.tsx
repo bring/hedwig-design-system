@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Footer, Container, Link, HStack } from "@postenbring/hedwig-react";
 
 function Example() {

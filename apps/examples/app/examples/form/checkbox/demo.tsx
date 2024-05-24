@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Fieldset, Checkbox } from "@postenbring/hedwig-react";
 
 function Example() {

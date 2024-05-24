@@ -1,4 +1,5 @@
 import { Box, Link, VStack } from "@postenbring/hedwig-react";
+import "@postenbring/hedwig-css";
 
 function Example() {
   return (
