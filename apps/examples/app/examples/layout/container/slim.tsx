@@ -4,11 +4,8 @@ import { Container, DescriptionList, Grid } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div style={{ background: "var(--hds-colors-signature)" }}>
-      <Container
-        variant="slim"
-        style={{ background: "var(--hds-colors-light)", minHeight: "100vh" }}
-      >
+    <div style={{ background: "#f8cb9c" }}>
+      <Container variant="slim" style={{ background: "#c1cd8a", minHeight: "100vh" }}>
         <Grid
           style={{
             height: "100vh",

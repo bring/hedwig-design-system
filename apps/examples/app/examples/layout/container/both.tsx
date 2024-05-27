@@ -3,8 +3,8 @@ import { Container, VStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <div style={{ background: "var(--hds-colors-signature)" }}>
-      <Container style={{ background: "var(--hds-colors-light)" }}>
+    <div style={{ background: "#f8cb9c" }}>
+      <Container style={{ background: "#c1cd8a" }}>
         <VStack
           justify="center"
           align="center"
@@ -13,7 +13,7 @@ function Example() {
           <h2>Default</h2>
         </VStack>
       </Container>
-      <Container variant="slim" style={{ background: "var(--hds-colors-light)" }}>
+      <Container variant="slim" style={{ background: "#c1cd8a" }}>
         <VStack
           justify="center"
           align="center"
