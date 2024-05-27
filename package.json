@@ -20,9 +20,9 @@
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "husky": "9.0.11",
-    "lint-staged": "15.2.2",
+    "lint-staged": "15.2.5",
     "prettier": "^3.2.4",
-    "stylelint": "16.5.0",
+    "stylelint": "16.6.0",
     "turbo": "1.13.3"
   },
   "pnpm": {
