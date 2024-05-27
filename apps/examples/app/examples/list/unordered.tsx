@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { HStack, UnorderedList } from "@postenbring/hedwig-react";
 
 function Example() {

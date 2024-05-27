@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Link, LinkList } from "@postenbring/hedwig-react";
 
 function Example() {

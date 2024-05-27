@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { HStack, Badge } from "@postenbring/hedwig-react";
 
 function Example() {

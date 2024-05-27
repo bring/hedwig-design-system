@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Select } from "@postenbring/hedwig-react";
 
 function Example() {

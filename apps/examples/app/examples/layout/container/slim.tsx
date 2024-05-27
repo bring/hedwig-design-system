@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { useId, useState, useRef, useEffect } from "react";
 import { Container, DescriptionList, Grid } from "@postenbring/hedwig-react";
 

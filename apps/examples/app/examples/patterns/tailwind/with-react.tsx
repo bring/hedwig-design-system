@@ -1,5 +1,6 @@
-import { Button } from "@postenbring/hedwig-react";
+import "@postenbring/hedwig-css";
 import "./tailwind.css";
+import { Button } from "@postenbring/hedwig-react";
 
 function Example() {
   return (

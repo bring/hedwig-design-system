@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Breadcrumbs, Link } from "@postenbring/hedwig-react";
 
 function Example() {

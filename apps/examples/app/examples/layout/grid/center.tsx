@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Grid, Box } from "@postenbring/hedwig-react";
 
 function Example() {

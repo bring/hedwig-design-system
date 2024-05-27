@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { useState } from "react";
 import { Accordion } from "@postenbring/hedwig-react";
 

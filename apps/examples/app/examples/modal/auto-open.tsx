@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Modal, Button } from "@postenbring/hedwig-react";
 
 function Example() {

@@ -4,9 +4,11 @@ Welcome to the Hedwig Design System – a comprehensive design system built to s
 
 ## ✨ Usage
 
-Storybook: https://bring.github.io/hedwig-design-system/
+[Examples](https://bring.github.io/hedwig-design-system/examples/) - A kitchen sink of all the components, showing their usage.
 
-This package has three packages
+[Storybook](https://bring.github.io/hedwig-design-system/) - Similar to the to examples, primarly used when developing the components inside the design system.
+
+Hedwig Design System consists of three packages
 
 - `@postenbring/hedwig-tokens`
 - `@postenbring/hedwig-css`
@@ -14,9 +16,12 @@ This package has three packages
 
 ### Getting started
 
-The simplest way is to just install the `@postenbring/hedwig-react` package, and start using the components. The css is imported in the javascript files so a bundler that supports side effect imports is required. Vite and Remix supports this out of the box.
+Install the `@postenbring/hedwig-react` and `@postenbring/hedwig-css` packages
+
+Then import the css package somewhere in your app (only needed once), and use the components.
 
 ```tsx
+import "@postenbring/hedwig-css";
 import { Box, Button } from "@postenbring/hedwig-react";
 
 export function MyComponent() {
@@ -43,13 +48,6 @@ function App() {
 ```
 
 ![Button inside Box with Bring theme](screenshots/box-and-button-bring-theme.png)
-
-### Custom css loading
-
-The `@postenbring/hedwig-react` entrypoint automaticly imports `@postenbring/hedwig-css`, ensuring all the needed css is loaded.
-For most projects and bundlers this just works.
-
-If you need to handle css loading yourself you can you import the react packages from `@postenbring/hedwig-react/dist/index-no-css`.
 
 ### Inspiration
 

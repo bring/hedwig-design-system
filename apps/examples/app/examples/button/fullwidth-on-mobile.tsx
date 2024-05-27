@@ -1,3 +1,4 @@
+import "@postenbring/hedwig-css";
 import { Button } from "@postenbring/hedwig-react";
 
 function Example() {
