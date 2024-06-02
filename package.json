@@ -14,15 +14,15 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.3",
-    "@types/node": "20.12.12",
+    "@changesets/cli": "^2.27.5",
+    "@types/node": "20.13.0",
     "eslint": "^8.57.0",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "husky": "9.0.11",
     "lint-staged": "15.2.5",
-    "prettier": "^3.2.4",
-    "stylelint": "16.6.0",
+    "prettier": "^3.3.0",
+    "stylelint": "16.6.1",
     "turbo": "1.13.3"
   },
   "pnpm": {
