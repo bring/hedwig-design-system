@@ -16,7 +16,7 @@
     "clean": "rm -rf .turbo node_modules dist"
   },
   "devDependencies": {
-    "@types/node": "20.13.0",
+    "@types/node": "20.14.0",
     "color2k": "2.0.3",
     "eslint": "^8.57.0",
     "eslint-config-custom": "*",
@@ -24,7 +24,7 @@
     "style-dictionary": "3.9.2",
     "style-dictionary-utils": "2.4.1",
     "tailwindcss": "3.4.3",
-    "tsx": "4.11.0",
+    "tsx": "4.11.2",
     "typescript": "^5.4.5"
   },
   "publishConfig": {
