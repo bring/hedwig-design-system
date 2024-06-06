@@ -1,4 +1,5 @@
 @import url("../_icons.css");
+@import url("../spacing/spacing.css");
 
 .hds-help-text-button {
   /* Button reset */
@@ -11,8 +12,13 @@
   /* Spacing */
   padding: 0 2px 2px;
 
-  /* Border */
-  border-bottom: var(--hds-stroke-default) dashed var(--hds-ui-colors-black);
+  /* Underline */
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: var(--hds-ui-colors-black);
+  text-decoration-thickness: 1px;
+  text-underline-offset: var(--hds-spacing-4-8);
+  text-align: left;
 
   &[data-state="open"] {
     background-color: var(--hds-ui-colors-light-grey-fill);
