@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 0.0.72
+
+### Patch Changes
+
+- 0085306: :lipstick: help-text: replaced border-bottom with text decoration
+- Updated dependencies [3435c56]
+  - @postenbring/hedwig-tokens@0.0.15
+
 ## 0.0.71
 
 ### Patch Changes
