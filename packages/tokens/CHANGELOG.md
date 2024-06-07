@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.15
+
+### Patch Changes
+
+- 3435c56: :recycle: ensure kebab-case in all token names & add line-height to tailwind config
+
 ## 0.0.14
 
 ### Patch Changes
