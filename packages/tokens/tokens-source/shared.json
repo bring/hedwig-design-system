@@ -269,7 +269,7 @@
         "letterSpacing": "0"
       }
     },
-    "body title": {
+    "body-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["18px", "20px"],
@@ -278,7 +278,7 @@
         "letterSpacing": "0"
       }
     },
-    "body small": {
+    "body-small": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["16px", "18px"],
@@ -287,7 +287,7 @@
         "letterSpacing": "0"
       }
     },
-    "body small title": {
+    "body-small-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["16px", "18px"],
@@ -305,7 +305,7 @@
         "letterSpacing": "0"
       }
     },
-    "technical title": {
+    "technical-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["14px", "16px"],
@@ -323,7 +323,7 @@
         "letterSpacing": "0"
       }
     },
-    "caption title": {
+    "caption-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": "13px",

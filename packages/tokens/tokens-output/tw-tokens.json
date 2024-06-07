@@ -243,7 +243,7 @@
       "fontWeight": 400,
       "letterSpacing": "0"
     },
-    "body title": {
+    "body-title": {
       "fontFamily": [
         "Posten Sans",
         "Arial",
@@ -260,7 +260,7 @@
       "fontWeight": 500,
       "letterSpacing": "0"
     },
-    "body small": {
+    "body-small": {
       "fontFamily": [
         "Posten Sans",
         "Arial",
@@ -277,7 +277,7 @@
       "fontWeight": 400,
       "letterSpacing": "0"
     },
-    "body small title": {
+    "body-small-title": {
       "fontFamily": [
         "Posten Sans",
         "Arial",
@@ -311,7 +311,7 @@
       "fontWeight": 400,
       "letterSpacing": "0"
     },
-    "technical title": {
+    "technical-title": {
       "fontFamily": [
         "Posten Sans",
         "Arial",
@@ -339,7 +339,7 @@
       "fontWeight": 400,
       "letterSpacing": "0"
     },
-    "caption title": {
+    "caption-title": {
       "fontFamily": [
         "Posten Sans",
         "Arial",
@@ -402,23 +402,23 @@
     "body": "clamp(18px,calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))),20px)",
     "body-min": "18px",
     "body-max": "20px",
-    "body title": "clamp(18px,calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))),20px)",
-    "body title-min": "18px",
-    "body title-max": "20px",
-    "body small": "clamp(16px,calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300))),18px)",
-    "body small-min": "16px",
-    "body small-max": "18px",
-    "body small title": "clamp(16px,calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300))),18px)",
-    "body small title-min": "16px",
-    "body small title-max": "18px",
+    "body-title": "clamp(18px,calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))),20px)",
+    "body-title-min": "18px",
+    "body-title-max": "20px",
+    "body-small": "clamp(16px,calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300))),18px)",
+    "body-small-min": "16px",
+    "body-small-max": "18px",
+    "body-small-title": "clamp(16px,calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300))),18px)",
+    "body-small-title-min": "16px",
+    "body-small-title-max": "18px",
     "technical": "clamp(14px,calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300))),16px)",
     "technical-min": "14px",
     "technical-max": "16px",
-    "technical title": "clamp(14px,calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300))),16px)",
-    "technical title-min": "14px",
-    "technical title-max": "16px",
+    "technical-title": "clamp(14px,calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300))),16px)",
+    "technical-title-min": "14px",
+    "technical-title-max": "16px",
     "caption": "13px",
-    "caption title": "13px"
+    "caption-title": "13px"
   },
   "line-height": {
     "type": "dimension",
@@ -449,23 +449,23 @@
     "body": "clamp(26px,calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))),28px)",
     "body-min": "26px",
     "body-max": "28px",
-    "body title": "clamp(26px,calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))),28px)",
-    "body title-min": "26px",
-    "body title-max": "28px",
-    "body small": "clamp(24px,calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300))),26px)",
-    "body small-min": "24px",
-    "body small-max": "26px",
-    "body small title": "clamp(24px,calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300))),26px)",
-    "body small title-min": "24px",
-    "body small title-max": "26px",
+    "body-title": "clamp(26px,calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))),28px)",
+    "body-title-min": "26px",
+    "body-title-max": "28px",
+    "body-small": "clamp(24px,calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300))),26px)",
+    "body-small-min": "24px",
+    "body-small-max": "26px",
+    "body-small-title": "clamp(24px,calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300))),26px)",
+    "body-small-title-min": "24px",
+    "body-small-title-max": "26px",
     "technical": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
     "technical-min": "22px",
     "technical-max": "24px",
-    "technical title": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
-    "technical title-min": "22px",
-    "technical title-max": "24px",
+    "technical-title": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
+    "technical-title-min": "22px",
+    "technical-title-max": "24px",
     "caption": "18px",
-    "caption title": "18px"
+    "caption-title": "18px"
   },
   "font-weight": {
     "type": "number",
@@ -478,12 +478,12 @@
     "h3": 400,
     "h3-title": 500,
     "body": 400,
-    "body title": 500,
-    "body small": 400,
-    "body small title": 500,
+    "body-title": 500,
+    "body-small": 400,
+    "body-small-title": 500,
     "technical": 400,
-    "technical title": 500,
+    "technical-title": 500,
     "caption": 400,
-    "caption title": 500
+    "caption-title": 500
   }
 }

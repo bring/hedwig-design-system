@@ -64,6 +64,7 @@ module.exports = {
       medium: 500,
       bold: 700,
     },
+    lineHeight: tokens["line-height"],
     fontSize: {
       "h1-display": fontSize("posten-h1-display", "var(--hds-font-weight-h1-display)"),
       "h1-display-min": fontSize("posten-h1-display-min", "var(--hds-font-weight-h1-display)"),
@@ -89,28 +90,28 @@ module.exports = {
       "body-min": fontSize("body-min", "body"),
       "body-max": fontSize("body-max", "body"),
 
-      "body-title": fontSize("body title", "body title"),
-      "body-title-min": fontSize("body title-min", "body title"),
-      "body-title-max": fontSize("body title-max", "body title"),
+      "body-title": fontSize("body-title", "body-title"),
+      "body-title-min": fontSize("body-title-min", "body-title"),
+      "body-title-max": fontSize("body-title-max", "body-title"),
 
-      "body-small": fontSize("body small", "body small"),
-      "body-small-min": fontSize("body small-min", "body small"),
-      "body-small-max": fontSize("body small-max", "body small"),
+      "body-small": fontSize("body-small", "body-small"),
+      "body-small-min": fontSize("body-small-min", "body-small"),
+      "body-small-max": fontSize("body-small-max", "body-small"),
 
-      "body-small-title": fontSize("body small title", "body small title"),
-      "body-small-title-min": fontSize("body small title-min", "body small title"),
-      "body-small-title-max": fontSize("body small title-max", "body small title"),
+      "body-small-title": fontSize("body-small-title", "body-small-title"),
+      "body-small-title-min": fontSize("body-small-title-min", "body-small-title"),
+      "body-small-title-max": fontSize("body-small-title-max", "body-small-title"),
 
       technical: fontSize("technical", "technical"),
       "technical-min": fontSize("technical-min", "technical"),
       "technical-max": fontSize("technical-max", "technical"),
 
-      "technical-title": fontSize("technical title", "technical title"),
-      "technical-title-min": fontSize("technical title-min", "technical title"),
-      "technical-title-max": fontSize("technical title-max", "technical title"),
+      "technical-title": fontSize("technical-title", "technical-title"),
+      "technical-title-min": fontSize("technical-title-min", "technical-title"),
+      "technical-title-max": fontSize("technical-title-max", "technical-title"),
 
       caption: fontSize("caption", "caption"),
-      "caption-title": fontSize("caption title", "caption title"),
+      "caption-title": fontSize("caption-title", "caption-title"),
     },
     colors: {
       // The brand specifc tokens are themeable,
