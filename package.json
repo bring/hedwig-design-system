@@ -23,7 +23,7 @@
     "lint-staged": "15.2.5",
     "prettier": "^3.3.0",
     "stylelint": "16.6.1",
-    "turbo": "1.13.3"
+    "turbo": "2.0.3"
   },
   "pnpm": {
     "overrides": {
@@ -38,5 +38,6 @@
   },
   "prettier": {
     "printWidth": 100
-  }
+  },
+  "name": "hedwig-design-system"
 }
