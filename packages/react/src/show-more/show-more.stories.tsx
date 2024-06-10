@@ -21,7 +21,7 @@ export const ShowMore: Story = {
     text: "Vis flere",
     onClick: () => {
       // eslint-disable-next-line no-alert -- It's an example
-      alert("Clicked");
+      alert("Clicked! Render more of whatever content thats already here.");
     },
   },
 };
@@ -46,7 +46,7 @@ export const SimpleShowMoreShowLess: Story = {
   render: () => {
     const [expanded, setExpanded] = useState(false);
     const elements = Array.from({ length: expanded ? 8 : 3 }, (_, i) => (
-      <li key={i}>Hallo {Math.random()}</li>
+      <li key={i}>List element {i + 1}</li>
     ));
     return (
       <>
@@ -75,13 +75,13 @@ export const CompleteShowMoreShowLess: Story = {
     const ref = useRef<HTMLDivElement>(null);
 
     const elements = Array.from({ length: expanded ? 40 : 3 }, (_, i) => (
-      <li key={i}>Hallo {Math.random()}</li>
+      <li key={i}>List element {i + 1}</li>
     ));
     return (
       <div>
         <div
           style={{
-            height: 1400,
+            height: 400,
             background: "linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12)",
           }}
         />
@@ -109,7 +109,7 @@ export const CompleteShowMoreShowLess: Story = {
         />
         <div
           style={{
-            height: 1400,
+            height: 400,
             background: "linear-gradient(to top, #051937, #004d7a, #008793, #00bf72, #a8eb12)",
           }}
         />

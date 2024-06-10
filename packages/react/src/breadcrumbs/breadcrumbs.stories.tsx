@@ -13,15 +13,15 @@ const meta: Meta<typeof Breadcrumbs> = {
           <Link href="https://www.posten.no">Home</Link>
         </li>
         <li>
-          <Link href="https://www.posten.no">Somewhere</Link>
+          <Link href="https://www.posten.no">First level</Link>
         </li>
         <li>
-          <Link href="https://www.posten.no">Deep inside</Link>
+          <Link href="https://www.posten.no">Next level</Link>
         </li>
         <li>
-          <Link href="https://www.posten.no">Posten dot no</Link>
+          <Link href="https://www.posten.no">The previous page</Link>
         </li>
-        <li>You will find this page</li>
+        <li>Title of the current page</li>
       </>
     ),
   },

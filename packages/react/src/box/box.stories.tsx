@@ -13,12 +13,13 @@ const meta: Meta<typeof Box> = {
     children: (
       <>
         <Text variant="h3-title" as="h2">
-          Box content
+          Box content header
         </Text>
         <Text _unstableSpacing>
-          This is some body copy in a box, but you can basically add anything you want in here.
+          Kepp the content in here short and to the point. This is some body copy in a box and a
+          link, but you can basically add anything you want in here.
         </Text>
-        <Link href="#a-link-for-whatever-reason">A link for whatever reason</Link>
+        <Link href="#a-link-for-whatever-reason">A link if thats what you need</Link>
       </>
     ),
   },
@@ -62,7 +63,7 @@ export const WarningBox: Story = {
   },
 };
 
-export const AreYouSureDialog: Story = {
+export const OnCloeCallback: Story = {
   args: {
     closeable: true,
     variant: "warning",
