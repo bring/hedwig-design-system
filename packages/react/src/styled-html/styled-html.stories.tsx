@@ -54,7 +54,7 @@ export const Default: Story = {
 
 export const Darkmode: Story = {
   args: {
-    darkmode: true,
+    unstable_darkmode: true,
   },
   parameters: {
     backgrounds: { default: "dark" },
@@ -69,7 +69,7 @@ export const Small: Story = {
 
 export const DarkmodeSmall: Story = {
   args: {
-    darkmode: true,
+    unstable_darkmode: true,
     size: "small",
   },
   parameters: {
