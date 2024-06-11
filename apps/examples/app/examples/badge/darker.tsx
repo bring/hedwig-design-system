@@ -6,7 +6,7 @@ function Example() {
     <HStack gap="8" align="end">
       <Badge variant="darker">Darker</Badge>
       <Badge variant="darker" size="smaller">
-        Dark
+        Darker
       </Badge>
     </HStack>
   );
