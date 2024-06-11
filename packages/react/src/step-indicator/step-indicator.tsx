@@ -38,11 +38,6 @@ interface StepIndicatorProps extends React.HTMLAttributes<HTMLDivElement> {
   lang?: "no" | "en" | "da" | "sv";
 }
 
-/**
- * Indicate a step in a process.
- *
- * It does not handle step content or navigation, only the visual indication of the active step.
- */
 export const StepIndicator = forwardRef<HTMLDivElement, StepIndicatorProps & TitleProps>(
   (
     {

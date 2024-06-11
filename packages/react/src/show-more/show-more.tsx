@@ -16,10 +16,6 @@ export type ShowMoreProps = React.HTMLAttributes<HTMLButtonElement> & {
 } & Variant;
 
 /**
- * Simple button for triggering more content.
- *
- * You have to add the logic for what happens when the button is clicked yourself.
- *
  * @example
  * ```tsx
  * function Content() {

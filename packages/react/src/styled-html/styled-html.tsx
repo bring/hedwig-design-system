@@ -16,13 +16,6 @@ export interface StyledHtmlProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * A component for displaying dynamic content that you want to apply hedwig styling to.
- * the styling depends on the semantic html elements you use inside the component.
- *
- * Useful when you have dynamic content that you want styled with hedwig, like content from a CMS.
- *
- * Previously known as `hw-wysiwyg` in hedwig legacy. In tailwind this kind of component it is known as `prose`.
- *
  * @example
  * ```tsx
  * <StyledHtml>

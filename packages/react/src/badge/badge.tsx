@@ -28,8 +28,6 @@ export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> 
 }
 
 /**
- * Badges are used to label, categorize or organize items using keywords to describe them.
- *
  * @example
  * <Badge variant="dark">Dark</Badge>
  */

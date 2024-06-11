@@ -13,10 +13,7 @@ export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
 }
 
 /**
- * Uses the HTML5 `<dl>` element
- *
- * Pass in corresponding `<dt>` and `<dd>` elements as children
- *
+ * @example
  * ```tsx
  * <DescriptionList>
  *   <dt>Vekt</dt>
@@ -26,20 +23,6 @@ export interface DescriptionListProps extends HTMLAttributes<HTMLDListElement> {
  * </DescriptionList>
  * ```
  *
- * Optionally wrap them in `<div>` elements as allowed by the HTML5 spec
- *
- * ```tsx
- * <DescriptionList>
- *   <div>
- *     <dt>Vekt</dt>
- *     <dd>12 kg</dd>
- *   </div>
- *   <div>
- *     <dt>Antall kolli</dt>
- *     <dd>2</dd>
- *   </div>
- * </DescriptionList>
- * ```
  */
 export const DescriptionList = forwardRef<HTMLDListElement, DescriptionListProps>(
   ({ variant = "vertical", className, ...rest }, ref) => {

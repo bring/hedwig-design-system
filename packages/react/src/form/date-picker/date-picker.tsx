@@ -17,16 +17,6 @@ export type DatePickerProps = Omit<
   calendarButtonTitle?: string;
 };
 
-/**
- * A basic implementation of a date picker
- *
- * This date picker is an implementation of native date picker, as you get
- * with `<input type="date" />`, where the input field is dressed in Hedwig styling.
- *
- * Due to accessibility concerns you will only see the appropriate Hedwig calendar
- * icon in Chrome. Firefox will show built in icon and Safari will show no icon.
- * Not tested in Edge.
- */
 export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function DatePicker(
   {
     className,

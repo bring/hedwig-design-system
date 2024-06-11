@@ -79,12 +79,6 @@ const defaultHTMLTag: Record<NonNullable<TextProps["variant"]>, `h${1 | 2 | 3}` 
 };
 
 /**
- * Text component
- *
- * If the variant is `h1-display`, `h1`, `h2`, `h3`, or `h3-title` the `as` or `asChild` prop is required.
- *
- * This is to force the consumer to consider which semantic html element to use. E.g. `<h1>` or `<h2>`
- *
  * @example
  * ```tsx
  * <Text variant="h1-display" as="h1">Hello world</Text>

@@ -37,8 +37,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 /**
- * Button component
- *
  * @example
  * <Button variant="primary">Primary</Button>
  * <Button variant="secondary" size="large">Secondary</Button>

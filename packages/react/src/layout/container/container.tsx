@@ -22,10 +22,6 @@ export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   as?: "div" | "section" | "aside" | "main" | "article" | "header" | "footer";
 }
 
-/**
- * Container is a layout component that is used to wrap content.
- * It ensures a max-width and minimum spacing on the sides.
- */
 export const Container = forwardRef<HTMLDivElement, ContainerProps>(
   ({ as: Tag = "div", asChild, className, children, variant, ...rest }, ref) => {
     const Component = asChild ? Slot : Tag;

@@ -63,7 +63,7 @@ export const WarningBox: Story = {
   },
 };
 
-export const OnCloeCallback: Story = {
+export const OnCloseCallback: Story = {
   args: {
     closeable: true,
     variant: "warning",

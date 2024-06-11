@@ -11,10 +11,6 @@ export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListEl
 }
 
 /**
- * An unordered list of simple items, often text. You can nest other lists inside this component.
- *
- * If you have other list needs, you can build your own using the semantic `ul` and `ol` tags.
- *
  * @example
  * ```tsx
  * <UnorderedList>
@@ -24,6 +20,7 @@ export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListEl
  * </UnorderedList>
  * ```
  */
+
 export const UnorderedList = forwardRef<HTMLUListElement, ListProps>(
   ({ size = "medium", className, ...rest }, ref) => {
     return (
