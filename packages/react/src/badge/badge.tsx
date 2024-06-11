@@ -10,7 +10,7 @@ export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> 
    *
    * @default "lighter"
    */
-  variant?: "lighter" | "dark" | "white" | "warning";
+  variant?: "lighter" | "darker" | "white" | "warning";
 
   /**
    * Font size of the badge
@@ -31,7 +31,7 @@ export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> 
  * Badges are used to label, categorize or organize items using keywords to describe them.
  *
  * @example
- * <Badge variant="dark">Dark</Badge>
+ * <Badge variant="darker">Darker</Badge>
  */
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
   ({ children, asChild, variant = "lighter", size = "small", className, ...rest }, ref) => {
