@@ -35,7 +35,7 @@
     color: var(--hds-colors-dark);
   }
 
-  &.hds-badge--dark {
+  &.hds-badge--darker {
     background-color: var(--hds-colors-darker);
     color: var(--hds-ui-colors-white);
   }

@@ -55,7 +55,7 @@ const exampleIndexer: Indexer = {
       {
         type: "story",
         exportName: "default",
-        name: `Example: ${kebabCaseToFirstLetterUpperCase(exampleName)}`,
+        name: kebabCaseToFirstLetterUpperCase(exampleName),
         __id: `${groupName ? `${groupName}-` : ""}${componentName}--example-${exampleName}`,
         title:
           (groupName ? kebabCaseToFirstLetterUpperCase(groupName) + "/" : "") +

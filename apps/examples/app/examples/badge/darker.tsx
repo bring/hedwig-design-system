@@ -4,9 +4,9 @@ import { Badge, HStack } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <HStack gap="8" align="end">
-      <Badge variant="dark">Dark</Badge>
-      <Badge variant="dark" size="smaller">
-        Dark
+      <Badge variant="darker">Darker</Badge>
+      <Badge variant="darker" size="smaller">
+        Darker
       </Badge>
     </HStack>
   );

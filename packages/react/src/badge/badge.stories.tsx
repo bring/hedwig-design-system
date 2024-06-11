@@ -19,10 +19,10 @@ export const Lighter: Story = {
   },
 };
 
-export const Dark: Story = {
+export const Darker: Story = {
   args: {
-    variant: "dark",
-    children: "Dark badge",
+    variant: "darker",
+    children: "Darker badge",
   },
 };
 

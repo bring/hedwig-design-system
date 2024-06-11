@@ -32,32 +32,34 @@ function ExamplesMenu() {
 
   return (
     <div className="docs-sidebar">
-      {Object.entries(componentsByGroup).map(([groupName, components]) => (
-        <div key={groupName}>
-          {groupName !== "default" && (
-            <h2 className="hds-text-body-title hds-mt-24-32 hds-mb-8-12">
-              {kebabCaseToFirstLetterUpperCase(groupName)}
-            </h2>
-          )}
-          <LinkList>
-            {Object.keys(components).map((componentName) => (
-              <li key={componentName}>
-                <Link variant="underline" asChild>
-                  <RemixLink
-                    to={{
-                      pathname:
-                        groupName !== "default" ? `${groupName}/${componentName}` : componentName,
-                      search: search.toString(),
-                    }}
-                  >
-                    {kebabCaseToFirstLetterUpperCase(componentName)}
-                  </RemixLink>
-                </Link>
-              </li>
-            ))}
-          </LinkList>
-        </div>
-      ))}
+      {Object.entries(componentsByGroup)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([groupName, components]) => (
+          <div key={groupName}>
+            {groupName !== "default" && (
+              <h2 className="hds-text-body-title hds-mt-24-32 hds-mb-8-12">
+                {kebabCaseToFirstLetterUpperCase(groupName)}
+              </h2>
+            )}
+            <LinkList>
+              {Object.keys(components).map((componentName) => (
+                <li key={componentName}>
+                  <Link variant="underline" asChild>
+                    <RemixLink
+                      to={{
+                        pathname:
+                          groupName !== "default" ? `${groupName}/${componentName}` : componentName,
+                        search: search.toString(),
+                      }}
+                    >
+                      {kebabCaseToFirstLetterUpperCase(componentName)}
+                    </RemixLink>
+                  </Link>
+                </li>
+              ))}
+            </LinkList>
+          </div>
+        ))}
     </div>
   );
 }

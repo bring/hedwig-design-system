@@ -4,8 +4,18 @@ import { Slot } from "@radix-ui/react-slot";
 
 export interface StyledHtmlProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
+
+  /**
+   * Size of content inside. Setting this to `small` makes the font size be `body-small`.
+   *
+   * @default "default"
+   */
   size?: "default" | "small";
-  darkmode?: boolean;
+
+  /**
+   * 🚧 Work in progress darkmode support
+   */
+  unstable_darkmode?: boolean;
 
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
@@ -31,7 +41,7 @@ export interface StyledHtmlProps extends React.HTMLAttributes<HTMLDivElement> {
  * ```
  */
 export const StyledHtml = forwardRef<HTMLDivElement, StyledHtmlProps>(
-  ({ asChild, children, size, darkmode = false, className, ...rest }, ref) => {
+  ({ asChild, children, size, unstable_darkmode: darkmode = false, className, ...rest }, ref) => {
     const Component = asChild ? Slot : "div";
     return (
       <Component
