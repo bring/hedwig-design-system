@@ -109,6 +109,30 @@ function Example() {
       <p>
         Se flere <a href="/kundeservice/pakkeboks-hjelp">spørsmål og svar om Pakkeboks</a>.
       </p>
+
+      <h2>En tabell</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sted</th>
+            <th>Antall</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Oslo</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>Bergen</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>Trondheim</td>
+            <td>30</td>
+          </tr>
+        </tbody>
+      </table>
     </StyledHtml>
   );
 }
