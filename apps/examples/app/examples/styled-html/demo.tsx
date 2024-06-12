@@ -3,7 +3,7 @@ import { StyledHtml } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <StyledHtml>
+    <StyledHtml style={{ padding: "var(--hds-spacing-24)" }}>
       <h1>Pakkebokser</h1>
       <p>
         Pakkeboksene er selvbetjente, og er plassert slik at de er mulig å bruke hele døgnet. Du
