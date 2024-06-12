@@ -6,12 +6,24 @@ import { HStack, VStack } from "@postenbring/hedwig-react";
 import { useState } from "react";
 import { PrefetchBehavior, usePrefetchBehavior } from "./use-prefetch-behaviour";
 
-export function Examples({ name }: { name: string }) {
+export function Examples({
+  name,
+  showCodeByDefault,
+}: {
+  name: string;
+  showCodeByDefault?: boolean;
+  preload?: PrefetchBehavior;
+}) {
   if (!(name in examplesByComponent)) {
     return null;
   }
 
-  return <ComponentCodeExamples examples={examplesByComponent[name]!} />;
+  return (
+    <ComponentCodeExamples
+      examples={examplesByComponent[name]!}
+      defaultShowCode={showCodeByDefault}
+    />
+  );
 }
 
 export function ComponentCodeExamples({

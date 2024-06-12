@@ -20,7 +20,7 @@ export default defineConfig({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
     }),
     remix({
-      ssr: false,
+      ssr: true,
       basename: "/hedwig-design-system/examples/",
       ignoredRouteFiles: ["*/**.css"],
 
