@@ -1,4 +1,3 @@
-import { composeEventHandlers } from "@remix-run/react/dist/components";
 import {
   FocusEventHandler,
   MouseEventHandler,
@@ -87,4 +86,16 @@ export function usePrefetchBehavior<T extends HTMLElement>(
       onTouchStart: composeEventHandlers(onTouchStart, setIntent),
     },
   ];
+}
+
+function composeEventHandlers<EventType extends React.SyntheticEvent | Event>(
+  theirHandler: ((event: EventType) => unknown) | undefined,
+  ourHandler: (event: EventType) => unknown,
+): (event: EventType) => unknown {
+  return (event) => {
+    theirHandler && theirHandler(event);
+    if (!event.defaultPrevented) {
+      ourHandler(event);
+    }
+  };
 }

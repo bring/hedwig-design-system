@@ -23,7 +23,7 @@ function Example() {
 
 function Widths() {
   const id = useId().replace(":", "").replace(":", "");
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
   const [innerWidth, setInnerWidth] = useState(0);
   const ref = useRef<HTMLDListElement>(null);

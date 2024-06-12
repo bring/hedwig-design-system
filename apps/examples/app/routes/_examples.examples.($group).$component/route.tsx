@@ -5,16 +5,20 @@ import {
   Link as RemixLink,
   useSearchParams,
   MetaFunction,
-  ClientLoaderFunctionArgs,
 } from "@remix-run/react";
-import { examplesByComponent } from "../examples";
+import { examplesByComponent } from "../../examples";
 import {
   ComponentCodeExamples,
   kebabCaseToFirstLetterUpperCase,
-} from "../components/component-examples";
+} from "../../components/component-examples";
 import { Breadcrumbs, Link, Text } from "@postenbring/hedwig-react";
+import { LoaderFunctionArgs } from "@remix-run/node";
 
-export async function clientLoader({ params: { group, component } }: ClientLoaderFunctionArgs) {
+export async function clientLoader({ params }: LoaderFunctionArgs) {
+  const group = params.group;
+  let component = params.component;
+  component = component?.replace(/\/$/, "");
+
   if (!component || !(component in examplesByComponent)) {
     throw new Response("Example component not found", { status: 404 });
   }
@@ -22,11 +26,11 @@ export async function clientLoader({ params: { group, component } }: ClientLoade
   return {
     group,
     component,
-    examples: examplesByComponent[component]!,
   };
 }
+type LoaderData = Awaited<ReturnType<typeof clientLoader>>;
 
-export const meta: MetaFunction<typeof clientLoader> = ({ data, error }) => {
+export const meta: MetaFunction = ({ data, error }) => {
   if (error) {
     return [
       {
@@ -35,16 +39,18 @@ export const meta: MetaFunction<typeof clientLoader> = ({ data, error }) => {
     ];
   }
 
-  const { component } = data as ReturnType<typeof useLoaderData<typeof clientLoader>>;
+  const { component } = data as LoaderData;
   return [
     {
-      title: `${kebabCaseToFirstLetterUpperCase(component)} - Hedwig Design System`,
+      title: `${kebabCaseToFirstLetterUpperCase(component)} examples - Hedwig Design System`,
     },
   ];
 };
 
 export default function Component() {
-  const { group, component, examples } = useLoaderData<typeof clientLoader>();
+  const { group, component } = useLoaderData() as LoaderData;
+  const examples = examplesByComponent[component];
+
   const [search] = useSearchParams();
   return (
     <div>
@@ -53,7 +59,7 @@ export default function Component() {
           <Link asChild>
             <RemixLink
               to={{
-                pathname: "../",
+                pathname: "/examples/",
                 search: search.toString(),
               }}
             >
@@ -79,7 +85,7 @@ export function ErrorBoundary() {
   const error = useRouteError();
 
   if (isRouteErrorResponse(error)) {
-    return <div>{error.status === 404 ? "Component not found" : "An error occurred"}</div>;
+    return <div>{error.status === 404 ? "Example not found" : "An error occurred"}</div>;
   }
 
   return <div>Something went wrong</div>;

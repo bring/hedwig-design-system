@@ -6,6 +6,7 @@
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
+  ignorePatterns: ["__generated__", "/public/storefront/"],
   root: true,
   parserOptions: {
     ecmaVersion: "latest",

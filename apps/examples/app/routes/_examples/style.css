@@ -26,7 +26,12 @@
   @media (min-width: 720px) {
     display: grid;
     grid-template-areas: "sidebar main";
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(160px, auto) 1fr;
+    gap: var(--hds-spacing-32);
+  }
+
+  @media (min-width: 940px) {
+    gap: var(--hds-spacing-64);
   }
 
   > * {
@@ -49,6 +54,18 @@
   @media (min-width: 940px) {
     max-width: 1440px;
     padding: 0 var(--hds-spacing-32);
+  }
+
+  [data-docs-area="main"] {
+    grid-area: main;
+  }
+
+  [data-docs-area="sidebar"] {
+    grid-area: sidebar;
+
+    @media (max-width: 720px) {
+      display: none;
+    }
   }
 
   .docs-sidebar {

@@ -1,12 +1,12 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/react";
 import { Link as RemixLink, useLocation, useSearchParams } from "@remix-run/react";
 
 import {
   ComponentCodeExamples,
   kebabCaseToFirstLetterUpperCase,
-} from "../components/component-examples";
-import { componentsByGroup } from "../examples";
-import styles from "./_layout._index.module.css";
+} from "../../components/component-examples";
+import { componentsByGroup } from "../../examples";
+import styles from "./styles.module.css";
 import { Grid, Link, LinkList } from "@postenbring/hedwig-react";
 import { useEffect } from "react";
 
@@ -36,7 +36,7 @@ function ExamplesMenu() {
         .sort(([a], [b]) => a.localeCompare(b))
         .map(([groupName, components]) => (
           <div key={groupName}>
-            {groupName !== "default" && (
+            {groupName !== "components" && (
               <h2 className="hds-text-body-title hds-mt-24-32 hds-mb-8-12">
                 {kebabCaseToFirstLetterUpperCase(groupName)}
               </h2>
@@ -48,7 +48,9 @@ function ExamplesMenu() {
                     <RemixLink
                       to={{
                         pathname:
-                          groupName !== "default" ? `${groupName}/${componentName}` : componentName,
+                          groupName !== "components"
+                            ? `${groupName}/${componentName}/`
+                            : `${componentName}/`,
                         search: search.toString(),
                       }}
                     >
@@ -75,7 +77,7 @@ export default function Index() {
           .sort(([a], [b]) => a.localeCompare(b))
           .map(([groupName, components]) => (
             <div key={groupName}>
-              {groupName !== "default" && (
+              {groupName !== "components" && (
                 <h2 className="hds-text-h1 hds-mt-48-64 hds-mb-24-32" id={`examples-${groupName}`}>
                   {kebabCaseToFirstLetterUpperCase(groupName)}
                 </h2>
@@ -96,9 +98,9 @@ export default function Index() {
                           className={styles.exampleHeadingLink}
                           to={{
                             pathname:
-                              groupName !== "default"
-                                ? `${groupName}/${componentName}`
-                                : componentName,
+                              groupName !== "components"
+                                ? `${groupName}/${componentName}/`
+                                : `${componentName}/`,
                             search: search.toString(),
                           }}
                         >
@@ -108,7 +110,7 @@ export default function Index() {
                       <div className="hds-mt-12-16" />
                       <ComponentCodeExamples
                         examples={examples ?? []}
-                        defaultShowCode={false}
+                        showCodeByDefault={false}
                         preload="intent"
                       />
                     </li>

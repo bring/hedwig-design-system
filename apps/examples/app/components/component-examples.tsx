@@ -6,21 +6,58 @@ import { HStack, VStack } from "@postenbring/hedwig-react";
 import { useState } from "react";
 import { PrefetchBehavior, usePrefetchBehavior } from "./use-prefetch-behaviour";
 
-export function Examples({ name }: { name: string }) {
-  if (!(name in examplesByComponent)) {
-    return null;
-  }
-
-  return <ComponentCodeExamples examples={examplesByComponent[name]!} />;
+export function Examples({
+  componentName,
+  exampleName,
+  onlyIframe,
+  onlyFirstExample,
+  showCodeByDefault,
+  shouldPreload,
+  preload,
+  scale,
+}: {
+  componentName: string;
+  exampleName?: string;
+  onlyFirstExample?: boolean;
+  onlyIframe?: boolean;
+  showCodeByDefault?: boolean;
+  shouldPreload?: boolean;
+  preload?: PrefetchBehavior;
+  scale?: number;
+}) {
+  const singleExample = exampleName
+    ? examplesByComponent[componentName].find((e) => e.exampleName === exampleName)
+    : onlyFirstExample
+      ? examplesByComponent[componentName][0]
+      : undefined;
+  if (singleExample) {
+    return (
+      <CodeExample
+        activeExample={singleExample}
+        showCodeByDefault={showCodeByDefault}
+        hideDescription={onlyIframe}
+        hideActions={onlyIframe}
+        shouldPreload={shouldPreload}
+        scale={scale}
+      />
+    );
+  } else
+    return (
+      <ComponentCodeExamples
+        examples={examplesByComponent[componentName]!}
+        showCodeByDefault={showCodeByDefault}
+        preload={preload}
+      />
+    );
 }
 
 export function ComponentCodeExamples({
   examples,
-  defaultShowCode,
+  showCodeByDefault,
   preload = "none",
 }: {
   examples: Example[];
-  defaultShowCode?: boolean;
+  showCodeByDefault?: boolean;
   preload?: PrefetchBehavior;
 }) {
   const [search] = useSearchParams();
@@ -64,7 +101,7 @@ export function ComponentCodeExamples({
 
       <CodeExample
         activeExample={activeExample}
-        defaultShowCode={defaultShowCode}
+        showCodeByDefault={showCodeByDefault}
         allExamples={examples}
         shouldPreload={shouldPreload}
       />

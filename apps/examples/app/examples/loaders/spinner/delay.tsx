@@ -19,7 +19,7 @@ export const config: ExampleConfig = {
     <a href="https://www.nngroup.com/articles/progress-indicators/" target="_blank">Read more loading times and spinners ↗</a>
     <blockquote>
     <p>This indicator should be reserved for actions that take between 2-10 seconds. For anything that takes less than 1 second to load, it is distracting to use a looped animation, because users cannot keep up with what happened and might feel anxious about whatever flashed on the screen.
-    <footer><cite>Neilsen Norman Group</cite></footer>
+    <footer>Nielsen Norman Group</footer>
     </p>
     </blockquote>`,
   index: 1,

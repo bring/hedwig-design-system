@@ -13,6 +13,7 @@ import { Example } from "../examples";
 import { Button, StyledHtml, type ButtonProps } from "@postenbring/hedwig-react";
 import { openExampleInCodeSandbox } from "./codesandbox";
 import { useSearchParams } from "@remix-run/react";
+import { useTheme } from "./use-theme";
 
 const codeThemes: Record<"posten" | "bring", ThemeRegistrationRaw> = {
   posten: vesper,
@@ -31,18 +32,24 @@ const highlighter = await getHighlighterCore({
 export function CodeExample({
   activeExample,
   allExamples,
-  defaultShowCode = true,
+  showCodeByDefault = false,
+  hideDescription = false,
+  hideActions = false,
   shouldPreload = false,
+  scale,
 }: {
   activeExample: Example;
   allExamples?: Example[];
-  defaultShowCode?: boolean;
+  showCodeByDefault?: boolean;
+  hideDescription?: boolean;
+  hideActions?: boolean;
   shouldPreload?: boolean;
+  scale?: number;
 }) {
   if (!allExamples) allExamples = [activeExample];
   const [search] = useSearchParams();
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
-  const [showCode, setShowCode] = useState(defaultShowCode);
+  const [showCode, setShowCode] = useState(showCodeByDefault);
 
   function iframeUrl(example: Example) {
     const iframeViewOptions = new URLSearchParams();
@@ -55,13 +62,16 @@ export function CodeExample({
     if (example.config?.breakpointIndicator) {
       iframeViewOptions.set("breakpointIndicator", String(example.config?.breakpointIndicator));
     }
-    return `${example.urlPath}?${iframeViewOptions.toString()}`;
+    if (scale) {
+      iframeViewOptions.set("scale", String(scale));
+    }
+    return `${(example.urlPath + "/").replace(/\/+$/, "/")}?${iframeViewOptions.toString()}`;
   }
 
   return (
     <div className={styles.codeExample}>
       {/* Description */}
-      {activeExample.config?.description && (
+      {!hideDescription && activeExample.config?.description && (
         <StyledHtml
           size="small"
           dangerouslySetInnerHTML={{ __html: activeExample.config.description }}
@@ -146,79 +156,81 @@ export function CodeExample({
         })}
 
         {/* Actions row */}
-        <div>
-          <Button
-            variant="secondary-outline"
-            onClick={() => {
-              if (iframeRef.current) {
-                iframeRef.current.style.width = "360px";
-              }
-            }}
-            title="Mobile"
-            size="small"
-            icon
-          >
-            📱
-          </Button>
-          <Button
-            variant="secondary-outline"
-            onClick={() => {
-              if (iframeRef.current) {
-                iframeRef.current.style.width = "";
-              }
-            }}
-            title="Desktop"
-            size="small"
-            icon
-          >
-            🖥️
-          </Button>
-          <div style={{ flexGrow: 1 }} />
-
-          <Button
-            variant="secondary-outline"
-            size="small"
-            onClick={() => setShowCode((prev) => !prev)}
-          >
-            {showCode ? "Hide code" : "Show code"}
-          </Button>
-
-          <Button
-            variant="secondary"
-            title="Open in CodeSandbox"
-            size="small"
-            onClick={() => openExampleInCodeSandbox(activeExample)}
-            icon
-          >
-            <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 24H24V0H0V2.45455H21.5455V21.5455H2.45455V0H0Z" />
-            </svg>
-          </Button>
-          <Button variant="secondary" size="small" icon asChild>
-            <a
-              href={iframeUrl(activeExample)}
-              target="_blank"
-              rel="noreferrer"
-              title="Open standalone"
+        {!hideActions && (
+          <div>
+            <Button
+              variant="secondary-outline"
+              onClick={() => {
+                if (iframeRef.current) {
+                  iframeRef.current.style.width = "360px";
+                }
+              }}
+              title="Mobile"
+              size="small"
+              icon
             >
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                style={{ height: 24, width: 24 }}
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"
-                />
+              📱
+            </Button>
+            <Button
+              variant="secondary-outline"
+              onClick={() => {
+                if (iframeRef.current) {
+                  iframeRef.current.style.width = "";
+                }
+              }}
+              title="Desktop"
+              size="small"
+              icon
+            >
+              🖥️
+            </Button>
+            <div style={{ flexGrow: 1 }} />
+
+            <Button
+              variant="secondary-outline"
+              size="small"
+              onClick={() => setShowCode((prev) => !prev)}
+            >
+              {showCode ? "Hide code" : "Show code"}
+            </Button>
+
+            <Button
+              variant="secondary"
+              title="Open in CodeSandbox"
+              size="small"
+              onClick={() => openExampleInCodeSandbox(activeExample)}
+              icon
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 24H24V0H0V2.45455H21.5455V21.5455H2.45455V0H0Z" />
               </svg>
-            </a>
-          </Button>
-        </div>
+            </Button>
+            <Button variant="secondary" size="small" icon asChild>
+              <a
+                href={iframeUrl(activeExample)}
+                target="_blank"
+                rel="noreferrer"
+                title="Open standalone"
+              >
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  style={{ height: 24, width: 24 }}
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"
+                  />
+                </svg>
+              </a>
+            </Button>
+          </div>
+        )}
       </div>
 
       {/* Code */}
@@ -257,8 +269,7 @@ function CopyButton({
 }
 
 function Code({ code, id }: { code: string; id: string }) {
-  const [search] = useSearchParams();
-  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
+  const { activeTheme } = useTheme();
 
   const formattedCode = useMemo(() => {
     return highlighter.codeToHtml(code, {
