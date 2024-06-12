@@ -1,9 +1,9 @@
 import "@postenbring/hedwig-css";
-import { Fieldset, Checkbox } from "@postenbring/hedwig-react";
+import { Checkbox, Fieldset } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Fieldset legend="Legend">
+    <Fieldset legend="Default fieldset">
       <Checkbox defaultChecked value="Hello">
         Hello
       </Checkbox>
@@ -17,7 +17,6 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  description: `Checkboxes should be grouped in a Fieldset`,
   index: 0,
   layout: "centered-fullwidth",
 };

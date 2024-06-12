@@ -1,11 +1,9 @@
 import "@postenbring/hedwig-css";
-import { Box, Textarea } from "@postenbring/hedwig-react";
+import { ErrorMessage } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Box>
-      <Textarea label="Label" variant="white" />
-    </Box>
+    <ErrorMessage id="id">This is an error message for use with form input components</ErrorMessage>
   );
 }
 
@@ -13,6 +11,6 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  index: 1,
+  index: 0,
   layout: "centered-fullwidth",
 };

@@ -3,25 +3,25 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { DatePicker } from ".";
 
 const meta: Meta<typeof DatePicker> = {
-  title: "Form/DatePicker",
+  title: "Form/Date Picker",
   component: DatePicker,
+  argTypes: {
+    variant: { control: "inline-radio", options: ["default", "white"] },
+  },
 };
 
 export default meta;
 
 type Story = StoryObj<typeof DatePicker>;
 
-export const PlainDatePicker: Story = {
+export const Preview: Story = {
   args: {
-    label: "Some kind of date picker",
+    label: "Choose a date",
     errorMessage: "",
     readOnly: false,
     variant: "default",
     min: "2024-04-05",
     max: "2026-04-04",
-    calendarButtonTitle: "Åpne kalender",
-  },
-  argTypes: {
-    variant: { control: "inline-radio", options: ["default", "white"] },
+    calendarButtonTitle: "Open calendar",
   },
 };

@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof Select>;
 
-export const Default: Story = {
+export const Preview: Story = {
   args: {
     label: "Default select",
     errorMessage: "",
@@ -29,65 +29,5 @@ export const Default: Story = {
       <option value="2">option 2</option>
       <option value="3">option 3</option>
     </Select>
-  ),
-};
-
-export const White: Story = {
-  args: {
-    label: "White select",
-    variant: "white",
-  },
-  render: (props) => (
-    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Select {...props} defaultValue="">
-        <option disabled hidden value="">
-          Please select
-        </option>
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-      </Select>
-    </div>
-  ),
-};
-
-export const DefaultWithError: Story = {
-  args: {
-    label: "select with error",
-    name: "name",
-    id: "someId",
-    errorMessage: "Something is wrong",
-  },
-  render: (props) => (
-    <Select {...props} defaultValue="">
-      <option disabled hidden value="">
-        Please select
-      </option>
-      <option value="1">option 1</option>
-      <option value="2">option 2</option>
-      <option value="3">option 3</option>
-    </Select>
-  ),
-};
-
-export const WhiteWithError: Story = {
-  args: {
-    label: "White select with error",
-    variant: "white",
-    name: "name",
-    id: "someId",
-    errorMessage: "Something is wrong",
-  },
-  render: (props) => (
-    <div style={{ background: "var(--hds-ui-colors-light-grey-fill)", padding: "1em" }}>
-      <Select {...props} defaultValue="">
-        <option disabled hidden value="">
-          Please select
-        </option>
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-      </Select>
-    </div>
   ),
 };
