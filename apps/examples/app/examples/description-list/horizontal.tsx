@@ -19,4 +19,4 @@ function Example() {
 export default Example;
 
 import type { ExampleConfig } from "..";
-export const config: ExampleConfig = {};
+export const config: ExampleConfig = { index: 1 };

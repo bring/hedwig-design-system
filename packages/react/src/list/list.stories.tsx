@@ -1,9 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { StoryObj, Meta } from "@storybook/react";
 import { HStack } from "../layout";
-import { OrderedList, UnorderedList } from ".";
+import { UnorderedList } from ".";
 
 type Story = StoryObj<typeof UnorderedList>;
+
+const meta: Meta<typeof UnorderedList> = {
+  title: "List",
+  component: UnorderedList,
+};
+export default meta;
 
 const listItems = (
   <>
@@ -13,59 +19,15 @@ const listItems = (
   </>
 );
 
-export const UnorderedListStory: Story = {
-  name: "Unordered List",
+export const Preview: Story = {
   args: {
     children: listItems,
   },
   render: (props) => (
     <HStack gap="16">
-      <UnorderedList {...props} size="small" />
-      <UnorderedList {...props} size="medium" />
       <UnorderedList {...props} size="large" />
+      <UnorderedList {...props} size="medium" />
+      <UnorderedList {...props} size="small" />
     </HStack>
   ),
 };
-
-export const OrderedListStory: Story = {
-  name: "Ordered List",
-  args: {
-    children: listItems,
-  },
-  render: (props) => (
-    <HStack gap="16">
-      <OrderedList {...(props as React.HTMLAttributes<HTMLOListElement>)} size="small" />
-      <OrderedList {...(props as React.HTMLAttributes<HTMLOListElement>)} size="medium" />
-      <OrderedList {...(props as React.HTMLAttributes<HTMLOListElement>)} size="large" />
-    </HStack>
-  ),
-};
-
-export const NestedLists: Story = {
-  render: () => (
-    <UnorderedList>
-      <li>
-        Varer med verdi opp til 3000 kroner der mva. er betalt i utenlandsk nettbutikk
-        (VOEC-ordningen): Ingen fortolling.
-      </li>
-      <li>
-        Næringsmidler, særavgiftsvarer og restriksjonsbelagte varer uansett verdi, samt varer med
-        verdi over&nbsp;3000 kroner: Fortolling til 270&nbsp;kroner (gjelder fra 01.12.2023).
-      </li>
-      <li>
-        Andre varer med verdi mellom 0 og 3000 kroner blir fortollet basert på verdi av innholdet i
-        sendingen. Posten har satt ned prisene for å utføre fortollingen.
-        <UnorderedList>
-          <li>Verdi på vare 0–500 kroner: 45 kroner</li>
-          <li>Verdi på vare&nbsp;500–3000 kroner: 75 kroner</li>
-        </UnorderedList>
-      </li>
-    </UnorderedList>
-  ),
-};
-
-const meta: Meta<typeof UnorderedList> = {
-  title: "List",
-  component: UnorderedList,
-};
-export default meta;

@@ -6,16 +6,6 @@ const meta: Meta<typeof Link> = {
   title: "Link",
   component: Link,
 
-  args: {
-    children: "Link",
-    href: "https://www.posten.no/",
-    onClick: (e) => {
-      e.preventDefault();
-      // eslint-disable-next-line no-alert -- Storybook Demo
-      alert("Hello");
-    },
-  },
-
   // Hide onClick from the auto generated table
   argTypes: {
     onClick: {
@@ -30,35 +20,14 @@ export default meta;
 
 type Story = StoryObj<typeof Link>;
 
-export const Underline: Story = {};
-export const Solid: Story = {
+export const Preview: Story = {
   args: {
-    variant: "solid",
-  },
-};
-export const Inverted: Story = {
-  args: {
-    variant: "inverted",
-  },
-  parameters: {
-    backgrounds: { default: "dark" },
-  },
-};
-export const NoUnderline: Story = {
-  args: {
-    variant: "no-underline",
-  },
-};
-
-export const ButtonAsLink: Story = {
-  name: "Button as a link",
-  args: {
-    asChild: true,
-    children: <button type="button">Les mer</button>,
-    href: undefined,
-    onClick: () => {
-      // eslint-disable-next-line no-alert -- Story
-      alert(`Hello world`);
+    children: "Link",
+    href: "https://www.posten.no/",
+    onClick: (e) => {
+      e.preventDefault();
+      // eslint-disable-next-line no-alert -- Storybook Demo
+      alert("Hello");
     },
   },
 };

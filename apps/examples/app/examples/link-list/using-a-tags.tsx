@@ -34,5 +34,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  description: "Unstyled <code>a</code> tags can be passed to the <code>LinkList</code> component.",
+  description:
+    "Unstyled <code>a</code> tags can be passed to the <code>li</code> elements in the <code>LinkList</code> component.",
 };

@@ -1,39 +1,38 @@
-/* eslint-disable import/no-extraneous-dependencies -- storybook story */
-import type { Meta, StoryObj } from "@storybook/react";
-import { Navbar } from ".";
+import "@postenbring/hedwig-css";
+import { Button, ButtonProps, HStack, VStack } from "@postenbring/hedwig-react";
 
-const meta: Meta<typeof Navbar> = {
-  title: "Navbar",
-  component: Navbar,
-  parameters: {
-    layout: "fullscreen",
-  },
-};
+function ButtonIcons({ variant }: Pick<ButtonProps, "variant">) {
+  return (
+    <HStack gap="16" wrap align="end">
+      <Button variant={variant} aria-label="Choose language" icon size="small">
+        <GlobeIcon />
+      </Button>
+      <Button variant={variant} aria-label="Choose language" icon size="medium">
+        <GlobeIcon />
+      </Button>
+      <Button variant={variant} aria-label="Choose language" icon size="large">
+        <GlobeIcon />
+      </Button>
+    </HStack>
+  );
+}
 
-export default meta;
+function Example() {
+  return (
+    <HStack gap="24" wrap>
+      <VStack gap="24">
+        <ButtonIcons variant="primary" />
+        <ButtonIcons variant="primary-outline" />
+      </VStack>
+      <VStack gap="24">
+        <ButtonIcons variant="secondary" />
+        <ButtonIcons variant="secondary-outline" />
+      </VStack>
+    </HStack>
+  );
+}
 
-type Story = StoryObj<typeof Navbar>;
-export const Default: Story = {
-  render: () => (
-    <Navbar>
-      <Navbar.Logo asChild>
-        <a href="https://www.posten.no/" title="Til forsiden" />
-      </Navbar.Logo>
-      <Navbar.Navigation>
-        <Navbar.LinkItem title="Link" href="https://www.posten.no/">
-          English
-          <Navbar.ItemIcon>{globeIcon}</Navbar.ItemIcon>
-        </Navbar.LinkItem>
-        <Navbar.ButtonItem title="Button">
-          Search
-          <Navbar.ItemIcon>{userIcon}</Navbar.ItemIcon>
-        </Navbar.ButtonItem>
-      </Navbar.Navigation>
-    </Navbar>
-  ),
-};
-
-const globeIcon = (
+const GlobeIcon = () => (
   <svg
     aria-hidden
     fill="none"
@@ -49,11 +48,14 @@ const globeIcon = (
   </svg>
 );
 
-const userIcon = (
-  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M368 208A160 160 0 1 0 48 208a160 160 0 1 0 320 0zM337.1 371.1C301.7 399.2 256.8 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 48.8-16.8 93.7-44.9 129.1L505 471c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L337.1 371.1z"
-      fill="currentColor"
-    />
-  </svg>
-);
+export default Example;
+
+import type { ExampleConfig } from "..";
+export const config: ExampleConfig = {
+  description: `Use the <code>icon</code> prop and render an icon as <code>children</code> for icon only buttons.
+  <br />
+  <br />
+  <strong>Note:</strong> The icon button should have an accessible label for screen readers, e.g. using <code>aria-label</code>.
+  `,
+  index: 4,
+};

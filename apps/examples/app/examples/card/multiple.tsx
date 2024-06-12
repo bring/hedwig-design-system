@@ -6,10 +6,10 @@ function Example() {
   return (
     <div
       style={{
-        margin: "20px",
+        margin: "var(--hds-spacing-20)",
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-        gap: "2.5em",
+        gap: "var(--hds-spacing-24-32)",
       }}
     >
       <Card>
@@ -86,5 +86,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
+  index: 1,
   layout: "none",
 };

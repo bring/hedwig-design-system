@@ -3,7 +3,7 @@ import { Box, Link, Text } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Box>
+    <Box variant="warning">
       <Text variant="h3-title" as="h3">
         Box content
       </Text>
@@ -20,4 +20,6 @@ function Example() {
 export default Example;
 
 import type { ExampleConfig } from "..";
-export const config: ExampleConfig = {};
+export const config: ExampleConfig = {
+  index: 2,
+};

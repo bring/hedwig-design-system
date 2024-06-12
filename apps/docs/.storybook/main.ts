@@ -81,7 +81,6 @@ function exampleLoader() {
         export const Example${kebabCaseToPascalCase(exampleName)} = {
           name: "${kebabCaseToFirstLetterUpperCase(exampleName)}",
           render: Example,
-          description: ${JSON.stringify(exampleConfig.description)},
           parameters: {
             docs: {
               description: {

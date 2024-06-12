@@ -16,7 +16,7 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 0,
+  index: 1,
   breakpointIndicator: "top",
   description: "You should have at minimum two levels in your hierarchy to use breadcrumbs.",
 };
