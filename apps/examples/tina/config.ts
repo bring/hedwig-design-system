@@ -1,22 +1,27 @@
-// tina/config.ts
 import { defineConfig } from "tinacms";
-var branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
-var config_default = defineConfig({
+
+// Your hosting provider likely exposes this as an environment variable
+const branch =
+  process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
+
+export default defineConfig({
   branch,
+
   // Get this from tina.io
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   // Get this from tina.io
   token: process.env.TINA_TOKEN,
+
   build: {
     basePath: "/hedwig-design-system/examples",
     outputFolder: "admin",
-    publicFolder: "public"
+    publicFolder: "public",
   },
   media: {
     tina: {
       mediaRoot: "",
-      publicFolder: "public"
-    }
+      publicFolder: "public",
+    },
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
@@ -26,7 +31,7 @@ var config_default = defineConfig({
         ui: {
           router: (props) => {
             return `/hedwig-design-system/examples/docs/${props.document._sys.filename}`;
-          }
+          },
         },
         name: "post",
         label: "Posts",
@@ -37,13 +42,13 @@ var config_default = defineConfig({
             name: "title",
             label: "Title",
             isTitle: true,
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "subtitle",
             label: "Subtitle",
-            required: false
+            required: false,
           },
           {
             type: "rich-text",
@@ -58,14 +63,14 @@ var config_default = defineConfig({
                   {
                     name: "name",
                     label: "Name of the component/pattern",
-                    type: "string"
+                    type: "string",
                   },
                   {
                     name: "showCodeByDefault",
                     label: "Show code by default",
-                    type: "boolean"
-                  }
-                ]
+                    type: "boolean",
+                  },
+                ],
               },
               {
                 name: "FigmaPreviews",
@@ -75,17 +80,14 @@ var config_default = defineConfig({
                     name: "urls",
                     label: "Figma URLs",
                     type: "string",
-                    list: true
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                    list: true,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 });
-export {
-  config_default as default
-};

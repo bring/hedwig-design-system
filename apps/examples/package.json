@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "dev": "wait-on ./node_modules/@postenbring/hedwig-css/dist/index.css ./node_modules/@postenbring/hedwig-react/dist/index.js && remix vite:dev",
+    "dev": "wait-on ./node_modules/@postenbring/hedwig-css/dist/index.css ./node_modules/@postenbring/hedwig-react/dist/index.js && tinacms dev -c \"remix vite:dev\"",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
