@@ -71,50 +71,52 @@ export default function Index() {
       <ExamplesMenu />
       <div>
         <h1 className="hds-text-h1 hds-mt-40-48 hds-mb-32-40">Examples</h1>
-        {Object.entries(componentsByGroup).map(([groupName, components]) => (
-          <div key={groupName}>
-            {groupName !== "default" && (
-              <h2 className="hds-text-h1 hds-mt-48-64 hds-mb-24-32" id={`examples-${groupName}`}>
-                {kebabCaseToFirstLetterUpperCase(groupName)}
-              </h2>
-            )}
+        {Object.entries(componentsByGroup)
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([groupName, components]) => (
+            <div key={groupName}>
+              {groupName !== "default" && (
+                <h2 className="hds-text-h1 hds-mt-48-64 hds-mb-24-32" id={`examples-${groupName}`}>
+                  {kebabCaseToFirstLetterUpperCase(groupName)}
+                </h2>
+              )}
 
-            <Grid gap="32-40" span={{ large: 6 }} asChild>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                }}
-              >
-                {Object.entries(components).map(([componentName, examples]) => (
-                  <li key={componentName}>
-                    <h2 id={`examples-${componentName}`}>
-                      <RemixLink
-                        className={styles.exampleHeadingLink}
-                        to={{
-                          pathname:
-                            groupName !== "default"
-                              ? `${groupName}/${componentName}`
-                              : componentName,
-                          search: search.toString(),
-                        }}
-                      >
-                        {kebabCaseToFirstLetterUpperCase(componentName)}
-                      </RemixLink>
-                    </h2>
-                    <div className="hds-mt-12-16" />
-                    <ComponentCodeExamples
-                      examples={examples ?? []}
-                      defaultShowCode={false}
-                      preload="intent"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          </div>
-        ))}
+              <Grid gap="32-40" span={{ large: 6 }} asChild>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                  }}
+                >
+                  {Object.entries(components).map(([componentName, examples]) => (
+                    <li key={componentName}>
+                      <h2 id={`examples-${componentName}`}>
+                        <RemixLink
+                          className={styles.exampleHeadingLink}
+                          to={{
+                            pathname:
+                              groupName !== "default"
+                                ? `${groupName}/${componentName}`
+                                : componentName,
+                            search: search.toString(),
+                          }}
+                        >
+                          {kebabCaseToFirstLetterUpperCase(componentName)}
+                        </RemixLink>
+                      </h2>
+                      <div className="hds-mt-12-16" />
+                      <ComponentCodeExamples
+                        examples={examples ?? []}
+                        defaultShowCode={false}
+                        preload="intent"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </Grid>
+            </div>
+          ))}
       </div>
     </>
   );
