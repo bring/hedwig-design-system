@@ -132,6 +132,28 @@
       @extend url("./src/table/table.css:hds-table--compressed");
     }
 
+    h1 {
+      font-size: var(--hds-font-size-h1-min);
+      line-height: var(--hds-line-height-h1-min);
+    }
+
+    h2 {
+      font-size: var(--hds-font-size-h2-min);
+      line-height: var(--hds-line-height-h2-min);
+    }
+
+    h3 {
+      font-size: var(--hds-font-size-h3-min);
+      line-height: var(--hds-line-height-h3-min);
+    }
+
+    h4,
+    h5,
+    h6 {
+      font-size: var(--hds-font-size-body-title-min);
+      line-height: var(--hds-line-height-body-title-min);
+    }
+
     & p,
     & li,
     & a {
