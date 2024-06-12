@@ -24,7 +24,7 @@ function Example() {
 
       <ShowMoreButton
         className="hds-mt-12-16"
-        text="Show more"
+        text="Load more content"
         onClick={async () => {
           await new Promise((resolve) => setTimeout(resolve, 300));
           setShowCount((prev) => prev + 6);
@@ -46,4 +46,5 @@ import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   index: 0,
   layout: "centered-fullwidth",
+  description: "Load more content asynchronously when the <code>ShowMoreButton</code> is clicked.",
 };

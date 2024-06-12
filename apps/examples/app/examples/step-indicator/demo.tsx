@@ -1,6 +1,6 @@
 import "@postenbring/hedwig-css";
 import { useState } from "react";
-import { HStack, StepIndicator, Button, VStack, Skeleton } from "@postenbring/hedwig-react";
+import { HStack, StepIndicator, Button, VStack, Skeleton, Badge } from "@postenbring/hedwig-react";
 
 const steps = ["Size and weight", "Sender", "Recipient", "Summary"];
 function Example() {
@@ -10,7 +10,14 @@ function Example() {
       <StepIndicator
         activeStep={activeStep}
         totalSteps={steps.length}
-        label="Norgespakke™ small"
+        label={
+          <>
+            Norgespakke™ liten
+            <Badge size="smaller" style={{ marginLeft: "var(--hds-spacing-12)" }}>
+              73,-
+            </Badge>
+          </>
+        }
         lang="en"
         title={steps[activeStep - 1]}
         titleAs="h1"
