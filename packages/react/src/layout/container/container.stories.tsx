@@ -1,30 +1,33 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState, useEffect, useRef, useId } from "react";
-import { Container } from "..";
+import { Container, Grid } from "..";
 
 const meta: Meta<typeof Container> = {
   title: "Layout/Container",
   component: Container,
-  render: (args) => (
-    <Container {...args} style={{ background: "var(--hds-ui-colors-warning-yellow)" }}>
-      <div style={{ background: "var(--hds-ui-colors-warning-yellow-light-fill)" }}>
-        <Widths />
-      </div>
-    </Container>
-  ),
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Container>;
 
-export const Default: Story = {};
-
-export const Slim: Story = {
-  args: {
-    variant: "slim",
-  },
+export const Preview: Story = {
+  render: (args) => (
+    <div style={{ background: "#f8cb9c" }}>
+      <Container {...args} style={{ background: "#c1cd8a" }}>
+        <Grid
+          style={{
+            background: "var(--hds-colors-lighter)",
+          }}
+          span={{ initial: 8, medium: 6, large: 4 }}
+          center
+        >
+          <Widths />
+        </Grid>
+      </Container>
+    </div>
+  ),
 };
 
 function Widths() {

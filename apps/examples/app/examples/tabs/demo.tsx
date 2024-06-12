@@ -11,7 +11,7 @@ function Example() {
       </Tabs.List>
       <Tabs.Contents>
         <Tabs.Content forTabId="first">Single tab</Tabs.Content>
-        <Tabs.Content forTabId="second">Two tabs</Tabs.Content>
+        <Tabs.Content forTabId="second">Second tabs</Tabs.Content>
         <Tabs.Content forTabId="third">Third tab</Tabs.Content>
       </Tabs.Contents>
     </Tabs>
@@ -21,4 +21,6 @@ function Example() {
 export default Example;
 
 import type { ExampleConfig } from "..";
-export const config: ExampleConfig = {};
+export const config: ExampleConfig = {
+  index: 0,
+};
