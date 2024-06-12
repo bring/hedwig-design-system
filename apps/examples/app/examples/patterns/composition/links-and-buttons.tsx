@@ -27,6 +27,7 @@ export const config: ExampleConfig = {
     <li>If the action navigates the user a <code>a</code> tag with a <code>href</code> is preferable</li>
     <li><code>a</code> tags should never be used if the action does not navigate the user and/or you don't have a <code>href</code></li>
   </ul>
+  <br />
   <a href="https://www.designsystemet.no/grunnleggende/for-utviklere/komposisjon" target="_blank">Read more about <code>asChild</code> over at Digdir Designsystemet ↗</a>
   `,
 };

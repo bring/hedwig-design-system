@@ -15,7 +15,7 @@ function Example() {
       <Text as="h1" variant="body-title">
         A button
       </Text>
-      <Button>Submit</Button>
+      <Button className="hds-mt-8-12">Submit</Button>
     </Box>
   );
 }
