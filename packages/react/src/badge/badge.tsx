@@ -2,7 +2,7 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef } from "react";
 
-export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> {
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;
 
   /**
@@ -32,6 +32,7 @@ export interface BadgeProps extends React.AnchorHTMLAttributes<HTMLSpanElement> 
  *
  * @example
  * <Badge variant="darker">Darker</Badge>
+ *
  */
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
   ({ children, asChild, variant = "lighter", size = "small", className, ...rest }, ref) => {

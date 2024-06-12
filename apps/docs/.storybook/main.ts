@@ -37,10 +37,8 @@ const config: StorybookConfig = {
     options: {},
   },
 
-  core: {},
-
-  docs: {
-    autodocs: true,
+  typescript: {
+    reactDocgen: "react-docgen",
   },
 };
 
@@ -78,6 +76,7 @@ function exampleLoader() {
         const storyCode = `
         ${exampleSourceNeat}
         export const Example${kebabCaseToPascalCase(exampleName)} = {
+          name: "${kebabCaseToFirstLetterUpperCase(exampleName)}",
           render: Example,
           parameters: {
             docs: {
