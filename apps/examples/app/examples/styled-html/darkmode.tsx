@@ -3,7 +3,13 @@ import { StyledHtml } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <StyledHtml unstable_darkmode>
+    <StyledHtml
+      unstable_darkmode
+      style={{
+        background: "var(--hds-dark-mode-colors-obsidian)",
+        padding: "var(--hds-spacing-24)",
+      }}
+    >
       <h1>Pakkebokser</h1>
       <p>
         Pakkeboksene er selvbetjente, og er plassert slik at de er mulig å bruke hele døgnet. Du
@@ -117,6 +123,7 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  description: "🚧 Experimental darkmode",
+  layout: "none",
+  description: "🚧 Experimental darkmode. You need to set the background color yourself.",
   index: 2,
 };

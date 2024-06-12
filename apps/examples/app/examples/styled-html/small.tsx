@@ -21,7 +21,7 @@ function Example() {
         </a>
       </p>
 
-      <h2 className="hds-text-h3">Slik bruker du Pakkeboks:</h2>
+      <h2 className="hds-text-h3 hds-text--min">Slik bruker du Pakkeboks:</h2>
 
       <p>
         For å bruke pakkeboksene må du&nbsp;
@@ -116,4 +116,6 @@ function Example() {
 export default Example;
 
 import type { ExampleConfig } from "..";
-export const config: ExampleConfig = {};
+export const config: ExampleConfig = {
+  index: 1,
+};
