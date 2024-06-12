@@ -39,7 +39,6 @@ export const preview: Preview = {
             {/* Disabled as rendring of the TSDoc's are not looking that nice */}
             {/* <Description /> */}
             <Primary />
-            <Source />
             <Controls />
             <Stories includePrimary={false} title={"Examples"} />
           </>

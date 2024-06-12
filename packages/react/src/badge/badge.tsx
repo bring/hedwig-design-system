@@ -31,7 +31,10 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
  * Badges are used to label, categorize or organize items using keywords to describe them.
  *
  * @example
+ *
+ * ```tsx
  * <Badge variant="darker">Darker</Badge>
+ * ```
  *
  */
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(

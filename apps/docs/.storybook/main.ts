@@ -72,14 +72,21 @@ function exampleLoader() {
         const { exampleName } = parseExampleFilename(id);
         const exampleSource = await fs.readFile(id, "utf-8");
 
+        const exampleConfigMatch = exampleSource.match(/config: ExampleConfig = ({[\s\S]*});/);
+        const exampleConfig = exampleConfigMatch ? eval(`(${exampleConfigMatch[1]})`) : {};
+
         const exampleSourceNeat = exampleSource.replace(/\s*export default \w+;[\s\S]*/, "");
         const storyCode = `
         ${exampleSourceNeat}
         export const Example${kebabCaseToPascalCase(exampleName)} = {
           name: "${kebabCaseToFirstLetterUpperCase(exampleName)}",
           render: Example,
+          description: ${JSON.stringify(exampleConfig.description)},
           parameters: {
             docs: {
+              description: {
+                story: decodeURIComponent("${encodeURIComponent(exampleConfig.description ?? "")}"),
+              },
               source: {
                 language: "tsx",
                 code: decodeURIComponent("${encodeURIComponent(exampleSourceNeat)}"),

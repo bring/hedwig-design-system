@@ -6,6 +6,13 @@ import { Breadcrumbs } from ".";
 const meta: Meta<typeof Breadcrumbs> = {
   title: "Breadcrumbs",
   component: Breadcrumbs,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Breadcrumbs>;
+
+export const Preview: Story = {
   args: {
     children: (
       <>
@@ -22,28 +29,6 @@ const meta: Meta<typeof Breadcrumbs> = {
           <Link href="https://www.posten.no">Posten dot no</Link>
         </li>
         <li>You will find this page</li>
-      </>
-    ),
-  },
-};
-
-export default meta;
-
-type Story = StoryObj<typeof Breadcrumbs>;
-
-export const Default: Story = {};
-
-/**
- * You should have at minimum two levels in your hierarchy to use breadcrumbs.
- */
-export const TwoElements: Story = {
-  args: {
-    children: (
-      <>
-        <li>
-          <Link href="https://www.posten.no">Track letters and parcels</Link>
-        </li>
-        <li>Shipment from SOMEONE YOU KNOW</li>
       </>
     ),
   },
