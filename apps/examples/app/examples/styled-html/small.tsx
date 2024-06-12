@@ -110,6 +110,23 @@ function Example() {
         Se flere <a href="/kundeservice/pakkeboks-hjelp">spørsmål og svar om Pakkeboks</a>.
       </p>
 
+      <h2>Et sitat</h2>
+      <p>
+        På denne måten slipper du å tenke noe mer på importfortolling, for nettbutikken betaler
+        avgiftene direkte til Skatteetaten. Dette gjelder nettbutikker som er registrert i VOEC (les
+        mer om hva det er lenger ned på siden).
+      </p>
+      <blockquote>
+        <p>... but they&rsquo;ll never take our freedom!</p>
+        <footer>William Wallace</footer>
+      </blockquote>
+      <p>
+        Samtidig som Stortinget avvikler tollfri handel, har Posten utviklet nye, digitale
+        fortollingstjenester. Disse er spesielt tilpasset netthandel og kjøp av varer med lav verdi
+        fra utlandet, og gjør at prisene på fortolling til privatkunder blir mye lavere enn
+        tidligere. De nye prisene finner du lenger ned på denne siden.
+      </p>
+
       <h2>En tabell</h2>
       <table>
         <thead>

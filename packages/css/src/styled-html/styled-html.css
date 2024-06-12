@@ -82,6 +82,11 @@
     margin-top: var(--hds-spacing-32);
   }
 
+  /* Blockquote */
+  & blockquote {
+    @extend url("./src/blockquote/blockquote.css:hds-blockquote");
+  }
+
   /* Table */
   & table {
     @extend url("./src/table/table.css:hds-table");
@@ -116,6 +121,12 @@
   /* Small version */
   &.hds-styled-html--small {
     font: var(--hds-typography-body-small);
+
+    & blockquote {
+      p {
+        font: var(--hds-typography-h3-title);
+      }
+    }
 
     & table {
       @extend url("./src/table/table.css:hds-table--compressed");
