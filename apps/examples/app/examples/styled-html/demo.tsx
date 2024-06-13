@@ -11,6 +11,17 @@ function Example() {
           trenger bare mobilen din og Posten-appen for å åpne lukene.
         </p>
 
+        <ul>
+          <li>
+            <p>
+              <i>
+                <strong>
+                  Handler du fra en VOEC-registrert nettbutikk får du se totalprisen når du handler.
+                </strong>
+              </i>
+            </p>
+          </li>
+        </ul>
         <p>
           Akkurat nå er det satt ut pakkebokser over 1800 steder i landet, og fremover vil det komme
           enda flere.&nbsp;

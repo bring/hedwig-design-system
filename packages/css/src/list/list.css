@@ -4,9 +4,6 @@
 }
 
 .hds-list {
-  display: flex;
-  flex-direction: column;
-
   /**
    * Spacing from the left
    * In hedwig legacy the bullets started at the content
@@ -49,7 +46,10 @@
    */
   &.hds-list--small {
     font: var(--hds-typography-body-small);
-    gap: var(--hds-spacing-4);
+
+    * + * {
+      margin-top: var(--hds-spacing-4);
+    }
 
     & ul,
     & ol {
@@ -59,7 +59,9 @@
 
   &, /* Default */
   &.hds-list--medium {
-    gap: var(--hds-spacing-8);
+    * + * {
+      margin-top: var(--hds-spacing-8);
+    }
 
     & ul,
     & ol {
@@ -69,7 +71,10 @@
 
   &.hds-list--large {
     font: var(--hds-typography-h3);
-    gap: var(--hds-spacing-12);
+
+    * + * {
+      margin-top: var(--hds-spacing-12);
+    }
 
     & ul,
     & ol {
