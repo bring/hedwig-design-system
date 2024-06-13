@@ -4,7 +4,7 @@ import { RadioGroup } from "./radio-group";
 import { RadioButton } from "./index";
 
 const meta: Meta<typeof RadioGroup> = {
-  title: "Form/Radiogroup",
+  title: "Form/Radio group",
   component: RadioGroup,
 };
 
