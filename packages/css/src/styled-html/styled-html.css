@@ -122,16 +122,6 @@
   &.hds-styled-html--small {
     font: var(--hds-typography-body-small);
 
-    & blockquote {
-      p {
-        font: var(--hds-typography-h3-title);
-      }
-    }
-
-    & table {
-      @extend url("./src/table/table.css:hds-table--compressed");
-    }
-
     & p,
     & li,
     & a {
