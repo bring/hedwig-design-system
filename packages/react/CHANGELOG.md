@@ -1,5 +1,20 @@
 # @postenbring/hedwig-react
 
+## 0.0.88
+
+### Patch Changes
+
+- c7a3175: :sparkles: blockquote component
+- 83f4c38: :recycle: radio-button: rename `Radiobutton` to `RadioButton`
+
+  Matching what the rest of the world seems to be doing.
+
+- 4f6795b: :lipstick: navbar: use a larger close icon for the navbar
+- Updated dependencies [c7a3175]
+- Updated dependencies [20d3179]
+- Updated dependencies [83f4c38]
+  - @postenbring/hedwig-css@0.0.73
+
 ## 0.0.87
 
 ### Patch Changes
