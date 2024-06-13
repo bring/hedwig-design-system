@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 0.0.89
+
+### Patch Changes
+
+- bdbefc6: :sparkles: figure: port figure component from hedwig legacy
+- Updated dependencies [bdbefc6]
+  - @postenbring/hedwig-css@0.0.74
+
 ## 0.0.88
 
 ### Patch Changes
