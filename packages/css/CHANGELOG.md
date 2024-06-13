@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 0.0.74
+
+### Patch Changes
+
+- bdbefc6: :sparkles: figure: port figure component from hedwig legacy
+
 ## 0.0.73
 
 ### Patch Changes
