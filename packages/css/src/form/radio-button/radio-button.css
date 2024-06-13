@@ -1,4 +1,4 @@
-.hds-radiobutton {
+.hds-radio-button {
   --checkmark-width: 16px;
   --checkmark-margin: var(--hds-spacing-4);
 
@@ -19,7 +19,7 @@
     cursor: pointer;
   }
 
-  .hds-radiobutton__title {
+  .hds-radio-button__title {
     font-weight: var(--hds-font-weight-body-title);
     padding-bottom: var(--hds-spacing-12);
   }
@@ -34,7 +34,7 @@
   }
 
   /**
-  * Hide the browser default radiobutton
+  * Hide the browser default RadioButton
   */
   input[type="radio"] {
     position: absolute;
@@ -44,9 +44,9 @@
   }
 
   /**
-  * Create a custom radiobutton
+  * Create a custom RadioButton
   */
-  .hds-radiobutton__checkmark {
+  .hds-radio-button__checkmark {
     margin: var(--hds-spacing-4);
     position: absolute;
     left: 0;
@@ -56,11 +56,11 @@
     border-radius: 50%;
   }
 
-  input[type="radio"]:checked ~ .hds-radiobutton__checkmark::after {
+  input[type="radio"]:checked ~ .hds-radio-button__checkmark::after {
     display: block;
   }
 
-  .hds-radiobutton__checkmark::after {
+  .hds-radio-button__checkmark::after {
     content: "";
     position: absolute;
     display: none;
@@ -75,7 +75,7 @@
   /**
   * Variant bounding-box and state error
   */
-  &.hds-radiobutton--bounding-box {
+  &.hds-radio-button--bounding-box {
     background-color: var(--hds-colors-lighter);
     padding: calc(var(--hds-spacing-16) - 1px) var(--hds-spacing-32)
       calc(var(--hds-spacing-16) - 1px)
@@ -85,21 +85,21 @@
       );
     border: solid var(--hds-stroke-default) var(--hds-colors-lighter);
 
-    .hds-radiobutton__checkmark {
+    .hds-radio-button__checkmark {
       left: var(--hds-spacing-16);
     }
 
-    &.hds-radiobutton--error {
+    &.hds-radio-button--error {
       border: solid var(--hds-stroke-default) var(--hds-ui-colors-warning-yellow);
     }
   }
 
-  &.hds-radiobutton--error {
-    .hds-radiobutton__checkmark {
+  &.hds-radio-button--error {
+    .hds-radio-button__checkmark {
       border-color: var(--hds-ui-colors-warning-yellow);
     }
 
-    .hds-radiobutton__checkmark::after {
+    .hds-radio-button__checkmark::after {
       background: var(--hds-ui-colors-warning-yellow);
     }
   }
@@ -108,23 +108,23 @@
   * State: Disabled
   */
   input[type="radio"]:disabled {
-    ~ .hds-radiobutton__checkmark,
-    ~ .hds-radiobutton__checkmark::after {
+    ~ .hds-radio-button__checkmark,
+    ~ .hds-radio-button__checkmark::after {
       border-color: var(--hds-ui-colors-grey);
       cursor: default;
     }
 
-    ~ .hds-radiobutton__checkmark::after {
+    ~ .hds-radio-button__checkmark::after {
       background: var(--hds-ui-colors-grey);
       cursor: default;
     }
   }
 
-  &.hds-radiobutton:has(input:disabled) {
+  &.hds-radio-button:has(input:disabled) {
     cursor: default;
     color: var(--hds-ui-colors-dark-grey);
 
-    &.hds-radiobutton--bounding-box {
+    &.hds-radio-button--bounding-box {
       background-color: var(--hds-ui-colors-light-grey-fill);
     }
   }

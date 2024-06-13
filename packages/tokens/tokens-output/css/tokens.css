@@ -27,7 +27,7 @@
   --hds-ui-colors-black-hover: #1e1e1e;
   --hds-dark-mode-colors-obsidian: #121212; /* Base color for dark mode */
   --hds-dark-mode-colors-coal: #252525; /* Background on none-clickable cards */
-  --hds-dark-mode-colors-dusk: #2c2c2c; /* Fill inputfields, checkbox, radiobuttons, toogles */
+  --hds-dark-mode-colors-dusk: #2c2c2c; /* Fill inputfields, checkbox, radio buttons, toogles */
   --hds-dark-mode-colors-spider: #333333; /* Clickable cards or tiles */
   --hds-dark-mode-colors-ash: #999999; /* Default radio buttons, checkbox, label on inputsfields, toogle off  (background) */
   --hds-breakpoint-small: 460px; /* Larger mobile phones */

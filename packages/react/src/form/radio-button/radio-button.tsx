@@ -1,19 +1,19 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { useFieldsetContext } from "../fieldset";
-import { type RadioGroupProps, useRadioGroupContext } from "./radiogroup";
+import { type RadioGroupProps, useRadioGroupContext } from "./radio-group";
 
-export interface RadiobuttonProps
+export interface RadioButtonProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> {
   children: ReactNode;
   variant?: "plain" | "bounding-box";
   /**
    * Set to `true` to add error styling. The component will take care of aria to indicate invalid state.
    *
-   * Normally you don't need this, as you should wrap your Radiobuttons in the RadioGroup component.
-   * When providing an errorMessage to RadioGroup, all contained Radiobuttons will get correct hasError state.
+   * Normally you don't need this, as you should wrap your Radio buttons in the RadioGroup component.
+   * When providing an errorMessage to RadioGroup, all contained Radio buttons will get correct hasError state.
    *
-   * You can use this when your Radiobutton is part of a non-HDS fieldset which shows an error message.
+   * You can use this when your Radio button is part of a non-HDS fieldset which shows an error message.
    */
   hasError?: boolean;
   title?: string;
@@ -23,7 +23,7 @@ const isChecked = ({
   checked,
   selectedValue,
   value,
-}: Pick<RadiobuttonProps, "checked" | "value"> & {
+}: Pick<RadioButtonProps, "checked" | "value"> & {
   selectedValue: RadioGroupProps["value"];
 }) => {
   if (typeof checked !== "undefined") return checked;
@@ -31,7 +31,7 @@ const isChecked = ({
   return undefined;
 };
 
-export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
+export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
   (
     {
       checked,
@@ -56,10 +56,10 @@ export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
     return (
       <div
         className={clsx(
-          "hds-radiobutton",
+          "hds-radio-button",
           {
-            [`hds-radiobutton--${variant}`]: variant === "bounding-box",
-            "hds-radiobutton--error": hasError,
+            [`hds-radio-button--${variant}`]: variant === "bounding-box",
+            "hds-radio-button--error": hasError,
           },
           className as undefined,
         )}
@@ -73,8 +73,8 @@ export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
             ref={ref}
             type="radio"
           />
-          <span aria-hidden className="hds-radiobutton__checkmark" />
-          {title ? <p className="hds-radiobutton__title">{title}</p> : children}
+          <span aria-hidden className="hds-radio-button__checkmark" />
+          {title ? <p className="hds-radio-button__title">{title}</p> : children}
         </label>
         {title ? children : null}
       </div>
@@ -82,4 +82,4 @@ export const Radiobutton = forwardRef<HTMLInputElement, RadiobuttonProps>(
   },
 );
 
-Radiobutton.displayName = "Radiobutton";
+RadioButton.displayName = "RadioButton";

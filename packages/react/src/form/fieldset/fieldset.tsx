@@ -7,10 +7,10 @@ export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElemen
   className?: string;
   style?: CSSProperties;
   /**
-   * Providing an errorMessage will also give contained Checkboxes or Radiobuttons
+   * Providing an errorMessage will also give contained Checkboxes or Radio buttons
    * error styling and aria to indicate invalid state.
    *
-   * For Radiobuttons you are even better off using RadioGroup.
+   * For Radio buttons you are even better off using RadioGroup.
    */
   errorMessage?: ReactNode;
   legendProps?: HTMLAttributes<HTMLElement> & { size: "default" | "large" };

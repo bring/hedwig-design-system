@@ -1,18 +1,18 @@
 import "@postenbring/hedwig-css";
-import { RadioGroup, Radiobutton } from "@postenbring/hedwig-react";
+import { RadioGroup, RadioButton } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
     <RadioGroup legend="Legend" name="group1">
-      <Radiobutton variant="bounding-box" defaultChecked value="Hello">
+      <RadioButton variant="bounding-box" defaultChecked value="Hello">
         Hello
-      </Radiobutton>
-      <Radiobutton variant="bounding-box" value="Hello">
+      </RadioButton>
+      <RadioButton variant="bounding-box" value="Hello">
         Hello
-      </Radiobutton>
-      <Radiobutton variant="bounding-box" value="Hello">
+      </RadioButton>
+      <RadioButton variant="bounding-box" value="Hello">
         Hello
-      </Radiobutton>
+      </RadioButton>
     </RadioGroup>
   );
 }

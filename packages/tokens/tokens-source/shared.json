@@ -95,7 +95,7 @@
     },
     "dusk": {
       "$value": "#2c2c2c",
-      "description": "Fill inputfields, checkbox, radiobuttons, toogles"
+      "description": "Fill inputfields, checkbox, radio buttons, toogles"
     },
     "spider": {
       "$value": "#333333",

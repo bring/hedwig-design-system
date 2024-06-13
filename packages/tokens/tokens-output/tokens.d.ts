@@ -27,7 +27,7 @@ export const UiColorsBlackHover : "#1e1e1e";
 export const DarkModeColorsObsidian : "#121212";
 /** Background on none-clickable cards */
 export const DarkModeColorsCoal : "#252525";
-/** Fill inputfields, checkbox, radiobuttons, toogles */
+/** Fill inputfields, checkbox, radio buttons, toogles */
 export const DarkModeColorsDusk : "#2c2c2c";
 /** Clickable cards or tiles */
 export const DarkModeColorsSpider : "#333333";

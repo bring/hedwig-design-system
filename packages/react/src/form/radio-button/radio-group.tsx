@@ -6,20 +6,20 @@ import {
   useContext,
 } from "react";
 import { Fieldset, type FieldsetProps } from "../fieldset";
-import type { RadiobuttonProps } from "./radiobutton";
+import type { RadioButtonProps } from "./radio-button";
 
 export interface RadioGroupProps extends Omit<FieldsetProps, "onChange"> {
   children: ReactNode;
-  /** Will be passed to all Radiobuttons within the radio group */
-  name?: RadiobuttonProps["name"];
+  /** Will be passed to all Radio buttons within the radio group */
+  name?: RadioButtonProps["name"];
   /** If you want the group to be controlled, you can pass the selected value here */
-  value?: RadiobuttonProps["value"];
+  value?: RadioButtonProps["value"];
   /**
-   * Error message is passed to the internal Fieldset, and will also give contained Radiobuttons
+   * Error message is passed to the internal Fieldset, and will also give contained Radio buttons
    * error styling and aria to indicate invalid state.
    */
   errorMessage?: ReactNode;
-  /** Will be passed to all Radiobuttons within the radio group */
+  /** Will be passed to all Radio buttons within the radio group */
   onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
