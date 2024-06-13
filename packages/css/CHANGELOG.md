@@ -1,5 +1,19 @@
 # @postenbring/hedwig-css
 
+## 0.0.75
+
+### Patch Changes
+
+- 97cae32: :lipstick: fix font declaration for `strong` and `b`
+
+  nesting a `strong` inside an `i` broke the `font-style` decleration
+
+- 6b9ab7a: :lipstick: list: don't use `display: flex`
+
+  margin collapse does not propegate outwards. This makes rendering `p` inside an `ul li` take more space than needed
+
+  https://stackoverflow.com/a/43882888
+
 ## 0.0.74
 
 ### Patch Changes
