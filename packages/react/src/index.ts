@@ -6,6 +6,7 @@ export * from "./breadcrumbs";
 export * from "./button";
 export * from "./card";
 export * from "./description-list";
+export * from "./figure";
 export * from "./form";
 export * from "./footer";
 export * from "./help-text";

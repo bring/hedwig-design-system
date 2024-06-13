@@ -1,0 +1,38 @@
+:where(.hds-figure) {
+  margin: 0;
+  padding: 0;
+}
+
+.hds-figure {
+  img {
+    width: 100%;
+  }
+
+  .hds-figure__container {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgb(0 0 0 / 10%) 0%,
+        rgb(0 0 0 / 0%) 20%,
+        rgb(0 0 0 / 0%) 80%,
+        rgb(0 0 0 / 10%) 100%
+      );
+      pointer-events: none;
+    }
+  }
+
+  figcaption {
+    position: relative;
+    margin-top: var(--hds-spacing-12);
+    font-size: var(--hds-font-size-caption);
+    line-height: 1.5;
+    text-align: left;
+    color: var(--hds-ui-colors-black);
+  }
+}

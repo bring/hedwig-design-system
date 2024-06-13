@@ -77,8 +77,10 @@
 
   /* Image */
   & figure {
-    /* TODO: @extend .hw-figure; */
+    @extend url("./src/figure/figure.css:hds-figure");
 
+    margin: 0;
+    padding: 0;
     margin-top: var(--hds-spacing-32);
   }
 
