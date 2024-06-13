@@ -1,5 +1,13 @@
 # @postenbring/hedwig-tokens
 
+## 0.0.16
+
+### Patch Changes
+
+- 83f4c38: :recycle: radio-button: rename `Radiobutton` to `RadioButton`
+
+  Matching what the rest of the world seems to be doing.
+
 ## 0.0.15
 
 ### Patch Changes
