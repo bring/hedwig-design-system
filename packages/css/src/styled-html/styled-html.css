@@ -113,7 +113,7 @@
 
   b,
   strong {
-    font: var(--hds-typography-body-title);
+    font-weight: var(--hds-font-weight-body-title);
   }
 
   /**
@@ -122,21 +122,16 @@
 
   /* Small version */
   &.hds-styled-html--small {
-    font: var(--hds-typography-body-small);
-
+    &,
     & p,
     & li,
     & a {
-      font: var(--hds-typography-body-small);
+      font-size: var(--hds-font-size-body-small);
+      line-height: var(--hds-line-height-body-small);
     }
 
     & p {
       margin-top: var(--hds-spacing-12);
-    }
-
-    & b,
-    & strong {
-      font: var(--hds-typography-body-small-title);
     }
   }
 
