@@ -12,6 +12,7 @@ export default meta;
 type Story = StoryObj<typeof Select>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     label: "Default select",
     errorMessage: "",

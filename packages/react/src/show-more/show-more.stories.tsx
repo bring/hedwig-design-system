@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof ShowMoreButton>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     text: "Vis flere",
     onClick: () => {

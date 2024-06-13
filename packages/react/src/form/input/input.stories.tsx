@@ -12,6 +12,7 @@ export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     label: "Some kind of input",
     placeholder: "I am a placeholder",

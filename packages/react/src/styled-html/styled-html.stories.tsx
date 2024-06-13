@@ -28,6 +28,7 @@ export default meta;
 
 type Story = StoryObj<typeof StyledHtml>;
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     children: (
       <>

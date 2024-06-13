@@ -12,6 +12,7 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   render: (props) => (
     <Card {...props} as="div" style={{ maxWidth: "500px", ...props.style }}>
       <Card.Media style={{ width: "100%" }}>

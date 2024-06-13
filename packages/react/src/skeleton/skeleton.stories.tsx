@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof Skeleton>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   render: () => (
     <VStack gap="8">
       <Skeleton variant="circle">

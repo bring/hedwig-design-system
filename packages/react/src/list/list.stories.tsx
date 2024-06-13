@@ -20,6 +20,7 @@ const listItems = (
 );
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     children: listItems,
   },

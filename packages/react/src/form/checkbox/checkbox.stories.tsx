@@ -15,6 +15,7 @@ export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     title: "",
     children: "Just a checkbox",

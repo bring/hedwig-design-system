@@ -13,6 +13,7 @@ const meta: Meta<typeof Stack> = {
 export default meta;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     gap: "12-16",
     direction: { initial: "column", small: "row" },

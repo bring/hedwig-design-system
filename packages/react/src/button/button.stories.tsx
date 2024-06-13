@@ -15,6 +15,7 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     variant: "primary",
     children: "Primary button",

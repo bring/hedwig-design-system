@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof RadioGroup>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     legend: "Radio group with radio buttons",
     errorMessage: "",

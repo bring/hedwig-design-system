@@ -12,6 +12,7 @@ export default meta;
 type Story = StoryObj<typeof LinkList>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     size: "medium",
     children: (

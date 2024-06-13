@@ -13,6 +13,7 @@ const meta: Meta<typeof Grid> = {
 export default meta;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     gap: "12-16",
     span: { initial: 12, small: 4 },

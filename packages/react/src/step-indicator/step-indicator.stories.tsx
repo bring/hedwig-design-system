@@ -12,6 +12,7 @@ export default meta;
 type Story = StoryObj<typeof StepIndicator>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     label: "Progress name",
     totalSteps: 5,

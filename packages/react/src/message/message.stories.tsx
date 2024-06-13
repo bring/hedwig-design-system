@@ -20,6 +20,7 @@ export default meta;
 
 type Story = StoryObj<typeof Message>;
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     variant: "success",
     children: (

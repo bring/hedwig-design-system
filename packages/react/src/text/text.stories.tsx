@@ -12,6 +12,7 @@ export default meta;
 
 type Story = StoryObj<typeof Text>;
 export const Preview: Story = {
+  tags: ["!dev"],
   render: () => (
     <VStack gap="16">
       <div>

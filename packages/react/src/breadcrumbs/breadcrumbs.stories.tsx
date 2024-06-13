@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof Breadcrumbs>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     children: (
       <>

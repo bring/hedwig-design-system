@@ -15,6 +15,7 @@ export default meta;
 type Story = StoryObj<typeof DatePicker>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     label: "Choose a date",
     errorMessage: "",

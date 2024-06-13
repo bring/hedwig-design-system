@@ -15,6 +15,7 @@ export default meta;
 type Story = StoryObj<typeof Textarea>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     label: "Some kind of textarea",
     placeholder: "I am a placeholder",

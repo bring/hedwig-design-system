@@ -21,6 +21,7 @@ export default meta;
 type Story = StoryObj<typeof Link>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     children: "Link",
     href: "https://www.posten.no/",

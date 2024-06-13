@@ -10,6 +10,7 @@ const meta: Meta<typeof Badge> = {
 export default meta;
 
 export const Preview: StoryObj<typeof Badge> = {
+  tags: ["!dev"],
   args: {
     variant: "lighter",
     children: "Default badge",

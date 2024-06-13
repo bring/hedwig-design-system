@@ -10,6 +10,7 @@ const meta: Meta<typeof Blockquote> = {
 export default meta;
 
 export const Preview: StoryObj<typeof Blockquote> = {
+  tags: ["!dev"],
   args: {
     children: (
       <>

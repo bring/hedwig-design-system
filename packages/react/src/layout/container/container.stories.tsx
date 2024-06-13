@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof Container>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   render: (args) => (
     <div style={{ background: "#f8cb9c" }}>
       <Container {...args} style={{ background: "#c1cd8a" }}>

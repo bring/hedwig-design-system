@@ -11,6 +11,7 @@ const meta: Meta<typeof Table> = {
 export default meta;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     caption: "Default table",
     description: "A short explanation of what this table contains, If you need it.",

@@ -13,7 +13,8 @@ const meta: Meta<typeof Navbar> = {
 export default meta;
 
 type Story = StoryObj<typeof Navbar>;
-export const Default: Story = {
+export const Preview: Story = {
+  tags: ["!dev"],
   render: () => (
     <Navbar>
       <Navbar.Logo asChild>

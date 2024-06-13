@@ -11,6 +11,7 @@ const meta: Meta<typeof Tabs> = {
 export default meta;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     defaultTab: "first",
     children: (

@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof WarningBanner>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     title: "Warning banner title",
     description:

@@ -12,6 +12,7 @@ export default meta;
 type Story = StoryObj<typeof ErrorMessage>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     id: "id",
     children: "This is an error message for use with form input components",

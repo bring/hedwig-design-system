@@ -12,6 +12,7 @@ const meta: Meta<typeof DescriptionList> = {
 export default meta;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     children: (
       <>

@@ -13,6 +13,7 @@ export default meta;
 type Story = StoryObj<typeof Fieldset>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     legend: "Default fieldset",
     errorMessage: "",

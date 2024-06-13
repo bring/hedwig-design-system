@@ -14,6 +14,7 @@ export default meta;
 type Story = StoryObj<typeof Accordion>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     children: (
       <>

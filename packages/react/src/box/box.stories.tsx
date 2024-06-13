@@ -22,6 +22,7 @@ export default meta;
 type Story = StoryObj<typeof Box>;
 
 export const Preview: Story = {
+  tags: ["!dev"],
   args: {
     closeable: false,
     children: (

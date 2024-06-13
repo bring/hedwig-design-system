@@ -13,7 +13,8 @@ const meta: Meta<typeof Modal> = {
 export default meta;
 
 type Story = StoryObj<typeof Modal>;
-export const Preview = {
+export const Preview: Story = {
+  tags: ["!dev"],
   render: function Render(args) {
     const modalRef = useRef<HTMLDialogElement>(null);
     const onClose = () => modalRef.current?.close();
