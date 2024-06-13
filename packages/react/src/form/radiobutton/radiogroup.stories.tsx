@@ -4,7 +4,7 @@ import { RadioGroup } from "./radiogroup";
 import { Radiobutton } from "./index";
 
 const meta: Meta<typeof RadioGroup> = {
-  title: "Form/Radiobutton/Radiogroup",
+  title: "Form/Radiogroup",
   component: RadioGroup,
 };
 
@@ -12,8 +12,7 @@ export default meta;
 
 type Story = StoryObj<typeof RadioGroup>;
 
-export const PlainRadioGroup: Story = {
-  name: "Radio group with radiobuttons",
+export const Preview: Story = {
   args: {
     legend: "Radio group with radiobuttons",
     errorMessage: "",

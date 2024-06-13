@@ -28,6 +28,7 @@ type RadioGroupContextProps = {
 } & Pick<RadioGroupProps, "name" | "value" | "onChange">;
 
 const RadioGroupContext = createContext<RadioGroupContextProps>({
+  name: undefined,
   hasError: false,
   onChange: () => {
     return undefined;
