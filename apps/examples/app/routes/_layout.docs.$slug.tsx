@@ -38,7 +38,7 @@ export default function Component() {
 }
 
 const MDXComponents = {
-  Examples: (props) => {
+  Examples: (props: { name: string; showCodeByDefault?: boolean }) => {
     const name = props.name;
     const showCodeByDefault = props.showCodeByDefault || false;
     return (
@@ -47,7 +47,7 @@ const MDXComponents = {
       </div>
     );
   },
-  FigmaPreviews: (props) => {
+  FigmaPreviews: (props: { urls: string[] }) => {
     const urls = props.urls;
     return (
       <div className="hds-mt-24-32">
