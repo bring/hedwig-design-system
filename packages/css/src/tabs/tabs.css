@@ -127,7 +127,7 @@
   }
 
   /* Tab contents */
-  .hds-tabs__contents {
-    margin-top: var(--hds-spacing-64);
+  :where(.hds-tabs__contents) {
+    margin-top: var(--hds-spacing-32);
   }
 }
