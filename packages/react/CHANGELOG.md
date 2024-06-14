@@ -1,5 +1,18 @@
 # @postenbring/hedwig-react
 
+## 1.0.0
+
+### Major Changes
+
+- bc12777: :tada: Version 1.0.0 of Hedwig Design System
+
+  From now on we won't do breaking changes without bumping the major version
+
+### Patch Changes
+
+- Updated dependencies [bc12777]
+  - @postenbring/hedwig-css@1.0.0
+
 ## 0.0.90
 
 ### Patch Changes
