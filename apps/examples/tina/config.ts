@@ -12,9 +12,10 @@ export default defineConfig({
   // Get this from tina.io
   token: process.env.TINA_TOKEN,
 
+  cmsCallback: (a) => a,
   build: {
-    basePath: "/hedwig-design-system/examples",
-    outputFolder: "admin",
+    basePath: "/hedwig-design-system/examples/storefront",
+    outputFolder: "storefront/admin",
     publicFolder: "public",
   },
   media: {
@@ -30,7 +31,7 @@ export default defineConfig({
         format: "mdx",
         ui: {
           router: (props) => {
-            return `/hedwig-design-system/examples/docs/${props.document._sys.filename}`;
+            return `/hedwig-design-system/examples/storefront/${props.document._sys.filename}`;
           },
         },
         name: "post",
