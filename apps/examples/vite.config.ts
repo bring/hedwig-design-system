@@ -1,8 +1,5 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
-import mdx from "@mdx-js/rollup";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
 import fs from "node:fs/promises";
 
@@ -16,11 +13,8 @@ export default defineConfig({
   },
   base: "/hedwig-design-system/examples/",
   plugins: [
-    mdx({
-      remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
-    }),
     remix({
-      ssr: true,
+      ssr: false,
       basename: "/hedwig-design-system/examples/",
       ignoredRouteFiles: ["*/**.css"],
 

@@ -108,7 +108,7 @@ export default function Index() {
                       <div className="hds-mt-12-16" />
                       <ComponentCodeExamples
                         examples={examples ?? []}
-                        defaultShowCode={false}
+                        showCodeByDefault={false}
                         preload="intent"
                       />
                     </li>
