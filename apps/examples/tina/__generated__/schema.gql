@@ -108,7 +108,8 @@ input BooleanFilter {
 }
 
 input PostBodyExamplesFilter {
-  name: StringFilter
+  componentName: StringFilter
+  exampleName: StringFilter
   showCodeByDefault: BooleanFilter
 }
 
@@ -116,9 +117,36 @@ input PostBodyFigmaPreviewsFilter {
   urls: StringFilter
 }
 
+input PostBodyFigmaEmbedFilter {
+  url: StringFilter
+  hideBottomBar: BooleanFilter
+}
+
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
+input PostBodyTableTableRowsTableCellsFilter {
+  value: RichTextFilter
+}
+
+input PostBodyTableTableRowsFilter {
+  tableCells: PostBodyTableTableRowsTableCellsFilter
+}
+
+input PostBodyTableFilter {
+  firstRowHeader: BooleanFilter
+  align: StringFilter
+  tableRows: PostBodyTableTableRowsFilter
+}
+
 input PostBodyFilter {
   Examples: PostBodyExamplesFilter
   FigmaPreviews: PostBodyFigmaPreviewsFilter
+  FigmaEmbed: PostBodyFigmaEmbedFilter
+  table: PostBodyTableFilter
 }
 
 input PostFilter {

@@ -1,4 +1,5 @@
 import { defineConfig } from "tinacms";
+import { templates } from "./templates";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -15,7 +16,7 @@ export default defineConfig({
   cmsCallback: (a) => a,
   build: {
     basePath: "/hedwig-design-system/examples/storefront",
-    outputFolder: "storefront/admin",
+    outputFolder: "admin",
     publicFolder: "public",
   },
   media: {
@@ -24,6 +25,7 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
+
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
@@ -31,7 +33,7 @@ export default defineConfig({
         format: "mdx",
         ui: {
           router: (props) => {
-            return `/hedwig-design-system/examples/storefront/${props.document._sys.filename}`;
+            return `/hedwig-design-system/examples/storefront/${props.document._sys.breadcrumbs.join("/")}`;
           },
         },
         name: "post",
@@ -56,36 +58,7 @@ export default defineConfig({
             name: "body",
             label: "Body",
             isBody: true,
-            templates: [
-              {
-                name: "Examples",
-                label: "Examples",
-                fields: [
-                  {
-                    name: "name",
-                    label: "Name of the component/pattern",
-                    type: "string",
-                  },
-                  {
-                    name: "showCodeByDefault",
-                    label: "Show code by default",
-                    type: "boolean",
-                  },
-                ],
-              },
-              {
-                name: "FigmaPreviews",
-                label: "Figma Previews",
-                fields: [
-                  {
-                    name: "urls",
-                    label: "Figma URLs",
-                    type: "string",
-                    list: true,
-                  },
-                ],
-              },
-            ],
+            templates,
           },
         ],
       },

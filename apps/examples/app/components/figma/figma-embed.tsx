@@ -29,7 +29,7 @@ export function FigmaEmbed({ urlToEmbed, hideBottomBar = false, width, height }:
 function figmaIframeSrc(url: string) {
   const iframeUrl = new URL("https://www.figma.com/embed");
   iframeUrl.searchParams.set("embed_host", "example");
-  iframeUrl.searchParams.set("embed_origin", window.location.origin);
+  // iframeUrl.searchParams.set("embed_origin", window.location.origin);
   iframeUrl.searchParams.set("url", url);
   return iframeUrl.toString();
 }

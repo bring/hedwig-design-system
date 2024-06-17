@@ -31,18 +31,18 @@ const highlighter = await getHighlighterCore({
 export function CodeExample({
   activeExample,
   allExamples,
-  defaultShowCode = true,
+  showCodeByDefault = true,
   shouldPreload = false,
 }: {
   activeExample: Example;
   allExamples?: Example[];
-  defaultShowCode?: boolean;
+  showCodeByDefault?: boolean;
   shouldPreload?: boolean;
 }) {
   if (!allExamples) allExamples = [activeExample];
   const [search] = useSearchParams();
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
-  const [showCode, setShowCode] = useState(defaultShowCode);
+  const [showCode, setShowCode] = useState(showCodeByDefault);
 
   function iframeUrl(example: Example) {
     const iframeViewOptions = new URLSearchParams();
