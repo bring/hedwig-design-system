@@ -7,6 +7,17 @@
   padding-right: 1rem;
 }
 
+.layoutCenteredVerticalPadding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .layoutCenteredFullwidth {
   display: flex;
   align-items: center;

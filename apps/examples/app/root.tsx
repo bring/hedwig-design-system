@@ -40,6 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 const layoutClassNames = {
   centered: styles.layoutCentered,
+  "centered-vertical-padding": styles.layoutCenteredVerticalPadding,
   "centered-fullwidth": styles.layoutCenteredFullwidth,
   "padding-only": styles.layoutPaddingOnly,
   none: "",
