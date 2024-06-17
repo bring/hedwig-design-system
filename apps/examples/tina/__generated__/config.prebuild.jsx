@@ -1,5 +1,68 @@
 // tina/config.ts
 import { defineConfig } from "tinacms";
+
+// tina/templates.ts
+import { tinaTableTemplate } from "tinacms";
+var templates = [
+  // Examples
+  {
+    name: "Examples",
+    label: "Examples",
+    fields: [
+      {
+        name: "componentName",
+        label: "Name of the component or pattern",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "exampleName",
+        description: "Only show one specific example",
+        label: "Specific example",
+        type: "string",
+      },
+      {
+        name: "showCodeByDefault",
+        label: "Show code by default",
+        type: "boolean",
+      },
+    ],
+  },
+  // Figma Previews
+  {
+    name: "FigmaPreviews",
+    label: "Figma Previews",
+    fields: [
+      {
+        name: "urls",
+        label: "Figma URLs",
+        type: "string",
+        list: true,
+      },
+    ],
+  },
+  // Figma Embed
+  {
+    name: "FigmaEmbed",
+    label: "Figma Embed",
+    fields: [
+      {
+        name: "url",
+        label: "Figma URL",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "hideBottomBar",
+        label: "Hide bottom bar",
+        type: "boolean",
+      },
+    ],
+  },
+];
+templates.push(tinaTableTemplate);
+
+// tina/config.ts
 var branch =
   process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
 var config_default = defineConfig({
@@ -11,7 +74,7 @@ var config_default = defineConfig({
   cmsCallback: (a) => a,
   build: {
     basePath: "/hedwig-design-system/examples/storefront",
-    outputFolder: "storefront/admin",
+    outputFolder: "admin",
     publicFolder: "public",
   },
   media: {
@@ -27,7 +90,7 @@ var config_default = defineConfig({
         format: "mdx",
         ui: {
           router: (props) => {
-            return `/hedwig-design-system/examples/storefront/${props.document._sys.filename}`;
+            return `/hedwig-design-system/examples/storefront/${props.document._sys.breadcrumbs.join("/")}`;
           },
         },
         name: "post",
@@ -52,36 +115,7 @@ var config_default = defineConfig({
             name: "body",
             label: "Body",
             isBody: true,
-            templates: [
-              {
-                name: "Examples",
-                label: "Examples",
-                fields: [
-                  {
-                    name: "name",
-                    label: "Name of the component/pattern",
-                    type: "string",
-                  },
-                  {
-                    name: "showCodeByDefault",
-                    label: "Show code by default",
-                    type: "boolean",
-                  },
-                ],
-              },
-              {
-                name: "FigmaPreviews",
-                label: "Figma Previews",
-                fields: [
-                  {
-                    name: "urls",
-                    label: "Figma URLs",
-                    type: "string",
-                    list: true,
-                  },
-                ],
-              },
-            ],
+            templates,
           },
         ],
       },

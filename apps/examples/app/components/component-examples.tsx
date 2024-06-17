@@ -8,31 +8,43 @@ import { PrefetchBehavior, usePrefetchBehavior } from "./use-prefetch-behaviour"
 
 export function Examples({
   name,
+  componentName,
+  exampleName,
   showCodeByDefault,
 }: {
-  name: string;
+  /** @deprecated */
+  name?: string;
+  componentName?: string;
+  exampleName?: string;
   showCodeByDefault?: boolean;
   preload?: PrefetchBehavior;
 }) {
+  name = name ?? componentName ?? "";
   if (!(name in examplesByComponent)) {
     return null;
   }
 
-  return (
-    <ComponentCodeExamples
-      examples={examplesByComponent[name]!}
-      defaultShowCode={showCodeByDefault}
-    />
-  );
+  const singleExample = exampleName
+    ? examplesByComponent[name].find((e) => e.exampleName === exampleName)
+    : null;
+  if (singleExample) {
+    return <CodeExample activeExample={singleExample} showCodeByDefault={showCodeByDefault} />;
+  } else
+    return (
+      <ComponentCodeExamples
+        examples={examplesByComponent[name]!}
+        showCodeByDefault={showCodeByDefault}
+      />
+    );
 }
 
 export function ComponentCodeExamples({
   examples,
-  defaultShowCode,
+  showCodeByDefault,
   preload = "none",
 }: {
   examples: Example[];
-  defaultShowCode?: boolean;
+  showCodeByDefault?: boolean;
   preload?: PrefetchBehavior;
 }) {
   const [search] = useSearchParams();
@@ -76,7 +88,7 @@ export function ComponentCodeExamples({
 
       <CodeExample
         activeExample={activeExample}
-        defaultShowCode={defaultShowCode}
+        showCodeByDefault={showCodeByDefault}
         allExamples={examples}
         shouldPreload={shouldPreload}
       />

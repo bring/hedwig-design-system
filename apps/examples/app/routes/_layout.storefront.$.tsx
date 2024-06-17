@@ -5,10 +5,11 @@ import { useLoaderData } from "@remix-run/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { StyledHtml } from "@postenbring/hedwig-react";
 import { Examples } from "../components/component-examples";
-import { FigmaPreviews } from "../components/figma";
+import { FigmaEmbed, FigmaPreviews } from "../components/figma";
+import type { TemplateNames } from "../../tina/templates";
 
-export async function loader({ params }: LoaderFunctionArgs) {
-  const slug = params.slug as string;
+export async function clientLoader({ params }: LoaderFunctionArgs) {
+  const slug = params["*"] as string;
 
   const { data, query, variables } = await client.queries.post({
     relativePath: slug + ".mdx",
@@ -24,7 +25,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 }
 
 export default function Component() {
-  const { dataQueryVariables } = useLoaderData<typeof loader>();
+  const { dataQueryVariables } = useLoaderData<typeof clientLoader>();
   const { data } = useTina(dataQueryVariables);
   return (
     <div>
@@ -37,13 +38,20 @@ export default function Component() {
   );
 }
 
-const MDXComponents = {
-  Examples: (props: { name: string; showCodeByDefault?: boolean }) => {
-    const name = props.name;
-    const showCodeByDefault = props.showCodeByDefault || false;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const MDXComponents: Record<TemplateNames, (props: any) => JSX.Element> = {
+  Examples: (props: {
+    componentName: string;
+    exampleName?: string;
+    showCodeByDefault?: boolean;
+  }) => {
     return (
       <div className="hds-mt-24-32">
-        <Examples name={name} showCodeByDefault={showCodeByDefault} />
+        <Examples
+          componentName={props.componentName}
+          exampleName={props.exampleName}
+          showCodeByDefault={props.showCodeByDefault ?? false}
+        />
       </div>
     );
   },
@@ -52,6 +60,18 @@ const MDXComponents = {
     return (
       <div className="hds-mt-24-32">
         <FigmaPreviews urls={urls} />
+      </div>
+    );
+  },
+  FigmaEmbed: (props: { url: string; hideBottomBar?: boolean }) => {
+    return (
+      <div className="hds-mt-24-32">
+        <FigmaEmbed
+          urlToEmbed={props.url}
+          height={1200}
+          width="80%"
+          hideBottomBar={props.hideBottomBar}
+        />
       </div>
     );
   },
