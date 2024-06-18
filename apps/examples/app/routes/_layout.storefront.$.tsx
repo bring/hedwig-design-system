@@ -1,9 +1,10 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { client } from "../../tina/__generated__/client";
-import { useTina } from "tinacms/dist/react";
-import { useLoaderData } from "@remix-run/react";
+import { useTina, tinaField } from "tinacms/dist/react";
+import { MetaFunction, useLoaderData } from "@remix-run/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { StyledHtml } from "@postenbring/hedwig-react";
+
 import { Examples } from "../components/component-examples";
 import { FigmaEmbed, FigmaPreviews } from "../components/figma";
 import type { TemplateNames } from "../../tina/templates";
@@ -24,14 +25,34 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
   };
 }
 
+export const meta: MetaFunction<typeof clientLoader> = ({ data }) => {
+  return [
+    { title: `${data?.dataQueryVariables.data.post.title} | Hedwig Design System` },
+    {
+      name: "description",
+      content: data?.dataQueryVariables.data.post.subtitle,
+    },
+  ];
+};
+
 export default function Component() {
   const { dataQueryVariables } = useLoaderData<typeof clientLoader>();
   const { data } = useTina(dataQueryVariables);
+
   return (
     <div>
-      <h1>{data.post.title}</h1>
-      {data.post.subtitle && <p className="hds-mt-12-16 hds-text-h3">{data.post.subtitle}</p>}
-      <StyledHtml className="hds-mt-24-32">
+      <h1
+        className="hds-text-h1 hds-mt-48-64 hds-mb-32-40"
+        data-tina-field={tinaField(data.post, "title")}
+      >
+        {data.post.title}
+      </h1>
+      {data.post.subtitle && (
+        <p className="hds-mt-24-32 hds-text-h3" data-tina-field={tinaField(data.post, "subtitle")}>
+          {data.post.subtitle}
+        </p>
+      )}
+      <StyledHtml className="hds-mt-48-64">
         <TinaMarkdown content={data.post.body} components={MDXComponents} />
       </StyledHtml>
     </div>
