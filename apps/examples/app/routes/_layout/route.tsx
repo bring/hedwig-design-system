@@ -11,9 +11,10 @@ import {
   VStack,
   useNavbarExpendableMenuContext,
 } from "@postenbring/hedwig-react";
-import { Outlet, useSearchParams, Link as RemixLink, useLocation } from "@remix-run/react";
+import { Outlet, Link as RemixLink, useLocation, useSearchParams } from "@remix-run/react";
 
 import { kebabCaseToFirstLetterUpperCase } from "../../components/component-examples";
+import { useTheme } from "../../components/use-theme";
 
 export default function Layout() {
   return (
@@ -32,8 +33,7 @@ export default function Layout() {
 }
 
 function LayoutHeader() {
-  const [search] = useSearchParams();
-  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
+  const { activeTheme } = useTheme();
 
   return (
     <Navbar variant="service">
@@ -82,8 +82,7 @@ function LayoutHeader() {
 function NavbarMenuItems() {
   const [search] = useSearchParams();
   const preview = search.has("preview");
-  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
-  const nextTheme = activeTheme === "bring" ? "posten" : "bring";
+  const { activeTheme, nextTheme } = useTheme();
 
   return (
     <>
@@ -164,8 +163,7 @@ function CloseExpandableMenuOnNavigation() {
 }
 
 function LayoutFooter() {
-  const [search] = useSearchParams();
-  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
+  const { activeTheme } = useTheme();
 
   return (
     <Footer variant="slim">
