@@ -1,5 +1,5 @@
 import "@postenbring/hedwig-css";
-import "./_layout.css";
+import "./style.css";
 
 import { useEffect } from "react";
 import {
@@ -13,7 +13,7 @@ import {
 } from "@postenbring/hedwig-react";
 import { Outlet, useSearchParams, Link as RemixLink, useLocation } from "@remix-run/react";
 
-import { kebabCaseToFirstLetterUpperCase } from "../components/component-examples";
+import { kebabCaseToFirstLetterUpperCase } from "../../components/component-examples";
 
 export default function Layout() {
   return (
