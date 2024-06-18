@@ -13,6 +13,7 @@ import { Example } from "../examples";
 import { Button, StyledHtml, type ButtonProps } from "@postenbring/hedwig-react";
 import { openExampleInCodeSandbox } from "./codesandbox";
 import { useSearchParams } from "@remix-run/react";
+import { useTheme } from "./use-theme";
 
 const codeThemes: Record<"posten" | "bring", ThemeRegistrationRaw> = {
   posten: vesper,
@@ -257,8 +258,7 @@ function CopyButton({
 }
 
 function Code({ code, id }: { code: string; id: string }) {
-  const [search] = useSearchParams();
-  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
+  const { activeTheme } = useTheme();
 
   const formattedCode = useMemo(() => {
     return highlighter.codeToHtml(code, {
