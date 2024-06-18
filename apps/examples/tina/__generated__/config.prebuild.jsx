@@ -13,20 +13,20 @@ var templates = [
         name: "componentName",
         label: "Name of the component or pattern",
         type: "string",
-        required: true,
+        required: true
       },
       {
         name: "exampleName",
         description: "Only show one specific example",
         label: "Specific example",
-        type: "string",
+        type: "string"
       },
       {
         name: "showCodeByDefault",
         label: "Show code by default",
-        type: "boolean",
-      },
-    ],
+        type: "boolean"
+      }
+    ]
   },
   // Figma Previews
   {
@@ -37,9 +37,9 @@ var templates = [
         name: "urls",
         label: "Figma URLs",
         type: "string",
-        list: true,
-      },
-    ],
+        list: true
+      }
+    ]
   },
   // Figma Embed
   {
@@ -50,21 +50,20 @@ var templates = [
         name: "url",
         label: "Figma URL",
         type: "string",
-        required: true,
+        required: true
       },
       {
         name: "hideBottomBar",
         label: "Hide bottom bar",
-        type: "boolean",
-      },
-    ],
-  },
+        type: "boolean"
+      }
+    ]
+  }
 ];
 templates.push(tinaTableTemplate);
 
 // tina/config.ts
-var branch =
-  process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
+var branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
 var config_default = defineConfig({
   branch,
   // Get this from tina.io
@@ -75,13 +74,13 @@ var config_default = defineConfig({
   build: {
     basePath: "/hedwig-design-system/examples/storefront",
     outputFolder: "admin",
-    publicFolder: "public",
+    publicFolder: "public"
   },
   media: {
     tina: {
       mediaRoot: "",
-      publicFolder: "public",
-    },
+      publicFolder: "public"
+    }
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
@@ -91,7 +90,7 @@ var config_default = defineConfig({
         ui: {
           router: (props) => {
             return `/hedwig-design-system/examples/storefront/${props.document._sys.breadcrumbs.join("/")}`;
-          },
+          }
         },
         name: "post",
         label: "Posts",
@@ -102,24 +101,26 @@ var config_default = defineConfig({
             name: "title",
             label: "Title",
             isTitle: true,
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "subtitle",
             label: "Subtitle",
-            required: false,
+            required: false
           },
           {
             type: "rich-text",
             name: "body",
             label: "Body",
             isBody: true,
-            templates,
-          },
-        ],
-      },
-    ],
-  },
+            templates
+          }
+        ]
+      }
+    ]
+  }
 });
-export { config_default as default };
+export {
+  config_default as default
+};
