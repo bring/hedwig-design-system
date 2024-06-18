@@ -31,10 +31,13 @@ export const examples = Object.keys(modules)
     const exampleSource = modules[filePath] as string;
 
     // Used in the code preview
-    const exampleSourceNeat = exampleSource.replace(/\s*export default \w+;[\s\S]*/, "");
+    const exampleSourceNeat = exampleSource.replace(/\s*export default Example;[\s\S]*/, "");
 
     // Used for Code Sandbox. Includes the default export
-    const exampleSourceComplete = exampleSource.replace(/(\s*export default \w+;)[\s\S]*/, "$1");
+    const exampleSourceComplete = exampleSource.replace(
+      /(\s*export default Example;)[\s\S]*/,
+      "$1",
+    );
 
     const configSource = exampleSource.match(/export const config.+({[\s\S]+?});/)?.[1];
 
