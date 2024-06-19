@@ -108,6 +108,13 @@
     }
 
     @media (--before-large) {
+      .hds-navbar__item-icon {
+        width: var(--hds-spacing-24);
+        height: var(--hds-spacing-24);
+      }
+    }
+
+    @media (--before-large) {
       .hds-navbar__item-responsive-text {
         display: none;
       }
