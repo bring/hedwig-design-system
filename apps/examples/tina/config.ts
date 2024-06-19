@@ -1,5 +1,6 @@
 import { defineConfig } from "tinacms";
 import { templates } from "./templates";
+import { GlobalCollection } from "./global-collection";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -62,6 +63,7 @@ export default defineConfig({
           },
         ],
       },
+      GlobalCollection,
     ],
   },
 });

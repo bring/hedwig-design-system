@@ -4,3 +4,17 @@ fragment PostParts on Post {
   subtitle
   body
 }
+
+fragment GlobalParts on Global {
+  __typename
+  header {
+    __typename
+    nav {
+      __typename
+      href
+      label
+      external
+      iconSvg
+    }
+  }
+}

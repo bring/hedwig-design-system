@@ -25,7 +25,7 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
 
 export const meta: MetaFunction<typeof clientLoader> = ({ data }) => {
   return [
-    { title: `${data?.dataQueryVariables.data.post.title} | Hedwig Design System` },
+    { title: `${data?.dataQueryVariables.data.post.title} - Hedwig Design System` },
     {
       name: "description",
       content: data?.dataQueryVariables.data.post.subtitle,

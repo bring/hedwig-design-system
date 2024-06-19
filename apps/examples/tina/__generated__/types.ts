@@ -83,6 +83,8 @@ export type Query = {
   document: DocumentNode;
   post: Post;
   postConnection: PostConnection;
+  global: Global;
+  globalConnection: GlobalConnection;
 };
 
 
@@ -121,8 +123,24 @@ export type QueryPostConnectionArgs = {
   filter?: InputMaybe<PostFilter>;
 };
 
+
+export type QueryGlobalArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryGlobalConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<GlobalFilter>;
+};
+
 export type DocumentFilter = {
   post?: InputMaybe<PostFilter>;
+  global?: InputMaybe<GlobalFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -162,7 +180,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Post | Folder;
+export type DocumentNode = Post | Global | Folder;
 
 export type Post = Node & Document & {
   __typename?: 'Post';
@@ -247,6 +265,55 @@ export type PostConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostConnectionEdges>>>;
 };
 
+export type GlobalHeaderNav = {
+  __typename?: 'GlobalHeaderNav';
+  href: Scalars['String']['output'];
+  label: Scalars['String']['output'];
+  external?: Maybe<Scalars['Boolean']['output']>;
+  iconSvg?: Maybe<Scalars['String']['output']>;
+};
+
+export type GlobalHeader = {
+  __typename?: 'GlobalHeader';
+  nav?: Maybe<Array<Maybe<GlobalHeaderNav>>>;
+};
+
+export type Global = Node & Document & {
+  __typename?: 'Global';
+  header?: Maybe<GlobalHeader>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type GlobalHeaderNavFilter = {
+  href?: InputMaybe<StringFilter>;
+  label?: InputMaybe<StringFilter>;
+  external?: InputMaybe<BooleanFilter>;
+  iconSvg?: InputMaybe<StringFilter>;
+};
+
+export type GlobalHeaderFilter = {
+  nav?: InputMaybe<GlobalHeaderNavFilter>;
+};
+
+export type GlobalFilter = {
+  header?: InputMaybe<GlobalHeaderFilter>;
+};
+
+export type GlobalConnectionEdges = {
+  __typename?: 'GlobalConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Global>;
+};
+
+export type GlobalConnection = Connection & {
+  __typename?: 'GlobalConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<GlobalConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -256,6 +323,8 @@ export type Mutation = {
   createFolder: DocumentNode;
   updatePost: Post;
   createPost: Post;
+  updateGlobal: Global;
+  createGlobal: Global;
 };
 
 
@@ -303,13 +372,27 @@ export type MutationCreatePostArgs = {
   params: PostMutation;
 };
 
+
+export type MutationUpdateGlobalArgs = {
+  relativePath: Scalars['String']['input'];
+  params: GlobalMutation;
+};
+
+
+export type MutationCreateGlobalArgs = {
+  relativePath: Scalars['String']['input'];
+  params: GlobalMutation;
+};
+
 export type DocumentUpdateMutation = {
   post?: InputMaybe<PostMutation>;
+  global?: InputMaybe<GlobalMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentMutation = {
   post?: InputMaybe<PostMutation>;
+  global?: InputMaybe<GlobalMutation>;
 };
 
 export type PostMutation = {
@@ -318,7 +401,24 @@ export type PostMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
+export type GlobalHeaderNavMutation = {
+  href?: InputMaybe<Scalars['String']['input']>;
+  label?: InputMaybe<Scalars['String']['input']>;
+  external?: InputMaybe<Scalars['Boolean']['input']>;
+  iconSvg?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type GlobalHeaderMutation = {
+  nav?: InputMaybe<Array<InputMaybe<GlobalHeaderNavMutation>>>;
+};
+
+export type GlobalMutation = {
+  header?: InputMaybe<GlobalHeaderMutation>;
+};
+
 export type PostPartsFragment = { __typename: 'Post', title: string, subtitle?: string | null, body?: any | null };
+
+export type GlobalPartsFragment = { __typename: 'Global', header?: { __typename: 'GlobalHeader', nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null } | null> | null } | null };
 
 export type PostQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -339,12 +439,46 @@ export type PostConnectionQueryVariables = Exact<{
 
 export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PostConnectionEdges', cursor: string, node?: { __typename: 'Post', id: string, title: string, subtitle?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
+export type GlobalQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type GlobalQuery = { __typename?: 'Query', global: { __typename: 'Global', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, header?: { __typename: 'GlobalHeader', nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null } | null> | null } | null } };
+
+export type GlobalConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<GlobalFilter>;
+}>;
+
+
+export type GlobalConnectionQuery = { __typename?: 'Query', globalConnection: { __typename?: 'GlobalConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'GlobalConnectionEdges', cursor: string, node?: { __typename: 'Global', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, header?: { __typename: 'GlobalHeader', nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null } | null> | null } | null } | null } | null> | null } };
+
 export const PostPartsFragmentDoc = gql`
     fragment PostParts on Post {
   __typename
   title
   subtitle
   body
+}
+    `;
+export const GlobalPartsFragmentDoc = gql`
+    fragment GlobalParts on Global {
+  __typename
+  header {
+    __typename
+    nav {
+      __typename
+      href
+      label
+      external
+      iconSvg
+    }
+  }
 }
     `;
 export const PostDocument = gql`
@@ -402,6 +536,61 @@ export const PostConnectionDocument = gql`
   }
 }
     ${PostPartsFragmentDoc}`;
+export const GlobalDocument = gql`
+    query global($relativePath: String!) {
+  global(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...GlobalParts
+  }
+}
+    ${GlobalPartsFragmentDoc}`;
+export const GlobalConnectionDocument = gql`
+    query globalConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: GlobalFilter) {
+  globalConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...GlobalParts
+      }
+    }
+  }
+}
+    ${GlobalPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -410,6 +599,12 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     postConnection(variables?: PostConnectionQueryVariables, options?: C): Promise<{data: PostConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostConnectionQueryVariables, query: string}> {
         return requester<{data: PostConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PostConnectionQueryVariables, query: string}, PostConnectionQueryVariables>(PostConnectionDocument, variables, options);
+      },
+    global(variables: GlobalQueryVariables, options?: C): Promise<{data: GlobalQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: GlobalQueryVariables, query: string}> {
+        return requester<{data: GlobalQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: GlobalQueryVariables, query: string}, GlobalQueryVariables>(GlobalDocument, variables, options);
+      },
+    globalConnection(variables?: GlobalConnectionQueryVariables, options?: C): Promise<{data: GlobalConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: GlobalConnectionQueryVariables, query: string}> {
+        return requester<{data: GlobalConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: GlobalConnectionQueryVariables, query: string}, GlobalConnectionQueryVariables>(GlobalConnectionDocument, variables, options);
       }
     };
   }
