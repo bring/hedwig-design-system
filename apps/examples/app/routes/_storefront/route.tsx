@@ -52,6 +52,23 @@ function NavbarMenuItems() {
           </Navbar.ItemIcon>
         ) : null;
 
+        /**
+         * { label: "Icon and label", value: "iconAndLabel" },
+         * { label: "Only icon on large", value: "onlyIconOnLarge" },
+         * { label: "Only icon on mobile", value: "onlyIconOnMobile" },
+         * { label: "Only icon", value: "onlyIcon" },
+         */
+        const label =
+          item.iconBehaviour === "onlyIcon" ? (
+            ""
+          ) : item.iconBehaviour === "onlyIconOnMobile" ? (
+            <span className="hidden-before-large">{item.label}</span>
+          ) : item.iconBehaviour === "onlyIconOnLarge" ? (
+            <span className="hidden-after-large">{item.label}</span>
+          ) : (
+            item.label
+          );
+
         if (item.external) {
           return (
             <Navbar.LinkItem key={item.href} asChild>
@@ -61,7 +78,7 @@ function NavbarMenuItems() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {item.label}
+                {label}
                 {icon}
               </a>
             </Navbar.LinkItem>
@@ -76,7 +93,7 @@ function NavbarMenuItems() {
                 search: activeTheme === "bring" ? "?theme=bring" : "",
               }}
             >
-              {item.label}
+              {label}
               {icon}
             </RemixLink>
           </Navbar.LinkItem>

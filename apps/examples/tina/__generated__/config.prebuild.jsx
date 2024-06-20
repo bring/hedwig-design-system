@@ -114,6 +114,18 @@ var GlobalCollection = {
                 component: "textarea"
               },
               required: false
+            },
+            {
+              type: "string",
+              label: "Icon Behaviour",
+              name: "iconBehaviour",
+              required: false,
+              options: [
+                { label: "Icon and label", value: "iconAndLabel" },
+                { label: "Only icon", value: "onlyIcon" },
+                { label: "Only icon on large", value: "onlyIconOnLarge" },
+                { label: "Only icon on mobile", value: "onlyIconOnMobile" }
+              ]
             }
           ]
         }
