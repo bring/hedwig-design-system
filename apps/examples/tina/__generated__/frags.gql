@@ -15,6 +15,7 @@ fragment GlobalParts on Global {
       label
       external
       iconSvg
+      iconBehaviour
     }
   }
 }
