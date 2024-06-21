@@ -105,6 +105,10 @@
     .hds-navbar__item-icon {
       width: var(--hds-spacing-32);
       height: var(--hds-spacing-32);
+
+      > * {
+        vertical-align: text-bottom;
+      }
     }
 
     @media (--before-large) {
