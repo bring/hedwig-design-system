@@ -18,6 +18,7 @@ export * from "./modal";
 export * from "./navbar";
 export * from "./show-more";
 export * from "./skeleton";
+export * from "./spinner";
 export * from "./step-indicator";
 export * from "./styled-html";
 export * from "./table";

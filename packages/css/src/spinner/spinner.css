@@ -1,0 +1,29 @@
+@keyframes hds-spinner-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hds-spinner {
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- Custom icon` */
+  background-image: var(--_hds-spinner);
+  animation: hds-spinner-spin 2s infinite linear normal;
+  width: var(--hds-component-spinner-size);
+  height: var(--hds-component-spinner-size);
+
+  &.hds-spinner--small {
+    --hds-component-spinner-size: 1em;
+  }
+
+  &.hds-spinner--medium {
+    --hds-component-spinner-size: 2em;
+  }
+
+  &.hds-spinner--large {
+    --hds-component-spinner-size: 3em;
+  }
+}
