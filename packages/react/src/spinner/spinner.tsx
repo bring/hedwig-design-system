@@ -31,16 +31,17 @@ export type SpinnerProps = SpinnerPropsInner;
  */
 export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
   ({ size = "medium", title = "", delay = 1000, className, ...rest }, ref) => {
-    const [shownAfterOneMinute, setShownAfterOneMinute] = useState<boolean>(false);
+    const [shouldShow, setShouldShow] = useState(delay !== undefined);
     useEffect(() => {
+      if (delay === undefined) return;
       const timeout = setTimeout(() => {
-        setShownAfterOneMinute(true);
+        setShouldShow(true);
       }, delay);
       return () => {
         clearTimeout(timeout);
       };
-    });
-    return shownAfterOneMinute ? (
+    }, [delay]);
+    return shouldShow ? (
       <div
         title={title}
         className={clsx("hds-spinner", `hds-spinner--${size}`, className as undefined)}
