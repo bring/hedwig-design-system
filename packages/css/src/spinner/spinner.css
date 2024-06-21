@@ -1,3 +1,5 @@
+@import url("../_icons.css");
+
 @keyframes hds-spinner-spin {
   from {
     transform: rotate(0deg);
