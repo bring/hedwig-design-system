@@ -31,13 +31,13 @@ export function LayoutHeader({ navbarMenuItems }: { navbarMenuItems?: React.Reac
           aria-label="To the front page"
         >
           <div>
-            Hedwig <span className="hidden-before-large">Design System</span>
+            Hedwig <span className="hidden-before-medium">Design System</span>
           </div>
         </RemixLink>
       </Navbar.LogoAndServiceText>
 
       {/* Mobile */}
-      <Navbar.Navigation className="hidden-after-medium">
+      <Navbar.Navigation className="hidden-after-large">
         <Navbar.ExpandableMenu>
           <Navbar.ExpandableMenuTrigger
             whenClosedText="Meny"
@@ -57,7 +57,7 @@ export function LayoutHeader({ navbarMenuItems }: { navbarMenuItems?: React.Reac
       </Navbar.Navigation>
 
       {/* Desktop */}
-      <Navbar.Navigation className="hidden-before-medium">
+      <Navbar.Navigation className="hidden-before-large">
         {navbarMenuItemsElement}
       </Navbar.Navigation>
     </Navbar>
