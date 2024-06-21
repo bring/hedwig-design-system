@@ -10,10 +10,22 @@
   }
 }
 
+@keyframes hds-fade-in {
+  0%,
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .hds-spinner {
-  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- Custom icon` */
   background-image: var(--_hds-spinner);
-  animation: hds-spinner-spin 2s infinite linear normal;
+  animation:
+    hds-spinner-spin 2s infinite linear normal,
+    hds-fade-in 10s ease-in;
   width: var(--hds-component-spinner-size);
   height: var(--hds-component-spinner-size);
 

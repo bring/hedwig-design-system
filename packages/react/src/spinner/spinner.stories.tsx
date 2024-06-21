@@ -22,7 +22,6 @@ type Story = StoryObj<typeof Spinner>;
 export const Preview: Story = {
   args: {
     size: "medium",
-    title: "Title",
-    delay: 2000,
+    title: "Venter på ...",
   },
 };
