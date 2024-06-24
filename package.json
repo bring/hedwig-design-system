@@ -14,8 +14,8 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.5",
-    "@types/node": "20.14.2",
+    "@changesets/cli": "^2.27.6",
+    "@types/node": "20.14.8",
     "eslint": "^8.57.0",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
