@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { getResponsiveProps, type ResponsiveProp } from "../layout/responsive";
 
 interface SpinnerPropsInner extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -18,13 +17,16 @@ interface SpinnerPropsInner extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
 
   /**
-   * Seconds delay before the spinner fades in
+   * Delay before the spinner fades in
    *
-   * @default '0s'
+   * If set to `true`, a default delay of `800ms` will be applied.
+   *
+   * @example
+   * 0.8s
+   *
+   * @default false
    */
-  delay?: ResponsiveProp<
-    "0s" | "1s" | "2s" | "3s" | "4s" | "5s" | "6s" | "7s" | "8s" | "9s" | "10s"
-  >;
+  delay?: `${string}ms` | `${string}s` | boolean;
 }
 
 export type SpinnerProps = SpinnerPropsInner;
@@ -33,16 +35,21 @@ export type SpinnerProps = SpinnerPropsInner;
  * Use spinner loading states as placeholder for your content while waiting for data to load.
  */
 export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
-  ({ size = "medium", title = "", delay = "0s", className, style: _style, ...rest }, ref) => {
-    const style: React.CSSProperties = {
+  ({ size = "medium", title = "", delay = false, className, style: _style, ...rest }, ref) => {
+    const style: React.CSSProperties & { "--hds-spinner-delay"?: string } = {
       ..._style,
-      ...getResponsiveProps("--hds-spinner-delay", delay),
+      ...(typeof delay === "string" && { "--hds-spinner-delay": delay }),
     };
     return (
       <div
         title={title}
         style={style}
-        className={clsx("hds-spinner", `hds-spinner--${size}`, className as undefined)}
+        className={clsx(
+          "hds-spinner",
+          `hds-spinner--${size}`,
+          delay && "hds-spinner--delay",
+          className as undefined,
+        )}
         ref={ref}
         {...rest}
       />

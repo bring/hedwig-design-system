@@ -10,7 +10,7 @@
   }
 }
 
-@keyframes hds-fade-in {
+@keyframes hds-spinner-fade-in {
   0% {
     opacity: 0;
   }
@@ -21,16 +21,12 @@
 }
 
 .hds-spinner {
-  --hds-spinner-delay-initial: initial;
-  --hds-spinner-delay: var(--hds-spinner-delay-initial);
+  --hds-spinner-delay: 800ms;
+  --hds-spinner-fade-in: var(--hds-micro-animation-duration-slow);
+  --_hds-spinner-animation: hds-spinner-spin 2s linear 0s infinite normal forwards;
 
-  opacity: 0;
   background-image: var(--_hds-spinner);
-  animation:
-    hds-spinner-spin 2s infinite linear normal,
-    hds-fade-in 8s ease-in;
-  animation-fill-mode: forwards;
-  animation-delay: 0s, var(--hds-spinner-delay);
+  animation: var(--_hds-spinner-animation);
   width: var(--hds-component-spinner-size);
   height: var(--hds-component-spinner-size);
 
@@ -38,11 +34,21 @@
     --hds-component-spinner-size: var(--hds-font-size-body);
   }
 
+  &, /* Default */
   &.hds-spinner--medium {
     --hds-component-spinner-size: var(--hds-font-size-h2);
   }
 
   &.hds-spinner--large {
     --hds-component-spinner-size: var(--hds-font-size-h1);
+  }
+
+  /* Delay */
+  &.hds-spinner--delay {
+    opacity: 0;
+    animation:
+      var(--_hds-spinner-animation),
+      hds-spinner-fade-in var(--hds-spinner-fade-in) var(--hds-micro-animation-easing-in)
+        var(--hds-spinner-delay) 1 normal forwards;
   }
 }
