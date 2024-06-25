@@ -11,8 +11,7 @@
 }
 
 @keyframes hds-fade-in {
-  0%,
-  20% {
+  0% {
     opacity: 0;
   }
 
@@ -22,22 +21,28 @@
 }
 
 .hds-spinner {
+  --hds-spinner-delay-initial: initial;
+  --hds-spinner-delay: var(--hds-spinner-delay-initial);
+
+  opacity: 0;
   background-image: var(--_hds-spinner);
   animation:
     hds-spinner-spin 2s infinite linear normal,
-    hds-fade-in 10s ease-in;
+    hds-fade-in 8s ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 0s, var(--hds-spinner-delay);
   width: var(--hds-component-spinner-size);
   height: var(--hds-component-spinner-size);
 
   &.hds-spinner--small {
-    --hds-component-spinner-size: 1em;
+    --hds-component-spinner-size: var(--hds-font-size-body);
   }
 
   &.hds-spinner--medium {
-    --hds-component-spinner-size: 2em;
+    --hds-component-spinner-size: var(--hds-font-size-h2);
   }
 
   &.hds-spinner--large {
-    --hds-component-spinner-size: 3em;
+    --hds-component-spinner-size: var(--hds-font-size-h1);
   }
 }

@@ -23,5 +23,6 @@ export const Preview: Story = {
   args: {
     size: "medium",
     title: "Venter på ...",
+    delay: "0s",
   },
 };
