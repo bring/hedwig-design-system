@@ -15,6 +15,12 @@ export const GlobalCollection: Collection = {
       name: "header",
       fields: [
         {
+          type: "boolean",
+          label: "Short header",
+          description: "Use 'Hedwig' instead of 'Hedwig Design System' in the header",
+          name: "shortHeader",
+        },
+        {
           type: "object",
           label: "Nav Links",
           name: "nav",
