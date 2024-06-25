@@ -10,7 +10,13 @@ import { Link as RemixLink, useLocation, useSearchParams } from "@remix-run/reac
 import { kebabCaseToFirstLetterUpperCase } from "../../components/component-examples";
 import { useTheme } from "../../components/use-theme";
 
-export function LayoutHeader({ navbarMenuItems }: { navbarMenuItems?: React.ReactNode }) {
+export function LayoutHeader({
+  navbarMenuItems,
+  shortHeader,
+}: {
+  navbarMenuItems?: React.ReactNode;
+  shortHeader?: boolean;
+}) {
   const { activeTheme } = useTheme();
 
   const navbarMenuItemsElement = (
@@ -31,7 +37,7 @@ export function LayoutHeader({ navbarMenuItems }: { navbarMenuItems?: React.Reac
           aria-label="To the front page"
         >
           <div>
-            Hedwig <span className="hidden-before-medium">Design System</span>
+            Hedwig {!shortHeader && <span className="hidden-before-medium">Design System</span>}
           </div>
         </RemixLink>
       </Navbar.LogoAndServiceText>

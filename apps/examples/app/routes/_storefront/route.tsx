@@ -104,9 +104,15 @@ function NavbarMenuItems() {
 }
 
 export default function Layout() {
+  const { dataQueryVariables } = useLoaderData<typeof clientLoader>();
+  const { data } = useTina(dataQueryVariables);
+
   return (
     <VStack style={{ minHeight: "100vh" }}>
-      <LayoutHeader navbarMenuItems={<NavbarMenuItems />} />
+      <LayoutHeader
+        navbarMenuItems={<NavbarMenuItems />}
+        shortHeader={data.global.header?.shortHeader ?? false}
+      />
       <div style={{ flexGrow: 1 }} className="docs-container">
         <Outlet />
       </div>
