@@ -178,6 +178,7 @@ type GlobalHeaderNav {
 }
 
 type GlobalHeader {
+  shortHeader: Boolean
   nav: [GlobalHeaderNav]
 }
 
@@ -197,6 +198,7 @@ input GlobalHeaderNavFilter {
 }
 
 input GlobalHeaderFilter {
+  shortHeader: BooleanFilter
   nav: GlobalHeaderNavFilter
 }
 
@@ -253,6 +255,7 @@ input GlobalHeaderNavMutation {
 }
 
 input GlobalHeaderMutation {
+  shortHeader: Boolean
   nav: [GlobalHeaderNavMutation]
 }
 

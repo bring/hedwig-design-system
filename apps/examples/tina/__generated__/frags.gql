@@ -9,6 +9,7 @@ fragment GlobalParts on Global {
   __typename
   header {
     __typename
+    shortHeader
     nav {
       __typename
       href
