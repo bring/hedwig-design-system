@@ -91,6 +91,7 @@
 
     & li {
       padding-left: 0;
+      margin-bottom: var(--hds-spacing-12);
     }
 
     /* Auto style `a` tags */
