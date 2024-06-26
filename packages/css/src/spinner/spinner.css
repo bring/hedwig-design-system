@@ -1,0 +1,54 @@
+@import url("../_icons.css");
+
+@keyframes hds-spinner-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hds-spinner-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.hds-spinner {
+  --hds-spinner-delay: 800ms;
+  --hds-spinner-fade-in: var(--hds-micro-animation-duration-slow);
+  --_hds-spinner-animation: hds-spinner-spin 2s linear 0s infinite normal forwards;
+
+  background-image: var(--_hds-spinner);
+  animation: var(--_hds-spinner-animation);
+  width: var(--hds-component-spinner-size);
+  height: var(--hds-component-spinner-size);
+
+  &.hds-spinner--small {
+    --hds-component-spinner-size: var(--hds-font-size-body);
+  }
+
+  &, /* Default */
+  &.hds-spinner--medium {
+    --hds-component-spinner-size: var(--hds-font-size-h2);
+  }
+
+  &.hds-spinner--large {
+    --hds-component-spinner-size: var(--hds-font-size-h1);
+  }
+
+  /* Delay */
+  &.hds-spinner--delay {
+    opacity: 0;
+    animation:
+      var(--_hds-spinner-animation),
+      hds-spinner-fade-in var(--hds-spinner-fade-in) var(--hds-micro-animation-easing-in)
+        var(--hds-spinner-delay) 1 normal forwards;
+  }
+}
