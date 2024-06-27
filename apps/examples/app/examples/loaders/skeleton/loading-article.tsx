@@ -45,5 +45,5 @@ function randomNumberBetween(min: number, max: number) {
 
 export default Example;
 
-import type { ExampleConfig } from "..";
+import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {};

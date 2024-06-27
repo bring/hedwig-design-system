@@ -4,7 +4,7 @@ import { VStack } from "../layout";
 import { Skeleton } from ".";
 
 const meta: Meta<typeof Skeleton> = {
-  title: "Skeleton",
+  title: "Loaders/Skeleton",
   component: Skeleton,
 };
 

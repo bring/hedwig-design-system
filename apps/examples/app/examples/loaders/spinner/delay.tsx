@@ -13,7 +13,7 @@ function Example() {
 
 export default Example;
 
-import type { ExampleConfig } from "..";
+import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   description: `<p>If the action usually takes less than 1 second, you can use a delay to prevent the spinner from flashing.<p>
     <a href="https://www.nngroup.com/articles/progress-indicators/" target="_blank">Read more loading times and spinners ↗</a>

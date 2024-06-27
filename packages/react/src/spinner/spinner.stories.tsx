@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Spinner } from ".";
 
 const meta: Meta<typeof Spinner> = {
-  title: "Spinner",
+  title: "Loaders/Spinner",
   component: Spinner,
   argTypes: {
     size: {
