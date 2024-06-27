@@ -1,5 +1,16 @@
 # @postenbring/hedwig-css
 
+## 1.1.0
+
+### Minor Changes
+
+- 8dff0b5: :sparkles: new component, spinner 🎉
+
+### Patch Changes
+
+- 508b0e5: :lipstick: link-list: bump space between link list items to 16px to closer resemble hedwig legacy
+- ee07f33: :lipstick: link-list: always `12` gap between items in link-list using `margin-top`
+
 ## 1.0.0
 
 ### Major Changes
