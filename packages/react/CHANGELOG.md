@@ -1,5 +1,18 @@
 # @postenbring/hedwig-react
 
+## 1.1.0
+
+### Minor Changes
+
+- 8dff0b5: :sparkles: new component, spinner 🎉
+
+### Patch Changes
+
+- Updated dependencies [8dff0b5]
+- Updated dependencies [508b0e5]
+- Updated dependencies [ee07f33]
+  - @postenbring/hedwig-css@1.1.0
+
 ## 1.0.0
 
 ### Major Changes
