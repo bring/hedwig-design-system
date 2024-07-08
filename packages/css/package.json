@@ -40,7 +40,7 @@
   "devDependencies": {
     "browserslist": "4.23.1",
     "chokidar-cli": "3.0.0",
-    "globby": "14.0.1",
+    "globby": "14.0.2",
     "lightningcss": "1.25.1",
     "sanitize.css": "^13.0.0",
     "stylelint": "16.6.1",
