@@ -24,8 +24,9 @@ export default function Component() {
           <div>
             <h1 className="hds-text-h1">Hedwig Design System</h1>
             <p className="hds-mt-40-48">
-              Hedwig offers everything you'll need when creating accessible and cohesive digital
-              services and experiences in line with the Posten and Bring brand. Fast and easy!
+              Hedwig offers everything you&apos;ll need when creating accessible and cohesive
+              digital services and experiences in line with the Posten and Bring brand. Fast and
+              easy!
             </p>
           </div>
         </Grid>
