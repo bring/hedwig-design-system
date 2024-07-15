@@ -51,7 +51,11 @@ function Block(block: PageBlocks) {
 function BrandSlogan({ block }: { block: PageBlocksBrandSlogan }) {
   return (
     <Grid span={{ initial: 12, small: 12 }}>
-      <h1 className="hds-text-h1" data-tina-field={tinaField(block, "title")}>
+      <h1
+        className="hds-text-h1"
+        style={{ color: "var(--hds-colors-darker)" }}
+        data-tina-field={tinaField(block, "title")}
+      >
         {block.title}
       </h1>
       <p
@@ -67,11 +71,23 @@ function BrandSlogan({ block }: { block: PageBlocksBrandSlogan }) {
 
 export function NavCards({ block }: { block: PageBlocksNavCards }) {
   return (
-    <Grid gap="20-24" span={{ initial: 12, medium: 4 }}>
+    <div
+      style={{
+        display: "grid",
+        gap: "var(--hds-spacing-20-24)",
+        gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,220px),1fr))",
+      }}
+    >
       {block.cards?.map((card, i) => {
         if (!card) return null;
         return (
           <Card key={i} data-tina-field={tinaField(card)}>
+            <Card.Media>
+              <Card.MediaImg
+                src={`https://placedog.net/120${i}/60${i}`}
+                style={{ aspectRatio: 16 / 9, objectFit: "cover" }}
+              />
+            </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
                 <Card.BodyHeaderTitle asChild>
@@ -80,10 +96,15 @@ export function NavCards({ block }: { block: PageBlocksNavCards }) {
                   </Link>
                 </Card.BodyHeaderTitle>
               </Card.BodyHeader>
+              {card.description && (
+                <Card.BodyDescription data-tina-field={tinaField(card, "description")}>
+                  {card.description}
+                </Card.BodyDescription>
+              )}
             </Card.Body>
           </Card>
         );
       })}
-    </Grid>
+    </div>
   );
 }

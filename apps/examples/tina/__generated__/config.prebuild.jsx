@@ -28,9 +28,9 @@ var GlobalCollection = {
           name: "nav",
           list: true,
           ui: {
-            itemProps: (item) => {
-              return { label: item?.label };
-            }
+            itemProps: (item) => ({
+              label: item.label
+            })
           },
           fields: [
             {
@@ -205,7 +205,8 @@ var navCardSchema = {
         {
           type: "string",
           label: "Title",
-          name: "title"
+          name: "title",
+          required: true
         },
         {
           type: "string",

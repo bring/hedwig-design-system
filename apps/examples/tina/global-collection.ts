@@ -26,9 +26,9 @@ export const GlobalCollection: Collection = {
           name: "nav",
           list: true,
           ui: {
-            itemProps: (item) => {
-              return { label: item?.label };
-            },
+            itemProps: (item) => ({
+              label: item.label,
+            }),
           },
           fields: [
             {
