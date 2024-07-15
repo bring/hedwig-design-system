@@ -9,6 +9,11 @@ export const templates = [
   {
     name: "Examples",
     label: "Examples",
+    ui: {
+      defaultItem: {
+        componentName: "button",
+      },
+    },
     fields: [
       {
         name: "componentName",
