@@ -1,6 +1,7 @@
 import { defineConfig } from "tinacms";
-import { templates } from "./templates";
 import { GlobalCollection } from "./global-collection";
+import { PageCollection } from "./page-collection";
+import { ComponentCollection } from "./component-collection";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -16,8 +17,8 @@ export default defineConfig({
 
   cmsCallback: (a) => a,
   build: {
-    basePath: "/hedwig-design-system/examples/storefront",
-    outputFolder: "admin",
+    basePath: "/hedwig-design-system/examples/storefront/",
+    outputFolder: "storefront/admin",
     publicFolder: "public",
   },
   media: {
@@ -29,41 +30,6 @@ export default defineConfig({
 
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
-    collections: [
-      {
-        format: "mdx",
-        ui: {
-          router: (props) => {
-            return `/hedwig-design-system/examples/storefront/${props.document._sys.breadcrumbs.join("/")}`;
-          },
-        },
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            name: "subtitle",
-            label: "Subtitle",
-            required: false,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-            templates,
-          },
-        ],
-      },
-      GlobalCollection,
-    ],
+    collections: [PageCollection, ComponentCollection, GlobalCollection],
   },
 });

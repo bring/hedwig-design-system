@@ -1,6 +1,6 @@
 import { Examples } from "../../components/component-examples";
 import { FigmaEmbed, FigmaPreviews } from "../../components/figma";
-import type { TemplateNames } from "../../../tina/templates";
+import type { TemplateNames } from "../../../tina/rich-text-templates";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const MDXComponents: Record<TemplateNames, (props: any) => JSX.Element> = {
