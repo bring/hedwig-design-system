@@ -216,6 +216,7 @@ var navCardSchema = {
         {
           type: "string",
           label: "Link",
+          required: true,
           name: "link"
         }
       ]

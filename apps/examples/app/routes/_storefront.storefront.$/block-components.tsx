@@ -5,6 +5,7 @@ import {
   PageBlocksNavCards,
 } from "../../../tina/__generated__/types";
 import { Card, Grid, Link, StyledHtml } from "@postenbring/hedwig-react";
+import { Link as RemixLink } from "@remix-run/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { MDXComponents } from "./mdx-components";
 
@@ -80,6 +81,18 @@ export function NavCards({ block }: { block: PageBlocksNavCards }) {
     >
       {block.cards?.map((card, i) => {
         if (!card) return null;
+
+        // Smoother navigation for local links
+        const linkElement = card.link.startsWith("http") ? (
+          <Link href={card.link} data-tina-field={tinaField(card, "title")}>
+            {card.title}
+          </Link>
+        ) : (
+          <Link data-tina-field={tinaField(card, "title")} asChild>
+            <RemixLink to={card.link}>{card.title}</RemixLink>
+          </Link>
+        );
+
         return (
           <Card key={i} data-tina-field={tinaField(card)}>
             <Card.Media>
@@ -90,11 +103,7 @@ export function NavCards({ block }: { block: PageBlocksNavCards }) {
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle asChild>
-                  <Link href={card.link ?? "#"} data-tina-field={tinaField(card, "title")}>
-                    {card.title}
-                  </Link>
-                </Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle asChild>{linkElement}</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               {card.description && (
                 <Card.BodyDescription data-tina-field={tinaField(card, "description")}>

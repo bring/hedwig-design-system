@@ -74,6 +74,7 @@ export const navCardSchema: Template = {
         {
           type: "string",
           label: "Link",
+          required: true,
           name: "link",
         },
       ],
