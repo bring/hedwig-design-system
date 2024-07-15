@@ -103,7 +103,7 @@ type PageBlocksBrandSlogan {
 }
 
 type PageBlocksNavCardsCards {
-  title: String
+  title: String!
   description: String
   link: String
 }
