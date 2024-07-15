@@ -113,7 +113,7 @@ export default function Layout() {
         navbarMenuItems={<NavbarMenuItems />}
         shortHeader={data.global.header?.shortHeader ?? false}
       />
-      <div style={{ flexGrow: 1 }} className="docs-container">
+      <div style={{ flexGrow: 1 }}>
         <Outlet />
       </div>
       <div className="hds-mt-80-120" />

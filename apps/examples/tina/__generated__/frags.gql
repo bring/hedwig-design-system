@@ -1,4 +1,30 @@
-fragment PostParts on Post {
+fragment PageParts on Page {
+  __typename
+  title
+  description
+  hideTitleAndDescription
+  blocks {
+    __typename
+    ... on PageBlocksContent {
+      content
+    }
+    ... on PageBlocksBrandSlogan {
+      title
+      slogan
+      illustrationSvg
+    }
+    ... on PageBlocksNavCards {
+      cards {
+        __typename
+        title
+        description
+        link
+      }
+    }
+  }
+}
+
+fragment ComponentParts on Component {
   __typename
   title
   subtitle

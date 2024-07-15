@@ -53,14 +53,17 @@ type Query {
   collections: [Collection!]!
   node(id: String): Node!
   document(collection: String, relativePath: String): DocumentNode!
-  post(relativePath: String): Post!
-  postConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostFilter): PostConnection!
+  page(relativePath: String): Page!
+  pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PageFilter): PageConnection!
+  component(relativePath: String): Component!
+  componentConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ComponentFilter): ComponentConnection!
   global(relativePath: String): Global!
   globalConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: GlobalFilter): GlobalConnection!
 }
 
 input DocumentFilter {
-  post: PostFilter
+  page: PageFilter
+  component: ComponentFilter
   global: GlobalFilter
 }
 
@@ -87,12 +90,35 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Post | Global | Folder
+union DocumentNode = Page | Component | Global | Folder
 
-type Post implements Node & Document {
+type PageBlocksContent {
+  content: JSON
+}
+
+type PageBlocksBrandSlogan {
+  title: String
+  slogan: String!
+  illustrationSvg: String
+}
+
+type PageBlocksNavCardsCards {
+  title: String
+  description: String
+  link: String
+}
+
+type PageBlocksNavCards {
+  cards: [PageBlocksNavCardsCards]
+}
+
+union PageBlocks = PageBlocksContent | PageBlocksBrandSlogan | PageBlocksNavCards
+
+type Page implements Node & Document {
   title: String!
-  subtitle: String
-  body: JSON
+  description: String
+  hideTitleAndDescription: Boolean
+  blocks: [PageBlocks]
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -110,17 +136,17 @@ input BooleanFilter {
   exists: Boolean
 }
 
-input PostBodyExamplesFilter {
+input PageBlocksContentContentExamplesFilter {
   componentName: StringFilter
   exampleName: StringFilter
   showCodeByDefault: BooleanFilter
 }
 
-input PostBodyFigmaPreviewsFilter {
+input PageBlocksContentContentFigmaPreviewsFilter {
   urls: StringFilter
 }
 
-input PostBodyFigmaEmbedFilter {
+input PageBlocksContentContentFigmaEmbedFilter {
   url: StringFilter
   hideBottomBar: BooleanFilter
 }
@@ -131,42 +157,127 @@ input RichTextFilter {
   exists: Boolean
 }
 
-input PostBodyTableTableRowsTableCellsFilter {
+input ComponentBodyTableTableRowsTableCellsFilter {
   value: RichTextFilter
 }
 
-input PostBodyTableTableRowsFilter {
-  tableCells: PostBodyTableTableRowsTableCellsFilter
+input PageBlocksContentContentTableTableRowsFilter {
+  tableCells: ComponentBodyTableTableRowsTableCellsFilter
 }
 
-input PostBodyTableFilter {
+input PageBlocksContentContentTableFilter {
   firstRowHeader: BooleanFilter
   align: StringFilter
-  tableRows: PostBodyTableTableRowsFilter
+  tableRows: PageBlocksContentContentTableTableRowsFilter
 }
 
-input PostBodyFilter {
-  Examples: PostBodyExamplesFilter
-  FigmaPreviews: PostBodyFigmaPreviewsFilter
-  FigmaEmbed: PostBodyFigmaEmbedFilter
-  table: PostBodyTableFilter
+input PageBlocksContentContentFilter {
+  Examples: PageBlocksContentContentExamplesFilter
+  FigmaPreviews: PageBlocksContentContentFigmaPreviewsFilter
+  FigmaEmbed: PageBlocksContentContentFigmaEmbedFilter
+  table: PageBlocksContentContentTableFilter
 }
 
-input PostFilter {
+input PageBlocksContentFilter {
+  content: PageBlocksContentContentFilter
+}
+
+input PageBlocksBrandSloganFilter {
   title: StringFilter
-  subtitle: StringFilter
-  body: PostBodyFilter
+  slogan: StringFilter
+  illustrationSvg: StringFilter
 }
 
-type PostConnectionEdges {
+input PageBlocksNavCardsCardsFilter {
+  title: StringFilter
+  description: StringFilter
+  link: StringFilter
+}
+
+input PageBlocksNavCardsFilter {
+  cards: PageBlocksNavCardsCardsFilter
+}
+
+input PageBlocksFilter {
+  content: PageBlocksContentFilter
+  brandSlogan: PageBlocksBrandSloganFilter
+  navCards: PageBlocksNavCardsFilter
+}
+
+input PageFilter {
+  title: StringFilter
+  description: StringFilter
+  hideTitleAndDescription: BooleanFilter
+  blocks: PageBlocksFilter
+}
+
+type PageConnectionEdges {
   cursor: String!
-  node: Post
+  node: Page
 }
 
-type PostConnection implements Connection {
+type PageConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
-  edges: [PostConnectionEdges]
+  edges: [PageConnectionEdges]
+}
+
+type Component implements Node & Document {
+  title: String!
+  subtitle: String
+  body: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input ComponentBodyExamplesFilter {
+  componentName: StringFilter
+  exampleName: StringFilter
+  showCodeByDefault: BooleanFilter
+}
+
+input ComponentBodyFigmaPreviewsFilter {
+  urls: StringFilter
+}
+
+input ComponentBodyFigmaEmbedFilter {
+  url: StringFilter
+  hideBottomBar: BooleanFilter
+}
+
+input ComponentBodyTableTableRowsFilter {
+  tableCells: ComponentBodyTableTableRowsTableCellsFilter
+}
+
+input ComponentBodyTableFilter {
+  firstRowHeader: BooleanFilter
+  align: StringFilter
+  tableRows: ComponentBodyTableTableRowsFilter
+}
+
+input ComponentBodyFilter {
+  Examples: ComponentBodyExamplesFilter
+  FigmaPreviews: ComponentBodyFigmaPreviewsFilter
+  FigmaEmbed: ComponentBodyFigmaEmbedFilter
+  table: ComponentBodyTableFilter
+}
+
+input ComponentFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  body: ComponentBodyFilter
+}
+
+type ComponentConnectionEdges {
+  cursor: String!
+  node: Component
+}
+
+type ComponentConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [ComponentConnectionEdges]
 }
 
 type GlobalHeaderNav {
@@ -223,24 +334,61 @@ type Mutation {
   deleteDocument(collection: String, relativePath: String!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   createFolder(collection: String, relativePath: String!): DocumentNode!
-  updatePost(relativePath: String!, params: PostMutation!): Post!
-  createPost(relativePath: String!, params: PostMutation!): Post!
+  updatePage(relativePath: String!, params: PageMutation!): Page!
+  createPage(relativePath: String!, params: PageMutation!): Page!
+  updateComponent(relativePath: String!, params: ComponentMutation!): Component!
+  createComponent(relativePath: String!, params: ComponentMutation!): Component!
   updateGlobal(relativePath: String!, params: GlobalMutation!): Global!
   createGlobal(relativePath: String!, params: GlobalMutation!): Global!
 }
 
 input DocumentUpdateMutation {
-  post: PostMutation
+  page: PageMutation
+  component: ComponentMutation
   global: GlobalMutation
   relativePath: String
 }
 
 input DocumentMutation {
-  post: PostMutation
+  page: PageMutation
+  component: ComponentMutation
   global: GlobalMutation
 }
 
-input PostMutation {
+input PageBlocksContentMutation {
+  content: JSON
+}
+
+input PageBlocksBrandSloganMutation {
+  title: String
+  slogan: String
+  illustrationSvg: String
+}
+
+input PageBlocksNavCardsCardsMutation {
+  title: String
+  description: String
+  link: String
+}
+
+input PageBlocksNavCardsMutation {
+  cards: [PageBlocksNavCardsCardsMutation]
+}
+
+input PageBlocksMutation {
+  content: PageBlocksContentMutation
+  brandSlogan: PageBlocksBrandSloganMutation
+  navCards: PageBlocksNavCardsMutation
+}
+
+input PageMutation {
+  title: String
+  description: String
+  hideTitleAndDescription: Boolean
+  blocks: [PageBlocksMutation]
+}
+
+input ComponentMutation {
   title: String
   subtitle: String
   body: JSON
