@@ -214,7 +214,7 @@ export type PageBlocksBrandSlogan = {
 
 export type PageBlocksNavCardsCards = {
   __typename?: 'PageBlocksNavCardsCards';
-  title?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
   description?: Maybe<Scalars['String']['output']>;
   link?: Maybe<Scalars['String']['output']>;
 };
@@ -604,7 +604,7 @@ export type GlobalMutation = {
   header?: InputMaybe<GlobalHeaderMutation>;
 };
 
-export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, hideTitleAndDescription?: boolean | null, blocks?: Array<{ __typename: 'PageBlocksContent', content?: any | null } | { __typename: 'PageBlocksBrandSlogan', title?: string | null, slogan: string, illustrationSvg?: string | null } | { __typename: 'PageBlocksNavCards', cards?: Array<{ __typename: 'PageBlocksNavCardsCards', title?: string | null, description?: string | null, link?: string | null } | null> | null } | null> | null };
+export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, hideTitleAndDescription?: boolean | null, blocks?: Array<{ __typename: 'PageBlocksContent', content?: any | null } | { __typename: 'PageBlocksBrandSlogan', title?: string | null, slogan: string, illustrationSvg?: string | null } | { __typename: 'PageBlocksNavCards', cards?: Array<{ __typename: 'PageBlocksNavCardsCards', title: string, description?: string | null, link?: string | null } | null> | null } | null> | null };
 
 export type ComponentPartsFragment = { __typename: 'Component', title: string, subtitle?: string | null, body?: any | null };
 
@@ -615,7 +615,7 @@ export type PageQueryVariables = Exact<{
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, description?: string | null, hideTitleAndDescription?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PageBlocksContent', content?: any | null } | { __typename: 'PageBlocksBrandSlogan', title?: string | null, slogan: string, illustrationSvg?: string | null } | { __typename: 'PageBlocksNavCards', cards?: Array<{ __typename: 'PageBlocksNavCardsCards', title?: string | null, description?: string | null, link?: string | null } | null> | null } | null> | null } };
+export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, description?: string | null, hideTitleAndDescription?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PageBlocksContent', content?: any | null } | { __typename: 'PageBlocksBrandSlogan', title?: string | null, slogan: string, illustrationSvg?: string | null } | { __typename: 'PageBlocksNavCards', cards?: Array<{ __typename: 'PageBlocksNavCardsCards', title: string, description?: string | null, link?: string | null } | null> | null } | null> | null } };
 
 export type PageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -627,7 +627,7 @@ export type PageConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, description?: string | null, hideTitleAndDescription?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PageBlocksContent', content?: any | null } | { __typename: 'PageBlocksBrandSlogan', title?: string | null, slogan: string, illustrationSvg?: string | null } | { __typename: 'PageBlocksNavCards', cards?: Array<{ __typename: 'PageBlocksNavCardsCards', title?: string | null, description?: string | null, link?: string | null } | null> | null } | null> | null } | null } | null> | null } };
+export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, description?: string | null, hideTitleAndDescription?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PageBlocksContent', content?: any | null } | { __typename: 'PageBlocksBrandSlogan', title?: string | null, slogan: string, illustrationSvg?: string | null } | { __typename: 'PageBlocksNavCards', cards?: Array<{ __typename: 'PageBlocksNavCardsCards', title: string, description?: string | null, link?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export type ComponentQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
