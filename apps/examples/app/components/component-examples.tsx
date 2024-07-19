@@ -7,33 +7,43 @@ import { useState } from "react";
 import { PrefetchBehavior, usePrefetchBehavior } from "./use-prefetch-behaviour";
 
 export function Examples({
-  name,
   componentName,
   exampleName,
+  onlyIframe,
+  onlyFirstExample,
   showCodeByDefault,
+  shouldPreload,
+  preload,
 }: {
-  /** @deprecated */
-  name?: string;
-  componentName?: string;
+  componentName: string;
   exampleName?: string;
+  onlyFirstExample?: boolean;
+  onlyIframe?: boolean;
   showCodeByDefault?: boolean;
+  shouldPreload?: boolean;
   preload?: PrefetchBehavior;
 }) {
-  name = name ?? componentName ?? "";
-  if (!(name in examplesByComponent)) {
-    return null;
-  }
-
   const singleExample = exampleName
-    ? examplesByComponent[name].find((e) => e.exampleName === exampleName)
-    : null;
+    ? examplesByComponent[componentName].find((e) => e.exampleName === exampleName)
+    : onlyFirstExample
+      ? examplesByComponent[componentName][0]
+      : undefined;
   if (singleExample) {
-    return <CodeExample activeExample={singleExample} showCodeByDefault={showCodeByDefault} />;
+    return (
+      <CodeExample
+        activeExample={singleExample}
+        showCodeByDefault={showCodeByDefault}
+        hideDescription={onlyIframe}
+        hideActions={onlyIframe}
+        shouldPreload={shouldPreload}
+      />
+    );
   } else
     return (
       <ComponentCodeExamples
-        examples={examplesByComponent[name]!}
+        examples={examplesByComponent[componentName]!}
         showCodeByDefault={showCodeByDefault}
+        preload={preload}
       />
     );
 }

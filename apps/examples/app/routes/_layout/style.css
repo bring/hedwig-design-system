@@ -26,7 +26,8 @@
   @media (min-width: 720px) {
     display: grid;
     grid-template-areas: "sidebar main";
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(120px, auto) 1fr;
+    gap: var(--hds-spacing-24-32);
   }
 
   > * {
