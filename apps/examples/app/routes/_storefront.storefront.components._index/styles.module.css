@@ -1,0 +1,19 @@
+.componentItem.componentItem {
+  > h2 > a {
+    text-decoration-thickness: var(--hds-stroke-thick);
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  div:has(iframe) {
+    background-color: var(--hds-ui-colors-white);
+    iframe {
+      resize: none;
+      box-shadow: none;
+      border: none;
+      height: 240px;
+      scale: 0.75;
+    }
+  }
+}

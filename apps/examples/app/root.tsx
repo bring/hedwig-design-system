@@ -6,13 +6,13 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
+  useMatches,
   useSearchParams,
 } from "@remix-run/react";
 import bringFavicon from "./assets/bring-favicon.png?url";
 import postenFavicon from "./assets/posten-favicon.png?url";
 
 import styles from "./root.module.css";
-import { isPathInExamples } from "./examples";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [search] = useSearchParams();
@@ -83,8 +83,9 @@ function parseViewOptions(search: string, isExample: boolean): ViewOptions & Exa
 
 export default function App() {
   const location = useLocation();
+  const matches = useMatches();
 
-  const isExample = isPathInExamples(location.pathname);
+  const isExample = matches.some((match) => match.id.startsWith("examples/"));
   const viewOptions = parseViewOptions(location.search, isExample);
 
   useEffect(() => {
