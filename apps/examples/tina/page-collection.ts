@@ -70,6 +70,9 @@ export const navCardSchema: Template = {
           type: "string",
           label: "Description",
           name: "description",
+          ui: {
+            component: "textarea",
+          },
         },
         {
           type: "string",

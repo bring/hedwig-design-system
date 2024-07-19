@@ -74,5 +74,52 @@ export const GlobalCollection: Collection = {
         },
       ],
     },
+    {
+      type: "object",
+      label: "Footer",
+      name: "footer",
+      fields: [
+        {
+          type: "string",
+          label: "Copyright",
+          name: "copyright",
+          required: true,
+        },
+        {
+          type: "object",
+          label: "Links",
+          name: "links",
+          list: true,
+          ui: {
+            itemProps: (item) => ({
+              label: item.label,
+            }),
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Link",
+              name: "href",
+              required: true,
+            },
+            {
+              type: "string",
+              label: "Label",
+              name: "label",
+              required: true,
+            },
+            {
+              type: "string",
+              label: "Icon svg",
+              name: "iconSvg",
+              ui: {
+                component: "textarea",
+              },
+              required: false,
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

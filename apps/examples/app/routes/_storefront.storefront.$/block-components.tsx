@@ -61,7 +61,7 @@ function BrandSlogan({ block }: { block: PageBlocksBrandSlogan }) {
       </h1>
       <p
         className="hds-mt-24-32"
-        style={{ maxWidth: "var(--hds-breakpoint-small)" }}
+        style={{ maxWidth: "590px" }} // Max width text. Copied from slim container. TODO: Make this a known design token for text length
         data-tina-field={tinaField(block, "slogan")}
       >
         {block.slogan}{" "}
@@ -95,7 +95,7 @@ export function NavCards({ block }: { block: PageBlocksNavCards }) {
 
         return (
           <Card key={i} data-tina-field={tinaField(card)}>
-            <Card.Media>
+            <Card.Media style={{ width: "100%" }}>
               <Card.MediaImg
                 src={`https://placedog.net/120${i}/60${i}`}
                 style={{ aspectRatio: 16 / 9, objectFit: "cover" }}

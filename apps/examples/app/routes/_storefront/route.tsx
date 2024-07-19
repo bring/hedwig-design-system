@@ -71,7 +71,7 @@ function NavbarMenuItems() {
 
         if (item.external) {
           return (
-            <Navbar.LinkItem key={item.href} asChild>
+            <Navbar.LinkItem key={item.href + item.label} asChild>
               <a
                 data-tina-field={tinaField(item, "label")}
                 href={item.href}
@@ -85,7 +85,7 @@ function NavbarMenuItems() {
           );
         }
         return (
-          <Navbar.LinkItem key={item.href} asChild>
+          <Navbar.LinkItem key={item.href + item.label} asChild>
             <RemixLink
               data-tina-field={tinaField(item, "label")}
               to={{
@@ -97,6 +97,39 @@ function NavbarMenuItems() {
               {icon}
             </RemixLink>
           </Navbar.LinkItem>
+        );
+      })}
+    </>
+  );
+}
+
+function FooterLinkItems() {
+  const { dataQueryVariables } = useLoaderData<typeof clientLoader>();
+  const { data } = useTina(dataQueryVariables);
+
+  return (
+    <>
+      {data.global.footer?.links?.map((item) => {
+        if (!item) return null;
+
+        const icon = item.iconSvg ? (
+          <span
+            style={{ marginLeft: "var(--hds-spacing-4)" }}
+            aria-hidden
+            dangerouslySetInnerHTML={{ __html: item.iconSvg }}
+          />
+        ) : null;
+        return (
+          <li key={item.href + item.label}>
+            <a
+              data-tina-field={tinaField(item, "label")}
+              href={item.href}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              {item.label}
+              {icon}
+            </a>
+          </li>
         );
       })}
     </>
@@ -117,7 +150,16 @@ export default function Layout() {
         <Outlet />
       </div>
       <div className="hds-mt-80-120" />
-      <LayoutFooter />
+      <LayoutFooter
+        copyright={
+          data.global.footer && (
+            <span data-tina-field={tinaField(data.global.footer, "copyright")}>
+              {data.global.footer?.copyright}
+            </span>
+          )
+        }
+        footerLinkItems={<FooterLinkItems />}
+      />
     </VStack>
   );
 }
