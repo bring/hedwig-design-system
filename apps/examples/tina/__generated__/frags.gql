@@ -45,4 +45,14 @@ fragment GlobalParts on Global {
       iconBehaviour
     }
   }
+  footer {
+    __typename
+    copyright
+    links {
+      __typename
+      href
+      label
+      iconSvg
+    }
+  }
 }

@@ -293,8 +293,20 @@ type GlobalHeader {
   nav: [GlobalHeaderNav]
 }
 
+type GlobalFooterLinks {
+  href: String!
+  label: String!
+  iconSvg: String
+}
+
+type GlobalFooter {
+  copyright: String!
+  links: [GlobalFooterLinks]
+}
+
 type Global implements Node & Document {
   header: GlobalHeader
+  footer: GlobalFooter
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -313,8 +325,20 @@ input GlobalHeaderFilter {
   nav: GlobalHeaderNavFilter
 }
 
+input GlobalFooterLinksFilter {
+  href: StringFilter
+  label: StringFilter
+  iconSvg: StringFilter
+}
+
+input GlobalFooterFilter {
+  copyright: StringFilter
+  links: GlobalFooterLinksFilter
+}
+
 input GlobalFilter {
   header: GlobalHeaderFilter
+  footer: GlobalFooterFilter
 }
 
 type GlobalConnectionEdges {
@@ -407,8 +431,20 @@ input GlobalHeaderMutation {
   nav: [GlobalHeaderNavMutation]
 }
 
+input GlobalFooterLinksMutation {
+  href: String
+  label: String
+  iconSvg: String
+}
+
+input GlobalFooterMutation {
+  copyright: String
+  links: [GlobalFooterLinksMutation]
+}
+
 input GlobalMutation {
   header: GlobalHeaderMutation
+  footer: GlobalFooterMutation
 }
 
 schema {
