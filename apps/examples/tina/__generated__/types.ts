@@ -413,9 +413,23 @@ export type GlobalHeader = {
   nav?: Maybe<Array<Maybe<GlobalHeaderNav>>>;
 };
 
+export type GlobalFooterLinks = {
+  __typename?: 'GlobalFooterLinks';
+  href: Scalars['String']['output'];
+  label: Scalars['String']['output'];
+  iconSvg?: Maybe<Scalars['String']['output']>;
+};
+
+export type GlobalFooter = {
+  __typename?: 'GlobalFooter';
+  copyright: Scalars['String']['output'];
+  links?: Maybe<Array<Maybe<GlobalFooterLinks>>>;
+};
+
 export type Global = Node & Document & {
   __typename?: 'Global';
   header?: Maybe<GlobalHeader>;
+  footer?: Maybe<GlobalFooter>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -434,8 +448,20 @@ export type GlobalHeaderFilter = {
   nav?: InputMaybe<GlobalHeaderNavFilter>;
 };
 
+export type GlobalFooterLinksFilter = {
+  href?: InputMaybe<StringFilter>;
+  label?: InputMaybe<StringFilter>;
+  iconSvg?: InputMaybe<StringFilter>;
+};
+
+export type GlobalFooterFilter = {
+  copyright?: InputMaybe<StringFilter>;
+  links?: InputMaybe<GlobalFooterLinksFilter>;
+};
+
 export type GlobalFilter = {
   header?: InputMaybe<GlobalHeaderFilter>;
+  footer?: InputMaybe<GlobalFooterFilter>;
 };
 
 export type GlobalConnectionEdges = {
@@ -600,15 +626,27 @@ export type GlobalHeaderMutation = {
   nav?: InputMaybe<Array<InputMaybe<GlobalHeaderNavMutation>>>;
 };
 
+export type GlobalFooterLinksMutation = {
+  href?: InputMaybe<Scalars['String']['input']>;
+  label?: InputMaybe<Scalars['String']['input']>;
+  iconSvg?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type GlobalFooterMutation = {
+  copyright?: InputMaybe<Scalars['String']['input']>;
+  links?: InputMaybe<Array<InputMaybe<GlobalFooterLinksMutation>>>;
+};
+
 export type GlobalMutation = {
   header?: InputMaybe<GlobalHeaderMutation>;
+  footer?: InputMaybe<GlobalFooterMutation>;
 };
 
 export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, hideTitleAndDescription?: boolean | null, blocks?: Array<{ __typename: 'PageBlocksContent', content?: any | null } | { __typename: 'PageBlocksBrandSlogan', title?: string | null, slogan: string, illustrationSvg?: string | null } | { __typename: 'PageBlocksNavCards', cards?: Array<{ __typename: 'PageBlocksNavCardsCards', title: string, description?: string | null, link: string } | null> | null } | null> | null };
 
 export type ComponentPartsFragment = { __typename: 'Component', title: string, subtitle?: string | null, body?: any | null };
 
-export type GlobalPartsFragment = { __typename: 'Global', header?: { __typename: 'GlobalHeader', shortHeader?: boolean | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null, iconBehaviour?: string | null } | null> | null } | null };
+export type GlobalPartsFragment = { __typename: 'Global', header?: { __typename: 'GlobalHeader', shortHeader?: boolean | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null, iconBehaviour?: string | null } | null> | null } | null, footer?: { __typename: 'GlobalFooter', copyright: string, links?: Array<{ __typename: 'GlobalFooterLinks', href: string, label: string, iconSvg?: string | null } | null> | null } | null };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -653,7 +691,7 @@ export type GlobalQueryVariables = Exact<{
 }>;
 
 
-export type GlobalQuery = { __typename?: 'Query', global: { __typename: 'Global', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, header?: { __typename: 'GlobalHeader', shortHeader?: boolean | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null, iconBehaviour?: string | null } | null> | null } | null } };
+export type GlobalQuery = { __typename?: 'Query', global: { __typename: 'Global', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, header?: { __typename: 'GlobalHeader', shortHeader?: boolean | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null, iconBehaviour?: string | null } | null> | null } | null, footer?: { __typename: 'GlobalFooter', copyright: string, links?: Array<{ __typename: 'GlobalFooterLinks', href: string, label: string, iconSvg?: string | null } | null> | null } | null } };
 
 export type GlobalConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -665,7 +703,7 @@ export type GlobalConnectionQueryVariables = Exact<{
 }>;
 
 
-export type GlobalConnectionQuery = { __typename?: 'Query', globalConnection: { __typename?: 'GlobalConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'GlobalConnectionEdges', cursor: string, node?: { __typename: 'Global', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, header?: { __typename: 'GlobalHeader', shortHeader?: boolean | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null, iconBehaviour?: string | null } | null> | null } | null } | null } | null> | null } };
+export type GlobalConnectionQuery = { __typename?: 'Query', globalConnection: { __typename?: 'GlobalConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'GlobalConnectionEdges', cursor: string, node?: { __typename: 'Global', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, header?: { __typename: 'GlobalHeader', shortHeader?: boolean | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null, iconBehaviour?: string | null } | null> | null } | null, footer?: { __typename: 'GlobalFooter', copyright: string, links?: Array<{ __typename: 'GlobalFooterLinks', href: string, label: string, iconSvg?: string | null } | null> | null } | null } | null } | null> | null } };
 
 export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
@@ -715,6 +753,16 @@ export const GlobalPartsFragmentDoc = gql`
       external
       iconSvg
       iconBehaviour
+    }
+  }
+  footer {
+    __typename
+    copyright
+    links {
+      __typename
+      href
+      label
+      iconSvg
     }
   }
 }
