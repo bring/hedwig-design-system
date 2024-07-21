@@ -10,7 +10,7 @@ export const MDXComponents: Record<TemplateNames, (props: any) => JSX.Element> =
     showCodeByDefault?: boolean;
   }) => {
     return (
-      <div className="hds-mt-24-32">
+      <div className="hds-mb-24-32">
         <Examples
           componentName={props.componentName}
           exampleName={props.exampleName}
@@ -22,14 +22,14 @@ export const MDXComponents: Record<TemplateNames, (props: any) => JSX.Element> =
   FigmaPreviews: (props: { urls: string[] }) => {
     const urls = props.urls;
     return (
-      <div className="hds-mt-24-32">
+      <div className="hds-mb-24-32">
         <FigmaPreviews urls={urls} />
       </div>
     );
   },
   FigmaEmbed: (props: { url: string; hideBottomBar?: boolean }) => {
     return (
-      <div className="hds-mt-24-32">
+      <div className="hds-mb-24-32">
         <FigmaEmbed
           urlToEmbed={props.url}
           height={1200}

@@ -28,19 +28,19 @@ function Block(block: PageBlocks) {
   switch (block.__typename) {
     case "PageBlocksContent":
       return (
-        <StyledHtml className="hds-mt-48-64">
+        <StyledHtml className="hds-mb-48-64">
           <TinaMarkdown content={block.content} components={MDXComponents} />
         </StyledHtml>
       );
     case "PageBlocksBrandSlogan":
       return (
-        <div className="hds-mt-48-64">
+        <div className="hds-mb-48-64">
           <BrandSlogan block={block} />
         </div>
       );
     case "PageBlocksNavCards":
       return (
-        <div className="hds-mt-48-64">
+        <div className="hds-mb-48-64">
           <NavCards block={block} />
         </div>
       );

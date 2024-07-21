@@ -17,7 +17,7 @@ export default defineConfig({
 
   cmsCallback: (a) => a,
   build: {
-    basePath: "/hedwig-design-system/storefront/",
+    basePath: "/hedwig-design-system/",
     outputFolder: "storefront/admin",
     publicFolder: "public",
   },

@@ -41,18 +41,15 @@ export default function Component() {
   const { data } = useTina(dataQueryVariables);
 
   return (
-    <Container>
+    <Container className="hds-mt-40-48">
       {data.page.hideTitleAndDescription ? null : (
         <>
-          <h1
-            className="hds-text-h1 hds-mt-48-64 hds-mb-32-40"
-            data-tina-field={tinaField(data.page, "title")}
-          >
+          <h1 className="hds-text-h1 hds-mb-24" data-tina-field={tinaField(data.page, "title")}>
             {data.page.title}
           </h1>
           {data.page.description && (
             <p
-              className="hds-mt-24-32 hds-text-h3"
+              className="hds-text-h3 hds-mb-48-64"
               data-tina-field={tinaField(data.page, "description")}
             >
               {data.page.description}

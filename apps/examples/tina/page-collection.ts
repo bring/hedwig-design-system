@@ -92,10 +92,11 @@ export const PageCollection: Collection = {
   path: "content/pages",
   ui: {
     router: ({ document }) => {
-      if (document._sys.filename === "home") {
-        return `/hedwig-design-system/storefront`;
+      const breadcrumbs = document._sys.breadcrumbs.slice();
+      if (breadcrumbs.at(-1) === "home") {
+        breadcrumbs.pop();
       }
-      return `/hedwig-design-system/storefront/${document._sys.breadcrumbs.join("/")}`;
+      return `/hedwig-design-system/storefront/${breadcrumbs.join("/")}`;
     },
   },
   fields: [
