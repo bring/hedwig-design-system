@@ -1,5 +1,16 @@
 import "@postenbring/hedwig-css";
+
 import "./tailwind.css";
+//      👆
+`
+import hedwigTailwind from "@postenbring/hedwig-tokens/tailwind.config.cjs";
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./app/examples/patterns/tailwind/**/*.tsx"],
+  presets: [hedwigTailwind],
+};
+`;
 
 function Example() {
   return (

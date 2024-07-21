@@ -3,32 +3,26 @@ import { useState } from "react";
 import { Accordion } from "@postenbring/hedwig-react";
 
 function Example() {
-  const [state, setState] = useState({ one: true, two: false, three: false });
-  function toggle(key: keyof typeof state) {
-    setState((prev) => {
-      return {
-        one: key === "one" ? !prev.one : false,
-        two: key === "two" ? !prev.two : false,
-        three: key === "three" ? !prev.three : false,
-      };
-    });
+  const [openItem, setOpenItem] = useState<"one" | "two" | "three" | undefined>("one");
+  function toggle(item: typeof openItem) {
+    setOpenItem(item === openItem ? undefined : item);
   }
 
   return (
     <Accordion>
-      <Accordion.Item onOpenChange={() => toggle("one")} open={state.one}>
+      <Accordion.Item onOpenChange={() => toggle("one")} open={openItem === "one"}>
         <Accordion.Header>One</Accordion.Header>
         <Accordion.Content>
           Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
         </Accordion.Content>
       </Accordion.Item>
-      <Accordion.Item onOpenChange={() => toggle("two")} open={state.two}>
+      <Accordion.Item onOpenChange={() => toggle("two")} open={openItem === "two"}>
         <Accordion.Header>Two</Accordion.Header>
         <Accordion.Content>
           Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
         </Accordion.Content>
       </Accordion.Item>
-      <Accordion.Item onOpenChange={() => toggle("three")} open={state.three}>
+      <Accordion.Item onOpenChange={() => toggle("three")} open={openItem === "three"}>
         <Accordion.Header>Three</Accordion.Header>
         <Accordion.Content>
           Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
