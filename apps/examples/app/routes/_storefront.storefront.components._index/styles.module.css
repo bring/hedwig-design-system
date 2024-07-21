@@ -1,7 +1,10 @@
 .componentItem.componentItem {
   position: relative;
   > h2 > a {
-    text-decoration: none;
+    text-decoration-color: transparent;
+    text-decoration-thickness: var(--hds-stroke-thick);
+    transition: text-decoration-color var(--hds-micro-animation-duration-quick)
+      var(--hds-micro-animation-easing-normal);
 
     &::after {
       content: "";
@@ -17,7 +20,7 @@
   &:hover {
     > h2 > a {
       color: var(--hds-colors-darker);
-      text-decoration: underline;
+      text-decoration-color: var(--hds-colors-darker);
     }
     div:has(> iframe) {
       filter: none;
