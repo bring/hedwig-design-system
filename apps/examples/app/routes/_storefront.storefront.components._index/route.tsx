@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 
 export function clientLoader() {
   // Use the examples for now
-  const whitelistedGroups = ["default", "layout"];
+  const whitelistedGroups = ["default", "layout", "loaders"];
   const componentsByGroup = Object.entries(exampleComponentsByGroup)
     .sort(([a], [b]) => a.localeCompare(b))
     .filter(([groupName]) => whitelistedGroups.includes(groupName))
@@ -64,7 +64,7 @@ export default function Component() {
                     <div className="hds-mt-12-16" />
                     <Examples
                       componentName={componentName}
-                      shouldPreload={groupName === "default" && i < 6}
+                      shouldPreload={groupName === "default" && i < 4}
                       onlyFirstExample
                       onlyIframe
                     />

@@ -1,6 +1,6 @@
 {
   "header": {
-    "shortHeader": false,
+    "shortHeader": true,
     "nav": [
       {
         "href": "foundation",
