@@ -17,6 +17,7 @@ export function LayoutHeader({
   navbarMenuItems?: React.ReactNode;
   shortHeader?: boolean;
 }) {
+  const location = useLocation();
   const { activeTheme } = useTheme();
 
   const navbarMenuItemsElement = (
@@ -31,7 +32,7 @@ export function LayoutHeader({
       <Navbar.LogoAndServiceText variant="flagship" asChild>
         <RemixLink
           to={{
-            pathname: "/",
+            pathname: location.pathname.startsWith("/storefront") ? "/storefront" : "/examples",
             search: activeTheme === "bring" ? "?theme=bring" : "",
           }}
           aria-label="To the front page"

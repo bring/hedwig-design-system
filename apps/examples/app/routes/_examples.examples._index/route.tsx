@@ -36,7 +36,7 @@ function ExamplesMenu() {
         .sort(([a], [b]) => a.localeCompare(b))
         .map(([groupName, components]) => (
           <div key={groupName}>
-            {groupName !== "default" && (
+            {groupName !== "components" && (
               <h2 className="hds-text-body-title hds-mt-24-32 hds-mb-8-12">
                 {kebabCaseToFirstLetterUpperCase(groupName)}
               </h2>
@@ -48,7 +48,9 @@ function ExamplesMenu() {
                     <RemixLink
                       to={{
                         pathname:
-                          groupName !== "default" ? `${groupName}/${componentName}` : componentName,
+                          groupName !== "components"
+                            ? `${groupName}/${componentName}`
+                            : componentName,
                         search: search.toString(),
                       }}
                     >
@@ -75,7 +77,7 @@ export default function Index() {
           .sort(([a], [b]) => a.localeCompare(b))
           .map(([groupName, components]) => (
             <div key={groupName}>
-              {groupName !== "default" && (
+              {groupName !== "components" && (
                 <h2 className="hds-text-h1 hds-mt-48-64 hds-mb-24-32" id={`examples-${groupName}`}>
                   {kebabCaseToFirstLetterUpperCase(groupName)}
                 </h2>
@@ -96,7 +98,7 @@ export default function Index() {
                           className={styles.exampleHeadingLink}
                           to={{
                             pathname:
-                              groupName !== "default"
+                              groupName !== "components"
                                 ? `${groupName}/${componentName}`
                                 : componentName,
                             search: search.toString(),

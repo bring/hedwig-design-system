@@ -224,7 +224,7 @@ type PageConnection implements Connection {
 
 type Component implements Node & Document {
   title: String!
-  subtitle: String
+  description: String
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -265,7 +265,7 @@ input ComponentBodyFilter {
 
 input ComponentFilter {
   title: StringFilter
-  subtitle: StringFilter
+  description: StringFilter
   body: ComponentBodyFilter
 }
 
@@ -414,7 +414,7 @@ input PageMutation {
 
 input ComponentMutation {
   title: String
-  subtitle: String
+  description: String
   body: JSON
 }
 

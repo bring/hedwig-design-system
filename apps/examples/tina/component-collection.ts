@@ -21,8 +21,8 @@ export const ComponentCollection: Collection = {
     },
     {
       type: "string",
-      name: "subtitle",
-      label: "Subtitle",
+      name: "description",
+      label: "Description",
       required: false,
     },
     {

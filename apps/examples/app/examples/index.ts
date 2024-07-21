@@ -81,7 +81,7 @@ for (const [componentName, examples] of Object.entries(examplesByComponent)) {
 
 export const componentsByGroup = Object.entries(examplesByComponent).reduce(
   (acc, [componentName, examples]) => {
-    const group = examples?.[0].groupName ?? "default";
+    const group = examples?.[0].groupName ?? "components";
     if (!acc[group]) {
       acc[group] = {};
     }

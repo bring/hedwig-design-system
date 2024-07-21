@@ -27,7 +27,11 @@
     display: grid;
     grid-template-areas: "sidebar main";
     grid-template-columns: minmax(160px, auto) 1fr;
-    gap: var(--hds-spacing-32-40);
+    gap: var(--hds-spacing-32);
+  }
+
+  @media (min-width: 940px) {
+    gap: var(--hds-spacing-64);
   }
 
   > * {

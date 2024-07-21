@@ -340,7 +340,7 @@ export type PageConnection = Connection & {
 export type Component = Node & Document & {
   __typename?: 'Component';
   title: Scalars['String']['output'];
-  subtitle?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
   body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
@@ -381,7 +381,7 @@ export type ComponentBodyFilter = {
 
 export type ComponentFilter = {
   title?: InputMaybe<StringFilter>;
-  subtitle?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
   body?: InputMaybe<ComponentBodyFilter>;
 };
 
@@ -609,7 +609,7 @@ export type PageMutation = {
 
 export type ComponentMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
-  subtitle?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
@@ -644,7 +644,7 @@ export type GlobalMutation = {
 
 export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, hideTitleAndDescription?: boolean | null, blocks?: Array<{ __typename: 'PageBlocksContent', content?: any | null } | { __typename: 'PageBlocksBrandSlogan', title?: string | null, slogan: string, illustrationSvg?: string | null } | { __typename: 'PageBlocksNavCards', cards?: Array<{ __typename: 'PageBlocksNavCardsCards', title: string, description?: string | null, link: string } | null> | null } | null> | null };
 
-export type ComponentPartsFragment = { __typename: 'Component', title: string, subtitle?: string | null, body?: any | null };
+export type ComponentPartsFragment = { __typename: 'Component', title: string, description?: string | null, body?: any | null };
 
 export type GlobalPartsFragment = { __typename: 'Global', header?: { __typename: 'GlobalHeader', shortHeader?: boolean | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href: string, label: string, external?: boolean | null, iconSvg?: string | null, iconBehaviour?: string | null } | null> | null } | null, footer?: { __typename: 'GlobalFooter', copyright: string, links?: Array<{ __typename: 'GlobalFooterLinks', href: string, label: string, iconSvg?: string | null } | null> | null } | null };
 
@@ -672,7 +672,7 @@ export type ComponentQueryVariables = Exact<{
 }>;
 
 
-export type ComponentQuery = { __typename?: 'Query', component: { __typename: 'Component', id: string, title: string, subtitle?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type ComponentQuery = { __typename?: 'Query', component: { __typename: 'Component', id: string, title: string, description?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type ComponentConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -684,7 +684,7 @@ export type ComponentConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ComponentConnectionQuery = { __typename?: 'Query', componentConnection: { __typename?: 'ComponentConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ComponentConnectionEdges', cursor: string, node?: { __typename: 'Component', id: string, title: string, subtitle?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type ComponentConnectionQuery = { __typename?: 'Query', componentConnection: { __typename?: 'ComponentConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ComponentConnectionEdges', cursor: string, node?: { __typename: 'Component', id: string, title: string, description?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type GlobalQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -736,7 +736,7 @@ export const ComponentPartsFragmentDoc = gql`
     fragment ComponentParts on Component {
   __typename
   title
-  subtitle
+  description
   body
 }
     `;

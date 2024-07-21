@@ -27,7 +27,7 @@ fragment PageParts on Page {
 fragment ComponentParts on Component {
   __typename
   title
-  subtitle
+  description
   body
 }
 

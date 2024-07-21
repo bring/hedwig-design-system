@@ -1,4 +1,5 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
+import { PageQuery } from "../../../tina/__generated__/types";
 import { client } from "../../../tina/__generated__/client";
 import { useTina, tinaField } from "tinacms/dist/react";
 import { MetaFunction, isRouteErrorResponse, useLoaderData, useRouteError } from "@remix-run/react";
@@ -36,28 +37,41 @@ export const meta: MetaFunction<typeof clientLoader> = ({ data }) => {
   ];
 };
 
+export function TitleAndDescription(props: { title: string; description?: string | null }) {
+  return (
+    <>
+      <h1 className="hds-text-h1 hds-mb-16-20" data-tina-field={tinaField(props, "title")}>
+        {props.title}
+      </h1>
+      {props.description && (
+        <p
+          className="hds-text-h3 hds-mb-48-64"
+          style={{ maxWidth: "590px" }} // Max width text. Copied from slim container. TODO: Make this a known design token for text length
+          data-tina-field={tinaField(props, "description")}
+        >
+          {props.description}
+        </p>
+      )}
+    </>
+  );
+}
+
+export function PageContent({ data }: { data: PageQuery }) {
+  return (
+    <div>
+      {!data.page.hideTitleAndDescription && <TitleAndDescription {...data.page} />}
+      {data.page.blocks && <Blocks blocks={data.page.blocks} />}
+    </div>
+  );
+}
+
 export default function Component() {
   const { dataQueryVariables } = useLoaderData<typeof clientLoader>();
   const { data } = useTina(dataQueryVariables);
 
   return (
     <Container className="hds-mt-40-48">
-      {data.page.hideTitleAndDescription ? null : (
-        <>
-          <h1 className="hds-text-h1 hds-mb-24" data-tina-field={tinaField(data.page, "title")}>
-            {data.page.title}
-          </h1>
-          {data.page.description && (
-            <p
-              className="hds-text-h3 hds-mb-48-64"
-              data-tina-field={tinaField(data.page, "description")}
-            >
-              {data.page.description}
-            </p>
-          )}
-        </>
-      )}
-      {data.page.blocks && <Blocks blocks={data.page.blocks} />}
+      <PageContent data={data} />
     </Container>
   );
 }
