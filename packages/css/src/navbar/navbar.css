@@ -105,6 +105,17 @@
     .hds-navbar__item-icon {
       width: var(--hds-spacing-32);
       height: var(--hds-spacing-32);
+
+      > * {
+        vertical-align: text-bottom;
+      }
+    }
+
+    @media (--before-large) {
+      .hds-navbar__item-icon {
+        width: var(--hds-spacing-24);
+        height: var(--hds-spacing-24);
+      }
     }
 
     @media (--before-large) {
@@ -142,6 +153,12 @@
     @media (--large) {
       height: 60px;
     }
+
+    /**
+     * Never wrap the header text.
+     * If it's to long it should be shortened or other menu items should be removed.
+     */
+    white-space: nowrap;
 
     /* Offset text so it matches the baseline */
     margin-top: 21.5px;
