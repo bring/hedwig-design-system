@@ -53,7 +53,7 @@ export default function Component() {
           <Link asChild>
             <RemixLink
               to={{
-                pathname: "../",
+                pathname: "/examples",
                 search: search.toString(),
               }}
             >

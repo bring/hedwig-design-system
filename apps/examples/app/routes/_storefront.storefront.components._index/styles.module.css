@@ -1,19 +1,51 @@
 .componentItem.componentItem {
+  position: relative;
   > h2 > a {
-    text-decoration-thickness: var(--hds-stroke-thick);
-    &:hover {
-      text-decoration: none;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
     }
   }
 
-  div:has(iframe) {
+  &:hover {
+    > h2 > a {
+      color: var(--hds-colors-darker);
+      text-decoration: underline;
+    }
+    div:has(> iframe) {
+      filter: none;
+      opacity: 1;
+
+      /* Same as the card */
+      box-shadow: 0 1px 3px 0 rgba(0 0 0 / 12%);
+      /* box-shadow: var(--hds-shadow-default); */
+    }
+  }
+
+  div:has(> iframe) {
+    transition-property: filter, opacity, box-shadow;
+    transition-duration: var(--hds-micro-animation-duration-quick);
+    transition-timing-function: var(--hds-micro-animation-easing-normal);
+
+    filter: grayscale(100%);
+    opacity: 0.6;
+
     background-color: var(--hds-ui-colors-white);
     iframe {
       resize: none;
       box-shadow: none;
       border: none;
-      height: 240px;
-      scale: 0.75;
+      height: 220px;
+      scale: 0.7;
+      overflow: hidden;
+      pointer-events: none;
     }
   }
 }

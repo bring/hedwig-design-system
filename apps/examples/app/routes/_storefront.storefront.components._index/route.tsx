@@ -1,7 +1,7 @@
 import { useLoaderData, Link as RemixLink, useSearchParams } from "@remix-run/react";
 import { componentsByGroup as exampleComponentsByGroup } from "../../examples";
 import { Examples, kebabCaseToFirstLetterUpperCase } from "../../components/component-examples";
-import { Grid, Link } from "@postenbring/hedwig-react";
+import { Grid, Link, VStack } from "@postenbring/hedwig-react";
 
 import styles from "./styles.module.css";
 
@@ -25,7 +25,45 @@ export default function Component() {
 
   return (
     <div className="docs-container hds-mt-40-48">
-      <div style={{ gridArea: "sidebar" }}>Sidebar</div>
+      <div style={{ gridArea: "sidebar" }}>
+        {data.componentsByGroup.map(({ groupName, components }) => (
+          <div key={groupName}>
+            {groupName !== "default" && (
+              <div className="hds-text-technical-title hds-mt-24 hds-mb-8">
+                {kebabCaseToFirstLetterUpperCase(groupName)}
+              </div>
+            )}
+
+            <VStack asChild gap="8">
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                }}
+              >
+                {components.map((componentName) => (
+                  <li key={componentName}>
+                    <Link asChild variant="underline" className={"hds-text-body-small"}>
+                      <RemixLink
+                        to={{
+                          pathname:
+                            groupName !== "default"
+                              ? `${groupName}/${componentName}`
+                              : componentName,
+                          search: search.toString(),
+                        }}
+                      >
+                        {kebabCaseToFirstLetterUpperCase(componentName)}
+                      </RemixLink>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </VStack>
+          </div>
+        ))}
+      </div>
       <div style={{ gridArea: "main" }}>
         {/* Components links, grouped */}
         {data.componentsByGroup.map(({ groupName, components }) => (
@@ -47,7 +85,7 @@ export default function Component() {
                 {components.map((componentName, i) => (
                   <li key={componentName} className={styles.componentItem}>
                     <h2 className="hds-text-h3-title" id={`examples-${componentName}`}>
-                      <Link asChild variant="solid" className={styles.componentHeadingLink}>
+                      <Link asChild variant="solid">
                         <RemixLink
                           to={{
                             pathname:
