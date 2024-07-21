@@ -11,11 +11,11 @@ export default defineConfig({
     target: "es2022",
     sourcemap: true,
   },
-  base: "/hedwig-design-system/examples/",
+  base: "/hedwig-design-system/",
   plugins: [
     remix({
       ssr: false,
-      basename: "/hedwig-design-system/examples/",
+      basename: "/hedwig-design-system/",
       ignoredRouteFiles: ["*/**.css"],
 
       /**
@@ -30,12 +30,17 @@ export default defineConfig({
 
         const routes = defineRoutes((route) => {
           for (const example of componentExamples) {
-            const urlPath = example.replace(/\.tsx$/, "");
+            const urlPath = "examples-iframe/" + example.replace(/\.tsx$/, "");
             const filePath = "examples/" + example;
-
-            route(urlPath, filePath);
+            route(urlPath, filePath, {});
           }
         });
+
+        // HACK: Manually set the layout for iframe examples
+        Object.values(routes).forEach((route) => {
+          route.parentId = "routes/_examples-iframe";
+        });
+
         return routes;
       },
     }),

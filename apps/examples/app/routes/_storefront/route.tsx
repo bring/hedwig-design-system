@@ -1,13 +1,13 @@
 import "@postenbring/hedwig-css";
-import "../_layout/style.css";
+import "../_examples/style.css";
 
 import { Navbar, VStack } from "@postenbring/hedwig-react";
 import { Outlet, Link as RemixLink, useLoaderData } from "@remix-run/react";
 
 import { tinaField, useTina } from "tinacms/dist/react";
 
-import { LayoutFooter } from "../_layout/footer";
-import { LayoutHeader } from "../_layout/header";
+import { LayoutFooter } from "../_examples/footer";
+import { LayoutHeader } from "../_examples/header";
 import { useTheme } from "../../components/use-theme";
 import { client } from "../../../tina/__generated__/client";
 

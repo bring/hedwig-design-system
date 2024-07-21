@@ -4,9 +4,9 @@ import { Link as RemixLink, useLocation, useSearchParams } from "@remix-run/reac
 import {
   ComponentCodeExamples,
   kebabCaseToFirstLetterUpperCase,
-} from "../components/component-examples";
-import { componentsByGroup } from "../examples";
-import styles from "./_layout._index.module.css";
+} from "../../components/component-examples";
+import { componentsByGroup } from "../../examples";
+import styles from "./styles.module.css";
 import { Grid, Link, LinkList } from "@postenbring/hedwig-react";
 import { useEffect } from "react";
 

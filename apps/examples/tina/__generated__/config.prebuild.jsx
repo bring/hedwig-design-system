@@ -281,9 +281,9 @@ var PageCollection = {
   ui: {
     router: ({ document }) => {
       if (document._sys.filename === "home") {
-        return `/hedwig-design-system/examples/storefront`;
+        return `/hedwig-design-system/storefront`;
       }
-      return `/hedwig-design-system/examples/storefront/${document._sys.breadcrumbs.join("/")}`;
+      return `/hedwig-design-system/storefront/${document._sys.breadcrumbs.join("/")}`;
     }
   },
   fields: [
@@ -324,7 +324,7 @@ var ComponentCollection = {
   format: "mdx",
   ui: {
     router: (props) => {
-      return `/hedwig-design-system/examples/storefront/components/${props.document._sys.breadcrumbs.join("/")}`;
+      return `/hedwig-design-system/storefront/components/${props.document._sys.breadcrumbs.join("/")}`;
     }
   },
   name: "component",
@@ -364,7 +364,7 @@ var config_default = defineConfig({
   token: process.env.TINA_TOKEN,
   cmsCallback: (a) => a,
   build: {
-    basePath: "/hedwig-design-system/examples/storefront/",
+    basePath: "/hedwig-design-system/storefront/",
     outputFolder: "storefront/admin",
     publicFolder: "public"
   },

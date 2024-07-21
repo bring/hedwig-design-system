@@ -5,7 +5,7 @@ export const ComponentCollection: Collection = {
   format: "mdx",
   ui: {
     router: (props) => {
-      return `/hedwig-design-system/examples/storefront/components/${props.document._sys.breadcrumbs.join("/")}`;
+      return `/hedwig-design-system/storefront/components/${props.document._sys.breadcrumbs.join("/")}`;
     },
   },
   name: "component",

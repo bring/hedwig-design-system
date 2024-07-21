@@ -36,6 +36,7 @@ export function CodeExample({
   hideDescription = false,
   hideActions = false,
   shouldPreload = false,
+  scale,
 }: {
   activeExample: Example;
   allExamples?: Example[];
@@ -43,6 +44,7 @@ export function CodeExample({
   hideDescription?: boolean;
   hideActions?: boolean;
   shouldPreload?: boolean;
+  scale?: number;
 }) {
   if (!allExamples) allExamples = [activeExample];
   const [search] = useSearchParams();
@@ -59,6 +61,9 @@ export function CodeExample({
     }
     if (example.config?.breakpointIndicator) {
       iframeViewOptions.set("breakpointIndicator", String(example.config?.breakpointIndicator));
+    }
+    if (scale) {
+      iframeViewOptions.set("scale", String(scale));
     }
     return `${example.urlPath}?${iframeViewOptions.toString()}`;
   }

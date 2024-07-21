@@ -93,9 +93,9 @@ export const PageCollection: Collection = {
   ui: {
     router: ({ document }) => {
       if (document._sys.filename === "home") {
-        return `/hedwig-design-system/examples/storefront`;
+        return `/hedwig-design-system/storefront`;
       }
-      return `/hedwig-design-system/examples/storefront/${document._sys.breadcrumbs.join("/")}`;
+      return `/hedwig-design-system/storefront/${document._sys.breadcrumbs.join("/")}`;
     },
   },
   fields: [

@@ -1,4 +1,4 @@
-import type { ExampleViewOptions } from "../root";
+import type { ExampleViewOptions } from "../routes/_examples-iframe/route";
 
 const modules = import.meta.glob(["./*/*/*.tsx", "./*/*.tsx"], {
   query: "?raw",
@@ -27,7 +27,7 @@ export const examples = Object.keys(modules)
   .map((filePath) => {
     const { groupName, componentName, exampleName } = parseExampleFilename(filePath);
 
-    const urlPath = `${import.meta.env.BASE_URL}${groupName ? `${groupName}/` : ""}${componentName}/${exampleName}`;
+    const urlPath = `${import.meta.env.BASE_URL}examples-iframe/${groupName ? `${groupName}/` : ""}${componentName}/${exampleName}`;
     const exampleSource = modules[filePath] as string;
 
     // Used in the code preview
@@ -91,10 +91,6 @@ export const componentsByGroup = Object.entries(examplesByComponent).reduce(
   },
   {} as Record<string, typeof examplesByComponent>,
 );
-
-export function isPathInExamples(path: string) {
-  return examples.some((example) => example.urlPath.endsWith(path));
-}
 
 // Types
 export type Example = (typeof examples)[number];

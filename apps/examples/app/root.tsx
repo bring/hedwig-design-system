@@ -1,21 +1,23 @@
-import { useEffect } from "react";
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useLocation,
-  useMatches,
-  useSearchParams,
-} from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "@remix-run/react";
 import bringFavicon from "./assets/bring-favicon.png?url";
 import postenFavicon from "./assets/posten-favicon.png?url";
 
-import styles from "./root.module.css";
+export function parseViewOptions(search: string) {
+  const { theme } = Object.fromEntries(new URLSearchParams(search));
+
+  return {
+    theme: theme === "bring" ? theme : "posten",
+  } as const;
+}
+export type ViewOptions = ReturnType<typeof parseViewOptions>;
+
+export function useViewOptions() {
+  const location = useLocation();
+  return parseViewOptions(location.search);
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const [search] = useSearchParams();
+  const viewOptions = useViewOptions();
   return (
     <html lang="en">
       <head>
@@ -24,12 +26,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link
           rel="icon"
           type="image/png"
-          href={search.get("theme") === "bring" ? bringFavicon : postenFavicon}
+          href={viewOptions.theme === "bring" ? bringFavicon : postenFavicon}
         />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className={viewOptions?.theme === "bring" ? "hds-theme-bring" : ""}>
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -38,82 +40,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-const layoutClassNames = {
-  centered: styles.layoutCentered,
-  "centered-vertical-padding": styles.layoutCenteredVerticalPadding,
-  "centered-fullwidth": styles.layoutCenteredFullwidth,
-  "padding-only": styles.layoutPaddingOnly,
-  none: "",
-} as const;
-
-const breakpointIndicatorValues = {
-  true: true,
-  top: "top",
-  bottom: "bottom",
-} as const;
-
-export interface ViewOptions {
-  theme?: "posten" | "bring";
-}
-export interface ExampleViewOptions {
-  layout?: keyof typeof layoutClassNames;
-
-  /**
-   * Display a visual indicator of the current breakpoint in example
-   * @default false
-   */
-  breakpointIndicator?: boolean | "top" | "bottom";
-}
-
-function parseViewOptions(search: string, isExample: boolean): ViewOptions & ExampleViewOptions {
-  const { theme, layout, breakpointIndicator } = Object.fromEntries(
-    new URLSearchParams(search),
-  ) as ViewOptions & ExampleViewOptions;
-
-  return {
-    theme: theme === "bring" ? theme : "posten",
-    ...(isExample && {
-      layout: layout! in layoutClassNames ? layout : "centered",
-      breakpointIndicator:
-        breakpointIndicatorValues[breakpointIndicator as keyof typeof breakpointIndicatorValues] ??
-        false,
-    }),
-  };
-}
-
 export default function App() {
-  const location = useLocation();
-  const matches = useMatches();
-
-  const isExample = matches.some((match) => match.id.startsWith("examples/"));
-  const viewOptions = parseViewOptions(location.search, isExample);
-
-  useEffect(() => {
-    if (isExample) {
-      window.parent.postMessage("example-loaded", "*");
-    }
-  }, [isExample]);
-
-  return (
-    <div
-      className={[
-        viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
-        isExample && viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",
-        isExample && viewOptions?.breakpointIndicator ? styles.breakpointIndicator : "",
-        isExample && viewOptions?.breakpointIndicator === "bottom"
-          ? styles.breakpointIndicatorBottom
-          : "",
-      ].join(" ")}
-    >
-      {isExample ? (
-        <div>
-          <Outlet />
-        </div>
-      ) : (
-        <Outlet />
-      )}
-    </div>
-  );
+  return <Outlet />;
 }
 
 export function HydrateFallback() {

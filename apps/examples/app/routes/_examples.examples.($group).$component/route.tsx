@@ -7,11 +7,11 @@ import {
   MetaFunction,
   ClientLoaderFunctionArgs,
 } from "@remix-run/react";
-import { examplesByComponent } from "../examples";
+import { examplesByComponent } from "../../examples";
 import {
   ComponentCodeExamples,
   kebabCaseToFirstLetterUpperCase,
-} from "../components/component-examples";
+} from "../../components/component-examples";
 import { Breadcrumbs, Link, Text } from "@postenbring/hedwig-react";
 
 export async function clientLoader({ params: { group, component } }: ClientLoaderFunctionArgs) {

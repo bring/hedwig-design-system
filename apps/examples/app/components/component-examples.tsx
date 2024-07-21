@@ -14,6 +14,7 @@ export function Examples({
   showCodeByDefault,
   shouldPreload,
   preload,
+  scale,
 }: {
   componentName: string;
   exampleName?: string;
@@ -22,6 +23,7 @@ export function Examples({
   showCodeByDefault?: boolean;
   shouldPreload?: boolean;
   preload?: PrefetchBehavior;
+  scale?: number;
 }) {
   const singleExample = exampleName
     ? examplesByComponent[componentName].find((e) => e.exampleName === exampleName)
@@ -36,6 +38,7 @@ export function Examples({
         hideDescription={onlyIframe}
         hideActions={onlyIframe}
         shouldPreload={shouldPreload}
+        scale={scale}
       />
     );
   } else
