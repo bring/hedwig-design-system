@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 
 export function clientLoader() {
   // Use the examples for now
-  const whitelistedGroups = ["default", "layout", "loaders"];
+  const whitelistedGroups = ["default", "form", "layout", "loaders"];
   const componentsByGroup = Object.entries(exampleComponentsByGroup)
     .sort(([a], [b]) => a.localeCompare(b))
     .filter(([groupName]) => whitelistedGroups.includes(groupName))
