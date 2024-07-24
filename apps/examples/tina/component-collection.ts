@@ -24,6 +24,15 @@ export const ComponentCollection: Collection = {
       name: "description",
       label: "Description",
       required: false,
+      ui: {
+        component: "textarea",
+      },
+    },
+    {
+      type: "string",
+      name: "status",
+      label: "Status",
+      options: ["ready-to-use", "pending-implementation", "work-in-progress", "deprecated"],
     },
     {
       type: "rich-text",

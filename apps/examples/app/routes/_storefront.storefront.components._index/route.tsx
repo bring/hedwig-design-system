@@ -5,7 +5,11 @@ import {
   MetaFunction,
 } from "react-router";
 import { componentsByGroup as exampleComponentsByGroup } from "../../examples";
-import { Examples, kebabCaseToFirstLetterUpperCase } from "../../components/component-examples";
+import {
+  Examples,
+  existsExamplesForComponent,
+  kebabCaseToFirstLetterUpperCase,
+} from "../../components/component-examples";
 import { Grid, Link, VStack } from "@postenbring/hedwig-react";
 import { client } from "../../../tina/__generated__/client";
 
@@ -15,15 +19,24 @@ import { PageContent } from "../_storefront.storefront.$/route";
 import { useViewOptionsSearch } from "../../root";
 
 export async function getComponentsByGroup() {
-  // Components
-  // Use the examples for now
+  // Get components from cms
+  const cmsComponents = await client.queries.componentConnection();
+  const cmsComponentNames =
+    cmsComponents.data.componentConnection.edges
+      ?.map((edge) => edge?.node?._sys.filename)
+      .filter((x) => x !== undefined) ?? [];
+
+  // Get components from examples
   const whitelistedGroups = ["components", "form", "layout", "loaders"];
   const componentsByGroup = Object.entries(exampleComponentsByGroup)
     .sort(([a], [b]) => a.localeCompare(b))
     .filter(([groupName]) => whitelistedGroups.includes(groupName))
     .map(([groupName, components]) => ({
       groupName,
-      components: Object.keys(components),
+      components:
+        groupName === "components"
+          ? [...new Set([...cmsComponentNames, ...Object.keys(components)])]
+          : Object.keys(components),
     }));
 
   return componentsByGroup;
@@ -119,12 +132,27 @@ export default function Component() {
                       </Link>
                     </h2>
                     <div className="hds-mt-12-16" />
-                    <Examples
-                      componentName={componentName}
-                      shouldPreload={groupName === "components" && i < 4}
-                      onlyFirstExample
-                      onlyIframe
-                    />
+                    {existsExamplesForComponent(componentName) ? (
+                      <Examples
+                        componentName={componentName}
+                        shouldPreload={groupName === "components" && i < 4}
+                        onlyFirstExample
+                        onlyIframe
+                      />
+                    ) : (
+                      <div
+                        aria-hidden
+                        className="hds-text-h2"
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          paddingTop: "var(--hds-spacing-48-64)",
+                        }}
+                      >
+                        {kebabCaseToFirstLetterUpperCase(componentName)}
+                      </div>
+                    )}
                   </li>
                 ))}
               </ul>

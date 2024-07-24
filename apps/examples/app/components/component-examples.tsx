@@ -7,6 +7,10 @@ import { useState } from "react";
 import { PrefetchBehavior, usePrefetchBehavior } from "./use-prefetch-behaviour";
 import { useViewOptionsSearch } from "../root";
 
+export function existsExamplesForComponent(componentName: string) {
+  return componentName in examplesByComponent;
+}
+
 export function Examples({
   componentName,
   exampleName,
@@ -26,6 +30,8 @@ export function Examples({
   preload?: PrefetchBehavior;
   scale?: number;
 }) {
+  if (!existsExamplesForComponent(componentName)) return null;
+
   const singleExample = exampleName
     ? examplesByComponent[componentName].find((e) => e.exampleName === exampleName)
     : onlyFirstExample

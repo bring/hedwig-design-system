@@ -4,7 +4,7 @@ import {
   PageBlocksBrandSlogan,
   PageBlocksNavCards,
 } from "../../../tina/__generated__/types";
-import { Card, Grid, Link, StyledHtml } from "@postenbring/hedwig-react";
+import { Card, Grid, StyledHtml } from "@postenbring/hedwig-react";
 import { Link as RemixLink } from "react-router";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { MDXComponents } from "./mdx-components";
@@ -84,15 +84,17 @@ export function NavCards({ block }: { block: PageBlocksNavCards }) {
 
         // Smoother navigation for local links
         const linkElement = card.link.startsWith("http") ? (
-          <Link href={card.link} data-tina-field={tinaField(card, "title")}>
+          <a href={card.link} data-tina-field={tinaField(card, "title")}>
             {card.title}
-          </Link>
+          </a>
         ) : (
-          <Link data-tina-field={tinaField(card, "title")} asChild>
-            <RemixLink to={`${card.link}/`.replace(/\/+$/, "/")} prefetch="intent">
-              {card.title}
-            </RemixLink>
-          </Link>
+          <RemixLink
+            data-tina-field={tinaField(card, "title")}
+            to={`${card.link}/`.replace(/\/+$/, "/")}
+            prefetch="intent"
+          >
+            {card.title}
+          </RemixLink>
         );
 
         return (

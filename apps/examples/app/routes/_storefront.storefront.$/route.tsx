@@ -48,12 +48,19 @@ export const meta: MetaFunction = ({ data, error }) => {
   ];
 };
 
-export function TitleAndDescription(props: { title: string; description?: string | null }) {
+export function TitleAndDescription(props: {
+  title: string;
+  description?: string | null;
+  extraStuff?: React.ReactNode;
+}) {
   return (
     <>
-      <h1 className="hds-text-h1 hds-mb-16-20" data-tina-field={tinaField(props, "title")}>
-        {props.title}
-      </h1>
+      <div className="hds-mb-16-20" style={{ display: "flex", gap: "var(--hds-spacing-24-32)" }}>
+        <h1 className="hds-text-h1" data-tina-field={tinaField(props, "title")}>
+          {props.title}
+        </h1>
+        {props.extraStuff}
+      </div>
       {props.description && (
         <p
           className="hds-text-h3 hds-mb-48-64"
