@@ -121,6 +121,7 @@ function NavbarMenuItems() {
                 pathname: "/storefront/" + `${item.href}/`.replace(/\/+$/, "/"),
                 search: viewOptionsSearch,
               }}
+              prefetch="intent"
             >
               {label}
               {icon}

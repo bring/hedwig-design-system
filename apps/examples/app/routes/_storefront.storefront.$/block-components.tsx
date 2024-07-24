@@ -89,7 +89,9 @@ export function NavCards({ block }: { block: PageBlocksNavCards }) {
           </Link>
         ) : (
           <Link data-tina-field={tinaField(card, "title")} asChild>
-            <RemixLink to={`${card.link}/`.replace(/\/+$/, "/")}>{card.title}</RemixLink>
+            <RemixLink to={`${card.link}/`.replace(/\/+$/, "/")} prefetch="intent">
+              {card.title}
+            </RemixLink>
           </Link>
         );
 

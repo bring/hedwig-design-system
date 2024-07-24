@@ -112,6 +112,7 @@ export default function Component() {
                             pathname: `/storefront/components/${componentName}/`,
                             search: viewOptionsSearch,
                           }}
+                          prefetch="intent"
                         >
                           {kebabCaseToFirstLetterUpperCase(componentName)}
                         </RemixLink>

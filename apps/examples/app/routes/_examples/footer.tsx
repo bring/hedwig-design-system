@@ -21,6 +21,7 @@ export function LayoutFooter({
                 pathname: "/",
                 search: viewOptionsSearch,
               }}
+              prefetch="intent"
               aria-label="To the front page"
             />
           </Footer.Logo>

@@ -36,6 +36,7 @@ export function LayoutHeader({
             search: viewOptionsSearch,
           }}
           aria-label="To the front page"
+          prefetch="intent"
         >
           <div>
             Hedwig {!shortHeader && <span className="hidden-before-medium">Design System</span>}

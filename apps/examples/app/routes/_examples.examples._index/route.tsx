@@ -54,6 +54,7 @@ function ExamplesMenu() {
                             : `${componentName}/`,
                         search: viewOptionsSearch,
                       }}
+                      prefetch="intent"
                     >
                       {kebabCaseToFirstLetterUpperCase(componentName)}
                     </RemixLink>

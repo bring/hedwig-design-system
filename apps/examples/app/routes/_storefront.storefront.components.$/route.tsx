@@ -86,6 +86,7 @@ export default function Component() {
                   pathname: "/storefront/",
                   search: viewOptionsSearch,
                 }}
+                prefetch="intent"
               >
                 Home
               </RemixLink>
@@ -99,6 +100,7 @@ export default function Component() {
                   pathname: "/storefront/components/",
                   search: viewOptionsSearch,
                 }}
+                prefetch="intent"
               >
                 Components
               </RemixLink>

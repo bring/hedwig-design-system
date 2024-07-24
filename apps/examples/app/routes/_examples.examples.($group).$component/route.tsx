@@ -62,6 +62,7 @@ export default function Component() {
                 pathname: "/examples/",
                 search: viewOptionsSearch,
               }}
+              prefetch="intent"
             >
               Examples
             </RemixLink>
