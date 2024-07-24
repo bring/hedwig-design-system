@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - poc-tina-5
+      - poc-tina-5-prerender
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
