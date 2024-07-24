@@ -1,4 +1,4 @@
-import { vitePlugin as remix } from "@remix-run/dev";
+import { vitePlugin as remix } from "@react-router/dev";
 import { defineConfig } from "vite";
 
 import fs from "node:fs/promises";
@@ -24,15 +24,16 @@ export default defineConfig({
   base: "/hedwig-design-system/",
   plugins: [
     remix({
-      ssr: false,
       basename: "/hedwig-design-system/",
       ignoredRouteFiles: ["*/**.css"],
       future: {
-        unstable_singleFetch: true,
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
         v3_throwAbortReason: true,
       },
+
+      prerender,
+      buildEnd,
 
       /**
        * Read the app/examples folder and create routes for each example component.
@@ -65,3 +66,82 @@ export default defineConfig({
     ],
   },
 });
+
+// Prerendering
+async function buildEnd() {
+  console.log("Copying static files...");
+  await fs.cp("./build/client/hedwig-design-system", "./build/static/hedwig-design-system", {
+    recursive: true,
+  });
+  await fs.cp("./build/client/assets", "./build/static/hedwig-design-system/assets", {
+    recursive: true,
+  });
+}
+
+async function prerender(): Promise<string[]> {
+  const examplePaths = (await getExamplesPaths()).map((path) => path.replace(/\.tsx$/, ""));
+  const componentNames = await getComponentNames();
+  const pagesPaths = await getPagesPaths();
+
+  const result = [
+    // Pages
+    ...pagesPaths.map((path) => `/storefront/${path}`),
+
+    // Component pages
+    ...componentNames.map((path) => `/storefront/components/${path}`),
+
+    // Examples pages
+    "/examples",
+    ...examplePaths.map((path) => `/examples/${path.split("/").slice(0, -1).join("/")}`),
+    ...examplePaths.map((path) => `/examples-iframe/${path}`),
+  ];
+  return [...new Set(result)];
+}
+
+async function getComponentNames() {
+  function parseExampleFilename(fileName: string): {
+    groupName?: string;
+    componentName: string;
+    exampleName: string;
+  } {
+    const titleMatch = fileName.match(
+      /((?<groupName>[\w-]+)\/)?(?<componentName>[\w-]+)\/(?<exampleName>[\w-]+)\.tsx$/u,
+    );
+    if (!titleMatch?.groups) throw new Error(`invalid file name ${fileName}`);
+
+    const { groupName, componentName, exampleName } = titleMatch.groups;
+    return { groupName, componentName, exampleName };
+  }
+
+  const examplePaths = await getExamplesPaths();
+  const componentNamesFromExamples = examplePaths
+    .map(parseExampleFilename)
+    .filter(({ groupName }) => groupName !== "patterns")
+    .map(({ componentName }) => componentName);
+
+  const contentComponentsFolder = "./content/components";
+  const contentFilesAndDirs = await fs.readdir(new URL(contentComponentsFolder, import.meta.url), {
+    recursive: true,
+  });
+  const componentPaths = contentFilesAndDirs
+    .filter((path) => path.endsWith(".mdx") && !path.split("/").at(-1)?.startsWith("."))
+    .map((path) => path.replace(/\.mdx$/, ""))
+    .map((path) => path.split("/").at(-1))
+    .filter((path) => path !== undefined);
+
+  return [...new Set([...componentNamesFromExamples, ...componentPaths])];
+}
+
+async function getPagesPaths() {
+  const pagesFolder = "./content/pages";
+  const pageFilesAndDirs = await fs.readdir(new URL(pagesFolder, import.meta.url), {
+    recursive: true,
+  });
+  const pagePaths = pageFilesAndDirs
+    .filter((path) => path.endsWith(".mdx") && !path.split("/").at(-1)?.startsWith("."))
+    .map((path) => path.replace("/home.mdx", "").replace("home.mdx", ""))
+    .map((path) => path.replace(/\.mdx$/, ""))
+    .filter((path) => path !== undefined);
+
+  return pagePaths;
+}

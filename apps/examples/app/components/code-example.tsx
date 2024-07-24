@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { type ThemeRegistrationRaw, getHighlighterCore } from "shiki/core";
+import { type ThemeRegistrationRaw, createHighlighterCore } from "shiki/core";
 import langsTsx from "shiki/langs/tsx.mjs";
 import getWasm from "shiki/wasm";
 import vesper from "shiki/themes/vesper.mjs";
@@ -12,15 +12,14 @@ import styles from "./code-example.module.css";
 import { Example } from "../examples";
 import { Button, StyledHtml, type ButtonProps } from "@postenbring/hedwig-react";
 import { openExampleInCodeSandbox } from "./codesandbox";
-import { useSearchParams } from "@remix-run/react";
-import { useTheme } from "./use-theme";
+import { useViewOptions } from "../root";
 
 const codeThemes: Record<"posten" | "bring", ThemeRegistrationRaw> = {
   posten: vesper,
   bring: poimandres,
 } as const;
 
-const highlighter = await getHighlighterCore({
+const highlighter = await createHighlighterCore({
   themes: [codeThemes.posten, codeThemes.bring],
   langs: [langsTsx],
   loadWasm: getWasm,
@@ -47,17 +46,16 @@ export function CodeExample({
   scale?: number;
 }) {
   if (!allExamples) allExamples = [activeExample];
-  const [search] = useSearchParams();
+  const viewOptions = useViewOptions();
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [showCode, setShowCode] = useState(showCodeByDefault);
 
   function iframeUrl(example: Example) {
     const iframeViewOptions = new URLSearchParams();
+
+    iframeViewOptions.set("theme", viewOptions.theme);
     if (example.config?.layout) {
       iframeViewOptions.set("layout", example.config.layout);
-    }
-    if (search.get("theme")) {
-      iframeViewOptions.set("theme", search.get("theme")!);
     }
     if (example.config?.breakpointIndicator) {
       iframeViewOptions.set("breakpointIndicator", String(example.config?.breakpointIndicator));
@@ -269,15 +267,15 @@ function CopyButton({
 }
 
 function Code({ code, id }: { code: string; id: string }) {
-  const { activeTheme } = useTheme();
+  const viewOptions = useViewOptions();
 
   const formattedCode = useMemo(() => {
     return highlighter.codeToHtml(code, {
       lang: "tsx",
-      theme: activeTheme === "bring" ? codeThemes.bring : codeThemes.posten,
+      theme: viewOptions.theme === "bring" ? codeThemes.bring : codeThemes.posten,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only run once
-  }, [activeTheme, id]);
+  }, [viewOptions.theme, id]);
 
   return (
     <div>

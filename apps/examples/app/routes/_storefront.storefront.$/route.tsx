@@ -1,12 +1,17 @@
-import { MetaFunction, isRouteErrorResponse, useLoaderData, useRouteError } from "@remix-run/react";
+import {
+  LoaderFunctionArgs,
+  MetaFunction,
+  isRouteErrorResponse,
+  useLoaderData,
+  useRouteError,
+} from "react-router";
 import { PageQuery } from "../../../tina/__generated__/types";
 import { client } from "../../../tina/__generated__/client";
 import { useTina, tinaField } from "tinacms/dist/react";
 import { Blocks } from "./block-components";
 import { Container } from "@postenbring/hedwig-react";
-import { LoaderFunctionArgs } from "@remix-run/node";
 
-export async function clientLoader({ params }: LoaderFunctionArgs) {
+export async function loader({ params }: LoaderFunctionArgs) {
   let slug = params["*"] || "home";
   slug = slug.replace(/\/$/, "");
 
@@ -22,7 +27,7 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
     },
   };
 }
-type LoaderData = Awaited<ReturnType<typeof clientLoader>>;
+type LoaderData = Awaited<ReturnType<typeof loader>>;
 
 export const meta: MetaFunction = ({ data, error }) => {
   if (error) {

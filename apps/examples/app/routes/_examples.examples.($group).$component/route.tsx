@@ -3,18 +3,18 @@ import {
   useLoaderData,
   useRouteError,
   Link as RemixLink,
-  useSearchParams,
   MetaFunction,
-} from "@remix-run/react";
+  LoaderFunctionArgs,
+} from "react-router";
 import { examplesByComponent } from "../../examples";
 import {
   ComponentCodeExamples,
   kebabCaseToFirstLetterUpperCase,
 } from "../../components/component-examples";
 import { Breadcrumbs, Link, Text } from "@postenbring/hedwig-react";
-import { LoaderFunctionArgs } from "@remix-run/node";
+import { useViewOptionsSearch } from "../../root";
 
-export async function clientLoader({ params }: LoaderFunctionArgs) {
+export async function loader({ params }: LoaderFunctionArgs) {
   const group = params.group;
   let component = params.component;
   component = component?.replace(/\/$/, "");
@@ -28,7 +28,7 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
     component,
   };
 }
-type LoaderData = Awaited<ReturnType<typeof clientLoader>>;
+type LoaderData = Awaited<ReturnType<typeof loader>>;
 
 export const meta: MetaFunction = ({ data, error }) => {
   if (error) {
@@ -51,7 +51,7 @@ export default function Component() {
   const { group, component } = useLoaderData() as LoaderData;
   const examples = examplesByComponent[component];
 
-  const [search] = useSearchParams();
+  const viewOptionsSearch = useViewOptionsSearch();
   return (
     <div>
       <Breadcrumbs className="hds-mt-24-32 hds-mb-24-32">
@@ -60,7 +60,7 @@ export default function Component() {
             <RemixLink
               to={{
                 pathname: "/examples/",
-                search: search.toString(),
+                search: viewOptionsSearch,
               }}
             >
               Examples

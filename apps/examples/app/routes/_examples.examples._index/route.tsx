@@ -1,5 +1,5 @@
-import type { MetaFunction } from "@remix-run/react";
-import { Link as RemixLink, useLocation, useSearchParams } from "@remix-run/react";
+import type { MetaFunction } from "react-router";
+import { Link as RemixLink, useLocation } from "react-router";
 
 import {
   ComponentCodeExamples,
@@ -9,6 +9,7 @@ import { componentsByGroup } from "../../examples";
 import styles from "./styles.module.css";
 import { Grid, Link, LinkList } from "@postenbring/hedwig-react";
 import { useEffect } from "react";
+import { useViewOptionsSearch } from "../../root";
 
 export const meta: MetaFunction = () => {
   return [
@@ -19,7 +20,7 @@ export const meta: MetaFunction = () => {
 
 function ExamplesMenu() {
   const location = useLocation();
-  const [search] = useSearchParams();
+  const viewOptionsSearch = useViewOptionsSearch();
 
   useEffect(() => {
     if (location.hash) {
@@ -51,7 +52,7 @@ function ExamplesMenu() {
                           groupName !== "components"
                             ? `${groupName}/${componentName}/`
                             : `${componentName}/`,
-                        search: search.toString(),
+                        search: viewOptionsSearch,
                       }}
                     >
                       {kebabCaseToFirstLetterUpperCase(componentName)}
@@ -67,7 +68,7 @@ function ExamplesMenu() {
 }
 
 export default function Index() {
-  const [search] = useSearchParams();
+  const viewOptionsSearch = useViewOptionsSearch();
   return (
     <>
       <ExamplesMenu />
@@ -101,7 +102,7 @@ export default function Index() {
                               groupName !== "components"
                                 ? `${groupName}/${componentName}/`
                                 : `${componentName}/`,
-                            search: search.toString(),
+                            search: viewOptionsSearch,
                           }}
                         >
                           {kebabCaseToFirstLetterUpperCase(componentName)}

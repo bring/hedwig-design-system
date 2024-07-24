@@ -1,4 +1,4 @@
-import { useLoaderData, MetaFunction, Link as RemixLink, useSearchParams } from "@remix-run/react";
+import { useLoaderData, MetaFunction, Link as RemixLink, LoaderFunctionArgs } from "react-router";
 import { Examples, kebabCaseToFirstLetterUpperCase } from "../../components/component-examples";
 import { client } from "../../../tina/__generated__/client";
 
@@ -10,9 +10,9 @@ import {
 } from "../_storefront.storefront.components._index/route";
 import { TitleAndDescription } from "../_storefront.storefront.$/route";
 import { Breadcrumbs, Link } from "@postenbring/hedwig-react";
-import { LoaderFunctionArgs } from "@remix-run/node";
+import { useViewOptionsSearch } from "../../root";
 
-export async function clientLoader({ params }: LoaderFunctionArgs) {
+export async function loader({ params }: LoaderFunctionArgs) {
   let slug = params["*"] ?? "";
   slug = slug.replace(/\/$/, "");
 
@@ -47,7 +47,7 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
     dataQueryVariables,
   };
 }
-type LoaderData = Awaited<ReturnType<typeof clientLoader>>;
+type LoaderData = Awaited<ReturnType<typeof loader>>;
 
 export const meta: MetaFunction = ({ data, error }) => {
   if (error) {
@@ -72,7 +72,7 @@ export const meta: MetaFunction = ({ data, error }) => {
 
 export default function Component() {
   const { componentName, componentsByGroup, dataQueryVariables } = useLoaderData() as LoaderData;
-  const [search] = useSearchParams();
+  const viewOptionsSearch = useViewOptionsSearch();
 
   return (
     <div className="docs-container hds-mt-40-48">
@@ -84,7 +84,7 @@ export default function Component() {
               <RemixLink
                 to={{
                   pathname: "/storefront/",
-                  search: search.toString(),
+                  search: viewOptionsSearch,
                 }}
               >
                 Home
@@ -97,7 +97,7 @@ export default function Component() {
               <RemixLink
                 to={{
                   pathname: "/storefront/components/",
-                  search: search.toString(),
+                  search: viewOptionsSearch,
                 }}
               >
                 Components

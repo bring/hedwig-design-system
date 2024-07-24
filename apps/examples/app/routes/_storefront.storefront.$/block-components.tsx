@@ -5,7 +5,7 @@ import {
   PageBlocksNavCards,
 } from "../../../tina/__generated__/types";
 import { Card, Grid, Link, StyledHtml } from "@postenbring/hedwig-react";
-import { Link as RemixLink } from "@remix-run/react";
+import { Link as RemixLink } from "react-router";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { MDXComponents } from "./mdx-components";
 

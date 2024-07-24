@@ -2,7 +2,7 @@ import "@postenbring/hedwig-css";
 import "./style.css";
 
 import { VStack } from "@postenbring/hedwig-react";
-import { Outlet } from "@remix-run/react";
+import { Outlet } from "react-router";
 
 import { LayoutFooter } from "./footer";
 import { LayoutHeader } from "./header";

@@ -2,16 +2,16 @@ import "@postenbring/hedwig-css";
 import "../_examples/style.css";
 
 import { Navbar, VStack } from "@postenbring/hedwig-react";
-import { Outlet, Link as RemixLink, useLoaderData } from "@remix-run/react";
+import { Outlet, Link as RemixLink, useLoaderData } from "react-router";
 
 import { tinaField, useTina } from "tinacms/dist/react";
 
 import { LayoutFooter } from "../_examples/footer";
 import { LayoutHeader } from "../_examples/header";
-import { useTheme } from "../../components/use-theme";
 import { client } from "../../../tina/__generated__/client";
+import { useViewOptionsSearch } from "../../root";
 
-export async function clientLoader() {
+export async function loader() {
   const { data, query, variables } = await client.queries.global({
     relativePath: "global.json",
   });
@@ -24,7 +24,7 @@ export async function clientLoader() {
     },
   };
 }
-type LoaderData = Awaited<ReturnType<typeof clientLoader>>;
+type LoaderData = Awaited<ReturnType<typeof loader>>;
 
 export default function Layout() {
   const { dataQueryVariables } = useLoaderData() as LoaderData;
@@ -55,7 +55,7 @@ export default function Layout() {
 }
 
 function NavbarMenuItems() {
-  const { activeTheme } = useTheme();
+  const viewOptionsSearch = useViewOptionsSearch();
   const { dataQueryVariables } = useLoaderData() as LoaderData;
   const { data } = useTina(dataQueryVariables);
 
@@ -119,7 +119,7 @@ function NavbarMenuItems() {
               data-tina-field={tinaField(item, "label")}
               to={{
                 pathname: "/storefront/" + `${item.href}/`.replace(/\/+$/, "/"),
-                search: activeTheme === "bring" ? "?theme=bring" : "",
+                search: viewOptionsSearch,
               }}
             >
               {label}

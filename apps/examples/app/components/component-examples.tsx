@@ -1,10 +1,11 @@
-import { useSearchParams, Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { Chip } from "./chip";
 import { CodeExample } from "./code-example";
 import { Example, examplesByComponent } from "../examples";
 import { HStack, VStack } from "@postenbring/hedwig-react";
 import { useState } from "react";
 import { PrefetchBehavior, usePrefetchBehavior } from "./use-prefetch-behaviour";
+import { useViewOptionsSearch } from "../root";
 
 export function Examples({
   componentName,
@@ -60,10 +61,8 @@ export function ComponentCodeExamples({
   showCodeByDefault?: boolean;
   preload?: PrefetchBehavior;
 }) {
-  const [search] = useSearchParams();
-  const [activeExample, setActiveExample] = useState(
-    () => examples.find((example) => example.exampleName === search.get("example")) ?? examples[0],
-  );
+  const viewOptionsSearch = useViewOptionsSearch();
+  const [activeExample, setActiveExample] = useState(examples[0]);
   const [shouldPreload, preloadRef, preloadHandlers] = usePrefetchBehavior<HTMLDivElement>(
     preload,
     {},
@@ -82,12 +81,7 @@ export function ComponentCodeExamples({
               replace
               preventScrollReset
               to={{
-                search:
-                  "?" +
-                  new URLSearchParams({
-                    ...Object.fromEntries(search),
-                    example: example.exampleName,
-                  }).toString(),
+                search: viewOptionsSearch,
               }}
               onClick={() => {
                 setActiveExample(example);

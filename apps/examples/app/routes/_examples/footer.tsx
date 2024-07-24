@@ -1,6 +1,6 @@
 import { Container, Footer, HStack } from "@postenbring/hedwig-react";
-import { Link as RemixLink } from "@remix-run/react";
-import { useTheme } from "../../components/use-theme";
+import { Link as RemixLink } from "react-router";
+import { useViewOptionsSearch } from "../../root";
 
 export function LayoutFooter({
   copyright,
@@ -9,7 +9,7 @@ export function LayoutFooter({
   copyright?: React.ReactNode;
   footerLinkItems?: React.ReactNode;
 }) {
-  const { activeTheme } = useTheme();
+  const viewOptionsSearch = useViewOptionsSearch();
 
   return (
     <Footer variant="slim">
@@ -19,7 +19,7 @@ export function LayoutFooter({
             <RemixLink
               to={{
                 pathname: "/",
-                search: activeTheme === "bring" ? "?theme=bring" : "",
+                search: viewOptionsSearch,
               }}
               aria-label="To the front page"
             />

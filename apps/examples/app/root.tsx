@@ -1,19 +1,35 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "react-router";
 import bringFavicon from "./assets/bring-favicon.png?url";
 import postenFavicon from "./assets/posten-favicon.png?url";
+import { useClientOnly } from "./components/client-only";
 
-export function parseViewOptions(search: string) {
+export function parseViewOptions(search: string, overrides: Partial<Record<string, string>> = {}) {
   const { theme } = Object.fromEntries(new URLSearchParams(search));
 
   return {
     theme: theme === "bring" ? theme : "posten",
+    ...overrides,
   } as const;
 }
 export type ViewOptions = ReturnType<typeof parseViewOptions>;
 
-export function useViewOptions() {
+export function useViewOptions(overrides: Partial<ViewOptions> = {}) {
   const location = useLocation();
-  return parseViewOptions(location.search);
+  return useClientOnly(
+    () => parseViewOptions(location.search, overrides),
+    () => parseViewOptions("", overrides),
+  );
+}
+export function useViewOptionsSearch(overrides: Partial<ViewOptions> = {}) {
+  const viewOptions = useViewOptions(overrides);
+
+  // Optimization: Empty string when all options are default
+  // Makes the URL cleaner and easier to read
+  if (viewOptions.theme === "posten") {
+    return "";
+  }
+
+  return new URLSearchParams(viewOptions).toString();
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {

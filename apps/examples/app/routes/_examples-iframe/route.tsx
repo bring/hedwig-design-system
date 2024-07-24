@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { Outlet, useLocation } from "@remix-run/react";
+import { Outlet, useLocation } from "react-router";
 import { parseViewOptions as rootParseViewOptions } from "../../root";
 
 import styles from "./styles.module.css";
+import { useClientOnly } from "../../components/client-only";
 
 const layoutClassNames = {
   centered: styles.layoutCentered,
@@ -50,13 +51,16 @@ function parseViewOptions(
       false,
   } as const;
 }
-function useViewOptions() {
+function useIframeViewOptions() {
   const location = useLocation();
-  return parseViewOptions(location.search);
+  return useClientOnly(
+    () => parseViewOptions(location.search),
+    () => parseViewOptions(""),
+  );
 }
 
 export default function App() {
-  const viewOptions = useViewOptions();
+  const iframeViewOptions = useIframeViewOptions();
 
   useEffect(() => {
     window.parent.postMessage("example-loaded", "*");
@@ -65,15 +69,15 @@ export default function App() {
   return (
     <div
       className={[
-        viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
-        viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",
-        viewOptions?.breakpointIndicator ? styles.breakpointIndicator : "",
-        viewOptions?.breakpointIndicator === "bottom" ? styles.breakpointIndicatorBottom : "",
+        iframeViewOptions?.theme === "bring" ? "hds-theme-bring" : "",
+        iframeViewOptions?.layout ? layoutClassNames[iframeViewOptions.layout] : "",
+        iframeViewOptions?.breakpointIndicator ? styles.breakpointIndicator : "",
+        iframeViewOptions?.breakpointIndicator === "bottom" ? styles.breakpointIndicatorBottom : "",
       ].join(" ")}
     >
       <div
         style={{
-          scale: viewOptions.scale ? String(viewOptions.scale) : undefined,
+          scale: iframeViewOptions.scale ? String(iframeViewOptions.scale) : undefined,
         }}
       >
         <Outlet />

@@ -40,13 +40,7 @@ jobs:
 
       - name: "Move examples app build into storybook-static"
         run: |
-          mkdir -p apps/docs/storybook-static/assets/
-          cp -v -R apps/examples/build/client/assets/* apps/docs/storybook-static/assets/
-          mkdir -p apps/docs/storybook-static/examples/
-          mkdir -p apps/docs/storybook-static/storefront/
-          cp apps/examples/build/client/index.html apps/docs/storybook-static/examples/index.html
-          cp apps/examples/build/client/index.html apps/docs/storybook-static/storefront/index.html
-          cp apps/examples/build/client/index.html apps/docs/storybook-static/404.html
+          cp -v -R apps/examples/build/static/hedwig-design-system/* apps/docs/storybook-static/
 
       - name: "upload"
         uses: actions/upload-pages-artifact@v3

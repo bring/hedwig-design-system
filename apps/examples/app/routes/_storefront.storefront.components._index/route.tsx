@@ -2,9 +2,8 @@ import {
   useLoaderData,
   Link as RemixLink,
   NavLink as RemixNavLink,
-  useSearchParams,
   MetaFunction,
-} from "@remix-run/react";
+} from "react-router";
 import { componentsByGroup as exampleComponentsByGroup } from "../../examples";
 import { Examples, kebabCaseToFirstLetterUpperCase } from "../../components/component-examples";
 import { Grid, Link, VStack } from "@postenbring/hedwig-react";
@@ -13,6 +12,7 @@ import { client } from "../../../tina/__generated__/client";
 import styles from "./styles.module.css";
 import { useTina } from "tinacms/dist/react";
 import { PageContent } from "../_storefront.storefront.$/route";
+import { useViewOptionsSearch } from "../../root";
 
 export async function getComponentsByGroup() {
   // Components
@@ -37,7 +37,7 @@ export function getComponent(
     .find((component) => component === name);
 }
 
-export async function clientLoader() {
+export async function loader() {
   const { data, query, variables } = await client.queries.page({
     relativePath: "components/home.mdx",
   });
@@ -51,7 +51,7 @@ export async function clientLoader() {
 
   return { dataQueryVariables, componentsByGroup };
 }
-type LoaderData = Awaited<ReturnType<typeof clientLoader>>;
+type LoaderData = Awaited<ReturnType<typeof loader>>;
 
 export const meta: MetaFunction = ({ data, error }) => {
   if (error) {
@@ -76,7 +76,7 @@ export const meta: MetaFunction = ({ data, error }) => {
 export default function Component() {
   const { componentsByGroup, dataQueryVariables } = useLoaderData() as LoaderData;
   const { data } = useTina(dataQueryVariables);
-  const [search] = useSearchParams();
+  const viewOptionsSearch = useViewOptionsSearch();
 
   return (
     <div className="docs-container hds-mt-40-48">
@@ -110,7 +110,7 @@ export default function Component() {
                         <RemixLink
                           to={{
                             pathname: `/storefront/components/${componentName}/`,
-                            search: search.toString(),
+                            search: viewOptionsSearch,
                           }}
                         >
                           {kebabCaseToFirstLetterUpperCase(componentName)}
@@ -140,7 +140,7 @@ export function ComponentsSidebar({
 }: {
   componentsByGroup: Awaited<ReturnType<typeof getComponentsByGroup>>;
 }) {
-  const [search] = useSearchParams();
+  const viewOptionsSearch = useViewOptionsSearch();
 
   return (
     <VStack data-docs-area="sidebar" gap="24">
@@ -164,15 +164,20 @@ export function ComponentsSidebar({
                     <RemixNavLink
                       to={{
                         pathname: `/storefront/components/${componentName}/`,
-                        search: search.toString(),
+                        search: viewOptionsSearch,
                       }}
+                      prefetch="intent"
                     >
                       {({ isActive }) => (
                         <span
-                          style={{
-                            fontWeight: isActive ? "500" : "",
-                            color: isActive ? "var(--hds-colors-darker)" : "",
-                          }}
+                          style={
+                            isActive
+                              ? {
+                                  fontWeight: "500",
+                                  color: "var(--hds-colors-darker)",
+                                }
+                              : undefined
+                          }
                         >
                           {kebabCaseToFirstLetterUpperCase(componentName)}
                         </span>
