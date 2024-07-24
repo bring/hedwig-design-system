@@ -9,14 +9,14 @@
   text-decoration: initial;
   background: var(--hds-colors-lighter);
   border-radius: var(--hds-border-radius);
-  transition: box-shadow var(--hds-micro-animation-duration-normal)
+  transition: box-shadow var(--hds-micro-animation-duration-quick)
     var(--hds-micro-animation-easing-normal);
   display: flex;
   flex-direction: column;
   color: var(--hds-ui-colors-black);
 
   &:hover {
-    box-shadow: 0 1px 3px 0 rgba(0 0 0 / 12%);
+    box-shadow: var(--hds-shadow-default);
 
     .hds-card__body-action-arrow {
       transform: translateX(6px);
@@ -94,7 +94,7 @@
     height: 20px;
     border-bottom: none;
     transform: translateX(0);
-    transition: transform var(--hds-micro-animation-duration-normal)
+    transition: transform var(--hds-micro-animation-duration-quick)
       var(--hds-micro-animation-easing-normal);
   }
 }
