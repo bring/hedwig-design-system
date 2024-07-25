@@ -50,7 +50,7 @@ export const examples = Object.keys(modules)
     return {
       filePath,
       urlPath,
-      groupName,
+      groupName: groupName ?? "components",
       componentName,
       exampleName,
       exampleSource,
@@ -81,7 +81,7 @@ for (const [componentName, examples] of Object.entries(examplesByComponent)) {
 
 export const componentsByGroup = Object.entries(examplesByComponent).reduce(
   (acc, [componentName, examples]) => {
-    const group = examples?.[0].groupName ?? "components";
+    const group = examples?.[0].groupName;
     if (!acc[group]) {
       acc[group] = {};
     }
