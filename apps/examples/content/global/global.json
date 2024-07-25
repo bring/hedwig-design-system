@@ -9,8 +9,8 @@
         "iconSvg": ""
       },
       {
-        "href": "patterns",
-        "label": "Patterns"
+        "href": "../examples",
+        "label": "Examples"
       },
       {
         "href": "components",

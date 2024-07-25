@@ -4,10 +4,12 @@ import { client } from "../../../tina/__generated__/client";
 
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TitleAndDescription } from "../_storefront.storefront.$/route";
-import { Badge, Breadcrumbs, Link } from "@postenbring/hedwig-react";
+import { Badge, Breadcrumbs, Link, StyledHtml } from "@postenbring/hedwig-react";
 import { useViewOptionsSearch } from "../../root";
 import { ComponentQuery } from "../../../tina/__generated__/types";
 import { getDocsComponent } from "../_storefront.storefront.components._components/route";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { MDXComponents } from "../_storefront.storefront.$/mdx-components";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   let slug = params["*"] ?? "";
@@ -104,7 +106,7 @@ function ShallowComponentDocs() {
 
       {docsComponent.hasExamples && (
         <>
-          <h2 className="hds-text-h2 hds-mt-40-48 hds-mb-12-16">Examples</h2>
+          <h2 className="hds-text-h2 hds-mt-40-48 hds-mb-16-20">Examples</h2>
           <Examples
             key={docsComponent.componentName}
             componentName={docsComponent.componentName}
@@ -152,9 +154,15 @@ function ComponentDocs() {
         }
       />
 
+      {data.component.body && (
+        <StyledHtml size="small" className="hds-mb-48-64" style={{ maxWidth: "590px" }}>
+          <TinaMarkdown content={data.component.body} components={MDXComponents} />
+        </StyledHtml>
+      )}
+
       {docsComponent.hasExamples && (
         <>
-          <h2 className="hds-text-h2 hds-mt-40-48 hds-mb-12-16">Examples</h2>
+          <h2 className="hds-text-h2 hds-mt-40-48 hds-mb-16-20">Examples</h2>
           <Examples
             key={docsComponent.componentName}
             componentName={docsComponent.componentName}
