@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 1.1.1
+
+### Patch Changes
+
+- 6651c44: :lipstick: navbar: use `currentColor` in menu close icon
+
 ## 1.1.0
 
 ### Minor Changes
