@@ -38,12 +38,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "browserslist": "4.23.2",
+    "browserslist": "4.23.3",
     "chokidar-cli": "3.0.0",
     "globby": "14.0.2",
     "lightningcss": "1.25.1",
     "sanitize.css": "^13.0.0",
-    "stylelint": "16.7.0",
+    "stylelint": "16.8.1",
     "stylelint-config-standard": "36.0.1",
     "stylelint-value-no-unknown-custom-properties": "6.0.1",
     "wait-on": "^7.2.0"
