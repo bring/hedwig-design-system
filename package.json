@@ -14,16 +14,16 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.7",
+    "@changesets/cli": "^2.27.8",
     "@types/node": "20.14.11",
     "eslint": "^8.57.0",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "husky": "9.1.5",
-    "lint-staged": "15.2.9",
+    "lint-staged": "15.2.10",
     "prettier": "^3.3.3",
-    "stylelint": "16.8.2",
-    "turbo": "2.0.14"
+    "stylelint": "16.9.0",
+    "turbo": "2.1.1"
   },
   "pnpm": {
     "overrides": {
