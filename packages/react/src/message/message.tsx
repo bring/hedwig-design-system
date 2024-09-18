@@ -49,7 +49,7 @@ MessageDescription.displayName = "Message.Description";
 
 export type MessageProps = (
   | {
-      variant?: "success" | "attention" | "warning";
+      variant?: "success" | "attention" | "warning" | "info";
       icon?: never;
       iconClassName?: never;
     }
