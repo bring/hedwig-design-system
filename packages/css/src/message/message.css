@@ -52,6 +52,15 @@
     }
   }
 
+  &.hds-message--info {
+    background-color: var(--hds-ui-colors-light-grey-fill);
+
+    &::before {
+      background-size: 32px;
+      background-image: var(--_hds-info-square);
+    }
+  }
+
   &.hds-message--neutral {
     background-color: var(--hds-ui-colors-light-grey-fill);
 
