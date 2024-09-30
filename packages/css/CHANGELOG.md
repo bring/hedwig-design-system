@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 1.2.0
+
+### Minor Changes
+
+- d841186: ✨ Added support for new message type info
+
 ## 1.1.0
 
 ### Minor Changes
