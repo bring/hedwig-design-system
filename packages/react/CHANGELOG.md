@@ -1,5 +1,17 @@
 # @postenbring/hedwig-react
 
+## 1.2.0
+
+### Minor Changes
+
+- d841186: ✨ Added support for new message type info
+
+### Patch Changes
+
+- 6651c44: :lipstick: navbar: use `currentColor` in menu close icon
+- Updated dependencies [d841186]
+  - @postenbring/hedwig-css@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes
