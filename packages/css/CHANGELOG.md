@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 1.2.1
+
+### Patch Changes
+
+- 393cf21: :wheelchair: hide empty error-message using other attributes than `display: none`
+
 ## 1.2.0
 
 ### Minor Changes
