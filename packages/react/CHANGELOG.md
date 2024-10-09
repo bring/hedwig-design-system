@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 1.2.1
+
+### Patch Changes
+
+- d61853f: :bug: Fix screen readers not picking up `Checkbox` error messages due to conditional rendering
+
+  the `aria-live` attribute requires that the element exists in the DOM already for it to announce changes
+
 ## 1.2.0
 
 ### Minor Changes
