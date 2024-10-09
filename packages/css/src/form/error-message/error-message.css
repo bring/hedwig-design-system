@@ -5,9 +5,18 @@
   color: var(--hds-ui-colors-black);
   padding: var(--hds-spacing-8) 0 0 var(--hds-spacing-40);
 
-  /* Avoid spacing when no errors are active, but keep the element always in DOM so `aria-live` works */
+  /**
+   * Avoid spacing when no errors are active, but keep the element always in DOM so `aria-live` works.
+   * Using `display: none` broke `aria-live` in some browsers.
+   *
+   * It isn't enough to reset the internal spacing, when used inside a flex container it effects the layout.
+   * using `position: fixed` we drag it out of any such contexts
+   */
   &:empty {
-    display: none;
+    height: 0;
+    width: 0;
+    padding: 0;
+    position: fixed;
   }
 
   &:not(:empty) {
