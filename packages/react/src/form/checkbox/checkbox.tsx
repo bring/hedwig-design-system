@@ -74,7 +74,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           </label>
           {title ? children : null}
         </div>
-        {errorMessage ? <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage> : null}
+        <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage>
       </div>
     );
   },
