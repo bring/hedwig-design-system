@@ -11,7 +11,7 @@ export const ErrorMessage = forwardRef<HTMLDivElement, ErrorMessageProps>(
   ({ children, id, className, ...rest }, ref) => {
     return (
       <div
-        aria-live="assertive"
+        aria-live="polite"
         className={clsx("hds-error-message", className as undefined)}
         id={id}
         ref={ref}
