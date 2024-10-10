@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.tool-versions'
+          node-version-file: ".tool-versions"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -36,4 +36,5 @@ jobs:
           pnpm changeset version --snapshot $SANITIZED_REF
           pnpm turbo run build --filter=docs^... && pnpm changeset publish --no-git-tag --tag $SANITIZED_REF
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
