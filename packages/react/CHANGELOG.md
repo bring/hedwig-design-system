@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 1.2.3
+
+### Patch Changes
+
+- d774bb9: Change aria-live default and make it configurable via props
+
 ## 1.2.2
 
 ### Patch Changes
