@@ -1,0 +1,53 @@
+import { type RefObject, useEffect, useRef } from "react";
+import { Message } from "../../message";
+import { UnorderedList } from "../../list";
+import { Link } from "../../link";
+
+export interface ErrorSummaryError {
+  message: string;
+  ref?: RefObject<HTMLInputElement>; // TODO: Is input-element okay here? Probably, since error summaries usually
+}
+
+export interface ErrorSummaryProps {
+  heading: string;
+  errors: ErrorSummaryError[];
+  autoFocus?: boolean;
+  id?: string;
+  className?: string;
+}
+
+export function ErrorSummary(props: ErrorSummaryProps) {
+  // Automatically focus on this element when it enters the DOM
+  const headingRef = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    if (props.autoFocus) {
+      headingRef.current?.focus();
+    }
+  });
+
+  return (
+    <Message variant="warning">
+      <Message.Title ref={headingRef}>{props.heading}</Message.Title>
+      <Message.Description>
+        <UnorderedList size="small">
+          {props.errors.map((error) => (
+            <li key={error.message}>
+              <Link
+                size="small"
+                onClick={(event) => {
+                  event.preventDefault();
+                  error.ref?.current?.focus();
+                }}
+              >
+                {error.message}
+              </Link>
+            </li>
+          ))}
+        </UnorderedList>
+        {/*{props.errors.map((error) => {*/}
+        {/*  return <p key={error.message}>{error.message}</p>*/}
+        {/*})}*/}
+      </Message.Description>
+    </Message>
+  );
+}
