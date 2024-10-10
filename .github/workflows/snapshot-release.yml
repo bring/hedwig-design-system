@@ -30,6 +30,11 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Set publishing config
+        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+
       - name: Set and publish snapshot versions to npm registry
         run: |
           SANITIZED_REF=$(echo ${GITHUB_REF##*/} | sed 's/[^0-9a-z.-]/-/g')
