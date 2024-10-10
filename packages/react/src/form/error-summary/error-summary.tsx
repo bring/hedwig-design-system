@@ -16,21 +16,21 @@ export interface ErrorSummaryProps {
   className?: string;
 }
 
-export function ErrorSummary(props: ErrorSummaryProps) {
+export function ErrorSummary({ heading, autoFocus, errors }: ErrorSummaryProps) {
   // Automatically focus on this element when it enters the DOM
   const headingRef = useRef<HTMLParagraphElement>(null);
   useEffect(() => {
-    if (props.autoFocus) {
+    if (autoFocus) {
       headingRef.current?.focus();
     }
   });
 
   return (
     <Message variant="warning">
-      <Message.Title ref={headingRef}>{props.heading}</Message.Title>
+      <Message.Title ref={headingRef}>{heading}</Message.Title>
       <Message.Description>
         <UnorderedList size="small">
-          {props.errors.map((error) => (
+          {errors.map((error) => (
             <li key={error.message}>
               <Link
                 size="small"
