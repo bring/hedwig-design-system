@@ -44,9 +44,6 @@ export function ErrorSummary(props: ErrorSummaryProps) {
             </li>
           ))}
         </UnorderedList>
-        {/*{props.errors.map((error) => {*/}
-        {/*  return <p key={error.message}>{error.message}</p>*/}
-        {/*})}*/}
       </Message.Description>
     </Message>
   );
