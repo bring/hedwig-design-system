@@ -1,7 +1,7 @@
 import { useId, forwardRef, Children, isValidElement, cloneElement } from "react";
 import type { LabelHTMLAttributes, ReactNode, CSSProperties } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { ErrorMessage } from "../error-message";
+import { ErrorMessage, type ErrorMessageProps } from "../error-message";
 
 interface InputProps {
   "aria-describedby"?: string;
@@ -16,6 +16,7 @@ export interface InputGroupProps {
   style?: CSSProperties;
   variant?: "default" | "white";
   errorMessage?: ReactNode;
+  errorMessageProps?: Partial<ErrorMessageProps>;
   labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
   label: ReactNode;
   disabled?: boolean;
@@ -35,6 +36,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
     style,
     variant = "default",
     errorMessage,
+    errorMessageProps,
     labelProps: { className: labelClassName, ...labelProps } = {},
     label,
     disabled,
@@ -100,7 +102,9 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
       >
         {renderInput()}
       </div>
-      <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage>
+      <ErrorMessage id={errorMessageId} {...errorMessageProps}>
+        {errorMessage}
+      </ErrorMessage>
     </div>
   );
 });

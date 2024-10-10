@@ -1,12 +1,13 @@
 import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { ErrorMessage } from "../error-message";
+import { ErrorMessage, type ErrorMessageProps } from "../error-message";
 import { useFieldsetContext } from "../fieldset";
 
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> & {
   children: ReactNode;
   variant?: "plain" | "bounding-box";
   title?: string;
+  errorMessageProps?: Partial<ErrorMessageProps>;
 } & (
     | {
         /**
@@ -38,6 +39,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       variant = "plain",
       hasError: hasErrorProp,
       errorMessage,
+      errorMessageProps,
       title,
       children,
       className,
@@ -74,7 +76,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           </label>
           {title ? children : null}
         </div>
-        <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage>
+        <ErrorMessage id={errorMessageId} {...errorMessageProps}>
+          {errorMessage}
+        </ErrorMessage>
       </div>
     );
   },
