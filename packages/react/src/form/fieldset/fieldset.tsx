@@ -1,7 +1,7 @@
 import { useId, forwardRef, createContext, useContext } from "react";
 import type { FieldsetHTMLAttributes, HTMLAttributes, ReactNode, CSSProperties } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { ErrorMessage } from "../error-message";
+import { ErrorMessage, type ErrorMessageProps } from "../error-message";
 
 export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
   className?: string;
@@ -16,6 +16,7 @@ export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElemen
   legendProps?: HTMLAttributes<HTMLElement> & { size: "default" | "large" };
   legend: ReactNode;
   children: ReactNode;
+  errorMessageProps?: Partial<ErrorMessageProps>;
 }
 
 const FieldsetContext = createContext<{ hasError: boolean }>({ hasError: false });
@@ -27,6 +28,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
     className,
     style,
     errorMessage,
+    errorMessageProps,
     legendProps: { size: legendSize = "default", className: legendClassName, ...legendProps } = {},
     legend,
     children,
@@ -58,7 +60,9 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage) }}>
         {children}
       </FieldsetContext.Provider>
-      <ErrorMessage id={errorMessageId}>{errorMessage}</ErrorMessage>
+      <ErrorMessage id={errorMessageId} {...errorMessageProps}>
+        {errorMessage}
+      </ErrorMessage>
     </fieldset>
   );
 });

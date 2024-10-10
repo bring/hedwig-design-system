@@ -22,6 +22,22 @@ function Example() {
           Check this box
         </Checkbox>
       </Fieldset>
+      <Fieldset
+        legend="Legend"
+        errorMessage="Aria-live is off for this error"
+        errorMessageProps={{ "aria-live": "off" }}
+        style={{ minWidth: 400 }}
+      >
+        <Checkbox variant="bounding-box" defaultChecked value="Hello">
+          Check this box
+        </Checkbox>
+        <Checkbox variant="bounding-box" value="Hello">
+          Check this box
+        </Checkbox>
+        <Checkbox variant="bounding-box" value="Hello">
+          Check this box
+        </Checkbox>
+      </Fieldset>
     </HStack>
   );
 }
