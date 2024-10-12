@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { type ThemeRegistrationRaw, getHighlighterCore } from "shiki/core";
+import { type ThemeRegistrationRaw, createHighlighterCore } from "shiki/core";
 import langsTsx from "shiki/langs/tsx.mjs";
 import getWasm from "shiki/wasm";
 import vesper from "shiki/themes/vesper.mjs";
@@ -19,11 +19,16 @@ const codeThemes: Record<"posten" | "bring", ThemeRegistrationRaw> = {
   bring: poimandres,
 } as const;
 
-const highlighter = await getHighlighterCore({
-  themes: [codeThemes.posten, codeThemes.bring],
-  langs: [langsTsx],
-  loadWasm: getWasm,
-});
+let highlighter: Awaited<ReturnType<typeof createHighlighterCore>> | undefined;
+async function initHighlighter() {
+  highlighter = await createHighlighterCore({
+    themes: [codeThemes.posten, codeThemes.bring],
+    langs: [langsTsx],
+    loadWasm: getWasm,
+  });
+}
+// Top-level await broke dev server. Need to do a non-blocking init
+initHighlighter();
 
 /**
  * A single code example
@@ -261,10 +266,12 @@ function Code({ code, id }: { code: string; id: string }) {
   const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
 
   const formattedCode = useMemo(() => {
-    return highlighter.codeToHtml(code, {
-      lang: "tsx",
-      theme: activeTheme === "bring" ? codeThemes.bring : codeThemes.posten,
-    });
+    return (
+      highlighter?.codeToHtml(code, {
+        lang: "tsx",
+        theme: activeTheme === "bring" ? codeThemes.bring : codeThemes.posten,
+      }) ?? "code highlighter not loaded. Refresh the page."
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only run once
   }, [activeTheme, id]);
 
