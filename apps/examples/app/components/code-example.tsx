@@ -12,7 +12,7 @@ import styles from "./code-example.module.css";
 import { Example } from "../examples";
 import { Button, StyledHtml, type ButtonProps } from "@postenbring/hedwig-react";
 import { openExampleInCodeSandbox } from "./codesandbox";
-import { useSearchParams } from "@remix-run/react";
+import { pathWithTheme, useTheme } from "../routes/_theme";
 
 const codeThemes: Record<"posten" | "bring", ThemeRegistrationRaw> = {
   posten: vesper,
@@ -44,8 +44,9 @@ export function CodeExample({
   defaultShowCode?: boolean;
   shouldPreload?: boolean;
 }) {
-  if (!allExamples) allExamples = [activeExample];
-  const [search] = useSearchParams();
+  allExamples ??= [activeExample];
+
+  const theme = useTheme();
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [showCode, setShowCode] = useState(defaultShowCode);
 
@@ -54,13 +55,10 @@ export function CodeExample({
     if (example.config?.layout) {
       iframeViewOptions.set("layout", example.config.layout);
     }
-    if (search.get("theme")) {
-      iframeViewOptions.set("theme", search.get("theme")!);
-    }
     if (example.config?.breakpointIndicator) {
       iframeViewOptions.set("breakpointIndicator", String(example.config?.breakpointIndicator));
     }
-    return `${example.urlPath}?${iframeViewOptions.toString()}`;
+    return pathWithTheme(`${example.urlPath}?${iframeViewOptions.toString()}`, theme);
   }
 
   return (
@@ -262,8 +260,7 @@ function CopyButton({
 }
 
 function Code({ code, id }: { code: string; id: string }) {
-  const [search] = useSearchParams();
-  const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
+  const activeTheme = useTheme();
 
   const formattedCode = useMemo(() => {
     return (

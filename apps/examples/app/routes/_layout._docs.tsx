@@ -1,5 +1,5 @@
 import { StyledHtml } from "@postenbring/hedwig-react";
-import { Outlet } from "@remix-run/react";
+import { Outlet } from "react-router";
 
 import styles from "./_layout._docs.module.css";
 

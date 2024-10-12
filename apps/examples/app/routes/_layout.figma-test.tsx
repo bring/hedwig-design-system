@@ -1,5 +1,5 @@
 import { StyledHtml, Text } from "@postenbring/hedwig-react";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "react-router";
 import { getFigmaPreviewImages } from "../components/figma/get-figma-preview";
 import { FigmaEmbed } from "../components/figma/figma-embed";
 import { FigmaPreviews } from "../components/figma/figma-preview";
@@ -17,7 +17,7 @@ export async function clientLoader() {
 }
 
 export default function Component() {
-  const data = useLoaderData<typeof clientLoader>();
+  const data = useLoaderData() as Awaited<ReturnType<typeof clientLoader>>;
 
   return (
     <div>

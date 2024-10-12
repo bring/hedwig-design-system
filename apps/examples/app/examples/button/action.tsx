@@ -18,6 +18,6 @@ import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   index: 3,
   layout: "centered-fullwidth",
-  breakpointIndicator: true,
+  breakpointIndicator: "top",
   description: `A main and alternative action button set that become fullwidth on mobile`,
 };

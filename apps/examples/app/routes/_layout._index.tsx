@@ -1,5 +1,5 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Link as RemixLink, useLocation, useSearchParams } from "@remix-run/react";
+import type { MetaFunction } from "react-router";
+import { Link as RemixLink, useLocation } from "react-router";
 
 import {
   ComponentCodeExamples,
@@ -9,6 +9,7 @@ import { componentsByGroup } from "../examples";
 import styles from "./_layout._index.module.css";
 import { Grid, Link, LinkList } from "@postenbring/hedwig-react";
 import { useEffect } from "react";
+import { pathWithTheme, useTheme } from "./_theme";
 
 export const meta: MetaFunction = () => {
   return [
@@ -19,7 +20,7 @@ export const meta: MetaFunction = () => {
 
 function ExamplesMenu() {
   const location = useLocation();
-  const [search] = useSearchParams();
+  const theme = useTheme();
 
   useEffect(() => {
     if (location.hash) {
@@ -36,7 +37,7 @@ function ExamplesMenu() {
         .sort(([a], [b]) => a.localeCompare(b))
         .map(([groupName, components]) => (
           <div key={groupName}>
-            {groupName !== "default" && (
+            {groupName !== "components" && (
               <h2 className="hds-text-body-title hds-mt-24-32 hds-mb-8-12">
                 {kebabCaseToFirstLetterUpperCase(groupName)}
               </h2>
@@ -47,9 +48,12 @@ function ExamplesMenu() {
                   <Link variant="underline" asChild>
                     <RemixLink
                       to={{
-                        pathname:
-                          groupName !== "default" ? `${groupName}/${componentName}` : componentName,
-                        search: search.toString(),
+                        pathname: pathWithTheme(
+                          groupName !== "components"
+                            ? `${groupName}/${componentName}`
+                            : componentName,
+                          theme,
+                        ),
                       }}
                     >
                       {kebabCaseToFirstLetterUpperCase(componentName)}
@@ -65,7 +69,7 @@ function ExamplesMenu() {
 }
 
 export default function Index() {
-  const [search] = useSearchParams();
+  const theme = useTheme();
   return (
     <>
       <ExamplesMenu />
@@ -75,7 +79,7 @@ export default function Index() {
           .sort(([a], [b]) => a.localeCompare(b))
           .map(([groupName, components]) => (
             <div key={groupName}>
-              {groupName !== "default" && (
+              {groupName !== "components" && (
                 <h2 className="hds-text-h1 hds-mt-48-64 hds-mb-24-32" id={`examples-${groupName}`}>
                   {kebabCaseToFirstLetterUpperCase(groupName)}
                 </h2>
@@ -95,11 +99,12 @@ export default function Index() {
                         <RemixLink
                           className={styles.exampleHeadingLink}
                           to={{
-                            pathname:
-                              groupName !== "default"
+                            pathname: pathWithTheme(
+                              groupName !== "components"
                                 ? `${groupName}/${componentName}`
                                 : componentName,
-                            search: search.toString(),
+                              theme,
+                            ),
                           }}
                         >
                           {kebabCaseToFirstLetterUpperCase(componentName)}

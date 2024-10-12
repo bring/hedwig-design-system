@@ -1,12 +1,10 @@
 import {
   isRouteErrorResponse,
-  useLoaderData,
   useRouteError,
   Link as RemixLink,
-  useSearchParams,
   MetaFunction,
-  ClientLoaderFunctionArgs,
-} from "@remix-run/react";
+  useParams,
+} from "react-router";
 import { examplesByComponent } from "../examples";
 import {
   ComponentCodeExamples,
@@ -14,19 +12,7 @@ import {
 } from "../components/component-examples";
 import { Breadcrumbs, Link, Text } from "@postenbring/hedwig-react";
 
-export async function clientLoader({ params: { group, component } }: ClientLoaderFunctionArgs) {
-  if (!component || !(component in examplesByComponent)) {
-    throw new Response("Example component not found", { status: 404 });
-  }
-
-  return {
-    group,
-    component,
-    examples: examplesByComponent[component]!,
-  };
-}
-
-export const meta: MetaFunction<typeof clientLoader> = ({ data, error }) => {
+export const meta: MetaFunction = ({ params: { component }, error }) => {
   if (error) {
     return [
       {
@@ -35,17 +21,17 @@ export const meta: MetaFunction<typeof clientLoader> = ({ data, error }) => {
     ];
   }
 
-  const { component } = data as ReturnType<typeof useLoaderData<typeof clientLoader>>;
   return [
     {
-      title: `${kebabCaseToFirstLetterUpperCase(component)} - Hedwig Design System`,
+      title: `${kebabCaseToFirstLetterUpperCase(component ?? "")} - Hedwig Design System`,
     },
   ];
 };
 
 export default function Component() {
-  const { group, component, examples } = useLoaderData<typeof clientLoader>();
-  const [search] = useSearchParams();
+  const { group, component } = useParams() as { group?: string; component: string };
+  const examples = examplesByComponent[component]!;
+
   return (
     <div>
       <Breadcrumbs className="hds-mt-24-32 hds-mb-24-32">
@@ -54,7 +40,6 @@ export default function Component() {
             <RemixLink
               to={{
                 pathname: "../",
-                search: search.toString(),
               }}
             >
               Examples

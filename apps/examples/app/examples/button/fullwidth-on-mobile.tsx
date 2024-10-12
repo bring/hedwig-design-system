@@ -11,6 +11,6 @@ import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   index: 2,
   layout: "centered-fullwidth",
-  breakpointIndicator: true,
+  breakpointIndicator: "top",
   description: `Button will be fullwidth on mobile screens when <code>fullWidth="mobile"</code> is set`,
 };

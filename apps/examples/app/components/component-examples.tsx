@@ -1,4 +1,4 @@
-import { useSearchParams, Link } from "@remix-run/react";
+import { useSearchParams, Link } from "react-router";
 import { Chip } from "./chip";
 import { CodeExample } from "./code-example";
 import { Example, examplesByComponent } from "../examples";
@@ -48,7 +48,6 @@ export function ComponentCodeExamples({
                 search:
                   "?" +
                   new URLSearchParams({
-                    ...Object.fromEntries(search),
                     example: example.exampleName,
                   }).toString(),
               }}

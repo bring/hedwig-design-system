@@ -1,67 +1,47 @@
-import { reactRouter } from "@react-router/dev/vite";
-import { defineConfig } from "vite";
+import { layout, route, type RouteConfig, type RouteConfigEntry } from "@react-router/dev/routes";
+import { flatRoutes } from "@react-router/fs-routes";
 import fs from "node:fs/promises";
 
-export default defineConfig({
-  server: {
-    port: 6007,
-  },
-  build: {
-    target: "es2022",
-    sourcemap: true,
-  },
-  base: "/hedwig-design-system/examples/",
-  plugins: [
-    reactRouter({
-      ssr: false,
-      basename: "/hedwig-design-system/examples/",
+export const routes: RouteConfig = buildRoutes();
 
-      async prerender({ getStaticPaths }) {
-        const staticPaths = getStaticPaths();
-        const dynamicPaths = (await getGroupAndComponentsList()).map(
-          ({ groupName, componentName }) => {
-            if (groupName) {
-              return `/${groupName}/${componentName}`;
-            }
-            return `/${componentName}`;
-          },
-        );
+async function buildRoutes(): Promise<RouteConfigEntry[]> {
+  const fileRoutes = await flatRoutes({
+    ignoredRouteFiles: ["*/**.css"],
+  });
 
-        const prerenderPaths = [...staticPaths, ...dynamicPaths];
-        return prerenderPaths;
-      },
+  const examplesRoutes = (await getExamplesFilePaths()).map((filePath) =>
+    route(filePath.replace(/\.tsx$/, ""), "examples/" + filePath),
+  );
+  const examplesRoutesWithIframeLayout = layout(
+    "./routes/_examples-iframe/route.tsx",
+    examplesRoutes,
+  );
 
-      async buildEnd() {
-        console.log("Copying static files...");
-        await fs.cp("./build/client/hedwig-design-system", "./build/static/hedwig-design-system", {
-          recursive: true,
-        });
-        await fs.cp(
-          "./build/client/assets",
-          "./build/static/hedwig-design-system/examples/assets",
-          {
-            recursive: true,
-          },
-        );
-      },
-    }),
-  ],
-  resolve: {
-    alias: [
-      {
-        find: "@postenbring/hedwig-react",
-        replacement: new URL("../../packages/react/src", import.meta.url).pathname,
-      },
-    ],
-  },
-});
+  const routes = [...fileRoutes, examplesRoutesWithIframeLayout];
+
+  const routesThemed = [
+    ...routes,
+    route("/bring", "./routes/_theme.tsx", prefixRoutesWithId(routes, "bring")),
+  ];
+  return routesThemed;
+}
+
+function prefixRoutesWithId(routes: RouteConfigEntry[], id: string): RouteConfigEntry[] {
+  return routes.map((route) => {
+    return {
+      ...route,
+      id: id + "-" + (route.id ?? route.file),
+      children: route.children ? prefixRoutesWithId(route.children, id) : undefined,
+    };
+  });
+}
 
 /**
  * Returns the file paths of all examples files, relative to `app/examples`.
  * `["warning-banner/expandable.tsx", "patterns/composition/links-and-buttons.tsx"]`.
  */
 export async function getExamplesFilePaths() {
-  const examplesFolder = "./app/examples";
+  const examplesFolder = "./examples";
   const exampleFilesAndDirs = await fs.readdir(new URL(examplesFolder, import.meta.url), {
     recursive: true,
   });

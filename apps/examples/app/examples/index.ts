@@ -1,4 +1,4 @@
-import type { ExampleViewOptions } from "../root";
+import type { ExampleViewOptions } from "../routes/_examples-iframe/route";
 
 const modules = import.meta.glob(["./*/*/*.tsx", "./*/*.tsx"], {
   query: "?raw",
@@ -50,7 +50,7 @@ export const examples = Object.keys(modules)
     return {
       filePath,
       urlPath,
-      groupName,
+      groupName: groupName ?? "components",
       componentName,
       exampleName,
       exampleSource,
@@ -81,7 +81,7 @@ for (const [componentName, examples] of Object.entries(examplesByComponent)) {
 
 export const componentsByGroup = Object.entries(examplesByComponent).reduce(
   (acc, [componentName, examples]) => {
-    const group = examples?.[0].groupName ?? "default";
+    const group = examples?.[0].groupName;
     if (!acc[group]) {
       acc[group] = {};
     }
@@ -91,10 +91,6 @@ export const componentsByGroup = Object.entries(examplesByComponent).reduce(
   },
   {} as Record<string, typeof examplesByComponent>,
 );
-
-export function isPathInExamples(path: string) {
-  return examples.some((example) => example.urlPath.endsWith(path));
-}
 
 // Types
 export type Example = (typeof examples)[number];
