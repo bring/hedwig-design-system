@@ -14,8 +14,10 @@ type Story = StoryObj<typeof ErrorSummary>;
 export const Preview: Story = {
   tags: ["!dev"],
   args: {
-    id: "id",
     heading: "Errors in demo",
-    errors: [{ message: "test1" }, { message: "test2" }],
+    errors: [
+      { message: "test1", anchor: "test1" },
+      { message: "test2", anchor: "test2" },
+    ],
   },
 };
