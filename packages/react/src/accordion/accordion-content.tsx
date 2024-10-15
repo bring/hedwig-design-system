@@ -16,7 +16,6 @@ export const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps
     return (
       <div
         id={context.contentId}
-        aria-hidden={!context.open}
         data-state={context.open ? "open" : "closed"}
         {...{ inert: context.open ? undefined : "true" }}
         className={clsx("hds-accordion-item-content", className as undefined)}
