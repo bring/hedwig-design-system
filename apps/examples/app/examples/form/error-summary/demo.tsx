@@ -65,7 +65,7 @@ function Example() {
         </ErrorSummary>
 
         <Button type="submit" fullWidth="mobile" style={{ alignSelf: "start" }}>
-          Fortsett
+          Continue
         </Button>
       </form>
     </VStack>
