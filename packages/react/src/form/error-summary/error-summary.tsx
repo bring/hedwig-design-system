@@ -19,7 +19,7 @@ interface ErrorSummaryHeadingPropsAutoFocus {
 
 interface ErrorSummaryHeadingPropsAs {
   /**
-   *
+   * A heading level must be selected, or optionally opting out for a different element
    *
    * Use {@link ErrorSummaryHeadingPropsAsChild.asChild} if you need more control of the rendered element.
    */
