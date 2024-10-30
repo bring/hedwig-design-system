@@ -3,7 +3,7 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 import { Box, type BoxProps } from "../box/box";
 
-interface MessageTitleProps extends React.HTMLAttributes<HTMLParagraphElement> {
+export interface MessageTitleProps extends React.HTMLAttributes<HTMLParagraphElement> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    *
@@ -25,7 +25,7 @@ export const MessageTitle = forwardRef<HTMLParagraphElement, MessageTitleProps>(
 );
 MessageTitle.displayName = "Message.Title";
 
-interface MessageDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
+export interface MessageDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    *

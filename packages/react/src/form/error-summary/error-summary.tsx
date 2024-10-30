@@ -1,14 +1,35 @@
-import { forwardRef } from "react";
-import { Message, type MessageProps } from "../../message";
+import { forwardRef, useEffect, useRef } from "react";
+import { Message, type MessageProps, type MessageTitleProps } from "../../message";
 import { UnorderedList, type ListProps } from "../../list";
 import { Link } from "../../link";
+import { useMergeRefs } from "../../utils";
 import { focusWithLegendOrLabelInViewport } from "./focus";
 
-type ErrorSummaryHeadingProps = React.HTMLAttributes<HTMLParagraphElement>;
+export interface ErrorSummaryHeadingProps extends MessageTitleProps {
+  /**
+   * The heading will be focused when the component mounts
+   *
+   * On following errornous form submissions you should manually focus the heading
+   * e.g. by passing a ref and calling `ref.current.focus()`
+   *
+   * @default true
+   */
+  autoFocus?: boolean;
+}
 export const ErrorSummaryHeading = forwardRef<HTMLParagraphElement, ErrorSummaryHeadingProps>(
-  ({ children, ...rest }, ref) => {
+  ({ children, autoFocus = true, ...rest }, ref) => {
+    const titleRef = useRef<HTMLElement>(null);
+    const mergedRef = useMergeRefs([titleRef, ref]);
+
+    useEffect(() => {
+      if (titleRef.current && autoFocus) {
+        titleRef.current.focus();
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps -- Only on initial render
+    }, []);
+
     return (
-      <Message.Title ref={ref} {...rest}>
+      <Message.Title ref={mergedRef} tabIndex={-1} {...rest}>
         {children}
       </Message.Title>
     );
@@ -16,7 +37,7 @@ export const ErrorSummaryHeading = forwardRef<HTMLParagraphElement, ErrorSummary
 );
 ErrorSummaryHeading.displayName = "ErrorSummary.Heading";
 
-interface ErrorSummaryListProps extends ListProps {
+export interface ErrorSummaryListProps extends ListProps {
   /**
    * Sets the size of the items (font)
    *
@@ -37,7 +58,7 @@ export const ErrorSummaryList = forwardRef<HTMLUListElement, ErrorSummaryListPro
 );
 ErrorSummaryList.displayName = "ErrorSummary.List";
 
-interface ErrorSummaryItemProps extends React.HTMLAttributes<HTMLLIElement> {
+export interface ErrorSummaryItemProps extends React.HTMLAttributes<HTMLLIElement> {
   /**
    * A hash link to the element that the error message refers to
    *

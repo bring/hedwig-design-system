@@ -10,7 +10,6 @@ import {
 
 function Example() {
   const errorsById: Record<string, string | undefined> = {
-    mobilenumber: "Mobile number is required",
     firstname: "First name is required",
     "favorite-food": "Favorite food is required",
   };
@@ -18,19 +17,6 @@ function Example() {
   return (
     <VStack gap="24" asChild>
       <form onSubmit={(e) => e.preventDefault()}>
-        <Input
-          label="Mobile number"
-          id="mobilenumber"
-          name="mobilenumber"
-          errorMessage={errorsById["mobilenumber"]}
-        />
-        <Input
-          label="Email"
-          id="email"
-          name="email"
-          type="email"
-          errorMessage={errorsById["email"]}
-        />
         <Input
           label="First name"
           id="firstname"
@@ -78,4 +64,12 @@ import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   index: 0,
   layout: "centered-vertical-padding",
+  description: `
+  <p>See other design systems for best practices around error summaries</p>
+  <ul>
+    <li><a href="https://aksel.nav.no/komponenter/core/errorsummary">NAV - Aksel</a></li>
+    <li><a href="https://next.storybook.designsystemet.no/?path=/docs/komponenter-errorsummary--docs">Digdir - Designsystemet</a></li>
+    <li><a href="https://design-system.service.gov.uk/components/error-summary/">GOV UK</a></li>
+  </ul>
+  `,
 };
