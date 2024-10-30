@@ -146,7 +146,7 @@ function Example() {
             Continue
           </Button>
           <Button
-            title="Reset button just for example purposes, it's generally not recommended to have a reset button in forms"
+            title="Reset button just for purpose of example usage, it's generally not recommended to have a reset button in forms"
             type="reset"
             onClick={() => setErrors(undefined)}
             variant="primary-outline"

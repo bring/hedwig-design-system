@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 import "@postenbring/hedwig-css";
 import {
   Input,
@@ -38,7 +39,7 @@ function Example() {
         </RadioGroup>
 
         <ErrorSummary>
-          <ErrorSummary.Heading>
+          <ErrorSummary.Heading autoFocus={false}>
             To continue please correct the following issues
           </ErrorSummary.Heading>
           <ErrorSummary.List>
@@ -65,7 +66,7 @@ export const config: ExampleConfig = {
   index: 0,
   layout: "centered-vertical-padding",
   description: `
-  <p>See other design systems for best practices around error summaries</p>
+  <p>Read about best practices for Error Summary in these design systems</p>
   <ul>
     <li><a href="https://aksel.nav.no/komponenter/core/errorsummary">NAV - Aksel</a></li>
     <li><a href="https://next.storybook.designsystemet.no/?path=/docs/komponenter-errorsummary--docs">Digdir - Designsystemet</a></li>

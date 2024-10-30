@@ -14,10 +14,14 @@ type Story = StoryObj<typeof ErrorSummary>;
 export const Preview: Story = {
   tags: ["!dev"],
   args: {
-    heading: "Errors in demo",
-    errors: [
-      { message: "test1", anchor: "test1" },
-      { message: "test2", anchor: "test2" },
-    ],
+    children: (
+      <>
+        <ErrorSummary.Heading>To continue please correct the following issues</ErrorSummary.Heading>
+        <ErrorSummary.List>
+          <ErrorSummary.Item href="#firstname">First name is required</ErrorSummary.Item>
+          <ErrorSummary.Item href="#surname">Surname is required</ErrorSummary.Item>
+        </ErrorSummary.List>
+      </>
+    ),
   },
 };
