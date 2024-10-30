@@ -5,7 +5,7 @@ import { Link } from "../../link";
 import { useMergeRefs } from "../../utils";
 import { focusWithLegendOrLabelInViewport } from "./focus";
 
-export interface ErrorSummaryHeadingProps extends MessageTitleProps {
+interface ErrorSummaryHeadingPropsAutoFocus {
   /**
    * The heading will be focused when the component mounts
    *
@@ -16,25 +16,49 @@ export interface ErrorSummaryHeadingProps extends MessageTitleProps {
    */
   autoFocus?: boolean;
 }
-export const ErrorSummaryHeading = forwardRef<HTMLParagraphElement, ErrorSummaryHeadingProps>(
-  ({ children, autoFocus = true, ...rest }, ref) => {
-    const titleRef = useRef<HTMLElement>(null);
-    const mergedRef = useMergeRefs([titleRef, ref]);
 
-    useEffect(() => {
-      if (titleRef.current && autoFocus) {
-        titleRef.current.focus();
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps -- Only on initial render
-    }, []);
+interface ErrorSummaryHeadingPropsAs {
+  /**
+   *
+   *
+   * Use {@link ErrorSummaryHeadingPropsAsChild.asChild} if you need more control of the rendered element.
+   */
+  as: "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "div" | "label" | "p";
+  asChild?: never;
+}
 
-    return (
-      <Message.Title ref={mergedRef} tabIndex={-1} {...rest}>
-        {children}
-      </Message.Title>
-    );
-  },
-);
+interface ErrorSummaryHeadingPropsAsChild {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   */
+  asChild: true;
+  as?: never;
+}
+
+export type ErrorSummaryHeadingProps = MessageTitleProps &
+  ErrorSummaryHeadingPropsAutoFocus &
+  (ErrorSummaryHeadingPropsAs | ErrorSummaryHeadingPropsAsChild);
+
+export const ErrorSummaryHeading = forwardRef<
+  HTMLParagraphElement,
+  ErrorSummaryHeadingProps & (ErrorSummaryHeadingPropsAs | ErrorSummaryHeadingPropsAsChild)
+>(({ children, as: Tag, autoFocus = true, ...rest }, ref) => {
+  const focusRef = useRef<HTMLElement>(null);
+  const mergedRef = useMergeRefs([focusRef, ref]);
+
+  useEffect(() => {
+    if (focusRef.current && autoFocus) {
+      focusRef.current.focus();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Only on initial render
+  }, []);
+
+  return (
+    <Message.Title ref={mergedRef} tabIndex={-1} asChild {...rest}>
+      {Tag ? <Tag>{children}</Tag> : children}
+    </Message.Title>
+  );
+});
 ErrorSummaryHeading.displayName = "ErrorSummary.Heading";
 
 export interface ErrorSummaryListProps extends ListProps {
@@ -93,10 +117,7 @@ export const ErrorSummaryItem = forwardRef<HTMLLIElement, ErrorSummaryItemProps>
 );
 ErrorSummaryItem.displayName = "ErrorSummary.Item";
 
-export interface ErrorSummaryProps
-  extends Omit<MessageProps, "variant" | "icon" | "iconClassName"> {
-  autoFocus?: boolean;
-}
+export type ErrorSummaryProps = Omit<MessageProps, "variant" | "icon" | "iconClassName">;
 
 export const ErrorSummary = forwardRef<HTMLDivElement, ErrorSummaryProps>(
   ({ children, ...rest }, ref) => {

@@ -39,7 +39,7 @@ function Example() {
         </RadioGroup>
 
         <ErrorSummary>
-          <ErrorSummary.Heading autoFocus={false}>
+          <ErrorSummary.Heading as="h2" autoFocus={false}>
             To continue please correct the following issues
           </ErrorSummary.Heading>
           <ErrorSummary.List>

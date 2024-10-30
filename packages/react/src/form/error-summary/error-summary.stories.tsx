@@ -16,7 +16,9 @@ export const Preview: Story = {
   args: {
     children: (
       <>
-        <ErrorSummary.Heading>To continue please correct the following issues</ErrorSummary.Heading>
+        <ErrorSummary.Heading as="h2">
+          To continue please correct the following issues
+        </ErrorSummary.Heading>
         <ErrorSummary.List>
           <ErrorSummary.Item href="#firstname">First name is required</ErrorSummary.Item>
           <ErrorSummary.Item href="#surname">Surname is required</ErrorSummary.Item>

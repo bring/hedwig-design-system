@@ -128,7 +128,7 @@ function Example() {
 
         {errors && (
           <ErrorSummary>
-            <ErrorSummary.Heading ref={errorSummaryHeadingRef}>
+            <ErrorSummary.Heading as="h2" ref={errorSummaryHeadingRef}>
               To continue please correct the following issues
             </ErrorSummary.Heading>
             <ErrorSummary.List>
