@@ -42,14 +42,11 @@ function Example() {
     e:
       | React.FocusEvent<HTMLInputElement | HTMLFieldSetElement>
       | React.ChangeEvent<HTMLInputElement | HTMLFieldSetElement>,
+    _id?: keyof typeof formSchema,
   ) {
-    let id = e.currentTarget.id as keyof typeof formSchema;
-    if ((!errors?.[id] && e.type === "radio") || e.type === "checkbox") {
-      id = e.currentTarget.closest("fieldset")?.id as keyof typeof formSchema;
-    }
+    const id = _id ?? (e.currentTarget.id as keyof typeof formSchema);
 
     if (!errors?.[id]) return;
-    e.currentTarget.form;
     const fieldErrors = validateForm(
       { [id]: formSchema[id] ?? [] },
       new FormData(e.currentTarget.form!),
@@ -88,7 +85,6 @@ function Example() {
           id="mobilenumber"
           name="mobilenumber"
           errorMessage={errors?.["mobilenumber"]}
-          onBlur={onBlurOrChange}
           onChange={onBlurOrChange}
         />
         <Input
@@ -97,7 +93,6 @@ function Example() {
           name="email"
           type="email"
           errorMessage={errors?.["email"]}
-          onBlur={onBlurOrChange}
           onChange={onBlurOrChange}
         />
         <Input
@@ -105,7 +100,6 @@ function Example() {
           id="firstname"
           name="firstname"
           errorMessage={errors?.["firstname"]}
-          onBlur={onBlurOrChange}
           onChange={onBlurOrChange}
         />
         <Input
@@ -113,7 +107,6 @@ function Example() {
           id="surname"
           name="surname"
           errorMessage={errors?.["surname"]}
-          onBlur={onBlurOrChange}
           onChange={onBlurOrChange}
         />
 
@@ -121,8 +114,7 @@ function Example() {
           legend="Favorite food"
           name="favorite-food"
           errorMessage={errors?.["favorite-food"]}
-          onBlur={onBlurOrChange}
-          onChange={onBlurOrChange}
+          onChange={(e) => onBlurOrChange(e, "favorite-food")}
         >
           <RadioButton value="Pizza" id="favorite-food">
             🍕 Pizza

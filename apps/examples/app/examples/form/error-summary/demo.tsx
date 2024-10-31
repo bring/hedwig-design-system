@@ -8,16 +8,23 @@ import {
   RadioButton,
   RadioGroup,
 } from "@postenbring/hedwig-react";
+import { useRef } from "react";
 
 function Example() {
   const errorsById: Record<string, string | undefined> = {
     firstname: "First name is required",
     "favorite-food": "Favorite food is required",
   };
+  const ref = useRef<HTMLHeadingElement>(null);
 
   return (
     <VStack gap="24" asChild>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          ref.current?.focus();
+        }}
+      >
         <Input
           label="First name"
           id="firstname"
@@ -39,7 +46,7 @@ function Example() {
         </RadioGroup>
 
         <ErrorSummary>
-          <ErrorSummary.Heading as="h2" autoFocus={false}>
+          <ErrorSummary.Heading as="h2" autoFocus={false} ref={ref}>
             To continue please correct the following issues
           </ErrorSummary.Heading>
           <ErrorSummary.List>
