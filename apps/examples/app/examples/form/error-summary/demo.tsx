@@ -66,10 +66,11 @@ export const config: ExampleConfig = {
   index: 0,
   layout: "centered-vertical-padding",
   description: `
-  <p>Read about best practices for Error Summary in these design systems</p>
+  <p>It's generally recommended placing the error summary at the bottom of the form, next to the submit/continue button making it clearer for the user why they cannot advance.</p>
+  <p>Read more about best practices for Error Summary in these design systems</p>
   <ul>
-    <li><a href="https://aksel.nav.no/komponenter/core/errorsummary">NAV - Aksel</a></li>
     <li><a href="https://next.storybook.designsystemet.no/?path=/docs/komponenter-errorsummary--docs">Digdir - Designsystemet</a></li>
+    <li><a href="https://aksel.nav.no/komponenter/core/errorsummary">NAV - Aksel</a></li>
     <li><a href="https://design-system.service.gov.uk/components/error-summary/">GOV UK</a></li>
   </ul>
   `,
