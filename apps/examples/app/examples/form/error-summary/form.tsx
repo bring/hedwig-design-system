@@ -38,12 +38,16 @@ function Example() {
   }
 
   // Revalidate errouneous fields when they are changed or blurred
-  function onBlurOrChange(
+  async function onBlurOrChange(
     e:
       | React.FocusEvent<HTMLInputElement | HTMLFieldSetElement>
       | React.ChangeEvent<HTMLInputElement | HTMLFieldSetElement>,
   ) {
-    const id = e.currentTarget.id as keyof typeof formSchema;
+    let id = e.currentTarget.id as keyof typeof formSchema;
+    if ((!errors?.[id] && e.type === "radio") || e.type === "checkbox") {
+      id = e.currentTarget.closest("fieldset")?.id as keyof typeof formSchema;
+    }
+
     if (!errors?.[id]) return;
     e.currentTarget.form;
     const fieldErrors = validateForm(
