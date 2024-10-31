@@ -8,6 +8,7 @@ import {
   RadioGroup,
   HStack,
 } from "@postenbring/hedwig-react";
+import { useRef, useState } from "react";
 
 const formSchema = {
   mobilenumber: [required("Mobile number is required")],
@@ -188,7 +189,6 @@ function required(message: string) {
 export default Example;
 
 import type { ExampleConfig } from "../..";
-import { useRef, useState } from "react";
 export const config: ExampleConfig = {
   index: 1,
   layout: "centered-vertical-padding",
