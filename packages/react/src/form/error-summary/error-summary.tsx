@@ -70,10 +70,15 @@ export interface ErrorSummaryListProps extends ListProps {
   size?: ListProps["size"];
 }
 export const ErrorSummaryList = forwardRef<HTMLUListElement, ErrorSummaryListProps>(
-  ({ children, size = "small", ...rest }, ref) => {
+  ({ children, style: _style, size = "small", ...rest }, ref) => {
+    const style = {
+      // Match the link `solid` style, which black underline
+      "--_hds-list-marker-color": "var(--hds-ui-colors-black)",
+      ..._style,
+    };
     return (
       <Message.Description asChild>
-        <UnorderedList size={size} ref={ref} {...rest}>
+        <UnorderedList size={size} ref={ref} style={style} {...rest}>
           {children}
         </UnorderedList>
       </Message.Description>
