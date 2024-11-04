@@ -108,7 +108,7 @@ export const ErrorSummaryItem = forwardRef<HTMLLIElement, ErrorSummaryItemProps>
 
     return (
       <li ref={ref} {...rest}>
-        <Link size="small" href={href} {...linkProps} onClick={onClick}>
+        <Link size="small" href={href} variant="solid" {...linkProps} onClick={onClick}>
           {children}
         </Link>
       </li>
