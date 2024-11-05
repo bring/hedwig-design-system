@@ -1,5 +1,21 @@
 # @postenbring/hedwig-react
 
+## 1.3.0
+
+### Minor Changes
+
+- 606f360: allow list to have the bullet point (marker) color changed
+
+  needed by the error-summary component
+
+- 664860d: :tada: New component: Error Summary :sparkles:
+
+### Patch Changes
+
+- d774bb9: Change aria-live default and make it configurable via props
+- Updated dependencies [606f360]
+  - @postenbring/hedwig-css@1.3.0
+
 ## 1.2.2
 
 ### Patch Changes

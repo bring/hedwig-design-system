@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 1.3.0
+
+### Minor Changes
+
+- 606f360: allow list to have the bullet point (marker) color changed
+
+  needed by the error-summary component
+
 ## 1.2.1
 
 ### Patch Changes
