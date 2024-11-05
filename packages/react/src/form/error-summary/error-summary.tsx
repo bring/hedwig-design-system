@@ -47,9 +47,15 @@ export const ErrorSummaryHeading = forwardRef<
   const mergedRef = useMergeRefs([focusRef, ref]);
 
   useEffect(() => {
-    if (focusRef.current && autoFocus) {
-      focusRef.current.focus();
-    }
+    /**
+     * Hack: Safari 18 on mac at the time of writing
+     * does not correctly focus it with VoiceOver without the timeout
+     */
+    setTimeout(() => {
+      if (focusRef.current && autoFocus) {
+        focusRef.current.focus();
+      }
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps -- Only on initial render
   }, []);
 
