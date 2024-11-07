@@ -26,7 +26,7 @@
   "bring-colors": {
     "$type": "color",
     "signature-green": {
-      "$value": "#7bc144"
+      "$value": "#56B529"
     },
     "darker-green": {
       "$value": "#002f19"
@@ -35,13 +35,13 @@
       "$value": "#00643a"
     },
     "light-green": {
-      "$value": "#c8dc8c"
+      "$value": "#B5E099"
     },
     "lighter-green": {
       "$value": "#f1f7e9"
     },
     "signature-green-hover": {
-      "$value": "#86cc4a"
+      "$value": "#6EC943"
     },
     "light-green-hover": {
       "$value": "#d3e593"

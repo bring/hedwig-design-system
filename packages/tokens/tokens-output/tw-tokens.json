@@ -11,12 +11,12 @@
   },
   "bring-colors": {
     "$type": "color",
-    "signature-green": "#7bc144",
+    "signature-green": "#56B529",
     "darker-green": "#002f19",
     "dark-green": "#00643a",
-    "light-green": "#c8dc8c",
+    "light-green": "#B5E099",
     "lighter-green": "#f1f7e9",
-    "signature-green-hover": "#86cc4a",
+    "signature-green-hover": "#6EC943",
     "light-green-hover": "#d3e593"
   },
   "ui-colors": {

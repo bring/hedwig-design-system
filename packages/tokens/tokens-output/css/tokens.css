@@ -7,12 +7,12 @@
   --hds-posten-colors-lighter-red: #fff5f0;
   --hds-posten-colors-signature-red-hover: #d62722;
   --hds-posten-colors-light-red-hover: #ff7d55;
-  --hds-bring-colors-signature-green: #7bc144;
+  --hds-bring-colors-signature-green: #56B529;
   --hds-bring-colors-darker-green: #002f19;
   --hds-bring-colors-dark-green: #00643a;
-  --hds-bring-colors-light-green: #c8dc8c;
+  --hds-bring-colors-light-green: #B5E099;
   --hds-bring-colors-lighter-green: #f1f7e9;
-  --hds-bring-colors-signature-green-hover: #86cc4a;
+  --hds-bring-colors-signature-green-hover: #6EC943;
   --hds-bring-colors-light-green-hover: #d3e593;
   --hds-ui-colors-black: #000000;
   --hds-ui-colors-dark-grey: #6e6e6e;
@@ -251,16 +251,16 @@
   --hds-font-weight-h1-display: 500;
   --hds-font-weight-h1: 500;
   --hds-font-weight-h2: 500;
-  --hds-colors-signature: #7bc144;
+  --hds-colors-signature: #56B529;
   --hds-colors-darker: #002f19;
   --hds-colors-dark: #00643a;
-  --hds-colors-light: #c8dc8c;
+  --hds-colors-light: #B5E099;
   --hds-colors-lighter: #f1f7e9;
-  --hds-colors-signature-hover: #86cc4a;
+  --hds-colors-signature-hover: #6EC943;
   --hds-colors-light-hover: #d3e593;
   --hds-button-colors-text: #000000;
   --hds-link-colors-text: #000000;
-  --hds-link-colors-underline: #7bc144;
+  --hds-link-colors-underline: #56B529;
   --hds-link-colors-hover: #00643a;
   --hds-link-colors-underline-hover: #00643a;
 }
