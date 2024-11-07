@@ -1,4 +1,5 @@
 ---
+"@postenbring/hedwig-css": patch
 "@postenbring/hedwig-tokens": patch
 ---
 
