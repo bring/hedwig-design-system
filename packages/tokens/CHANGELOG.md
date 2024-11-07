@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 1.1.0
+
+### Minor Changes
+
+- 24dd8ed: Change Bring signature colors to the Bring 2.0 colors
+
 ## 1.0.0
 
 ### Major Changes

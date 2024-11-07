@@ -1,5 +1,17 @@
 # @postenbring/hedwig-css
 
+## 1.4.0
+
+### Minor Changes
+
+- 24dd8ed: Change Bring signature colors to the Bring 2.0 colors
+- 021068f: Update to the new version of the Bring logos
+
+### Patch Changes
+
+- Updated dependencies [24dd8ed]
+  - @postenbring/hedwig-tokens@1.1.0
+
 ## 1.3.0
 
 ### Minor Changes
