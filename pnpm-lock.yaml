@@ -300,8 +300,8 @@ importers:
         specifier: 3.9.2
         version: 3.9.2
       style-dictionary-utils:
-        specifier: 2.4.1
-        version: 2.4.1(style-dictionary@3.9.2)
+        specifier: 4.0.1
+        version: 4.0.1(style-dictionary@3.9.2)
       tailwindcss:
         specifier: 3.4.14
         version: 3.4.14
@@ -6064,10 +6064,10 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  style-dictionary-utils@2.4.1:
-    resolution: {integrity: sha512-Ged3wCzzswC6vw8Fh74IKUJg7ajPiH0ersYsPi0VT2ENWCq/gx6uAYOr1rjslqjSyQUfAVvNnOPxuWGJ2mdncQ==}
+  style-dictionary-utils@4.0.1:
+    resolution: {integrity: sha512-D0/lQWwkdlpGU2xEIs3xGyyj64qlHdGCk+/dSHY2BQagVULYo04+IM/RfwlPTZshMzqPKuC62xDgeRaIWfTCyQ==}
     peerDependencies:
-      style-dictionary: ^3.7.1
+      style-dictionary: ^4
 
   style-dictionary@3.9.2:
     resolution: {integrity: sha512-M2pcQ6hyRtqHOh+NyT6T05R3pD/gwNpuhREBKvxC1En0vyywx+9Wy9nXWT1SZ9ePzv1vAo65ItnpA16tT9ZUCg==}
@@ -13680,11 +13680,9 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  style-dictionary-utils@2.4.1(style-dictionary@3.9.2):
+  style-dictionary-utils@4.0.1(style-dictionary@3.9.2):
     dependencies:
       color2k: 2.0.3
-      json5: 2.2.3
-      prettier: 2.8.8
       style-dictionary: 3.9.2
 
   style-dictionary@3.9.2:
