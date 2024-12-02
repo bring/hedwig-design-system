@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 1.2.0
+
+### Minor Changes
+
+- f7aafd6: Update border-radius
+
 ## 1.1.0
 
 ### Minor Changes

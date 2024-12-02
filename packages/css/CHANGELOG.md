@@ -1,5 +1,12 @@
 # @postenbring/hedwig-css
 
+## 1.4.1
+
+### Patch Changes
+
+- Updated dependencies [f7aafd6]
+  - @postenbring/hedwig-tokens@1.2.0
+
 ## 1.4.0
 
 ### Minor Changes
