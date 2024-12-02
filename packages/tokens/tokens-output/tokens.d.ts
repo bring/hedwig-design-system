@@ -75,7 +75,11 @@ export const TypographyTechnical : { fontFamily: string[], fontSize: string[], l
 export const TypographyTechnicalTitle : { fontFamily: string[], fontSize: string[], lineHeight: string[], fontWeight: number, letterSpacing: string };
 export const TypographyCaption : { fontFamily: string[], fontSize: string, lineHeight: string, fontWeight: number, letterSpacing: string };
 export const TypographyCaptionTitle : { fontFamily: string[], fontSize: string, lineHeight: string, fontWeight: number, letterSpacing: string };
-export const BorderRadius : "2px";
+export const BorderRadius8 : "8px";
+export const BorderRadius16 : "16px";
+export const BorderRadius24 : "24px";
+export const BorderRadius32 : "32px";
+export const BorderRadius : "8px";
 export const StrokeDefault : "1px";
 export const StrokeThick : "2px";
 export const ShadowDefault : { color: string, offsetX: string, offsetY: string, blur: string, spread: string };

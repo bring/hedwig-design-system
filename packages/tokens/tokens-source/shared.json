@@ -334,8 +334,12 @@
     }
   },
   "border-radius": {
-    "$value": "2px",
-    "$type": "borderRadius"
+    "$type": "borderRadius",
+    "_": { "$value": "8px" },
+    "8": { "$value": "8px" },
+    "16": { "$value": "16px" },
+    "24": { "$value": "24px" },
+    "32": { "$value": "32px" }
   },
   "stroke-default": {
     "$value": "1px",

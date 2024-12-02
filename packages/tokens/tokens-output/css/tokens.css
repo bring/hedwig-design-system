@@ -68,7 +68,11 @@
   --hds-typography-technical-title: 500 clamp(14px,calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300))),16px)/clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-caption: 400 13px/18px 'Posten Sans', Arial, sans-serif;
   --hds-typography-caption-title: 500 13px/18px 'Posten Sans', Arial, sans-serif;
-  --hds-border-radius: 2px;
+  --hds-border-radius-8: 8px;
+  --hds-border-radius-16: 16px;
+  --hds-border-radius-24: 24px;
+  --hds-border-radius-32: 32px;
+  --hds-border-radius: 8px;
   --hds-stroke-default: 1px;
   --hds-stroke-thick: 2px;
   --hds-shadow-default: 0px 1px 5px 0px #00000022;
