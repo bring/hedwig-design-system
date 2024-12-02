@@ -16,8 +16,8 @@ function Example() {
   return (
     <div className="flex gap-12 large:gap-16">
       <div className="transition-all rounded size-48 hover:scale-125 bg-signature hover:bg-darker" />
-      <div className="transition-all rounded size-48 hover:scale-125 bg-signature hover:bg-darker" />
-      <div className="transition-all rounded size-48 hover:scale-125 bg-signature hover:bg-darker" />
+      <div className="transition-all rounded-8 size-48 hover:scale-125 bg-signature hover:bg-darker" />
+      <div className="transition-all rounded-24 size-48 hover:scale-125 bg-signature hover:bg-darker" />
     </div>
   );
 }
