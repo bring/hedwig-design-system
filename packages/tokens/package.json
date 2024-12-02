@@ -22,7 +22,7 @@
     "eslint-config-custom": "*",
     "hedwig-tsconfig": "workspace:*",
     "style-dictionary": "3.9.2",
-    "style-dictionary-utils": "2.4.1",
+    "style-dictionary-utils": "4.0.1",
     "tailwindcss": "3.4.14",
     "tsx": "4.19.2",
     "typescript": "^5.6.3"
