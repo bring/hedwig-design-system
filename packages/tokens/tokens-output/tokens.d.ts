@@ -79,7 +79,7 @@ export const BorderRadius8 : "8px";
 export const BorderRadius16 : "16px";
 export const BorderRadius24 : "24px";
 export const BorderRadius32 : "32px";
-export const BorderRadius : "8px";
+export const BorderRadius : "2px";
 export const StrokeDefault : "1px";
 export const StrokeThick : "2px";
 export const ShadowDefault : { color: string, offsetX: string, offsetY: string, blur: string, spread: string };

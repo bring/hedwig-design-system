@@ -335,7 +335,7 @@
   },
   "border-radius": {
     "$type": "borderRadius",
-    "_": { "$value": "8px" },
+    "_": { "$value": "2px" },
     "8": { "$value": "8px" },
     "16": { "$value": "16px" },
     "24": { "$value": "24px" },

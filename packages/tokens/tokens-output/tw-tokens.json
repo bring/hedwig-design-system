@@ -357,7 +357,7 @@
     "24": "24px",
     "32": "32px",
     "$type": "borderRadius",
-    "_": "8px"
+    "_": "2px"
   },
   "stroke-default": "1px",
   "stroke-thick": "2px",
