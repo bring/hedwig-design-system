@@ -1,5 +1,5 @@
 ---
-"@postenbring/hedwig-tokens": patch
+"@postenbring/hedwig-tokens": minor
 ---
 
 Update border-radius
