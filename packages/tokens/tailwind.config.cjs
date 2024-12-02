@@ -32,6 +32,16 @@ function expandAndPrefix(obj, prefix) {
 }
 
 /**
+ * 
+ * @param {Record<string, unknown>} obj 
+ * @param {string} key 
+ */
+function omitKey(obj, key) {
+  const {[key]: _, ...rest} = obj;
+  return rest;
+}
+
+/**
  * @param {keyof typeof tokens["font-size"]} name
  * @param {`var(--hds-${string})` | keyof typeof tokens["font-weight"]} fontWeightName
  * @returns
@@ -141,7 +151,8 @@ module.exports = {
     },
     borderRadius: {
       0: 0,
-      DEFAULT: tokens["border-radius"],
+      DEFAULT: tokens["border-radius"]["_"],
+      ...omitKey(tokens["border-radius"], "_"),
     },
     borderWidth: {
       0: 0,

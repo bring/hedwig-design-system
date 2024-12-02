@@ -356,7 +356,6 @@
     "16": "16px",
     "24": "24px",
     "32": "32px",
-    "$type": "borderRadius",
     "_": "2px"
   },
   "stroke-default": "1px",

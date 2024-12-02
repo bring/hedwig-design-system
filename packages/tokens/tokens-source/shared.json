@@ -334,12 +334,11 @@
     }
   },
   "border-radius": {
-    "$type": "borderRadius",
-    "_": { "$value": "2px" },
-    "8": { "$value": "8px" },
-    "16": { "$value": "16px" },
-    "24": { "$value": "24px" },
-    "32": { "$value": "32px" }
+    "_": { "$type": "dimension", "$value": "2px" },
+    "8": { "$type": "dimension", "$value": "8px" },
+    "16": { "$type": "dimension", "$value": "16px" },
+    "24": { "$type": "dimension", "$value": "24px" },
+    "32": { "$type": "dimension", "$value": "32px" }
   },
   "stroke-default": {
     "$value": "1px",
