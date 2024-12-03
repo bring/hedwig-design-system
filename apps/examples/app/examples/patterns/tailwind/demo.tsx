@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions -- It's ok */
 import "@postenbring/hedwig-css";
 
 import "./tailwind.css";
