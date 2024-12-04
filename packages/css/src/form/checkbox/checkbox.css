@@ -128,7 +128,7 @@
   }
 
   /* Focus effect */
-  &:focus-within {
+  &:has(input[type="checkbox"]:focus-visible) {
     outline: 2px solid var(--hds-colors-dark);
     outline-offset: 2px;
   }
