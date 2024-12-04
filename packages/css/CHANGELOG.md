@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 1.4.2
+
+### Patch Changes
+
+- f6d3a1e: :lipstick: checkbox/radio-button: only show focus outline on focus-visible
+
 ## 1.4.1
 
 ### Patch Changes
