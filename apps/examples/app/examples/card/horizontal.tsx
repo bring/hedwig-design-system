@@ -12,7 +12,7 @@ function Example() {
         <Card.Body>
           <Card.BodyHeader as="h2">
             <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
-            <Card.BodyHeaderTitle asChild>Cool article</Card.BodyHeaderTitle>
+            <Card.BodyHeaderTitle>Cool article</Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>
             The card will take up all available space by default. It is the consumer&apos;s choice
