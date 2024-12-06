@@ -29,16 +29,16 @@
   }
 
   .hds-card__media {
-    width: fit-content;
+    border-radius: var(--hds-border-radius-8);
+    overflow: hidden;
 
     .hds-card__media__img {
-      border-radius: var(--hds-border-radius-8);
       width: 100%;
     }
   }
 
   .hds-card__body {
-    padding: var(--hds-spacing-24-32);
+    padding-top: var(--hds-spacing-12-16);
     height: 100%;
 
     &:hover {
@@ -108,22 +108,19 @@
 
     .hds-card__media {
       width: 50%;
-      padding-right: var(--hds-spacing-16);
-
-      /** Image will be cropped on the sides if needed */
-      .hds-card__media__img {
-        height: 100%;
-        object-fit: cover;
-      }
+      object-fit: cover;
     }
   }
 
   .hds-card__body {
     padding: var(--hds-spacing-32-40);
+    padding-top: calc(var(--hds-spacing-32-40) + var(--hds-spacing-12-16));
 
     @media (--small) {
       width: 50%;
       height: auto;
+      padding-left: calc(var(--hds-spacing-32-40) + var(--hds-spacing-12-16));
+      padding-top: var(--hds-spacing-32-40);
     }
   }
 }
