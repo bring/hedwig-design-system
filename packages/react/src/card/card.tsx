@@ -186,7 +186,7 @@ export interface CardProps extends CardBaseProps {
    */
   as?: "section" | "div" | "article" | "aside";
   /**
-   * If true, the card will be horizontal for sizes above small.
+   * Allows for a horizontal variant for sizes above small.
    *
    * @default "default"
    */
