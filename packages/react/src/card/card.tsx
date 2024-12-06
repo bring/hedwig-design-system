@@ -185,13 +185,27 @@ export interface CardProps extends CardBaseProps {
    * as a link to the user. That would be perceived as information overload.
    */
   as?: "section" | "div" | "article" | "aside";
+  /**
+   * Allows for a horizontal variant for sizes above small.
+   *
+   * @default "default"
+   */
+  variant?: "default" | "horizontal";
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ as: Tag = "section", asChild, className, children, ...rest }, ref) => {
+  ({ as: Tag = "section", asChild, className, children, variant, ...rest }, ref) => {
     const Component = asChild ? Slot : Tag;
     return (
-      <Component {...rest} className={clsx("hds-card", className as undefined)} ref={ref}>
+      <Component
+        {...rest}
+        className={clsx(
+          "hds-card",
+          { "hds-card--horizontal": variant === "horizontal" },
+          className as undefined,
+        )}
+        ref={ref}
+      >
         {children}
       </Component>
     );
