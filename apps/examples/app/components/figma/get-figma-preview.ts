@@ -4,7 +4,7 @@ function parseFigmaUrl(urlString: string) {
   let url;
   try {
     url = new URL(urlString);
-  } catch (e) {
+  } catch {
     return;
   }
 
