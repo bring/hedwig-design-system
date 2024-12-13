@@ -5,7 +5,7 @@ import postenBringImage from "../../assets/posten-bring.avif";
 function Example() {
   return (
     <Container>
-      <Card variant="horizontal">
+      <Card variant="focus">
         <Card.Media>
           <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
@@ -18,10 +18,12 @@ function Example() {
             The card will take up all available space by default. It is the consumer&apos;s choice
             and responsibility to limit the width if wanted.
           </Card.BodyDescription>
-          <Card.BodyActionArrow />{" "}
-          <Link href="https://www.posten.no" variant="solid">
-            Read more
-          </Link>
+          <Card.BodyAction asChild>
+            <Link href="https://www.posten.no" variant="solid">
+              <Card.BodyActionArrow />
+              No button yet
+            </Link>
+          </Card.BodyAction>
         </Card.Body>
       </Card>
     </Container>

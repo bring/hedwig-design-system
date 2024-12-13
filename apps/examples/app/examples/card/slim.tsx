@@ -12,70 +12,82 @@ function Example() {
         gap: "var(--hds-spacing-24-32)",
       }}
     >
-      <Card>
+      <Card variant="slim">
         <Card.Media>
           <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
         <Card.Body>
           <Card.BodyHeader as="h3">
             <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
-            <Card.BodyHeaderTitle asChild>
-              <a href="#article-1">Article 1</a>
-            </Card.BodyHeaderTitle>
+            <Card.BodyHeaderTitle>Article 1</Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>
             In this example, the whole card is an <code>&lt;a&gt;</code> tag.
           </Card.BodyDescription>
-          <Card.BodyActionArrow />
+          <Card.BodyAction>
+            <Link href="#article-1" variant="solid">
+              <Card.BodyActionArrow />
+              Read more
+            </Link>
+          </Card.BodyAction>
         </Card.Body>
       </Card>
-      <Card>
+      <Card variant="slim">
         <Card.Media>
           <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
         <Card.Body>
           <Card.BodyHeader as="h3">
             <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
-            <Card.BodyHeaderTitle asChild>
-              <a href="#article-2">Article 2</a>
-            </Card.BodyHeaderTitle>
+            <Card.BodyHeaderTitle>Article 2 </Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>
             In this example, only the arrow below is a link.
           </Card.BodyDescription>
-          <Card.BodyActionArrow />
+          <Card.BodyAction>
+            <Card.BodyActionArrow />
+            <Link href="#article-2" variant="solid">
+              Read more
+            </Link>
+          </Card.BodyAction>
         </Card.Body>
       </Card>
-      <Card>
+      <Card variant="slim">
         <Card.Media>
           <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
         <Card.Body>
           <Card.BodyHeader as="h3">
             <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
-            <Card.BodyHeaderTitle asChild>
-              <Link href="#article-3">Article 3</Link>
-            </Card.BodyHeaderTitle>
+            <Card.BodyHeaderTitle>Article 3</Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>
             In this example, there is a <code>&lt;Link&gt;</code> component below.
           </Card.BodyDescription>
-          <Card.BodyAction>Read more</Card.BodyAction>
+          <Card.BodyAction>
+            <Link href="#article-3" variant="solid">
+              <Card.BodyActionArrow />
+              Read more
+            </Link>
+          </Card.BodyAction>
         </Card.Body>
       </Card>
-      <Card className="hds-theme-bring">
+      <Card variant="slim">
         <Card.Media>
           <Card.MediaImg alt="posten-bring" src={postenBringImage} />
         </Card.Media>
         <Card.Body>
           <Card.BodyHeader as="h3">
             <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
-            <Card.BodyHeaderTitle asChild>
-              <a href="#article-4">Article 4</a>
-            </Card.BodyHeaderTitle>
+            <Card.BodyHeaderTitle>Article 4</Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>A Bring card.</Card.BodyDescription>
-          <Card.BodyActionArrow />
+          <Card.BodyAction>
+            <Link href="#article-4" variant="solid">
+              <Card.BodyActionArrow />
+              Read more
+            </Link>
+          </Card.BodyAction>
         </Card.Body>
       </Card>
     </div>
