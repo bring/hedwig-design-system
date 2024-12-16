@@ -26,7 +26,7 @@ function Example() {
             </Card.BodyDescription>
             <Card.BodyAction>
               <Link href="https://www.posten.no" variant="solid" target="_blank">
-                <Card.BodyActionArrow />
+                <Card.BodyActionArrow direction="up-right" />
                 Only link
               </Link>
             </Card.BodyAction>

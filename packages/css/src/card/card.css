@@ -66,7 +66,13 @@
 
   .hds-card__body-action:hover {
     .hds-card__body-action-arrow {
-      transform: translateX(6px);
+      transform: translateX(2px);
+      background-image: var(--_hds-icons-arrow-right-dark);
+    }
+
+    .hds-card__body-action-arrow-up-right {
+      transform: rotate(-45deg) translateX(2px);
+      color: red;
     }
   }
 
@@ -79,10 +85,14 @@
     width: var(--hds-spacing-20);
     height: var(--hds-spacing-20);
     border-bottom: none;
-    margin-right: var(--hds-spacing-12);
+    margin-right: 10px;
     transform: translateX(0);
     transition: transform var(--hds-micro-animation-duration-normal)
       var(--hds-micro-animation-easing-normal);
+  }
+
+  .hds-card__body-action-arrow-up-right {
+    transform: rotate(-45deg);
   }
 }
 

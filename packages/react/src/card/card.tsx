@@ -150,14 +150,25 @@ interface CardBodyActionArrowProps extends React.HTMLAttributes<HTMLSpanElement>
    * @default false
    */
   asChild?: boolean;
+
+  /**
+   * Set direction of the arrow
+   *
+   * @default "right"
+   */
+  direction?: "right" | "up-right";
 }
 export const CardBodyActionArrow = forwardRef<HTMLSpanElement, CardBodyActionArrowProps>(
-  ({ asChild, className, ...rest }, ref) => {
+  ({ asChild, className, direction, ...rest }, ref) => {
     const Component = asChild ? Slot : "span";
     return (
       <Component
         {...rest}
-        className={clsx("hds-card__body-action-arrow", className as undefined)}
+        className={clsx(
+          "hds-card__body-action-arrow",
+          { "hds-card__body-action-arrow-up-right": direction === "up-right" },
+          className as undefined,
+        )}
         ref={ref}
       />
     );
