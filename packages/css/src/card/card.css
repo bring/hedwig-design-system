@@ -26,10 +26,6 @@
 
   .hds-card__body {
     padding-top: var(--hds-spacing-12-16);
-
-    &:hover {
-      color: initial;
-    }
   }
 
   .hds-card__body-header {
@@ -52,15 +48,6 @@
     line-height: var(--hds-line-height-h2-max);
     color: var(--hds-ui-colors-black);
     text-decoration: none;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-    }
   }
 
   .hds-card__body-description {
@@ -89,9 +76,10 @@
 
   .hds-card__body-action-arrow {
     background-image: var(--_hds-icons-arrow-right);
-    width: 20px;
-    height: 20px;
+    width: var(--hds-spacing-20);
+    height: var(--hds-spacing-20);
     border-bottom: none;
+    margin-right: var(--hds-spacing-12);
     transform: translateX(0);
     transition: transform var(--hds-micro-animation-duration-normal)
       var(--hds-micro-animation-easing-normal);
@@ -141,11 +129,8 @@
     color: var(--hds-colors-light);
   }
 
+  .hds-card__body-description,
   .hds-card__body-header-title {
-    color: var(--hds-ui-colors-white);
-  }
-
-  .hds-card__body-description {
     color: var(--hds-ui-colors-white);
   }
 }
