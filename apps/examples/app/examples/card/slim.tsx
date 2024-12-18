@@ -22,7 +22,7 @@ function Example() {
             <Card.BodyHeaderTitle>Article 1</Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>
-            In this example, the whole card is an <code>&lt;a&gt;</code> tag.
+            This is the default card variant. The link below is preceeded by an arrow.
           </Card.BodyDescription>
           <Card.BodyAction>
             <Link href="#article-1" variant="solid">
@@ -42,7 +42,8 @@ function Example() {
             <Card.BodyHeaderTitle>Article 2 </Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>
-            In this example, only the arrow below is a link.
+            The slim cards are a collection of items. They will have the same height while on the
+            same row.
           </Card.BodyDescription>
           <Card.BodyAction>
             <Card.BodyActionArrow />
@@ -62,7 +63,9 @@ function Example() {
             <Card.BodyHeaderTitle>Article 3</Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>
-            In this example, there is a <code>&lt;Link&gt;</code> component below.
+            If there is a lot of contents in the card body, the media will be cropped to make the
+            cards look equally crowded. The links will be aligned at the bottom across the cards in
+            a row.
           </Card.BodyDescription>
           <Card.BodyAction>
             <Link href="#article-3" variant="solid">
@@ -81,7 +84,7 @@ function Example() {
             <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
             <Card.BodyHeaderTitle>Article 4</Card.BodyHeaderTitle>
           </Card.BodyHeader>
-          <Card.BodyDescription>A Bring card.</Card.BodyDescription>
+          <Card.BodyDescription>A short card.</Card.BodyDescription>
           <Card.BodyAction>
             <Link href="#article-4" variant="solid">
               <Card.BodyActionArrow />
