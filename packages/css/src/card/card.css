@@ -71,6 +71,10 @@
 
   .hds-card__body-action {
     margin-top: var(--hds-spacing-32-40);
+
+    :first-child {
+      margin-top: 0;
+    }
   }
 
   .hds-card__body-action,
@@ -178,11 +182,20 @@
   }
 
   .hds-card__body {
+    flex-basis: min-content;
+    padding-top: 0;
+
     .hds-card__body-header-title {
       font-size: var(--hds-font-size-body-title);
       font-weight: var(--hds-font-weight-body-title);
     }
+  }
 
-    padding-top: 0;
+  .hds-card__body-action {
+    margin-top: var(--hds-spacing-8-12);
+
+    :first-child {
+      margin-top: 0;
+    }
   }
 }
