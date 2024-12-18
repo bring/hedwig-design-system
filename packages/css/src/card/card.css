@@ -18,14 +18,23 @@
   .hds-card__media {
     border-radius: var(--hds-border-radius-8);
     overflow: hidden;
+    min-height: 120px;
+    max-height: 350px;
+    flex: 1 1 auto;
 
     .hds-card__media__img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
   .hds-card__body {
     padding-top: var(--hds-spacing-12-16);
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .hds-card__body-header {
@@ -35,6 +44,7 @@
 
   .hds-card__body-header-overline {
     display: block;
+    margin-bottom: var(--hds-spacing-8-12);
     color: var(--hds-colors-dark);
     font-family: var(--hds-fonts-posten-sans);
     font-size: var(--hds-font-size-body-title);
@@ -44,24 +54,28 @@
 
   .hds-card__body-header-title {
     font-size: var(--hds-font-size-h2-min);
-    font-weight: var(--hds-font-weight-h3);
+    font-weight: var(--hds-font-weight-h1);
     line-height: var(--hds-line-height-h2-max);
     color: var(--hds-ui-colors-black);
     text-decoration: none;
   }
 
   .hds-card__body-description {
-    margin-top: var(--hds-spacing-16-20);
+    margin-top: var(--hds-spacing-8-12);
+    margin-bottom: auto;
     font-family: var(--hds-fonts-posten-sans);
-    font-size: var(--hds-font-size-technical-max);
-    font-weight: var(--hds-font-weight-technical);
-    line-height: var(--hds-line-height-technical-max);
+    font-size: var(--hds-font-size-body);
+    font-weight: var(--hds-font-weight-body);
+    line-height: var(--hds-line-height-body);
+  }
+
+  .hds-card__body-action {
+    margin-top: var(--hds-spacing-32-40);
   }
 
   .hds-card__body-action,
   .hds-card__body-action-arrow {
     display: inline-block;
-    margin-top: var(--hds-spacing-16);
   }
 
   .hds-card__body-action:hover {
@@ -76,8 +90,12 @@
     }
   }
 
-  .hds-card__body-action-arrow:first-child {
+  .hds-card__body-action:first-child {
     margin-top: 0;
+
+    .hds-card__body-action-arrow {
+      margin-top: 0;
+    }
   }
 
   .hds-card__body-action-arrow {
@@ -117,6 +135,7 @@
 
     .hds-card__media {
       width: 50%;
+      height: 100%;
       object-fit: cover;
     }
   }
@@ -159,6 +178,11 @@
   }
 
   .hds-card__body {
+    .hds-card__body-header-title {
+      font-size: var(--hds-font-size-body-title);
+      font-weight: var(--hds-font-weight-body-title);
+    }
+
     padding-top: 0;
   }
 }
