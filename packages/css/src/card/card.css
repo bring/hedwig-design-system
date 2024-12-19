@@ -20,13 +20,13 @@
     overflow: hidden;
     min-height: 120px;
     max-height: 350px;
-    flex: 1 1 auto;
+    flex: 3 1 auto;
+  }
 
-    .hds-card__media__img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  .hds-card__media__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .hds-card__body {
@@ -70,11 +70,7 @@
   }
 
   .hds-card__body-action {
-    margin-top: var(--hds-spacing-32-40);
-
-    :first-child {
-      margin-top: 0;
-    }
+    margin-top: var(--hds-spacing-8-12);
   }
 
   .hds-card__body-action,
@@ -90,16 +86,11 @@
 
     .hds-card__body-action-arrow-up-right {
       transform: rotate(-45deg) translateX(2px);
-      color: red;
     }
   }
 
   .hds-card__body-action:first-child {
     margin-top: 0;
-
-    .hds-card__body-action-arrow {
-      margin-top: 0;
-    }
   }
 
   .hds-card__body-action-arrow {
@@ -109,7 +100,7 @@
     border-bottom: none;
     margin-right: 10px;
     transform: translateX(0);
-    transition: transform var(--hds-micro-animation-duration-normal)
+    transition: transform var(--hds-micro-animation-duration-quick)
       var(--hds-micro-animation-easing-normal);
   }
 
@@ -133,15 +124,29 @@
 .hds-card--focus,
 .hds-card--full-width {
   max-width: none;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 
   @media (--small) {
+    display: flex;
     flex-direction: row;
+  }
 
-    .hds-card__media {
-      width: 50%;
-      height: 100%;
-      object-fit: cover;
+  .hds-card__media {
+    min-height: 220px;
+    max-height: 500px;
+    overflow: auto;
+
+    @media (--small) {
+      min-height: none;
+      max-height: none;
     }
+  }
+
+  .hds-card__media__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .hds-card__body {
@@ -154,6 +159,10 @@
       padding-left: calc(var(--hds-spacing-32-40) + var(--hds-spacing-12-16));
       padding-top: var(--hds-spacing-32-40);
     }
+  }
+
+  .hds-card__body-action {
+    margin-top: var(--hds-spacing-32-40);
   }
 }
 
@@ -188,14 +197,6 @@
     .hds-card__body-header-title {
       font-size: var(--hds-font-size-body-title);
       font-weight: var(--hds-font-weight-body-title);
-    }
-  }
-
-  .hds-card__body-action {
-    margin-top: var(--hds-spacing-8-12);
-
-    :first-child {
-      margin-top: 0;
     }
   }
 }
