@@ -1,6 +1,6 @@
 import "@postenbring/hedwig-css";
 import { Card, Link, Container } from "@postenbring/hedwig-react";
-import postenFavicon from "../../assets/posten-favicon.png";
+import customerParcel from "../../assets/customer-parcel.svg";
 
 function Example() {
   return (
@@ -15,7 +15,7 @@ function Example() {
       >
         <Card variant="miniature">
           <Card.Media>
-            <Card.MediaImg alt="posten-bring" src={postenFavicon} />
+            <Card.MediaImg alt="posten-bring" src={customerParcel} />
           </Card.Media>
           <Card.Body>
             <Card.BodyHeader as="h2">
@@ -33,12 +33,15 @@ function Example() {
           </Card.Body>
         </Card>
         <Card variant="miniature">
+          <Card.Media>
+            <Card.MediaImg alt="posten-bring" src={customerParcel} />
+          </Card.Media>
           <Card.Body>
             <Card.BodyHeader as="h2">
-              <Card.BodyHeaderTitle>No image</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle>Another article</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
-              This card has no image, but it still looks good. It is the consumer&apos;s choice.
+              If you have an address label for return, you can place it on the middle of the parcel.
             </Card.BodyDescription>
             <Card.BodyAction asChild>
               <Link href="https://www.posten.no" variant="solid" target="_blank">
@@ -49,6 +52,9 @@ function Example() {
           </Card.Body>
         </Card>
         <Card variant="miniature">
+          <Card.Media>
+            <Card.MediaImg alt="posten-bring" src={customerParcel} />
+          </Card.Media>
           <Card.Body>
             <Card.BodyAction asChild>
               <Link href="https://www.posten.no" variant="solid" target="_blank">

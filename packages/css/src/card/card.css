@@ -21,6 +21,7 @@
     min-height: 120px;
     max-height: 350px;
     flex: 3 1 auto;
+    margin-bottom: var(--hds-spacing-12-16);
   }
 
   .hds-card__media__img {
@@ -30,7 +31,6 @@
   }
 
   .hds-card__body {
-    padding-top: var(--hds-spacing-12-16);
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
@@ -44,18 +44,17 @@
 
   .hds-card__body-header-overline {
     display: block;
-    margin-bottom: var(--hds-spacing-8-12);
+    margin-bottom: var(--hds-spacing-4-8);
     color: var(--hds-colors-dark);
-    font-family: var(--hds-fonts-posten-sans);
     font-size: var(--hds-font-size-body-title);
     font-weight: var(--hds-font-weight-body-title);
     line-height: var(--hds-line-height-body-title);
   }
 
   .hds-card__body-header-title {
-    font-size: var(--hds-font-size-h2-min);
+    font-size: var(--hds-font-size-h2);
     font-weight: var(--hds-font-weight-h1);
-    line-height: var(--hds-line-height-h2-max);
+    line-height: var(--hds-line-height-h2);
     color: var(--hds-ui-colors-black);
     text-decoration: none;
   }
@@ -63,7 +62,6 @@
   .hds-card__body-description {
     margin-top: var(--hds-spacing-8-12);
     margin-bottom: auto;
-    font-family: var(--hds-fonts-posten-sans);
     font-size: var(--hds-font-size-body);
     font-weight: var(--hds-font-weight-body);
     line-height: var(--hds-line-height-body);
@@ -136,6 +134,7 @@
     min-height: 220px;
     max-height: 500px;
     overflow: auto;
+    margin-bottom: 0;
 
     @media (--small) {
       min-height: none;
@@ -161,8 +160,9 @@
     }
   }
 
+  .hds-card__body-description,
   .hds-card__body-action {
-    margin-top: var(--hds-spacing-32-40);
+    margin-top: var(--hds-spacing-20-24);
   }
 }
 
@@ -188,6 +188,7 @@
     object-fit: cover;
     background-color: var(--hds-ui-colors-white);
     margin-right: var(--hds-spacing-12-16);
+    margin-bottom: 0;
   }
 
   .hds-card__body {
@@ -197,6 +198,7 @@
     .hds-card__body-header-title {
       font-size: var(--hds-font-size-body-title);
       font-weight: var(--hds-font-weight-body-title);
+      line-height: var(--hds-line-height-body-title);
     }
   }
 }
