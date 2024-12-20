@@ -19,7 +19,7 @@ function Example() {
             and responsibility to limit the width if wanted.
           </Card.BodyDescription>
           <Card.BodyAction asChild>
-            <Link href="https://www.posten.no" variant="solid">
+            <Link href="https://www.posten.no" variant="inverted">
               <Card.BodyActionArrow />
               No button yet
             </Link>
