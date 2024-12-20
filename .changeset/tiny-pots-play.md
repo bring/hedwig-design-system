@@ -3,4 +3,10 @@
 "@postenbring/hedwig-css": minor
 ---
 
-Add horizontal variant of card, new radii
+This is the new version of Hedwig cards.
+They come in four different variants:
+
+- Slim (default)
+- Miniature
+- Full width
+- Focus
