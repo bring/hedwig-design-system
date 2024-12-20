@@ -30,7 +30,7 @@
   --hds-grid-span: var(--hds-grid-span-initial);
 
   /* Center */
-  --hds-grid-center-initial: 0;
+  --hds-grid-center-initial: unset;
   --hds-grid-center-small: var(--hds-grid-center-initial);
   --hds-grid-center-medium: var(--hds-grid-center-small);
   --hds-grid-center-large: var(--hds-grid-center-medium);
