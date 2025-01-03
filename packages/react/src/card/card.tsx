@@ -150,14 +150,25 @@ interface CardBodyActionArrowProps extends React.HTMLAttributes<HTMLSpanElement>
    * @default false
    */
   asChild?: boolean;
+
+  /**
+   * Set direction of the arrow
+   *
+   * @default "right"
+   */
+  direction?: "right" | "up-right";
 }
 export const CardBodyActionArrow = forwardRef<HTMLSpanElement, CardBodyActionArrowProps>(
-  ({ asChild, className, ...rest }, ref) => {
+  ({ asChild, className, direction, ...rest }, ref) => {
     const Component = asChild ? Slot : "span";
     return (
       <Component
         {...rest}
-        className={clsx("hds-card__body-action-arrow", className as undefined)}
+        className={clsx(
+          "hds-card__body-action-arrow",
+          { "hds-card__body-action-arrow-up-right": direction === "up-right" },
+          className as undefined,
+        )}
         ref={ref}
       />
     );
@@ -178,20 +189,48 @@ export interface CardBaseProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export interface CardProps extends CardBaseProps {
   /**
-   * A Card should in most cases appear as a big link,
-   * but the actual link should just be the header title.
-   * To make life better for those with screen readers we should not make
-   * the entire card a link, as that would cause the entire card to be read
-   * as a link to the user. That would be perceived as information overload.
+   * Change the default rendered element for Card.
    */
   as?: "section" | "div" | "article" | "aside";
+  /**
+   * Allows for a horizontal variant for sizes above small.
+   *
+   * @default "slim"
+   */
+  variant?: "slim" | "full-width" | "miniature" | "focus";
+  /**
+   * The color of the card.
+   *
+   * @default "lighter-brand"
+   * */
+  color?: "white" | "lighter-brand" | "light-grey-fill";
 }
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ as: Tag = "section", asChild, className, children, ...rest }, ref) => {
+interface CardFocusProps extends CardBaseProps {
+  as?: "section" | "div" | "article" | "aside";
+  variant: "focus";
+  color: "darker";
+}
+
+export const Card = forwardRef<HTMLDivElement, CardProps | CardFocusProps>(
+  ({ as: Tag = "section", asChild, className, children, variant, color, ...rest }, ref) => {
     const Component = asChild ? Slot : Tag;
+    const effectiveColor = variant === "focus" && !color ? "darker" : color;
     return (
-      <Component {...rest} className={clsx("hds-card", className as undefined)} ref={ref}>
+      <Component
+        {...rest}
+        className={clsx(
+          "hds-card",
+          { "hds-card--full-width": variant === "full-width" },
+          { "hds-card--miniature": variant === "miniature" },
+          { "hds-card--focus": variant === "focus" },
+          { "hds-card--color-white": effectiveColor === "white" },
+          { "hds-card--color-light-grey-fill": effectiveColor === "light-grey-fill" },
+          { "hds-card--color-darker": effectiveColor === "darker" },
+          className as undefined,
+        )}
+        ref={ref}
+      >
         {children}
       </Component>
     );
