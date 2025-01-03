@@ -1,5 +1,11 @@
 # @postenbring/hedwig-react
 
+## 1.3.4
+
+### Patch Changes
+
+- 71f74f8: Allow for React 19 as peer dependency
+
 ## 1.3.3
 
 ### Patch Changes
