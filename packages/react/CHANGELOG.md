@@ -1,5 +1,23 @@
 # @postenbring/hedwig-react
 
+## 1.4.0
+
+### Minor Changes
+
+- baba2e8: This is the new version of Hedwig cards.
+  They come in four different variants:
+
+  - Slim (default)
+  - Miniature
+  - Full width
+  - Focus
+
+### Patch Changes
+
+- 71f74f8: Allow for React 19 as peer dependency
+- Updated dependencies [baba2e8]
+  - @postenbring/hedwig-css@1.5.0
+
 ## 1.3.3
 
 ### Patch Changes
