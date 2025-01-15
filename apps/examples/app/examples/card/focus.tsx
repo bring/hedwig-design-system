@@ -7,21 +7,26 @@ function Example() {
     <Container>
       <Card variant="focus">
         <Card.Media>
-          <Card.MediaImg alt="posten-bring" src={postenBringImage} />
+          <Card.MediaImg
+            alt="Posten delivery van with Bring cargo truck in the background"
+            src={postenBringImage}
+          />
         </Card.Media>
         <Card.Body>
           <Card.BodyHeader as="h2">
-            <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
-            <Card.BodyHeaderTitle>Cool article</Card.BodyHeaderTitle>
+            <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
+            <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
           </Card.BodyHeader>
           <Card.BodyDescription>
-            The card will take up all available space by default. It is the consumer&apos;s choice
-            and responsibility to limit the width if wanted.
+            From January 1, 2024, the authorities will abolish the 350-kroner limit. This means that
+            you have to pay import duties from the first krone on most of what you buy from abroad.
+            The new rules largely mean that foreign online shops will collect the value added tax
+            (VAT) immediately when you shop and pay for the goods.
           </Card.BodyDescription>
           <Card.BodyAction asChild>
-            <Link href="https://www.posten.no" variant="inverted">
+            <Link href="https://www.posten.no" variant="solid">
               <Card.BodyActionArrow />
-              No button yet
+              This is smart to know
             </Link>
           </Card.BodyAction>
         </Card.Body>
