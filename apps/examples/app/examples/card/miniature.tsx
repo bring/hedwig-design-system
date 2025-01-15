@@ -18,53 +18,55 @@ function Example() {
         >
           <Card variant="miniature" color="lighter-brand">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Cool article</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
-                If you have an address label for return, you can place it on the middle of the
-                parcel.
+                Our services for national and international transport
               </Card.BodyDescription>
               <Card.BodyAction>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
-                  Only link
+                  Parcels and cargo
                 </Link>
               </Card.BodyAction>
             </Card.Body>
           </Card>
           <Card variant="miniature" color="lighter-brand">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Another article</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Mail</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
-                If you have an address label for return, you can place it on the middle of the
-                parcel.
+                Mail and direct mail delivered to the mailbox
               </Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow />
-                  Only link
+                  Mail to mailbox
                 </Link>
               </Card.BodyAction>
             </Card.Body>
           </Card>
           <Card variant="miniature" color="lighter-brand">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>International cargo</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow />
-                  Only link
+                  International cargo
                 </Link>
               </Card.BodyAction>
             </Card.Body>
@@ -84,53 +86,55 @@ function Example() {
         >
           <Card variant="miniature" color="light-grey-fill">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Cool article</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
-                If you have an address label for return, you can place it on the middle of the
-                parcel.
+                Our services for national and international transport
               </Card.BodyDescription>
               <Card.BodyAction>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
-                  Only link
+                  Parcels and cargo
                 </Link>
               </Card.BodyAction>
             </Card.Body>
           </Card>
           <Card variant="miniature" color="light-grey-fill">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Another article</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Mail</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
-                If you have an address label for return, you can place it on the middle of the
-                parcel.
+                Mail and direct mail delivered to the mailbox
               </Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow />
-                  Only link
+                  Mail to mailbox
                 </Link>
               </Card.BodyAction>
             </Card.Body>
           </Card>
           <Card variant="miniature" color="light-grey-fill">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>International cargo</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow />
-                  Only link
+                  International cargo
                 </Link>
               </Card.BodyAction>
             </Card.Body>
@@ -150,53 +154,55 @@ function Example() {
         >
           <Card variant="miniature" color="white">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Cool article</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
-                If you have an address label for return, you can place it on the middle of the
-                parcel.
+                Our services for national and international transport
               </Card.BodyDescription>
               <Card.BodyAction>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
-                  Only link
+                  Parcels and cargo
                 </Link>
               </Card.BodyAction>
             </Card.Body>
           </Card>
           <Card variant="miniature" color="white">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Another article</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Mail</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
-                If you have an address label for return, you can place it on the middle of the
-                parcel.
+                Mail and direct mail delivered to the mailbox
               </Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow />
-                  Only link
+                  Mail to mailbox
                 </Link>
               </Card.BodyAction>
             </Card.Body>
           </Card>
           <Card variant="miniature" color="white">
             <Card.Media>
-              <Card.MediaImg alt="posten-bring" src={customerParcel} />
+              <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>International cargo</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow />
-                  Only link
+                  International cargo
                 </Link>
               </Card.BodyAction>
             </Card.Body>
