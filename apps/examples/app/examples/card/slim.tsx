@@ -6,9 +6,11 @@ function Example() {
   return (
     <>
       <Container>
+        <h2>Color - Lighter Brand - Default</h2>
         <div
           style={{
-            margin: "var(--hds-spacing-20)",
+            marginTop: "var(--hds-spacing-20)",
+            marginBottom: "var(--hds-spacing-20)",
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "var(--hds-spacing-24-32)",
@@ -105,9 +107,11 @@ function Example() {
         </div>
       </Container>
       <Container>
+        <h2>Color - Light Grey Fill</h2>
         <div
           style={{
-            margin: "var(--hds-spacing-20)",
+            marginTop: "var(--hds-spacing-20)",
+            marginBottom: "var(--hds-spacing-20)",
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "var(--hds-spacing-24-32)",
@@ -180,9 +184,11 @@ function Example() {
         </div>
       </Container>
       <Container>
+        <h2>Color - White</h2>
         <div
           style={{
-            margin: "var(--hds-spacing-20)",
+            marginTop: "var(--hds-spacing-20)",
+            marginBottom: "var(--hds-spacing-20)",
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "var(--hds-spacing-24-32)",
