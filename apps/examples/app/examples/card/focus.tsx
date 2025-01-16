@@ -26,7 +26,7 @@ function Example() {
           <Card.BodyAction asChild>
             <Link href="https://www.posten.no" variant="solid">
               <Card.BodyActionArrow />
-              This is smart to know
+              Import duty changes from 2024
             </Link>
           </Card.BodyAction>
         </Card.Body>
