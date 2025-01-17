@@ -1,5 +1,5 @@
 import "@postenbring/hedwig-css";
-import { Card, Link, Container } from "@postenbring/hedwig-react";
+import { Card, Container } from "@postenbring/hedwig-react";
 import postenBringImage from "../../assets/posten-bring.avif";
 
 function Example() {
@@ -23,12 +23,6 @@ function Example() {
             The new rules largely mean that foreign online shops will collect the value added tax
             (VAT) immediately when you shop and pay for the goods.
           </Card.BodyDescription>
-          <Card.BodyAction asChild>
-            <Link href="https://www.posten.no" variant="solid">
-              <Card.BodyActionArrow />
-              Import duty changes from 2024
-            </Link>
-          </Card.BodyAction>
         </Card.Body>
       </Card>
     </Container>
