@@ -1,5 +1,17 @@
 # @postenbring/hedwig-css
 
+## 1.5.0
+
+### Minor Changes
+
+- baba2e8: This is the new version of Hedwig cards.
+  They come in four different variants:
+
+  - Slim (default)
+  - Miniature
+  - Full width
+  - Focus
+
 ## 1.4.2
 
 ### Patch Changes
