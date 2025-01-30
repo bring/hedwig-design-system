@@ -7,7 +7,7 @@
   --hds-grid-gap-medium: var(--hds-grid-gap-small);
   --hds-grid-gap-large: var(--hds-grid-gap-medium);
   --hds-grid-gap-xlarge: var(--hds-grid-gap-large);
-  --hds-grid-gap: var(--hds-grid-gap-initial);
+  --hds-grid-gap: unset;
   --hds-grid-gap-x-initial: var(--hds-grid-gap);
   --hds-grid-gap-x-small: var(--hds-grid-gap-x-initial);
   --hds-grid-gap-x-medium: var(--hds-grid-gap-x-small);
