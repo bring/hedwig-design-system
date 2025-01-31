@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 1.5.1
+
+### Patch Changes
+
+- 910b97c: Support use of Breadcrumbs without reset.css
+
 ## 1.5.0
 
 ### Minor Changes
