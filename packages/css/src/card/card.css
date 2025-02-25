@@ -126,7 +126,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
 
-  @media (--medium) {
+  @media (--large) {
     display: flex;
     flex-direction: row;
   }
@@ -137,7 +137,7 @@
     overflow: auto;
     margin-bottom: 0;
 
-    @media (--medium) {
+    @media (--large) {
       min-height: none;
       max-height: none;
     }
@@ -152,7 +152,7 @@
   .hds-card__body {
     padding: var(--hds-spacing-32-40);
 
-    @media (--medium) {
+    @media (--large) {
       width: 50%;
       height: auto;
     }
