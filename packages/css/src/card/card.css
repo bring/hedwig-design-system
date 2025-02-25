@@ -14,6 +14,7 @@
   color: var(--hds-ui-colors-black);
   padding: var(--hds-spacing-20-24);
   max-width: 560px;
+  gap: var(--hds-spacing-12-16);
 
   .hds-card__media {
     border-radius: var(--hds-border-radius-8);
@@ -125,7 +126,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
 
-  @media (--small) {
+  @media (--medium) {
     display: flex;
     flex-direction: row;
   }
@@ -136,7 +137,7 @@
     overflow: auto;
     margin-bottom: 0;
 
-    @media (--small) {
+    @media (--medium) {
       min-height: none;
       max-height: none;
     }
@@ -150,13 +151,10 @@
 
   .hds-card__body {
     padding: var(--hds-spacing-32-40);
-    padding-top: calc(var(--hds-spacing-32-40) + var(--hds-spacing-12-16));
 
-    @media (--small) {
+    @media (--medium) {
       width: 50%;
       height: auto;
-      padding-left: calc(var(--hds-spacing-32-40) + var(--hds-spacing-12-16));
-      padding-top: var(--hds-spacing-32-40);
     }
   }
 
