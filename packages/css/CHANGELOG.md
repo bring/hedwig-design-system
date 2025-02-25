@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 1.5.2
+
+### Patch Changes
+
+- 33ca79f: Card adjustments
+
 ## 1.5.1
 
 ### Patch Changes
