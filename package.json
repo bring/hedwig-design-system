@@ -14,16 +14,16 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.9",
-    "@types/node": "22.9.0",
+    "@changesets/cli": "^2.28.0",
+    "@types/node": "22.13.4",
     "eslint": "^8.57.0",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
-    "husky": "9.1.6",
-    "lint-staged": "15.2.10",
-    "prettier": "^3.3.3",
-    "stylelint": "16.10.0",
-    "turbo": "2.2.3"
+    "husky": "9.1.7",
+    "lint-staged": "15.4.3",
+    "prettier": "^3.5.1",
+    "stylelint": "16.14.1",
+    "turbo": "2.4.2"
   },
   "packageManager": "pnpm@9.1.1",
   "lint-staged": {
