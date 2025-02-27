@@ -1,19 +1,21 @@
-import { forwardRef } from "react";
+import { forwardRef, Children } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * The height, font size and padding of the button
+   *
+   * @default "large"
    */
-  size?: "small" | "medium" | "large";
+  size?: "small" | "large";
 
   /**
    * The background and fill of the button
    *
    * @default "primary"
    */
-  variant?: "primary" | "secondary" | "primary-outline" | "secondary-outline";
+  variant?: "primary" | "secondary" | "tertiary" | "inverted";
 
   /**
    * Make the button use 100% width available.
@@ -55,7 +57,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       asChild,
       children,
       variant = "primary",
-      size = "medium",
+      size = "large",
       fullWidth = false,
       icon,
       className,
@@ -64,6 +66,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const Component = asChild ? Slot : "button";
+
+    /**
+     * Check if the button has leading or trailing icons.
+     * Class names are added to the button to adjust the padding.
+     */
+    const childrenArray = Children.toArray(children);
+    const hasLeadingIcon = childrenArray.length > 1 && typeof childrenArray[0] !== "string";
+    const hasTrailingIcon =
+      childrenArray.length > 1 && typeof childrenArray[childrenArray.length - 1] !== "string";
+
     return (
       <Component
         className={clsx(
@@ -74,6 +86,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             "hds-button--full": fullWidth === true,
             "hds-button--mobile-full": fullWidth === "mobile",
             "hds-button--icon-only": icon,
+            "hds-button--leading-icon": hasLeadingIcon,
+            "hds-button--trailing-icon": hasTrailingIcon,
           },
           className as undefined,
         )}
