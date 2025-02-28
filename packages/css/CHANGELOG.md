@@ -1,5 +1,43 @@
 # @postenbring/hedwig-css
 
+## 1.5.2
+
+### Patch Changes
+
+- 33ca79f: Card adjustments
+
+## 1.5.1
+
+### Patch Changes
+
+- 910b97c: Support use of Breadcrumbs without reset.css
+
+## 1.5.0
+
+### Minor Changes
+
+- baba2e8: This is the new version of Hedwig cards.
+  They come in four different variants:
+
+  - Slim (default)
+  - Miniature
+  - Full width
+  - Focus
+
+## 1.4.2
+
+### Patch Changes
+
+- 9737781: Fix grid on Safari 18.2
+- f6d3a1e: :lipstick: checkbox/radio-button: only show focus outline on focus-visible
+
+## 1.4.1
+
+### Patch Changes
+
+- Updated dependencies [f7aafd6]
+  - @postenbring/hedwig-tokens@1.2.0
+
 ## 1.4.0
 
 ### Minor Changes

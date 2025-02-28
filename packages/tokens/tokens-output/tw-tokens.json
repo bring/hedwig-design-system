@@ -351,7 +351,13 @@
       "letterSpacing": "0"
     }
   },
-  "border-radius": "2px",
+  "border-radius": {
+    "8": "8px",
+    "16": "16px",
+    "24": "24px",
+    "32": "32px",
+    "_": "2px"
+  },
   "stroke-default": "1px",
   "stroke-thick": "2px",
   "shadow-default": "0px 1px 5px 0px #00000022",

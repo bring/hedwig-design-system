@@ -16,6 +16,8 @@
   }
 
   & li {
+    display: flex;
+
     /*
      * Design in Figma has an extra 2px distance between
      * the text and underline border on links
@@ -36,6 +38,7 @@
     }
 
     &::before {
+      content: "";
       display: inline-block;
       background-image: var(--_hds-icons-cheveron-right-dark-grey);
       width: 20px;
