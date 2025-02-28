@@ -23,7 +23,7 @@ type Story = StoryObj<typeof Link>;
 export const Preview: Story = {
   tags: ["!dev"],
   args: {
-    children: "Link",
+    children: <>Link</>,
     href: "https://www.posten.no/",
     onClick: (e) => {
       e.preventDefault();

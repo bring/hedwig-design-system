@@ -5,13 +5,16 @@ function Example() {
   return (
     <Box variant="warning">
       <VStack gap="40" align="center">
-        <Link href="#demo-link" variant="solid" size="medium">
+        <Link href="#demo-link" variant="solid" size="default">
           Call to action
         </Link>
         <Link href="#demo-link" variant="solid" size="small">
           Call to action
         </Link>
         <Link href="#demo-link" variant="solid" size="large">
+          Call to action
+        </Link>
+        <Link href="#demo-link" variant="solid" size="technical">
           Call to action
         </Link>
       </VStack>
