@@ -29,7 +29,7 @@ export const CardMediaImg = forwardRef<HTMLImageElement, CardImageMediaProps>(
     return (
       <Component
         {...rest}
-        className={clsx("hds-card__media__img", className as undefined)}
+        className={clsx("hds-card__media--img", className as undefined)}
         ref={ref}
       />
     );
