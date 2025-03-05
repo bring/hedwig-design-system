@@ -1,3 +1,4 @@
+@import url("../_custom-media.css");
 @import url("../spacing/spacing.css");
 
 :root {
@@ -9,13 +10,13 @@
   --fullwidthcard-image-aspect-mini: 100 / 155;
   --fullwidthcard-image-height-max: 420px;
 
-  @media (width >= 800px) {
+  @media (--fullwidthcard-largest) {
     --fullwidthcard-image-height-max: 650px;
   }
 
   --fullwidthcard-image-height-fixed: 300px;
 
-  @media (width >= 500px) {
+  @media (--fullwidthcard-media-large) {
     --fullwidthcard-image-height-fixed: 600px;
   }
 }
@@ -43,22 +44,22 @@
 		*/
 
     /* Narrowest: fixed aspect ratio (portrait: height is 1.5 times the width). */
-    @media (width <= 307px) {
+    @media (--fullwidthcard-media-narrowest) {
       aspect-ratio: var(--fullwidthcard-image-aspect-mini);
     }
 
     /* Second narrowest: fixed image height */
-    @media (width >= 308px) and (width <= 411px) {
+    @media (--fullwidthcard-media-narrow) {
       height: var(--fullwidthcard-image-height-fixed);
     }
 
     /* Middle narrow: fixed aspect ratio (quare format), variable height */
-    @media (width >= 412px) and (width <= 647px) {
+    @media (--fullwidthcard-media-mid) {
       aspect-ratio: 1;
     }
 
     /* "Widest" narrow card layout: fixed image height (but higher now) */
-    @media (width >= 648px) and (width <= 799px) {
+    @media (--fullwidthcard-media-large) {
       height: var(--fullwidthcard-image-height-fixed);
     }
   }
@@ -72,7 +73,7 @@
 	Image height is at least 400px high, but scales up if the body text is higher.
 	Image has a max height if the text is huge, limiting the aspect ratio of the image.
  */
-@media (width >= 800px) {
+@media (--fullwidthcard-largest) {
   .hds-card.hds-card--full-width {
     display: flex;
     flex-direction: row;
