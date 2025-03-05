@@ -84,7 +84,8 @@
       min-height: var(--fullwidthcard-content-min-height);
     }
 
-    /* Image is absolutely positioned and centered within .hds-card__media, to avoid making .hds-card__media outgrow the body text. */
+    /* Image is absolutely positioned within .hds-card__media,
+       to center and avoid making .hds-card__media outgrow the body text: */
     .hds-card__media > .hds-card__media--img {
       position: absolute;
       top: 50%;
@@ -92,7 +93,7 @@
       transform: translate(-50%, -50%);
     }
 
-    /* Body sizes itself based on its content */
+    /* Body sizes itself based on its content, and centers the contained wrapper (.hds-card__centerbody) vertically: */
     .hds-card__body {
       align-self: flex-start;
       display: flex;
