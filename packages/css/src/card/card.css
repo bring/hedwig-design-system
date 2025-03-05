@@ -26,7 +26,7 @@
     margin-bottom: var(--hds-spacing-12-16);
   }
 
-  .hds-card__media--img {
+  .hds-card__media__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -143,7 +143,7 @@
     }
   }
 
-  .hds-card__media--img {
+  .hds-card__media__img {
     width: 100%;
     height: 100%;
     object-fit: cover;

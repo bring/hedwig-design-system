@@ -87,7 +87,9 @@
 
     /* Image is absolutely positioned within .hds-card__media,
        to center and avoid making .hds-card__media outgrow the body text: */
-    .hds-card__media > .hds-card__media--img {
+
+    /* stylelint-disable selector-class-pattern */
+    .hds-card__media > .hds-card__media__img {
       position: absolute;
       top: 50%;
       left: 50%;
