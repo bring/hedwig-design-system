@@ -42,7 +42,7 @@ export const CardBody = forwardRef<HTMLDivElement, CardBaseProps>(
     const Component = asChild ? Slot : "div";
     return (
       <Component {...rest} className={clsx("hds-card__body", className as undefined)} ref={ref}>
-        <div>{children}</div>
+        <div className="hds-card__centerbody">{children}</div>
       </Component>
     );
   },
