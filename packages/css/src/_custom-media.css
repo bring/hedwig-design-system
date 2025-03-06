@@ -18,12 +18,3 @@
 @custom-media --before-medium (width < 720px);
 @custom-media --before-large (width < 940px);
 @custom-media --before-xlarge (width < 1200px);
-
-/*  Extra customized for edge cases: */
-
-/* Used in packages/css/src/card/fullwidth-card.css: */
-@custom-media --fullwidthcard-media-narrowest (width < 308px);
-@custom-media --fullwidthcard-media-narrow (width >= 308px) and (width < 412px);
-@custom-media --fullwidthcard-media-mid (width >= 412px) and (width < 648px);
-@custom-media --fullwidthcard-media-large (width >= 648px) and (width < 800px);
-@custom-media --fullwidthcard-largest (width >= 800px);
