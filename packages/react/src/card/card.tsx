@@ -204,16 +204,27 @@ export interface CardProps extends CardBaseProps {
    * @default "lighter-brand"
    * */
   color?: "white" | "lighter-brand" | "light-grey-fill";
+  /**
+   * On cards that can have images to the left or right of the text, (fullwidth or focus),
+   * left position is default. Setting imageRight to true, puts the image to the right.
+   *
+   * @default false
+   * */
+  imageRight?: boolean;
 }
 
 interface CardFocusProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "focus";
   color: "darker";
+  imageRight?: boolean;
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps | CardFocusProps>(
-  ({ as: Tag = "section", asChild, className, children, variant, color, ...rest }, ref) => {
+  (
+    { as: Tag = "section", asChild, className, children, variant, color, imageRight, ...rest },
+    ref,
+  ) => {
     const Component = asChild ? Slot : Tag;
     const effectiveColor = variant === "focus" && !color ? "darker" : color;
     return (
@@ -227,6 +238,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps | CardFocusProps>(
           { "hds-card--color-white": effectiveColor === "white" },
           { "hds-card--color-light-grey-fill": effectiveColor === "light-grey-fill" },
           { "hds-card--color-darker": effectiveColor === "darker" },
+          { "hds-card--imagepos-right": imageRight },
           className as undefined,
         )}
         ref={ref}
