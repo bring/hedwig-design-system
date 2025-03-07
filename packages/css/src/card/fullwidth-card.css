@@ -56,16 +56,22 @@
     }
   }
 
-  .hds-card__centerbody {
-    margin: var(--hds-spacing-32-40);
-  }
+  .hds-card__body {
+    .hds-card__centerbody {
+      margin: var(--hds-spacing-32-40);
+    }
 
-  .hds-card__body-description {
-    margin-top: var(--hds-spacing-20-24);
-  }
+    .hds-card__body-description {
+      margin-top: var(--hds-spacing-20-24);
+    }
 
-  .hds-card__body-action {
-    margin-top: var(--hds-spacing-20-24);
+    .hds-card__body-action {
+      margin-top: var(--hds-spacing-20-24);
+    }
+
+    .hds-button {
+      margin-top: var(--hds-spacing-20-24);
+    }
   }
 
   /*  Wide layout: image to the left or right of the text. Image height is at least 400px high, but scales up if the
