@@ -32,36 +32,31 @@
     max-height: var(--hds-fullwidthcard-image-maxheight-small);
     width: 100%;
 
-    /*  Responsivity: different card layouts and content/images sizes,
-				while still displaying as much as the image as possible and trying to keep focus on the middle,
-				.hds-card__media is displayed in particular ways on particular viewport widths,
-				 but always filling the available width
-				 (which below 800px is the full width of the card minus padding,
-				 and above 800px is only half the width of the card):
-			*/
+    /*  Responsivity: different card layouts and content/images sizes, while still displaying as much as the image as
+     *  possible and trying to keep focus on the middle, .hds-card__media is displayed in particular ways on
+     *  particular viewport widths, but always filling the available width (which below 800px is the full width of the
+     *  card minus padding, and above 800px is only half the width of the card):
+     *
+     **/
 
     /* Narrowest: fixed aspect ratio (portrait: height is 1.5 times the width). */
-    @container fullwidthcard (width < 308px) {
+    @container fullwidthcard (width < 300px) {
       aspect-ratio: var(--hds-fullwidthcard-image-aspect-mini);
-    }
-
-    /* Second narrowest: fixed image height */
-    @container fullwidthcard (width >= 308px) and (width < 412px) {
-      height: var(--hds-fullwidthcard-image-height-small);
+      max-height: var(--hds-fullwidthcard-image-height-small);
     }
 
     /* Middle narrow: fixed aspect ratio (quare format), variable height */
-    @container fullwidthcard (width >= 412px) and (width < 648px) {
+    @container fullwidthcard (width >= 300px) and (width < 648px) {
       aspect-ratio: 1;
     }
 
-    /* "Widest" narrow card layout: fixed image height (but higher now) */
+    /* "Widest" of the narrow card layouts: fixed image height (but higher now) */
     @container fullwidthcard (width >= 648px) and (width < 800px) {
       height: var(--hds-fullwidthcard-image-height-medium);
     }
   }
 
-  .hds-card__body > * {
+  .hds-card__centerbody {
     margin: var(--hds-spacing-32-40);
   }
 
@@ -73,10 +68,10 @@
     margin-top: var(--hds-spacing-20-24);
   }
 
-  /*  Wide layout: image to the left or right of the text.
-		Image height is at least 400px high, but scales up if the body text is higher.
-		Image has a max height if the text is huge, limiting the aspect ratio of the image.
-	 */
+  /*  Wide layout: image to the left or right of the text. Image height is at least 400px high, but scales up if the
+   *  body text is higher. Image has a max height if the text is huge, limiting the aspect ratio of the image.
+   *
+   **/
   @container fullwidthcard (width >= 800px) {
     .hds-card__layoutwrapper {
       display: flex;
@@ -94,8 +89,10 @@
       }
     }
 
-    /* Image is absolutely positioned within .hds-card__media,
-		   to center and avoid making .hds-card__media outgrow the body text: */
+    /* Image is absolutely positioned within .hds-card__media, to center and avoid making .hds-card__media outgrow
+     * the body text:
+     *
+     **/
 
     /* stylelint-disable selector-class-pattern */
     .hds-card__media > .hds-card__media__img {
@@ -105,7 +102,7 @@
       transform: translate(-50%, -50%);
     }
 
-    &.hds-card--imagepos-right .hds-card__media {
+    &.hds-card--image-position-right .hds-card__media {
       order: 2;
     }
 

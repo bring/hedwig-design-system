@@ -42,7 +42,7 @@ export const CardBody = forwardRef<HTMLDivElement, CardBaseProps>(
     const Component = asChild ? Slot : "div";
     return (
       <Component {...rest} className={clsx("hds-card__body", className as undefined)} ref={ref}>
-        <div className="hds-card__centerbody">{children}</div>
+        <div className={clsx("hds-card__centerbody", className as undefined)}>{children}</div>
       </Component>
     );
   },
@@ -204,25 +204,38 @@ export interface CardProps extends CardBaseProps {
    * @default "lighter-brand"
    * */
   color?: "white" | "lighter-brand" | "light-grey-fill";
-  /**
-   * On cards that can have images to the left or right of the text, (fullwidth or focus),
-   * left position is default. Setting imageRight to true, puts the image to the right.
-   *
-   * @default false
-   * */
-  imageRight?: boolean;
+
+  /* Only fullwidth or focus cards can have images to the left or right of the text: */
+  imagePosition?: "left" | "right";
 }
 
 interface CardFocusProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "focus";
   color: "darker";
-  imageRight?: boolean;
+  /**
+   * fullwidth or focus cards can have images to the left or right of the text.
+   *
+   * @default "left"
+   * */
+  imagePosition?: "left" | "right";
 }
 
-export const Card = forwardRef<HTMLDivElement, CardProps | CardFocusProps>(
+interface CardFullwidthProps extends CardBaseProps {
+  as?: "section" | "div" | "article" | "aside";
+  variant: "full-width";
+  color: "white" | "lighter-brand" | "light-grey-fill";
+  /**
+   * fullwidth or focus cards can have images to the left or right of the text.
+   *
+   * @default false
+   * */
+  imagePosition?: "left" | "right";
+}
+
+export const Card = forwardRef<HTMLDivElement, CardProps | CardFocusProps | CardFullwidthProps>(
   (
-    { as: Tag = "section", asChild, className, children, variant, color, imageRight, ...rest },
+    { as: Tag = "section", asChild, className, children, variant, color, imagePosition, ...rest },
     ref,
   ) => {
     const Component = asChild ? Slot : Tag;
@@ -238,13 +251,13 @@ export const Card = forwardRef<HTMLDivElement, CardProps | CardFocusProps>(
           { "hds-card--color-white": effectiveColor === "white" },
           { "hds-card--color-light-grey-fill": effectiveColor === "light-grey-fill" },
           { "hds-card--color-darker": effectiveColor === "darker" },
-          { "hds-card--imagepos-right": imageRight },
+          { "hds-card--image-position-right": imagePosition === "right" },
           className as undefined,
         )}
         ref={ref}
       >
         {variant === "full-width" ? (
-          <div className="hds-card__layoutwrapper">{children}</div>
+          <div className={clsx("hds-card__layoutwrapper", className as undefined)}>{children}</div>
         ) : (
           children
         )}
