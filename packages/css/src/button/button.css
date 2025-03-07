@@ -51,6 +51,11 @@
     &.hds-button--trailing-icon {
       padding-right: var(--hds-spacing-8);
     }
+
+    &.hds-button--only-icon {
+      padding-left: var(--hds-spacing-8);
+      padding-right: var(--hds-spacing-8);
+    }
   }
 
   &.hds-button--large {
@@ -68,6 +73,11 @@
     }
 
     &.hds-button--trailing-icon {
+      padding-right: var(--hds-spacing-12);
+    }
+
+    &.hds-button--only-icon {
+      padding-left: var(--hds-spacing-12);
       padding-right: var(--hds-spacing-12);
     }
   }
@@ -184,40 +194,6 @@
       &:hover {
         color: var(--hds-ui-colors-grey);
         border-color: var(--hds-ui-colors-grey);
-      }
-    }
-  }
-
-  /**
-  * Variant: Icon only
-  * TODO: Support text + icon on either left or right side.
-  * See button component in digdir/designsystemet and nav/aksel
-  */
-  &.hds-button--icon-only {
-    display: inline-flex;
-    justify-content: center;
-    padding: 0;
-
-    /**
-    * Modifiers: sizes
-    *
-    * TODO: Consider/figure out using css variables for these values
-    * must make sense, not just choosing a value that matches for the sake of it
-    */
-
-    &.hds-button--small {
-      width: 44px;
-
-      & * {
-        width: 24px;
-      }
-    }
-
-    &.hds-button--large {
-      width: 58px;
-
-      & * {
-        width: 32px;
       }
     }
   }

@@ -24,13 +24,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   fullWidth?: boolean | "mobile";
 
   /**
-   * Use the button as an icon button
-   *
-   * Render the icon in `children`
-   */
-  icon?: boolean;
-
-  /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    *
    * @default false
@@ -44,8 +37,8 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  * @example
  * <Button variant="primary">Primary</Button>
  * <Button variant="secondary" size="large">Secondary</Button>
- * <Button variant="primary-outline">Primary Outline</Button>
- * <Button variant="secondary-outline" fullWidth="mobile">Secondary Outline</Button>
+ * <Button variant="inverted">Inverted</Button>
+ * <Button variant="tertiary" fullWidth="mobile">Secondary Outline</Button>
  *
  * @example
  * // If used for navigation use the `asChild` prop with a anchor element as a child.
@@ -59,7 +52,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "primary",
       size = "large",
       fullWidth = false,
-      icon,
       className,
       ...rest
     },
@@ -75,6 +67,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const hasLeadingIcon = childrenArray.length > 1 && typeof childrenArray[0] !== "string";
     const hasTrailingIcon =
       childrenArray.length > 1 && typeof childrenArray[childrenArray.length - 1] !== "string";
+    const hasOnlyIcon = childrenArray.length === 1 && typeof childrenArray[0] !== "string";
 
     return (
       <Component
@@ -85,7 +78,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {
             "hds-button--full": fullWidth === true,
             "hds-button--mobile-full": fullWidth === "mobile",
-            "hds-button--icon-only": icon,
+            "hds-button--only-icon": hasOnlyIcon,
             "hds-button--leading-icon": hasLeadingIcon,
             "hds-button--trailing-icon": hasTrailingIcon,
           },
