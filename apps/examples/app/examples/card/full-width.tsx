@@ -39,7 +39,13 @@ function Example() {
           </Card.Body>
         </Card>
         <h2>Color - Lighter Brand - Default - Image right</h2>
-        <Card variant="full-width" color="lighter-brand">
+        <Card variant="full-width" color="lighter-brand" imageRight>
+          <Card.Media>
+            <Card.MediaImg
+              alt="Posten delivery van with Bring cargo truck in the background"
+              src={postenBringImage}
+            />
+          </Card.Media>
           <Card.Body>
             <Card.BodyHeader as="h2">
               <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
@@ -58,12 +64,6 @@ function Example() {
               </Link>
             </Card.BodyAction>
           </Card.Body>
-          <Card.Media>
-            <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
-              src={postenBringImage}
-            />
-          </Card.Media>
         </Card>
         <h2>Color - Light Grey Fill</h2>
         <Card variant="full-width" color="light-grey-fill">

@@ -99,6 +99,10 @@
       transform: translate(-50%, -50%);
     }
 
+    &.hds-card--imagepos-right .hds-card__media {
+      order: 2;
+    }
+
     /* Body sizes itself based on its content, and centers the contained wrapper (.hds-card__centerbody) vertically: */
 
     .hds-card__body {
