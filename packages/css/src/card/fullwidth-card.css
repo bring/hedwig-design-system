@@ -1,19 +1,17 @@
 @import url("../spacing/spacing.css");
 
-:root {
-  /* Basic sizing for fullwidth cards: */
-  --fullwidthcard-min-height: 400px;
-  --fullwidthcard-content-min-height: calc(
-    var(--fullwidthcard-min-height) - 2 * var(--hds-spacing-20-24)
-  );
-  --fullwidthcard-image-aspect-mini: 100 / 155;
-  --fullwidthcard-image-maxheight-small: 420px;
-  --fullwidthcard-image-maxheight-medium: 650px;
-  --fullwidthcard-image-height-small: 300px;
-  --fullwidthcard-image-height-medium: 600px;
-}
-
 .hds-card.hds-card--full-width {
+  /* Basic sizing for fullwidth cards: */
+  --hds-fullwidthcard-min-height: 400px;
+  --hds-fullwidthcard-content-min-height: calc(
+    var(--hds-fullwidthcard-min-height) - 2 * var(--hds-spacing-20-24)
+  );
+  --hds-fullwidthcard-image-aspect-mini: 100 / 155;
+  --hds-fullwidthcard-image-maxheight-small: 420px;
+  --hds-fullwidthcard-image-maxheight-medium: 650px;
+  --hds-fullwidthcard-image-height-small: 300px;
+  --hds-fullwidthcard-image-height-medium: 600px;
+
   max-width: inherit;
   container-type: inline-size;
   container-name: fullwidthcard;
@@ -31,7 +29,7 @@
     overflow: hidden;
     position: relative;
     border-radius: var(--hds-border-radius-8);
-    max-height: var(--fullwidthcard-image-maxheight-small);
+    max-height: var(--hds-fullwidthcard-image-maxheight-small);
     width: 100%;
 
     /*  Responsivity: different card layouts and content/images sizes,
@@ -44,12 +42,12 @@
 
     /* Narrowest: fixed aspect ratio (portrait: height is 1.5 times the width). */
     @container fullwidthcard (width < 308px) {
-      aspect-ratio: var(--fullwidthcard-image-aspect-mini);
+      aspect-ratio: var(--hds-fullwidthcard-image-aspect-mini);
     }
 
     /* Second narrowest: fixed image height */
     @container fullwidthcard (width >= 308px) and (width < 412px) {
-      height: var(--fullwidthcard-image-height-small);
+      height: var(--hds-fullwidthcard-image-height-small);
     }
 
     /* Middle narrow: fixed aspect ratio (quare format), variable height */
@@ -59,12 +57,20 @@
 
     /* "Widest" narrow card layout: fixed image height (but higher now) */
     @container fullwidthcard (width >= 648px) and (width < 800px) {
-      height: var(--fullwidthcard-image-height-medium);
+      height: var(--hds-fullwidthcard-image-height-medium);
     }
   }
 
   .hds-card__body > * {
     margin: var(--hds-spacing-32-40);
+  }
+
+  .hds-card__body-description {
+    margin-top: var(--hds-spacing-20-24);
+  }
+
+  .hds-card__body-action {
+    margin-top: var(--hds-spacing-20-24);
   }
 
   /*  Wide layout: image to the left or right of the text.
@@ -80,11 +86,11 @@
       .hds-card__media,
       .hds-card__body {
         flex: 1;
-        min-height: var(--fullwidthcard-content-min-height);
+        min-height: var(--hds-fullwidthcard-content-min-height);
       }
 
       .hds-card__media {
-        max-height: var(--fullwidthcard-image-maxheight-medium);
+        max-height: var(--hds-fullwidthcard-image-maxheight-medium);
       }
     }
 
