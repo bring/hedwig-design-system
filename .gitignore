@@ -19,3 +19,4 @@ storybook-static/
 .stylelintcache
 **/tsconfig.tsbuildinfo
 .tsup
+vite.config.ts.timestamp-*
