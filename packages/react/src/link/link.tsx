@@ -14,7 +14,7 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
    *
    * Note: `medium` is deprecated, use `default` instead of `medium`
    */
-  size?: "default" | "small" | "large" | "technical";
+  size?: "default" | "small" | "large" | "technical" | "medium";
 
   children: React.ReactNode;
 
@@ -34,7 +34,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
         className={clsx(
           "hds-link",
           variant !== "underline" && `hds-link--${variant}`,
-          size !== "default" && `hds-link--${size}`,
+          size !== "default" && size !== "medium" && `hds-link--${size}`,
           className as undefined,
         )}
         ref={ref}
