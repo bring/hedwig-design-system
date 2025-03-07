@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 1.5.3
+
+### Patch Changes
+
+- 9548df8: Updated the posten logo with new color
+
 ## 1.5.2
 
 ### Patch Changes
