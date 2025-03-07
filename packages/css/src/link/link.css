@@ -3,6 +3,8 @@
  */
 
 .hds-link {
+  display: inline-flex;
+  gap: 8px;
   color: var(--hds-link-colors-text);
   fill: currentcolor;
   transition-duration: var(--hds-micro-animation-duration-quick);
@@ -78,6 +80,10 @@
 
   &.hds-link--large {
     font: var(--hds-typography-h3);
+  }
+
+  &.hds-link--technical {
+    font: var(--hds-typography-technical);
   }
 
   /**

@@ -4,15 +4,16 @@ import { Link, VStack } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <VStack gap="40" align="center">
-      <Link href="#demo-link" size="medium">
-        Call to action
+      <Link href="#demo-link" size="default">
+        Default link
       </Link>
       <Link href="#demo-link" size="small">
-        Call to action
+        Small link
       </Link>
       <Link href="#demo-link" size="large">
-        Call to action
+        Large link
       </Link>
+      <Link size="technical">Technical</Link>
     </VStack>
   );
 }
