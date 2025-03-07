@@ -1,5 +1,5 @@
 import "@postenbring/hedwig-css";
-import { Card, Link, Container } from "@postenbring/hedwig-react";
+import { Card, Link, Container, HStack, Button } from "@postenbring/hedwig-react";
 import postenBringImage from "../../assets/posten-bring.avif";
 
 function Example() {
@@ -117,6 +117,43 @@ function Example() {
                 Import duty changes from 2024
               </Link>
             </Card.BodyAction>
+          </Card.Body>
+        </Card>
+        <h2>CTA Buttons</h2>
+        <Card variant="full-width" color="lighter-brand">
+          <Card.Media>
+            <Card.MediaImg
+              alt="Posten delivery van with Bring cargo truck in the background"
+              src={postenBringImage}
+            />
+          </Card.Media>
+          <Card.Body>
+            <Card.BodyHeader as="h2">
+              <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
+              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+            </Card.BodyHeader>
+            <Card.BodyDescription>
+              From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
+              that you have to pay import duties from the first krone on most of what you buy from
+              abroad. The new rules largely mean that foreign online shops will collect the value
+              added tax (VAT) immediately when you shop and pay for the goods.
+            </Card.BodyDescription>
+            <HStack wrap>
+              <Card.BodyAction asChild>
+                <Button fullWidth="mobile" asChild>
+                  <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
+                    Postenbring
+                  </a>
+                </Button>
+              </Card.BodyAction>
+              <Card.BodyAction asChild>
+                <Button fullWidth="mobile" variant="primary-outline" asChild>
+                  <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                    Posten
+                  </a>
+                </Button>
+              </Card.BodyAction>
+            </HStack>
           </Card.Body>
         </Card>
       </div>
