@@ -11,6 +11,8 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 
   /**
    * Font size of the link
+   *
+   * Note: `medium` is deprecated, use `default` instead of `medium`
    */
   size?: "default" | "small" | "large" | "technical";
 
