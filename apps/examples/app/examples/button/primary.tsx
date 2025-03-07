@@ -4,7 +4,7 @@ import { GlobeIconSmall, EnvelopeIconLarge } from "../../assets/icon-examples";
 
 function Example() {
   return (
-    <VStack gap="24">
+    <VStack gap="24" style={{ padding: "24px" }}>
       <h2>Large - Only text</h2>
       <HStack gap="24" wrap align="end">
         <Button>Call to action</Button>
