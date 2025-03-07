@@ -231,7 +231,11 @@ export const Card = forwardRef<HTMLDivElement, CardProps | CardFocusProps>(
         )}
         ref={ref}
       >
-        {children}
+        {variant === "full-width" ? (
+          <div className="hds-card__layoutwrapper">{children}</div>
+        ) : (
+          children
+        )}
       </Component>
     );
   },
