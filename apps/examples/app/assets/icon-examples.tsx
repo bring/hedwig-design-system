@@ -1,38 +1,4 @@
-import "@postenbring/hedwig-css";
-import { Button, ButtonProps, HStack, VStack } from "@postenbring/hedwig-react";
-
-function ButtonIcons({ variant }: Pick<ButtonProps, "variant">) {
-  return (
-    <HStack gap="16" wrap align="end">
-      <Button variant={variant} aria-label="Choose language" icon size="small">
-        <GlobeIcon />
-      </Button>
-      <Button variant={variant} aria-label="Choose language" icon size="medium">
-        <GlobeIcon />
-      </Button>
-      <Button variant={variant} aria-label="Choose language" icon size="large">
-        <GlobeIcon />
-      </Button>
-    </HStack>
-  );
-}
-
-function Example() {
-  return (
-    <HStack gap="24" wrap>
-      <VStack gap="24">
-        <ButtonIcons variant="primary" />
-        <ButtonIcons variant="primary-outline" />
-      </VStack>
-      <VStack gap="24">
-        <ButtonIcons variant="secondary" />
-        <ButtonIcons variant="secondary-outline" />
-      </VStack>
-    </HStack>
-  );
-}
-
-const GlobeIcon = () => (
+export const GlobeIconSmall = () => (
   <svg
     aria-hidden
     fill="none"
@@ -48,14 +14,11 @@ const GlobeIcon = () => (
   </svg>
 );
 
-export default Example;
-
-import type { ExampleConfig } from "..";
-export const config: ExampleConfig = {
-  description: `Use the <code>icon</code> prop and render an icon as <code>children</code> for icon only buttons.
-  <br />
-  <br />
-  <strong>Note:</strong> The icon button should have an accessible label for screen readers, e.g. using <code>aria-label</code>.
-  `,
-  index: 4,
-};
+export const EnvelopeIconLarge = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M4 10.5C4 8.85938 5.3125 7.5 7 7.5H25C26.6406 7.5 28 8.85938 28 10.5V22.5C28 24.1875 26.6406 25.5 25 25.5H7C5.3125 25.5 4 24.1875 4 22.5V10.5ZM6.25 10.5V11.5781L14.3125 18.1875C15.2969 18.9844 16.6562 18.9844 17.6406 18.1875L25.75 11.5781V10.5C25.75 10.125 25.375 9.75 25 9.75H7C6.57812 9.75 6.25 10.125 6.25 10.5ZM6.25 14.4844V22.5C6.25 22.9219 6.57812 23.25 7 23.25H25C25.375 23.25 25.75 22.9219 25.75 22.5V14.4844L19.0938 19.9219C17.2656 21.4219 14.6875 21.4219 12.8594 19.9219L6.25 14.4844Z"
+      fill="currentColor"
+    />
+  </svg>
+);
