@@ -9,13 +9,16 @@ function Example() {
       }}
     >
       <VStack gap="40" align="center">
-        <Link href="#demo-link" variant="inverted" size="medium">
+        <Link href="#demo-link" variant="inverted" size="default">
           Call to action
         </Link>
         <Link href="#demo-link" variant="inverted" size="small">
           Call to action
         </Link>
         <Link href="#demo-link" variant="inverted" size="large">
+          Call to action
+        </Link>
+        <Link href="#demo-link" variant="inverted" size="technical">
           Call to action
         </Link>
       </VStack>
