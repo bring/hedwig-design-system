@@ -65,6 +65,10 @@
       margin-top: var(--hds-spacing-20-24);
     }
 
+    .hds-stack {
+      gap: 8px;
+    }
+
     .hds-card__body-action {
       margin-top: var(--hds-spacing-20-24);
     }
