@@ -143,6 +143,22 @@ export const CardBodyAction = forwardRef<HTMLDivElement, CardBaseProps>(
 );
 CardBodyAction.displayName = "Card.BodyAction";
 
+export const CardBodyActionRow = forwardRef<HTMLDivElement, CardBaseProps>(
+  ({ asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "div";
+    return (
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-action-row", className as undefined)}
+        ref={ref}
+      >
+        {children}
+      </Component>
+    );
+  },
+);
+CardBodyActionRow.displayName = "Card.BodyActionRow";
+
 interface CardBodyActionArrowProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
@@ -277,6 +293,7 @@ Card.BodyHeaderOverline = CardBodyHeaderOverline;
 Card.BodyHeaderTitle = CardBodyHeaderTitle;
 Card.BodyDescription = CardBodyDescription;
 Card.BodyAction = CardBodyAction;
+Card.BodyActionRow = CardBodyActionRow;
 Card.BodyActionArrow = CardBodyActionArrow;
 
 type CardType = ReturnType<typeof forwardRef<HTMLDivElement, CardProps>> & {
@@ -288,5 +305,6 @@ type CardType = ReturnType<typeof forwardRef<HTMLDivElement, CardProps>> & {
   BodyHeaderTitle: typeof CardBodyHeaderTitle;
   BodyDescription: typeof CardBodyDescription;
   BodyAction: typeof CardBodyAction;
+  BodyActionRow: typeof CardBodyActionRow;
   BodyActionArrow: typeof CardBodyActionArrow;
 };

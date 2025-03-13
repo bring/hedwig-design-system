@@ -1,5 +1,5 @@
 import "@postenbring/hedwig-css";
-import { Card, Link, Container, HStack, Button } from "@postenbring/hedwig-react";
+import { Card, Link, Container, Button } from "@postenbring/hedwig-react";
 import postenBringImage from "../../assets/posten-bring.avif";
 
 function Example() {
@@ -138,22 +138,36 @@ function Example() {
               abroad. The new rules largely mean that foreign online shops will collect the value
               added tax (VAT) immediately when you shop and pay for the goods.
             </Card.BodyDescription>
-            <HStack wrap>
+            <Card.BodyActionRow>
               <Card.BodyAction asChild>
                 <Button fullWidth="mobile" asChild>
                   <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
-                    Postenbring
+                    Primary
                   </a>
                 </Button>
               </Card.BodyAction>
               <Card.BodyAction asChild>
                 <Button fullWidth="mobile" variant="primary-outline" asChild>
                   <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                    Posten
+                    Pr. outline
                   </a>
                 </Button>
               </Card.BodyAction>
-            </HStack>
+              <Card.BodyAction asChild>
+                <Button fullWidth="mobile" variant="secondary" asChild>
+                  <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                    Secondary
+                  </a>
+                </Button>
+              </Card.BodyAction>
+              <Card.BodyAction asChild>
+                <Button fullWidth="mobile" variant="secondary-outline" asChild>
+                  <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                    Sec. outline
+                  </a>
+                </Button>
+              </Card.BodyAction>
+            </Card.BodyActionRow>
           </Card.Body>
         </Card>
       </div>
