@@ -187,7 +187,7 @@ export interface CardBaseProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
 }
 
-export interface CardProps extends CardBaseProps {
+export interface CardSlimAndMiniatureProps extends CardBaseProps {
   /**
    * Change the default rendered element for Card.
    */
@@ -197,7 +197,7 @@ export interface CardProps extends CardBaseProps {
    *
    * @default "slim"
    */
-  variant?: "slim" | "full-width" | "miniature" | "focus";
+  variant?: "slim" | "miniature";
   /**
    * The color of the card.
    *
@@ -206,13 +206,13 @@ export interface CardProps extends CardBaseProps {
   color?: "white" | "lighter-brand" | "light-grey-fill";
 
   /* Only fullwidth or focus cards can have images to the left or right of the text: */
-  imagePosition?: "left" | "right";
+  imagePosition?: never;
 }
 
-interface CardFocusProps extends CardBaseProps {
+export interface CardFocusProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "focus";
-  color: "darker";
+  color?: "darker";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
    *
@@ -221,19 +221,21 @@ interface CardFocusProps extends CardBaseProps {
   imagePosition?: "left" | "right";
 }
 
-interface CardFullwidthProps extends CardBaseProps {
+export interface CardFullwidthProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "full-width";
   color: "white" | "lighter-brand" | "light-grey-fill";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
    *
-   * @default false
+   * @default "left"
    * */
   imagePosition?: "left" | "right";
 }
 
-export const Card = forwardRef<HTMLDivElement, CardProps | CardFocusProps | CardFullwidthProps>(
+export type CardProps = CardSlimAndMiniatureProps | CardFocusProps | CardFullwidthProps;
+
+export const Card = forwardRef<HTMLDivElement, CardProps>(
   (
     { as: Tag = "section", asChild, className, children, variant, color, imagePosition, ...rest },
     ref,
