@@ -149,21 +149,7 @@ function Example() {
               <Card.BodyAction asChild>
                 <Button fullWidth="mobile" variant="primary-outline" asChild>
                   <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                    Pr. outline
-                  </a>
-                </Button>
-              </Card.BodyAction>
-              <Card.BodyAction asChild>
-                <Button fullWidth="mobile" variant="secondary" asChild>
-                  <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                    Secondary
-                  </a>
-                </Button>
-              </Card.BodyAction>
-              <Card.BodyAction asChild>
-                <Button fullWidth="mobile" variant="secondary-outline" asChild>
-                  <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                    Sec. outline
+                    Primary outline
                   </a>
                 </Button>
               </Card.BodyAction>

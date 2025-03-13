@@ -68,16 +68,22 @@
     .hds-card__body-action-row {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--hds-spacing-16);
+      gap: var(--hds-spacing-8);
       margin-top: var(--hds-spacing-20-24);
+
+      .hds-button {
+        border-radius: var(--hds-border-radius-8);
+        flex: 1 0 160px;
+        white-space: nowrap;
+      }
     }
 
     .hds-card__body-action {
-      margin-top: var(--hds-spacing-20-24);
+      margin-top: 0;
     }
 
-    .hds-button {
-      margin-top: 0;
+    .hds-link.hds-card__body-action {
+      margin-top: var(--hds-spacing-20-24);
     }
   }
 
