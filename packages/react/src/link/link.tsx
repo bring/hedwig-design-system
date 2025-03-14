@@ -11,8 +11,10 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 
   /**
    * Font size of the link
+   *
+   * Note: `medium` is deprecated, use `default` instead of `medium`
    */
-  size?: "small" | "medium" | "large";
+  size?: "default" | "small" | "large" | "technical" | "medium";
 
   children: React.ReactNode;
 
@@ -25,14 +27,14 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-  ({ asChild, children, variant = "underline", size = "medium", className, ...rest }, ref) => {
+  ({ asChild, children, variant = "underline", size = "default", className, ...rest }, ref) => {
     const Component = asChild ? Slot : "a";
     return (
       <Component
         className={clsx(
           "hds-link",
           variant !== "underline" && `hds-link--${variant}`,
-          size !== "medium" && `hds-link--${size}`,
+          size !== "default" && size !== "medium" && `hds-link--${size}`,
           className as undefined,
         )}
         ref={ref}
