@@ -7,57 +7,57 @@ function Example() {
     <VStack gap="24" style={{ padding: "24px" }}>
       <h2>Large - Only text</h2>
       <HStack gap="24" wrap align="end">
-        <Button variant="secondary">Call to action</Button>
-        <Button variant="secondary" disabled>
+        <Button variant="tertiary">Call to action</Button>
+        <Button variant="tertiary" disabled>
           Disabled
         </Button>
       </HStack>
       <h2>Small - Only text</h2>
       <HStack gap="24" wrap align="end">
-        <Button variant="secondary" size="small">
+        <Button variant="tertiary" size="small">
           Call to action
         </Button>
-        <Button variant="secondary" size="small" disabled>
+        <Button variant="tertiary" size="small" disabled>
           Disabled
         </Button>
       </HStack>
       <h2>Large - With leading icon</h2>
       <HStack gap="24" wrap align="end">
-        <Button variant="secondary">
+        <Button variant="tertiary">
           <EnvelopeIconLarge />
           Call to action
         </Button>
-        <Button variant="secondary" disabled>
+        <Button variant="tertiary" disabled>
           <EnvelopeIconLarge />
           Disabled
         </Button>
       </HStack>
       <h2>Small - With leading icon</h2>
       <HStack gap="24" wrap align="end">
-        <Button variant="secondary" size="small">
+        <Button variant="tertiary" size="small">
           <GlobeIconSmall />
           Call to action
         </Button>
-        <Button variant="secondary" size="small" disabled>
+        <Button variant="tertiary" size="small" disabled>
           <GlobeIconSmall />
           Disabled
         </Button>
       </HStack>
       <h2>Large - With only icon</h2>
       <HStack gap="24" wrap align="end">
-        <Button variant="secondary">
+        <Button variant="tertiary">
           <EnvelopeIconLarge />
         </Button>
-        <Button variant="secondary" disabled>
+        <Button disabled>
           <EnvelopeIconLarge />
         </Button>
       </HStack>
       <h2>Small - With only icon</h2>
       <HStack gap="24" wrap align="end">
-        <Button variant="secondary" size="small">
+        <Button variant="tertiary" size="small">
           <GlobeIconSmall />
         </Button>
-        <Button variant="secondary" size="small" disabled>
+        <Button variant="tertiary" size="small" disabled>
           <GlobeIconSmall />
         </Button>
       </HStack>
