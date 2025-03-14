@@ -16,10 +16,6 @@
   container-type: inline-size;
   container-name: fullwidthcard;
 
-  * {
-    box-sizing: border-box;
-  }
-
   .hds-card__layoutwrapper {
     height: 100%;
     width: 100%;
@@ -61,18 +57,20 @@
       margin: var(--hds-spacing-32-40);
     }
 
+    .hds-card__body-header {
+      margin-bottom: var(--hds-spacing-20-24);
+    }
+
     .hds-card__body-description {
-      margin-top: var(--hds-spacing-20-24);
+      margin-bottom: var(--hds-spacing-20-24);
     }
 
     .hds-card__body-action-row {
       display: flex;
       flex-wrap: wrap;
       gap: var(--hds-spacing-8);
-      margin-top: var(--hds-spacing-20-24);
 
       .hds-button {
-        border-radius: var(--hds-border-radius-8);
         flex: 1 0 160px;
         white-space: nowrap;
       }
@@ -80,10 +78,6 @@
 
     .hds-card__body-action {
       margin-top: 0;
-    }
-
-    .hds-link.hds-card__body-action {
-      margin-top: var(--hds-spacing-20-24);
     }
   }
 
