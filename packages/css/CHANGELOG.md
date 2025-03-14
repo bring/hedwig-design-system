@@ -1,5 +1,16 @@
 # @postenbring/hedwig-css
 
+## 1.6.0
+
+### Minor Changes
+
+- 5b76f10: update link sizes and add support for icons
+
+### Patch Changes
+
+- c0ed57c: small visual fix to the posten secondary logo
+- 9548df8: Updated the posten logo with new color
+
 ## 1.5.2
 
 ### Patch Changes
