@@ -1,6 +1,7 @@
 @import url("../_custom-media.css");
 @import url("../_icons.css");
 @import url("../spacing/spacing.css");
+@import url("./fullwidth-card.css");
 
 /* stylelint-disable selector-class-pattern */
 .hds-card {
@@ -120,8 +121,7 @@
   background-color: var(--hds-colors-darker);
 }
 
-.hds-card--focus,
-.hds-card--full-width {
+.hds-card--focus {
   max-width: none;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -162,9 +162,7 @@
   .hds-card__body-action {
     margin-top: var(--hds-spacing-20-24);
   }
-}
 
-.hds-card--focus {
   .hds-card__body-header-overline {
     color: var(--hds-colors-light);
   }
