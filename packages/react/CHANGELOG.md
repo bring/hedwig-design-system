@@ -1,5 +1,18 @@
 # @postenbring/hedwig-react
 
+## 1.5.0
+
+### Minor Changes
+
+- 5b76f10: update link sizes and add support for icons
+
+### Patch Changes
+
+- Updated dependencies [c0ed57c]
+- Updated dependencies [9548df8]
+- Updated dependencies [5b76f10]
+  - @postenbring/hedwig-css@1.6.0
+
 ## 1.4.2
 
 ### Patch Changes
