@@ -1,5 +1,17 @@
 # @postenbring/hedwig-css
 
+## 1.6.0
+
+### Minor Changes
+
+- 5b76f10: update link sizes and add support for icons
+
+### Patch Changes
+
+- c0ed57c: small visual fix to the posten secondary logo
+- 9548df8: Updated the posten logo with new color
+- a061fb1: Fullwidth-card: re-styled for responsive layout. Keeps layout and images nice regardless of their size or aspect ratio, or the length of the text next to them. Square source images are recommended.
+
 ## 1.5.2
 
 ### Patch Changes
