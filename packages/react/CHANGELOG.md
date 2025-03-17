@@ -1,5 +1,20 @@
 # @postenbring/hedwig-react
 
+## 1.5.0
+
+### Minor Changes
+
+- 5b76f10: update link sizes and add support for icons
+
+### Patch Changes
+
+- a061fb1: Fullwidth-card: re-styled for responsive layout. Keeps layout and images nice regardless of their size or aspect ratio, or the length of the text next to them. Square source images are recommended.
+- Updated dependencies [c0ed57c]
+- Updated dependencies [9548df8]
+- Updated dependencies [5b76f10]
+- Updated dependencies [a061fb1]
+  - @postenbring/hedwig-css@1.6.0
+
 ## 1.4.2
 
 ### Patch Changes
