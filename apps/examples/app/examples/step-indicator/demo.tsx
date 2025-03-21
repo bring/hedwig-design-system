@@ -29,10 +29,7 @@ function Example() {
         </div>
         <HStack gap="12">
           {activeStep > 1 && (
-            <Button
-              variant="primary-outline"
-              onClick={() => setActiveStep((current) => current - 1)}
-            >
+            <Button variant="secondary" onClick={() => setActiveStep((current) => current - 1)}>
               Back
             </Button>
           )}

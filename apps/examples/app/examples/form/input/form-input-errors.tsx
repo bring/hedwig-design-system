@@ -32,7 +32,7 @@ function Example() {
           </Button>
           <Button
             fullWidth="mobile"
-            variant="secondary-outline"
+            variant="secondary"
             onClick={() => {
               setErrors({});
             }}
