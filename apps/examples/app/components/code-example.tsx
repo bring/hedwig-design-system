@@ -153,7 +153,7 @@ export function CodeExample({
         {/* Actions row */}
         <div>
           <Button
-            variant="secondary-outline"
+            variant="secondary"
             onClick={() => {
               if (iframeRef.current) {
                 iframeRef.current.style.width = "360px";
@@ -161,12 +161,11 @@ export function CodeExample({
             }}
             title="Mobile"
             size="small"
-            icon
           >
             📱
           </Button>
           <Button
-            variant="secondary-outline"
+            variant="secondary"
             onClick={() => {
               if (iframeRef.current) {
                 iframeRef.current.style.width = "";
@@ -174,17 +173,12 @@ export function CodeExample({
             }}
             title="Desktop"
             size="small"
-            icon
           >
             🖥️
           </Button>
           <div style={{ flexGrow: 1 }} />
 
-          <Button
-            variant="secondary-outline"
-            size="small"
-            onClick={() => setShowCode((prev) => !prev)}
-          >
+          <Button variant="secondary" size="small" onClick={() => setShowCode((prev) => !prev)}>
             {showCode ? "Hide code" : "Show code"}
           </Button>
 
@@ -193,13 +187,12 @@ export function CodeExample({
             title="Open in CodeSandbox"
             size="small"
             onClick={() => openExampleInCodeSandbox(activeExample)}
-            icon
           >
             <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 24H24V0H0V2.45455H21.5455V21.5455H2.45455V0H0Z" />
             </svg>
           </Button>
-          <Button variant="secondary" size="small" icon asChild>
+          <Button variant="secondary" size="small" asChild>
             <a
               href={iframeUrl(activeExample)}
               target="_blank"
@@ -246,7 +239,7 @@ function CopyButton({
   const [copied, setCopied] = useState(false);
   return (
     <Button
-      variant="secondary"
+      variant="inverted"
       onClick={async () => {
         navigator.clipboard.writeText(code);
         setCopied(true);
