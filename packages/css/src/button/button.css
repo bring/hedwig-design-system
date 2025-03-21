@@ -183,7 +183,7 @@
   &.hds-button--inverted {
     background-color: transparent;
     border-color: var(--hds-colors-signature);
-    color: var(--hds-button-colors-text);
+    color: var(--hds-ui-colors-white);
 
     &:hover {
       color: var(--hds-colors-light);

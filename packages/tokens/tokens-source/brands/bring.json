@@ -26,7 +26,7 @@
 
   "button-colors": {
     "$type": "color",
-    "text": { "$value": "{ui-colors.white}" }
+    "text": { "$value": "{ui-colors.black}" }
   },
 
   "link-colors": {
