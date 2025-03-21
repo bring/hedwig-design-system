@@ -55,6 +55,10 @@
     &.hds-button--only-icon {
       padding-left: var(--hds-spacing-8);
       padding-right: var(--hds-spacing-8);
+
+      & * {
+        width: 24px;
+      }
     }
   }
 
@@ -79,6 +83,10 @@
     &.hds-button--only-icon {
       padding-left: var(--hds-spacing-12);
       padding-right: var(--hds-spacing-12);
+
+      & * {
+        width: 32px;
+      }
     }
   }
 
