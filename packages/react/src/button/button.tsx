@@ -16,7 +16,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    * The background and fill of the button
    *
    * Note: `primary-outline` and `secondary-outline` are deprecated
-   * Use `inverted` instead, or check the other variants
+   * Use `secondary` instead, or check the other variants
    * https://bring.github.io/hedwig-design-system/examples/button
    *
    * @default "primary"
@@ -73,7 +73,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     let resolvedVariant = variant;
     if (resolvedVariant === "primary-outline" || resolvedVariant === "secondary-outline") {
-      resolvedVariant = "inverted";
+      resolvedVariant = "secondary";
     }
 
     let resolvedSize = size;
