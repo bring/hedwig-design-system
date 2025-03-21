@@ -6,16 +6,28 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   /**
    * The height, font size and padding of the button
    *
+   * Note: `medium` is deprecated, use `large` or `small` instead of `medium`
+   *
    * @default "large"
    */
-  size?: "small" | "large";
+  size?: "small" | "medium" | "large";
 
   /**
    * The background and fill of the button
    *
+   * Note: `primary-outline` and `secondary-outline` are deprecated
+   * Use `inverted` instead, or check the other variants
+   * https://bring.github.io/hedwig-design-system/examples/button
+   *
    * @default "primary"
    */
-  variant?: "primary" | "secondary" | "tertiary" | "inverted";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "inverted"
+    | "primary-outline" // deprecated
+    | "secondary-outline"; // deprecated
 
   /**
    * Make the button use 100% width available.
@@ -59,6 +71,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const Component = asChild ? Slot : "button";
 
+    let resolvedVariant = variant;
+    if (resolvedVariant === "primary-outline" || resolvedVariant === "secondary-outline") {
+      resolvedVariant = "inverted";
+    }
+
+    let resolvedSize = size;
+    if (resolvedSize === "medium") {
+      resolvedSize = "large";
+    }
     /**
      * Check if the button has leading or trailing icons.
      * Class names are added to the button to adjust the padding.
@@ -82,8 +103,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <Component
         className={clsx(
           "hds-button",
-          `hds-button--${size}`,
-          `hds-button--${variant}`,
+          `hds-button--${resolvedSize}`,
+          `hds-button--${resolvedVariant}`,
           {
             "hds-button--full": fullWidth === true,
             "hds-button--mobile-full": fullWidth === "mobile",
