@@ -161,8 +161,9 @@ export function CodeExample({
             }}
             title="Mobile"
             size="small"
+            className="hds-button--only-icon"
           >
-            📱
+            <span>📱</span>
           </Button>
           <Button
             variant="secondary"
@@ -173,8 +174,9 @@ export function CodeExample({
             }}
             title="Desktop"
             size="small"
+            className="hds-button--only-icon"
           >
-            🖥️
+            <span>🖥️</span>
           </Button>
           <div style={{ flexGrow: 1 }} />
 
