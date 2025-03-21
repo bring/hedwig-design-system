@@ -1,4 +1,4 @@
-import { forwardRef, Children } from "react";
+import { forwardRef, Children, isValidElement, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 
@@ -63,7 +63,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
      * Check if the button has leading or trailing icons.
      * Class names are added to the button to adjust the padding.
      */
-    const childrenArray = Children.toArray(children);
+    let childrenArray: ReactNode[] = [];
+    /**
+     * If asChild is used, check the grandchildren
+     */
+    if (asChild && isValidElement(children) && children.props && "children" in children.props) {
+      const childProps = children.props as { children?: ReactNode | ReactNode[] };
+      childrenArray = Children.toArray(childProps.children);
+    } else {
+      childrenArray = Children.toArray(children);
+    }
     const hasLeadingIcon = childrenArray.length > 1 && typeof childrenArray[0] !== "string";
     const hasTrailingIcon =
       childrenArray.length > 1 && typeof childrenArray[childrenArray.length - 1] !== "string";
