@@ -5,7 +5,7 @@ function Example() {
   return (
     <HStack gap="8" wrap>
       <Button fullWidth="mobile">Main action</Button>
-      <Button variant="primary-outline" fullWidth="mobile">
+      <Button variant="secondary" fullWidth="mobile">
         Alternative action
       </Button>
     </HStack>
