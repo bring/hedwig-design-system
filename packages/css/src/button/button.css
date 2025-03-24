@@ -30,9 +30,6 @@
    * Modifiers: sizes
    */
   &.hds-button--small {
-    /* In figma, the actual padding for the text is 10px */
-    --hds-component-button-small-y-padding: 10px;
-
     font-size: var(--hds-font-size-technical-title-max);
     line-height: var(--hds-line-height-technical-title-max);
     padding: var(--hds-spacing-8) var(--hds-spacing-16);
