@@ -36,6 +36,17 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   fullWidth?: boolean | "mobile";
 
   /**
+   * Use the button as an icon button
+   *
+   * Render the icon in `children`
+   *
+   * Note: `icon` is deprecated. Automatic detection of icon buttons is now supported.
+   *
+   * @default false
+   */
+  icon?: boolean;
+
+  /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    *
    * @default false
@@ -64,6 +75,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "primary",
       size = "large",
       fullWidth = false,
+      icon = false, // deprecated
       className,
       ...rest
     },
@@ -97,7 +109,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const hasLeadingIcon = childrenArray.length > 1 && typeof childrenArray[0] !== "string";
     const hasTrailingIcon =
       childrenArray.length > 1 && typeof childrenArray[childrenArray.length - 1] !== "string";
-    const hasOnlyIcon = childrenArray.length === 1 && typeof childrenArray[0] !== "string";
+    const hasOnlyIcon =
+      icon || (childrenArray.length === 1 && typeof childrenArray[0] !== "string"); // `icon` prop is deprecated
 
     return (
       <Component
