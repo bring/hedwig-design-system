@@ -9,7 +9,7 @@
   appearance: button;
   box-sizing: border-box;
   display: inline-flex;
-  gap: 8px;
+  gap: var(--hds-spacing-8);
   border-style: solid;
   border-radius: var(--hds-border-radius-8);
   border-width: var(--hds-component-button-border-width);
@@ -38,7 +38,7 @@
     min-height: var(--hds-component-button-height-small);
 
     & * {
-      height: 24px;
+      height: var(--hds-spacing-24);
     }
 
     &.hds-button--leading-icon {
@@ -54,7 +54,7 @@
       padding-right: var(--hds-spacing-8);
 
       & * {
-        width: 24px;
+        width: var(--hds-spacing-24);
       }
     }
   }
@@ -66,7 +66,7 @@
     padding: var(--hds-spacing-12) var(--hds-spacing-20);
 
     & * {
-      height: 32px;
+      height: var(--hds-spacing-32);
     }
 
     &.hds-button--leading-icon {
@@ -82,7 +82,7 @@
       padding-right: var(--hds-spacing-12);
 
       & * {
-        width: 32px;
+        width: var(--hds-spacing-32);
       }
     }
   }
