@@ -75,7 +75,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "primary",
       size = "large",
       fullWidth = false,
-      icon = false, // deprecated
+      icon, // deprecated
       className,
       ...rest
     },
@@ -110,7 +110,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const hasTrailingIcon =
       childrenArray.length > 1 && typeof childrenArray[childrenArray.length - 1] !== "string";
     const hasOnlyIcon =
-      icon || (childrenArray.length === 1 && typeof childrenArray[0] !== "string"); // `icon` prop is deprecated
+      icon ?? (childrenArray.length === 1 && typeof childrenArray[0] !== "string"); // `icon` prop is deprecated
 
     return (
       <Component
