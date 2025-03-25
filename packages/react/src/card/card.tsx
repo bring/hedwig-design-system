@@ -22,14 +22,19 @@ export interface CardImageMediaProps extends React.ImgHTMLAttributes<HTMLImageEl
    * @default false
    */
   asChild?: boolean;
+  variant?: "crop" | "scale";
 }
 export const CardMediaImg = forwardRef<HTMLImageElement, CardImageMediaProps>(
-  ({ asChild, className, ...rest }, ref) => {
+  ({ asChild, variant, className, ...rest }, ref) => {
     const Component = asChild ? Slot : "img";
     return (
       <Component
         {...rest}
-        className={clsx("hds-card__media__img", className as undefined)}
+        className={clsx(
+          "hds-card__media__img",
+          { "hds-card__img__scale": variant === "scale" },
+          className as undefined,
+        )}
         ref={ref}
       />
     );
