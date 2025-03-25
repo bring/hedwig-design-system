@@ -113,10 +113,6 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-
-      &.hds-card__img__scale {
-        object-fit: contain;
-      }
     }
 
     &.hds-card--image-position-right .hds-card__media {

@@ -30,6 +30,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    &.hds-card__img__scale {
+      object-fit: contain;
+    }
   }
 
   .hds-card__body {
