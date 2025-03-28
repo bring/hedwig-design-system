@@ -93,11 +93,13 @@
 
   &.hds-button--full {
     width: 100%;
+    justify-content: center;
   }
 
   &.hds-button--mobile-full {
     @media (--before-medium) {
       width: 100%;
+      justify-content: center;
     }
   }
 
