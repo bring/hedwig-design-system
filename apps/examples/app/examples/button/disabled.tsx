@@ -5,18 +5,24 @@ function Example() {
   return (
     <HStack gap="24">
       <VStack gap="24" wrap align="center" style={{ paddingTop: "24px" }}>
-        <Button>Primary large</Button>
-        <Button size="small">Primary small</Button>
+        <Button disabled>Primary large</Button>
+        <Button disabled size="small">
+          Primary small
+        </Button>
       </VStack>
       <VStack gap="24" wrap align="center" style={{ paddingTop: "24px" }}>
-        <Button variant="secondary">Secondary large</Button>
-        <Button variant="secondary" size="small">
+        <Button disabled variant="secondary">
+          Secondary large
+        </Button>
+        <Button disabled variant="secondary" size="small">
           Secondary small
         </Button>
       </VStack>
       <VStack gap="24" wrap align="center" style={{ paddingTop: "24px" }}>
-        <Button variant="tertiary">Tertiary large</Button>
-        <Button variant="tertiary" size="small">
+        <Button disabled variant="tertiary">
+          Tertiary large
+        </Button>
+        <Button disabled variant="tertiary" size="small">
           Tertiary small
         </Button>
       </VStack>
@@ -26,8 +32,10 @@ function Example() {
         align="center"
         style={{ backgroundColor: "var(--hds-colors-darker)", padding: "24px" }}
       >
-        <Button variant="inverted">Inverted large</Button>
-        <Button variant="inverted" size="small">
+        <Button disabled variant="inverted">
+          Inverted large
+        </Button>
+        <Button disabled variant="inverted" size="small">
           Inverted small
         </Button>
       </VStack>
@@ -39,5 +47,5 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 0,
+  index: 3,
 };
