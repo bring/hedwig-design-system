@@ -1,4 +1,4 @@
-import { forwardRef, Children, isValidElement, type ReactNode } from "react";
+import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 
@@ -36,15 +36,14 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   fullWidth?: boolean | "mobile";
 
   /**
-   * Use the button as an icon button
-   *
-   * Render the icon in `children`
-   *
-   * Note: `icon` is deprecated. Automatic detection of icon buttons is now supported.
+   * Specify that there is an icon in the button.
+   * `icon`: There is only an icon in the button.
+   * `icon="leading"`: There is an icon before the text.
+   * `icon="trailing"`: There is an icon after the text.
    *
    * @default false
    */
-  icon?: boolean;
+  icon?: boolean | "leading" | "trailing";
 
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
@@ -62,6 +61,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  * <Button variant="secondary" size="large">Secondary</Button>
  * <Button variant="inverted">Inverted</Button>
  * <Button variant="tertiary" fullWidth="mobile">Secondary Outline</Button>
+ * <Button icon="leading"><LeadingIcon />Leading icon</Button>
  *
  * @example
  * // If used for navigation use the `asChild` prop with a anchor element as a child.
@@ -75,7 +75,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "primary",
       size = "large",
       fullWidth = false,
-      icon, // deprecated
+      icon,
       className,
       ...rest
     },
@@ -92,25 +92,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     if (resolvedSize === "medium") {
       resolvedSize = "large";
     }
-    /**
-     * Check if the button has leading or trailing icons.
-     * Class names are added to the button to adjust the padding.
-     */
-    let childrenArray: ReactNode[] = [];
-    /**
-     * If asChild is used, check the grandchildren
-     */
-    if (asChild && isValidElement(children) && children.props && "children" in children.props) {
-      const childProps = children.props as { children?: ReactNode | ReactNode[] };
-      childrenArray = Children.toArray(childProps.children);
-    } else {
-      childrenArray = Children.toArray(children);
-    }
-    const hasLeadingIcon = childrenArray.length > 1 && typeof childrenArray[0] !== "string";
-    const hasTrailingIcon =
-      childrenArray.length > 1 && typeof childrenArray[childrenArray.length - 1] !== "string";
-    const hasOnlyIcon =
-      icon ?? (childrenArray.length === 1 && typeof childrenArray[0] !== "string"); // `icon` prop is deprecated
 
     return (
       <Component
@@ -121,9 +102,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {
             "hds-button--full": fullWidth === true,
             "hds-button--mobile-full": fullWidth === "mobile",
-            "hds-button--only-icon": hasOnlyIcon,
-            "hds-button--leading-icon": hasLeadingIcon,
-            "hds-button--trailing-icon": hasTrailingIcon,
+            "hds-button--only-icon": icon === true,
+            "hds-button--leading-icon": icon === "leading",
+            "hds-button--trailing-icon": icon === "trailing",
           },
           className as undefined,
         )}
