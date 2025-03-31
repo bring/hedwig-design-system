@@ -161,7 +161,7 @@ export function CodeExample({
             }}
             title="Mobile"
             size="small"
-            className="hds-button--only-icon"
+            icon
           >
             <span>📱</span>
           </Button>
@@ -174,7 +174,7 @@ export function CodeExample({
             }}
             title="Desktop"
             size="small"
-            className="hds-button--only-icon"
+            icon
           >
             <span>🖥️</span>
           </Button>
