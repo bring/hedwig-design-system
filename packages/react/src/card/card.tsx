@@ -22,6 +22,15 @@ export interface CardImageMediaProps extends React.ImgHTMLAttributes<HTMLImageEl
    * @default false
    */
   asChild?: boolean;
+  /**
+   * Define image scaling behavior when the image are varies in both width and height across different page breaks and  sizes of the card.
+   * "crop": Image always fills the available space.
+   *         If the aspect ratio doesn't match, then the top/bottom or left/right edges are cropped away.
+   * "scale": No cropping, image scales to the maximum size available and centers.
+   *          If the aspect ratio doesn't match, then the background will show on the top/bottom or left/right sides of the image.
+   *
+   * @default "crop"
+   */
   variant?: "crop" | "scale";
 }
 export const CardMediaImg = forwardRef<HTMLImageElement, CardImageMediaProps>(
