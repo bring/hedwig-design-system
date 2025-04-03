@@ -300,8 +300,8 @@ importers:
         specifier: 3.9.2
         version: 3.9.2
       style-dictionary-utils:
-        specifier: 2.4.1
-        version: 2.4.1(style-dictionary@3.9.2)
+        specifier: 4.0.5
+        version: 4.0.5(style-dictionary@3.9.2)
       tailwindcss:
         specifier: 3.4.14
         version: 3.4.14
@@ -1161,8 +1161,8 @@ packages:
     resolution: {integrity: sha512-fTxvnS1sRMu3+JjXwJG0j/i4RT9u4qJ+lqS/yCGap4lH4zZGzQ7tu+xZqQmcMZq5OBZDL4QRxQzRjkWcGt8IVw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/core@0.12.0':
-    resolution: {integrity: sha512-cmrR6pytBuSMTaBweKoGMwu3EiHiEC+DoyupPmlZ0HxBJBtIxwe+j/E4XPIKNx+Q74c8lXKPwYawBf5glsTkHg==}
+  '@eslint/core@0.13.0':
+    resolution: {integrity: sha512-yfkgDw1KR66rkT5A8ci4irzDysN7FRpq3ttJolR88OqQikAWqwA8j5VZyas+vjyBNFIJ7MfybJ9plMILI2UrCw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/core@0.6.0':
@@ -1189,8 +1189,8 @@ packages:
     resolution: {integrity: sha512-RBMg5FRL0I0gs51M/guSAj5/e14VQ4tpZnQNWwuDT66P14I43ItmPfIZRhO9fUVIPOAQXU47atlywZ/czoqFPA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/plugin-kit@0.2.7':
-    resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
+  '@eslint/plugin-kit@0.2.8':
+    resolution: {integrity: sha512-ZAoA40rNMPwSm+AeHpCq8STiNAwzWLJuP8Xv4CHIc9wv/PSuExjMrmjfYNj682vW0OOiZ1HKxzvjQr9XZIisQA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@floating-ui/core@1.6.9':
@@ -6299,10 +6299,10 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  style-dictionary-utils@2.4.1:
-    resolution: {integrity: sha512-Ged3wCzzswC6vw8Fh74IKUJg7ajPiH0ersYsPi0VT2ENWCq/gx6uAYOr1rjslqjSyQUfAVvNnOPxuWGJ2mdncQ==}
+  style-dictionary-utils@4.0.5:
+    resolution: {integrity: sha512-XiHS7UAM0ONGZuFMcwrgCtQ1KhNCGPK34qdBCICsmFem6FUz0DMK4eKeH7FHUjSL/Ml2FYcWB3V5Kv4TrvJcIg==}
     peerDependencies:
-      style-dictionary: ^3.7.1
+      style-dictionary: ^4
 
   style-dictionary@3.9.2:
     resolution: {integrity: sha512-M2pcQ6hyRtqHOh+NyT6T05R3pD/gwNpuhREBKvxC1En0vyywx+9Wy9nXWT1SZ9ePzv1vAo65ItnpA16tT9ZUCg==}
@@ -7789,7 +7789,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/core@0.12.0':
+  '@eslint/core@0.13.0':
     dependencies:
       '@types/json-schema': 7.0.15
 
@@ -7829,9 +7829,9 @@ snapshots:
 
   '@eslint/object-schema@2.1.6': {}
 
-  '@eslint/plugin-kit@0.2.7':
+  '@eslint/plugin-kit@0.2.8':
     dependencies:
-      '@eslint/core': 0.12.0
+      '@eslint/core': 0.13.0
       levn: 0.4.1
 
   '@floating-ui/core@1.6.9':
@@ -10994,7 +10994,7 @@ snapshots:
       '@eslint/core': 0.6.0
       '@eslint/eslintrc': 3.3.1
       '@eslint/js': 9.12.0
-      '@eslint/plugin-kit': 0.2.7
+      '@eslint/plugin-kit': 0.2.8
       '@humanfs/node': 0.16.6
       '@humanwhocodes/module-importer': 1.0.1
       '@humanwhocodes/retry': 0.3.1
@@ -14309,11 +14309,9 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  style-dictionary-utils@2.4.1(style-dictionary@3.9.2):
+  style-dictionary-utils@4.0.5(style-dictionary@3.9.2):
     dependencies:
       color2k: 2.0.3
-      json5: 2.2.3
-      prettier: 2.8.8
       style-dictionary: 3.9.2
 
   style-dictionary@3.9.2:
