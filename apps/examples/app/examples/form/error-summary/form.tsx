@@ -146,7 +146,7 @@ function Example() {
             title="Reset button just for purpose of example usage, it's generally not recommended to have a reset button in forms"
             type="reset"
             onClick={() => setErrors(undefined)}
-            variant="primary-outline"
+            variant="secondary"
             fullWidth="mobile"
           >
             Reset

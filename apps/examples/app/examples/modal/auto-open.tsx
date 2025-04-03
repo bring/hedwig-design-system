@@ -15,11 +15,9 @@ function Example() {
       </Modal>
 
       <Button
-        variant="secondary-outline"
         onClick={() => {
           window.location.reload();
         }}
-        icon
         size="large"
         title="Refresh"
       >

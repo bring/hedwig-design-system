@@ -88,7 +88,7 @@ export default function Layout() {
           </>
         )}
         <Navbar.Item>
-          <Button variant="primary-outline" size="small" asChild>
+          <Button variant="secondary" size="small" asChild>
             <RemixLink
               to={{
                 search:

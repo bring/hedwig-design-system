@@ -5,15 +5,29 @@ import { Slot } from "@radix-ui/react-slot";
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * The height, font size and padding of the button
+   *
+   * Note: `medium` is deprecated, use `large` or `small` instead of `medium`
+   *
+   * @default "large"
    */
   size?: "small" | "medium" | "large";
 
   /**
    * The background and fill of the button
    *
+   * Note: `primary-outline` and `secondary-outline` are deprecated
+   * Use `secondary` instead, or check the other variants
+   * https://bring.github.io/hedwig-design-system/examples/button
+   *
    * @default "primary"
    */
-  variant?: "primary" | "secondary" | "primary-outline" | "secondary-outline";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "inverted"
+    | "primary-outline" // deprecated
+    | "secondary-outline"; // deprecated
 
   /**
    * Make the button use 100% width available.
@@ -22,11 +36,14 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   fullWidth?: boolean | "mobile";
 
   /**
-   * Use the button as an icon button
+   * Specify that there is an icon in the button.
+   * `icon`: There is only an icon in the button.
+   * `icon="leading"`: There is an icon before the text.
+   * `icon="trailing"`: There is an icon after the text.
    *
-   * Render the icon in `children`
+   * @default false
    */
-  icon?: boolean;
+  icon?: boolean | "leading" | "trailing";
 
   /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
@@ -42,8 +59,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  * @example
  * <Button variant="primary">Primary</Button>
  * <Button variant="secondary" size="large">Secondary</Button>
- * <Button variant="primary-outline">Primary Outline</Button>
- * <Button variant="secondary-outline" fullWidth="mobile">Secondary Outline</Button>
+ * <Button variant="inverted">Inverted</Button>
+ * <Button variant="tertiary" fullWidth="mobile">Secondary Outline</Button>
+ * <Button icon="leading"><LeadingIcon />Leading icon</Button>
  *
  * @example
  * // If used for navigation use the `asChild` prop with a anchor element as a child.
@@ -55,7 +73,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       asChild,
       children,
       variant = "primary",
-      size = "medium",
+      size = "large",
       fullWidth = false,
       icon,
       className,
@@ -64,16 +82,29 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const Component = asChild ? Slot : "button";
+
+    let resolvedVariant = variant;
+    if (resolvedVariant === "primary-outline" || resolvedVariant === "secondary-outline") {
+      resolvedVariant = "secondary";
+    }
+
+    let resolvedSize = size;
+    if (resolvedSize === "medium") {
+      resolvedSize = "large";
+    }
+
     return (
       <Component
         className={clsx(
           "hds-button",
-          `hds-button--${size}`,
-          `hds-button--${variant}`,
+          `hds-button--${resolvedSize}`,
+          `hds-button--${resolvedVariant}`,
           {
             "hds-button--full": fullWidth === true,
             "hds-button--mobile-full": fullWidth === "mobile",
-            "hds-button--icon-only": icon,
+            "hds-button--only-icon": icon === true,
+            "hds-button--leading-icon": icon === "leading",
+            "hds-button--trailing-icon": icon === "trailing",
           },
           className as undefined,
         )}

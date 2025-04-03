@@ -47,7 +47,7 @@ export const FooterButtonLink = forwardRef<HTMLAnchorElement, FooterButtonLinkPr
   ({ children, className, asChild, ...rest }, ref) => {
     const Component = asChild ? Slot : "a";
     return (
-      <Button asChild variant="primary-outline" className={clsx(className as undefined)}>
+      <Button asChild variant="inverted" className={clsx(className as undefined)}>
         <Component ref={ref} {...rest}>
           {children}
         </Component>

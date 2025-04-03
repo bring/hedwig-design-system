@@ -5,11 +5,7 @@ import { useState } from "react";
 function Example() {
   const [closed, setClosed] = useState(false);
   if (closed) {
-    return (
-      <Button onClick={() => setClosed(false)} variant="primary-outline">
-        Open box again
-      </Button>
-    );
+    return <Button onClick={() => setClosed(false)}>Open box again</Button>;
   }
   return (
     <Box closeable closed={closed} onClose={() => setClosed(true)}>

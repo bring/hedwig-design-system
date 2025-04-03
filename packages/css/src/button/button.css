@@ -1,14 +1,17 @@
 @import url("../_custom-media.css");
 
 .hds-button {
-  --hds-component-button-border-width: 0px;
+  --hds-component-button-border-width: 1px;
+  --hds-component-button-height-large: 58px;
+  --hds-component-button-height-small: 44px;
 
   -webkit-font-smoothing: antialiased;
   appearance: button;
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  gap: var(--hds-spacing-8);
   border-style: solid;
-  border-radius: var(--hds-border-radius);
+  border-radius: var(--hds-border-radius-8);
   border-width: var(--hds-component-button-border-width);
   transition-duration: var(--hds-micro-animation-duration-quick);
   transition-timing-function: var(--hds-micro-animation-easing-normal);
@@ -16,47 +19,72 @@
   cursor: pointer;
   word-break: normal;
   font: var(--hds-typography-body-small-title);
+  align-items: center;
 
   /* When used as a link (<a>) */
   text-decoration: none;
   text-align: center;
+  outline-offset: 2px;
 
   /**
    * Modifiers: sizes
    */
   &.hds-button--small {
-    /* In figma, the actual padding for the text is 10px */
-    --hds-component-button-small-y-padding: 10px;
-
     font-size: var(--hds-font-size-technical-title-max);
     line-height: var(--hds-line-height-technical-title-max);
-    padding: calc(
-        var(--hds-component-button-small-y-padding) - var(--hds-component-button-border-width)
-      )
-      calc(var(--hds-spacing-16) - var(--hds-component-button-border-width));
+    padding: var(--hds-spacing-8) var(--hds-spacing-16);
 
     /* The height can be more if the text inside the button wraps */
-    min-height: 44px;
-  }
+    min-height: var(--hds-component-button-height-small);
 
-  &.hds-button--medium {
-    font-size: var(--hds-font-size-body-small-title-max);
-    line-height: var(--hds-line-height-body-small-title-max);
-    padding: calc(var(--hds-spacing-12) - var(--hds-component-button-border-width))
-      calc(var(--hds-spacing-20) - var(--hds-component-button-border-width));
+    & * {
+      height: var(--hds-spacing-24);
+    }
 
-    /* The height can be more if the text inside the button wraps */
-    min-height: 50px;
+    &.hds-button--leading-icon {
+      padding-left: var(--hds-spacing-8);
+    }
+
+    &.hds-button--trailing-icon {
+      padding-right: var(--hds-spacing-8);
+    }
+
+    &.hds-button--only-icon {
+      padding-left: var(--hds-spacing-8);
+      padding-right: var(--hds-spacing-8);
+
+      & * {
+        width: var(--hds-spacing-24);
+      }
+    }
   }
 
   &.hds-button--large {
-    font-size: var(--hds-font-size-body-small-title-max);
-    line-height: var(--hds-line-height-body-small-title-max);
-    padding: calc(var(--hds-spacing-16) - var(--hds-component-button-border-width))
-      calc(var(--hds-spacing-24) - var(--hds-component-button-border-width));
+    min-height: var(--hds-component-button-height-large);
+    font-size: var(--hds-font-size-body);
+    line-height: var(--hds-line-height-body);
+    padding: var(--hds-spacing-12) var(--hds-spacing-20);
 
-    /* The height can be more if the text inside the button wraps */
-    min-height: 58px;
+    & * {
+      height: var(--hds-spacing-32);
+    }
+
+    &.hds-button--leading-icon {
+      padding-left: var(--hds-spacing-12);
+    }
+
+    &.hds-button--trailing-icon {
+      padding-right: var(--hds-spacing-12);
+    }
+
+    &.hds-button--only-icon {
+      padding-left: var(--hds-spacing-12);
+      padding-right: var(--hds-spacing-12);
+
+      & * {
+        width: var(--hds-spacing-32);
+      }
+    }
   }
 
   /**
@@ -65,11 +93,13 @@
 
   &.hds-button--full {
     width: 100%;
+    justify-content: center;
   }
 
   &.hds-button--mobile-full {
     @media (--before-medium) {
       width: 100%;
+      justify-content: center;
     }
   }
 
@@ -79,159 +109,98 @@
 
   &.hds-button--primary {
     background-color: var(--hds-colors-signature);
+    border-color: var(--hds-colors-signature);
     color: var(--hds-button-colors-text);
     fill: var(--hds-button-colors-text);
 
     &:hover {
       background-color: var(--hds-colors-signature-hover);
-      outline: 0 solid var(--hds-colors-signature-hover);
     }
 
     &:active {
       background-color: var(--hds-colors-signature);
-      outline: 0 solid var(--hds-colors-signature-hover);
+    }
+
+    &:disabled {
+      color: var(--hds-ui-colors-dark-grey);
+      background-color: var(--hds-ui-colors-grey);
+      border-color: var(--hds-ui-colors-grey);
     }
   }
 
   &.hds-button--secondary {
-    background-color: var(--hds-colors-darker);
-    color: var(--hds-ui-colors-white);
-    fill: var(--hds-ui-colors-white);
-
-    &:hover {
-      background-color: var(--hds-ui-colors-black);
-      outline: 0 solid var(--hds-ui-colors-black);
-    }
-
-    &:active {
-      background-color: var(--hds-colors-darker);
-      outline: 0 solid var(--hds-ui-colors-black);
-    }
-  }
-
-  &.hds-button--primary-outline {
-    --hds-component-button-border-width: var(--hds-stroke-default);
-
     background-color: transparent;
-    border-color: var(--hds-colors-signature);
     color: var(--hds-ui-colors-black);
     fill: var(--hds-ui-colors-black);
-    outline-offset: 3px;
+    border-color: var(--hds-colors-signature);
 
-    &:hover,
-    &:active {
+    &:hover {
       color: var(--hds-colors-dark);
-      fill: var(--hds-colors-dark);
-      border-color: var(--hds-colors-dark);
+      background-color: var(--hds-colors-lighter);
     }
-  }
 
-  &.hds-button--secondary-outline {
-    --hds-component-button-border-width: var(--hds-stroke-default);
-
-    background-color: transparent;
-    border-color: var(--hds-colors-darker);
-    color: var(--hds-colors-darker);
-    fill: var(--hds-colors-darker);
-    outline-offset: 3px;
-
-    &:hover,
     &:active {
       color: var(--hds-ui-colors-black);
-      fill: var(--hds-ui-colors-black);
-      border-color: var(--hds-ui-colors-black);
-    }
-  }
-
-  &.hds-button--white-outline {
-    --hds-component-button-border-width: var(--hds-stroke-default);
-
-    background-color: transparent;
-    border-color: var(--hds-colors-light);
-    color: var(--hds-ui-colors-white);
-    fill: var(--hds-ui-colors-white);
-    outline-offset: 3px;
-
-    &:hover,
-    &:active {
-      color: var(--hds-colors-light);
-      fill: var(--hds-colors-light);
-    }
-  }
-
-  /**
-   * State: Disabled
-   */
-
-  &:disabled,
-  &[disabled],
-  &[disabled]:active {
-    &.hds-button--primary,
-    &.hds-button--secondary {
-      color: var(--hds-ui-colors-dark-grey);
-      fill: var(--hds-ui-colors-dark-grey);
-      background-color: var(--hds-ui-colors-grey);
-      border-color: var(--hds-ui-colors-grey);
-      outline: 0;
-      box-shadow: none;
-      cursor: default;
-    }
-
-    &.hds-button--primary-outline,
-    &.hds-button--secondary-outline {
-      border-color: var(--hds-ui-colors-grey);
-      color: var(--hds-ui-colors-dark-grey);
-      fill: var(--hds-ui-colors-dark-grey);
       background-color: transparent;
-      cursor: default;
+    }
+
+    &:disabled {
+      color: var(--hds-ui-colors-dark-grey);
+      border-color: var(--hds-ui-colors-grey);
+
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
 
-  /**
-  * Variant: Icon only
-  * TODO: Support text + icon on either left or right side.
-  * See button component in digdir/designsystemet and nav/aksel
-  */
-  &.hds-button--icon-only {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+  &.hds-button--tertiary {
+    background-color: transparent;
+    border-color: transparent;
 
-    /**
-    * Modifiers: sizes
-    *
-    * TODO: Consider/figure out using css variables for these values
-    * must make sense, not just choosing a value that matches for the sake of it
-    */
-
-    &.hds-button--small {
-      height: 44px;
-      width: 44px;
-
-      & * {
-        height: 24px;
-        width: 24px;
-      }
+    &:hover {
+      color: var(--hds-colors-dark);
+      background-color: var(--hds-colors-lighter);
     }
 
-    &.hds-button--medium {
-      height: 50px;
-      width: 50px;
-
-      & * {
-        height: 32px;
-        width: 32px;
-      }
+    &:active {
+      color: var(--hds-ui-colors-black);
+      background-color: transparent;
     }
 
-    &.hds-button--large {
-      height: 58px;
-      width: 58px;
+    &:disabled {
+      color: var(--hds-ui-colors-dark-grey);
 
-      & * {
-        height: 32px;
-        width: 32px;
+      &:hover {
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &.hds-button--inverted {
+    background-color: transparent;
+    border-color: var(--hds-colors-signature);
+    color: var(--hds-ui-colors-white);
+
+    &:hover {
+      color: var(--hds-colors-light);
+      border-color: var(--hds-colors-light);
+    }
+
+    &:active {
+      color: var(--hds-button-colors-text);
+      border-color: var(--hds-colors-signature);
+    }
+
+    &:disabled {
+      color: var(--hds-ui-colors-grey);
+      border-color: var(--hds-ui-colors-grey);
+
+      &:hover {
+        color: var(--hds-ui-colors-grey);
+        border-color: var(--hds-ui-colors-grey);
       }
     }
   }
