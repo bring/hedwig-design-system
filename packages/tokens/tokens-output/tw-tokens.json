@@ -4,10 +4,10 @@
     "signature-red": "#e32d22",
     "darker-red": "#4a1011",
     "dark-red": "#980000",
-    "light-red": "#ff8a5f",
+    "light-red": "#FFB5AF",
     "lighter-red": "#fff5f0",
-    "signature-red-hover": "#d62722",
-    "light-red-hover": "#ff7d55"
+    "signature-red-hover": "#CA201C",
+    "light-red-hover": "#FFA199"
   },
   "bring-colors": {
     "$type": "color",

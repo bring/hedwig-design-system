@@ -1,10 +1,10 @@
 export const PostenColorsSignatureRed = "#e32d22";
 export const PostenColorsDarkerRed = "#4a1011";
 export const PostenColorsDarkRed = "#980000";
-export const PostenColorsLightRed = "#ff8a5f";
+export const PostenColorsLightRed = "#ffb5af";
 export const PostenColorsLighterRed = "#fff5f0";
-export const PostenColorsSignatureRedHover = "#d62722";
-export const PostenColorsLightRedHover = "#ff7d55";
+export const PostenColorsSignatureRedHover = "#ca201c";
+export const PostenColorsLightRedHover = "#ffa199";
 export const BringColorsSignatureGreen = "#56b529";
 export const BringColorsDarkerGreen = "#002f19";
 export const BringColorsDarkGreen = "#00643a";

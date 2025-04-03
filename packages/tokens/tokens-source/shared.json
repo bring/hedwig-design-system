@@ -11,16 +11,16 @@
       "$value": "#980000"
     },
     "light-red": {
-      "$value": "#ff8a5f"
+      "$value": "#FFB5AF"
     },
     "lighter-red": {
       "$value": "#fff5f0"
     },
     "signature-red-hover": {
-      "$value": "#d62722"
+      "$value": "#CA201C"
     },
     "light-red-hover": {
-      "$value": "#ff7d55"
+      "$value": "#FFA199"
     }
   },
   "bring-colors": {

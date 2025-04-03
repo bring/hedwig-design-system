@@ -3,10 +3,10 @@
   --hds-posten-colors-signature-red: #e32d22;
   --hds-posten-colors-darker-red: #4a1011;
   --hds-posten-colors-dark-red: #980000;
-  --hds-posten-colors-light-red: #ff8a5f;
+  --hds-posten-colors-light-red: #FFB5AF;
   --hds-posten-colors-lighter-red: #fff5f0;
-  --hds-posten-colors-signature-red-hover: #d62722;
-  --hds-posten-colors-light-red-hover: #ff7d55;
+  --hds-posten-colors-signature-red-hover: #CA201C;
+  --hds-posten-colors-light-red-hover: #FFA199;
   --hds-bring-colors-signature-green: #56B529;
   --hds-bring-colors-darker-green: #002f19;
   --hds-bring-colors-dark-green: #00643a;
@@ -220,10 +220,10 @@
   --hds-colors-signature: #e32d22;
   --hds-colors-darker: #4a1011;
   --hds-colors-dark: #980000;
-  --hds-colors-light: #ff8a5f;
+  --hds-colors-light: #FFB5AF;
   --hds-colors-lighter: #fff5f0;
-  --hds-colors-signature-hover: #d62722;
-  --hds-colors-light-hover: #ff7d55;
+  --hds-colors-signature-hover: #CA201C;
+  --hds-colors-light-hover: #FFA199;
   --hds-button-colors-text: #ffffff;
   --hds-link-colors-text: #000000;
   --hds-link-colors-underline: #e32d22;
