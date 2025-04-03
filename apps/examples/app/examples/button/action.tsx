@@ -5,19 +5,19 @@ function Example() {
   return (
     <HStack gap="24">
       <VStack gap="24" wrap align="center" style={{ paddingTop: "24px" }}>
-        <Button>Primary large</Button>
-        <Button size="small">Primary small</Button>
+        <Button>Primary</Button>
+        <Button size="small">Primary</Button>
       </VStack>
       <VStack gap="24" wrap align="center" style={{ paddingTop: "24px" }}>
-        <Button variant="secondary">Secondary large</Button>
+        <Button variant="secondary">Secondary</Button>
         <Button variant="secondary" size="small">
-          Secondary small
+          Secondary
         </Button>
       </VStack>
       <VStack gap="24" wrap align="center" style={{ paddingTop: "24px" }}>
-        <Button variant="tertiary">Tertiary large</Button>
+        <Button variant="tertiary">Tertiary</Button>
         <Button variant="tertiary" size="small">
-          Tertiary small
+          Tertiary
         </Button>
       </VStack>
       <VStack
@@ -26,9 +26,9 @@ function Example() {
         align="center"
         style={{ backgroundColor: "var(--hds-colors-darker)", padding: "24px" }}
       >
-        <Button variant="inverted">Inverted large</Button>
+        <Button variant="inverted">Inverted</Button>
         <Button variant="inverted" size="small">
-          Inverted small
+          Inverted
         </Button>
       </VStack>
     </HStack>
