@@ -5,13 +5,13 @@ function Example() {
   return (
     <VStack gap="24" wrap>
       <HStack gap="8" wrap>
-        <Button fullWidth="mobile">Primary large</Button>
+        <Button fullWidth="mobile">Primary</Button>
         <Button fullWidth="mobile" variant="secondary">
-          Primary small
+          Secondary
         </Button>
       </HStack>
       <HStack gap="8" wrap style={{ paddingTop: "24px", width: "250px" }}>
-        <Button fullWidth>Primary large</Button>
+        <Button fullWidth>Fullwidth</Button>
       </HStack>
     </VStack>
   );
