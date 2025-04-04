@@ -1,5 +1,22 @@
 # @postenbring/hedwig-css
 
+## 1.7.0
+
+### Minor Changes
+
+- ece5bcb: Buttons update
+
+  Bring the buttons into the new 2.0 design
+
+- fb067fa: Update token colors for posten
+
+### Patch Changes
+
+- 064012d: Bump the minor-and-patch group across 1 directory with 36 updates
+- Updated dependencies [064012d]
+- Updated dependencies [fb067fa]
+  - @postenbring/hedwig-tokens@1.3.0
+
 ## 1.6.0
 
 ### Minor Changes
