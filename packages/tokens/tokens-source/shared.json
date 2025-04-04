@@ -11,22 +11,22 @@
       "$value": "#980000"
     },
     "light-red": {
-      "$value": "#ff8a5f"
+      "$value": "#ffb5af"
     },
     "lighter-red": {
       "$value": "#fff5f0"
     },
     "signature-red-hover": {
-      "$value": "#d62722"
+      "$value": "#ca201c"
     },
     "light-red-hover": {
-      "$value": "#ff7d55"
+      "$value": "#ffa199"
     }
   },
   "bring-colors": {
     "$type": "color",
     "signature-green": {
-      "$value": "#56B529"
+      "$value": "#56b529"
     },
     "darker-green": {
       "$value": "#002f19"
@@ -35,13 +35,13 @@
       "$value": "#00643a"
     },
     "light-green": {
-      "$value": "#B5E099"
+      "$value": "#b5e099"
     },
     "lighter-green": {
       "$value": "#f1f7e9"
     },
     "signature-green-hover": {
-      "$value": "#6EC943"
+      "$value": "#6ec943"
     },
     "light-green-hover": {
       "$value": "#d3e593"
