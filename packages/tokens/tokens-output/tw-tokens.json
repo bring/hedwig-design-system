@@ -4,19 +4,19 @@
     "signature-red": "#e32d22",
     "darker-red": "#4a1011",
     "dark-red": "#980000",
-    "light-red": "#FFB5AF",
+    "light-red": "#ffB5af",
     "lighter-red": "#fff5f0",
-    "signature-red-hover": "#CA201C",
-    "light-red-hover": "#FFA199"
+    "signature-red-hover": "#ca201c",
+    "light-red-hover": "#ffa199"
   },
   "bring-colors": {
     "$type": "color",
-    "signature-green": "#56B529",
+    "signature-green": "#56b529",
     "darker-green": "#002f19",
     "dark-green": "#00643a",
-    "light-green": "#B5E099",
+    "light-green": "#b5e099",
     "lighter-green": "#f1f7e9",
-    "signature-green-hover": "#6EC943",
+    "signature-green-hover": "#6ec943",
     "light-green-hover": "#d3e593"
   },
   "ui-colors": {
