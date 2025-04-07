@@ -19,20 +19,20 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "8.6.11",
-    "@storybook/addon-actions": "8.6.11",
-    "@storybook/addon-docs": "8.6.11",
-    "@storybook/addon-essentials": "8.6.11",
-    "@storybook/addon-links": "8.6.11",
-    "@storybook/addon-themes": "8.6.11",
-    "@storybook/react": "8.6.11",
-    "@storybook/react-vite": "8.6.11",
+    "@storybook/addon-a11y": "8.6.12",
+    "@storybook/addon-actions": "8.6.12",
+    "@storybook/addon-docs": "8.6.12",
+    "@storybook/addon-essentials": "8.6.12",
+    "@storybook/addon-links": "8.6.12",
+    "@storybook/addon-themes": "8.6.12",
+    "@storybook/react": "8.6.12",
+    "@storybook/react-vite": "8.6.12",
     "@vitejs/plugin-react": "4.3.4",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "serve": "14.2.4",
-    "storybook": "8.6.11",
-    "typescript": "5.8.2",
+    "storybook": "8.6.12",
+    "typescript": "5.8.3",
     "vite": "6.2.5"
   }
 }
