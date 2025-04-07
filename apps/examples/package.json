@@ -18,7 +18,7 @@
     "@radix-ui/react-slot": "1.1.2",
     "@remix-run/node": "^2.16.4",
     "@remix-run/react": "^2.16.4",
-    "isbot": "^4",
+    "isbot": "^5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "shiki": "1.22.2"
