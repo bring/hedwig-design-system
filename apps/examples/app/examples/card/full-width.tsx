@@ -156,6 +156,53 @@ function Example() {
             </Card.BodyActionRow>
           </Card.Body>
         </Card>
+        <h2>Scale image, no cropping</h2>
+        <Card variant="full-width" color="lighter-brand">
+          <Card.Media>
+            <Card.MediaImg
+              alt="Posten delivery van with Bring cargo truck in the background"
+              variant="scale"
+              src={postenBringImage}
+            />
+          </Card.Media>
+          <Card.Body>
+            <Card.BodyHeader as="h2">
+              <Card.BodyHeaderOverline>Scale</Card.BodyHeaderOverline>
+              <Card.BodyHeaderTitle>No image cropping</Card.BodyHeaderTitle>
+            </Card.BodyHeader>
+            <Card.BodyDescription>
+              Some images, in particular SVG illustrations with transparent backgrounds, should not
+              have their edges cropped but show the background instead (since they are transparent
+              and do that anyway). The prop{" "}
+              <pre
+                style={{
+                  display: "inline",
+                  backgroundColor: "rgba(0,0,0,.06)",
+                  padding: "0 4px",
+                }}
+              >
+                variant=&quot;scale&quot;
+              </pre>{" "}
+              on the image disables the cropping behavior when images resize.
+            </Card.BodyDescription>
+            <Card.BodyActionRow>
+              <Card.BodyAction asChild>
+                <Button fullWidth="mobile" asChild>
+                  <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
+                    Primary
+                  </a>
+                </Button>
+              </Card.BodyAction>
+              <Card.BodyAction asChild>
+                <Button fullWidth="mobile" variant="primary-outline" asChild>
+                  <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                    Primary outline
+                  </a>
+                </Button>
+              </Card.BodyAction>
+            </Card.BodyActionRow>
+          </Card.Body>
+        </Card>
       </div>
     </Container>
   );
