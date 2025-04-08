@@ -11,9 +11,6 @@ function Example() {
         <Link href="#demo-link" variant="solid" size="small">
           Call to action
         </Link>
-        <Link href="#demo-link" variant="solid" size="large">
-          Call to action
-        </Link>
         <Link href="#demo-link" variant="solid" size="technical">
           Call to action
         </Link>
@@ -26,5 +23,5 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 2,
+  index: 1,
 };

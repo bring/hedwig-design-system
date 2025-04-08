@@ -3,8 +3,6 @@
  */
 
 .hds-link {
-  display: inline-flex;
-  gap: 8px;
   color: var(--hds-link-colors-text);
   fill: currentcolor;
   transition-duration: var(--hds-micro-animation-duration-quick);
@@ -29,12 +27,10 @@
 
   &.hds-link--inverted {
     color: var(--hds-ui-colors-white);
-    text-decoration-color: currentcolor;
+    text-decoration-color: var(--hds-colors-signature);
 
-    &:hover,
-    &:active {
-      color: var(--hds-colors-light);
-      text-decoration-color: currentcolor;
+    &:hover {
+      text-decoration: none;
     }
 
     &:disabled {
@@ -47,9 +43,18 @@
     }
   }
 
+  &.hds-link--inverted-no-underline {
+    color: var(--hds-ui-colors-white);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: var(--hds-ui-colors-white);
+    }
+  }
+
   &.hds-link--no-underline {
-    font-weight: 500;
-    color: var(--hds-colors-dark);
+    color: var(--hds-ui-colors-black);
     text-decoration: none;
 
     &:hover,
@@ -64,10 +69,9 @@
     color: var(--hds-ui-colors-black);
     text-decoration-color: currentcolor;
 
-    &:hover,
-    &:active {
-      color: var(--hds-ui-colors-black-hover);
-      text-decoration-color: currentcolor;
+    &:hover {
+      color: var(--hds-colors-dark);
+      text-decoration: none;
     }
   }
 
@@ -84,6 +88,27 @@
 
   &.hds-link--technical {
     font: var(--hds-typography-technical);
+  }
+
+  /**
+  * Icons 
+  */
+
+  &.hds-link--leading-icon svg,
+  &.hds-link--trailing-icon svg {
+    width: 1em;
+    height: 1em;
+    fill: currentcolor;
+    vertical-align: middle;
+    margin-bottom: 2px;
+  }
+
+  &.hds-link--leading-icon svg {
+    margin-right: 10px;
+  }
+
+  &.hds-link--trailing-icon svg {
+    margin-left: 10px;
   }
 
   /**

@@ -10,9 +10,6 @@ function Example() {
       <Link href="#demo-link" size="small">
         Small link
       </Link>
-      <Link href="#demo-link" size="large">
-        Large link
-      </Link>
       <Link size="technical">Technical</Link>
     </VStack>
   );

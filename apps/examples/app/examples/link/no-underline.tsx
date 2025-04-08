@@ -10,9 +10,6 @@ function Example() {
       <Link href="#demo-link" variant="no-underline" size="small">
         Call to action
       </Link>
-      <Link href="#demo-link" variant="no-underline" size="large">
-        Call to action
-      </Link>
       <Link href="#demo-link" variant="no-underline" size="technical">
         Call to action
       </Link>
@@ -25,5 +22,5 @@ export default Example;
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   description: "Except when you hover, then a underline appears.",
-  index: 3,
+  index: 2,
 };

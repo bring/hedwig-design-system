@@ -38,10 +38,10 @@
       "$value": "{posten-colors.signature-red}"
     },
     "hover": {
-      "$value": "{posten-colors.signature-red}"
+      "$value": "{posten-colors.dark-red}"
     },
     "underline-hover": {
-      "$value": "{posten-colors.signature-red}"
+      "$value": "{posten-colors.dark-red}"
     }
   },
 
