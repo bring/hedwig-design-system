@@ -1,36 +1,36 @@
 import "@postenbring/hedwig-css";
 import { HStack, Button, VStack } from "@postenbring/hedwig-react";
-import { GlobeIconSmall, EnvelopeIconLarge } from "../../assets/icon-examples";
+import { GlobeIcon, EnvelopeIcon } from "../../assets/icon-examples";
 
 function Example() {
   return (
     <HStack gap="24" style={{ padding: "24px" }}>
       <VStack gap="24" wrap align="center">
         <Button icon="leading">
-          <EnvelopeIconLarge />
+          <EnvelopeIcon />
           Leading
         </Button>
         <Button size="small" icon="leading">
-          <GlobeIconSmall />
+          <GlobeIcon />
           Leading
         </Button>
       </VStack>
       <VStack gap="24" wrap align="center">
         <Button icon>
-          <EnvelopeIconLarge />
+          <EnvelopeIcon />
         </Button>
         <Button size="small" icon>
-          <GlobeIconSmall />
+          <GlobeIcon />
         </Button>
       </VStack>
       <VStack gap="24" wrap align="center">
         <Button icon="trailing">
           Trailing
-          <EnvelopeIconLarge />
+          <EnvelopeIcon />
         </Button>
         <Button size="small" icon="trailing">
           Trailing
-          <GlobeIconSmall />
+          <GlobeIcon />
         </Button>
       </VStack>
     </HStack>
