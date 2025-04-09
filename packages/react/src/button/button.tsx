@@ -6,28 +6,16 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   /**
    * The height, font size and padding of the button
    *
-   * Note: `medium` is deprecated, use `large` or `small` instead of `medium`
-   *
    * @default "large"
    */
-  size?: "small" | "medium" | "large";
+  size?: "small" | "large";
 
   /**
    * The background and fill of the button
    *
-   * Note: `primary-outline` and `secondary-outline` are deprecated
-   * Use `secondary` instead, or check the other variants
-   * https://bring.github.io/hedwig-design-system/examples/button
-   *
    * @default "primary"
    */
-  variant?:
-    | "primary"
-    | "secondary"
-    | "tertiary"
-    | "inverted"
-    | "primary-outline" // deprecated
-    | "secondary-outline"; // deprecated
+  variant?: "primary" | "secondary" | "tertiary" | "inverted";
 
   /**
    * Make the button use 100% width available.
@@ -60,7 +48,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  * <Button variant="primary">Primary</Button>
  * <Button variant="secondary" size="large">Secondary</Button>
  * <Button variant="inverted">Inverted</Button>
- * <Button variant="tertiary" fullWidth="mobile">Secondary Outline</Button>
+ * <Button variant="tertiary" fullWidth="mobile">Tertiary</Button>
  * <Button icon="leading"><LeadingIcon />Leading icon</Button>
  *
  * @example
@@ -75,7 +63,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = "primary",
       size = "large",
       fullWidth = false,
-      icon,
+      icon = false,
       className,
       ...rest
     },
@@ -83,22 +71,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const Component = asChild ? Slot : "button";
 
-    let resolvedVariant = variant;
-    if (resolvedVariant === "primary-outline" || resolvedVariant === "secondary-outline") {
-      resolvedVariant = "secondary";
-    }
-
-    let resolvedSize = size;
-    if (resolvedSize === "medium") {
-      resolvedSize = "large";
-    }
-
     return (
       <Component
         className={clsx(
           "hds-button",
-          `hds-button--${resolvedSize}`,
-          `hds-button--${resolvedVariant}`,
+          `hds-button--${size}`,
+          `hds-button--${variant}`,
           {
             "hds-button--full": fullWidth === true,
             "hds-button--mobile-full": fullWidth === "mobile",
