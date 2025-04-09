@@ -147,9 +147,9 @@ function Example() {
                 </Button>
               </Card.BodyAction>
               <Card.BodyAction asChild>
-                <Button fullWidth="mobile" variant="primary-outline" asChild>
+                <Button fullWidth="mobile" variant="secondary" asChild>
                   <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                    Primary outline
+                    Secondary
                   </a>
                 </Button>
               </Card.BodyAction>
@@ -194,9 +194,9 @@ function Example() {
                 </Button>
               </Card.BodyAction>
               <Card.BodyAction asChild>
-                <Button fullWidth="mobile" variant="primary-outline" asChild>
+                <Button fullWidth="mobile" variant="secondary" asChild>
                   <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                    Primary outline
+                    Secondary
                   </a>
                 </Button>
               </Card.BodyAction>
