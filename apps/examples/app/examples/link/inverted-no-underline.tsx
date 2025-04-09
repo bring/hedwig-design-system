@@ -9,13 +9,13 @@ function Example() {
       }}
     >
       <VStack gap="40" align="center">
-        <Link href="#demo-link" variant="inverted" size="default">
+        <Link href="#demo-link" variant="inverted-no-underline" size="default">
           Call to action
         </Link>
-        <Link href="#demo-link" variant="inverted" size="small">
+        <Link href="#demo-link" variant="inverted-no-underline" size="small">
           Call to action
         </Link>
-        <Link href="#demo-link" variant="inverted" size="technical">
+        <Link href="#demo-link" variant="inverted-no-underline" size="technical">
           Call to action
         </Link>
       </VStack>
@@ -27,5 +27,5 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 3,
+  index: 4,
 };

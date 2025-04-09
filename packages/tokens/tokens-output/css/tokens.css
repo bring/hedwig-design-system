@@ -227,8 +227,8 @@
   --hds-button-colors-text: #ffffff;
   --hds-link-colors-text: #000000;
   --hds-link-colors-underline: #e32d22;
-  --hds-link-colors-hover: #e32d22;
-  --hds-link-colors-underline-hover: #e32d22;
+  --hds-link-colors-hover: #980000;
+  --hds-link-colors-underline-hover: #980000;
 }
 .hds-theme-bring {
   --hds-typography-h1-display: 500 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;

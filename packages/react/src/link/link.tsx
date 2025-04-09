@@ -7,14 +7,23 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
   /**
    * The visual style of the link
    */
-  variant?: "underline" | "solid" | "inverted" | "no-underline";
+  variant?: "underline" | "solid" | "inverted" | "no-underline" | "inverted-no-underline";
 
   /**
    * Font size of the link
    *
-   * Note: `medium` is deprecated, use `default` instead of `medium`
+   * Note: `medium` and `large` is deprecated, use `default` instead of `medium`
+   *
    */
   size?: "default" | "small" | "large" | "technical" | "medium";
+
+  /**
+   * Specify that there is an icon in the link.
+   * `icon="leading"`: There is an icon before the text.
+   * `icon="trailing"`: There is an icon after the text.
+   *
+   */
+  icon?: "leading" | "trailing";
 
   children: React.ReactNode;
 
@@ -27,14 +36,20 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 }
 
 export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
-  ({ asChild, children, variant = "underline", size = "default", className, ...rest }, ref) => {
+  (
+    { asChild, children, variant = "underline", size = "default", icon, className, ...rest },
+    ref,
+  ) => {
     const Component = asChild ? Slot : "a";
+
     return (
       <Component
         className={clsx(
           "hds-link",
           variant !== "underline" && `hds-link--${variant}`,
           size !== "default" && size !== "medium" && `hds-link--${size}`,
+          { "hds-link--trailing-icon": icon === "trailing" },
+          { "hds-link--leading-icon": icon === "leading" },
           className as undefined,
         )}
         ref={ref}
