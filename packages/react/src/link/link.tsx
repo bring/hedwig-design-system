@@ -11,11 +11,9 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 
   /**
    * Font size of the link
-   *
-   * Note: `medium` and `large` is deprecated, use `default` instead of `medium`
-   *
+   * @default "default"
    */
-  size?: "default" | "small" | "large" | "technical" | "medium";
+  size?: "default" | "small" | "large" | "technical";
 
   /**
    * Specify that there is an icon in the link.
@@ -47,7 +45,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
         className={clsx(
           "hds-link",
           variant !== "underline" && `hds-link--${variant}`,
-          size !== "default" && size !== "medium" && `hds-link--${size}`,
+          size !== "default" && `hds-link--${size}`,
           { "hds-link--trailing-icon": icon === "trailing" },
           { "hds-link--leading-icon": icon === "leading" },
           className as undefined,
