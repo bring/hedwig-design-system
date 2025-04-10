@@ -1,5 +1,31 @@
 # @postenbring/hedwig-css
 
+## 2.0.0
+
+### Major Changes
+
+- 2b7f2ae: Use icons with no padding in buttons
+
+### Minor Changes
+
+- ece5bcb: Buttons update
+
+  Bring the buttons into the new 2.0 design
+
+- accfaff: Fullwidth-card: optional disabling of the cropping behavior of images in fullwidth-cards
+- fb067fa: Update token colors for posten
+
+### Patch Changes
+
+- 064012d: Bump the minor-and-patch group across 1 directory with 36 updates
+- d980967: Bump the minor-and-patch group with 16 updates
+- d5f7e24: Updated link colors and icon use
+- Updated dependencies [064012d]
+- Updated dependencies [d980967]
+- Updated dependencies [fb067fa]
+- Updated dependencies [d5f7e24]
+  - @postenbring/hedwig-tokens@1.3.0
+
 ## 1.6.0
 
 ### Minor Changes
