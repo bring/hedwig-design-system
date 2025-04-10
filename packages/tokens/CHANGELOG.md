@@ -1,5 +1,17 @@
 # @postenbring/hedwig-tokens
 
+## 1.3.0
+
+### Minor Changes
+
+- fb067fa: Update token colors for posten
+
+### Patch Changes
+
+- 064012d: Bump the minor-and-patch group across 1 directory with 36 updates
+- d980967: Bump the minor-and-patch group with 16 updates
+- d5f7e24: Updated link colors and icon use
+
 ## 1.2.0
 
 ### Minor Changes
