@@ -1,0 +1,28 @@
+@import url("../_custom-media.css");
+@import url("../spacing/spacing.css");
+
+.hds-button-list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: var(--hds-spacing-24-32);
+
+  &.hds-button-list--default {
+    flex-wrap: wrap;
+  }
+
+  &.hds-button-list--stretched {
+    justify-content: space-between;
+    flex-direction: column;
+
+    button,
+    a {
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    @media (--medium) {
+      flex-direction: row;
+    }
+  }
+}
