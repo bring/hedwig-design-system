@@ -5,7 +5,6 @@
   display: flex;
   justify-content: flex-start;
   gap: 8px;
-  margin-bottom: var(--hds-spacing-24-32);
 
   &.hds-button-list--default {
     flex-wrap: wrap;
