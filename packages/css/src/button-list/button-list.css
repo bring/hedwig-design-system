@@ -14,8 +14,7 @@
     justify-content: space-between;
     flex-direction: column;
 
-    button,
-    a {
+    & * {
       flex-grow: 1;
       justify-content: center;
     }
