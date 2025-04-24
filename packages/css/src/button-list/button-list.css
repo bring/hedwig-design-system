@@ -17,6 +17,7 @@
     & * {
       flex-grow: 1;
       justify-content: center;
+      flex-basis: 0;
     }
 
     @media (--medium) {
