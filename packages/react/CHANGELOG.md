@@ -1,5 +1,17 @@
 # @postenbring/hedwig-react
 
+## 2.1.0
+
+### Minor Changes
+
+- 5fecc71: Added component ButtonList
+
+### Patch Changes
+
+- Updated dependencies [5fecc71]
+- Updated dependencies [1eb5642]
+  - @postenbring/hedwig-css@2.1.0
+
 ## 2.0.0
 
 ### Major Changes

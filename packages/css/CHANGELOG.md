@@ -1,5 +1,15 @@
 # @postenbring/hedwig-css
 
+## 2.1.0
+
+### Minor Changes
+
+- 5fecc71: Added component ButtonList
+
+### Patch Changes
+
+- 1eb5642: Remove inline-block for buttons in cards. Update fullwidth-card example with buttonlist.
+
 ## 2.0.0
 
 ### Major Changes
