@@ -71,7 +71,6 @@
       gap: var(--hds-spacing-8);
 
       .hds-button {
-        flex: 1 0 160px;
         white-space: nowrap;
       }
     }
