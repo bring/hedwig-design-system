@@ -1,5 +1,5 @@
 import "@postenbring/hedwig-css";
-import { Card, Link, Container, Button } from "@postenbring/hedwig-react";
+import { Card, Link, Container, Button, ButtonList } from "@postenbring/hedwig-react";
 import postenBringImage from "../../assets/posten-bring.avif";
 
 function Example() {
@@ -119,7 +119,7 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>CTA Buttons</h2>
+        <h2>A single CTA Button</h2>
         <Card variant="full-width" color="lighter-brand">
           <Card.Media>
             <Card.MediaImg
@@ -129,14 +129,11 @@ function Example() {
           </Card.Media>
           <Card.Body>
             <Card.BodyHeader as="h2">
-              <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+              <Card.BodyHeaderOverline>CTA buttons</Card.BodyHeaderOverline>
+              <Card.BodyHeaderTitle>Only one button: Button</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
-              From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
-              that you have to pay import duties from the first krone on most of what you buy from
-              abroad. The new rules largely mean that foreign online shops will collect the value
-              added tax (VAT) immediately when you shop and pay for the goods.
+              For a single CTA button, just use the Button component direclty.
             </Card.BodyDescription>
             <Card.BodyActionRow>
               <Card.BodyAction asChild>
@@ -146,13 +143,52 @@ function Example() {
                   </a>
                 </Button>
               </Card.BodyAction>
-              <Card.BodyAction asChild>
-                <Button fullWidth="mobile" variant="secondary" asChild>
-                  <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                    Secondary
-                  </a>
-                </Button>
-              </Card.BodyAction>
+            </Card.BodyActionRow>
+          </Card.Body>
+        </Card>
+        <h2>More CTA Buttons</h2>
+        <Card variant="full-width" color="lighter-brand">
+          <Card.Media>
+            <Card.MediaImg
+              alt="Posten delivery van with Bring cargo truck in the background"
+              src={postenBringImage}
+            />
+          </Card.Media>
+          <Card.Body>
+            <Card.BodyHeader as="h2">
+              <Card.BodyHeaderOverline>CTA buttons</Card.BodyHeaderOverline>
+              <Card.BodyHeaderTitle>Multiple buttons: ButtonList</Card.BodyHeaderTitle>
+            </Card.BodyHeader>
+            <Card.BodyDescription>
+              For more than 1 CTA button, use{" "}
+              <pre
+                style={{
+                  display: "inline",
+                  backgroundColor: "rgba(0,0,0,.06)",
+                  padding: "0 4px",
+                }}
+              >
+                &lt;ButtonList variant=&quot;stretched&quot;&gt;
+              </pre>
+              , and add an &apos;asChild&apos; prop to the surrounding Card.BodyActionRow.
+            </Card.BodyDescription>
+            <Card.BodyActionRow asChild>
+              <ButtonList variant="stretched">
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" asChild>
+                    <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
+                      Primary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" variant="secondary" asChild>
+                    <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                      Secondary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+              </ButtonList>
             </Card.BodyActionRow>
           </Card.Body>
         </Card>
@@ -189,14 +225,7 @@ function Example() {
               <Card.BodyAction asChild>
                 <Button fullWidth="mobile" asChild>
                   <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
-                    Primary
-                  </a>
-                </Button>
-              </Card.BodyAction>
-              <Card.BodyAction asChild>
-                <Button fullWidth="mobile" variant="secondary" asChild>
-                  <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                    Secondary
+                    Button
                   </a>
                 </Button>
               </Card.BodyAction>
@@ -211,6 +240,7 @@ function Example() {
 export default Example;
 
 import type { ExampleConfig } from "..";
+
 export const config: ExampleConfig = {
   index: 0,
   layout: "none",
