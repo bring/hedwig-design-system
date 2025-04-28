@@ -8,7 +8,6 @@
   position: relative;
   border-bottom: initial;
   text-decoration: initial;
-  background-color: var(--hds-colors-lighter);
   border-radius: var(--hds-border-radius-16);
   display: flex;
   flex-direction: column;
@@ -123,6 +122,10 @@
 
 .hds-card--color-darker {
   background-color: var(--hds-colors-darker);
+}
+
+.hds-card--color-lighter {
+  background-color: var(--hds-colors-lighter);
 }
 
 .hds-card--focus {

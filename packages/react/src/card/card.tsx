@@ -271,7 +271,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     ref,
   ) => {
     const Component = asChild ? Slot : Tag;
-    const effectiveColor = variant === "focus" && !color ? "darker" : color;
+    const effectiveColor = variant === "focus" && !color ? "darker" : (color ?? "lighter-brand");
     return (
       <Component
         {...rest}
@@ -282,6 +282,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           { "hds-card--focus": variant === "focus" },
           { "hds-card--color-white": effectiveColor === "white" },
           { "hds-card--color-light-grey-fill": effectiveColor === "light-grey-fill" },
+          { "hds-card--color-lighter": effectiveColor === "lighter-brand" },
           { "hds-card--color-darker": effectiveColor === "darker" },
           { "hds-card--image-position-right": imagePosition === "right" },
           className as undefined,
