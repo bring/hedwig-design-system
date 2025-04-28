@@ -43,7 +43,7 @@
     "globby": "14.1.0",
     "lightningcss": "1.29.3",
     "sanitize.css": "^13.0.0",
-    "stylelint": "16.18.0",
+    "stylelint": "16.19.1",
     "stylelint-config-standard": "36.0.1",
     "stylelint-value-no-unknown-custom-properties": "6.0.1",
     "wait-on": "^8.0.3"
