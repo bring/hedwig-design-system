@@ -147,7 +147,7 @@ StyleDictionary.extend({
       transformGroup: "js",
       files: [
         {
-          destination: "tokens-output/tokens.mjs",
+          destination: "tokens-output/tokens.js",
           format: "javascript/es6",
           options: {
             outputStringLiterals: true,
