@@ -280,6 +280,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           { "hds-card--full-width": variant === "full-width" },
           { "hds-card--miniature": variant === "miniature" },
           { "hds-card--focus": variant === "focus" },
+          { "hds-card--slim": variant === "slim" },
           { "hds-card--color-white": effectiveColor === "white" },
           { "hds-card--color-light-grey-fill": effectiveColor === "light-grey-fill" },
           { "hds-card--color-darker": effectiveColor === "darker" },
