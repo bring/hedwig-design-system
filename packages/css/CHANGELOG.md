@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 2.1.2
+
+### Patch Changes
+
+- ceae386: Add and style .hds-card--slim class: it's the only card variant that needs margin-bottom on the media element. Remove overrides on other variants.
+
 ## 2.1.1
 
 ### Patch Changes
