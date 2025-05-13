@@ -267,7 +267,16 @@ export type CardProps = CardSlimAndMiniatureProps | CardFocusProps | CardFullwid
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   (
-    { as: Tag = "section", asChild, className, children, variant, color, imagePosition, ...rest },
+    {
+      as: Tag = "section",
+      asChild,
+      className,
+      children,
+      variant = "slim",
+      color,
+      imagePosition,
+      ...rest
+    },
     ref,
   ) => {
     const Component = asChild ? Slot : Tag;
