@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 1.3.1
+
+### Patch Changes
+
+- 5fadb01: :adhesive_bandage: fix tokens js file import for vite dev server
+
 ## 1.3.0
 
 ### Minor Changes
