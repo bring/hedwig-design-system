@@ -23,7 +23,6 @@
     min-height: 120px;
     max-height: 350px;
     flex: 3 1 auto;
-    margin-bottom: var(--hds-spacing-12-16);
   }
 
   .hds-card__media__img {
@@ -139,7 +138,6 @@
     min-height: 220px;
     max-height: 500px;
     overflow: auto;
-    margin-bottom: 0;
 
     @media (--large) {
       min-height: none;
@@ -188,7 +186,6 @@
     object-fit: cover;
     background-color: var(--hds-ui-colors-white);
     margin-right: var(--hds-spacing-12-16);
-    margin-bottom: 0;
   }
 
   .hds-card__body {
@@ -200,5 +197,11 @@
       font-weight: var(--hds-font-weight-body-title);
       line-height: var(--hds-line-height-body-title);
     }
+  }
+}
+
+.hds-card--slim {
+  .hds-card__media {
+    margin-bottom: var(--hds-spacing-12-16);
   }
 }
