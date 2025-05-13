@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 2.1.1
+
+### Patch Changes
+
+- 03987ec: Center the button contents for all buttons
+- Updated dependencies [5fadb01]
+  - @postenbring/hedwig-tokens@1.3.1
+
 ## 2.1.0
 
 ### Minor Changes
