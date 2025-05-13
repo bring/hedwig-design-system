@@ -22,6 +22,7 @@
   word-break: normal;
   font: var(--hds-typography-body-small-title);
   align-items: center;
+  justify-content: center;
 
   /* When used as a link (<a>) */
   text-decoration: none;
@@ -97,13 +98,11 @@
 
   &.hds-button--full {
     width: 100%;
-    justify-content: center;
   }
 
   &.hds-button--mobile-full {
     @media (--before-medium) {
       width: 100%;
-      justify-content: center;
     }
   }
 
