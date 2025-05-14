@@ -111,6 +111,29 @@
       }
     }
 
+    &.hds-navbar__item--open {
+      .hds-navbar__item-whenclosedtext {
+        height: 0;
+      }
+    }
+
+    &.hds-navbar__item--closed {
+      .hds-navbar__item-whenopentext {
+        height: 0;
+      }
+    }
+
+    .hds-navbar__item-responsive-text {
+      display: block;
+      text-align: right;
+
+      * {
+        white-space: nowrap;
+        display: block;
+        overflow-y: hidden;
+      }
+    }
+
     @media (--before-large) {
       .hds-navbar__item-icon {
         width: var(--hds-spacing-24);

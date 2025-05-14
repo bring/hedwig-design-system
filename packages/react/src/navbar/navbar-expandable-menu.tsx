@@ -8,6 +8,7 @@ interface ExpandableMenuContextProps {
   setOpen: (open: boolean) => void;
   contentId: string;
 }
+
 const ExpandableMenuContext = createContext<ExpandableMenuContextProps | null>(null);
 export const useNavbarExpendableMenuContext = () => {
   const value = useContext(ExpandableMenuContext);
@@ -53,6 +54,7 @@ export function NavbarExpandableMenu({ children }: NavbarExpandableMenuProps) {
     </ExpandableMenuContext.Provider>
   );
 }
+
 NavbarExpandableMenu.displayName = "NavbarExpandableMenu";
 
 /**
@@ -66,6 +68,7 @@ export interface NavbarExpandableMenuTriggerProps
   whenOpenText: React.ReactNode;
   whenOpenHelperTitle?: string;
 }
+
 export const NavbarExpandableMenuTrigger = forwardRef<
   HTMLButtonElement,
   NavbarExpandableMenuTriggerProps
@@ -86,23 +89,6 @@ export const NavbarExpandableMenuTrigger = forwardRef<
   ) => {
     const { contentId, open, setOpen } = useNavbarExpendableMenuContext();
 
-    // Measure the width of the text when open and closed and choose the widest one
-    // This is to ensure that the button doesn't change size when the text changes
-    const [textWidth, setTextWidth] = useState<number | undefined>(undefined);
-    const measurementId = useId();
-    useEffect(() => {
-      const widthWhenOpen =
-        document.getElementById(`${measurementId}-when-open`)?.getBoundingClientRect().width ?? 0;
-      const widthWhenClosed =
-        document.getElementById(`${measurementId}-when-closed`)?.getBoundingClientRect().width ?? 0;
-
-      setTextWidth(widthWhenOpen < widthWhenClosed ? widthWhenClosed : widthWhenOpen);
-    }, [measurementId]);
-
-    const text = open ? whenOpenText : whenClosedText;
-    const title = open ? whenOpenHelperTitle : whenClosedHelperTitle;
-    const icon = open ? <CloseIcon /> : <MenuIcon />;
-
     function toggleOpen() {
       setOpen(!open);
     }
@@ -111,48 +97,27 @@ export const NavbarExpandableMenuTrigger = forwardRef<
       <button
         aria-expanded={open}
         aria-controls={contentId}
-        className={clsx("hds-navbar__item", className as undefined)}
+        className={clsx(
+          "hds-navbar__item",
+          className as undefined,
+          open ? "hds-navbar__item--open" : "hds-navbar__item--closed",
+        )}
         onClick={toggleOpen}
         ref={ref}
-        title={title}
+        title={open ? whenOpenHelperTitle : whenClosedHelperTitle}
         type="button"
         style={{ position: "relative", ...style }}
         {...rest}
       >
-        {/* Measurement elements, not shown to the user */}
-        <span
-          id={`${measurementId}-when-closed`}
-          aria-hidden
-          style={{
-            position: "absolute",
-            visibility: "hidden",
-            pointerEvents: "none",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {whenOpenText}
+        <span className="hds-navbar__item-responsive-text">
+          <span aria-hidden={!open} className={clsx("hds-navbar__item-whenopentext")}>
+            {whenOpenText}
+          </span>
+          <span aria-hidden={open} className={clsx("hds-navbar__item-whenclosedtext")}>
+            {whenClosedText}
+          </span>
         </span>
-        <span
-          id={`${measurementId}-when-open`}
-          aria-hidden
-          style={{
-            position: "absolute",
-            visibility: "hidden",
-            pointerEvents: "none",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {whenClosedText}
-        </span>
-
-        {/* Actual content */}
-        <span
-          style={{ width: textWidth, whiteSpace: "nowrap" }}
-          className={clsx("hds-navbar__item-responsive-text")}
-        >
-          {text}
-        </span>
-        <span style={{ width: 32, height: 32 }}>{icon}</span>
+        <span style={{ width: 32, height: 32 }}>{open ? <CloseIcon /> : <MenuIcon />}</span>
       </button>
     );
   },
@@ -166,6 +131,7 @@ export interface NavbarExpandableMenuContentProps {
   children: React.ReactNode;
   className?: string;
 }
+
 export const NavbarExpandableMenuContent = forwardRef<
   HTMLDivElement,
   NavbarExpandableMenuContentProps
