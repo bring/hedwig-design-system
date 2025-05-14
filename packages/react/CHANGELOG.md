@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 2.1.3
+
+### Patch Changes
+
+- 951924d: Set width of navbar menu label, by pure CSS instead of JS
+- Updated dependencies [951924d]
+  - @postenbring/hedwig-css@2.1.3
+
 ## 2.1.2
 
 ### Patch Changes
