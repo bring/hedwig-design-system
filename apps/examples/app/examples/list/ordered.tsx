@@ -4,17 +4,17 @@ import { HStack, OrderedList } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <HStack gap="20" wrap>
-      <OrderedList size="large">
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-      </OrderedList>
-      <OrderedList size="medium">
+      <OrderedList size="default">
         <li>List item</li>
         <li>List item</li>
         <li>List item</li>
       </OrderedList>
       <OrderedList size="small">
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </OrderedList>
+      <OrderedList size="technical">
         <li>List item</li>
         <li>List item</li>
         <li>List item</li>
