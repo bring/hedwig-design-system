@@ -27,16 +27,22 @@
 
   &:is(ul) {
     list-style: disc;
+
+    & li::marker {
+      font-size: 16px;
+    }
   }
 
   /* Nested unordered lists */
   &:is(ul) ul {
     list-style: circle;
+    padding-left: var(--hds-spacing-16);
   }
 
   /* Nested ordered lists */
   &:is(ol) ol {
     list-style: decimal;
+    padding-left: var(--hds-spacing-16);
 
     /* TODO: Consider variant for a, b, c list style when nested */
 
