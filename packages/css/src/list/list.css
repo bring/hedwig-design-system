@@ -27,16 +27,22 @@
 
   &:is(ul) {
     list-style: disc;
+
+    & li::marker {
+      font-size: 16px;
+    }
   }
 
   /* Nested unordered lists */
   &:is(ul) ul {
     list-style: circle;
+    padding-left: var(--hds-spacing-16);
   }
 
   /* Nested ordered lists */
   &:is(ol) ol {
     list-style: decimal;
+    padding-left: var(--hds-spacing-16);
 
     /* TODO: Consider variant for a, b, c list style when nested */
 
@@ -46,6 +52,22 @@
   /**
    * Modifers: Sizes
    */
+
+  &, /* Default */
+  &.hds-list--default,
+  &.hds-list--medium {
+    font: var(--hds-typography-body);
+
+    * + * {
+      margin-top: var(--hds-spacing-8);
+    }
+
+    & ul,
+    & ol {
+      margin-top: var(--hds-spacing-8);
+    }
+  }
+
   &.hds-list--small {
     font: var(--hds-typography-body-small);
 
@@ -59,15 +81,16 @@
     }
   }
 
-  &, /* Default */
-  &.hds-list--medium {
+  &.hds-list--technical {
+    font: var(--hds-typography-technical);
+
     * + * {
-      margin-top: var(--hds-spacing-8);
+      margin-top: var(--hds-spacing-4);
     }
 
     & ul,
     & ol {
-      margin-top: var(--hds-spacing-8);
+      margin-top: var(--hds-spacing-4);
     }
   }
 

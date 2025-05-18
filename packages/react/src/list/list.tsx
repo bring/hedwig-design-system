@@ -7,7 +7,7 @@ export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListEl
    *
    * @default "medium"
    */
-  size?: "small" | "medium" | "large";
+  size?: "default" | "small" | "technical" | "medium" | "large";
 }
 
 /**
@@ -29,7 +29,11 @@ export const UnorderedList = forwardRef<HTMLUListElement, ListProps>(
     return (
       <ul
         ref={ref}
-        className={clsx("hds-list", `hds-list--${size}`, className as undefined)}
+        className={clsx(
+          "hds-list",
+          size !== "default" && `hds-list--${size}`,
+          className as undefined,
+        )}
         {...rest}
       />
     );
@@ -56,7 +60,11 @@ export const OrderedList = forwardRef<HTMLOListElement, ListProps>(
     return (
       <ol
         ref={ref}
-        className={clsx("hds-list", `hds-list--${size}`, className as undefined)}
+        className={clsx(
+          "hds-list",
+          size !== "default" && `hds-list--${size}`,
+          className as undefined,
+        )}
         {...rest}
       />
     );
