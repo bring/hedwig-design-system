@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 2.1.4
+
+### Patch Changes
+
+- 6ac09af: adjustment to border color on hover
+- 3b65270: adjusted padding, new sizenames
+- 724a528: new radius on figure
+
 ## 2.1.3
 
 ### Patch Changes
