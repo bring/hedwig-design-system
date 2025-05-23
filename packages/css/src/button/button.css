@@ -118,6 +118,7 @@
 
     &:hover {
       background-color: var(--hds-colors-signature-hover);
+      border-color: var(--hds-colors-signature-hover);
     }
 
     &:active {
@@ -140,6 +141,7 @@
     &:hover {
       color: var(--hds-colors-dark);
       background-color: var(--hds-colors-lighter);
+      border-color: var(--hds-colors-dark);
     }
 
     &:active {
