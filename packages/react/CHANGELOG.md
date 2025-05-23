@@ -1,5 +1,17 @@
 # @postenbring/hedwig-react
 
+## 2.1.4
+
+### Patch Changes
+
+- 3b65270: adjusted padding, new sizenames
+- 69bda07: Documentation changes only
+- b39ae62: corrected small typo
+- Updated dependencies [6ac09af]
+- Updated dependencies [3b65270]
+- Updated dependencies [724a528]
+  - @postenbring/hedwig-css@2.1.4
+
 ## 2.1.3
 
 ### Patch Changes
