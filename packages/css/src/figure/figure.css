@@ -6,6 +6,7 @@
 .hds-figure {
   img {
     width: 100%;
+    border-radius: var(--hds-border-radius-8);
   }
 
   .hds-figure__container {
