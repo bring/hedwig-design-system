@@ -25,7 +25,7 @@ export interface ListProps extends HTMLAttributes<HTMLOListElement | HTMLUListEl
  * ```
  */
 export const UnorderedList = forwardRef<HTMLUListElement, ListProps>(
-  ({ size = "medium", className, ...rest }, ref) => {
+  ({ size = "default", className, ...rest }, ref) => {
     return (
       <ul
         ref={ref}
