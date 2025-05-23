@@ -8,7 +8,7 @@ const meta: Meta<typeof Alert> = {
 
   argTypes: {
     variant: {
-      options: ["success", "attention", "warning", "neutral", "info"],
+      options: ["info", "success", "warning", "error", "neutral"],
       control: {
         type: "radio",
       },
