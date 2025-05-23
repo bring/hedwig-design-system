@@ -57,7 +57,7 @@
 
     &::before {
       background-size: 32px;
-      background-image: var(--_hds-info-circle);
+      background-image: var(--_hds-info-circle-deprecated);
     }
   }
 
