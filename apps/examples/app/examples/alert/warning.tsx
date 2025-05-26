@@ -6,7 +6,7 @@ function Example() {
     <Alert variant="warning">
       <Alert.Title>Warning</Alert.Title>
       <Alert.Description>
-        Something did not go as excpected. Yellow always means something negative.
+        Something did not go as expected. Yellow always means something negative.
       </Alert.Description>
     </Alert>
   );
