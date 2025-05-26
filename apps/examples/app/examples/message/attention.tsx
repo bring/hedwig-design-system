@@ -18,4 +18,6 @@ function Example() {
 export default Example;
 
 import type { ExampleConfig } from "..";
-export const config: ExampleConfig = {};
+export const config: ExampleConfig = {
+  description: "⚠️Message component is deprecated. Use Alert component instead.⚠️",
+};

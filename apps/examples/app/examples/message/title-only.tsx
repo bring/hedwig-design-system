@@ -14,4 +14,5 @@ export default Example;
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   index: 4,
+  description: "⚠️Message component is deprecated. Use Alert component instead.⚠️",
 };
