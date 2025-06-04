@@ -35,6 +35,13 @@
     }
   }
 
+  .hds-card__body {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .hds-card__body-header {
     margin-top: 0;
     margin-bottom: 0;
@@ -145,9 +152,6 @@
   }
 
   .hds-card__body {
-    display: flex;
-    flex: 1 0 auto;
-    flex-direction: column;
     padding: var(--hds-spacing-32-40);
 
     @media (--large) {
@@ -185,9 +189,7 @@
   }
 
   .hds-card__body {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 auto;
+    flex-basis: min-content;
     padding-top: 0;
 
     .hds-card__body-header-title {
