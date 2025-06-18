@@ -200,12 +200,6 @@
   }
 }
 
-.hds-card--slim {
-  .hds-card__media {
-    margin-bottom: var(--hds-spacing-12-16);
-  }
-}
-
 .hds-card--slim,
 .hds-card--miniature {
   .hds-card__centerbody {
