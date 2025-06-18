@@ -1,0 +1,117 @@
+@import url("../_custom-media.css");
+@import url("../_icons.css");
+@import url("../spacing/spacing.css");
+
+.hds-box.hds-alert {
+  --hds-component-alert-icon-width: var(--hds-spacing-24);
+  --hds-component-alert-spacing-between: var(--hds-spacing-16);
+
+  border-radius: var(--hds-border-radius-8);
+
+  @media (--medium) {
+    --hds-component-alert-spacing-between: var(--hds-spacing-24);
+  }
+
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties -- Comes from `box.css` */
+  --hds-component-alert-padding: var(--hds-component-box-padding);
+
+  /* --hds-component-icon-padding: var(--hds-component-box-padding + --hds-spacing-4); */
+
+  padding-left: calc(
+    var(--hds-component-alert-padding) + var(--hds-component-alert-icon-width) +
+      var(--hds-component-alert-spacing-between)
+  );
+
+  /* Icon placement */
+  &.hds-alert--info::before,
+  &.hds-alert--success::before,
+  &.hds-alert--warning::before,
+  &.hds-alert--error::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--hds-component-alert-padding) + var(--hds-spacing-4));
+    left: var(--hds-component-alert-padding);
+    width: var(--hds-component-alert-icon-width);
+    height: var(--hds-component-alert-icon-width);
+    mask-size: cover;
+  }
+
+  &.hds-alert--info {
+    background-color: var(--hds-ui-colors-warning-yellow-light-fill);
+
+    &::before {
+      /* More info about mask image: https://codepen.io/noahblon/pen/PovZva */
+      mask-image: var(--_hds-info-circle);
+      background-color: var(--hds-ui-colors-black);
+    }
+  }
+
+  &.hds-alert--success {
+    background-color: var(--hds-bring-colors-light-green);
+    color: var(--hds-bring-colors-darker-green);
+
+    &::before {
+      mask-image: var(--_hds-check-circle);
+      background-color: var(--hds-bring-colors-darker-green);
+    }
+  }
+
+  &.hds-alert--warning {
+    background-color: var(--hds-ui-colors-warning-yellow);
+
+    &::before {
+      mask-image: var(--_hds-warning);
+      background-color: var(--hds-ui-colors-black);
+    }
+  }
+
+  &.hds-alert--error {
+    background-color: var(--hds-posten-colors-dark-red);
+    color: var(--hds-ui-colors-white);
+
+    &::before {
+      background-color: var(--hds-ui-colors-white);
+      mask-image: var(--_hds-error);
+    }
+  }
+
+  &.hds-alert--neutral {
+    background-color: var(--hds-ui-colors-light-grey-fill);
+
+    .hds-alert__title {
+      margin-top: 2px;
+    }
+
+    /* stylelint-disable-next-line selector-class-pattern -- Custom icon is only available for the neutral variant */
+    .hds-alert--neutral__icon {
+      position: absolute;
+      top: calc(var(--hds-component-alert-padding) + var(--hds-spacing-4));
+      left: var(--hds-component-alert-padding);
+      width: var(--hds-component-alert-icon-width);
+      height: var(--hds-component-alert-icon-width);
+
+      svg {
+        vertical-align: baseline;
+      }
+    }
+  }
+
+  /* Reset margin */
+  & .hds-alert__title,
+  & .hds-alert__description {
+    margin: 0;
+  }
+
+  /* Offset to match the icon */
+  & *:is(.hds-alert__title, .hds-alert__description):first-of-type {
+    margin-top: 2px;
+  }
+
+  & .hds-alert__title {
+    font: var(--hds-typography-body-title);
+  }
+
+  & .hds-alert__title ~ .hds-alert__description {
+    margin-top: var(--hds-spacing-12-16);
+  }
+}
