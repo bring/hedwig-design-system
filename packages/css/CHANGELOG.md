@@ -1,5 +1,15 @@
 # @postenbring/hedwig-css
 
+## 2.2.0
+
+### Minor Changes
+
+- 85d26a2: Add Alert component
+
+### Patch Changes
+
+- d9fb852: Make Slim and Miniature cards links align when placed side-by-side
+
 ## 2.1.4
 
 ### Patch Changes
