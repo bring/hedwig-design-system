@@ -1,5 +1,17 @@
 # @postenbring/hedwig-react
 
+## 2.2.0
+
+### Minor Changes
+
+- 85d26a2: Add Alert component
+
+### Patch Changes
+
+- Updated dependencies [d9fb852]
+- Updated dependencies [85d26a2]
+  - @postenbring/hedwig-css@2.2.0
+
 ## 2.1.4
 
 ### Patch Changes
