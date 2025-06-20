@@ -1,0 +1,26 @@
+{
+  "colors": {
+    "$type": "color",
+    "signature": {
+      "$value": "{bring-colors.signature-green}"
+    },
+    "darker": {
+      "$value": "{bring-colors.darker-green}"
+    },
+    "dark": {
+      "$value": "{bring-colors.dark-green}"
+    },
+    "light": {
+      "$value": "{bring-colors.light-green}"
+    },
+    "lighter": {
+      "$value": "{bring-colors.lighter-green}"
+    },
+    "signature-hover": {
+      "$value": "{bring-colors.signature-green-hover}"
+    },
+    "light-hover": {
+      "$value": "{bring-colors.light-green-hover}"
+    }
+  }
+}

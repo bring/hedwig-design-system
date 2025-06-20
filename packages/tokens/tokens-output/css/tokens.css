@@ -268,3 +268,21 @@
   --hds-link-colors-hover: #00643a;
   --hds-link-colors-underline-hover: #00643a;
 }
+.hds-theme-bring-darkmode {
+  --hds-colors-signature: #56b529;
+  --hds-colors-darker: #002f19;
+  --hds-colors-dark: #00643a;
+  --hds-colors-light: #b5e099;
+  --hds-colors-lighter: #f1f7e9;
+  --hds-colors-signature-hover: #6ec943;
+  --hds-colors-light-hover: #d3e593;
+}
+.hds-theme-posten-darkmode {
+  --hds-colors-signature: #56b529;
+  --hds-colors-darker: #002f19;
+  --hds-colors-dark: #00643a;
+  --hds-colors-light: #b5e099;
+  --hds-colors-lighter: #f1f7e9;
+  --hds-colors-signature-hover: #6ec943;
+  --hds-colors-light-hover: #d3e593;
+}

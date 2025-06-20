@@ -61,7 +61,7 @@ function buildSharedCssVariables() {
 buildSharedCssVariables();
 
 function buildBrandCssVariables() {
-  for (const brand of ["posten", "bring"]) {
+  for (const brand of ["posten", "bring", "bring-darkmode", "posten-darkmode"]) {
     console.log(`🤖 Building ${brand} css variables`);
     StyleDictionary.extend({
       include: ["tokens-source/shared.json"],
@@ -94,6 +94,13 @@ function buildFinalCssVariables() {
   console.log("✨ Building final css variables");
   const postenCss = String(readFileSync(`${__dirname}/tokens-output/css/posten.css`));
   const bringCss = String(readFileSync(`${__dirname}/tokens-output/css/bring.css`));
+  const bringDarkmodeCss = String(
+    readFileSync(`${__dirname}/tokens-output/css/bring-darkmode.css`),
+  );
+  const postenDarkModeCss = String(
+    readFileSync(`${__dirname}/tokens-output/css/posten-darkmode.css`),
+  );
+
   const sharedCss = String(readFileSync(`${__dirname}/tokens-output/css/shared.css`));
 
   function extractVariables(fromString: string) {
@@ -116,6 +123,12 @@ ${printVariables(extractVariables(postenCss))}
 .hds-theme-bring {
 ${printVariables(extractVariables(bringCss))}
 }
+.hds-theme-bring-darkmode {
+${printVariables(extractVariables(bringDarkmodeCss))}
+}
+.hds-theme-posten-darkmode {
+${printVariables(extractVariables(postenDarkModeCss))}
+}
 `;
 
   writeFileSync(`${__dirname}/tokens-output/css/tokens.css`, final, "utf8");
@@ -125,7 +138,7 @@ buildFinalCssVariables();
 function cssCleanup() {
   console.log("🧹 Cleanup after css building");
   // Delete css/bring.css, css/posten.css, css/shared.css
-  const filesToDelete = ["bring", "posten", "shared"].map(
+  const filesToDelete = ["bring", "posten", "bring-darkmode", "posten-darkmode", "shared"].map(
     (brand) => `${__dirname}/tokens-output/css/${brand}.css`,
   );
   for (const file of filesToDelete) {
