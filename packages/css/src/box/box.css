@@ -4,7 +4,7 @@
 
 .hds-box {
   position: relative;
-  border-radius: var(--hds-border-radius);
+  border-radius: var(--hds-border-radius-8);
 
   &, /* Default */
   &.hds-box--light-grey {
