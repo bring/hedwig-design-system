@@ -6,8 +6,6 @@
   --hds-component-alert-icon-width: var(--hds-spacing-24);
   --hds-component-alert-spacing-between: var(--hds-spacing-16);
 
-  border-radius: var(--hds-border-radius-8);
-
   @media (--medium) {
     --hds-component-alert-spacing-between: var(--hds-spacing-24);
   }
