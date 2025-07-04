@@ -86,7 +86,7 @@ export interface ErrorSummaryListProps extends ListProps {
   size?: ListProps["size"];
 }
 export const ErrorSummaryList = forwardRef<HTMLUListElement, ErrorSummaryListProps>(
-  ({ children, style: _style, size = "small", ...rest }, ref) => (
+  ({ children, size = "small", ...rest }, ref) => (
     <UnorderedList size={size} ref={ref} {...rest}>
       {children}
     </UnorderedList>
