@@ -5,6 +5,7 @@
   gap: var(--hds-spacing-12);
 
   .hds-error-summary__title {
+    font: var(--hds-typography-body-title);
     color: var(--hds-ui-colors-white);
   }
 

@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef, type HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { Text } from "../../text";
+import { Slot } from "@radix-ui/react-slot";
 import { Box, type BoxProps } from "../../box";
 import { UnorderedList, type ListProps } from "../../list";
 import { Link } from "../../link";
@@ -37,16 +37,17 @@ interface ErrorSummaryHeadingPropsAsChild {
   as?: never;
 }
 
-export type ErrorSummaryHeadingProps = HTMLAttributes<HTMLParagraphElement> &
+export type ErrorSummaryHeadingProps = HTMLAttributes<HTMLElement> &
   ErrorSummaryHeadingPropsAutoFocus &
   (ErrorSummaryHeadingPropsAs | ErrorSummaryHeadingPropsAsChild);
 
 export const ErrorSummaryHeading = forwardRef<
   HTMLParagraphElement,
   ErrorSummaryHeadingProps & (ErrorSummaryHeadingPropsAs | ErrorSummaryHeadingPropsAsChild)
->(({ children, as: Tag, autoFocus = true, ...rest }, ref) => {
+>(({ asChild, children, as: Tag, autoFocus = true, ...rest }, ref) => {
   const focusRef = useRef<HTMLElement>(null);
   const mergedRef = useMergeRefs([focusRef, ref]);
+  const Component = asChild ? Slot : Tag;
 
   useEffect(() => {
     /**
@@ -62,16 +63,9 @@ export const ErrorSummaryHeading = forwardRef<
   }, []);
 
   return (
-    <Text
-      className={clsx(`hds-error-summary__title`)}
-      variant="body-title"
-      ref={mergedRef}
-      tabIndex={-1}
-      asChild
-      {...rest}
-    >
-      {Tag ? <Tag>{children}</Tag> : children}
-    </Text>
+    <Component className={clsx(`hds-error-summary__title`)} ref={mergedRef} tabIndex={-1} {...rest}>
+      {children}
+    </Component>
   );
 });
 ErrorSummaryHeading.displayName = "ErrorSummary.Heading";
