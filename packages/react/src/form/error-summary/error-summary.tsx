@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { type MessageTitleProps } from "../../message";
+import { type AlertTitleProps } from "../../alert";
 import { Text } from "../../text";
 import { Box, type BoxProps } from "../../box";
 import { UnorderedList, type ListProps } from "../../list";
@@ -38,7 +38,7 @@ interface ErrorSummaryHeadingPropsAsChild {
   as?: never;
 }
 
-export type ErrorSummaryHeadingProps = MessageTitleProps &
+export type ErrorSummaryHeadingProps = AlertTitleProps &
   ErrorSummaryHeadingPropsAutoFocus &
   (ErrorSummaryHeadingPropsAs | ErrorSummaryHeadingPropsAsChild);
 
