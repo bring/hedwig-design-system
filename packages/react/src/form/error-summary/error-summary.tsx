@@ -1,6 +1,5 @@
-import { forwardRef, useEffect, useRef } from "react";
+import { forwardRef, useEffect, useRef, type HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { type AlertTitleProps } from "../../alert";
 import { Text } from "../../text";
 import { Box, type BoxProps } from "../../box";
 import { UnorderedList, type ListProps } from "../../list";
@@ -38,7 +37,7 @@ interface ErrorSummaryHeadingPropsAsChild {
   as?: never;
 }
 
-export type ErrorSummaryHeadingProps = AlertTitleProps &
+export type ErrorSummaryHeadingProps = HTMLAttributes<HTMLParagraphElement> &
   ErrorSummaryHeadingPropsAutoFocus &
   (ErrorSummaryHeadingPropsAs | ErrorSummaryHeadingPropsAsChild);
 
