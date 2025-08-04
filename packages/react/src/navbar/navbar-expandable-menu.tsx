@@ -1,6 +1,6 @@
 import { createContext, useContext, forwardRef, useState, useEffect, useId } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { focusTrap } from "../utils/utils";
+import { focusTrap, inertPropValue } from "../utils/utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
 interface ExpandableMenuContextProps {
@@ -137,13 +137,14 @@ export const NavbarExpandableMenuContent = forwardRef<
   NavbarExpandableMenuContentProps
 >(({ children, className, ...rest }, ref) => {
   const { contentId, open } = useNavbarExpendableMenuContext();
+
   return (
     <section
       {...rest}
       id={contentId}
       className={clsx("hds-navbar__expandable-menu-content", className as undefined)}
       data-state={open ? "open" : "closed"}
-      {...{ inert: open ? undefined : "true" }}
+      {...{ inert: inertPropValue(!open) }}
       ref={ref}
     >
       <div className={clsx("hds-navbar__expandable-menu-content-inner")}>{children}</div>

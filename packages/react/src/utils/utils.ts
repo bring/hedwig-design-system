@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, version } from "react";
 
 /**
  * Merges an array of refs into a single memoized callback ref or `null`.
@@ -108,3 +108,16 @@ function releaseFocusTrap(inertElements: Iterable<HTMLElement>) {
     el.removeAttribute("inert");
   }
 }
+
+/**
+ * React 19 supports inert prop
+ * React 18 needs inert to be a string
+ */
+const inertBooleanSupported: boolean = Number(version.split(".")[0]) >= 19;
+
+/**
+ * Returns the inert prop value based on the React version.
+ */
+export const inertPropValue: (x: boolean) => boolean | "" | undefined = inertBooleanSupported
+  ? (x: boolean): boolean => x
+  : (x: boolean): "" | undefined => (x ? "" : undefined);

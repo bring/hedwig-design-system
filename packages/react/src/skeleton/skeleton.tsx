@@ -4,6 +4,7 @@
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef } from "react";
+import { inertPropValue } from "../utils";
 
 interface DimensionsFromWidthAndHeight {
   height?: number | string;
@@ -102,7 +103,7 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
         )}
         style={{ ...style, width, height }}
         aria-hidden
-        {...{ inert: "true" }}
+        {...{ inert: inertPropValue(true) }}
         ref={ref as any}
         {...(rest as any)}
       >
