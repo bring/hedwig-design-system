@@ -142,7 +142,7 @@ export const NavbarExpandableMenuContent = forwardRef<
 
   const isInert = inertBooleanSupported
     ? (x: boolean) => x
-    : (x: boolean) => (x ? "true" : undefined) as unknown as boolean; // Use undefined for React 19+ to avoid inert attribute
+    : (x: boolean) => (x ? "" : undefined) as unknown as boolean; // Use undefined for React 19+ to avoid inert attribute
 
   return (
     <section
