@@ -17,7 +17,7 @@ export const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps
       <div
         id={context.contentId}
         data-state={context.open ? "open" : "closed"}
-        {...{ inert: context.open ? undefined : "true" }}
+        {...{ inert: context.open ? undefined : true }}
         className={clsx("hds-accordion-item-content", className as undefined)}
         ref={ref}
         {...rest}

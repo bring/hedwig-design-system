@@ -143,7 +143,7 @@ export const NavbarExpandableMenuContent = forwardRef<
       id={contentId}
       className={clsx("hds-navbar__expandable-menu-content", className as undefined)}
       data-state={open ? "open" : "closed"}
-      {...{ inert: open ? undefined : "true" }}
+      {...{ inert: open ? undefined : true }}
       ref={ref}
     >
       <div className={clsx("hds-navbar__expandable-menu-content-inner")}>{children}</div>

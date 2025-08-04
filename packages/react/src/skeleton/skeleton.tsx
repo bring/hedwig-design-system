@@ -102,7 +102,7 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
         )}
         style={{ ...style, width, height }}
         aria-hidden
-        {...{ inert: "true" }}
+        {...{ inert: true }}
         ref={ref as any}
         {...(rest as any)}
       >
