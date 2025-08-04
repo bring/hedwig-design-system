@@ -115,6 +115,9 @@ function releaseFocusTrap(inertElements: Iterable<HTMLElement>) {
  */
 const inertBooleanSupported: boolean = Number(version.split(".")[0]) >= 19;
 
-export const isInert: (x: boolean) => boolean | "" | undefined = inertBooleanSupported
+/**
+ * Returns the inert prop value based on the React version.
+ */
+export const inertPropValue: (x: boolean) => boolean | "" | undefined = inertBooleanSupported
   ? (x: boolean): boolean => x
   : (x: boolean): "" | undefined => (x ? "" : undefined);
