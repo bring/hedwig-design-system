@@ -109,7 +109,11 @@ function releaseFocusTrap(inertElements: Iterable<HTMLElement>) {
   }
 }
 
-const inertBooleanSupported: boolean = Number(version.split(".")[0]) >= 19; // React 19 supports inert attribute
+/**
+ * React 19 supports inert prop
+ * React 18 needs inert to be a string
+ */
+const inertBooleanSupported: boolean = Number(version.split(".")[0]) >= 19;
 
 export const isInert: (x: boolean) => boolean | "" | undefined = inertBooleanSupported
   ? (x: boolean): boolean => x
