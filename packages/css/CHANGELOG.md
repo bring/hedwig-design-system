@@ -1,5 +1,12 @@
 # @postenbring/hedwig-css
 
+## 2.2.1
+
+### Patch Changes
+
+- cbb8105: Update Box radius and padding
+- 797d20a: Update Error Summary to new design
+
 ## 2.2.0
 
 ### Minor Changes

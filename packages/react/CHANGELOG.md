@@ -1,5 +1,15 @@
 # @postenbring/hedwig-react
 
+## 2.2.1
+
+### Patch Changes
+
+- 0ccc784: Handle `inert` prop in both React 18 and 19
+- 797d20a: Update Error Summary to new design
+- Updated dependencies [cbb8105]
+- Updated dependencies [797d20a]
+  - @postenbring/hedwig-css@2.2.1
+
 ## 2.2.0
 
 ### Minor Changes
