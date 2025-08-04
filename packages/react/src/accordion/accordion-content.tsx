@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { forwardRef, useContext } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { isInert } from "../utils";
 import { AccordionItemContext } from "./context";
 
 export interface AccordionContentProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -17,7 +18,7 @@ export const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps
       <div
         id={context.contentId}
         data-state={context.open ? "open" : "closed"}
-        {...{ inert: context.open ? undefined : "true" }}
+        {...{ inert: isInert(!context.open) }}
         className={clsx("hds-accordion-item-content", className as undefined)}
         ref={ref}
         {...rest}
