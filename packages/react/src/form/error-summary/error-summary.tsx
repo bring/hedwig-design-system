@@ -1,5 +1,7 @@
-import { forwardRef, useEffect, useRef } from "react";
-import { Message, type MessageProps, type MessageTitleProps } from "../../message";
+import { forwardRef, useEffect, useRef, type HTMLAttributes } from "react";
+import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { Slot } from "@radix-ui/react-slot";
+import { Box, type BoxProps } from "../../box";
 import { UnorderedList, type ListProps } from "../../list";
 import { Link } from "../../link";
 import { useMergeRefs } from "../../utils";
@@ -35,16 +37,17 @@ interface ErrorSummaryHeadingPropsAsChild {
   as?: never;
 }
 
-export type ErrorSummaryHeadingProps = MessageTitleProps &
+export type ErrorSummaryHeadingProps = HTMLAttributes<HTMLElement> &
   ErrorSummaryHeadingPropsAutoFocus &
   (ErrorSummaryHeadingPropsAs | ErrorSummaryHeadingPropsAsChild);
 
 export const ErrorSummaryHeading = forwardRef<
   HTMLParagraphElement,
   ErrorSummaryHeadingProps & (ErrorSummaryHeadingPropsAs | ErrorSummaryHeadingPropsAsChild)
->(({ children, as: Tag, autoFocus = true, ...rest }, ref) => {
+>(({ asChild, children, as: Tag, autoFocus = true, ...rest }, ref) => {
   const focusRef = useRef<HTMLElement>(null);
   const mergedRef = useMergeRefs([focusRef, ref]);
+  const Component = asChild ? Slot : Tag;
 
   useEffect(() => {
     /**
@@ -60,9 +63,9 @@ export const ErrorSummaryHeading = forwardRef<
   }, []);
 
   return (
-    <Message.Title ref={mergedRef} tabIndex={-1} asChild {...rest}>
-      {Tag ? <Tag>{children}</Tag> : children}
-    </Message.Title>
+    <Component className={clsx(`hds-error-summary__title`)} ref={mergedRef} tabIndex={-1} {...rest}>
+      {children}
+    </Component>
   );
 });
 ErrorSummaryHeading.displayName = "ErrorSummary.Heading";
@@ -76,20 +79,11 @@ export interface ErrorSummaryListProps extends ListProps {
   size?: ListProps["size"];
 }
 export const ErrorSummaryList = forwardRef<HTMLUListElement, ErrorSummaryListProps>(
-  ({ children, style: _style, size = "small", ...rest }, ref) => {
-    const style = {
-      // Match the link `solid` style, which black underline
-      "--_hds-list-marker-color": "var(--hds-ui-colors-black)",
-      ..._style,
-    };
-    return (
-      <Message.Description asChild>
-        <UnorderedList size={size} ref={ref} style={style} {...rest}>
-          {children}
-        </UnorderedList>
-      </Message.Description>
-    );
-  },
+  ({ children, size = "small", ...rest }, ref) => (
+    <UnorderedList size={size} ref={ref} {...rest}>
+      {children}
+    </UnorderedList>
+  ),
 );
 ErrorSummaryList.displayName = "ErrorSummary.List";
 
@@ -118,8 +112,14 @@ export const ErrorSummaryItem = forwardRef<HTMLLIElement, ErrorSummaryItemProps>
     }
 
     return (
-      <li ref={ref} {...rest}>
-        <Link size="small" href={href} variant="solid" {...linkProps} onClick={onClick}>
+      <li className={clsx(`hds-error-summary__list-item`)} ref={ref} {...rest}>
+        <Link
+          size="small"
+          href={href}
+          variant="inverted-no-underline"
+          {...linkProps}
+          onClick={onClick}
+        >
           {children}
         </Link>
       </li>
@@ -128,16 +128,17 @@ export const ErrorSummaryItem = forwardRef<HTMLLIElement, ErrorSummaryItemProps>
 );
 ErrorSummaryItem.displayName = "ErrorSummary.Item";
 
-export type ErrorSummaryProps = Omit<MessageProps, "variant" | "icon" | "iconClassName">;
+export type ErrorSummaryProps = Omit<
+  BoxProps,
+  "variant" | "closeable" | "onClose" | "closed" | "closeButtonProps"
+>;
 
 export const ErrorSummary = forwardRef<HTMLDivElement, ErrorSummaryProps>(
-  ({ children, ...rest }, ref) => {
-    return (
-      <Message variant="warning" ref={ref} {...rest}>
-        {children}
-      </Message>
-    );
-  },
+  ({ children, className, ...rest }, ref) => (
+    <Box ref={ref} {...rest} className={clsx(`hds-error-summary`, className as undefined)}>
+      {children}
+    </Box>
+  ),
 ) as ErrorSummaryType;
 ErrorSummary.displayName = "ErrorSummary";
 

@@ -1,0 +1,15 @@
+.hds-error-summary {
+  background-color: var(--hds-posten-colors-dark-red);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hds-spacing-12);
+
+  .hds-error-summary__title {
+    font: var(--hds-typography-body-title);
+    color: var(--hds-ui-colors-white);
+  }
+
+  .hds-error-summary__list-item::marker {
+    color: var(--hds-ui-colors-white);
+  }
+}
