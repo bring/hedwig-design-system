@@ -1,4 +1,4 @@
-import { createContext, useContext, forwardRef, useState, useEffect, useId } from "react";
+import { createContext, useContext, forwardRef, useState, useEffect, useId, version } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { focusTrap } from "../utils/utils";
 import { CloseIcon, MenuIcon } from "./icons";
@@ -137,13 +137,20 @@ export const NavbarExpandableMenuContent = forwardRef<
   NavbarExpandableMenuContentProps
 >(({ children, className, ...rest }, ref) => {
   const { contentId, open } = useNavbarExpendableMenuContext();
+
+  const inertBooleanSupported = Number(version.split(".")[0]) >= 19; // React 19 supports inert attribute
+
+  const isInert = inertBooleanSupported
+    ? (x: boolean) => x
+    : (x: boolean) => (x ? "true" : undefined) as unknown as boolean; // Use undefined for React 19+ to avoid inert attribute
+
   return (
     <section
       {...rest}
       id={contentId}
       className={clsx("hds-navbar__expandable-menu-content", className as undefined)}
       data-state={open ? "open" : "closed"}
-      {...{ inert: open ? undefined : "true" }}
+      {...{ inert: isInert(!open) }}
       ref={ref}
     >
       <div className={clsx("hds-navbar__expandable-menu-content-inner")}>{children}</div>
