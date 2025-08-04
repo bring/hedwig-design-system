@@ -1,6 +1,6 @@
-import { createContext, useContext, forwardRef, useState, useEffect, useId, version } from "react";
+import { createContext, useContext, forwardRef, useState, useEffect, useId } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { focusTrap } from "../utils/utils";
+import { focusTrap, isInert } from "../utils/utils";
 import { CloseIcon, MenuIcon } from "./icons";
 
 interface ExpandableMenuContextProps {
@@ -137,12 +137,6 @@ export const NavbarExpandableMenuContent = forwardRef<
   NavbarExpandableMenuContentProps
 >(({ children, className, ...rest }, ref) => {
   const { contentId, open } = useNavbarExpendableMenuContext();
-
-  const inertBooleanSupported = Number(version.split(".")[0]) >= 19; // React 19 supports inert attribute
-
-  const isInert = inertBooleanSupported
-    ? (x: boolean) => x
-    : (x: boolean) => (x ? "" : undefined) as unknown as boolean; // Use undefined for React 19+ to avoid inert attribute
 
   return (
     <section
