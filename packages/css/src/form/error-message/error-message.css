@@ -1,9 +1,10 @@
 @import url("../../_icons.css");
 
 .hds-error-message {
-  font: var(--hds-typography-caption-title);
-  color: var(--hds-ui-colors-black);
-  padding: var(--hds-spacing-8) 0 0 var(--hds-spacing-40);
+  font: var(--hds-typography-body);
+  color: var(--hds-posten-colors-dark-red);
+  display: flex;
+  gap: var(--hds-spacing-8);
 
   /**
    * Avoid spacing when no errors are active, but keep the element always in DOM so `aria-live` works.
@@ -20,9 +21,14 @@
   }
 
   &:not(:empty) {
-    background-image: var(--_hds-warning-yellow);
-    background-repeat: no-repeat;
-    background-position-x: var(--hds-spacing-8);
-    background-position-y: var(--hds-spacing-4);
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-top: var(--hds-spacing-4);
+      width: 20px;
+      height: 20px;
+      background-color: var(--hds-posten-colors-dark-red);
+      mask-image: var(--_hds-error);
+    }
   }
 }
