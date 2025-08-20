@@ -25,8 +25,8 @@
       content: "";
       display: inline-block;
       margin-top: var(--hds-spacing-4);
-      width: 20px;
-      height: 20px;
+      width: var(--hds-spacing-20);
+      height: var(--hds-spacing-20);
       background-color: var(--hds-posten-colors-dark-red);
       mask-image: var(--_hds-error);
     }
