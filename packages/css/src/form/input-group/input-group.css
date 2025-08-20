@@ -1,3 +1,5 @@
+@import url("../../_icons.css");
+
 .hds-input-group {
   --hds-input-group-background-color: var(--hds-ui-colors-white);
 
@@ -26,8 +28,6 @@
   }
 
   & .hds-input-group__label {
-    transition: color var(--hds-micro-animation-duration-quick)
-      var(--hds-micro-animation-easing-normal);
     font: var(--hds-typography-body-title);
   }
 
@@ -37,6 +37,25 @@
   */
   &:has(input.hds-input-group__input:disabled, textarea.hds-input-group__input:disabled) {
     opacity: 0.5;
+  }
+
+  &:has(
+      input.hds-input-group__input:read-only:not(:disabled),
+      textarea.hds-input-group__input:read-only:not(:disabled)
+    )
+    .hds-input-group__label {
+    display: flex;
+    gap: var(--hds-spacing-4);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-top: var(--hds-spacing-4);
+      width: var(--hds-spacing-24);
+      height: var(--hds-spacing-24);
+      background-color: var(--hds-ui-colors-black);
+      mask-image: var(--_hds-lock);
+    }
   }
 
   & .hds-input-group__input-wrapper {
