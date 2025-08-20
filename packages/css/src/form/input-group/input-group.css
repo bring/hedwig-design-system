@@ -50,7 +50,7 @@
     &::before {
       content: "";
       display: inline-block;
-      margin-top: var(--hds-spacing-4);
+      margin-top: calc(var(--hds-spacing-4) / 2);
       width: var(--hds-spacing-24);
       height: var(--hds-spacing-24);
       background-color: var(--hds-ui-colors-black);
