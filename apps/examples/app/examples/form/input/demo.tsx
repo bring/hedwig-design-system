@@ -29,5 +29,5 @@ export default Example;
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   index: 0,
-  layout: "none",
+  layout: "centered-fullwidth",
 };
