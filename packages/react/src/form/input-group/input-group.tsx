@@ -14,7 +14,7 @@ export interface InputGroupProps {
   id?: string;
   className?: string;
   style?: CSSProperties;
-  size?: "default" | "small";
+  size?: "large" | "small";
   errorMessage?: ReactNode;
   errorMessageProps?: Partial<ErrorMessageProps>;
   labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
@@ -34,7 +34,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
     id,
     className,
     style,
-    size = "default",
+    size = "large",
     errorMessage,
     errorMessageProps,
     labelProps: { className: labelClassName, ...labelProps } = {},
