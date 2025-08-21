@@ -4,7 +4,10 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { InputGroup } from "../input-group";
 import type { InputGroupProps } from "../input-group";
 
-export type InputProps = Omit<InputGroupProps & InputHTMLAttributes<HTMLInputElement>, "children">;
+export type InputProps = Omit<
+  InputGroupProps & InputHTMLAttributes<HTMLInputElement>,
+  "children" | "size"
+> & { size: "large" | "small" };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   { className, size, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
