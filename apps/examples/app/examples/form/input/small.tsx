@@ -1,5 +1,5 @@
 import "@postenbring/hedwig-css";
-import { VStack, Input, Container, Textarea, Select, Button } from "@postenbring/hedwig-react";
+import { VStack, Input, Container, Button } from "@postenbring/hedwig-react";
 
 function Example() {
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -18,15 +18,6 @@ function Example() {
             placeholder="At least 6 characters"
             size="small"
           />
-          <Textarea label="Profile bio (optional)" size="small" />
-          <Select label="Preferred animal" defaultValue="" size="small">
-            <option disabled value="">
-              Choose an animal
-            </option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="other">Other</option>
-          </Select>
           <Button size="small">Submit</Button>
         </VStack>
       </form>
