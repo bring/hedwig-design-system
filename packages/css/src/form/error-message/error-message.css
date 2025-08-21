@@ -20,15 +20,25 @@
     position: fixed;
   }
 
+  /* (X) Error icon */
   &:not(:empty) {
     &::before {
       content: "";
       display: inline-block;
-      margin-top: var(--hds-spacing-4);
-      width: var(--hds-spacing-20);
-      height: var(--hds-spacing-20);
+      margin-top: calc(var(--hds-spacing-4) / 2);
+      width: var(--hds-spacing-24);
+      height: var(--hds-spacing-24);
       background-color: var(--hds-posten-colors-dark-red);
       mask-image: var(--_hds-error);
     }
+  }
+}
+
+.hds-input-group--small .hds-error-message {
+  font: var(--hds-typography-technical);
+
+  &:not(:empty)::before {
+    width: var(--hds-spacing-20);
+    height: var(--hds-spacing-20);
   }
 }

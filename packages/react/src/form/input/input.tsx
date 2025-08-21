@@ -7,7 +7,7 @@ import type { InputGroupProps } from "../input-group";
 export type InputProps = Omit<InputGroupProps & InputHTMLAttributes<HTMLInputElement>, "children">;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { className, variant, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
+  { className, size, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
   ref,
 ) {
   return (
@@ -20,7 +20,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       labelProps={labelProps}
       readOnly={readOnly}
       style={style}
-      variant={variant}
+      size={size}
     >
       <input {...rest} disabled={disabled} readOnly={readOnly} ref={ref} />
     </InputGroup>

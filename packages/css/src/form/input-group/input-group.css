@@ -3,9 +3,43 @@
 .hds-input-group {
   --hds-input-group-background-color: var(--hds-ui-colors-white);
 
-  /* Modifier: White */
-  &.hds-input-group--white {
-    --hds-input-group-background-color: var(--hds-ui-colors-white);
+  /* Size: Small */
+  &.hds-input-group--small {
+    & .hds-input-group__label {
+      font: var(--hds-typography-technical-title);
+    }
+
+    /* 🔒 Modify Lock icon for small read-only inputs */
+    &:has(
+        input.hds-input-group__input:read-only:not(:disabled),
+        textarea.hds-input-group__input:read-only:not(:disabled)
+      )
+      .hds-input-group__label::before {
+      width: var(--hds-spacing-20);
+      height: var(--hds-spacing-20);
+      margin-top: 0.5px;
+    }
+
+    & .hds-input-group__input-wrapper {
+      &:focus-within,
+      &:has(input.hds-input-group__input:read-only,
+      textarea.hds-input-group__input:read-only):focus-within,
+      &[data-readonly="true"]:focus-within /* Fallback for :has */ {
+        /* Since the border size increases when focused, we offset the added height by decreasing the input height and padding */
+        & .hds-input-group__input {
+          height: calc(
+            (var(--hds-spacing-12) - var(--hds-stroke-thick)) * 2 +
+              var(--hds-line-height-technical-min) - var(--hds-stroke-thick)
+          );
+          padding: calc(var(--hds-spacing-8) - var(--hds-stroke-default));
+        }
+      }
+    }
+
+    & .hds-input-group__input {
+      font: var(--hds-typography-technical);
+      padding: var(--hds-spacing-8);
+    }
   }
 
   display: flex;
@@ -47,6 +81,7 @@
     display: flex;
     gap: var(--hds-spacing-4);
 
+    /* 🔒 Lock icon for read-only inputs */
     &::before {
       content: "";
       display: inline-block;
