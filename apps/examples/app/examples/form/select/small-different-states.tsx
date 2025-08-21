@@ -13,7 +13,7 @@ function Example() {
 
 function SelectExample(props: Omit<SelectProps, "children">) {
   return (
-    <Select defaultValue="" {...props}>
+    <Select defaultValue="" {...props} size="small">
       <option disabled hidden value="">
         Please select
       </option>
@@ -28,6 +28,6 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  index: 2,
+  index: 3,
   layout: "centered-fullwidth",
 };

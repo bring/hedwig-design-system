@@ -69,7 +69,11 @@
     Make the entire disabled input group appear faded
     Including the label, border and text color
   */
-  &:has(input.hds-input-group__input:disabled, textarea.hds-input-group__input:disabled) {
+  &:has(
+      input.hds-input-group__input:disabled,
+      textarea.hds-input-group__input:disabled,
+      select.hds-input-group__input:disabled
+    ) {
     opacity: 0.5;
   }
 
