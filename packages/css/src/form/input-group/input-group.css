@@ -127,7 +127,7 @@
       textarea.hds-input-group__input:read-only:not(:disabled)
     ),
     &[data-readonly="true"] /* Fallback for :has */ {
-      background-color: var(--hds-ui-colors-light-grey-fill);
+      --hds-input-group-background-color: var(--hds-ui-colors-light-grey-fill);
     }
   }
 
