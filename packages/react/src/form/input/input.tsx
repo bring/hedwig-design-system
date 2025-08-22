@@ -4,6 +4,13 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { InputGroup } from "../input-group";
 import type { InputGroupProps } from "../input-group";
 
+/**
+ * Omitting:
+ * - `size` from InputHTMLAttributes
+ * - `children` from InputGroupProps
+ * The original `size` prop that input elements have is not in use in HDS.
+ * It is overridden by styling.
+ */
 export type InputProps = Omit<
   InputGroupProps & Omit<InputHTMLAttributes<HTMLInputElement>, "size">,
   "children"
