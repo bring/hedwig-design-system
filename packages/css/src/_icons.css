@@ -69,6 +69,9 @@
 
   /* ✔︎ */
   --_hds-check-circle: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>');
+
+  /* 🔒 */
+  --_hds-lock: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.9375 9.5V7.8125C6.9375 5.03516 9.1875 2.75 12 2.75C14.7773 2.75 17.0625 5.03516 17.0625 7.8125V9.5H17.625C18.8555 9.5 19.875 10.5195 19.875 11.75V18.5C19.875 19.7656 18.8555 20.75 17.625 20.75H6.375C5.10938 20.75 4.125 19.7656 4.125 18.5V11.75C4.125 10.5195 5.10938 9.5 6.375 9.5H6.9375ZM9.1875 9.5H14.8125V7.8125C14.8125 6.26562 13.5469 5 12 5C10.418 5 9.1875 6.26562 9.1875 7.8125V9.5Z" fill="black"/></svg>');
 }
 
 .hds-theme-bring {

@@ -1,9 +1,45 @@
-.hds-input-group {
-  --hds-input-group-background-color: var(--hds-ui-colors-light-grey-fill);
+@import url("../../_icons.css");
 
-  /* Modifier: White */
-  &.hds-input-group--white {
-    --hds-input-group-background-color: var(--hds-ui-colors-white);
+.hds-input-group {
+  --hds-input-group-background-color: var(--hds-ui-colors-white);
+
+  /* Size: Small */
+  &.hds-input-group--small {
+    & .hds-input-group__label {
+      font: var(--hds-typography-technical-title);
+    }
+
+    /* 🔒 Modify Lock icon for small read-only inputs */
+    &:has(
+        input.hds-input-group__input:read-only:not(:disabled),
+        textarea.hds-input-group__input:read-only:not(:disabled)
+      )
+      .hds-input-group__label::before {
+      width: var(--hds-spacing-20);
+      height: var(--hds-spacing-20);
+      margin-top: 0.5px;
+    }
+
+    & .hds-input-group__input-wrapper {
+      &:focus-within,
+      &:has(input.hds-input-group__input:read-only,
+      textarea.hds-input-group__input:read-only):focus-within,
+      &[data-readonly="true"]:focus-within /* Fallback for :has */ {
+        /* Since the border size increases when focused, we offset the added height by decreasing the input height and padding */
+        & .hds-input-group__input {
+          height: calc(
+            (var(--hds-spacing-12) - var(--hds-stroke-thick)) * 2 +
+              var(--hds-line-height-technical-min) - var(--hds-stroke-thick)
+          );
+          padding: calc(var(--hds-spacing-8) - var(--hds-stroke-default));
+        }
+      }
+    }
+
+    & .hds-input-group__input {
+      font: var(--hds-typography-technical);
+      padding: var(--hds-spacing-8);
+    }
   }
 
   display: flex;
@@ -13,40 +49,52 @@
   /* State: Error */
   &.hds-input-group--error {
     .hds-input-group__input-wrapper,
-    .hds-input-group__input-wrapper:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only),
+    .hds-input-group__input-wrapper:has(
+      input.hds-input-group__input:read-only,
+      textarea.hds-input-group__input:read-only
+    ),
     .hds-input-group__input-wrapper[data-readonly="true"] /* Fallback for :has */,
-    .hds-input-group__input-wrapper:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only):focus-within,
-    .hds-input-group__input-wrapper:has(.hds-input-group__input:disabled),
-    .hds-input-group__input-wrapper[data-disabled="true"] /* Fallback for :has */ {
-      background-color: var(--hds-ui-colors-warning-yellow-light-fill);
-
-      &:not(:focus-within) {
-        border-bottom: var(--hds-stroke-thick) solid var(--hds-ui-colors-warning-yellow);
-      }
-
-      margin-bottom: calc(-1 * var(--hds-stroke-default));
+    .hds-input-group__input-wrapper:has(
+      input.hds-input-group__input:read-only,
+      textarea.hds-input-group__input:read-only):focus-within {
+      border-color: var(--hds-posten-colors-dark-red);
     }
   }
 
-  /* State: Focus */
-  &:focus-within .hds-input-group__label {
-    color: var(--hds-colors-dark);
-  }
-
   & .hds-input-group__label {
-    transition: color var(--hds-micro-animation-duration-quick)
-      var(--hds-micro-animation-easing-normal);
-    font: var(--hds-typography-caption);
+    font: var(--hds-typography-body-title);
   }
 
-  /* State: Read only, no focus */
+  /*
+    Make the entire disabled input group appear faded
+    Including the label, border and text color
+  */
   &:has(
-      input.hds-input-group__input:read-only,
-      textarea.hds-input-group__input:read-only,
-      .hds-input-group__input:disabled
-    ):not(:focus-within)
+      input.hds-input-group__input:disabled,
+      textarea.hds-input-group__input:disabled,
+      select.hds-input-group__input:disabled
+    ) {
+    opacity: 0.5;
+  }
+
+  &:has(
+      input.hds-input-group__input:read-only:not(:disabled),
+      textarea.hds-input-group__input:read-only:not(:disabled)
+    )
     .hds-input-group__label {
-    color: var(--hds-ui-colors-dark-grey);
+    display: flex;
+    gap: var(--hds-spacing-4);
+
+    /* 🔒 Lock icon for read-only inputs */
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-top: calc(var(--hds-spacing-4) / 2);
+      width: var(--hds-spacing-24);
+      height: var(--hds-spacing-24);
+      background-color: var(--hds-ui-colors-black);
+      mask-image: var(--_hds-lock);
+    }
   }
 
   & .hds-input-group__input-wrapper {
@@ -54,10 +102,8 @@
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    border: 0;
-    border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-dark-grey);
-    border-top-left-radius: var(--hds-border-radius);
-    border-top-right-radius: var(--hds-border-radius);
+    border: var(--hds-stroke-default) solid var(--hds-ui-colors-dark-grey);
+    border-radius: var(--hds-border-radius-8);
     transition-duration: var(--hds-micro-animation-duration-quick);
     transition-timing-function: var(--hds-micro-animation-easing-normal);
     transition-property: border-color;
@@ -67,23 +113,25 @@
     &:focus-within,
     &:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only):focus-within,
     &[data-readonly="true"]:focus-within /* Fallback for :has */ {
-      border-bottom: var(--hds-stroke-thick) solid var(--hds-colors-dark);
+      border: var(--hds-stroke-thick) solid var(--hds-colors-signature);
 
-      /* Since the border size increases when focused, we offset the added height by decreasing the margin */
-      margin-bottom: calc(-1 * var(--hds-stroke-default));
+      /* Since the border size increases when focused, we offset the added height by decreasing the input height and padding */
+      & .hds-input-group__input {
+        height: calc(
+          var(--hds-spacing-16) * 2 + var(--hds-line-height-body-small-min) -
+            var(--hds-stroke-thick)
+        );
+        padding: calc(var(--hds-spacing-16) - var(--hds-stroke-default));
+      }
     }
 
     /* State: Read only */
-    &:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only),
-    &[data-readonly="true"] /* Fallback for :has */,
-    &:has(.hds-input-group__input:disabled),
-    &[data-disabled="true"] /* Fallback for :has */ {
-      .hds-input-group__input {
-        color: var(--hds-ui-colors-dark-grey);
-      }
-
-      background-color: var(--hds-ui-colors-grey);
-      border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-grey);
+    &:has(
+      input.hds-input-group__input:read-only:not(:disabled),
+      textarea.hds-input-group__input:read-only:not(:disabled)
+    ),
+    &[data-readonly="true"] /* Fallback for :has */ {
+      --hds-input-group-background-color: var(--hds-ui-colors-light-grey-fill);
     }
   }
 
@@ -91,14 +139,13 @@
     color: var(--hds-ui-colors-black);
     width: 100%;
     padding: var(--hds-spacing-16);
-    font: var(--hds-typography-body-small);
+    font: var(--hds-typography-body);
     line-height: normal;
     border: 0;
     background: transparent;
 
     &::placeholder {
       color: var(--hds-ui-colors-dark-grey);
-      opacity: 1;
     }
 
     &:focus {
