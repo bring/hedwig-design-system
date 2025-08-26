@@ -4,7 +4,7 @@ import { InputGroup } from "../input-group";
 import type { InputGroupProps } from "../input-group";
 
 export type SelectProps = Omit<
-  InputGroupProps & SelectHTMLAttributes<HTMLSelectElement>,
+  InputGroupProps & Omit<SelectHTMLAttributes<HTMLSelectElement>, "size">,
   "readOnly" | "children"
 > & { children: ReactNode };
 
