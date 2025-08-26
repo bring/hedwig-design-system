@@ -43,7 +43,7 @@ jobs:
           cp apps/docs/storybook-static/examples/index.html apps/docs/storybook-static/404.html
 
       - name: "upload"
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: apps/docs/storybook-static
 
