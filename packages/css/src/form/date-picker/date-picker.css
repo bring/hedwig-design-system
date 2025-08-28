@@ -45,7 +45,10 @@
   .hds-input-group__input {
     padding-right: calc(var(--hds-date-picker-background-size) + var(--hds-spacing-16));
     height: calc(var(--hds-spacing-16) * 2 + var(--hds-line-height-body-small-min));
-    cursor: text;
+
+    &:not(:disabled) {
+      cursor: text;
+    }
 
     &::-webkit-calendar-picker-indicator {
       display: none;
