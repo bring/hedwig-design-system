@@ -6,7 +6,7 @@ const meta: Meta<typeof Textarea> = {
   title: "Form/Textarea",
   component: Textarea,
   argTypes: {
-    variant: { control: "inline-radio", options: ["default", "white"] },
+    size: { control: "inline-radio", options: ["large", "small"] },
   },
 };
 
@@ -21,6 +21,6 @@ export const Preview: Story = {
     placeholder: "I am a placeholder",
     errorMessage: "",
     readOnly: false,
-    variant: "default",
+    size: "default",
   },
 };

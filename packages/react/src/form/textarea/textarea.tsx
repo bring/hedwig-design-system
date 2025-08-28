@@ -10,7 +10,7 @@ export type TextareaProps = Omit<
 >;
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
-  { className, variant, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
+  { className, size, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
   ref,
 ) {
   return (
@@ -23,7 +23,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
       labelProps={labelProps}
       readOnly={readOnly}
       style={style}
-      variant={variant}
+      size={size}
     >
       <textarea {...rest} disabled={disabled} readOnly={readOnly} ref={ref} />
     </InputGroup>
