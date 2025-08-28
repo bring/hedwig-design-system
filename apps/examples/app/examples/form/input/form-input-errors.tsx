@@ -50,7 +50,7 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  index: 3,
+  index: 4,
   layout: "centered-fullwidth",
   description: `Use your preferred form library to handle error messages.`,
 };

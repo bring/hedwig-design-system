@@ -4,7 +4,7 @@ import { InputGroup, type InputGroupProps } from "../input-group";
 import { useMergeRefs } from "../../utils/utils";
 
 export type DatePickerProps = Omit<
-  InputGroupProps & InputHTMLAttributes<HTMLInputElement>,
+  InputGroupProps & Omit<InputHTMLAttributes<HTMLInputElement>, "size">,
   "children" | "type"
 > & {
   /**
@@ -30,7 +30,7 @@ export type DatePickerProps = Omit<
 export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function DatePicker(
   {
     className,
-    variant,
+    size,
     errorMessage,
     labelProps,
     label,
@@ -56,7 +56,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function
       labelProps={labelProps}
       readOnly={readOnly}
       style={style}
-      variant={variant}
+      size={size}
     >
       {(inputProps) => (
         <>

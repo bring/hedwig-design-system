@@ -14,7 +14,8 @@ export interface InputGroupProps {
   id?: string;
   className?: string;
   style?: CSSProperties;
-  variant?: "default" | "white";
+  size?: "large" | "small";
+  variant?: "default";
   errorMessage?: ReactNode;
   errorMessageProps?: Partial<ErrorMessageProps>;
   labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
@@ -34,6 +35,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
     id,
     className,
     style,
+    size = "large",
     variant = "default",
     errorMessage,
     errorMessageProps,
@@ -79,6 +81,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
       className={clsx(
         "hds-input-group",
         {
+          [`hds-input-group--${size}`]: size,
           [`hds-input-group--${variant}`]: variant,
           "hds-input-group--error": errorMessage,
         },

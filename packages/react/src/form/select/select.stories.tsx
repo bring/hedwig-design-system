@@ -16,10 +16,10 @@ export const Preview: Story = {
   args: {
     label: "Default select",
     errorMessage: "",
-    variant: "default",
+    size: "large",
   },
   argTypes: {
-    variant: { control: "inline-radio", options: ["default", "white"] },
+    size: { control: "inline-radio", options: ["large", "small"] },
   },
   render: (props) => (
     <Select {...props} defaultValue="">
