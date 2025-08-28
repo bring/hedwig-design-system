@@ -21,6 +21,6 @@ export const Preview: Story = {
     placeholder: "I am a placeholder",
     errorMessage: "",
     readOnly: false,
-    size: "default",
+    size: "large",
   },
 };
