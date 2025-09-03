@@ -6,7 +6,7 @@ const meta: Meta<typeof DatePicker> = {
   title: "Form/Date Picker",
   component: DatePicker,
   argTypes: {
-    variant: { control: "inline-radio", options: ["default", "white"] },
+    size: { control: "inline-radio", options: ["large", "small"] },
   },
 };
 
