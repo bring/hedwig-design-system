@@ -1,12 +1,8 @@
 import "@postenbring/hedwig-css";
-import { Box, Input } from "@postenbring/hedwig-react";
+import { Textarea } from "@postenbring/hedwig-react";
 
 function Example() {
-  return (
-    <Box>
-      <Input label="Label" variant="white" />
-    </Box>
-  );
+  return <Textarea label="Label" size="small" />;
 }
 
 export default Example;

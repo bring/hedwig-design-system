@@ -4,10 +4,20 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { InputGroup } from "../input-group";
 import type { InputGroupProps } from "../input-group";
 
-export type InputProps = Omit<InputGroupProps & InputHTMLAttributes<HTMLInputElement>, "children">;
+/**
+ * Omitting:
+ * - `size` from InputHTMLAttributes
+ * - `children` from InputGroupProps
+ * The original `size` prop that input elements have is not in use in HDS.
+ * It is overridden by styling.
+ */
+export type InputProps = Omit<
+  InputGroupProps & Omit<InputHTMLAttributes<HTMLInputElement>, "size">,
+  "children"
+>;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { className, variant, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
+  { className, size, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
   ref,
 ) {
   return (
@@ -20,7 +30,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       labelProps={labelProps}
       readOnly={readOnly}
       style={style}
-      variant={variant}
+      size={size}
     >
       <input {...rest} disabled={disabled} readOnly={readOnly} ref={ref} />
     </InputGroup>

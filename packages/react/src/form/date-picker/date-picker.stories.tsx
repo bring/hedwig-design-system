@@ -6,7 +6,7 @@ const meta: Meta<typeof DatePicker> = {
   title: "Form/Date Picker",
   component: DatePicker,
   argTypes: {
-    variant: { control: "inline-radio", options: ["default", "white"] },
+    size: { control: "inline-radio", options: ["large", "small"] },
   },
 };
 
@@ -20,7 +20,7 @@ export const Preview: Story = {
     label: "Choose a date",
     errorMessage: "",
     readOnly: false,
-    variant: "default",
+    size: "large",
     min: "2024-04-05",
     max: "2026-04-04",
     calendarButtonTitle: "Open calendar",

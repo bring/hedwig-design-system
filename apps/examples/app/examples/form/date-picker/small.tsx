@@ -1,11 +1,15 @@
 import "@postenbring/hedwig-css";
-import { Box, Textarea } from "@postenbring/hedwig-react";
+import { DatePicker } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Box>
-      <Textarea label="Label" variant="white" />
-    </Box>
+    <DatePicker
+      label="Choose a date"
+      min="2024-04-05"
+      max="2026-04-04"
+      calendarButtonTitle="Open calendar"
+      size="small"
+    />
   );
 }
 
