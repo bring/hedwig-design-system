@@ -1,5 +1,16 @@
 # @postenbring/hedwig-react
 
+## 3.0.0
+
+### Major Changes
+
+- 5e6757d: New input style
+
+### Patch Changes
+
+- Updated dependencies [5e6757d]
+  - @postenbring/hedwig-css@3.0.0
+
 ## 2.2.1
 
 ### Patch Changes

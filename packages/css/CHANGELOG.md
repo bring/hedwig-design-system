@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 3.0.0
+
+### Major Changes
+
+- 5e6757d: New input style
+
 ## 2.2.1
 
 ### Patch Changes
