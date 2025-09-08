@@ -1,3 +1,9 @@
 .hds-input .hds-input-group__input {
   height: calc(var(--hds-spacing-16) * 2 + var(--hds-line-height-body-small-min));
 }
+
+.hds-input.hds-input-group--small .hds-input-group__input {
+  height: calc(
+    (var(--hds-spacing-12) - var(--hds-stroke-thick)) * 2 + var(--hds-line-height-technical-min)
+  );
+}

@@ -18,9 +18,9 @@ export const Preview: Story = {
     placeholder: "I am a placeholder",
     errorMessage: "",
     readOnly: false,
-    variant: "default",
+    size: "large",
   },
   argTypes: {
-    variant: { control: "inline-radio", options: ["default", "white"] },
+    size: { control: "inline-radio", options: ["large", "small"] },
   },
 };
