@@ -1,5 +1,5 @@
 import "@postenbring/hedwig-css";
-import { Card, Link, Container } from "@postenbring/hedwig-react";
+import { Card, Link, Container, HStack } from "@postenbring/hedwig-react";
 import customerParcel from "../../assets/customer-parcel.svg";
 
 function Example() {
@@ -208,6 +208,40 @@ function Example() {
             </Card.Body>
           </Card>
         </div>
+      </Container>
+      <Container>
+        <h2>Selected components</h2>
+        <HStack
+          gap="8"
+          style={{
+            marginTop: "var(--hds-spacing-20)",
+            marginBottom: "var(--hds-spacing-20)",
+          }}
+        >
+          <Card variant="miniature">
+            <Card.Media>
+              <Card.MediaImg src={customerParcel} />
+            </Card.Media>
+            <Card.Body>
+              <Card.BodyAction>
+                <Link href="https://www.posten.no" variant="solid" target="_blank">
+                  <Card.BodyActionArrow direction="up-right" />
+                  Parcels and cargo
+                </Link>
+              </Card.BodyAction>
+            </Card.Body>
+          </Card>
+          <Card variant="miniature">
+            <Card.Body>
+              <Card.BodyAction>
+                <Link href="https://www.posten.no" variant="solid" target="_blank">
+                  <Card.BodyActionArrow direction="up-right" />
+                  Parcels and cargo
+                </Link>
+              </Card.BodyAction>
+            </Card.Body>
+          </Card>
+        </HStack>
       </Container>
     </>
   );
