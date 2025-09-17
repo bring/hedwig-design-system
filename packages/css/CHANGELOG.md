@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 3.0.2
+
+### Patch Changes
+
+- 4bdc89b: Center stand-alone body action on miniature card vertically
+
 ## 3.0.1
 
 ### Patch Changes
