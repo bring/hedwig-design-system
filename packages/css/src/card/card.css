@@ -185,7 +185,6 @@
     max-width: 60px;
     object-fit: cover;
     background-color: var(--hds-ui-colors-white);
-    margin-right: var(--hds-spacing-12-16);
   }
 
   .hds-card__body {
