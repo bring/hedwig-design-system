@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 3.0.1
+
+### Patch Changes
+
+- 009caa1: Remove margin-right from miniature card media
+
 ## 3.0.0
 
 ### Major Changes
