@@ -196,6 +196,11 @@
       font-weight: var(--hds-font-weight-body-title);
       line-height: var(--hds-line-height-body-title);
     }
+
+    .hds-card__body-action:only-child {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
   }
 }
 
