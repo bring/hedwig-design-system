@@ -73,6 +73,7 @@
   }
 
   .hds-card__body-action {
+    width: fit-content;
     margin-top: var(--hds-spacing-8-12);
   }
 
