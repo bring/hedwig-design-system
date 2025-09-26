@@ -27,7 +27,7 @@ function Example() {
               <Card.BodyDescription>
                 Our services for national and international transport
               </Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
                   Parcels and cargo
@@ -95,7 +95,7 @@ function Example() {
               <Card.BodyDescription>
                 Our services for national and international transport
               </Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
                   Parcels and cargo
@@ -163,7 +163,7 @@ function Example() {
               <Card.BodyDescription>
                 Our services for national and international transport
               </Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
                   Parcels and cargo
@@ -223,7 +223,7 @@ function Example() {
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
                   Parcels and cargo
@@ -233,7 +233,7 @@ function Example() {
           </Card>
           <Card variant="miniature">
             <Card.Body>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
                   Parcels and cargo
