@@ -3,9 +3,20 @@ import { ValidationMessage } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <ValidationMessage id="id">
-      This is a validation message for use with form input components
-    </ValidationMessage>
+    <>
+      <ValidationMessage id="id" type="info">
+        Info message
+      </ValidationMessage>
+      <ValidationMessage id="id" type="success">
+        Success message
+      </ValidationMessage>
+      <ValidationMessage id="id" type="warning">
+        Warning message
+      </ValidationMessage>
+      <ValidationMessage id="id" type="danger">
+        Danger message
+      </ValidationMessage>
+    </>
   );
 }
 
