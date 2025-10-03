@@ -29,7 +29,7 @@ function Example() {
                 <Card.BodyHeaderTitle>Information about services</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Find the right service and order</Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="#article-1" variant="solid">
                   <Card.BodyActionArrow />
                   Find a service
@@ -52,9 +52,9 @@ function Example() {
               <Card.BodyDescription>
                 Contact our customer service for help with your questions
               </Card.BodyDescription>
-              <Card.BodyAction>
-                <Card.BodyActionArrow />
+              <Card.BodyAction asChild>
                 <Link href="#article-2" variant="solid">
+                  <Card.BodyActionArrow />
                   Get in touch
                 </Link>
               </Card.BodyAction>
@@ -73,7 +73,7 @@ function Example() {
                 <Card.BodyHeaderTitle>Price enquiry</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Request a quote for your business</Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="#article-3" variant="solid">
                   <Card.BodyActionArrow />
                   Request a quote
@@ -96,7 +96,7 @@ function Example() {
               <Card.BodyDescription>
                 Familiarise yourself with regulations relating to customs and fees
               </Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="#article-4" variant="solid">
                   <Card.BodyActionArrow />
                   Find out about customs
@@ -124,7 +124,7 @@ function Example() {
                 <Card.BodyHeaderTitle>Information about services</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Find the right service and order</Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="#article-1" variant="solid">
                   <Card.BodyActionArrow />
                   Find a service
@@ -141,9 +141,9 @@ function Example() {
               <Card.BodyDescription>
                 Contact our customer service for help with your questions
               </Card.BodyDescription>
-              <Card.BodyAction>
-                <Card.BodyActionArrow />
+              <Card.BodyAction asChild>
                 <Link href="#article-2" variant="solid">
+                  <Card.BodyActionArrow />
                   Get in touch
                 </Link>
               </Card.BodyAction>
@@ -156,7 +156,7 @@ function Example() {
                 <Card.BodyHeaderTitle>Price enquiry</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Request a quote for your business</Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="#article-3" variant="solid">
                   <Card.BodyActionArrow />
                   Request a quote
@@ -173,7 +173,7 @@ function Example() {
               <Card.BodyDescription>
                 Familiarise yourself with regulations relating to customs and fees
               </Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="#article-4" variant="solid">
                   <Card.BodyActionArrow />
                   Find out about customs
@@ -207,7 +207,7 @@ function Example() {
                 <Card.BodyHeaderTitle>Information about services</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Find the right service and order</Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="#article-1" variant="solid">
                   <Card.BodyActionArrow />
                   Find a service
@@ -230,9 +230,9 @@ function Example() {
               <Card.BodyDescription>
                 Contact our customer service for help with your questions
               </Card.BodyDescription>
-              <Card.BodyAction>
-                <Card.BodyActionArrow />
+              <Card.BodyAction asChild>
                 <Link href="#article-2" variant="solid">
+                  <Card.BodyActionArrow />
                   Get in touch
                 </Link>
               </Card.BodyAction>
@@ -251,7 +251,7 @@ function Example() {
                 <Card.BodyHeaderTitle>Price enquiry</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Request a quote for your business</Card.BodyDescription>
-              <Card.BodyAction>
+              <Card.BodyAction asChild>
                 <Link href="#article-3" variant="solid">
                   <Card.BodyActionArrow />
                   Request a quote
