@@ -8,6 +8,12 @@
     background-size: var(--hds-select-background-size);
     background-position: calc(100% - var(--hds-spacing-16)) 50%;
     background-repeat: no-repeat;
+
+    &:focus-within .hds-input-group__input {
+      padding-right: calc(
+        var(--hds-select-background-size) + var(--hds-spacing-16) + var(--hds-stroke-thick)
+      );
+    }
   }
 
   .hds-input-group__input {
