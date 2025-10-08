@@ -34,5 +34,12 @@
     height: calc(
       (var(--hds-spacing-12) - var(--hds-stroke-thick)) * 2 + var(--hds-line-height-technical-min)
     );
+    padding-right: calc(var(--hds-select-background-size) + var(--hds-spacing-16));
+  }
+
+  .hds-input-group__input-wrapper:focus-within .hds-input-group__input {
+    padding-right: calc(
+      var(--hds-select-background-size) + var(--hds-spacing-16) - var(--hds-stroke-thick) / 2
+    );
   }
 }
