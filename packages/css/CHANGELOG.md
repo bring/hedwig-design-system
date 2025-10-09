@@ -1,5 +1,12 @@
 # @postenbring/hedwig-css
 
+## 3.0.3
+
+### Patch Changes
+
+- 76fb963: Fix select text overlap
+- 8924451: Fix card click area
+
 ## 3.0.2
 
 ### Patch Changes
