@@ -6,21 +6,21 @@ export interface ValidationMessageProps extends React.HTMLAttributes<HTMLDivElem
   id: string;
 
   /**
-   * Type of validation message
-   * @default "info"
+   * Variant of validation message
+   * @default "danger"
    */
-  type: "info" | "success" | "warning" | "danger";
+  variant?: "info" | "success" | "warning" | "danger";
   className?: string;
 }
 
 export const ValidationMessage = forwardRef<HTMLDivElement, ValidationMessageProps>(
-  ({ children, id, type = "info", className, ...rest }, ref) => {
+  ({ children, id, variant = "danger", className, ...rest }, ref) => {
     return (
       <div
         aria-live="polite"
         className={clsx(
           "hds-validation-message",
-          `hds-validation-message--${type}`,
+          `hds-validation-message--${variant}`,
           className as undefined,
         )}
         id={id}
