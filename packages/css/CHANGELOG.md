@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 3.0.4
+
+### Patch Changes
+
+- 3d82561: Prevent error icon from repeating
+
 ## 3.0.3
 
 ### Patch Changes
