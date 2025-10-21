@@ -24,7 +24,7 @@
   &:not(:empty) {
     &::before {
       content: "";
-      display: inline-block;
+      flex: 0 0 auto;
       margin-top: calc(var(--hds-spacing-4) / 2);
       width: var(--hds-spacing-24);
       height: var(--hds-spacing-24);
