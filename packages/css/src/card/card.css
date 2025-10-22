@@ -125,6 +125,10 @@
   background-color: var(--hds-colors-darker);
 }
 
+.hds-card--color-dark {
+  background-color: var(--hds-colors-dark);
+}
+
 .hds-card--focus {
   max-width: none;
   display: grid;
