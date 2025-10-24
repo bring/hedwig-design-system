@@ -10,7 +10,7 @@
    * Avoid spacing when no validation messages are active, but keep the element always in DOM so `aria-live` works.
    * Using `display: none` broke `aria-live` in some browsers.
    *
-   * It isn't enough to reset the internal spacing, when used inside a flex container it effects the layout.
+   * It isn't enough to reset the internal spacing, when used inside a flex container it affects the layout.
    * using `position: fixed` we drag it out of any such contexts
    */
   &:empty {
