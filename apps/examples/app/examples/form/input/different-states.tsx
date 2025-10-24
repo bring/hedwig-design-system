@@ -5,7 +5,7 @@ function Example() {
   return (
     <VStack gap="16-20" style={{ padding: "var(--hds-spacing-24-32) 0" }}>
       <Input label="Plain" />
-      <Input label="Error" defaultValue="Some value" errorMessage="This is invalid" />
+      <Input label="Error" defaultValue="Some value" validationMessage="This is invalid" />
       <Input label="Disabled" value="Some value" disabled />
       <Input label="Read only" value="Some value" readOnly />
       {/* This one should really never happen */}
@@ -13,7 +13,7 @@ function Example() {
         label="Read only with error"
         value="Some value"
         readOnly
-        errorMessage="This is invalid"
+        validationMessage="This is invalid"
       />
     </VStack>
   );

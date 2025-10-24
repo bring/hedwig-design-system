@@ -1,24 +1,20 @@
 import "@postenbring/hedwig-css";
 import { ValidationMessage } from "@postenbring/hedwig-react";
 
-function Example() {
-  return (
-    <>
-      <ValidationMessage id="id" type="info">
-        Info message
-      </ValidationMessage>
-      <ValidationMessage id="id" type="success">
-        Success message
-      </ValidationMessage>
-      <ValidationMessage id="id" type="warning">
-        Warning message
-      </ValidationMessage>
-      <ValidationMessage id="id" type="danger">
-        Danger message
-      </ValidationMessage>
-    </>
-  );
-}
+const Example = () => (
+  <>
+    <ValidationMessage id="id" variant="info">
+      Info message
+    </ValidationMessage>
+    <ValidationMessage id="id" variant="success">
+      Success message
+    </ValidationMessage>
+    <ValidationMessage id="id" variant="warning">
+      Warning message
+    </ValidationMessage>
+    <ValidationMessage id="id">Danger message</ValidationMessage>
+  </>
+);
 
 export default Example;
 

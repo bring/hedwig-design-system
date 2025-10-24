@@ -76,7 +76,8 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
   const renderInput = () => {
     const inputProps: InputProps = {
       "aria-describedby": validationMessageValue ? validationMessageId : undefined,
-      "aria-invalid": validationMessageValue ? true : undefined,
+      "aria-invalid":
+        validationMessageValue && validationMessageVariant === "danger" ? true : undefined,
       id: id ?? inputId,
       className: clsx("hds-input-group__input"),
     };
@@ -104,7 +105,7 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
         "hds-input-group",
         {
           [`hds-input-group--${size}`]: size,
-          "hds-input-group--error": errorMessage,
+          "hds-input-group--error": validationMessageValue && validationMessageVariant === "danger",
         },
         className as undefined,
       )}
