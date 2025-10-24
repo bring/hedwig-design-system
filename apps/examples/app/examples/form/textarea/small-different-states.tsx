@@ -6,9 +6,30 @@ function Example() {
     <VStack gap="16-20" style={{ padding: "var(--hds-spacing-24-32) 0" }}>
       <Textarea label="Plain" size="small" />
       <Textarea
-        label="Error"
+        label="Info"
         defaultValue="Some value"
-        errorMessage="This is invalid"
+        validationMessage={{ value: "Some information", variant: "info" }}
+        size="small"
+      />
+      <Textarea
+        label="Success"
+        defaultValue="Some value"
+        validationMessage={{ value: "This went really well", variant: "success" }}
+        size="small"
+      />
+      <Textarea
+        label="Warning"
+        defaultValue="Some value"
+        validationMessage={{
+          value: "You should probably fix this, but don't worry too much",
+          variant: "warning",
+        }}
+        size="small"
+      />
+      <Textarea
+        label="Danger"
+        defaultValue="Some value"
+        validationMessage="This is invalid"
         size="small"
       />
       <Textarea label="Disabled" value="Some value" disabled size="small" />

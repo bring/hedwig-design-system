@@ -11,6 +11,30 @@ function Example() {
         calendarButtonTitle="Open calendar"
       />
       <DatePicker
+        label="Info"
+        min="2024-04-05"
+        max="2026-04-04"
+        calendarButtonTitle="Open calendar"
+        validationMessage={{ value: "Some information", variant: "info" }}
+      />
+      <DatePicker
+        label="Success"
+        min="2024-04-05"
+        max="2026-04-04"
+        calendarButtonTitle="Open calendar"
+        validationMessage={{ value: "This went really well", variant: "success" }}
+      />
+      <DatePicker
+        label="Warning"
+        min="2024-04-05"
+        max="2026-04-04"
+        calendarButtonTitle="Open calendar"
+        validationMessage={{
+          value: "You should probably fix this, but don't worry too much",
+          variant: "warning",
+        }}
+      />
+      <DatePicker
         label="Danger"
         min="2024-04-05"
         max="2026-04-04"
