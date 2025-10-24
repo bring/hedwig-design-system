@@ -12,11 +12,11 @@ function Example() {
         size="small"
       />
       <DatePicker
-        label="Error"
+        label="Danger"
         min="2024-04-05"
         max="2026-04-04"
         calendarButtonTitle="Open calendar"
-        errorMessage="This is invalid"
+        validationMessage="This is invalid"
         size="small"
       />
       <DatePicker
@@ -43,6 +43,6 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  index: 0,
+  index: 3,
   layout: "centered-fullwidth",
 };

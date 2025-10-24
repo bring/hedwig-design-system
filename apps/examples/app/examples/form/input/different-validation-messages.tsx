@@ -16,7 +16,7 @@ function Example() {
       <Input
         label="Warning"
         validationMessage={{
-          value: "You should fix this, but don't worry too much",
+          value: "You should probably fix this, but don't worry too much",
           variant: "warning",
         }}
       />
