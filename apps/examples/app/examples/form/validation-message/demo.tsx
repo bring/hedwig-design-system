@@ -3,16 +3,16 @@ import { ValidationMessage } from "@postenbring/hedwig-react";
 
 const Example = () => (
   <>
-    <ValidationMessage id="id" variant="info">
+    <ValidationMessage id="id-info" variant="info">
       Info message
     </ValidationMessage>
-    <ValidationMessage id="id" variant="success">
+    <ValidationMessage id="id-success" variant="success">
       Success message
     </ValidationMessage>
-    <ValidationMessage id="id" variant="warning">
+    <ValidationMessage id="id-warning" variant="warning">
       Warning message
     </ValidationMessage>
-    <ValidationMessage id="id">Danger message</ValidationMessage>
+    <ValidationMessage id="id-danger">Danger message</ValidationMessage>
   </>
 );
 
