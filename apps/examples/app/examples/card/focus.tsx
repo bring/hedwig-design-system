@@ -32,8 +32,8 @@ function Example() {
           </Card.Body>
         </Card>
 
-        <h2>Color - Dark Brand</h2>
-        <Card variant="focus" color="dark">
+        <h2>Color - Dark Brand - Image right</h2>
+        <Card variant="focus" color="dark" imagePosition="right">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
