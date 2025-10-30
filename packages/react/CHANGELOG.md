@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 3.0.5
+
+### Patch Changes
+
+- 114e12d: Add 'dark' background color for focus cards
+- Updated dependencies [114e12d]
+  - @postenbring/hedwig-css@3.0.5
+
 ## 3.0.4
 
 ### Patch Changes

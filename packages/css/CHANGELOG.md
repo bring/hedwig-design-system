@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 3.0.5
+
+### Patch Changes
+
+- 114e12d: Add 'dark' background color for focus cards
+
 ## 3.0.4
 
 ### Patch Changes
