@@ -242,7 +242,7 @@ export interface CardSlimAndMiniatureProps extends CardBaseProps {
 export interface CardFocusProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "focus";
-  color?: "darker";
+  color?: "darker" | "dark";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
    *
@@ -292,13 +292,14 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           { "hds-card--slim": variant === "slim" },
           { "hds-card--color-white": effectiveColor === "white" },
           { "hds-card--color-light-grey-fill": effectiveColor === "light-grey-fill" },
+          { "hds-card--color-dark": effectiveColor === "dark" },
           { "hds-card--color-darker": effectiveColor === "darker" },
           { "hds-card--image-position-right": imagePosition === "right" },
           className as undefined,
         )}
         ref={ref}
       >
-        {variant === "full-width" ? (
+        {variant === "full-width" || variant === "focus" ? (
           <div className={clsx("hds-card__layoutwrapper", className as undefined)}>{children}</div>
         ) : (
           children

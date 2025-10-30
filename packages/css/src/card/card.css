@@ -1,7 +1,7 @@
 @import url("../_custom-media.css");
 @import url("../_icons.css");
 @import url("../spacing/spacing.css");
-@import url("./fullwidth-card.css");
+@import url("./fullwidth-focus.css");
 
 /* stylelint-disable selector-class-pattern */
 .hds-card {
@@ -125,55 +125,8 @@
   background-color: var(--hds-colors-darker);
 }
 
-.hds-card--focus {
-  max-width: none;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-
-  @media (--large) {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .hds-card__media {
-    min-height: 220px;
-    max-height: 500px;
-    overflow: auto;
-
-    @media (--large) {
-      min-height: none;
-      max-height: none;
-    }
-  }
-
-  .hds-card__media__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .hds-card__body {
-    padding: var(--hds-spacing-32-40);
-
-    @media (--large) {
-      width: 50%;
-      height: auto;
-    }
-  }
-
-  .hds-card__body-description,
-  .hds-card__body-action {
-    margin-top: var(--hds-spacing-20-24);
-  }
-
-  .hds-card__body-header-overline {
-    color: var(--hds-colors-light);
-  }
-
-  .hds-card__body-description,
-  .hds-card__body-header-title {
-    color: var(--hds-ui-colors-white);
-  }
+.hds-card--color-dark {
+  background-color: var(--hds-colors-dark);
 }
 
 .hds-card--miniature {
