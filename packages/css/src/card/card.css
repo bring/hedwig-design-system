@@ -85,7 +85,13 @@
   .hds-card__body-action:hover {
     .hds-card__body-action-arrow {
       transform: translateX(2px);
-      background-image: var(--_hds-icons-arrow-right-dark);
+      background-color: var(--hds-colors-dark);
+    }
+
+    &.hds-link--inverted {
+      .hds-card__body-action-arrow {
+        background-color: var(--hds-ui-colors-white);
+      }
     }
 
     .hds-card__body-action-arrow-up-right {
@@ -98,7 +104,9 @@
   }
 
   .hds-card__body-action-arrow {
-    background-image: var(--_hds-icons-arrow-right);
+    background-image: none;
+    mask-image: var(--_hds-icons-arrow-right);
+    background-color: var(--hds-ui-colors-black);
     width: var(--hds-spacing-20);
     height: var(--hds-spacing-20);
     border-bottom: none;

@@ -41,6 +41,10 @@
       box-shadow: none !important;
       cursor: default;
     }
+
+    .hds-card__body-action-arrow {
+      background-color: var(--hds-ui-colors-white);
+    }
   }
 
   &.hds-link--inverted-no-underline {
