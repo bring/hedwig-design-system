@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 3.0.6
+
+### Patch Changes
+
+- 6465956: Set arrow-icon color by CSS instead of separate icons
+
 ## 3.0.5
 
 ### Patch Changes
