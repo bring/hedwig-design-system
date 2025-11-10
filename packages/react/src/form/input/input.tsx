@@ -17,7 +17,19 @@ export type InputProps = Omit<
 >;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { className, size, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
+  {
+    className,
+    size,
+    errorMessage,
+    validationMessage,
+    labelProps,
+    label,
+    id,
+    style,
+    disabled,
+    readOnly,
+    ...rest
+  },
   ref,
 ) {
   return (
@@ -25,6 +37,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       className={clsx("hds-input", className as undefined)}
       disabled={disabled}
       errorMessage={errorMessage}
+      validationMessage={validationMessage}
       id={id}
       label={label}
       labelProps={labelProps}

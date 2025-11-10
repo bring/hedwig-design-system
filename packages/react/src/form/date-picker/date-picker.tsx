@@ -32,6 +32,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function
     className,
     size,
     errorMessage,
+    validationMessage,
     labelProps,
     label,
     id,
@@ -51,6 +52,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function
       className={clsx("hds-date-picker", className as undefined)}
       disabled={disabled}
       errorMessage={errorMessage}
+      validationMessage={validationMessage}
       id={id}
       label={label}
       labelProps={labelProps}
