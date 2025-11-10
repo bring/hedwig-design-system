@@ -9,6 +9,39 @@
     },
     "surface-default": {
       "$value": "{colours-green.1}"
+    },
+    "surface-tinted": {
+      "$value": "{colours-green.2}"
+    },
+    "surface-hover": {
+      "$value": "{colours-green.3}"
+    },
+    "surface-active": {
+      "$value": "{colours-green.4}"
+    },
+    "border-default": {
+      "$value": "{colours-green.6}"
+    },
+    "border-strong": {
+      "$value": "{colours-green.7}"
+    },
+    "text-subtle": {
+      "$value": "{colours-green.7}"
+    },
+    "text-default": {
+      "$value": "{colours-green.8}"
+    },
+    "base-default": {
+      "$value": "{colours-green.5}"
+    },
+    "base-hover": {
+      "$value": "{colours-green.6}"
+    },
+    "base-active": {
+      "$value": "{colours-green.4}"
+    },
+    "base-contrast-default": {
+      "$value": "{colours-grey.13}"
     }
   },
   "colors": {
