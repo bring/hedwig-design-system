@@ -1,5 +1,5 @@
 /* eslint-disable no-console -- script */
-import { readFileSync, writeFileSync, unlinkSync } from "node:fs";
+import { readFileSync, writeFileSync /*, unlinkSync*/ } from "node:fs";
 import StyleDictionary from "style-dictionary-utils";
 import { customTypography } from "./lib/typography";
 import { customTokensParser } from "./lib/parser";
@@ -90,11 +90,44 @@ function buildBrandCssVariables() {
 }
 buildBrandCssVariables();
 
+function buildThemeColorCssVariables() {
+  for (const theme of ["dark", "light"]) {
+    for (const color of ["bring", "posten", "neutral"]) {
+      console.log(`🤖 Building ${color} for ${theme} css variables`);
+      StyleDictionary.extend({
+        include: ["tokens-source/shared.json"],
+        source: [`tokens-source/themes/${theme}/${color}.json`],
+        platforms: {
+          css: {
+            options: {
+              showFileHeader: false,
+            },
+            prefix: "hds",
+            transforms: cssTransforms,
+            files: [
+              {
+                filter: "isSource",
+                destination: `tokens-output/css/${theme}/${color}.css`,
+                format: "css/variables",
+                options: {
+                  outputReferences: false,
+                },
+              },
+            ],
+          },
+        },
+      }).buildAllPlatforms();
+    }
+  }
+}
+buildThemeColorCssVariables();
+
 function buildFinalCssVariables() {
   console.log("✨ Building final css variables");
   const postenCss = String(readFileSync(`${__dirname}/tokens-output/css/posten.css`));
   const bringCss = String(readFileSync(`${__dirname}/tokens-output/css/bring.css`));
   const sharedCss = String(readFileSync(`${__dirname}/tokens-output/css/shared.css`));
+  //const postenDarkCss = String(readFileSync(`${__dirname}/tokens-output/css/posten.css`));
 
   function extractVariables(fromString: string) {
     const variables = fromString.match(/--.+/g);
@@ -121,7 +154,7 @@ ${printVariables(extractVariables(bringCss))}
   writeFileSync(`${__dirname}/tokens-output/css/tokens.css`, final, "utf8");
 }
 buildFinalCssVariables();
-
+/*
 function cssCleanup() {
   console.log("🧹 Cleanup after css building");
   // Delete css/bring.css, css/posten.css, css/shared.css
@@ -133,7 +166,7 @@ function cssCleanup() {
   }
 }
 cssCleanup();
-
+*/
 /**
  * Javascript and Json output
  */
