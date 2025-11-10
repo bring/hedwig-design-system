@@ -1,4 +1,58 @@
 {
+  "colors-red": {
+    "$type": "color",
+    "1": {
+      "$value": "#FFF5F0"
+    },
+    "2": {
+      "$value": "#FFE3E0"
+    },
+    "3": {
+      "$value": "#FCD3CF"
+    },
+    "4": {
+      "$value": "#FFB5AF"
+    },
+    "5": {
+      "$value": "#E32D22"
+    },
+    "6": {
+      "$value": "#CA201C"
+    },
+    "7": {
+      "$value": "#980000"
+    },
+    "8": {
+      "$value": "#4A1011"
+    }
+  },
+  "colors-green": {
+    "$type": "color",
+    "1": {
+      "$value": "#F1F7E9"
+    },
+    "2": {
+      "$value": "#DDF1D0"
+    },
+    "3": {
+      "$value": "#C6E7B1"
+    },
+    "4": {
+      "$value": "#B5E099"
+    },
+    "5": {
+      "$value": "#6EC943"
+    },
+    "6": {
+      "$value": "#56B529"
+    },
+    "7": {
+      "$value": "#00643A"
+    },
+    "8": {
+      "$value": "#002F19"
+    }
+  },
   "posten-colors": {
     "$type": "color",
     "signature-red": {
