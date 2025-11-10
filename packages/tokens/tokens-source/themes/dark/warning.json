@@ -1,0 +1,23 @@
+{
+  "colours": {
+    "$type": "color",
+    "surface-default": {
+      "$value": "{colours-grey.8}"
+    },
+    "border-default": {
+      "$value": "{colours-yellow.4}"
+    },
+    "border-strong": {
+      "$value": "{colours-yellow.3}"
+    },
+    "text-default": {
+      "$value": "{colours-yellow.2}"
+    },
+    "base-default": {
+      "$value": "{colours-yellow.3}"
+    },
+    "base-contrast-default": {
+      "$value": "{colours-grey.12}"
+    }
+  }
+}
