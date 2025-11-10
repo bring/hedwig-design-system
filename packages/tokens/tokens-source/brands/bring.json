@@ -1,4 +1,16 @@
 {
+  "colours": {
+    "$type": "color",
+    "bg-default": {
+      "$value": "{colours-grey.1}"
+    },
+    "bg-tinted": {
+      "$value": "{colours-green.1}"
+    },
+    "surface-default": {
+      "$value": "{colours-green.1}"
+    }
+  },
   "colors": {
     "$type": "color",
     "signature": {
