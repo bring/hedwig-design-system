@@ -121,7 +121,7 @@ function buildThemeCssVariables() {
 buildThemeCssVariables();
 
 function buildColorCssVariables() {
-  for (const color of ["bring", "posten", "neutral", "warning"]) {
+  for (const color of ["bring", "posten", "neutral", "info", "success", "warning", "error"]) {
     console.log(`🤖 Building ${color} css variables`);
     StyleDictionary.extend({
       include: [
@@ -174,7 +174,14 @@ function buildFinalCssVariables() {
   function printVariables(variables: string[]) {
     return variables.map((variable) => `  ${variable}`).join("\n");
   }
-
+  function colorLayer(color: string) {
+    const colorCss = String(readFileSync(`${__dirname}/tokens-output/css/colors/${color}.css`));
+    return `
+@layer hds.theme.color {
+[data-color="${color}"], [data-color-scheme][data-color="${color}"] {
+${printVariables(extractVariables(colorCss))}
+}}`;
+  }
   const final = `
 :root {
 ${printVariables(extractVariables(sharedCss))}
@@ -199,6 +206,13 @@ ${darkVariables}
 ${darkVariables}
   color-scheme: dark;
 }}
+${colorLayer("bring")}
+${colorLayer("posten")}
+${colorLayer("neutral")}
+${colorLayer("info")}
+${colorLayer("success")}
+${colorLayer("warning")}
+${colorLayer("error")}
 :root, /* Default */
 .hds-theme-posten {
 ${printVariables(extractVariables(postenCss))}
