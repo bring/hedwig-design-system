@@ -159,8 +159,8 @@ function buildFinalCssVariables() {
   const postenCss = String(readFileSync(`${__dirname}/tokens-output/css/posten.css`));
   const bringCss = String(readFileSync(`${__dirname}/tokens-output/css/bring.css`));
   const sharedCss = String(readFileSync(`${__dirname}/tokens-output/css/shared.css`));
-  //const lightCss = String(readFileSync(`${__dirname}/tokens-output/css/light.css`));
-  //const darkCss = String(readFileSync(`${__dirname}/tokens-output/css/dark.css`));
+  const lightCss = String(readFileSync(`${__dirname}/tokens-output/css/light.css`));
+  const darkCss = String(readFileSync(`${__dirname}/tokens-output/css/dark.css`));
 
   function extractVariables(fromString: string) {
     const variables = fromString.match(/--.+/g);
@@ -175,6 +175,26 @@ function buildFinalCssVariables() {
 :root {
 ${printVariables(extractVariables(sharedCss))}
 }
+@layer hds.theme.color-scheme.light {
+:root, [data-color-scheme="light"] {
+${printVariables(extractVariables(lightCss))}
+  color-scheme: light;
+}}
+@media (prefers-color-scheme: light) {
+  [data-color-scheme="auto"] {
+${printVariables(extractVariables(lightCss))}
+  color-scheme: light;
+}}
+@layer hds.theme.color-scheme.dark {
+:root, [data-color-scheme="dark"] {
+${printVariables(extractVariables(darkCss))}
+  color-scheme: dark;
+}}
+@media (prefers-color-scheme: dark) {
+  [data-color-scheme="auto"] {
+${printVariables(extractVariables(darkCss))}
+  color-scheme: dark;
+}}
 :root, /* Default */
 .hds-theme-posten {
 ${printVariables(extractVariables(postenCss))}
