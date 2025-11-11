@@ -121,10 +121,14 @@ function buildThemeCssVariables() {
 buildThemeCssVariables();
 
 function buildColorCssVariables() {
-  for (const color of ["bring"]) {
+  for (const color of ["bring", "posten", "neutral", "warning"]) {
     console.log(`🤖 Building ${color} css variables`);
     StyleDictionary.extend({
-      include: ["tokens-source/shared.json", "tokens-source/themes/dark.json"],
+      include: [
+        "tokens-source/shared.json",
+        "tokens-source/themes/dark.json",
+        "tokens-source/themes/light.json",
+      ],
       source: [`tokens-source/colors/${color}.json`],
       platforms: {
         css: {
@@ -149,7 +153,6 @@ function buildColorCssVariables() {
   }
 }
 buildColorCssVariables();
-
 
 function buildFinalCssVariables() {
   console.log("✨ Building final css variables");
