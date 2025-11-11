@@ -12,6 +12,7 @@ import {
   useNavbarExpendableMenuContext,
 } from "@postenbring/hedwig-react";
 import { Outlet, useSearchParams, Link as RemixLink, useLocation } from "@remix-run/react";
+import { SunIcon, MoonIcon } from "../assets/icon-examples";
 
 import { kebabCaseToFirstLetterUpperCase } from "../components/component-examples";
 
@@ -93,7 +94,7 @@ export default function Layout() {
           </>
         )}
         <Navbar.Item>
-          <Button variant="secondary" size="small" asChild>
+          <Button variant="secondary" size="small" icon={true} asChild>
             <RemixLink
               to={{
                 search:
@@ -104,7 +105,7 @@ export default function Layout() {
                   }).toString(),
               }}
             >
-              {kebabCaseToFirstLetterUpperCase(nextMode)}
+              {nextMode === "dark" ? <MoonIcon /> : <SunIcon />}
             </RemixLink>
           </Button>
         </Navbar.Item>
