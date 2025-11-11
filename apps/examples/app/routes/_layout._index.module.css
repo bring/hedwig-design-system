@@ -1,5 +1,5 @@
 .exampleHeadingLink {
-  color: var(--hds-ui-colors-black);
+  color: var(--hds-colours-neutral-text-default);
   text-decoration: none;
 
   &:hover {
