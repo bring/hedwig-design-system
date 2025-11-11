@@ -26,10 +26,10 @@
       "$value": "{colours-green.7}"
     },
     "text-subtle": {
-      "$value": "{colours-green.7}"
+      "$value": "{colours-green.3}"
     },
     "text-default": {
-      "$value": "{colours-green.8}"
+      "$value": "{colours-green.1}"
     },
     "base-default": {
       "$value": "{colours-green.5}"
@@ -68,13 +68,13 @@
       "$value": "{colours-red.5}"
     },
     "border-strong": {
-      "$value": "{colours-red.7}"
+      "$value": "{colours-red.3}"
     },
     "text-subtle": {
-      "$value": "{colours-red.7}"
+      "$value": "{colours-red.3}"
     },
     "text-default": {
-      "$value": "{colours-red.8}"
+      "$value": "{colours-red.1}"
     },
     "base-default": {
       "$value": "{colours-red.5}"
