@@ -16,6 +16,10 @@ import { useEffect } from "react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [search] = useSearchParams();
+  const location = useLocation();
+  const isExample = isPathInExamples(location.pathname);
+  const viewOptions = parseViewOptions(location.search, isExample);
+
   return (
     <html lang="en">
       <head>
@@ -29,7 +33,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        data-color-scheme={viewOptions?.mode ? viewOptions?.mode : "auto"}
+        data-color={viewOptions?.theme ? viewOptions?.theme : ""}
+      >
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -97,8 +104,6 @@ export default function App() {
 
   return (
     <div
-      data-color-scheme={viewOptions?.mode ? viewOptions?.mode : "auto"}
-      data-color={viewOptions?.theme ? viewOptions?.theme : ""}
       className={[
         viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
         isExample && viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",
