@@ -54,6 +54,7 @@ const breakpointIndicatorValues = {
 
 export interface ViewOptions {
   theme?: "posten" | "bring";
+  mode?: "light" | "dark" | "auto";
 }
 export interface ExampleViewOptions {
   layout?: keyof typeof layoutClassNames;
@@ -66,12 +67,13 @@ export interface ExampleViewOptions {
 }
 
 function parseViewOptions(search: string, isExample: boolean): ViewOptions & ExampleViewOptions {
-  const { theme, layout, breakpointIndicator } = Object.fromEntries(
+  const { theme, mode, layout, breakpointIndicator } = Object.fromEntries(
     new URLSearchParams(search),
   ) as ViewOptions & ExampleViewOptions;
 
   return {
     theme: theme === "bring" ? theme : "posten",
+    mode: mode === "dark" ? "dark" : mode === "light" ? "light" : "auto",
     ...(isExample && {
       layout: layout! in layoutClassNames ? layout : "centered",
       breakpointIndicator:
@@ -95,6 +97,7 @@ export default function App() {
 
   return (
     <div
+      data-color-scheme={viewOptions?.mode === undefined ? "auto" : viewOptions?.mode}
       className={[
         viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
         isExample && viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",

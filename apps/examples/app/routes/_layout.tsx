@@ -19,6 +19,9 @@ export default function Layout() {
   const [search] = useSearchParams();
   const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
   const nextTheme = activeTheme === "bring" ? "posten" : "bring";
+  const activeMode =
+    search.get("mode") === "dark" ? "dark" : search.get("mode") === "light" ? "light" : "auto";
+  const nextMode = activeMode === "dark" ? "light" : "dark";
 
   /**
    * When navigating inside an SPA from the expandable menu we need to manually ensure it closes.
@@ -87,6 +90,22 @@ export default function Layout() {
             </Navbar.LinkItem>
           </>
         )}
+        <Navbar.Item>
+          <Button variant="secondary" size="small" asChild>
+            <RemixLink
+              to={{
+                search:
+                  "?" +
+                  new URLSearchParams({
+                    ...Object.fromEntries(search),
+                    mode: nextMode,
+                  }).toString(),
+              }}
+            >
+              {activeMode === "auto" ? "Light" : kebabCaseToFirstLetterUpperCase(activeMode)}
+            </RemixLink>
+          </Button>
+        </Navbar.Item>
         <Navbar.Item>
           <Button variant="secondary" size="small" asChild>
             <RemixLink
