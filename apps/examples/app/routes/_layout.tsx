@@ -17,11 +17,13 @@ import { kebabCaseToFirstLetterUpperCase } from "../components/component-example
 
 export default function Layout() {
   const [search] = useSearchParams();
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
   const nextTheme = activeTheme === "bring" ? "posten" : "bring";
   const activeMode =
     search.get("mode") === "dark" ? "dark" : search.get("mode") === "light" ? "light" : "auto";
-  const nextMode = activeMode === "dark" ? "light" : "dark";
+  const nextMode =
+    activeMode === "dark" || (prefersDark && activeMode === "auto") ? "light" : "dark";
 
   /**
    * When navigating inside an SPA from the expandable menu we need to manually ensure it closes.
@@ -102,7 +104,7 @@ export default function Layout() {
                   }).toString(),
               }}
             >
-              {activeMode === "auto" ? "Light" : kebabCaseToFirstLetterUpperCase(activeMode)}
+              {kebabCaseToFirstLetterUpperCase(nextMode)}
             </RemixLink>
           </Button>
         </Navbar.Item>
@@ -118,7 +120,7 @@ export default function Layout() {
                   }).toString(),
               }}
             >
-              {kebabCaseToFirstLetterUpperCase(activeTheme)}
+              {kebabCaseToFirstLetterUpperCase(nextTheme)}
             </RemixLink>
           </Button>
         </Navbar.Item>
