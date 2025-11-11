@@ -98,6 +98,7 @@ export default function App() {
   return (
     <div
       data-color-scheme={viewOptions?.mode ? viewOptions?.mode : "auto"}
+      data-color={viewOptions?.theme ? viewOptions?.theme : ""}
       className={[
         viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
         isExample && viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",
