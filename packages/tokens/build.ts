@@ -90,44 +90,74 @@ function buildBrandCssVariables() {
 }
 buildBrandCssVariables();
 
-function buildThemeColorCssVariables() {
+function buildThemeCssVariables() {
   for (const theme of ["dark", "light"]) {
-    for (const color of ["bring", "posten", "neutral"]) {
-      console.log(`🤖 Building ${color} for ${theme} css variables`);
-      StyleDictionary.extend({
-        include: ["tokens-source/shared.json"],
-        source: [`tokens-source/themes/${theme}/${color}.json`],
-        platforms: {
-          css: {
-            options: {
-              showFileHeader: false,
-            },
-            prefix: "hds",
-            transforms: cssTransforms,
-            files: [
-              {
-                filter: "isSource",
-                destination: `tokens-output/css/${theme}/${color}.css`,
-                format: "css/variables",
-                options: {
-                  outputReferences: false,
-                },
-              },
-            ],
+    console.log(`🤖 Building ${theme} css variables`);
+    StyleDictionary.extend({
+      include: ["tokens-source/shared.json"],
+      source: [`tokens-source/themes/${theme}.json`],
+      platforms: {
+        css: {
+          options: {
+            showFileHeader: false,
           },
+          prefix: "hds",
+          transforms: cssTransforms,
+          files: [
+            {
+              filter: "isSource",
+              destination: `tokens-output/css/${theme}.css`,
+              format: "css/variables",
+              options: {
+                outputReferences: true,
+              },
+            },
+          ],
         },
-      }).buildAllPlatforms();
-    }
+      },
+    }).buildAllPlatforms();
   }
 }
-buildThemeColorCssVariables();
+buildThemeCssVariables();
+
+function buildColorCssVariables() {
+  for (const color of ["bring"]) {
+    console.log(`🤖 Building ${color} css variables`);
+    StyleDictionary.extend({
+      include: ["tokens-source/shared.json", "tokens-source/themes/dark.json"],
+      source: [`tokens-source/colors/${color}.json`],
+      platforms: {
+        css: {
+          options: {
+            showFileHeader: false,
+          },
+          prefix: "hds",
+          transforms: cssTransforms,
+          files: [
+            {
+              filter: "isSource",
+              destination: `tokens-output/css/colors/${color}.css`,
+              format: "css/variables",
+              options: {
+                outputReferences: true,
+              },
+            },
+          ],
+        },
+      },
+    }).buildAllPlatforms();
+  }
+}
+buildColorCssVariables();
+
 
 function buildFinalCssVariables() {
   console.log("✨ Building final css variables");
   const postenCss = String(readFileSync(`${__dirname}/tokens-output/css/posten.css`));
   const bringCss = String(readFileSync(`${__dirname}/tokens-output/css/bring.css`));
   const sharedCss = String(readFileSync(`${__dirname}/tokens-output/css/shared.css`));
-  //const postenDarkCss = String(readFileSync(`${__dirname}/tokens-output/css/posten.css`));
+  //const lightCss = String(readFileSync(`${__dirname}/tokens-output/css/light.css`));
+  //const darkCss = String(readFileSync(`${__dirname}/tokens-output/css/dark.css`));
 
   function extractVariables(fromString: string) {
     const variables = fromString.match(/--.+/g);
