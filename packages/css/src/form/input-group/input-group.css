@@ -151,9 +151,5 @@
     &:focus {
       outline: 0;
     }
-
-    &:read-only:focus::placeholder {
-      /* color: var(--hds-ui-colors-dark-grey); */
-    }
   }
 }
