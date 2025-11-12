@@ -2,22 +2,22 @@
   "colors-bring": {
     "$type": "color",
     "bg-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     },
     "bg-tinted": {
-      "$value": "{colors-grey.11}"
+      "$value": "{colors-gray.11}"
     },
     "surface-default": {
-      "$value": "{colors-grey.9}"
+      "$value": "{colors-gray.9}"
     },
     "surface-tinted": {
       "$value": "{colors-green.8}"
     },
     "surface-hover": {
-      "$value": "{colors-grey.11}"
+      "$value": "{colors-gray.11}"
     },
     "surface-active": {
-      "$value": "{colors-grey.8}"
+      "$value": "{colors-gray.8}"
     },
     "border-default": {
       "$value": "{colors-green.6}"
@@ -41,28 +41,28 @@
       "$value": "{colors-green.4}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.13}"
+      "$value": "{colors-gray.13}"
     }
   },
   "colors-posten": {
     "$type": "color",
     "bg-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     },
     "bg-tinted": {
-      "$value": "{colors-grey.11}"
+      "$value": "{colors-gray.11}"
     },
     "surface-default": {
-      "$value": "{colors-grey.9}"
+      "$value": "{colors-gray.9}"
     },
     "surface-tinted": {
       "$value": "{colors-red.8}"
     },
     "surface-hover": {
-      "$value": "{colors-grey.11}"
+      "$value": "{colors-gray.11}"
     },
     "surface-active": {
-      "$value": "{colors-grey.8}"
+      "$value": "{colors-gray.8}"
     },
     "border-default": {
       "$value": "{colors-red.5}"
@@ -86,58 +86,58 @@
       "$value": "{colors-red.7}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     }
   },
   "colors-neutral": {
     "$type": "color",
     "bg-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     },
     "bg-tinted": {
-      "$value": "{colors-grey.11}"
+      "$value": "{colors-gray.11}"
     },
     "surface-default": {
-      "$value": "{colors-grey.10}"
+      "$value": "{colors-gray.10}"
     },
     "surface-tinted": {
-      "$value": "{colors-grey.9}"
+      "$value": "{colors-gray.9}"
     },
     "surface-hover": {
-      "$value": "{colors-grey.8}"
+      "$value": "{colors-gray.8}"
     },
     "surface-active": {
-      "$value": "{colors-grey.7}"
+      "$value": "{colors-gray.7}"
     },
     "border-default": {
-      "$value": "{colors-grey.7}"
+      "$value": "{colors-gray.7}"
     },
     "border-strong": {
-      "$value": "{colors-grey.5}"
+      "$value": "{colors-gray.5}"
     },
     "text-subtle": {
-      "$value": "{colors-grey.5}"
+      "$value": "{colors-gray.5}"
     },
     "text-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     },
     "base-default": {
-      "$value": "{colors-grey.10}"
+      "$value": "{colors-gray.10}"
     },
     "base-hover": {
-      "$value": "{colors-grey.8}"
+      "$value": "{colors-gray.8}"
     },
     "base-active": {
-      "$value": "{colors-grey.7}"
+      "$value": "{colors-gray.7}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.2}"
+      "$value": "{colors-gray.2}"
     }
   },
   "colors-warning": {
     "$type": "color",
     "surface-default": {
-      "$value": "{colors-grey.8}"
+      "$value": "{colors-gray.8}"
     },
     "border-default": {
       "$value": "{colors-yellow.4}"
@@ -152,7 +152,7 @@
       "$value": "{colors-yellow.3}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     }
   },
   "colors-success": {
@@ -179,7 +179,7 @@
   "colors-info": {
     "$type": "color",
     "surface-default": {
-      "$value": "{colors-grey.8}"
+      "$value": "{colors-gray.8}"
     },
     "border-default": {
       "$value": "{colors-purple.2}"
@@ -194,7 +194,7 @@
       "$value": "{colors-purple.2}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     }
   },
   "colors-error": {
@@ -215,7 +215,7 @@
       "$value": "{colors-red.7}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     }
   }
 }

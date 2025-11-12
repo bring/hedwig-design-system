@@ -53,7 +53,7 @@
       "$value": "#002F19"
     }
   },
-  "colors-grey": {
+  "colors-gray": {
     "$type": "color",
     "1": {
       "$value": "#FFFFFF"

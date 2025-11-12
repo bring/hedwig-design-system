@@ -2,7 +2,7 @@
   "colors-bring": {
     "$type": "color",
     "bg-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     },
     "bg-tinted": {
       "$value": "{colors-green.1}"
@@ -41,13 +41,13 @@
       "$value": "{colors-green.4}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.13}"
+      "$value": "{colors-gray.13}"
     }
   },
   "colors-posten": {
     "$type": "color",
     "bg-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     },
     "bg-tinted": {
       "$value": "{colors-red.1}"
@@ -86,52 +86,52 @@
       "$value": "{colors-red.7}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     }
   },
   "colors-neutral": {
     "$type": "color",
     "bg-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     },
     "bg-tinted": {
-      "$value": "{colors-grey.2}"
+      "$value": "{colors-gray.2}"
     },
     "surface-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     },
     "surface-tinted": {
-      "$value": "{colors-grey.2}"
+      "$value": "{colors-gray.2}"
     },
     "surface-hover": {
-      "$value": "{colors-grey.3}"
+      "$value": "{colors-gray.3}"
     },
     "surface-active": {
-      "$value": "{colors-grey.4}"
+      "$value": "{colors-gray.4}"
     },
     "border-default": {
-      "$value": "{colors-grey.5}"
+      "$value": "{colors-gray.5}"
     },
     "border-strong": {
-      "$value": "{colors-grey.7}"
+      "$value": "{colors-gray.7}"
     },
     "text-subtle": {
-      "$value": "{colors-grey.7}"
+      "$value": "{colors-gray.7}"
     },
     "text-default": {
-      "$value": "{colors-grey.13}"
+      "$value": "{colors-gray.13}"
     },
     "base-default": {
-      "$value": "{colors-grey.4}"
+      "$value": "{colors-gray.4}"
     },
     "base-hover": {
-      "$value": "{colors-grey.5}"
+      "$value": "{colors-gray.5}"
     },
     "base-active": {
-      "$value": "{colors-grey.6}"
+      "$value": "{colors-gray.6}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     }
   },
   "colors-warning": {
@@ -143,16 +143,16 @@
       "$value": "{colors-yellow.4}"
     },
     "border-strong": {
-      "$value": "{colors-grey.7}"
+      "$value": "{colors-gray.7}"
     },
     "text-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     },
     "base-default": {
       "$value": "{colors-yellow.3}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     }
   },
   "colors-success": {
@@ -194,7 +194,7 @@
       "$value": "{colors-yellow.1}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.12}"
+      "$value": "{colors-gray.12}"
     }
   },
   "colors-error": {
@@ -215,7 +215,7 @@
       "$value": "{colors-red.7}"
     },
     "base-contrast-default": {
-      "$value": "{colors-grey.1}"
+      "$value": "{colors-gray.1}"
     }
   }
 }
