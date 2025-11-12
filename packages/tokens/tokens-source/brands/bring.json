@@ -2,48 +2,62 @@
   "colors": {
     "$type": "color",
     "signature": {
-      "$value": "{bring-colors.signature-green}"
+      "$value": "{bring-colors.signature-green}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "darker": {
-      "$value": "{bring-colors.darker-green}"
+      "$value": "{bring-colors.darker-green}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "dark": {
-      "$value": "{bring-colors.dark-green}"
+      "$value": "{bring-colors.dark-green}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light": {
-      "$value": "{bring-colors.light-green}"
+      "$value": "{bring-colors.light-green}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "lighter": {
-      "$value": "{bring-colors.lighter-green}"
+      "$value": "{bring-colors.lighter-green}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "signature-hover": {
-      "$value": "{bring-colors.signature-green-hover}"
+      "$value": "{bring-colors.signature-green-hover}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light-hover": {
-      "$value": "{bring-colors.light-green-hover}"
+      "$value": "{bring-colors.light-green-hover}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
   },
 
   "button-colors": {
     "$type": "color",
-    "text": { "$value": "{ui-colors.black}" },
+    "text": {
+      "$value": "{ui-colors.black}",
+      "description": "@deprecated Use the new color scheme instead"
+    },
     "_deprecated": true
   },
 
   "link-colors": {
     "$type": "color",
     "text": {
-      "$value": "{ui-colors.black}"
+      "$value": "{ui-colors.black}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "underline": {
-      "$value": "{bring-colors.signature-green}"
+      "$value": "{bring-colors.signature-green}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "hover": {
-      "$value": "{bring-colors.dark-green}"
+      "$value": "{bring-colors.dark-green}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "underline-hover": {
-      "$value": "{bring-colors.dark-green}"
+      "$value": "{bring-colors.dark-green}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
   },

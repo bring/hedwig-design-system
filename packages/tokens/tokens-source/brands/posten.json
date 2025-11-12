@@ -3,62 +3,77 @@
     "$type": "color",
     "signature": {
       "$value": "{posten-colors.signature-red}",
-      "description": "@deprecated ",
-      "_deprecated": true
+      "description": "@deprecated Use the new color scheme instead"
     },
     "darker": {
-      "$value": "{posten-colors.darker-red}"
+      "$value": "{posten-colors.darker-red}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "dark": {
-      "$value": "{posten-colors.dark-red}"
+      "$value": "{posten-colors.dark-red}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light": {
-      "$value": "{posten-colors.light-red}"
+      "$value": "{posten-colors.light-red}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "lighter": {
-      "$value": "{posten-colors.lighter-red}"
+      "$value": "{posten-colors.lighter-red}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "signature-hover": {
-      "$value": "{posten-colors.signature-red-hover}"
+      "$value": "{posten-colors.signature-red-hover}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light-hover": {
-      "$value": "{posten-colors.light-red-hover}"
+      "$value": "{posten-colors.light-red-hover}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
   },
 
   "button-colors": {
     "$type": "color",
-    "text": { "$value": "{ui-colors.white}" },
+    "text": {
+      "$value": "{ui-colors.white}",
+      "description": "@deprecated Use the new color scheme instead"
+    },
     "_deprecated": true
   },
 
   "link-colors": {
     "$type": "color",
     "text": {
-      "$value": "{ui-colors.black}"
+      "$value": "{ui-colors.black}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "underline": {
-      "$value": "{posten-colors.signature-red}"
+      "$value": "{posten-colors.signature-red}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "hover": {
-      "$value": "{posten-colors.dark-red}"
+      "$value": "{posten-colors.dark-red}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "underline-hover": {
-      "$value": "{posten-colors.dark-red}"
+      "$value": "{posten-colors.dark-red}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
   },
 
   "typography": {
     "h1-display": {
-      "$value": "{typography.posten-h1-display}"
+      "$value": "{typography.posten-h1-display}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "h1": {
-      "$value": "{typography.posten-h1}"
+      "$value": "{typography.posten-h1}",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "h2": {
-      "$value": "{typography.posten-h2}"
+      "$value": "{typography.posten-h2}",
+      "description": "@deprecated Use the new color scheme instead"
     }
   },
 

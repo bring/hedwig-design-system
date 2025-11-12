@@ -2,87 +2,112 @@
   "posten-colors": {
     "$type": "color",
     "signature-red": {
-      "$value": "#e32d22"
+      "$value": "#e32d22",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "darker-red": {
-      "$value": "#4a1011"
+      "$value": "#4a1011",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "dark-red": {
-      "$value": "#980000"
+      "$value": "#980000",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light-red": {
-      "$value": "#ffb5af"
+      "$value": "#ffb5af",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "lighter-red": {
-      "$value": "#fff5f0"
+      "$value": "#fff5f0",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "signature-red-hover": {
-      "$value": "#ca201c"
+      "$value": "#ca201c",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light-red-hover": {
-      "$value": "#ffa199"
+      "$value": "#ffa199",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
   },
   "bring-colors": {
     "$type": "color",
     "signature-green": {
-      "$value": "#56b529"
+      "$value": "#56b529",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "darker-green": {
-      "$value": "#002f19"
+      "$value": "#002f19",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "dark-green": {
-      "$value": "#00643a"
+      "$value": "#00643a",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light-green": {
-      "$value": "#b5e099"
+      "$value": "#b5e099",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "lighter-green": {
-      "$value": "#f1f7e9"
+      "$value": "#f1f7e9",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "signature-green-hover": {
-      "$value": "#6ec943"
+      "$value": "#6ec943",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light-green-hover": {
-      "$value": "#d3e593"
+      "$value": "#d3e593",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
   },
   "ui-colors": {
     "$type": "color",
     "black": {
-      "$value": "#000000"
+      "$value": "#000000",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "dark-grey": {
-      "$value": "#6e6e6e"
+      "$value": "#6e6e6e",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "grey": {
-      "$value": "#d6d6d6"
+      "$value": "#d6d6d6",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light-grey-stroke": {
-      "$value": "#e4e4e4"
+      "$value": "#e4e4e4",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "light-grey-fill": {
-      "$value": "#f2f2f2"
+      "$value": "#f2f2f2",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "white": {
-      "$value": "#ffffff"
+      "$value": "#ffffff",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "warning-yellow": {
-      "$value": "#fdbb2f"
+      "$value": "#fdbb2f",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "warning-yellow-stroke": {
-      "$value": "#d68000"
+      "$value": "#d68000",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "warning-yellow-light-fill": {
-      "$value": "#fff5e0"
+      "$value": "#fff5e0",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "warning-yellow-hover": {
-      "$value": "#ffc340"
+      "$value": "#ffc340",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "black-hover": {
-      "$value": "#1e1e1e"
+      "$value": "#1e1e1e",
+      "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
   },
@@ -90,23 +115,23 @@
     "$type": "color",
     "obsidian": {
       "$value": "#121212",
-      "description": "Base color for dark mode"
+      "description": "@deprecated Use the new color scheme instead - Base color for dark mode"
     },
     "coal": {
       "$value": "#252525",
-      "description": "Background on none-clickable cards"
+      "description": "@deprecated Use the new color scheme instead - Background on none-clickable cards"
     },
     "dusk": {
       "$value": "#2c2c2c",
-      "description": "Fill inputfields, checkbox, radio buttons, toogles"
+      "description": "@deprecated Use the new color scheme instead - Fill inputfields, checkbox, radio buttons, toogles"
     },
     "spider": {
       "$value": "#333333",
-      "description": "Clickable cards or tiles"
+      "description": "@deprecated Use the new color scheme instead - Clickable cards or tiles"
     },
     "ash": {
       "$value": "#999999",
-      "description": "Default radio buttons, checkbox, label on inputsfields, toogle off  (background)"
+      "description": "@deprecated Use the new color scheme instead - Default radio buttons, checkbox, label on inputsfields, toogle off  (background)"
     },
     "_deprecated": true
   },

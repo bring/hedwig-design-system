@@ -1,35 +1,35 @@
 
 :root {
-  --hds-posten-colors-signature-red: #e32d22;
-  --hds-posten-colors-darker-red: #4a1011;
-  --hds-posten-colors-dark-red: #980000;
-  --hds-posten-colors-light-red: #ffb5af;
-  --hds-posten-colors-lighter-red: #fff5f0;
-  --hds-posten-colors-signature-red-hover: #ca201c;
-  --hds-posten-colors-light-red-hover: #ffa199;
-  --hds-bring-colors-signature-green: #56b529;
-  --hds-bring-colors-darker-green: #002f19;
-  --hds-bring-colors-dark-green: #00643a;
-  --hds-bring-colors-light-green: #b5e099;
-  --hds-bring-colors-lighter-green: #f1f7e9;
-  --hds-bring-colors-signature-green-hover: #6ec943;
-  --hds-bring-colors-light-green-hover: #d3e593;
-  --hds-ui-colors-black: #000000;
-  --hds-ui-colors-dark-grey: #6e6e6e;
-  --hds-ui-colors-grey: #d6d6d6;
-  --hds-ui-colors-light-grey-stroke: #e4e4e4;
-  --hds-ui-colors-light-grey-fill: #f2f2f2;
-  --hds-ui-colors-white: #ffffff;
-  --hds-ui-colors-warning-yellow: #fdbb2f;
-  --hds-ui-colors-warning-yellow-stroke: #d68000;
-  --hds-ui-colors-warning-yellow-light-fill: #fff5e0;
-  --hds-ui-colors-warning-yellow-hover: #ffc340;
-  --hds-ui-colors-black-hover: #1e1e1e;
-  --hds-dark-mode-colors-obsidian: #121212; /* Base color for dark mode */
-  --hds-dark-mode-colors-coal: #252525; /* Background on none-clickable cards */
-  --hds-dark-mode-colors-dusk: #2c2c2c; /* Fill inputfields, checkbox, radio buttons, toogles */
-  --hds-dark-mode-colors-spider: #333333; /* Clickable cards or tiles */
-  --hds-dark-mode-colors-ash: #999999; /* Default radio buttons, checkbox, label on inputsfields, toogle off  (background) */
+  --hds-posten-colors-signature-red: #e32d22; /* @deprecated Use the new color scheme instead */
+  --hds-posten-colors-darker-red: #4a1011; /* @deprecated Use the new color scheme instead */
+  --hds-posten-colors-dark-red: #980000; /* @deprecated Use the new color scheme instead */
+  --hds-posten-colors-light-red: #ffb5af; /* @deprecated Use the new color scheme instead */
+  --hds-posten-colors-lighter-red: #fff5f0; /* @deprecated Use the new color scheme instead */
+  --hds-posten-colors-signature-red-hover: #ca201c; /* @deprecated Use the new color scheme instead */
+  --hds-posten-colors-light-red-hover: #ffa199; /* @deprecated Use the new color scheme instead */
+  --hds-bring-colors-signature-green: #56b529; /* @deprecated Use the new color scheme instead */
+  --hds-bring-colors-darker-green: #002f19; /* @deprecated Use the new color scheme instead */
+  --hds-bring-colors-dark-green: #00643a; /* @deprecated Use the new color scheme instead */
+  --hds-bring-colors-light-green: #b5e099; /* @deprecated Use the new color scheme instead */
+  --hds-bring-colors-lighter-green: #f1f7e9; /* @deprecated Use the new color scheme instead */
+  --hds-bring-colors-signature-green-hover: #6ec943; /* @deprecated Use the new color scheme instead */
+  --hds-bring-colors-light-green-hover: #d3e593; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-black: #000000; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-dark-grey: #6e6e6e; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-grey: #d6d6d6; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-light-grey-stroke: #e4e4e4; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-light-grey-fill: #f2f2f2; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-white: #ffffff; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-warning-yellow: #fdbb2f; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-warning-yellow-stroke: #d68000; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-warning-yellow-light-fill: #fff5e0; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-warning-yellow-hover: #ffc340; /* @deprecated Use the new color scheme instead */
+  --hds-ui-colors-black-hover: #1e1e1e; /* @deprecated Use the new color scheme instead */
+  --hds-dark-mode-colors-obsidian: #121212; /* @deprecated Use the new color scheme instead - Base color for dark mode */
+  --hds-dark-mode-colors-coal: #252525; /* @deprecated Use the new color scheme instead - Background on none-clickable cards */
+  --hds-dark-mode-colors-dusk: #2c2c2c; /* @deprecated Use the new color scheme instead - Fill inputfields, checkbox, radio buttons, toogles */
+  --hds-dark-mode-colors-spider: #333333; /* @deprecated Use the new color scheme instead - Clickable cards or tiles */
+  --hds-dark-mode-colors-ash: #999999; /* @deprecated Use the new color scheme instead - Default radio buttons, checkbox, label on inputsfields, toogle off  (background) */
   --hds-breakpoint-small: 460px; /* Larger mobile phones */
   --hds-breakpoint-medium: 720px; /* Most tablets */
   --hds-breakpoint-large: 940px; /* Smaller laptops and desktop monitors. This is where the navbar goes from the mobile version to the desktop version */
@@ -567,9 +567,9 @@
 }}
 :root, /* Default */
 .hds-theme-posten {
-  --hds-typography-h1-display: 700 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-h1: 700 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h1-display: 700 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif; /* @deprecated Use the new color scheme instead */
+  --hds-typography-h1: 700 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif; /* @deprecated Use the new color scheme instead */
+  --hds-typography-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif; /* @deprecated Use the new color scheme instead */
   --hds-font-size-h1-display: clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px);
   --hds-font-size-h1-display-min: 40px;
   --hds-font-size-h1-display-max: 72px;
@@ -591,18 +591,18 @@
   --hds-font-weight-h1-display: 700;
   --hds-font-weight-h1: 700;
   --hds-font-weight-h2: 500;
-  --hds-colors-signature: #e32d22; /* @deprecated  */
-  --hds-colors-darker: #4a1011;
-  --hds-colors-dark: #980000;
-  --hds-colors-light: #ffb5af;
-  --hds-colors-lighter: #fff5f0;
-  --hds-colors-signature-hover: #ca201c;
-  --hds-colors-light-hover: #ffa199;
-  --hds-button-colors-text: #ffffff;
-  --hds-link-colors-text: #000000;
-  --hds-link-colors-underline: #e32d22;
-  --hds-link-colors-hover: #980000;
-  --hds-link-colors-underline-hover: #980000;
+  --hds-colors-signature: #e32d22; /* @deprecated Use the new color scheme instead */
+  --hds-colors-darker: #4a1011; /* @deprecated Use the new color scheme instead */
+  --hds-colors-dark: #980000; /* @deprecated Use the new color scheme instead */
+  --hds-colors-light: #ffb5af; /* @deprecated Use the new color scheme instead */
+  --hds-colors-lighter: #fff5f0; /* @deprecated Use the new color scheme instead */
+  --hds-colors-signature-hover: #ca201c; /* @deprecated Use the new color scheme instead */
+  --hds-colors-light-hover: #ffa199; /* @deprecated Use the new color scheme instead */
+  --hds-button-colors-text: #ffffff; /* @deprecated Use the new color scheme instead */
+  --hds-link-colors-text: #000000; /* @deprecated Use the new color scheme instead */
+  --hds-link-colors-underline: #e32d22; /* @deprecated Use the new color scheme instead */
+  --hds-link-colors-hover: #980000; /* @deprecated Use the new color scheme instead */
+  --hds-link-colors-underline-hover: #980000; /* @deprecated Use the new color scheme instead */
 }
 .hds-theme-bring {
   --hds-typography-h1-display: 500 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
@@ -629,16 +629,16 @@
   --hds-font-weight-h1-display: 500;
   --hds-font-weight-h1: 500;
   --hds-font-weight-h2: 500;
-  --hds-colors-signature: #56b529;
-  --hds-colors-darker: #002f19;
-  --hds-colors-dark: #00643a;
-  --hds-colors-light: #b5e099;
-  --hds-colors-lighter: #f1f7e9;
-  --hds-colors-signature-hover: #6ec943;
-  --hds-colors-light-hover: #d3e593;
-  --hds-button-colors-text: #000000;
-  --hds-link-colors-text: #000000;
-  --hds-link-colors-underline: #56b529;
-  --hds-link-colors-hover: #00643a;
-  --hds-link-colors-underline-hover: #00643a;
+  --hds-colors-signature: #56b529; /* @deprecated Use the new color scheme instead */
+  --hds-colors-darker: #002f19; /* @deprecated Use the new color scheme instead */
+  --hds-colors-dark: #00643a; /* @deprecated Use the new color scheme instead */
+  --hds-colors-light: #b5e099; /* @deprecated Use the new color scheme instead */
+  --hds-colors-lighter: #f1f7e9; /* @deprecated Use the new color scheme instead */
+  --hds-colors-signature-hover: #6ec943; /* @deprecated Use the new color scheme instead */
+  --hds-colors-light-hover: #d3e593; /* @deprecated Use the new color scheme instead */
+  --hds-button-colors-text: #000000; /* @deprecated Use the new color scheme instead */
+  --hds-link-colors-text: #000000; /* @deprecated Use the new color scheme instead */
+  --hds-link-colors-underline: #56b529; /* @deprecated Use the new color scheme instead */
+  --hds-link-colors-hover: #00643a; /* @deprecated Use the new color scheme instead */
+  --hds-link-colors-underline-hover: #00643a; /* @deprecated Use the new color scheme instead */
 }
