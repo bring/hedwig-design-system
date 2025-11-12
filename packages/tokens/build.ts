@@ -1,5 +1,5 @@
 /* eslint-disable no-console -- script */
-import { readFileSync, writeFileSync /*, unlinkSync*/ } from "node:fs";
+import { readFileSync, writeFileSync, unlinkSync } from "node:fs";
 import StyleDictionary from "style-dictionary-utils";
 import { customTypography } from "./lib/typography";
 import { customTokensParser } from "./lib/parser";
@@ -140,7 +140,7 @@ function buildColorCssVariables() {
           files: [
             {
               filter: "isSource",
-              destination: `tokens-output/css/colors/${color}.css`,
+              destination: `tokens-output/css/color-${color}.css`,
               format: "css/variables",
               options: {
                 outputReferences: true,
@@ -175,13 +175,14 @@ function buildFinalCssVariables() {
     return variables.map((variable) => `  ${variable}`).join("\n");
   }
   function colorLayer(color: string) {
-    const colorCss = String(readFileSync(`${__dirname}/tokens-output/css/colors/${color}.css`));
+    const colorCss = String(readFileSync(`${__dirname}/tokens-output/css/color-${color}.css`));
     return `
 @layer hds.theme.color {
 [data-color="${color}"], [data-color-scheme][data-color="${color}"] {
 ${printVariables(extractVariables(colorCss))}
 }}`;
   }
+
   const final = `
 :root {
 ${printVariables(extractVariables(sharedCss))}
@@ -225,19 +226,30 @@ ${printVariables(extractVariables(bringCss))}
   writeFileSync(`${__dirname}/tokens-output/css/tokens.css`, final, "utf8");
 }
 buildFinalCssVariables();
-/*
+
 function cssCleanup() {
   console.log("🧹 Cleanup after css building");
   // Delete css/bring.css, css/posten.css, css/shared.css
-  const filesToDelete = ["bring", "posten", "shared"].map(
-    (brand) => `${__dirname}/tokens-output/css/${brand}.css`,
-  );
+  const filesToDelete = [
+    "bring",
+    "posten",
+    "shared",
+    "dark",
+    "light",
+    "color-bring",
+    "color-posten",
+    "color-neutral",
+    "color-info",
+    "color-success",
+    "color-warning",
+    "color-error",
+  ].map((brand) => `${__dirname}/tokens-output/css/${brand}.css`);
   for (const file of filesToDelete) {
     unlinkSync(file);
   }
 }
 cssCleanup();
-*/
+
 /**
  * Javascript and Json output
  */
