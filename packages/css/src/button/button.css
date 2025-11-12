@@ -107,14 +107,23 @@
   }
 
   /**
+   * Disabled
+   */
+
+  &:disabled {
+    opacity: var(--hds-opacity-50);
+    cursor: default;
+  }
+
+  /**
    * Modifiers: Variants
    */
 
   &.hds-button--primary {
-    background-color: var(--hds-colours-base-default);
-    border-color: var(--hds-colours-base-default);
     color: var(--hds-colours-base-contrast-default);
     fill: var(--hds-colours-base-contrast-default);
+    background-color: var(--hds-colours-base-default);
+    border-color: var(--hds-colours-base-default);
 
     &:hover {
       background-color: var(--hds-colours-base-hover);
@@ -126,23 +135,19 @@
       border-color: var(--hds-colours-base-active);
     }
 
-    &:disabled {
-      opacity: var(--hds-opacity-50);
-
-      &:hover {
-        background-color: var(--hds-colours-base-default);
-        border-color: var(--hds-colours-base-default);
-        color: var(--hds-colours-base-contrast-default);
-        fill: var(--hds-colours-base-contrast-default);
-      }
+    &:disabled:hover {
+      color: var(--hds-colours-base-contrast-default);
+      fill: var(--hds-colours-base-contrast-default);
+      background-color: var(--hds-colours-base-default);
+      border-color: var(--hds-colours-base-default);
     }
   }
 
   &.hds-button--secondary {
-    background-color: transparent;
-    border-color: var(--hds-colours-border-default);
     color: var(--hds-colours-neutral-text-default);
     fill: var(--hds-colours-neutral-text-default);
+    background-color: transparent;
+    border-color: var(--hds-colours-border-default);
 
     &:hover {
       color: var(--hds-colours-text-subtle);
@@ -158,44 +163,39 @@
       border-color: var(--hds-colours-border-default);
     }
 
-    &:disabled {
-      opacity: var(--hds-opacity-50);
-
-      &:hover {
-        color: var(--hds-colours-neutral-text-default);
-        fill: var(--hds-colours-neutral-text-default);
-        background-color: transparent;
-        border-color: var(--hds-colours-border-default);
-      }
+    &:disabled:hover {
+      color: var(--hds-colours-neutral-text-default);
+      fill: var(--hds-colours-neutral-text-default);
+      background-color: transparent;
+      border-color: var(--hds-colours-border-default);
     }
   }
 
   &.hds-button--tertiary {
-    background-color: transparent;
-    border-color: transparent;
     color: var(--hds-colours-neutral-text-default);
     fill: var(--hds-colours-neutral-text-default);
+    background-color: transparent;
+    border-color: transparent;
 
     &:hover {
       color: var(--hds-colours-text-subtle);
       fill: var(--hds-colours-text-subtle);
       background-color: var(--hds-colours-surface-hover);
+      border-color: var(--hds-colours-surface-hover);
     }
 
     &:active {
       color: var(--hds-colours-neutral-text-default);
       fill: var(--hds-colours-neutral-text-default);
       background-color: var(--hds-colours-surface-active);
+      border-color: var(--hds-colours-surface-active);
     }
 
-    &:disabled {
-      opacity: var(--hds-opacity-50);
+    &:disabled:hover {
       color: var(--hds-colours-neutral-text-default);
       fill: var(--hds-colours-neutral-text-default);
-
-      &:hover {
-        background-color: transparent;
-      }
+      background-color: transparent;
+      border-color: transparent;
     }
   }
 
