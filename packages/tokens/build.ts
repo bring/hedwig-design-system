@@ -94,7 +94,7 @@ function buildThemeCssVariables() {
   for (const theme of ["dark", "light"]) {
     console.log(`🤖 Building ${theme} css variables`);
     StyleDictionary.extend({
-      include: ["tokens-source/shared.json"],
+      include: ["tokens-source/shared-colors.json"],
       source: [`tokens-source/themes/${theme}.json`],
       platforms: {
         css: {
@@ -109,7 +109,7 @@ function buildThemeCssVariables() {
               destination: `tokens-output/css/${theme}.css`,
               format: "css/variables",
               options: {
-                outputReferences: true,
+                outputReferences: false,
               },
             },
           ],
@@ -125,7 +125,7 @@ function buildColorCssVariables() {
     console.log(`🤖 Building ${color} css variables`);
     StyleDictionary.extend({
       include: [
-        "tokens-source/shared.json",
+        "tokens-source/shared-colors.json",
         "tokens-source/themes/dark.json",
         "tokens-source/themes/light.json",
       ],
