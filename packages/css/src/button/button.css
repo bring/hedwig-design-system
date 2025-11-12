@@ -120,80 +120,80 @@
    */
 
   &.hds-button--primary {
-    color: var(--hds-colours-base-contrast-default);
-    fill: var(--hds-colours-base-contrast-default);
-    background-color: var(--hds-colours-base-default);
-    border-color: var(--hds-colours-base-default);
+    color: var(--hds-colors-base-contrast-default);
+    fill: var(--hds-colors-base-contrast-default);
+    background-color: var(--hds-colors-base-default);
+    border-color: var(--hds-colors-base-default);
 
     &:hover {
-      background-color: var(--hds-colours-base-hover);
-      border-color: var(--hds-colours-base-hover);
+      background-color: var(--hds-colors-base-hover);
+      border-color: var(--hds-colors-base-hover);
     }
 
     &:active {
-      background-color: var(--hds-colours-base-active);
-      border-color: var(--hds-colours-base-active);
+      background-color: var(--hds-colors-base-active);
+      border-color: var(--hds-colors-base-active);
     }
 
     &:disabled:hover {
-      color: var(--hds-colours-base-contrast-default);
-      fill: var(--hds-colours-base-contrast-default);
-      background-color: var(--hds-colours-base-default);
-      border-color: var(--hds-colours-base-default);
+      color: var(--hds-colors-base-contrast-default);
+      fill: var(--hds-colors-base-contrast-default);
+      background-color: var(--hds-colors-base-default);
+      border-color: var(--hds-colors-base-default);
     }
   }
 
   &.hds-button--secondary {
-    color: var(--hds-colours-neutral-text-default);
-    fill: var(--hds-colours-neutral-text-default);
+    color: var(--hds-colors-neutral-text-default);
+    fill: var(--hds-colors-neutral-text-default);
     background-color: transparent;
-    border-color: var(--hds-colours-border-default);
+    border-color: var(--hds-colors-border-default);
 
     &:hover {
-      color: var(--hds-colours-text-subtle);
-      fill: var(--hds-colours-text-subtle);
-      background-color: var(--hds-colours-surface-hover);
-      border-color: var(--hds-colours-border-strong);
+      color: var(--hds-colors-text-subtle);
+      fill: var(--hds-colors-text-subtle);
+      background-color: var(--hds-colors-surface-hover);
+      border-color: var(--hds-colors-border-strong);
     }
 
     &:active {
-      color: var(--hds-colours-neutral-text-default);
-      fill: var(--hds-colours-neutral-text-default);
-      background-color: var(--hds-colours-surface-active);
-      border-color: var(--hds-colours-border-default);
+      color: var(--hds-colors-neutral-text-default);
+      fill: var(--hds-colors-neutral-text-default);
+      background-color: var(--hds-colors-surface-active);
+      border-color: var(--hds-colors-border-default);
     }
 
     &:disabled:hover {
-      color: var(--hds-colours-neutral-text-default);
-      fill: var(--hds-colours-neutral-text-default);
+      color: var(--hds-colors-neutral-text-default);
+      fill: var(--hds-colors-neutral-text-default);
       background-color: transparent;
-      border-color: var(--hds-colours-border-default);
+      border-color: var(--hds-colors-border-default);
     }
   }
 
   &.hds-button--tertiary {
-    color: var(--hds-colours-neutral-text-default);
-    fill: var(--hds-colours-neutral-text-default);
+    color: var(--hds-colors-neutral-text-default);
+    fill: var(--hds-colors-neutral-text-default);
     background-color: transparent;
     border-color: transparent;
 
     &:hover {
-      color: var(--hds-colours-text-subtle);
-      fill: var(--hds-colours-text-subtle);
-      background-color: var(--hds-colours-surface-hover);
-      border-color: var(--hds-colours-surface-hover);
+      color: var(--hds-colors-text-subtle);
+      fill: var(--hds-colors-text-subtle);
+      background-color: var(--hds-colors-surface-hover);
+      border-color: var(--hds-colors-surface-hover);
     }
 
     &:active {
-      color: var(--hds-colours-neutral-text-default);
-      fill: var(--hds-colours-neutral-text-default);
-      background-color: var(--hds-colours-surface-active);
-      border-color: var(--hds-colours-surface-active);
+      color: var(--hds-colors-neutral-text-default);
+      fill: var(--hds-colors-neutral-text-default);
+      background-color: var(--hds-colors-surface-active);
+      border-color: var(--hds-colors-surface-active);
     }
 
     &:disabled:hover {
-      color: var(--hds-colours-neutral-text-default);
-      fill: var(--hds-colours-neutral-text-default);
+      color: var(--hds-colors-neutral-text-default);
+      fill: var(--hds-colors-neutral-text-default);
       background-color: transparent;
       border-color: transparent;
     }

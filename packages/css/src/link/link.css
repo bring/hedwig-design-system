@@ -3,7 +3,7 @@
  */
 
 .hds-link {
-  color: var(--hds-colours-neutral-text-default);
+  color: var(--hds-colors-neutral-text-default);
   fill: currentcolor;
   transition-duration: var(--hds-micro-animation-duration-quick);
   transition-timing-function: var(--hds-micro-animation-easing-normal);
@@ -11,14 +11,14 @@
   cursor: pointer;
   text-decoration-line: underline;
   text-decoration-thickness: var(--hds-stroke-default);
-  text-decoration-color: var(--hds-colours-border-default);
+  text-decoration-color: var(--hds-colors-border-default);
   text-underline-offset: 0.25em;
 
   &:hover,
   &:active {
-    color: var(--hds-colours-text-subtle);
+    color: var(--hds-colors-text-subtle);
     fill: currentcolor;
-    text-decoration-color: var(--hds-colours-text-subtle);
+    text-decoration-color: var(--hds-colors-text-subtle);
   }
 
   /**
@@ -58,23 +58,23 @@
   }
 
   &.hds-link--no-underline {
-    color: var(--hds-colours-neutral-text-default);
+    color: var(--hds-colors-neutral-text-default);
     text-decoration: none;
 
     &:hover,
     &:active {
-      color: var(--hds-colours-text-subtle);
+      color: var(--hds-colors-text-subtle);
       text-decoration: underline;
-      text-decoration-color: var(--hds-colours-border-strong);
+      text-decoration-color: var(--hds-colors-border-strong);
     }
   }
 
   &.hds-link--solid {
-    color: var(--hds-colours-neutral-text-default);
+    color: var(--hds-colors-neutral-text-default);
     text-decoration-color: currentcolor;
 
     &:hover {
-      color: var(--hds-colours-text-subtle);
+      color: var(--hds-colors-text-subtle);
       text-decoration: none;
     }
   }

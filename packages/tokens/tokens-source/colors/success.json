@@ -1,23 +1,23 @@
 {
-  "colours": {
+  "colors": {
     "$type": "color",
     "surface-default": {
-      "$value": "{colours-success.surface-default}"
+      "$value": "{colors-success.surface-default}"
     },
     "border-default": {
-      "$value": "{colours-success.border-default}"
+      "$value": "{colors-success.border-default}"
     },
     "border-strong": {
-      "$value": "{colours-success.border-strong}"
+      "$value": "{colors-success.border-strong}"
     },
     "text-default": {
-      "$value": "{colours-success.text-default}"
+      "$value": "{colors-success.text-default}"
     },
     "base-default": {
-      "$value": "{colours-success.base-default}"
+      "$value": "{colors-success.base-default}"
     },
     "base-contrast-default": {
-      "$value": "{colours-success.base-contrast-default}"
+      "$value": "{colors-success.base-contrast-default}"
     }
   }
 }

@@ -229,7 +229,7 @@ buildFinalCssVariables();
 
 function cssCleanup() {
   console.log("🧹 Cleanup after css building");
-  // Delete css/bring.css, css/posten.css, css/shared.css
+  // Delete temporary css files
   const filesToDelete = [
     "bring",
     "posten",

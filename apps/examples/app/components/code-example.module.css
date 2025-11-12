@@ -19,9 +19,9 @@
 
   div:has(> iframe) {
     position: relative;
-    border: 1px solid var(--hds-colours-neutral-border-default);
+    border: 1px solid var(--hds-colors-neutral-border-default);
     border-radius: var(--hds-border-radius);
-    background-color: var(--hds-colours-neutral-base-active);
+    background-color: var(--hds-colors-neutral-base-active);
 
     width: 100%;
     overflow: hidden;
@@ -40,8 +40,8 @@
       gap: var(--hds-spacing-4-8);
       padding: var(--hds-spacing-8);
 
-      border-top: 1px solid var(--hds-colours-neutral-border-default);
-      background-color: var(--hds-colours-neutral-bg-default);
+      border-top: 1px solid var(--hds-colors-neutral-border-default);
+      background-color: var(--hds-colors-neutral-bg-default);
 
       div {
         display: flex;

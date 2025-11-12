@@ -1,5 +1,5 @@
 {
-  "colours-red": {
+  "colors-red": {
     "1": "#FFF5F0",
     "2": "#FFE3E0",
     "3": "#FCD3CF",
@@ -10,7 +10,7 @@
     "8": "#4A1011",
     "$type": "color"
   },
-  "colours-green": {
+  "colors-green": {
     "1": "#F1F7E9",
     "2": "#DDF1D0",
     "3": "#C6E7B1",
@@ -21,7 +21,7 @@
     "8": "#002F19",
     "$type": "color"
   },
-  "colours-grey": {
+  "colors-grey": {
     "1": "#FFFFFF",
     "2": "#F7F7F7",
     "3": "#F2F2F2",
@@ -37,14 +37,14 @@
     "13": "#000000",
     "$type": "color"
   },
-  "colours-yellow": {
+  "colors-yellow": {
     "1": "#FFF5E0",
     "2": "#FFE2A3",
     "3": "#FDBB2F",
     "4": "#D68000",
     "$type": "color"
   },
-  "colours-purple": {
+  "colors-purple": {
     "1": "#EFEEFF",
     "2": "#C6C2FF",
     "3": "#7167FE",
@@ -59,7 +59,8 @@
     "light-red": "#ffb5af",
     "lighter-red": "#fff5f0",
     "signature-red-hover": "#ca201c",
-    "light-red-hover": "#ffa199"
+    "light-red-hover": "#ffa199",
+    "_deprecated": true
   },
   "bring-colors": {
     "$type": "color",
@@ -69,7 +70,8 @@
     "light-green": "#b5e099",
     "lighter-green": "#f1f7e9",
     "signature-green-hover": "#6ec943",
-    "light-green-hover": "#d3e593"
+    "light-green-hover": "#d3e593",
+    "_deprecated": true
   },
   "ui-colors": {
     "$type": "color",
@@ -83,7 +85,8 @@
     "warning-yellow-stroke": "#d68000",
     "warning-yellow-light-fill": "#fff5e0",
     "warning-yellow-hover": "#ffc340",
-    "black-hover": "#1e1e1e"
+    "black-hover": "#1e1e1e",
+    "_deprecated": true
   },
   "dark-mode-colors": {
     "$type": "color",
@@ -91,7 +94,8 @@
     "coal": "#252525",
     "dusk": "#2c2c2c",
     "spider": "#333333",
-    "ash": "#999999"
+    "ash": "#999999",
+    "_deprecated": true
   },
   "breakpoint": {
     "$type": "dimension",

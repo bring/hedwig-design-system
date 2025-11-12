@@ -31,18 +31,18 @@
 
   &, /* Default */
   &.hds-badge--lighter {
-    background-color: var(--hds-colours-surface-tinted);
-    color: var(--hds-colours-base-active);
+    background-color: var(--hds-colors-surface-tinted);
+    color: var(--hds-colors-base-active);
   }
 
   &.hds-badge--darker {
-    background-color: var(--hds-colours-base-active);
-    color: var(--hds-colours-surface-default);
+    background-color: var(--hds-colors-base-active);
+    color: var(--hds-colors-surface-default);
   }
 
   &.hds-badge--white {
-    background-color: var(--hds-colours-surface-default);
-    color: var(--hds-colours-base-active);
+    background-color: var(--hds-colors-surface-default);
+    color: var(--hds-colors-base-active);
   }
 
   &.hds-badge--warning {

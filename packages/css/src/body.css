@@ -14,9 +14,9 @@
 }
 
 body {
-  background: var(--hds-colours-neutral-bg-default);
-  fill: var(--hds-colours-neutral-text-default);
-  color: var(--hds-colours-neutral-text-default);
+  background: var(--hds-colors-neutral-bg-default);
+  fill: var(--hds-colors-neutral-text-default);
+  color: var(--hds-colors-neutral-text-default);
 
   /* Get specificity on the same level as the font decleration in the 
    * legacy Hedwig CSS, making it possible to override by ordering */
