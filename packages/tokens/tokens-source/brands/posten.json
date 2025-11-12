@@ -2,7 +2,9 @@
   "colors": {
     "$type": "color",
     "signature": {
-      "$value": "{posten-colors.signature-red}"
+      "$value": "{posten-colors.signature-red}",
+      "description": "@deprecated ",
+      "_deprecated": true
     },
     "darker": {
       "$value": "{posten-colors.darker-red}"
@@ -21,12 +23,14 @@
     },
     "light-hover": {
       "$value": "{posten-colors.light-red-hover}"
-    }
+    },
+    "_deprecated": true
   },
 
   "button-colors": {
     "$type": "color",
-    "text": { "$value": "{ui-colors.white}" }
+    "text": { "$value": "{ui-colors.white}" },
+    "_deprecated": true
   },
 
   "link-colors": {
@@ -42,7 +46,8 @@
     },
     "underline-hover": {
       "$value": "{posten-colors.dark-red}"
-    }
+    },
+    "_deprecated": true
   },
 
   "typography": {

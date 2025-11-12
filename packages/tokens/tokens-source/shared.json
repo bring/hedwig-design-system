@@ -147,7 +147,8 @@
     },
     "light-red-hover": {
       "$value": "#ffa199"
-    }
+    },
+    "_deprecated": true
   },
   "bring-colors": {
     "$type": "color",
@@ -171,7 +172,8 @@
     },
     "light-green-hover": {
       "$value": "#d3e593"
-    }
+    },
+    "_deprecated": true
   },
   "ui-colors": {
     "$type": "color",
@@ -207,7 +209,8 @@
     },
     "black-hover": {
       "$value": "#1e1e1e"
-    }
+    },
+    "_deprecated": true
   },
   "dark-mode-colors": {
     "$type": "color",
@@ -230,7 +233,8 @@
     "ash": {
       "$value": "#999999",
       "description": "Default radio buttons, checkbox, label on inputsfields, toogle off  (background)"
-    }
+    },
+    "_deprecated": true
   },
   "breakpoint": {
     "$type": "dimension",

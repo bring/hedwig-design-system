@@ -21,12 +21,14 @@
     },
     "light-hover": {
       "$value": "{bring-colors.light-green-hover}"
-    }
+    },
+    "_deprecated": true
   },
 
   "button-colors": {
     "$type": "color",
-    "text": { "$value": "{ui-colors.black}" }
+    "text": { "$value": "{ui-colors.black}" },
+    "_deprecated": true
   },
 
   "link-colors": {
@@ -42,7 +44,8 @@
     },
     "underline-hover": {
       "$value": "{bring-colors.dark-green}"
-    }
+    },
+    "_deprecated": true
   },
 
   "typography": {
