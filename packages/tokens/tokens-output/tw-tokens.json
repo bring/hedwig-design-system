@@ -142,7 +142,7 @@
         "36px",
         "40px"
       ],
-      "fontWeight": 500,
+      "fontWeight": 700,
       "letterSpacing": "0"
     },
     "bring-h1-display": {
@@ -481,7 +481,7 @@
     "type": "number",
     "posten-h1-display": 700,
     "posten-h1": 700,
-    "posten-h2": 500,
+    "posten-h2": 700,
     "bring-h1-display": 500,
     "bring-h1": 500,
     "bring-h2": 500,
