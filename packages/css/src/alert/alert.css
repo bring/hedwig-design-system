@@ -19,6 +19,8 @@
     var(--hds-component-alert-padding) + var(--hds-component-alert-icon-width) +
       var(--hds-component-alert-spacing-between)
   );
+  color: var(--hds-colors-base-contrast-default);
+  background-color: var(--hds-colors-base-default);
 
   /* Icon placement */
   &.hds-alert--info::before,
@@ -35,19 +37,14 @@
   }
 
   &.hds-alert--info {
-    background-color: var(--hds-ui-colors-warning-yellow-light-fill);
-
     &::before {
       /* More info about mask image: https://codepen.io/noahblon/pen/PovZva */
       mask-image: var(--_hds-info-circle);
-      background-color: var(--hds-ui-colors-black);
+      background-color: var(--hds-colors-base-contrast-default);
     }
   }
 
   &.hds-alert--success {
-    background-color: var(--hds-bring-colors-light-green);
-    color: var(--hds-bring-colors-darker-green);
-
     &::before {
       mask-image: var(--_hds-check-circle);
       background-color: var(--hds-bring-colors-darker-green);
@@ -55,8 +52,6 @@
   }
 
   &.hds-alert--warning {
-    background-color: var(--hds-ui-colors-warning-yellow);
-
     &::before {
       mask-image: var(--_hds-warning);
       background-color: var(--hds-ui-colors-black);
@@ -64,9 +59,6 @@
   }
 
   &.hds-alert--error {
-    background-color: var(--hds-posten-colors-dark-red);
-    color: var(--hds-ui-colors-white);
-
     &::before {
       background-color: var(--hds-ui-colors-white);
       mask-image: var(--_hds-error);
@@ -74,8 +66,6 @@
   }
 
   &.hds-alert--neutral {
-    background-color: var(--hds-ui-colors-light-grey-fill);
-
     .hds-alert__title {
       margin-top: 2px;
     }

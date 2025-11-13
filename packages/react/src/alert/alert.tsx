@@ -61,6 +61,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
   ({ children, className, variant = "success", icon, iconClassName, ...rest }, ref) => {
     return (
       <Box
+        data-color={variant}
         className={clsx(`hds-alert`, `hds-alert--${variant}`, className as undefined)}
         ref={ref}
         {...rest}
