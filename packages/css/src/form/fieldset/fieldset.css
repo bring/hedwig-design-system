@@ -12,13 +12,10 @@
   padding: 0;
   gap: var(--hds-fieldset-spacing);
 
-  &:focus-within .hds-fieldset__legend {
-    color: var(--hds-colors-darker);
-  }
-
   & .hds-fieldset__legend,
   & .hds-fieldset__legend--default {
     padding: 0;
+    color: var(--hds-colors-neutral-text-default);
     margin-bottom: var(--hds-fieldset-spacing);
     transition: color var(--hds-micro-animation-duration-quick)
       var(--hds-micro-animation-easing-normal);
