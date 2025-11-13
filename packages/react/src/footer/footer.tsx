@@ -47,7 +47,7 @@ export const FooterButtonLink = forwardRef<HTMLAnchorElement, FooterButtonLinkPr
   ({ children, className, asChild, ...rest }, ref) => {
     const Component = asChild ? Slot : "a";
     return (
-      <Button asChild variant="inverted" className={clsx(className as undefined)}>
+      <Button asChild variant="secondary" className={clsx(className as undefined)}>
         <Component ref={ref} {...rest}>
           {children}
         </Component>
@@ -141,6 +141,7 @@ export const Footer = forwardRef<HTMLDivElement, FooterProps>(
     const Component = asChild ? Slot : "footer";
     return (
       <Component
+        data-color-scheme="dark"
         className={clsx(
           `hds-footer`,
           variant === "slim" && "hds-footer--slim",

@@ -15,8 +15,8 @@
   border: none;
   border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-stroke);
   font: var(--hds-typography-body);
-  fill: var(--hds-ui-colors-black);
-  color: var(--hds-ui-colors-black);
+  fill: var(--hds-colors-text-subtle);
+  color: var(--hds-colors-neutral-text-default);
 
   .hds-accordion-item {
     overflow: hidden;
@@ -36,19 +36,27 @@
       border-top: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-stroke);
       text-align: left;
       background-color: transparent;
-      color: inherit;
+
+      /* color: var(--hds-colors-text-subtle); */
       font: var(--hds-typography-body);
 
       &:hover {
-        color: var(--hds-colors-dark);
+        color: var(--hds-colors-text-subtle);
         outline: 0;
       }
 
       &::before {
         content: "";
-        width: var(--hds-accordion-icon-dimension);
-        height: var(--hds-accordion-icon-dimension);
-        background-image: var(--_hds-icons-cheveron-down-dark);
+        width: 20px;
+        height: 20px;
+        mask-image: var(--_hds-accordion-chevron-up);
+        mask-size: cover;
+        background-image: none;
+        background-color: var(--hds-colors-text-subtle);
+
+        /* background-image: var(--_hds-icons-cheveron-down-dark); */
+
+        /* -webkit-mask-image: var(--_hds-icons-cheveron-down-dark); */
 
         /* Optionally animate the cheveron.
            As of 31. jan 2024 I think it looks nicer without animation on the cheveron.
@@ -60,11 +68,12 @@
       }
 
       &[data-state="open"] {
-        color: var(--hds-colors-dark);
+        color: var(--hds-colors-text-subtle);
       }
 
       &[data-state="open"]::before {
-        transform: rotate(180deg);
+        /* transform: rotate(180deg); */
+        mask-image: var(--_hds-accordion-chevron-down);
       }
     }
 

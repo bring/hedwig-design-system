@@ -4,11 +4,11 @@
 @import url("../spacing/spacing.css");
 
 .hds-footer {
-  --footer-color: var(--hds-colors-lighter);
+  --footer-color: var(--hds-colors-neutral-text-subtle);
   --footer-color-hover: var(--hds-colors-light-hover);
 
   padding: var(--hds-spacing-48) 0;
-  background-color: var(--hds-colors-darker);
+  background-color: var(--hds-colors-surface-tinted);
   color: var(--footer-color);
 
   &.hds-footer--slim {
@@ -40,14 +40,14 @@
     flex-direction: column;
     gap: var(--hds-spacing-12-16);
 
-    .hds-button {
+    /* .hds-button {
       color: var(--footer-color);
       border-color: var(--footer-color-hover);
 
       &:hover {
         color: var(--footer-color-hover);
       }
-    }
+    } */
   }
 
   /**
@@ -66,7 +66,7 @@
           filter: invert(1);
         }
 
-        color: var(--footer-color);
+        /* color: var(--footer-color); */
       }
     }
 
@@ -76,7 +76,8 @@
       .hds-footer__link-section {
         h2 {
           font: var(--hds-typography-body-title);
-          color: var(--footer-color);
+
+          /* color: var(--footer-color); */
           margin-bottom: var(--hds-spacing-16);
         }
       }
@@ -97,13 +98,13 @@
 
   /* Override the link-list */
   .hds-footer__link-section .hds-list.hds-list--link-list a {
-    color: var(--footer-color);
+    /* color: var(--footer-color); */
     text-decoration: none;
 
-    &:active,
+    /* &:active,
     &:hover {
       color: var(--footer-color-hover);
-    }
+    } */
   }
 
   /* Logo */
@@ -132,6 +133,7 @@
 
     /* Icons. Like social media links */
     svg {
+      /* fill: var(--footer-color); */
       fill: var(--footer-color);
     }
 
@@ -148,12 +150,12 @@
 
     a,
     .hds-link {
-      color: var(--footer-color);
+      /* color: var(--footer-color); */
 
-      &:hover {
+      /* &:hover {
         color: var(--footer-color-hover);
         text-decoration-color: currentcolor;
-      }
+      } */
     }
 
     display: flex;
