@@ -178,7 +178,7 @@ function buildFinalCssVariables() {
     const colorCss = String(readFileSync(`${__dirname}/tokens-output/css/color-${color}.css`));
     return `
 @layer hds.theme.color {
-[data-color="${color}"], [data-color-scheme][data-color="${color}"] {
+[data-color="${color}"], [data-color="${color}"] [data-color-scheme] {
 ${printVariables(extractVariables(colorCss))}
 }}`;
   }
