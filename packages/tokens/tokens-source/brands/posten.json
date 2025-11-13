@@ -64,16 +64,13 @@
 
   "typography": {
     "h1-display": {
-      "$value": "{typography.posten-h1-display}",
-      "description": "@deprecated Use the new color scheme instead"
+      "$value": "{typography.posten-h1-display}"
     },
     "h1": {
-      "$value": "{typography.posten-h1}",
-      "description": "@deprecated Use the new color scheme instead"
+      "$value": "{typography.posten-h1}"
     },
     "h2": {
-      "$value": "{typography.posten-h2}",
-      "description": "@deprecated Use the new color scheme instead"
+      "$value": "{typography.posten-h2}"
     }
   },
 
