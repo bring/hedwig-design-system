@@ -54,7 +54,7 @@
   --hds-fonts-posten-sans-regular: 'Posten Sans Regular', Arial, sans-serif;
   --hds-typography-posten-h1-display: 700 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-posten-h1: 700 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-posten-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-posten-h2: 700 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-bring-h1-display: 500 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-bring-h1: 500 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-bring-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
@@ -176,7 +176,7 @@
   --hds-line-height-caption-title: 18px;
   --hds-font-weight-posten-h1-display: 700;
   --hds-font-weight-posten-h1: 700;
-  --hds-font-weight-posten-h2: 500;
+  --hds-font-weight-posten-h2: 700;
   --hds-font-weight-bring-h1-display: 500;
   --hds-font-weight-bring-h1: 500;
   --hds-font-weight-bring-h2: 500;
@@ -473,7 +473,7 @@
 }}
 
 @layer hds.theme.color {
-[data-color="bring"], [data-color-scheme][data-color="bring"] {
+[data-color="bring"], [data-color="bring"] [data-color-scheme] {
   --hds-colors-base-contrast-default: var(--hds-colors-bring-base-contrast-default);
   --hds-colors-base-active: var(--hds-colors-bring-base-active);
   --hds-colors-base-hover: var(--hds-colors-bring-base-hover);
@@ -488,10 +488,13 @@
   --hds-colors-surface-default: var(--hds-colors-bring-surface-default);
   --hds-colors-bg-tinted: var(--hds-colors-bring-bg-tinted);
   --hds-colors-bg-default: var(--hds-colors-bring-bg-default);
+  --hds-typography-h1-display: 500 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h1: 500 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
 }}
 
 @layer hds.theme.color {
-[data-color="posten"], [data-color-scheme][data-color="posten"] {
+[data-color="posten"], [data-color="posten"] [data-color-scheme] {
   --hds-colors-base-contrast-default: var(--hds-colors-posten-base-contrast-default);
   --hds-colors-base-active: var(--hds-colors-posten-base-active);
   --hds-colors-base-hover: var(--hds-colors-posten-base-hover);
@@ -506,10 +509,13 @@
   --hds-colors-surface-default: var(--hds-colors-posten-surface-default);
   --hds-colors-bg-tinted: var(--hds-colors-posten-bg-tinted);
   --hds-colors-bg-default: var(--hds-colors-posten-bg-default);
+  --hds-typography-h1-display: 700 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h1: 700 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h2: 700 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
 }}
 
 @layer hds.theme.color {
-[data-color="neutral"], [data-color-scheme][data-color="neutral"] {
+[data-color="neutral"], [data-color="neutral"] [data-color-scheme] {
   --hds-colors-base-contrast-default: var(--hds-colors-neutral-base-contrast-default);
   --hds-colors-base-active: var(--hds-colors-neutral-base-active);
   --hds-colors-base-hover: var(--hds-colors-neutral-base-hover);
@@ -524,52 +530,57 @@
   --hds-colors-surface-default: var(--hds-colors-neutral-surface-default);
   --hds-colors-bg-tinted: var(--hds-colors-neutral-bg-tinted);
   --hds-colors-bg-default: var(--hds-colors-neutral-bg-default);
+
 }}
 
 @layer hds.theme.color {
-[data-color="info"], [data-color-scheme][data-color="info"] {
+[data-color="info"], [data-color="info"] [data-color-scheme] {
   --hds-colors-base-contrast-default: var(--hds-colors-info-base-contrast-default);
   --hds-colors-base-default: var(--hds-colors-info-base-default);
   --hds-colors-text-default: var(--hds-colors-info-text-default);
   --hds-colors-border-strong: var(--hds-colors-info-border-strong);
   --hds-colors-border-default: var(--hds-colors-info-border-default);
   --hds-colors-surface-default: var(--hds-colors-info-surface-default);
+
 }}
 
 @layer hds.theme.color {
-[data-color="success"], [data-color-scheme][data-color="success"] {
+[data-color="success"], [data-color="success"] [data-color-scheme] {
   --hds-colors-base-contrast-default: var(--hds-colors-success-base-contrast-default);
   --hds-colors-base-default: var(--hds-colors-success-base-default);
   --hds-colors-text-default: var(--hds-colors-success-text-default);
   --hds-colors-border-strong: var(--hds-colors-success-border-strong);
   --hds-colors-border-default: var(--hds-colors-success-border-default);
   --hds-colors-surface-default: var(--hds-colors-success-surface-default);
+
 }}
 
 @layer hds.theme.color {
-[data-color="warning"], [data-color-scheme][data-color="warning"] {
+[data-color="warning"], [data-color="warning"] [data-color-scheme] {
   --hds-colors-base-contrast-default: var(--hds-colors-warning-base-contrast-default);
   --hds-colors-base-default: var(--hds-colors-warning-base-default);
   --hds-colors-text-default: var(--hds-colors-warning-text-default);
   --hds-colors-border-strong: var(--hds-colors-warning-border-strong);
   --hds-colors-border-default: var(--hds-colors-warning-border-default);
   --hds-colors-surface-default: var(--hds-colors-warning-surface-default);
+
 }}
 
 @layer hds.theme.color {
-[data-color="error"], [data-color-scheme][data-color="error"] {
+[data-color="error"], [data-color="error"] [data-color-scheme] {
   --hds-colors-base-contrast-default: var(--hds-colors-error-base-contrast-default);
   --hds-colors-base-default: var(--hds-colors-error-base-default);
   --hds-colors-text-default: var(--hds-colors-error-text-default);
   --hds-colors-border-strong: var(--hds-colors-error-border-strong);
   --hds-colors-border-default: var(--hds-colors-error-border-default);
   --hds-colors-surface-default: var(--hds-colors-error-surface-default);
+
 }}
 :root, /* Default */
 .hds-theme-posten {
   --hds-typography-h1-display: 700 clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)/clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px) 'Posten Sans', Arial, sans-serif;
   --hds-typography-h1: 700 clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)/clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px) 'Posten Sans', Arial, sans-serif;
-  --hds-typography-h2: 500 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
+  --hds-typography-h2: 700 clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)/clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px) 'Posten Sans', Arial, sans-serif;
   --hds-font-size-h1-display: clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px);
   --hds-font-size-h1-display-min: 40px;
   --hds-font-size-h1-display-max: 72px;
@@ -590,7 +601,7 @@
   --hds-line-height-h2-max: 40px;
   --hds-font-weight-h1-display: 700;
   --hds-font-weight-h1: 700;
-  --hds-font-weight-h2: 500;
+  --hds-font-weight-h2: 700;
   --hds-colors-signature: #e32d22; /* @deprecated Use the new color scheme instead */
   --hds-colors-darker: #4a1011; /* @deprecated Use the new color scheme instead */
   --hds-colors-dark: #980000; /* @deprecated Use the new color scheme instead */

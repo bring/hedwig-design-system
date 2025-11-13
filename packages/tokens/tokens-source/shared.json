@@ -240,7 +240,7 @@
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["28px", "32px"],
         "lineHeight": ["36px", "40px"],
-        "fontWeight": 500,
+        "fontWeight": 700,
         "letterSpacing": "0"
       }
     },

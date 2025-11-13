@@ -1,5 +1,6 @@
 {
   "colors-bring": {
+    "colorScheme": "light",
     "$type": "color",
     "bg-default": {
       "$value": "{colors-gray.1}"

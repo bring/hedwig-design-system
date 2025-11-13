@@ -124,11 +124,7 @@ function buildColorCssVariables() {
   for (const color of ["bring", "posten", "neutral", "info", "success", "warning", "error"]) {
     console.log(`🤖 Building ${color} css variables`);
     StyleDictionary.extend({
-      include: [
-        "tokens-source/shared-colors.json",
-        "tokens-source/themes/dark.json",
-        "tokens-source/themes/light.json",
-      ],
+      include: ["tokens-source/shared-colors.json", "tokens-source/themes/dark.json"],
       source: [`tokens-source/colors/${color}.json`],
       platforms: {
         css: {
@@ -171,15 +167,23 @@ function buildFinalCssVariables() {
     if (!variables) throw new Error("no variables extracted");
     return variables.map(String);
   }
+
+  function filterH1andH2Variables(fromString: string) {
+    const variables = fromString.match(/--hds-typography-h1.+/g)?.map(String) ?? [];
+    const h2Variables = fromString.match(/--hds-typography-h2.+/g)?.map(String) ?? [];
+    return [...variables, ...h2Variables];
+  }
+
   function printVariables(variables: string[]) {
     return variables.map((variable) => `  ${variable}`).join("\n");
   }
-  function colorLayer(color: string) {
+  function colorLayer(color: string, extraCss?: string) {
     const colorCss = String(readFileSync(`${__dirname}/tokens-output/css/color-${color}.css`));
     return `
 @layer hds.theme.color {
 [data-color="${color}"], [data-color="${color}"] [data-color-scheme] {
 ${printVariables(extractVariables(colorCss))}
+${extraCss ? printVariables(extractVariables(extraCss)) : ""}
 }}`;
   }
 
@@ -207,8 +211,8 @@ ${darkVariables}
 ${darkVariables}
   color-scheme: dark;
 }}
-${colorLayer("bring")}
-${colorLayer("posten")}
+${colorLayer("bring", printVariables(filterH1andH2Variables(bringCss)))}
+${colorLayer("posten", printVariables(filterH1andH2Variables(postenCss)))}
 ${colorLayer("neutral")}
 ${colorLayer("info")}
 ${colorLayer("success")}
