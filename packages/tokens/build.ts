@@ -202,7 +202,7 @@ ${lightVariables}
   color-scheme: light;
 }}
 @layer hds.theme.color-scheme.dark {
-:root, [data-color-scheme="dark"] {
+[data-color-scheme="dark"] {
 ${darkVariables}
   color-scheme: dark;
 }}

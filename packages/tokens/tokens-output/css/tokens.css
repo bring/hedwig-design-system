@@ -332,7 +332,7 @@
   color-scheme: light;
 }}
 @layer hds.theme.color-scheme.dark {
-:root, [data-color-scheme="dark"] {
+[data-color-scheme="dark"] {
   --hds-colors-bring-bg-default: #121212;
   --hds-colors-bring-bg-tinted: #222222;
   --hds-colors-bring-surface-default: #333333;
