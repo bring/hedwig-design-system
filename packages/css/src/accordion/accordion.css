@@ -47,10 +47,14 @@
 
       &::before {
         content: "";
-        width: 20px;
-        height: 20px;
-        mask-image: var(--_hds-accordion-chevron-up);
-        mask-size: cover;
+        width: 24px;
+        height: 24px;
+        mask-image: var(--_hds-chevron-up);
+        mask-size:
+          15px 20px,
+          contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
         background-image: none;
         background-color: var(--hds-colors-text-subtle);
 
@@ -73,7 +77,7 @@
 
       &[data-state="open"]::before {
         /* transform: rotate(180deg); */
-        mask-image: var(--_hds-accordion-chevron-down);
+        mask-image: var(--_hds-chevron-down);
       }
     }
 
