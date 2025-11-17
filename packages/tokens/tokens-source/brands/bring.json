@@ -7,10 +7,14 @@
     },
     "darker": {
       "$value": "{bring-colors.darker-green}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "dark": {
       "$value": "{bring-colors.dark-green}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light": {
