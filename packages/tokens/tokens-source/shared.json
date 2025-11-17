@@ -3,6 +3,8 @@
     "$type": "color",
     "signature-red": {
       "$value": "#e32d22",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "darker-red": {
