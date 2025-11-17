@@ -8,11 +8,13 @@
   position: relative;
   border-bottom: initial;
   text-decoration: initial;
-  background-color: var(--hds-colors-lighter);
+
+  /** Default background-color */
+  background-color: var(--hds-colors-surface-default);
   border-radius: var(--hds-border-radius-16);
   display: flex;
   flex-direction: column;
-  color: var(--hds-ui-colors-black);
+  color: var(--hds-colors-neutral-text-default);
   padding: var(--hds-spacing-20-24);
   max-width: 560px;
   gap: var(--hds-spacing-12-16);
@@ -50,7 +52,7 @@
   .hds-card__body-header-overline {
     display: block;
     margin-bottom: var(--hds-spacing-4-8);
-    color: var(--hds-colors-dark);
+    color: var(--hds-colors-text-subtle);
     font-size: var(--hds-font-size-body-title);
     font-weight: var(--hds-font-weight-body-title);
     line-height: var(--hds-line-height-body-title);
@@ -60,7 +62,7 @@
     font-size: var(--hds-font-size-h2);
     font-weight: var(--hds-font-weight-h1);
     line-height: var(--hds-line-height-h2);
-    color: var(--hds-ui-colors-black);
+    color: var(--hds-colors-neutral-text-default);
     text-decoration: none;
   }
 
@@ -85,7 +87,7 @@
   .hds-card__body-action:hover {
     .hds-card__body-action-arrow {
       transform: translateX(2px);
-      background-color: var(--hds-colors-dark);
+      background-color: var(--hds-colors-neutral-text-default);
     }
 
     &.hds-link--inverted {
@@ -106,7 +108,7 @@
   .hds-card__body-action-arrow {
     background-image: none;
     mask-image: var(--_hds-icons-arrow-right);
-    background-color: var(--hds-ui-colors-black);
+    background-color: var(--hds-colors-neutral-text-default);
     width: var(--hds-spacing-20);
     height: var(--hds-spacing-20);
     border-bottom: none;
@@ -121,20 +123,22 @@
   }
 }
 
+.hds-card--color-neutral-subtle {
+  background-color: var(--hds-colors-neutral-surface-default);
+}
+
+.hds-card--color-neutral-default {
+  background-color: var(--hds-colors-neutral-base-default);
+}
+
+/** @deprecated */
 .hds-card--color-white {
-  background-color: var(--hds-ui-colors-white);
+  background-color: var(--hds-colors-neutral-surface-default);
 }
 
+/** @deprecated */
 .hds-card--color-light-grey-fill {
-  background-color: var(--hds-ui-colors-light-grey-fill);
-}
-
-.hds-card--color-darker {
-  background-color: var(--hds-colors-darker);
-}
-
-.hds-card--color-dark {
-  background-color: var(--hds-colors-dark);
+  background-color: var(--hds-colors-neutral-base-default);
 }
 
 .hds-card--miniature {

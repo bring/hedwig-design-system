@@ -217,6 +217,32 @@ export interface CardBaseProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
 }
 
+/**
+ * @deprecated This interface is deprecated and will be removed in a future release.
+ * Use `CardSlimAndMiniatureProps` with `brand-default`, `neutral-default`, or `neutral-subtle` for colors instead.
+ */
+export interface CardSlimAndMiniaturePropsDeprecated extends CardBaseProps {
+  /**
+   * Change the default rendered element for Card.
+   */
+  as?: "section" | "div" | "article" | "aside";
+  /**
+   * Allows for a horizontal variant for sizes above small.
+   *
+   * @default "slim"
+   */
+  variant?: "slim" | "miniature";
+  /**
+   * @deprecated
+   * Use `brand-default`, `neutral-default` or `neutral-subtle` instead.
+   * These colors will be removed in a future release.
+   * */
+  color?: "white" | "lighter-brand" | "light-grey-fill";
+
+  /* Only fullwidth or focus cards can have images to the left or right of the text: */
+  imagePosition?: never;
+}
+
 export interface CardSlimAndMiniatureProps extends CardBaseProps {
   /**
    * Change the default rendered element for Card.
@@ -233,7 +259,7 @@ export interface CardSlimAndMiniatureProps extends CardBaseProps {
    *
    * @default "lighter-brand"
    * */
-  color?: "white" | "lighter-brand" | "light-grey-fill";
+  color?: "brand-default" | "neutral-default" | "neutral-subtle";
 
   /* Only fullwidth or focus cards can have images to the left or right of the text: */
   imagePosition?: never;
@@ -242,7 +268,29 @@ export interface CardSlimAndMiniatureProps extends CardBaseProps {
 export interface CardFocusProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "focus";
+  /** @deprecated Focus cards has no color selection */
   color?: "darker" | "dark";
+  /**
+   * fullwidth or focus cards can have images to the left or right of the text.
+   *
+   * @default "left"
+   * */
+  imagePosition?: "left" | "right";
+}
+
+/**
+ * @deprecated This interface is deprecated and will be removed in a future release.
+ * Use `CardFullwidthProps` with `brand-default`, `neutral-default`, or `neutral-subtle` for colors instead.
+ */
+export interface CardFullwidthPropsDeprecated extends CardBaseProps {
+  as?: "section" | "div" | "article" | "aside";
+  variant: "full-width";
+  /**
+   * @deprecated
+   * Use `brand-default`, `neutral-default` or `neutral-subtle` instead.
+   * These colors will be removed in a future release.
+   * */
+  color: "white" | "lighter-brand" | "light-grey-fill";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
    *
@@ -254,7 +302,10 @@ export interface CardFocusProps extends CardBaseProps {
 export interface CardFullwidthProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "full-width";
-  color: "white" | "lighter-brand" | "light-grey-fill";
+  /**
+   * @default "brand-default"
+   */
+  color?: "brand-default" | "neutral-default" | "neutral-subtle";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
    *
@@ -263,7 +314,30 @@ export interface CardFullwidthProps extends CardBaseProps {
   imagePosition?: "left" | "right";
 }
 
-export type CardProps = CardSlimAndMiniatureProps | CardFocusProps | CardFullwidthProps;
+export type CardProps =
+  | CardSlimAndMiniatureProps
+  | CardFocusProps
+  | CardFullwidthProps
+  | CardSlimAndMiniaturePropsDeprecated
+  | CardFullwidthPropsDeprecated;
+
+/**
+ * Converts deprecated colors to current colors
+ * @param color
+ * @returns
+ */
+const convertDeprecatedColors = (color: string) => {
+  switch (color) {
+    case "lighter-brand":
+      return "brand-default";
+    case "light-grey-fill":
+      return "neutral-default";
+    case "white":
+      return "neutral-subtle";
+    default:
+      return color;
+  }
+};
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   (
@@ -280,20 +354,22 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     ref,
   ) => {
     const Component = asChild ? Slot : Tag;
-    const effectiveColor = variant === "focus" && !color ? "darker" : color;
+    const newColor = color ? convertDeprecatedColors(color) : undefined;
+    /** Effective color "darker" is default for Focus card */
+    const effectiveColor = variant === "focus" && !newColor ? "darker" : newColor;
     return (
       <Component
         {...rest}
+        {...(variant === "focus" ? { "data-color-scheme": "dark" } : {})}
         className={clsx(
           "hds-card",
           { "hds-card--full-width": variant === "full-width" },
           { "hds-card--miniature": variant === "miniature" },
           { "hds-card--focus": variant === "focus" },
           { "hds-card--slim": variant === "slim" },
-          { "hds-card--color-white": effectiveColor === "white" },
-          { "hds-card--color-light-grey-fill": effectiveColor === "light-grey-fill" },
-          { "hds-card--color-dark": effectiveColor === "dark" },
-          { "hds-card--color-darker": effectiveColor === "darker" },
+          { "hds-card--color-neutral-subtle": effectiveColor === "neutral-subtle" },
+          { "hds-card--color-neutral-default": effectiveColor === "neutral-default" },
+          { "hds-card--color-dark": effectiveColor === "dark" }, // Deprecated
           { "hds-card--image-position-right": imagePosition === "right" },
           className as undefined,
         )}

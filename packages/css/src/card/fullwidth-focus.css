@@ -130,9 +130,21 @@
   }
 
   &.hds-card--focus {
+    background-color: var(--hds-colors-surface-tinted);
+
+    /** @deprecated There are no color options for focus card */
+    &.hds-card--color-dark {
+      background-color: var(--hds-colors-dark);
+    }
+
+    /** @deprecated There are no color options for focus card */
+    .hds-card--color-darker {
+      background-color: var(--hds-colors-surface-tinted);
+    }
+
     .hds-card__body-description,
     .hds-card__body-header-title {
-      color: var(--hds-ui-colors-white);
+      color: var(--hds-colors-text-default);
     }
   }
 }
