@@ -6,7 +6,7 @@ function Example() {
   return (
     <>
       <Container>
-        <h2>Color - Lighter Brand - Default</h2>
+        <h2>Color - Brand Default - Default</h2>
         <div
           style={{
             marginTop: "var(--hds-spacing-20)",
@@ -16,7 +16,7 @@ function Example() {
             gap: "var(--hds-spacing-24-32)",
           }}
         >
-          <Card variant="slim" color="lighter-brand">
+          <Card variant="slim" color="brand-default">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -37,7 +37,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="lighter-brand">
+          <Card variant="slim" color="brand-default">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -60,7 +60,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="lighter-brand">
+          <Card variant="slim" color="brand-default">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -81,7 +81,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="lighter-brand">
+          <Card variant="slim" color="brand-default">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -107,7 +107,7 @@ function Example() {
         </div>
       </Container>
       <Container>
-        <h2>Color - Light Grey Fill</h2>
+        <h2>Color - Neutral Default</h2>
         <div
           style={{
             marginTop: "var(--hds-spacing-20)",
@@ -117,7 +117,7 @@ function Example() {
             gap: "var(--hds-spacing-24-32)",
           }}
         >
-          <Card variant="slim" color="light-grey-fill">
+          <Card variant="slim" color="neutral-default">
             <Card.Body>
               <Card.BodyHeader as="h3">
                 <Card.BodyHeaderOverline>Services</Card.BodyHeaderOverline>
@@ -132,7 +132,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="light-grey-fill">
+          <Card variant="slim" color="neutral-default">
             <Card.Body>
               <Card.BodyHeader as="h3">
                 <Card.BodyHeaderOverline>Customer service</Card.BodyHeaderOverline>
@@ -149,7 +149,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="light-grey-fill">
+          <Card variant="slim" color="neutral-default">
             <Card.Body>
               <Card.BodyHeader as="h3">
                 <Card.BodyHeaderOverline>Quote</Card.BodyHeaderOverline>
@@ -164,7 +164,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="light-grey-fill">
+          <Card variant="slim" color="neutral-default">
             <Card.Body>
               <Card.BodyHeader as="h3">
                 <Card.BodyHeaderOverline>Customs</Card.BodyHeaderOverline>
@@ -184,7 +184,7 @@ function Example() {
         </div>
       </Container>
       <Container>
-        <h2>Color - White</h2>
+        <h2>Color - Neutral Subtle</h2>
         <div
           style={{
             marginTop: "var(--hds-spacing-20)",
@@ -194,7 +194,7 @@ function Example() {
             gap: "var(--hds-spacing-24-32)",
           }}
         >
-          <Card variant="slim" color="white">
+          <Card variant="slim" color="neutral-subtle">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -215,7 +215,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="white">
+          <Card variant="slim" color="neutral-subtle">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -238,7 +238,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="white">
+          <Card variant="slim" color="neutral-subtle">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -259,7 +259,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="white">
+          <Card variant="slim" color="neutral-subtle">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"

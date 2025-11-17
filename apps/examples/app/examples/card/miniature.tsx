@@ -6,7 +6,7 @@ function Example() {
   return (
     <>
       <Container>
-        <h2>Color - Lighter Brand - Default</h2>
+        <h2>Color - Brand Default - Default</h2>
         <div
           style={{
             marginTop: "var(--hds-spacing-20)",
@@ -16,7 +16,7 @@ function Example() {
             gap: "var(--hds-spacing-24-32)",
           }}
         >
-          <Card variant="miniature" color="lighter-brand">
+          <Card variant="miniature" color="brand-default">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -35,7 +35,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="lighter-brand">
+          <Card variant="miniature" color="brand-default">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -54,7 +54,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="lighter-brand">
+          <Card variant="miniature" color="brand-default">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -74,7 +74,7 @@ function Example() {
         </div>
       </Container>
       <Container>
-        <h2>Color - Light Grey Fill</h2>
+        <h2>Color - Neutral Default</h2>
         <div
           style={{
             marginTop: "var(--hds-spacing-20)",
@@ -84,7 +84,7 @@ function Example() {
             gap: "var(--hds-spacing-24-32)",
           }}
         >
-          <Card variant="miniature" color="light-grey-fill">
+          <Card variant="miniature" color="neutral-default">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -103,7 +103,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="light-grey-fill">
+          <Card variant="miniature" color="neutral-default">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -122,7 +122,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="light-grey-fill">
+          <Card variant="miniature" color="neutral-default">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -142,7 +142,7 @@ function Example() {
         </div>
       </Container>
       <Container>
-        <h2>Color - White</h2>
+        <h2>Color - Neutral Subtle</h2>
         <div
           style={{
             marginTop: "var(--hds-spacing-20)",
@@ -152,7 +152,7 @@ function Example() {
             gap: "var(--hds-spacing-24-32)",
           }}
         >
-          <Card variant="miniature" color="white">
+          <Card variant="miniature" color="neutral-subtle">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -171,7 +171,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="white">
+          <Card variant="miniature" color="neutral-subtle">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -190,7 +190,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="white">
+          <Card variant="miniature" color="neutral-subtle">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>

@@ -11,8 +11,8 @@ function Example() {
           gap: "var(--hds-spacing-24-32)",
         }}
       >
-        <h2>Color - Lighter Brand - Default</h2>
-        <Card variant="full-width" color="lighter-brand">
+        <h2>Color - Brand Default - Default</h2>
+        <Card variant="full-width" color="brand-default">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -38,8 +38,8 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Lighter Brand - Default - Image right</h2>
-        <Card variant="full-width" color="lighter-brand" imagePosition="right">
+        <h2>Color - Brand Default - Image right</h2>
+        <Card variant="full-width" color="brand-default" imagePosition="right">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -65,8 +65,8 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Light Grey Fill</h2>
-        <Card variant="full-width" color="light-grey-fill">
+        <h2>Color - Neutral Default</h2>
+        <Card variant="full-width" color="neutral-default">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -92,8 +92,8 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - White</h2>
-        <Card variant="full-width" color="white">
+        <h2>Color - Neutral Subtle</h2>
+        <Card variant="full-width" color="neutral-subtle">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -120,7 +120,7 @@ function Example() {
           </Card.Body>
         </Card>
         <h2>A single CTA Button</h2>
-        <Card variant="full-width" color="lighter-brand">
+        <Card variant="full-width" color="brand-default">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -147,7 +147,7 @@ function Example() {
           </Card.Body>
         </Card>
         <h2>More CTA Buttons</h2>
-        <Card variant="full-width" color="lighter-brand">
+        <Card variant="full-width" color="brand-default">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -193,7 +193,7 @@ function Example() {
           </Card.Body>
         </Card>
         <h2>Scale image, no cropping</h2>
-        <Card variant="full-width" color="lighter-brand">
+        <Card variant="full-width" color="brand-default">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
