@@ -23,6 +23,7 @@ function Example() {
           </Card.Media>
           <Card.Body>
             <Card.BodyHeader as="h2">
+              <Card.BodyHeaderOverline variant="inverted">Overline title</Card.BodyHeaderOverline>
               <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
@@ -51,6 +52,7 @@ function Example() {
           </Card.Media>
           <Card.Body>
             <Card.BodyHeader as="h2">
+              <Card.BodyHeaderOverline variant="inverted">Overline title</Card.BodyHeaderOverline>
               <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
