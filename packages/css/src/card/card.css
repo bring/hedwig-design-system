@@ -54,6 +54,10 @@
     font-size: var(--hds-font-size-body-title);
     font-weight: var(--hds-font-weight-body-title);
     line-height: var(--hds-line-height-body-title);
+
+    &.hds-card--overline-inverted {
+      color: var(--hds-colors-light);
+    }
   }
 
   .hds-card__body-header-title {
