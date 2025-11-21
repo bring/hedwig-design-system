@@ -88,12 +88,24 @@ function Example() {
               with variant=scale, or no variant prop at all. This leaves some empty space on the
               sides/above/below if needed for showing the full image.
             </Card.BodyDescription>
-            <Card.BodyAction asChild>
-              <Link href="https://www.posten.no" variant="inverted" icon="leading">
-                <Card.BodyActionArrow direction="right" />
-                Internal link
-              </Link>
-            </Card.BodyAction>
+            <Card.BodyActionRow asChild>
+              <ButtonList variant="stretched">
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" asChild>
+                    <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
+                      Primary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" variant="secondary" asChild>
+                    <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                      Secondary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+              </ButtonList>
+            </Card.BodyActionRow>
           </Card.Body>
         </Card>
       </div>
