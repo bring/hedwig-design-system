@@ -93,21 +93,13 @@ export const CardBodyHeader = forwardRef<
 });
 CardBodyHeader.displayName = "Card.BodyHeader";
 
-export interface CardOverlineProps extends CardBaseProps {
-  variant?: "inverted";
-}
-
-export const CardBodyHeaderOverline = forwardRef<HTMLDivElement, CardOverlineProps>(
-  ({ asChild, variant, className, children, ...rest }, ref) => {
+export const CardBodyHeaderOverline = forwardRef<HTMLDivElement, CardBaseProps>(
+  ({ asChild, className, children, ...rest }, ref) => {
     const Component = asChild ? Slot : "span";
     return (
       <Component
         {...rest}
-        className={clsx(
-          "hds-card__body-header-overline",
-          { "hds-card--overline-inverted": variant === "inverted" },
-          className as undefined,
-        )}
+        className={clsx("hds-card__body-header-overline", className as undefined)}
         ref={ref}
       >
         {children}

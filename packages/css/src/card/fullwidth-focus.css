@@ -134,5 +134,9 @@
     .hds-card__body-header-title {
       color: var(--hds-ui-colors-white);
     }
+
+    .hds-card__body-header-overline {
+      color: var(--hds-colors-light);
+    }
   }
 }
