@@ -29,7 +29,7 @@ export interface CardImageMediaProps extends React.ImgHTMLAttributes<HTMLImageEl
    * "scale": No cropping, image scales to the maximum size available and centers.
    *          If the aspect ratio doesn't match, then the background will show on the top/bottom or left/right sides of the image.
    *
-   * @default "crop"
+   * @default "scale"
    */
   variant?: "crop" | "scale";
 }
@@ -41,7 +41,7 @@ export const CardMediaImg = forwardRef<HTMLImageElement, CardImageMediaProps>(
         {...rest}
         className={clsx(
           "hds-card__media__img",
-          { "hds-card__img__scale": variant === "scale" },
+          { "hds-card__img__crop": variant === "crop" },
           className as undefined,
         )}
         ref={ref}

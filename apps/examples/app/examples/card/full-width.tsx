@@ -1,6 +1,7 @@
 import "@postenbring/hedwig-css";
 import { Card, Link, Container, Button, ButtonList } from "@postenbring/hedwig-react";
 import postenBringImage from "../../assets/posten-bring.avif";
+import vectoriImage from "../../assets/customer-parcel.svg";
 
 function Example() {
   return (
@@ -15,8 +16,9 @@ function Example() {
         <Card variant="full-width" color="lighter-brand">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -38,12 +40,14 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
+
         <h2>Color - Lighter Brand - Default - Image right</h2>
         <Card variant="full-width" color="lighter-brand" imagePosition="right">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -69,8 +73,9 @@ function Example() {
         <Card variant="full-width" color="light-grey-fill">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -92,12 +97,14 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
+
         <h2>Color - White</h2>
         <Card variant="full-width" color="white">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -123,8 +130,9 @@ function Example() {
         <Card variant="full-width" color="lighter-brand">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -146,12 +154,14 @@ function Example() {
             </Card.BodyActionRow>
           </Card.Body>
         </Card>
+
         <h2>More CTA Buttons</h2>
         <Card variant="full-width" color="lighter-brand">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -192,13 +202,13 @@ function Example() {
             </Card.BodyActionRow>
           </Card.Body>
         </Card>
-        <h2>Scale image, no cropping</h2>
+
+        <h2>Scale illustration (no cropping)</h2>
         <Card variant="full-width" color="lighter-brand">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
-              variant="scale"
-              src={postenBringImage}
+              alt="Images with transparent backgrounds (eg. SVG's, some PNG's) should be used with variant=crop, or no variant prop at all"
+              src={vectoriImage}
             />
           </Card.Media>
           <Card.Body>
@@ -219,7 +229,8 @@ function Example() {
               >
                 variant=&quot;scale&quot;
               </pre>{" "}
-              on the image disables the cropping behavior when images resize.
+              on the image disables the cropping behavior when images resize. This prop&lsquo;s
+              default is &quot;scale&quot; already, so the variant prop can just be skipped.
             </Card.BodyDescription>
             <Card.BodyActionRow>
               <Card.BodyAction asChild>
