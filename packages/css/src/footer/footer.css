@@ -147,17 +147,6 @@
 
   .hds-footer__copyright-and-links {
     font: var(--hds-typography-body-small);
-
-    a,
-    .hds-link {
-      /* color: var(--footer-color); */
-
-      /* &:hover {
-        color: var(--footer-color-hover);
-        text-decoration-color: currentcolor;
-      } */
-    }
-
     display: flex;
     flex-wrap: wrap;
     gap: var(--hds-spacing-20) var(--hds-spacing-40);
