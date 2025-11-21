@@ -16,7 +16,7 @@ function Example() {
         <Card variant="full-width" theme="default">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
               variant="crop"
             />
@@ -127,7 +127,7 @@ function Example() {
         <Card variant="full-width" theme="default" data-color="neutral">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
               variant="crop"
             />
@@ -156,7 +156,7 @@ function Example() {
         <Card variant="full-width" theme="tinted" data-color="neutral">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
               variant="crop"
             />
@@ -185,7 +185,7 @@ function Example() {
         <Card variant="full-width" theme="base" data-color="neutral">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
               variant="crop"
             />
@@ -214,7 +214,7 @@ function Example() {
         <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
               variant="crop"
             />
@@ -243,7 +243,7 @@ function Example() {
         <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
+              alt="Use variant=crop on photographs, to make the image fill the frame completely"
               src={postenBringImage}
               variant="crop"
             />
@@ -287,7 +287,7 @@ function Example() {
           </Card.Body>
         </Card>
 
-        <h2>Scale (not crop) illustrations</h2>
+        <h2>Scale illustration (no cropping)</h2>
         <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
