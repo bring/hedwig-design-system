@@ -42,6 +42,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
     const Component = asChild ? Slot : "span";
     return (
       <Component
+        data-color-scheme="light"
         ref={ref}
         className={clsx(
           "hds-badge",

@@ -54,13 +54,13 @@
   &.hds-alert--warning {
     &::before {
       mask-image: var(--_hds-warning);
-      background-color: var(--hds-ui-colors-black);
+      background-color: var(--hds-colors-base-contrast-default);
     }
   }
 
   &.hds-alert--error {
     &::before {
-      background-color: var(--hds-ui-colors-white);
+      background-color: var(--hds-colors-base-contrast-default);
       mask-image: var(--_hds-error);
     }
   }
