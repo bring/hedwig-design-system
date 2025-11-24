@@ -2,7 +2,7 @@
 
 .hds-tabs {
   --_hds-tabs-border-active-size: var(--hds-stroke-thick);
-  --_hds-tabs-marker-color: var(--hds-colors-signature);
+  --_hds-tabs-marker-color: var(--hds-colors-border-default);
 
   /* Set by javascript. Controlles the animation of the tab marker */
   --_hds-tabs-marker-border-fallback-color: var(--_hds-tabs-marker-color);
@@ -30,18 +30,18 @@
       text-align: left;
 
       &:hover {
-        color: var(--hds-colors-dark);
+        color: var(--hds-colors-text-subtle);
       }
 
       &.hds-tabs__tab--active {
-        color: var(--hds-colors-dark);
+        color: var(--hds-colors-text-subtle);
       }
     }
 
     /* List styling */
     &, /* Default */
     &.hds-tabs__list--vertical {
-      border-left: 1px solid var(--hds-ui-colors-light-grey-fill);
+      border-left: 1px solid var(--hds-colors-neutral-border-default);
       flex-direction: column;
 
       .hds-tabs__tab {
@@ -80,7 +80,7 @@
     @media (--medium) {
       &.hds-tabs__list--horizontal {
         border-left: 0;
-        border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-fill);
+        border-bottom: var(--hds-stroke-default) solid var(--hds-colors-neutral-border-default);
         flex-direction: row;
 
         .hds-tabs__tab {

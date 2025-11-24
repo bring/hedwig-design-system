@@ -140,7 +140,7 @@
     /* Red/Green divider line + spacing when there is content underneath */
     &:not(:last-child) {
       padding-bottom: var(--hds-spacing-24);
-      border-bottom: var(--hds-stroke-default) solid var(--hds-colors-dark);
+      border-bottom: var(--hds-stroke-default) solid var(--hds-colors-border-default);
       margin-bottom: var(--hds-spacing-24);
     }
   }
