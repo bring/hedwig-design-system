@@ -134,26 +134,4 @@
       margin-top: var(--hds-spacing-12);
     }
   }
-
-  /* 🚧 Dark mode */
-  &.hds-styled-html--darkmode {
-    /* TODO: Do we want the background to be set? */
-
-    /* background-color: var(--hds-dark-mode-colors-obsidian); */
-
-    color: #ccc;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #fafafa;
-    }
-
-    & a {
-      @extend url("./src/link/link.css:hds-link--inverted");
-    }
-  }
 }
