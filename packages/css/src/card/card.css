@@ -141,6 +141,14 @@
   background-color: var(--hds-colors-neutral-base-default);
 }
 
+.hds-card--color-darker {
+  background-color: var(--hds-colors-surface-tinted);
+}
+
+.hds-card--color-dark {
+  background-color: var(--hds-colors-base-active);
+}
+
 .hds-card--miniature {
   flex-direction: row;
 

@@ -268,7 +268,6 @@ export interface CardSlimAndMiniatureProps extends CardBaseProps {
 export interface CardFocusProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "focus";
-  /** @deprecated Focus cards has no color selection */
   color?: "darker" | "dark";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
@@ -369,7 +368,8 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           { "hds-card--slim": variant === "slim" },
           { "hds-card--color-neutral-subtle": effectiveColor === "neutral-subtle" },
           { "hds-card--color-neutral-default": effectiveColor === "neutral-default" },
-          { "hds-card--color-dark": effectiveColor === "dark" }, // Deprecated
+          { "hds-card--color-dark": effectiveColor === "dark" },
+          { "hds-card--color-darker": effectiveColor === "darker" },
           { "hds-card--image-position-right": imagePosition === "right" },
           className as undefined,
         )}
