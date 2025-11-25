@@ -25,38 +25,6 @@
    * Modifers
    */
 
-  &.hds-link--inverted {
-    color: var(--hds-ui-colors-white);
-    text-decoration-color: var(--hds-colors-signature);
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &:disabled {
-      color: var(--hds-ui-colors-dark-grey);
-      fill: currentcolor;
-      text-decoration-color: currentcolor;
-      outline: 0 !important;
-      box-shadow: none !important;
-      cursor: default;
-    }
-
-    .hds-card__body-action-arrow {
-      background-color: var(--hds-ui-colors-white);
-    }
-  }
-
-  &.hds-link--inverted-no-underline {
-    color: var(--hds-ui-colors-white);
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-      text-decoration-color: var(--hds-ui-colors-white);
-    }
-  }
-
   &.hds-link--no-underline {
     color: var(--hds-colors-neutral-text-default);
     text-decoration: none;

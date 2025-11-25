@@ -90,12 +90,6 @@
       background-color: var(--hds-colors-neutral-text-default);
     }
 
-    &.hds-link--inverted {
-      .hds-card__body-action-arrow {
-        background-color: var(--hds-ui-colors-white);
-      }
-    }
-
     .hds-card__body-action-arrow-up-right {
       transform: rotate(-45deg) translateX(2px);
     }
