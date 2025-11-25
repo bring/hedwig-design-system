@@ -11,7 +11,9 @@ function Example() {
         This is some body copy in a box, but you can basically add anything you want in here.
       </Text>
       <Text className="hds-mt-16-20">
-        <Link href="#a-link-for-whatever-reason">A link for whatever reason</Link>
+        <Link variant="solid" href="#a-link-for-whatever-reason">
+          A link for whatever reason
+        </Link>
       </Text>
     </Box>
   );

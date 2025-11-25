@@ -5,23 +5,24 @@
 .hds-box {
   position: relative;
   border-radius: var(--hds-border-radius-8);
+  background-color: var(--_background-color);
 
-  &, /* Default */
+  &,
   &.hds-box--light-grey {
-    background-color: var(--hds-ui-colors-light-grey-fill);
+    --_background-color: var(--hds-colors-neutral-base-default);
   }
 
   &.hds-box--lighter {
-    background-color: var(--hds-colors-lighter);
+    background-color: var(--hds-colors-surface-default);
   }
 
   &.hds-box--white {
-    background-color: var(--hds-ui-colors-white);
+    background-color: var(--hds-colors-neutral-surface-default);
     box-shadow: var(--hds-shadow-default);
   }
 
   &.hds-box--warning {
-    background-color: var(--hds-ui-colors-warning-yellow);
+    background-color: var(--hds-colors-warning-base-default);
   }
 
   /* Padding */

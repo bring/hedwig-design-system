@@ -98,6 +98,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
 
     return (
       <Component
+        {...(variant === "warning" ? { "data-color-scheme": "light" } : {})}
         className={clsx(
           "hds-box",
           variant && `hds-box--${variant}`,
