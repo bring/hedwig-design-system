@@ -61,6 +61,7 @@ export type MessageProps = (
 ) &
   Omit<BoxProps, "variant" | "asChild">;
 
+/** @deprecated Use Alert component instead */
 export const Message = forwardRef<HTMLDivElement, MessageProps>(
   ({ children, className, variant = "success", icon, iconClassName, ...rest }, ref) => {
     return (
