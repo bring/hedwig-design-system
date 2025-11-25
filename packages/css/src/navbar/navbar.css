@@ -39,7 +39,7 @@
     top: var(--hds-navbar-height);
     left: 0;
     display: grid;
-    background-color: white;
+    background-color: var(--hds-colors-neutral-bg-default);
 
     --_animation-time: var(--hds-micro-animation-duration-quick);
 
@@ -99,7 +99,7 @@
     }
 
     &:hover {
-      color: var(--hds-link-colors-hover);
+      color: var(--hds-colors-text-subtle);
     }
 
     .hds-navbar__item-icon {
