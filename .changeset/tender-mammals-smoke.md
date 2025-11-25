@@ -3,4 +3,4 @@
 "@postenbring/hedwig-css": patch
 ---
 
-Add buttons to focus card example
+Make buttons fill available width on fullwidth (and focus/hero) cards when there are multiple buttons. Add buttons to focus card example.
