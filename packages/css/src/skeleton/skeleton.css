@@ -1,5 +1,5 @@
 .hds-skeleton {
-  background-color: var(--hds-ui-colors-grey);
+  background-color: var(--hds-colors-neutral-base-default);
   pointer-events: none;
   user-select: none;
 
@@ -37,7 +37,7 @@
    * Variants
    */
   &.hds-skeleton--text {
-    border-radius: var(--hds-border-radius);
+    border-radius: var(--hds-border-radius-8);
 
     /* Emulate the whitespace in line-height */
     transform: scale(1, 0.7);
@@ -59,11 +59,11 @@
   }
 
   &.hds-skeleton--rectangle {
-    border-radius: 0;
+    border-radius: var(--hds-border-radius-8);
   }
 
   &.hds-skeleton--rounded {
-    border-radius: var(--hds-border-radius);
+    border-radius: var(--hds-border-radius-16);
   }
 }
 
