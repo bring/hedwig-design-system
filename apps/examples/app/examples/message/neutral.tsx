@@ -31,5 +31,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  description: "⚠️Message component is deprecated. Use Alert component instead.⚠️",
+  description:
+    "⚠️Message component is deprecated, will not work in darkmode. Use Alert component instead.⚠️",
 };
