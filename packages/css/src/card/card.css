@@ -9,12 +9,14 @@
   border-bottom: initial;
   text-decoration: initial;
 
+  --hds-card-text-color: var(--hds-colors-neutral-text-default);
+
   /** Default background-color */
   background-color: var(--hds-colors-surface-default);
   border-radius: var(--hds-border-radius-16);
   display: flex;
   flex-direction: column;
-  color: var(--hds-colors-neutral-text-default);
+  color: var(--hds-card-text-color);
   padding: var(--hds-spacing-20-24);
   max-width: 560px;
   gap: var(--hds-spacing-12-16);
@@ -62,7 +64,7 @@
     font-size: var(--hds-font-size-h2);
     font-weight: var(--hds-font-weight-h1);
     line-height: var(--hds-line-height-h2);
-    color: var(--hds-colors-neutral-text-default);
+    color: var(--hds-card-text-color);
     text-decoration: none;
   }
 
@@ -117,11 +119,29 @@
   }
 }
 
-.hds-card--color-neutral-subtle {
-  background-color: var(--hds-colors-neutral-surface-default);
+.hds-card--color-brand-default {
+  background-color: var(--hds-colors-surface-default);
+}
+
+.hds-card--color-brand-tinted {
+  background-color: var(--hds-colors-surface-tinted);
+}
+
+.hds-card--color-brand-base {
+  background-color: var(--hds-colors-base-default);
+
+  --hds-card-text-color: var(--hds-colors-base-contrast-default);
 }
 
 .hds-card--color-neutral-default {
+  background-color: var(--hds-colors-neutral-surface-default);
+}
+
+.hds-card--color-neutral-tinted {
+  background-color: var(--hds-colors-neutral-surface-tinted);
+}
+
+.hds-card--color-neutral-base {
   background-color: var(--hds-colors-neutral-base-default);
 }
 
@@ -130,15 +150,17 @@
   background-color: var(--hds-colors-neutral-surface-default);
 }
 
-/** @deprecated */
+/** @deprecated Use hds-card--color-neutral-default instead */
 .hds-card--color-light-grey-fill {
   background-color: var(--hds-colors-neutral-base-default);
 }
 
+/** @deprecated Use hds-card--color-brand- */
 .hds-card--color-darker {
   background-color: var(--hds-colors-surface-tinted);
 }
 
+/** @deprecated */
 .hds-card--color-dark {
   background-color: var(--hds-colors-base-active);
 }
