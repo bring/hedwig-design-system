@@ -10,6 +10,7 @@
   text-decoration: initial;
 
   --hds-card-text-color: var(--hds-colors-neutral-text-default);
+  --hds-card-overline-color: var(--hds-colors-text-subtle);
 
   /** Default background-color */
   background-color: var(--hds-colors-surface-default);
@@ -54,7 +55,7 @@
   .hds-card__body-header-overline {
     display: block;
     margin-bottom: var(--hds-spacing-4-8);
-    color: var(--hds-colors-text-subtle);
+    color: var(--hds-card-overline-color);
     font-size: var(--hds-font-size-body-title);
     font-weight: var(--hds-font-weight-body-title);
     line-height: var(--hds-line-height-body-title);
@@ -130,6 +131,7 @@
 .hds-card--color-brand-base {
   background-color: var(--hds-colors-base-default);
 
+  --hds-card-overline-color: var(--hds-colors-base-contrast-default);
   --hds-card-text-color: var(--hds-colors-base-contrast-default);
 }
 
