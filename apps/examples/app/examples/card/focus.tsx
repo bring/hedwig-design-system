@@ -57,7 +57,7 @@ function Example() {
               added tax (VAT) immediately when you shop and pay for the goods.
             </Card.BodyDescription>
             <Card.BodyAction asChild>
-              <Link href="posten.no" variant="inverted">
+              <Link href="posten.no">
                 <Card.BodyActionArrow direction="up-right" />
                 External link
               </Link>
