@@ -6,7 +6,7 @@ function Example() {
   return (
     <>
       <Container>
-        <h2>Color - Brand Default - Default</h2>
+        <h2>Miniature Card - All colors</h2>
         <div
           style={{
             marginTop: "var(--hds-spacing-20)",
@@ -22,7 +22,7 @@ function Example() {
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Brand Default (default)</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Our services for national and international transport
@@ -41,7 +41,7 @@ function Example() {
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Brand Tinted</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Our services for national and international transport
@@ -60,7 +60,7 @@ function Example() {
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Mail</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Brand Base</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Mail and direct mail delivered to the mailbox
@@ -79,7 +79,7 @@ function Example() {
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>International cargo</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Neutral Default</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
               <Card.BodyAction asChild>
@@ -96,7 +96,7 @@ function Example() {
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Neutral Tinted</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Our services for national and international transport
@@ -115,7 +115,7 @@ function Example() {
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Mail</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle>Neutral Base</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Mail and direct mail delivered to the mailbox
