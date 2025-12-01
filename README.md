@@ -55,7 +55,7 @@ function App() {
 
 #### Darkmode
 
-Use the data-color-scheme attribute to set mode to "dark"|"light"|"auto"
+Use the data-color-scheme attribute to set mode to "dark"|"light"|"auto" in one of your wrapping elements i.e body. If no data-color-scheme is set, it will default to "light"
 
 ```tsx
 function App() {
