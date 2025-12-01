@@ -14,7 +14,7 @@ Hedwig Design System consists of three packages
 - `@postenbring/hedwig-css`
 - `@postenbring/hedwig-react`
 
-### Getting started
+### Getting started ![UPDATED](https://img.shields.io/badge/-UPDATED-yellow)
 
 Install the `@postenbring/hedwig-react` and `@postenbring/hedwig-css` packages
 
@@ -33,21 +33,29 @@ export function MyComponent() {
 }
 ```
 
-![Button inside Box with Posten theme](screenshots/box-and-button-posten-theme.png)
+![Button inside Box with Posten theme](screenshots/posten-box-and-button.png)
 
-By default you will get the Posten theme in your app. If you want to use the Bring theme, you have to apply the `hds-theme-bring` class to a wrapping element in e.g. your `index.html` or `App.tsx` file:
+### Theme and darkmode in Hedwig ![NEW](https://img.shields.io/badge/-NEW-green)
+
+#### Theme
+
+By default you will get the Posten theme in your app. If you want to use the Bring theme, you have to apply the `data-color` attribute to a wrapping element in e.g. your `index.html` or `App.tsx` file:
 
 ```tsx
 function App() {
   return (
-    <div className="hds-theme-bring">
+    <div data-color="bring">
       <MyComponent />
     </div>
   );
 }
 ```
 
-![Button inside Box with Bring theme](screenshots/box-and-button-bring-theme.png)
+![Button inside Box with Bring theme](screenshots/bring-box-and-button.png)
+
+#### Darkmode
+
+Use the data-color-scheme attribute to set mode to "dark"|"light"|"auto"
 
 ### Inspiration
 
