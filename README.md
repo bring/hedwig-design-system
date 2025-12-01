@@ -57,6 +57,18 @@ function App() {
 
 Use the data-color-scheme attribute to set mode to "dark"|"light"|"auto"
 
+```tsx
+function App() {
+  return (
+    <div data-color="posten" data-color-scheme="dark">
+      <MyComponent />
+    </div>
+  );
+}
+```
+
+![Button inside Box with Bring theme](screenshots/posten-box-and-button-dark.png)
+
 ### Inspiration
 
 Check out our component overview in [Storybook](https://bring.github.io/hedwig-design-system/) or the [example implementations](https://bring.github.io/hedwig-design-system/examples). Note that these are examples and not necessarily the correct or optimal implementation for your project. It is meant to demonstratet the capabilities of Hedwig.
