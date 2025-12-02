@@ -1,19 +1,10 @@
-:root {
-  --_link-color: var(--hds-colors-neutral-text-default);
-
-  [data-color="info"],
-  [data-color="success"],
-  [data-color="warning"],
-  [data-color="error"] {
-    --_link-color: var(--hds-colors-base-contrast-default);
-  }
-}
-
 /**
  * Block
  */
 
 .hds-link {
+  --_link-color: var(--hds-colors-neutral-text-default);
+
   color: var(--_link-color);
   fill: currentcolor;
   transition-duration: var(--hds-micro-animation-duration-quick);
@@ -106,5 +97,14 @@
     &:not(.hds-link--small, .hds-link--large) {
       font: var(--hds-typography-body);
     }
+  }
+}
+
+[data-color="info"],
+[data-color="success"],
+[data-color="warning"],
+[data-color="error"] {
+  .hds-link {
+    --_link-color: var(--hds-colors-base-contrast-default);
   }
 }
