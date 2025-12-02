@@ -7,7 +7,7 @@ import {
 } from "../components/component-examples";
 import { componentsByGroup } from "../examples";
 import styles from "./_layout._index.module.css";
-import { Grid, Link, LinkList } from "@postenbring/hedwig-react";
+import { Alert, Grid, Link, LinkList } from "@postenbring/hedwig-react";
 import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
@@ -71,6 +71,16 @@ export default function Index() {
       <ExamplesMenu />
       <div>
         <h1 className="hds-text-h1 hds-mt-40-48 hds-mb-32-40">Examples</h1>
+        <Alert variant="info" className="hds-mb-24-32">
+          <Alert.Title>New!! Darkmode</Alert.Title>
+          <Alert.Description>
+            Hedwig darkmode is finally here! Try it yourself by toggling the mode switch in the
+            navbar, or read more in the examples section{" "}
+            <Link variant="solid" href={`patterns/darkmode?mode=${search.get("mode")}`}>
+              here
+            </Link>
+          </Alert.Description>
+        </Alert>
         {Object.entries(componentsByGroup)
           .sort(([a], [b]) => a.localeCompare(b))
           .map(([groupName, components]) => (
