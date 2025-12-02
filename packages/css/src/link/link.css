@@ -1,5 +1,12 @@
 :root {
-  --_link-color: var(--hds-colors-base-contrast-default);
+  --_link-color: var(--hds-colors-neutral-text-default);
+
+  [data-color="info"],
+  [data-color="success"],
+  [data-color="warning"],
+  [data-color="error"] {
+    --_link-color: var(--hds-colors-base-contrast-default);
+  }
 }
 
 /**
@@ -25,17 +32,12 @@
     text-decoration-color: var(--hds-colors-text-subtle);
   }
 
-  [data-color="posten"],
-  [data-color="bring"] {
-    --_link-color: var(--hds-colors-neutral-text-default);
-  }
-
   /**
    * Modifers
    */
 
   &.hds-link--no-underline {
-    color: var(--hds-colors-neutral-text-default);
+    /* color: var(--hds-colors-neutral-text-default); */
     text-decoration: none;
 
     &:hover,
@@ -47,7 +49,7 @@
   }
 
   &.hds-link--solid {
-    color: var(--hds-colors-neutral-text-default);
+    /* color: var(--hds-colors-neutral-text-default); */
     text-decoration-color: currentcolor;
 
     &:hover {
