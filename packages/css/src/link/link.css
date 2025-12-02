@@ -3,7 +3,7 @@
  */
 
 .hds-link {
-  color: var(--hds-colors-neutral-text-default);
+  color: var(--hds-colors-base-contrast-default);
   fill: currentcolor;
   transition-duration: var(--hds-micro-animation-duration-quick);
   transition-timing-function: var(--hds-micro-animation-easing-normal);
@@ -19,6 +19,11 @@
     color: var(--hds-colors-text-subtle);
     fill: currentcolor;
     text-decoration-color: var(--hds-colors-text-subtle);
+  }
+
+  &[data-color="posten"],
+  &[data-color="bring"] {
+    color: var(--hds-colors-neutral-text-default);
   }
 
   /**
