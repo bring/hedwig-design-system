@@ -103,7 +103,8 @@
 [data-color="info"],
 [data-color="success"],
 [data-color="warning"],
-[data-color="error"] {
+[data-color="error"],
+[data-color="neutral"] {
   .hds-link {
     --_link-color: var(--hds-colors-base-contrast-default);
   }
