@@ -1,5 +1,5 @@
 import "@postenbring/hedwig-css";
-import { Alert, Button, Container, VStack, Text } from "@postenbring/hedwig-react";
+import { Alert, Badge, Button, Container, HStack, VStack, Text } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
@@ -48,6 +48,18 @@ function Example() {
             </Alert>
           </VStack>
         </Container>
+        <Container>
+          <HStack gap="16-20" className="hds-mb-48-64">
+            <Badge variant="lighter">Lighter</Badge>
+            <Badge variant="darker">Darker</Badge>
+            <Badge variant="white">White</Badge>
+            <Badge variant="info">Info</Badge>
+            <Badge variant="neutral">Neutral</Badge>
+            <Badge variant="success">Success</Badge>
+            <Badge variant="warning">Warning</Badge>
+            <Badge variant="error">Error</Badge>
+          </HStack>
+        </Container>
       </body>
     </>
   );
@@ -61,9 +73,9 @@ export const config: ExampleConfig = {
   index: 1,
   layout: "none",
   description: `<p>
-    Using data-color-scheme to control theme (light, dark, auto)
+    Using <i><b>data-color-scheme</b></i> to control theme (light, dark, auto)
 
-The data-color-scheme attribute can be added to an element — typically the <html> or <body> tag — and used in CSS to switch between light mode, dark mode, or an automatic mode based on the user’s system preferences.
+The <i><b>data-color-scheme</b></i> attribute can be added to an element — typically the html or body tag — and used in CSS to switch between light mode, dark mode, or an automatic mode based on the user’s system preferences.
 
   </p>
   `,

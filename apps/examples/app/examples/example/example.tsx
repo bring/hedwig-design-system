@@ -13,6 +13,7 @@ import {
   Text,
   VStack,
   Input,
+  Box,
 } from "@postenbring/hedwig-react";
 import ex1 from "../../assets/ex1.avif";
 
@@ -72,7 +73,8 @@ function Example() {
           Last ned Posten-appen
         </Text>
         <Text as="p" variant="body" className="hds-mb-16-20" style={{ width: "65%" }}>
-          Posten-appen er en av Norges mest brukte og godt likte apper med over 2 millioner brukere.{" "}
+          Posten-appen er en av Norges mest brukte og godt likte apper med over 2 millioner
+          brukere.{" "}
         </Text>
         <Button className="hds-mb-16-20">Last ned posten appen</Button>
         <Text as="h2" variant="h2" className="hds-mb-16-20" style={{ width: "65%" }}>
@@ -155,6 +157,11 @@ function Example() {
             </Accordion.Content>
           </Accordion.Item>
         </Accordion>
+      </Container>
+      <Container variant="slim" className="hds-mb-48-64">
+        <Box>
+          <Button variant="primary">Hello, World</Button>
+        </Box>
       </Container>
 
       <Footer>
