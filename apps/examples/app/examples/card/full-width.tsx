@@ -11,8 +11,8 @@ function Example() {
           gap: "var(--hds-spacing-24-32)",
         }}
       >
-        <h2>Color - Brand Default - Default</h2>
-        <Card variant="full-width" color="brand-default">
+        <h2>Theme: Default</h2>
+        <Card variant="full-width" theme="default">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -38,8 +38,8 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Brand Tinted - Image right</h2>
-        <Card variant="full-width" color="brand-tinted" imagePosition="right">
+        <h2>Theme: Tinted - Image right</h2>
+        <Card variant="full-width" theme="tinted" imagePosition="right">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -65,8 +65,8 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Brand Base</h2>
-        <Card variant="full-width" color="brand-base">
+        <h2>Theme: Base</h2>
+        <Card variant="full-width" theme="base">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -92,8 +92,8 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Neutral Default</h2>
-        <Card variant="full-width" color="neutral-default">
+        <h2>Theme: default, data-color: neutral</h2>
+        <Card variant="full-width" theme="default" data-color="neutral">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -119,8 +119,8 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Neutral Tinted</h2>
-        <Card variant="full-width" color="neutral-tinted">
+        <h2>Theme: Tinted, data-color: neutral</h2>
+        <Card variant="full-width" theme="tinted" data-color="neutral">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -146,8 +146,8 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Neutral Base</h2>
-        <Card variant="full-width" color="neutral-base">
+        <h2>Theme: Base, data-color: neutral</h2>
+        <Card variant="full-width" theme="base" data-color="neutral">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -174,7 +174,7 @@ function Example() {
           </Card.Body>
         </Card>
         <h2>A single CTA Button</h2>
-        <Card variant="full-width" color="brand-default">
+        <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -201,7 +201,7 @@ function Example() {
           </Card.Body>
         </Card>
         <h2>More CTA Buttons</h2>
-        <Card variant="full-width" color="brand-default">
+        <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -247,7 +247,7 @@ function Example() {
           </Card.Body>
         </Card>
         <h2>Scale image, no cropping</h2>
-        <Card variant="full-width" color="brand-default">
+        <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
