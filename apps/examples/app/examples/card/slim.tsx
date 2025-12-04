@@ -16,7 +16,7 @@ function Example() {
             gap: "var(--hds-spacing-24-32)",
           }}
         >
-          <Card variant="slim" color="brand-default">
+          <Card variant="slim" theme="default">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -37,7 +37,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="brand-tinted">
+          <Card variant="slim" theme="tinted">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -60,7 +60,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="brand-base">
+          <Card variant="slim" theme="base">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -81,7 +81,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="neutral-default">
+          <Card variant="slim" theme="default" data-color="neutral">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -104,7 +104,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="neutral-tinted">
+          <Card variant="slim" theme="tinted" data-color="neutral">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
@@ -127,7 +127,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="slim" color="neutral-base">
+          <Card variant="slim" theme="base" data-color="neutral">
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"

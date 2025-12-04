@@ -16,7 +16,7 @@ function Example() {
             gap: "var(--hds-spacing-24-32)",
           }}
         >
-          <Card variant="miniature" color="brand-default">
+          <Card variant="miniature">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -35,7 +35,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="brand-tinted">
+          <Card variant="miniature" theme="tinted">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -54,7 +54,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="brand-base">
+          <Card variant="miniature" theme="base">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -73,7 +73,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="neutral-default">
+          <Card variant="miniature" theme="default" data-color="neutral">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -90,7 +90,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="neutral-tinted">
+          <Card variant="miniature" theme="tinted" data-color="neutral">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
@@ -109,7 +109,7 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature" color="neutral-base">
+          <Card variant="miniature" theme="base" data-color="neutral">
             <Card.Media>
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
