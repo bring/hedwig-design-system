@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
-import { forwardRef, useRef, useEffect, useContext, createContext, useState } from "react";
+import { forwardRef, useRef, useEffect, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
-
-const ColorContext = createContext("brand-default");
 
 export const CardMedia = forwardRef<HTMLDivElement, CardBaseProps>(
   ({ asChild, className, children, ...rest }, ref) => {
@@ -146,55 +144,11 @@ CardBodyDescription.displayName = "Card.BodyDescription";
 export const CardBodyAction = forwardRef<HTMLDivElement, CardBaseProps>(
   ({ asChild, className, children, ...rest }, ref) => {
     const Component = asChild ? Slot : "div";
-    const color = useContext(ColorContext);
-    const localRef = useRef<HTMLDivElement | null>(null);
-
-    // Merge forwarded ref with local ref so we can inspect DOM
-    const setRefs = (node: HTMLDivElement) => {
-      localRef.current = node;
-      if (typeof ref === "function") {
-        ref(node);
-      }
-    };
-
-    /*
-      Get "data-color" set somewhere in the DOM
-      Only care about "posten" and "bring" data-color
-     */
-    const [dataColor, setDataColor] = useState("");
-    useEffect(() => {
-      if (typeof document === "undefined" || color !== "brand-base") return;
-
-      // Prefer closest ancestor with `data-color`, walking up the tree
-      let found = "";
-      let el: HTMLElement | null = localRef.current;
-      while (el) {
-        const attr = el.getAttribute("data-color");
-        if (attr) {
-          found = attr;
-          break;
-        }
-        el = el.parentElement;
-      }
-
-      // Fallback to documentElement/body if no ancestor found
-      if (!found) {
-        found =
-          document.documentElement.getAttribute("data-color") ??
-          document.body.getAttribute("data-color") ??
-          "";
-      }
-
-      setDataColor(found);
-    }, [color]);
     return (
       <Component
         {...rest}
         className={clsx("hds-card__body-action", className as undefined)}
-        {...(dataColor === "bring" ? { "data-color-scheme": "light" } : {})}
-        {...(dataColor === "posten" ? { "data-color-scheme": "dark" } : {})}
-        ref={setRefs}
-        color={dataColor}
+        ref={ref}
       >
         {children}
       </Component>
@@ -278,6 +232,8 @@ export interface CardSlimAndMiniaturePropsDeprecated extends CardBaseProps {
    * @default "slim"
    */
   variant?: "slim" | "miniature";
+  "data-color"?: never;
+  theme?: never;
   /**
    * @deprecated
    * Use `brand-default`, `neutral-default` or `neutral-subtle` instead.
@@ -301,18 +257,14 @@ export interface CardSlimAndMiniatureProps extends CardBaseProps {
    */
   variant?: "slim" | "miniature";
   /**
-   * The color of the card.
-   *
-   * @default "brand-default"
-   * */
-  color?:
-    | "brand-default"
-    | "brand-tinted"
-    | "brand-base"
-    | "neutral-default"
-    | "neutral-tinted"
-    | "neutral-base";
-
+   * Set theme for card
+   * @default "default"
+   */
+  theme?: "default" | "tinted" | "base";
+  /**
+   * Set data-color for card.
+   */
+  "data-color"?: "neutral" | "posten" | "bring";
   /* Only fullwidth or focus cards can have images to the left or right of the text: */
   imagePosition?: never;
 }
@@ -325,7 +277,12 @@ export interface CardFocusProps extends CardBaseProps {
 
   /** @deprecated Use Full-width card instead */
   variant: "focus";
+  /**
+   * @deprecated Use Full-width card instead
+   */
   color?: "darker" | "dark";
+  "data-color"?: never;
+  theme?: never;
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
    *
@@ -341,6 +298,8 @@ export interface CardFocusProps extends CardBaseProps {
 export interface CardFullwidthPropsDeprecated extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "full-width";
+  "data-color"?: never;
+  theme?: never;
   /**
    * @deprecated
    * Use `brand-default`, `neutral-default` or `neutral-subtle` instead.
@@ -359,15 +318,14 @@ export interface CardFullwidthProps extends CardBaseProps {
   as?: "section" | "div" | "article" | "aside";
   variant: "full-width";
   /**
-   * @default "brand-default"
+   * Set theme for card
+   * @default "default"
    */
-  color?:
-    | "brand-default"
-    | "brand-tinted"
-    | "brand-base"
-    | "neutral-default"
-    | "neutral-tinted"
-    | "neutral-base";
+  theme?: "default" | "tinted" | "base";
+  /**
+   * Set data-color for card.
+   */
+  "data-color"?: "neutral" | "posten" | "bring";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
    *
@@ -388,6 +346,7 @@ export type CardProps =
  * @param color
  * @returns
  */
+/*
 const convertDeprecatedColors = (color: string) => {
   switch (color) {
     case "lighter-brand":
@@ -396,11 +355,15 @@ const convertDeprecatedColors = (color: string) => {
       return "neutral-tinted";
     case "white":
       return "neutral-default";
+    case "dark":
+      return "brand-tinted";
+    case "darker":
+      return "brand-base";
     default:
       return color;
   }
 };
-
+*/
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   (
     {
@@ -409,47 +372,95 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       className,
       children,
       variant = "slim",
-      color = "brand-default",
+      "data-color": dataColorAttr,
+      theme = "default",
+      //color,
       imagePosition,
       ...rest
     },
     ref,
   ) => {
     const Component = asChild ? Slot : Tag;
-    const newColor = convertDeprecatedColors(color);
+
+    const localRef = useRef<HTMLDivElement | null>(null);
+
+    // Merge forwarded ref with local ref so we can inspect DOM
+    const setRefs = (node: HTMLDivElement) => {
+      localRef.current = node;
+      if (typeof ref === "function") {
+        ref(node);
+      }
+    };
+
+    /*
+      Get "data-color" set somewhere in the DOM
+      Only care about "posten" and "bring" data-color
+     */
+    const [dataColor, setDataColor] = useState("");
+    useEffect(() => {
+      if (
+        typeof document === "undefined" ||
+        variant === "focus" || // Focus card is deprecated and does not support data-color
+        theme !== "base" || // No need to get data-color if theme is not "base"
+        dataColorAttr // We already have a data-color
+      )
+        return;
+
+      // Prefer closest ancestor with `data-color`, walking up the tree
+      let found = "";
+      let el: HTMLElement | null = localRef.current;
+      while (el) {
+        const attr = el.getAttribute("data-color");
+        if (attr) {
+          found = attr;
+          break;
+        }
+        el = el.parentElement;
+      }
+
+      // Fallback to documentElement/body if no ancestor found
+      if (!found) {
+        found =
+          document.documentElement.getAttribute("data-color") ??
+          document.body.getAttribute("data-color") ??
+          "";
+      }
+
+      setDataColor(found);
+    }, [theme, dataColorAttr, variant]);
+
+    //const newColor = convertDeprecatedColors(color);
     /** Effective color "darker" is default for Focus card; otherwise default to brand-default */
-    const effectiveColor = variant === "focus" && !newColor ? "darker" : newColor;
+    //const effectiveColor = variant === "focus" && !newColor ? "darker" : newColor;
+    //console.log(dataColorAttr);
     return (
-      <ColorContext.Provider value={effectiveColor}>
-        <Component
-          {...rest}
-          {...(variant === "focus" ? { "data-color-scheme": "dark" } : {})}
-          className={clsx(
-            "hds-card",
-            { "hds-card--full-width": variant === "full-width" },
-            { "hds-card--miniature": variant === "miniature" },
-            { "hds-card--focus": variant === "focus" },
-            { "hds-card--slim": variant === "slim" },
-            { "hds-card--color-brand-default": effectiveColor === "brand-default" },
-            { "hds-card--color-brand-tinted": effectiveColor === "brand-tinted" },
-            { "hds-card--color-brand-base": effectiveColor === "brand-base" },
-            { "hds-card--color-neutral-default": effectiveColor === "neutral-default" },
-            { "hds-card--color-neutral-tinted": effectiveColor === "neutral-tinted" },
-            { "hds-card--color-neutral-base": effectiveColor === "neutral-base" },
-            { "hds-card--image-position-right": imagePosition === "right" },
-            className as undefined,
-          )}
-          ref={ref}
-        >
-          {variant === "full-width" || variant === "focus" ? (
-            <div className={clsx("hds-card__layoutwrapper", className as undefined)}>
-              {children}
-            </div>
-          ) : (
-            children
-          )}
-        </Component>
-      </ColorContext.Provider>
+      <Component
+        {...rest}
+        //{...(variant === "focus" && color === "dark" ? { "data-color-scheme": "dark" } : {})}
+        {...(dataColor === "bring" && theme === "base" ? { "data-color-scheme": "light" } : {})}
+        {...(dataColor === "posten" && theme === "base" ? { "data-color-scheme": "dark" } : {})}
+        {...(dataColorAttr ? { "data-color": dataColorAttr } : {})}
+        className={clsx(
+          "hds-card",
+          { "hds-card--full-width": variant === "full-width" },
+          { "hds-card--miniature": variant === "miniature" },
+          { "hds-card--focus": variant === "focus" },
+          { "hds-card--slim": variant === "slim" },
+          { "hds-card--theme-default": theme === "default" },
+          { "hds-card--theme-tinted": theme === "tinted" },
+          { "hds-card--theme-base": theme === "base" },
+          { "hds-card--image-position-right": imagePosition === "right" },
+
+          className as undefined,
+        )}
+        ref={setRefs}
+      >
+        {variant === "full-width" || variant === "focus" ? (
+          <div className={clsx("hds-card__layoutwrapper", className as undefined)}>{children}</div>
+        ) : (
+          children
+        )}
+      </Component>
     );
   },
 ) as CardType;
