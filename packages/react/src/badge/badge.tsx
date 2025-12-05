@@ -9,9 +9,9 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
    * Color of the badge
    *
    * @deprecated
-   * @default "info"
+   * @default "lighter"
    * "lighter", "darker", and "white" are deprecated and will be removed in a future release.
-   * Use "neutral", "info", "success", "warning", or "error" instead.
+   * Use data-color "neutral", "info", "success", "warning", or "error" instead.
    */
   variant?: /** @deprecated */
   | "lighter"

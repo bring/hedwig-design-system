@@ -1,6 +1,7 @@
 import { forwardRef, useCallback, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot, Slottable } from "@radix-ui/react-slot";
+import { CloseIcon } from "./Icons";
 
 export type BoxCloseButtonProps = Omit<React.HTMLAttributes<HTMLButtonElement>, "children">;
 export const BoxCloseButton = forwardRef<HTMLButtonElement, BoxCloseButtonProps>(
@@ -11,7 +12,9 @@ export const BoxCloseButton = forwardRef<HTMLButtonElement, BoxCloseButtonProps>
         ref={ref}
         type="button"
         {...rest}
-      />
+      >
+        <CloseIcon />
+      </button>
     );
   },
 );
@@ -21,11 +24,19 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 
   /**
-   * Color variant of the box
+   * Variant of the box
    *
+   * @deprecated
    * @default "light-grey"
    */
   variant?: "light-grey" | "lighter" | "white" | "warning";
+
+  /**
+   * Color variant of the box
+   *
+   */
+
+  "data-color"?: "neutral" | "info" | "success" | "warning" | "error";
 
   /**
    * If `true`, a close button will be shown.
@@ -66,9 +77,23 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
 }
 
+const convertVariantToColor = (variant: BoxProps["variant"] | "") => {
+  switch (variant) {
+    case "lighter":
+      return "";
+    case "white":
+      return "";
+    case "warning":
+      return "warning";
+    default:
+      return "neutral";
+  }
+};
+
 export const Box = forwardRef<HTMLDivElement, BoxProps>(
   (
     {
+      "data-color": color = "",
       asChild,
       variant,
       closeable = false,
@@ -96,12 +121,15 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
     const closed = closedProp ?? closedState;
     const Component = asChild ? Slot : "div";
 
+    const resolvedColor = color || convertVariantToColor(variant);
+
     return (
       <Component
-        {...(variant === "warning" ? { "data-color-scheme": "light" } : {})}
+        data-color={resolvedColor}
         className={clsx(
           "hds-box",
-          variant && `hds-box--${variant}`,
+          { "hds-box--lighter": variant === "lighter" },
+          { "hds-box--white": variant === "white" },
           { "hds-box--closed": closed },
           className as undefined,
         )}
