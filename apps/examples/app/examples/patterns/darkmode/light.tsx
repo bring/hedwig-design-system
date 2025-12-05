@@ -71,5 +71,5 @@ import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   index: 2,
   description:
-    "Using <i><b>data-color-scheme</b></i> to control theme (light, dark, auto). The <i><b>data-color-scheme</b></i> attribute can be added to an element — typically the html or body tag — and used in CSS to switch between light mode, dark mode, or an automatic mode based on the user’s system preferences.</p>",
+    "Using <i><b>data-color-scheme</b></i> to control theme (light, dark, auto). The <i><b>data-color-scheme</b></i> attribute can be added to an element — typically the html or body tag — to switch between light mode, dark mode, or an automatic mode based on the user’s system preferences.</p>",
 };

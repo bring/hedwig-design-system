@@ -4,9 +4,9 @@ import { Badge, HStack } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <HStack gap="8" align="end">
-      <Badge variant="white">White</Badge>
-      <Badge variant="white" size="smaller">
-        White
+      <Badge data-color="error">Error</Badge>
+      <Badge data-color="error" size="smaller">
+        Error
       </Badge>
     </HStack>
   );
@@ -16,5 +16,5 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 3,
+  index: 8,
 };

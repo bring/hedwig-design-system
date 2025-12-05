@@ -71,7 +71,7 @@ export default function Index() {
       <ExamplesMenu />
       <div>
         <h1 className="hds-text-h1 hds-mt-40-48 hds-mb-32-40">Examples</h1>
-        <Alert variant="info" className="hds-mb-24-32">
+        <Alert className="hds-mb-24-32" variant="info">
           <Alert.Title>New!! Darkmode</Alert.Title>
           <Alert.Description>
             Hedwig darkmode is finally here! Try it yourself by toggling the mode switch in the
