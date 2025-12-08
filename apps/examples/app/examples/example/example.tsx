@@ -2,6 +2,7 @@ import "@postenbring/hedwig-css";
 import {
   Accordion,
   Alert,
+  Badge,
   Breadcrumbs,
   Button,
   Navbar,
@@ -162,6 +163,18 @@ function Example() {
         <Box>
           <Button variant="primary">Hello, World</Button>
         </Box>
+      </Container>
+      <Container>
+        <HStack gap="16-20" className="hds-mb-48-64">
+          <Badge variant="lighter">Lighter</Badge>
+          <Badge variant="darker">Darker</Badge>
+          <Badge variant="white">White</Badge>
+          <Badge data-color="info">Info</Badge>
+          <Badge data-color="neutral">Neutral</Badge>
+          <Badge data-color="success">Success</Badge>
+          <Badge data-color="warning">Warning</Badge>
+          <Badge data-color="error">Error</Badge>
+        </HStack>
       </Container>
 
       <Footer>

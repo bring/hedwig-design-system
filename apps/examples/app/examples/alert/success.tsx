@@ -4,13 +4,13 @@ import { Alert, VStack } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <VStack gap="12-16">
-      <Alert variant="success">
+      <Alert data-color="success">
         <Alert.Title>Success</Alert.Title>
         <Alert.Description>
           Something went according to expectations. Thats great!
         </Alert.Description>
       </Alert>
-      <Alert variant="success">
+      <Alert data-color="success">
         <Alert.Title>Alert header</Alert.Title>
       </Alert>
     </VStack>

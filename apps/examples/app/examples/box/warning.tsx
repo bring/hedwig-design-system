@@ -8,7 +8,7 @@ function Example() {
         Box content
       </Text>
       <Text className="hds-mt-16-20">
-        This is some body copy in a box, but you can basically add anything you want in here.
+        Use the data-color attributte to get feature colors like warning on a Box
       </Text>
       <Text className="hds-mt-16-20">
         <Link variant="solid" href="#a-link-for-whatever-reason">
@@ -23,5 +23,5 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 2,
+  index: 6,
 };

@@ -3,7 +3,7 @@ import { Alert } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Alert variant="success">
+    <Alert data-color="success">
       <Alert.Title>Alert header</Alert.Title>
     </Alert>
   );

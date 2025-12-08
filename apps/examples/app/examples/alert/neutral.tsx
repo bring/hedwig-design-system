@@ -5,7 +5,7 @@ import { RainbowIcon } from "../../assets/icon-examples";
 function Example() {
   return (
     <VStack gap="12-16">
-      <Alert variant="neutral" icon={<RainbowIcon />}>
+      <Alert data-color="neutral" icon={<RainbowIcon />}>
         <Alert.Title>Custom icon</Alert.Title>
         <Alert.Description>This alert uses a custom icon.</Alert.Description>
       </Alert>

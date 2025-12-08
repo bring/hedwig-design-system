@@ -24,12 +24,16 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 
   /**
-   * Variant of the box
+   * Posten/Bring-spesific variant of the box. NB: warning variant is deprecated, use data-color="warning" instead.
    *
-   * @deprecated
    * @default "light-grey"
    */
-  variant?: "light-grey" | "lighter" | "white" | "warning";
+  variant?:
+    | "light-grey"
+    | "lighter"
+    | "white"
+    /** @deprecated use data-color="warning" instead */
+    | "warning";
 
   /**
    * Color variant of the box
@@ -121,7 +125,7 @@ export const Box = forwardRef<HTMLDivElement, BoxProps>(
     const closed = closedProp ?? closedState;
     const Component = asChild ? Slot : "div";
 
-    const resolvedColor = color || convertVariantToColor(variant);
+    const resolvedColor = color && color !== "" ? color : convertVariantToColor(variant);
 
     return (
       <Component

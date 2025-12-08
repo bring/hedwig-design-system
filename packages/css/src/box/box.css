@@ -7,7 +7,7 @@
   --_box-color: var(--hds-colors-base-contrast-default);
 
   position: relative;
-  border-radius: var(--hds-border-radius-8);
+  border-radius: var(--hds-border-radius-16);
   background-color: var(--_box-background-color);
   color: var(--_box-color);
 

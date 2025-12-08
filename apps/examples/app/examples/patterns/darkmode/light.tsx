@@ -53,11 +53,11 @@ function Example() {
             <Badge variant="lighter">Lighter</Badge>
             <Badge variant="darker">Darker</Badge>
             <Badge variant="white">White</Badge>
-            <Badge variant="info">Info</Badge>
-            <Badge variant="neutral">Neutral</Badge>
-            <Badge variant="success">Success</Badge>
-            <Badge variant="warning">Warning</Badge>
-            <Badge variant="error">Error</Badge>
+            <Badge data-color="info">Info</Badge>
+            <Badge data-color="neutral">Neutral</Badge>
+            <Badge data-color="success">Success</Badge>
+            <Badge data-color="warning">Warning</Badge>
+            <Badge data-color="error">Error</Badge>
           </HStack>
         </Container>
       </body>

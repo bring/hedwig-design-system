@@ -9,7 +9,13 @@ const meta: Meta<typeof Box> = {
   component: Box,
   argTypes: {
     variant: {
-      options: ["light-grey", "lighter", "white", "warning"],
+      options: ["light-grey", "lighter", "white"],
+      control: {
+        type: "radio",
+      },
+    },
+    "data-color": {
+      options: ["neutral", "info", "success", "warning", "error"],
       control: {
         type: "radio",
       },

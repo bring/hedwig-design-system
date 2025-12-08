@@ -19,10 +19,12 @@
     var(--hds-component-alert-padding) + var(--hds-component-alert-icon-width) +
       var(--hds-component-alert-spacing-between)
   );
-  color: var(--hds-colors-base-contrast-default);
-  background-color: var(--hds-colors-base-default);
 
   /* Icon placement */
+  &[data-color="info"]::before,
+  &[data-color="success"]::before,
+  &[data-color="warning"]::before,
+  &[data-color="error"]::before,
   &.hds-alert--info::before,
   &.hds-alert--success::before,
   &.hds-alert--warning::before,
@@ -36,6 +38,7 @@
     mask-size: cover;
   }
 
+  &[data-color="info"],
   &.hds-alert--info {
     &::before {
       /* More info about mask image: https://codepen.io/noahblon/pen/PovZva */
@@ -44,6 +47,7 @@
     }
   }
 
+  &[data-color="success"],
   &.hds-alert--success {
     &::before {
       mask-image: var(--_hds-check-circle);
@@ -51,6 +55,7 @@
     }
   }
 
+  &[data-color="warning"],
   &.hds-alert--warning {
     &::before {
       mask-image: var(--_hds-warning);
@@ -58,6 +63,7 @@
     }
   }
 
+  &[data-color="error"],
   &.hds-alert--error {
     &::before {
       background-color: var(--hds-colors-base-contrast-default);
@@ -65,6 +71,7 @@
     }
   }
 
+  &[data-color="neutral"],
   &.hds-alert--neutral {
     .hds-alert__title {
       margin-top: 2px;
