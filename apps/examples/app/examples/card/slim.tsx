@@ -160,6 +160,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 1,
+  index: 0,
   layout: "none",
 };

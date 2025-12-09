@@ -11,8 +11,58 @@ function Example() {
           gap: "var(--hds-spacing-24-32)",
         }}
       >
+        <Card variant="miniature" color="lighter-brand">
+          <Card.Media>
+            <Card.MediaImg
+              src={postenBringImage}
+              alt="Posten delivery van with Bring cargo truck in the background"
+            />
+          </Card.Media>
+          <Card.Body>
+            <Card.BodyHeader as="h2">
+              <Card.BodyHeaderTitle>Brand Default (default)</Card.BodyHeaderTitle>
+            </Card.BodyHeader>
+            <Card.BodyDescription>
+              Our services for national and international transport
+            </Card.BodyDescription>
+            <Card.BodyAction asChild>
+              <Link href="https://www.posten.no" variant="solid" target="_blank">
+                <Card.BodyActionArrow direction="up-right" />
+                Parcels and cargo
+              </Link>
+            </Card.BodyAction>
+          </Card.Body>
+        </Card>
+
         <h2>Color - Darker Brand - Default</h2>
-        <Card variant="focus">
+        <Card variant="focus" color="darker">
+          <Card.Media>
+            <Card.MediaImg
+              alt="Posten delivery van with Bring cargo truck in the background"
+              src={postenBringImage}
+            />
+          </Card.Media>
+          <Card.Body>
+            <Card.BodyHeader as="h2">
+              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+            </Card.BodyHeader>
+            <Card.BodyDescription>
+              From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
+              that you have to pay import duties from the first krone on most of what you buy from
+              abroad. The new rules largely mean that foreign online shops will collect the value
+              added tax (VAT) immediately when you shop and pay for the goods.
+            </Card.BodyDescription>
+            <Card.BodyAction asChild>
+              <Link href="https://www.posten.no" icon="leading">
+                <Card.BodyActionArrow direction="right" />
+                Internal link
+              </Link>
+            </Card.BodyAction>
+          </Card.Body>
+        </Card>
+
+        <h2>Color - Darker Brand - Default</h2>
+        <Card variant="focus" color="darker">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
@@ -73,6 +123,7 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 0,
+  index: 3,
   layout: "none",
+  description: "⚠️Focus card is deprecated. Use Full-width card instead.⚠️",
 };

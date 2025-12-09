@@ -67,7 +67,7 @@ function Example() {
               </Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow />
+                  <Card.BodyActionArrow direction="up-right" />
                   Mail to mailbox
                 </Link>
               </Card.BodyAction>
@@ -138,6 +138,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 0,
+  index: 1,
   layout: "none",
 };
