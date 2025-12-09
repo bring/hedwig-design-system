@@ -4,7 +4,7 @@ import { Alert, Badge, Button, Container, HStack, VStack, Text } from "@postenbr
 function Example() {
   return (
     <>
-      <body data-color-scheme="light" style={{ paddingTop: "32px", paddingBottom: "32px" }}>
+      <body data-color-scheme="dark" style={{ paddingTop: "32px", paddingBottom: "32px" }}>
         <Container>
           <Text as="h2" variant="h2" className="hds-mb-16-20" style={{ width: "65%" }}>
             Last ned Posten-appen
@@ -68,8 +68,15 @@ function Example() {
 export default Example;
 
 import type { ExampleConfig } from "../..";
+
 export const config: ExampleConfig = {
-  index: 2,
-  description:
-    "Using <i><b>data-color-scheme</b></i> to control theme (light, dark, auto). The <i><b>data-color-scheme</b></i> attribute can be added to an element — typically the html or body tag — to switch between light mode, dark mode, or an automatic mode based on the user’s system preferences.</p>",
+  index: 1,
+  layout: "none",
+  description: `<p>
+    Using <i><b>data-color-scheme</b></i> to control theme (light, dark, auto)
+
+The <i><b>data-color-scheme</b></i> attribute can be added to an element — typically the html or body tag — to switch between light mode, dark mode, or an automatic mode based on the user’s system preferences.
+
+  </p>
+  `,
 };

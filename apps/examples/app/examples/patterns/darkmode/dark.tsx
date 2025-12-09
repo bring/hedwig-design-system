@@ -3,65 +3,63 @@ import { Alert, Badge, Button, Container, HStack, VStack, Text } from "@postenbr
 
 function Example() {
   return (
-    <>
-      <body data-color-scheme="dark" style={{ paddingTop: "32px", paddingBottom: "32px" }}>
-        <Container>
-          <Text as="h2" variant="h2" className="hds-mb-16-20" style={{ width: "65%" }}>
-            Last ned Posten-appen
-          </Text>
-          <Text as="p" variant="body" className="hds-mb-16-20" style={{ width: "65%" }}>
-            Posten-appen er en av Norges mest brukte og godt likte apper med over 2 millioner
-            brukere.{" "}
-          </Text>
-          <Button className="hds-mb-16-20">Last ned posten appen</Button>
-          <Text as="h2" variant="h2" className="hds-mb-16-20" style={{ width: "65%" }}>
-            Velg favoritt-hentested
-          </Text>
-          <Text as="p" variant="body" className="hds-mb-48-64" style={{ width: "65%" }}>
-            Nå kan du bruke appen til å velge ditt foretrukne hentested. Det vil si at om du handler
-            hos en nettbutikk som ikke lar deg velge hvor du vil ha pakken, så blir pakken levert
-            til den pakkeboksen eller Post i Butikk som du setter som favoritt. Dette gjør du enkelt
-            ved å åpne Posten-appen, gå inn på profilen din og velge ditt favoritt-hentested.
-          </Text>
-        </Container>
-        <Container variant="slim" className="hds-mb-48-64">
-          <VStack gap="24-32" className="hds-mb-48-64">
-            <Alert variant="info">
-              <Alert.Title>Information</Alert.Title>
-              <Alert.Description>Some not that important information.</Alert.Description>
-            </Alert>
-            <Alert variant="success">
-              <Alert.Title>Success</Alert.Title>
-              <Alert.Description>
-                Something went according to expectations. Thats great!
-              </Alert.Description>
-            </Alert>
-            <Alert variant="warning">
-              <Alert.Title>Warning</Alert.Title>
-              <Alert.Description>
-                Something did not go as expected. Yellow always means something negative.
-              </Alert.Description>
-            </Alert>
-            <Alert variant="error">
-              <Alert.Title>Error</Alert.Title>
-              <Alert.Description>Something has gone wrong.</Alert.Description>
-            </Alert>
-          </VStack>
-        </Container>
-        <Container>
-          <HStack gap="16-20" className="hds-mb-48-64">
-            <Badge variant="lighter">Lighter</Badge>
-            <Badge variant="darker">Darker</Badge>
-            <Badge variant="white">White</Badge>
-            <Badge data-color="info">Info</Badge>
-            <Badge data-color="neutral">Neutral</Badge>
-            <Badge data-color="success">Success</Badge>
-            <Badge data-color="warning">Warning</Badge>
-            <Badge data-color="error">Error</Badge>
-          </HStack>
-        </Container>
-      </body>
-    </>
+    <body data-color-scheme="dark" style={{ paddingTop: "32px", paddingBottom: "32px" }}>
+      <Container>
+        <Text as="h2" variant="h2" className="hds-mb-16-20" style={{ width: "65%" }}>
+          Last ned Posten-appen
+        </Text>
+        <Text as="p" variant="body" className="hds-mb-16-20" style={{ width: "65%" }}>
+          Posten-appen er en av Norges mest brukte og godt likte apper med over 2 millioner
+          brukere.{" "}
+        </Text>
+        <Button className="hds-mb-16-20">Last ned posten appen</Button>
+        <Text as="h2" variant="h2" className="hds-mb-16-20" style={{ width: "65%" }}>
+          Velg favoritt-hentested
+        </Text>
+        <Text as="p" variant="body" className="hds-mb-48-64" style={{ width: "65%" }}>
+          Nå kan du bruke appen til å velge ditt foretrukne hentested. Det vil si at om du handler
+          hos en nettbutikk som ikke lar deg velge hvor du vil ha pakken, så blir pakken levert til
+          den pakkeboksen eller Post i Butikk som du setter som favoritt. Dette gjør du enkelt ved å
+          åpne Posten-appen, gå inn på profilen din og velge ditt favoritt-hentested.
+        </Text>
+      </Container>
+      <Container variant="slim" className="hds-mb-48-64">
+        <VStack gap="24-32" className="hds-mb-48-64">
+          <Alert variant="info">
+            <Alert.Title>Information</Alert.Title>
+            <Alert.Description>Some not that important information.</Alert.Description>
+          </Alert>
+          <Alert variant="success">
+            <Alert.Title>Success</Alert.Title>
+            <Alert.Description>
+              Something went according to expectations. Thats great!
+            </Alert.Description>
+          </Alert>
+          <Alert variant="warning">
+            <Alert.Title>Warning</Alert.Title>
+            <Alert.Description>
+              Something did not go as expected. Yellow always means something negative.
+            </Alert.Description>
+          </Alert>
+          <Alert variant="error">
+            <Alert.Title>Error</Alert.Title>
+            <Alert.Description>Something has gone wrong.</Alert.Description>
+          </Alert>
+        </VStack>
+      </Container>
+      <Container>
+        <HStack gap="16-20" className="hds-mb-48-64">
+          <Badge variant="lighter">Lighter</Badge>
+          <Badge variant="darker">Darker</Badge>
+          <Badge variant="white">White</Badge>
+          <Badge data-color="info">Info</Badge>
+          <Badge data-color="neutral">Neutral</Badge>
+          <Badge data-color="success">Success</Badge>
+          <Badge data-color="warning">Warning</Badge>
+          <Badge data-color="error">Error</Badge>
+        </HStack>
+      </Container>
+    </body>
   );
 }
 
