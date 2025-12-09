@@ -48,15 +48,15 @@
     background-color: var(--hds-colors-neutral-surface-default);
     color: var(--hds-colors-neutral-text-default);
   }
-
-  /*
-  &.hds-badge--warning {
-    background-color: var(--hds-colors-warning-base-default);
-    color: var(--hds-colors-text-default);
-  } */
 }
 
+/* to avoid breaking deprecated versions of badge */
 [data-color="bring"] .hds-badge.hds-badge--darker {
+  background-color: var(--hds-colors-text-default);
+  color: var(--hds-colors-surface-tinted);
+}
+
+[data-color="bring"] .hds-badge.hds-badge--lighter {
   background-color: var(--hds-colors-surface-tinted);
-  color: var(--hds-colors-text-default);
+  color: var(--hds-colors-text-subtle);
 }
