@@ -2,7 +2,7 @@ import { forwardRef, useCallback, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 
-export function CloseIcon() {
+function CloseIcon() {
   return (
     <svg aria-hidden xmlns="http://www.w3.org/2000/svg" width={32} height={32} viewBox="0 0 32 32">
       <path
