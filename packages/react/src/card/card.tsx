@@ -219,7 +219,7 @@ export interface CardBaseProps extends React.HTMLAttributes<HTMLDivElement> {
 
 /**
  * @deprecated This interface is deprecated and will be removed in a future release.
- * Use `CardSlimAndMiniatureProps` with `brand-default`, `neutral-default`, or `neutral-subtle` for colors instead.
+ * Use `CardSlimAndMiniatureProps` with props `data-color` and `theme` instead.
  */
 export interface CardSlimAndMiniaturePropsDeprecated extends CardBaseProps {
   /**
@@ -236,9 +236,9 @@ export interface CardSlimAndMiniaturePropsDeprecated extends CardBaseProps {
   theme?: never;
   /**
    * @deprecated
-   * Use `brand-default`, `neutral-default` or `neutral-subtle` instead.
+   * Use props `data-color` and `theme` instead.
    * These colors will be removed in a future release.
-   * */
+   */
   color?: "white" | "lighter-brand" | "light-grey-fill";
 
   /* Only fullwidth or focus cards can have images to the left or right of the text: */
@@ -278,7 +278,9 @@ export interface CardFocusProps extends CardBaseProps {
   /** @deprecated Use Full-width card instead */
   variant: "focus";
   /**
-   * @deprecated Use Full-width card instead
+   * @deprecated
+   * Use props `data-color` and `theme` instead.
+   * These colors will be removed in a future release.
    */
   color?: "darker" | "dark";
   "data-color"?: never;
@@ -302,9 +304,9 @@ export interface CardFullwidthPropsDeprecated extends CardBaseProps {
   theme?: never;
   /**
    * @deprecated
-   * Use `brand-default`, `neutral-default` or `neutral-subtle` instead.
+   * Use `data-color` and `theme` instead.
    * These colors will be removed in a future release.
-   * */
+   */
   color: "white" | "lighter-brand" | "light-grey-fill";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
@@ -346,8 +348,17 @@ export type CardProps =
  * @param color
  * @returns
  */
-/*
-const convertDeprecatedColor = (color: string | undefined) => {
+//type AllowedTheme = CardSlimAndMiniatureProps["theme"];
+//type AllowedDataColor = CardSlimAndMiniatureProps["data-color"];
+//type AllowedDataColorScheme = "light" | "dark";
+
+const convertDeprecatedColor = (
+  color: string | undefined,
+): Partial<{
+  theme: NonNullable<CardSlimAndMiniatureProps["theme"]>;
+  dataColor: CardSlimAndMiniatureProps["data-color"];
+  dataColorScheme: "light" | "dark";
+}> => {
   switch (color) {
     case "lighter-brand":
       return { theme: "default" };
@@ -356,14 +367,14 @@ const convertDeprecatedColor = (color: string | undefined) => {
     case "white":
       return { theme: "default", dataColor: "neutral" };
     case "dark":
-      return { theme: "tinted" };
+      return { theme: "base" };
     case "darker":
-      return { theme: "base", dataColorScheme: "dark" };
+      return { theme: "tinted", dataColorScheme: "dark" };
     default:
       return {};
   }
 };
-*/
+
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   (
     {
@@ -374,7 +385,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       variant = "slim",
       "data-color": dataColorAttr,
       theme = "default",
-      //color,
+      color,
       imagePosition,
       ...rest
     },
@@ -382,14 +393,13 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
   ) => {
     const Component = asChild ? Slot : Tag;
 
-    /*
     const {
-      theme: dataColorFromDeprecated,
-      dataColor: themeFromDeprecated,
-      dataColorSheme: dataColorSchemeFromDeprecated,
-    } = convertDeprecatedColor(color);
-    console.log(dataColorFromDeprecated, themeFromDeprecated, dataColorSchemeFromDeprecated);
-*/
+      theme: themeFromDeprecated,
+      dataColor: dataColorFromDeprecated,
+      dataColorScheme: dataColorSchemeFromDeprecated,
+    } = convertDeprecatedColor(color ?? (variant === "focus" ? "darker" : undefined));
+    //console.log(dataColorFromDeprecated, themeFromDeprecated /*, dataColorSchemeFromDeprecated*/);
+
     //if (dataColorAttr) {
 
     //}
@@ -400,17 +410,20 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     return (
       <Component
         {...rest}
-        //{...(variant === "focus" && color === "dark" ? { "data-color-scheme": "dark" } : {})}
         {...(dataColorAttr ? { "data-color": dataColorAttr } : {})}
+        {...(dataColorFromDeprecated ? { "data-color": dataColorFromDeprecated } : {})}
+        {...(dataColorSchemeFromDeprecated
+          ? { "data-color-scheme": dataColorSchemeFromDeprecated }
+          : {})}
         className={clsx(
           "hds-card",
           { "hds-card--full-width": variant === "full-width" },
           { "hds-card--miniature": variant === "miniature" },
-          { "hds-card--focus": variant === "focus" },
+          { "hds-card--focus": variant === "focus" }, // @deprecated
           { "hds-card--slim": variant === "slim" },
-          { "hds-card--theme-default": theme === "default" },
-          { "hds-card--theme-tinted": theme === "tinted" },
-          { "hds-card--theme-base": theme === "base" },
+          { "hds-card--theme-default": (themeFromDeprecated ?? theme) === "default" },
+          { "hds-card--theme-tinted": (themeFromDeprecated ?? theme) === "tinted" },
+          { "hds-card--theme-base": (themeFromDeprecated ?? theme) === "base" },
           { "hds-card--image-position-right": imagePosition === "right" },
           className as undefined,
         )}

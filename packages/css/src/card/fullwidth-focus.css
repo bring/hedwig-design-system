@@ -128,11 +128,4 @@
       }
     }
   }
-
-  &.hds-card--focus {
-    .hds-card__body-description,
-    .hds-card__body-header-title {
-      color: var(--hds-colors-text-default);
-    }
-  }
 }
