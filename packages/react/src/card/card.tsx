@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { forwardRef, useRef, useEffect, useState } from "react";
+import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 
@@ -347,20 +347,20 @@ export type CardProps =
  * @returns
  */
 /*
-const convertDeprecatedColors = (color: string) => {
+const convertDeprecatedColor = (color: string | undefined) => {
   switch (color) {
     case "lighter-brand":
-      return "brand-default";
+      return { theme: "default" };
     case "light-grey-fill":
-      return "neutral-tinted";
+      return { theme: "base", dataColor: "neutral" };
     case "white":
-      return "neutral-default";
+      return { theme: "default", dataColor: "neutral" };
     case "dark":
-      return "brand-tinted";
+      return { theme: "tinted" };
     case "darker":
-      return "brand-base";
+      return { theme: "base", dataColorScheme: "dark" };
     default:
-      return color;
+      return {};
   }
 };
 */
@@ -382,53 +382,17 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
   ) => {
     const Component = asChild ? Slot : Tag;
 
-    const localRef = useRef<HTMLDivElement | null>(null);
-
-    // Merge forwarded ref with local ref so we can inspect DOM
-    const setRefs = (node: HTMLDivElement) => {
-      localRef.current = node;
-      if (typeof ref === "function") {
-        ref(node);
-      }
-    };
-
     /*
-      Get "data-color" set somewhere in the DOM
-      Only care about "posten" and "bring" data-color
-     */
-    const [dataColor, setDataColor] = useState("");
-    useEffect(() => {
-      if (
-        typeof document === "undefined" ||
-        variant === "focus" || // Focus card is deprecated and does not support data-color
-        theme !== "base" || // No need to get data-color if theme is not "base"
-        dataColorAttr // We already have a data-color
-      )
-        return;
+    const {
+      theme: dataColorFromDeprecated,
+      dataColor: themeFromDeprecated,
+      dataColorSheme: dataColorSchemeFromDeprecated,
+    } = convertDeprecatedColor(color);
+    console.log(dataColorFromDeprecated, themeFromDeprecated, dataColorSchemeFromDeprecated);
+*/
+    //if (dataColorAttr) {
 
-      // Prefer closest ancestor with `data-color`, walking up the tree
-      let found = "";
-      let el: HTMLElement | null = localRef.current;
-      while (el) {
-        const attr = el.getAttribute("data-color");
-        if (attr) {
-          found = attr;
-          break;
-        }
-        el = el.parentElement;
-      }
-
-      // Fallback to documentElement/body if no ancestor found
-      if (!found) {
-        found =
-          document.documentElement.getAttribute("data-color") ??
-          document.body.getAttribute("data-color") ??
-          "";
-      }
-
-      setDataColor(found);
-    }, [theme, dataColorAttr, variant]);
-
+    //}
     //const newColor = convertDeprecatedColors(color);
     /** Effective color "darker" is default for Focus card; otherwise default to brand-default */
     //const effectiveColor = variant === "focus" && !newColor ? "darker" : newColor;
@@ -437,8 +401,6 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       <Component
         {...rest}
         //{...(variant === "focus" && color === "dark" ? { "data-color-scheme": "dark" } : {})}
-        {...(dataColor === "bring" && theme === "base" ? { "data-color-scheme": "light" } : {})}
-        {...(dataColor === "posten" && theme === "base" ? { "data-color-scheme": "dark" } : {})}
         {...(dataColorAttr ? { "data-color": dataColorAttr } : {})}
         className={clsx(
           "hds-card",
@@ -450,10 +412,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           { "hds-card--theme-tinted": theme === "tinted" },
           { "hds-card--theme-base": theme === "base" },
           { "hds-card--image-position-right": imagePosition === "right" },
-
           className as undefined,
         )}
-        ref={setRefs}
+        ref={ref}
       >
         {variant === "full-width" || variant === "focus" ? (
           <div className={clsx("hds-card__layoutwrapper", className as undefined)}>{children}</div>
