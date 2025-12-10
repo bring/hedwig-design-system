@@ -1,5 +1,4 @@
 ---
-"tokens": major
 "css": major
 "react": major
 ---
