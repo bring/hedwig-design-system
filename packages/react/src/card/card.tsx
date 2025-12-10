@@ -273,14 +273,16 @@ export interface CardSlimAndMiniatureProps extends CardBaseProps {
  * @deprecated Use Full-width card instead
  */
 export interface CardFocusProps extends CardBaseProps {
+  /**
+   * Change the default rendered element for Card.
+   */
   as?: "section" | "div" | "article" | "aside";
-
   /** @deprecated Use Full-width card instead */
   variant: "focus";
   /**
    * @deprecated
    * Use props `data-color` and `theme` instead.
-   * These colors will be removed in a future release.
+   * The color prop will be removed in a future release.
    */
   color?: "darker" | "dark";
   "data-color"?: never;
@@ -295,9 +297,12 @@ export interface CardFocusProps extends CardBaseProps {
 
 /**
  * @deprecated This interface is deprecated and will be removed in a future release.
- * Use `CardFullwidthProps` with `brand-default`, `neutral-default`, or `neutral-subtle` for colors instead.
+ * Use `CardSlimAndMiniatureProps` with props `data-color` and `theme` instead.
  */
 export interface CardFullwidthPropsDeprecated extends CardBaseProps {
+  /**
+   * Change the default rendered element for Card.
+   */
   as?: "section" | "div" | "article" | "aside";
   variant: "full-width";
   "data-color"?: never;
@@ -305,7 +310,7 @@ export interface CardFullwidthPropsDeprecated extends CardBaseProps {
   /**
    * @deprecated
    * Use `data-color` and `theme` instead.
-   * These colors will be removed in a future release.
+   * The color prop will be removed in a future release.
    */
   color: "white" | "lighter-brand" | "light-grey-fill";
   /**
@@ -317,6 +322,9 @@ export interface CardFullwidthPropsDeprecated extends CardBaseProps {
 }
 
 export interface CardFullwidthProps extends CardBaseProps {
+  /**
+   * Change the default rendered element for Card.
+   */
   as?: "section" | "div" | "article" | "aside";
   variant: "full-width";
   /**
@@ -348,15 +356,11 @@ export type CardProps =
  * @param color
  * @returns
  */
-//type AllowedTheme = CardSlimAndMiniatureProps["theme"];
-//type AllowedDataColor = CardSlimAndMiniatureProps["data-color"];
-//type AllowedDataColorScheme = "light" | "dark";
-
 const convertDeprecatedColor = (
   color: string | undefined,
 ): Partial<{
   theme: NonNullable<CardSlimAndMiniatureProps["theme"]>;
-  dataColor: CardSlimAndMiniatureProps["data-color"];
+  dataColor: NonNullable<CardSlimAndMiniatureProps["data-color"]>;
   dataColorScheme: "light" | "dark";
 }> => {
   switch (color) {
@@ -398,15 +402,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       dataColor: dataColorFromDeprecated,
       dataColorScheme: dataColorSchemeFromDeprecated,
     } = convertDeprecatedColor(color ?? (variant === "focus" ? "darker" : undefined));
-    //console.log(dataColorFromDeprecated, themeFromDeprecated /*, dataColorSchemeFromDeprecated*/);
 
-    //if (dataColorAttr) {
-
-    //}
-    //const newColor = convertDeprecatedColors(color);
-    /** Effective color "darker" is default for Focus card; otherwise default to brand-default */
-    //const effectiveColor = variant === "focus" && !newColor ? "darker" : newColor;
-    //console.log(dataColorAttr);
     return (
       <Component
         {...rest}
