@@ -1,7 +1,7 @@
 {
   "colors-bring": {
-    "colorScheme": "light",
     "$type": "color",
+    "colorScheme": "light",
     "bg-default": {
       "$value": "{colors-gray.1}"
     },
@@ -47,6 +47,7 @@
   },
   "colors-posten": {
     "$type": "color",
+    "colorScheme": "light",
     "bg-default": {
       "$value": "{colors-gray.1}"
     },
@@ -92,6 +93,7 @@
   },
   "colors-neutral": {
     "$type": "color",
+    "colorScheme": "light",
     "bg-default": {
       "$value": "{colors-gray.1}"
     },
@@ -137,6 +139,7 @@
   },
   "colors-warning": {
     "$type": "color",
+    "colorScheme": "light",
     "surface-default": {
       "$value": "{colors-yellow.1}"
     },
@@ -158,6 +161,7 @@
   },
   "colors-success": {
     "$type": "color",
+    "colorScheme": "light",
     "surface-default": {
       "$value": "{colors-green.1}"
     },
@@ -179,6 +183,7 @@
   },
   "colors-info": {
     "$type": "color",
+    "colorScheme": "light",
     "surface-default": {
       "$value": "{colors-purple.1}"
     },
@@ -200,6 +205,7 @@
   },
   "colors-error": {
     "$type": "color",
+    "colorScheme": "light",
     "surface-default": {
       "$value": "{colors-red.1}"
     },
