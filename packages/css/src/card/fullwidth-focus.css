@@ -134,5 +134,10 @@
     .hds-card__body-header-title {
       color: var(--hds-ui-colors-white);
     }
+
+    h1 .hds-card__body-header-title {
+      font-size: var(--hds-font-size-h1);
+      line-height: var(--hds-line-height-h1);
+    }
   }
 }
