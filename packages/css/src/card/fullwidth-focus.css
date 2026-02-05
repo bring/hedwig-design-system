@@ -37,17 +37,6 @@
 			 *
 			 **/
 
-      /* Narrowest: fixed aspect ratio (portrait: height is 1.5 times the width). */
-      @container fullwidthcard (width < 300px) {
-        aspect-ratio: var(--hds-fullwidthcard-image-aspect-mini);
-        max-height: var(--hds-fullwidthcard-image-height-small);
-      }
-
-      /* Middle narrow: fixed aspect ratio (quare format), variable height */
-      @container fullwidthcard (width >= 300px) and (width < 648px) {
-        aspect-ratio: 1;
-      }
-
       /* "Widest" of the narrow card layouts: fixed image height (but higher now) */
       @container fullwidthcard (width >= 648px) and (width < 800px) {
         height: var(--hds-fullwidthcard-image-height-medium);
