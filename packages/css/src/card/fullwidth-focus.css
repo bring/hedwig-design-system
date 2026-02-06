@@ -29,18 +29,6 @@
       border-radius: var(--hds-border-radius-8);
       max-height: var(--hds-fullwidthcard-image-maxheight-small);
       width: 100%;
-
-      /*  Responsivity: different card layouts and content/images sizes, while still displaying as much as the image as
-			 *  possible and trying to keep focus on the middle, .hds-card__media is displayed in particular ways on
-			 *  particular viewport widths, but always filling the available width (which below 800px is the full width of the
-			 *  card minus padding, and above 800px is only half the width of the card):
-			 *
-			 **/
-
-      /* "Widest" of the narrow card layouts: fixed image height (but higher now) */
-      @container fullwidthcard (width >= 648px) and (width < 800px) {
-        height: var(--hds-fullwidthcard-image-height-medium);
-      }
     }
 
     .hds-card__body {
