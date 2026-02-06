@@ -29,6 +29,22 @@
       border-radius: var(--hds-border-radius-8);
       max-height: var(--hds-fullwidthcard-image-maxheight-small);
       width: 100%;
+
+      @container fullwidthcard (width >= 280px) {
+        min-height: 210px;
+
+        img {
+          min-height: 210px;
+        }
+      }
+
+      @container fullwidthcard (width < 280px) {
+        aspect-ratio: 4 / 3;
+
+        img {
+          aspect-ratio: 4 / 3;
+        }
+      }
     }
 
     .hds-card__body {
