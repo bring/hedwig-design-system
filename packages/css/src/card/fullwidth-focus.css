@@ -30,27 +30,20 @@
       max-height: var(--hds-fullwidthcard-image-maxheight-small);
       width: 100%;
 
-      /*  Responsivity: different card layouts and content/images sizes, while still displaying as much as the image as
-			 *  possible and trying to keep focus on the middle, .hds-card__media is displayed in particular ways on
-			 *  particular viewport widths, but always filling the available width (which below 800px is the full width of the
-			 *  card minus padding, and above 800px is only half the width of the card):
-			 *
-			 **/
+      @container fullwidthcard (width >= 280px) {
+        min-height: 210px;
 
-      /* Narrowest: fixed aspect ratio (portrait: height is 1.5 times the width). */
-      @container fullwidthcard (width < 300px) {
-        aspect-ratio: var(--hds-fullwidthcard-image-aspect-mini);
-        max-height: var(--hds-fullwidthcard-image-height-small);
+        img {
+          min-height: 210px;
+        }
       }
 
-      /* Middle narrow: fixed aspect ratio (quare format), variable height */
-      @container fullwidthcard (width >= 300px) and (width < 648px) {
-        aspect-ratio: 1;
-      }
+      @container fullwidthcard (width < 280px) {
+        aspect-ratio: 4 / 3;
 
-      /* "Widest" of the narrow card layouts: fixed image height (but higher now) */
-      @container fullwidthcard (width >= 648px) and (width < 800px) {
-        height: var(--hds-fullwidthcard-image-height-medium);
+        img {
+          aspect-ratio: 4 / 3;
+        }
       }
     }
 
