@@ -37,7 +37,7 @@ jobs:
           pnpm build
           echo "::endgroup::"
 
-      - name: "Move examples and examples-v3 apps build into storybook-static"
+      - name: "Move examples and examples-v3 app builds into storybook-static"
         run: |
           mv apps/examples/build/client/ apps/docs/storybook-static/examples
           mv apps/examples-v3/build/client/ apps/docs/storybook-static/examples-v3
