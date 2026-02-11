@@ -6,6 +6,8 @@ Welcome to the Hedwig Design System – a comprehensive design system built to s
 
 [Examples](https://bring.github.io/hedwig-design-system/examples/) - A kitchen sink of all the components, showing their usage.
 
+[Examples V3](https://bring.github.io/hedwig-design-system/examples-v3/) - Version 3 of all the components.
+
 [Storybook](https://bring.github.io/hedwig-design-system/) - Similar to the to examples, primarly used when developing the components inside the design system.
 
 Hedwig Design System consists of three packages
@@ -108,7 +110,9 @@ To start the development server:
 pnpm dev
 ```
 
-[Storybook](https://storybook.js.org/) should now be available at [`localhost:6006`](http://localhost:6006). The [examples app](apps/examples/) should be available at [`localhost:6007`](http://localhost:6007).
+[Storybook](https://storybook.js.org/) should now be available at [`localhost:6006`](http://localhost:6006).
+The [examples app](apps/examples/) should be available at [`localhost:6007`](http://localhost:6007).
+The [examples-v3 app](apps/examples-v3/) should be available at [`localhost:6008`](http://localhost:6008). This will not reflect local changes to components. Only used for historic reference.
 
 ## Publishing
 

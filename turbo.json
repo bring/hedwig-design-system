@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "outputs": ["dist/**", "tokens-output/**", "storybook-static/**"],
+      "outputs": ["dist/**", "tokens-output/**", "storybook-static/**", "build/client/**"],
       "dependsOn": ["^build"]
     },
     "lint": {

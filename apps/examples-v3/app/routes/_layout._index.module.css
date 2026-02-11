@@ -1,0 +1,8 @@
+.exampleHeadingLink {
+  color: var(--hds-ui-colors-black);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
