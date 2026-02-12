@@ -1,0 +1,82 @@
+.layoutCentered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.layoutCenteredVerticalPadding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.layoutCenteredFullwidth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  > * {
+    width: 100%;
+  }
+}
+
+.layoutPaddingOnly {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.breakpointIndicator {
+  &::before {
+    z-index: 1;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: block;
+
+    font: var(--hds-typography-technical);
+    font-size: var(--hds-font-size-technical-max);
+    content: "▮ initial";
+  }
+
+  @media (min-width: 460px) {
+    &::before {
+      content: "📱 small";
+    }
+  }
+
+  @media (min-width: 720px) {
+    &::before {
+      content: "📺 medium";
+    }
+  }
+
+  @media (min-width: 940px) {
+    &::before {
+      content: "💻 large";
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &::before {
+      content: "🖥️ xlarge";
+    }
+  }
+
+  &.breakpointIndicatorBottom {
+    &::before {
+      top: auto;
+      bottom: 8px;
+    }
+  }
+}

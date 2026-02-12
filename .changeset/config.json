@@ -6,5 +6,5 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": ["docs", "examples"]
+  "ignore": ["docs", "examples", "examples-v3"]
 }

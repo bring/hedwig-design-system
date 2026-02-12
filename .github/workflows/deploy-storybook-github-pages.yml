@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.tool-versions'
+          node-version-file: ".tool-versions"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -37,9 +37,10 @@ jobs:
           pnpm build
           echo "::endgroup::"
 
-      - name: "Move examples app build into storybook-static"
+      - name: "Move examples and examples-v3 app builds into storybook-static"
         run: |
           mv apps/examples/build/client/ apps/docs/storybook-static/examples
+          mv apps/examples-v3/build/client/ apps/docs/storybook-static/examples-v3
           cp apps/docs/storybook-static/examples/index.html apps/docs/storybook-static/404.html
 
       - name: "upload"
