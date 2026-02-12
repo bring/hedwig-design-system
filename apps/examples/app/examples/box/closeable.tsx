@@ -21,6 +21,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 3,
+  index: 4,
   description: `Use the <code>closeable</code> prop to add a close button to the box.`,
 };

@@ -34,6 +34,7 @@
     font-size: var(--hds-font-size-caption);
     line-height: 1.5;
     text-align: left;
-    color: var(--hds-ui-colors-black);
+    color: var(--hds-colors-neutral-text-default);
+    fill: var(--hds-colors-neutral-text-default);
   }
 }

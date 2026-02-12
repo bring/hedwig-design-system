@@ -61,10 +61,12 @@ export type MessageProps = (
 ) &
   Omit<BoxProps, "variant" | "asChild">;
 
+/** @deprecated Use Alert component instead */
 export const Message = forwardRef<HTMLDivElement, MessageProps>(
   ({ children, className, variant = "success", icon, iconClassName, ...rest }, ref) => {
     return (
       <Box
+        {...(variant === "warning" ? { "data-color-scheme": "light" } : {})}
         className={clsx(`hds-message`, `hds-message--${variant}`, className as undefined)}
         ref={ref}
         {...rest}

@@ -4,7 +4,7 @@
 
 .hds-navbar {
   position: relative;
-  background-color: var(--hds-ui-colors-white);
+  background-color: var(--hds-colors-neutral-bg-default);
   height: var(--hds-navbar-height);
   display: flex;
   justify-content: space-between;
@@ -39,7 +39,7 @@
     top: var(--hds-navbar-height);
     left: 0;
     display: grid;
-    background-color: white;
+    background-color: var(--hds-colors-neutral-bg-default);
 
     --_animation-time: var(--hds-micro-animation-duration-quick);
 
@@ -99,7 +99,7 @@
     }
 
     &:hover {
-      color: var(--hds-link-colors-hover);
+      color: var(--hds-colors-text-subtle);
     }
 
     .hds-navbar__item-icon {
@@ -235,7 +235,7 @@
     &::after {
       align-self: stretch;
       content: "";
-      border-right: 1px solid var(--hds-ui-colors-grey);
+      border-right: 1px solid var(--hds-colors-neutral-border-default);
       margin-left: var(--hds-spacing-24);
       margin-right: var(--hds-spacing-24);
     }
@@ -243,12 +243,12 @@
     &, /* Default */
     &.hds-navbar__logo-and-service-text--service {
       font: var(--hds-typography-h3);
-      color: var(--hds-ui-colors-black);
+      color: var(--hds-colors-text-default);
     }
 
     &.hds-navbar__logo-and-service-text--flagship {
       font: var(--hds-typography-h2);
-      color: var(--hds-colors-darker);
+      color: var(--hds-colors-text-default);
     }
   }
 }

@@ -8,9 +8,21 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
    * Color of the badge
    *
+   * @deprecated
    * @default "lighter"
+   * "lighter", "darker", and "white" are deprecated and will be removed in a future release.
+   * Use data-color "neutral", "info", "success", "warning", or "error" instead.
    */
-  variant?: "lighter" | "darker" | "white" | "warning";
+  variant?: /** @deprecated */
+  | "lighter"
+    /** @deprecated */
+    | "darker"
+    /** @deprecated */
+    | "white"
+    /** @deprecated */
+    | "warning";
+
+  "data-color"?: "neutral" | "info" | "success" | "warning" | "error";
 
   /**
    * Font size of the badge
@@ -33,20 +45,38 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
  * @example
  *
  * ```tsx
- * <Badge variant="darker">Darker</Badge>
+ * <Badge variant="info">Info</Badge>
  * ```
  *
  */
+
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ children, asChild, variant = "lighter", size = "small", className, ...rest }, ref) => {
+  (
+    {
+      "data-color": color = "",
+      children,
+      asChild,
+      variant = "",
+      size = "small",
+      className,
+      ...rest
+    },
+    ref,
+  ) => {
     const Component = asChild ? Slot : "span";
     return (
       <Component
+        {...(variant === "warning" || variant === "lighter" || variant === "darker"
+          ? { "data-color-scheme": "light" }
+          : {})}
+        data-color={color}
         ref={ref}
         className={clsx(
           "hds-badge",
           `hds-badge--${size}`,
-          `hds-badge--${variant}`,
+          { "hds-badge--lighter": variant === "lighter" },
+          { "hds-badge--darker": variant === "darker" },
+          { "hds-badge--white": variant === "white" },
           className as undefined,
         )}
         {...rest}

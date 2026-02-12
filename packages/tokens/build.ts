@@ -90,25 +90,134 @@ function buildBrandCssVariables() {
 }
 buildBrandCssVariables();
 
+function buildThemeCssVariables() {
+  for (const theme of ["dark", "light"]) {
+    console.log(`🤖 Building ${theme} css variables`);
+    StyleDictionary.extend({
+      include: ["tokens-source/shared-colors.json"],
+      source: [`tokens-source/themes/${theme}.json`],
+      platforms: {
+        css: {
+          options: {
+            showFileHeader: false,
+          },
+          prefix: "hds",
+          transforms: cssTransforms,
+          files: [
+            {
+              filter: "isSource",
+              destination: `tokens-output/css/${theme}.css`,
+              format: "css/variables",
+              options: {
+                outputReferences: false,
+              },
+            },
+          ],
+        },
+      },
+    }).buildAllPlatforms();
+  }
+}
+buildThemeCssVariables();
+
+function buildColorCssVariables() {
+  for (const color of ["bring", "posten", "neutral", "info", "success", "warning", "error"]) {
+    console.log(`🤖 Building ${color} css variables`);
+    StyleDictionary.extend({
+      include: ["tokens-source/shared-colors.json", "tokens-source/themes/dark.json"],
+      source: [`tokens-source/colors/${color}.json`],
+      platforms: {
+        css: {
+          options: {
+            showFileHeader: false,
+          },
+          prefix: "hds",
+          transforms: cssTransforms,
+          files: [
+            {
+              filter: "isSource",
+              destination: `tokens-output/css/color-${color}.css`,
+              format: "css/variables",
+              options: {
+                outputReferences: true,
+              },
+            },
+          ],
+        },
+      },
+    }).buildAllPlatforms();
+  }
+}
+buildColorCssVariables();
+
 function buildFinalCssVariables() {
   console.log("✨ Building final css variables");
   const postenCss = String(readFileSync(`${__dirname}/tokens-output/css/posten.css`));
   const bringCss = String(readFileSync(`${__dirname}/tokens-output/css/bring.css`));
   const sharedCss = String(readFileSync(`${__dirname}/tokens-output/css/shared.css`));
+  const lightVariables = printVariables(
+    extractVariables(String(readFileSync(`${__dirname}/tokens-output/css/light.css`))),
+  );
+  const darkVariables = printVariables(
+    extractVariables(String(readFileSync(`${__dirname}/tokens-output/css/dark.css`))),
+  );
 
   function extractVariables(fromString: string) {
     const variables = fromString.match(/--.+/g);
     if (!variables) throw new Error("no variables extracted");
     return variables.map(String);
   }
+
+  function filterH1andH2Variables(fromString: string) {
+    const variables = fromString.match(/--hds-typography-h1.+/g)?.map(String) ?? [];
+    const h2Variables = fromString.match(/--hds-typography-h2.+/g)?.map(String) ?? [];
+    return [...variables, ...h2Variables];
+  }
+
   function printVariables(variables: string[]) {
     return variables.map((variable) => `  ${variable}`).join("\n");
+  }
+  function colorLayer(color: string, extraCss?: string) {
+    const colorCss = String(readFileSync(`${__dirname}/tokens-output/css/color-${color}.css`));
+    return `
+@layer hds.theme.color {
+[data-color="${color}"], [data-color="${color}"] [data-color-scheme] {
+${printVariables(extractVariables(colorCss))}
+${extraCss ? printVariables(extractVariables(extraCss)) : ""}
+}}`;
   }
 
   const final = `
 :root {
 ${printVariables(extractVariables(sharedCss))}
 }
+@layer hds.theme.color-scheme.light {
+:root, [data-color-scheme="light"] {
+${lightVariables}
+  color-scheme: light;
+}}
+@media (prefers-color-scheme: light) {
+  [data-color-scheme="auto"] {
+${lightVariables}
+  color-scheme: light;
+}}
+@layer hds.theme.color-scheme.dark {
+[data-color-scheme="dark"] {
+${darkVariables}
+  color-scheme: dark;
+}}
+@media (prefers-color-scheme: dark) {
+  [data-color-scheme="auto"] {
+${darkVariables}
+  color-scheme: dark;
+}}
+${colorLayer("bring", printVariables(filterH1andH2Variables(bringCss)))}
+${colorLayer("posten", printVariables(filterH1andH2Variables(postenCss)))}
+${colorLayer("neutral")}
+${colorLayer("info")}
+${colorLayer("success")}
+${colorLayer("warning")}
+${colorLayer("error")}
 :root, /* Default */
 .hds-theme-posten {
 ${printVariables(extractVariables(postenCss))}
@@ -124,10 +233,21 @@ buildFinalCssVariables();
 
 function cssCleanup() {
   console.log("🧹 Cleanup after css building");
-  // Delete css/bring.css, css/posten.css, css/shared.css
-  const filesToDelete = ["bring", "posten", "shared"].map(
-    (brand) => `${__dirname}/tokens-output/css/${brand}.css`,
-  );
+  // Delete temporary css files
+  const filesToDelete = [
+    "bring",
+    "posten",
+    "shared",
+    "dark",
+    "light",
+    "color-bring",
+    "color-posten",
+    "color-neutral",
+    "color-info",
+    "color-success",
+    "color-warning",
+    "color-error",
+  ].map((brand) => `${__dirname}/tokens-output/css/${brand}.css`);
   for (const file of filesToDelete) {
     unlinkSync(file);
   }

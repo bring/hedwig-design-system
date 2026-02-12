@@ -15,20 +15,22 @@
   /* Underline */
   text-decoration: underline;
   text-decoration-style: dashed;
-  text-decoration-color: var(--hds-ui-colors-black);
+  text-decoration-color: var(--hds-colors-neutral-text-default);
   text-decoration-thickness: 1px;
   text-underline-offset: var(--hds-spacing-4-8);
   text-align: left;
 
   &[data-state="open"] {
-    background-color: var(--hds-ui-colors-light-grey-fill);
+    background-color: var(--hds-colors-neutral-base-default);
   }
 
   /* Info icon */
   &::after {
     display: inline-block;
     content: "";
-    background-image: var(--_hds-info-square);
+    mask-image: var(--_hds-info-square);
+    mask-size: cover;
+    background-color: var(--hds-colors-neutral-text-default);
     width: 24px;
     height: 24px;
     vertical-align: bottom;

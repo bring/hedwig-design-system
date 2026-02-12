@@ -107,83 +107,99 @@
   }
 
   /**
+   * Disabled
+   */
+
+  &:disabled {
+    opacity: var(--hds-opacity-50);
+    cursor: default;
+  }
+
+  /**
    * Modifiers: Variants
    */
 
   &.hds-button--primary {
-    background-color: var(--hds-colors-signature);
-    border-color: var(--hds-colors-signature);
-    color: var(--hds-button-colors-text);
-    fill: var(--hds-button-colors-text);
+    color: var(--hds-colors-base-contrast-default);
+    fill: var(--hds-colors-base-contrast-default);
+    background-color: var(--hds-colors-base-default);
+    border-color: var(--hds-colors-base-default);
 
     &:hover {
-      background-color: var(--hds-colors-signature-hover);
-      border-color: var(--hds-colors-signature-hover);
+      background-color: var(--hds-colors-base-hover);
+      border-color: var(--hds-colors-base-hover);
     }
 
     &:active {
-      background-color: var(--hds-colors-signature);
+      background-color: var(--hds-colors-base-active);
+      border-color: var(--hds-colors-base-active);
     }
 
-    &:disabled {
-      color: var(--hds-ui-colors-dark-grey);
-      background-color: var(--hds-ui-colors-grey);
-      border-color: var(--hds-ui-colors-grey);
+    &:disabled:hover {
+      color: var(--hds-colors-base-contrast-default);
+      fill: var(--hds-colors-base-contrast-default);
+      background-color: var(--hds-colors-base-default);
+      border-color: var(--hds-colors-base-default);
     }
   }
 
   &.hds-button--secondary {
+    color: var(--hds-colors-neutral-text-default);
+    fill: var(--hds-colors-neutral-text-default);
     background-color: transparent;
-    color: var(--hds-ui-colors-black);
-    fill: var(--hds-ui-colors-black);
-    border-color: var(--hds-colors-signature);
+    border-color: var(--hds-colors-border-default);
 
     &:hover {
-      color: var(--hds-colors-dark);
-      background-color: var(--hds-colors-lighter);
-      border-color: var(--hds-colors-dark);
+      color: var(--hds-colors-text-subtle);
+      fill: var(--hds-colors-text-subtle);
+      background-color: var(--hds-colors-surface-hover);
+      border-color: var(--hds-colors-border-strong);
     }
 
     &:active {
-      color: var(--hds-ui-colors-black);
-      background-color: transparent;
+      color: var(--hds-colors-neutral-text-default);
+      fill: var(--hds-colors-neutral-text-default);
+      background-color: var(--hds-colors-surface-active);
+      border-color: var(--hds-colors-border-default);
     }
 
-    &:disabled {
-      color: var(--hds-ui-colors-dark-grey);
-      border-color: var(--hds-ui-colors-grey);
-
-      &:hover {
-        background-color: transparent;
-      }
+    &:disabled:hover {
+      color: var(--hds-colors-neutral-text-default);
+      fill: var(--hds-colors-neutral-text-default);
+      background-color: transparent;
+      border-color: var(--hds-colors-border-default);
     }
   }
 
   &.hds-button--tertiary {
+    color: var(--hds-colors-neutral-text-default);
+    fill: var(--hds-colors-neutral-text-default);
     background-color: transparent;
     border-color: transparent;
 
     &:hover {
-      color: var(--hds-colors-dark);
-      background-color: var(--hds-colors-lighter);
+      color: var(--hds-colors-text-subtle);
+      fill: var(--hds-colors-text-subtle);
+      background-color: var(--hds-colors-surface-hover);
+      border-color: var(--hds-colors-surface-hover);
     }
 
     &:active {
-      color: var(--hds-ui-colors-black);
-      background-color: transparent;
+      color: var(--hds-colors-neutral-text-default);
+      fill: var(--hds-colors-neutral-text-default);
+      background-color: var(--hds-colors-surface-active);
+      border-color: var(--hds-colors-surface-active);
     }
 
-    &:disabled {
-      color: var(--hds-ui-colors-dark-grey);
-
-      &:hover {
-        &:hover {
-          background-color: transparent;
-        }
-      }
+    &:disabled:hover {
+      color: var(--hds-colors-neutral-text-default);
+      fill: var(--hds-colors-neutral-text-default);
+      background-color: transparent;
+      border-color: transparent;
     }
   }
 
+  /** @deprecated **/
   &.hds-button--inverted {
     background-color: transparent;
     border-color: var(--hds-colors-signature);
@@ -200,6 +216,7 @@
     }
 
     &:disabled {
+      opacity: var(--hds-opacity-50);
       color: var(--hds-ui-colors-grey);
       border-color: var(--hds-ui-colors-grey);
 

@@ -217,6 +217,34 @@ export interface CardBaseProps extends React.HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
 }
 
+/**
+ * @deprecated This interface is deprecated and will be removed in a future release.
+ * Use `CardSlimAndMiniatureProps` with props `data-color` and `theme` instead.
+ */
+export interface CardSlimAndMiniaturePropsDeprecated extends CardBaseProps {
+  /**
+   * Change the default rendered element for Card.
+   */
+  as?: "section" | "div" | "article" | "aside";
+  /**
+   * Allows for a horizontal variant for sizes above small.
+   *
+   * @default "slim"
+   */
+  variant?: "slim" | "miniature";
+  "data-color"?: never;
+  theme?: never;
+  /**
+   * @deprecated
+   * Use props `data-color` and `theme` instead.
+   * These colors will be removed in a future release.
+   */
+  color?: "white" | "lighter-brand" | "light-grey-fill";
+
+  /* Only fullwidth or focus cards can have images to the left or right of the text: */
+  imagePosition?: never;
+}
+
 export interface CardSlimAndMiniatureProps extends CardBaseProps {
   /**
    * Change the default rendered element for Card.
@@ -229,20 +257,36 @@ export interface CardSlimAndMiniatureProps extends CardBaseProps {
    */
   variant?: "slim" | "miniature";
   /**
-   * The color of the card.
-   *
-   * @default "lighter-brand"
-   * */
-  color?: "white" | "lighter-brand" | "light-grey-fill";
-
+   * Set theme for card
+   * @default "default"
+   */
+  theme?: "default" | "tinted" | "base";
+  /**
+   * Set data-color for card.
+   */
+  "data-color"?: "neutral" | "posten" | "bring";
   /* Only fullwidth or focus cards can have images to the left or right of the text: */
   imagePosition?: never;
 }
 
+/**
+ * @deprecated Use Full-width card instead
+ */
 export interface CardFocusProps extends CardBaseProps {
+  /**
+   * Change the default rendered element for Card.
+   */
   as?: "section" | "div" | "article" | "aside";
+  /** @deprecated Use Full-width card instead */
   variant: "focus";
+  /**
+   * @deprecated
+   * Use props `data-color` and `theme` instead.
+   * The color prop will be removed in a future release.
+   */
   color?: "darker" | "dark";
+  "data-color"?: never;
+  theme?: never;
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
    *
@@ -251,9 +295,23 @@ export interface CardFocusProps extends CardBaseProps {
   imagePosition?: "left" | "right";
 }
 
-export interface CardFullwidthProps extends CardBaseProps {
+/**
+ * @deprecated This interface is deprecated and will be removed in a future release.
+ * Use `CardSlimAndMiniatureProps` with props `data-color` and `theme` instead.
+ */
+export interface CardFullwidthPropsDeprecated extends CardBaseProps {
+  /**
+   * Change the default rendered element for Card.
+   */
   as?: "section" | "div" | "article" | "aside";
   variant: "full-width";
+  "data-color"?: never;
+  theme?: never;
+  /**
+   * @deprecated
+   * Use `data-color` and `theme` instead.
+   * The color prop will be removed in a future release.
+   */
   color: "white" | "lighter-brand" | "light-grey-fill";
   /**
    * fullwidth or focus cards can have images to the left or right of the text.
@@ -263,7 +321,63 @@ export interface CardFullwidthProps extends CardBaseProps {
   imagePosition?: "left" | "right";
 }
 
-export type CardProps = CardSlimAndMiniatureProps | CardFocusProps | CardFullwidthProps;
+export interface CardFullwidthProps extends CardBaseProps {
+  /**
+   * Change the default rendered element for Card.
+   */
+  as?: "section" | "div" | "article" | "aside";
+  variant: "full-width";
+  /**
+   * Set theme for card
+   * @default "default"
+   */
+  theme?: "default" | "tinted" | "base";
+  /**
+   * Set data-color for card.
+   */
+  "data-color"?: "neutral" | "posten" | "bring";
+  /**
+   * fullwidth or focus cards can have images to the left or right of the text.
+   *
+   * @default "left"
+   * */
+  imagePosition?: "left" | "right";
+}
+
+export type CardProps =
+  | CardSlimAndMiniatureProps
+  | CardFocusProps
+  | CardFullwidthProps
+  | CardSlimAndMiniaturePropsDeprecated
+  | CardFullwidthPropsDeprecated;
+
+/**
+ * Converts deprecated colors to current colors
+ * @param color
+ * @returns
+ */
+const convertDeprecatedColor = (
+  color: string | undefined,
+): Partial<{
+  theme: NonNullable<CardSlimAndMiniatureProps["theme"]>;
+  dataColor: NonNullable<CardSlimAndMiniatureProps["data-color"]>;
+  dataColorScheme: "light" | "dark";
+}> => {
+  switch (color) {
+    case "lighter-brand":
+      return { theme: "default" };
+    case "light-grey-fill":
+      return { theme: "base", dataColor: "neutral" };
+    case "white":
+      return { theme: "default", dataColor: "neutral" };
+    case "dark":
+      return { theme: "base" };
+    case "darker":
+      return { theme: "tinted", dataColorScheme: "dark" };
+    default:
+      return {};
+  }
+};
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   (
@@ -273,6 +387,8 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       className,
       children,
       variant = "slim",
+      "data-color": dataColorAttr,
+      theme = "default",
       color,
       imagePosition,
       ...rest
@@ -280,20 +396,30 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     ref,
   ) => {
     const Component = asChild ? Slot : Tag;
-    const effectiveColor = variant === "focus" && !color ? "darker" : color;
+
+    const {
+      theme: themeFromDeprecated,
+      dataColor: dataColorFromDeprecated,
+      dataColorScheme: dataColorSchemeFromDeprecated,
+    } = convertDeprecatedColor(color ?? (variant === "focus" ? "darker" : undefined));
+
     return (
       <Component
         {...rest}
+        {...(dataColorAttr ? { "data-color": dataColorAttr } : {})}
+        {...(dataColorFromDeprecated ? { "data-color": dataColorFromDeprecated } : {})}
+        {...(dataColorSchemeFromDeprecated
+          ? { "data-color-scheme": dataColorSchemeFromDeprecated }
+          : {})}
         className={clsx(
           "hds-card",
           { "hds-card--full-width": variant === "full-width" },
           { "hds-card--miniature": variant === "miniature" },
-          { "hds-card--focus": variant === "focus" },
+          { "hds-card--focus": variant === "focus" }, // @deprecated
           { "hds-card--slim": variant === "slim" },
-          { "hds-card--color-white": effectiveColor === "white" },
-          { "hds-card--color-light-grey-fill": effectiveColor === "light-grey-fill" },
-          { "hds-card--color-dark": effectiveColor === "dark" },
-          { "hds-card--color-darker": effectiveColor === "darker" },
+          { "hds-card--theme-default": (themeFromDeprecated ?? theme) === "default" },
+          { "hds-card--theme-tinted": (themeFromDeprecated ?? theme) === "tinted" },
+          { "hds-card--theme-base": (themeFromDeprecated ?? theme) === "base" },
           { "hds-card--image-position-right": imagePosition === "right" },
           className as undefined,
         )}

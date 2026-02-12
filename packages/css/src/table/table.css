@@ -11,7 +11,7 @@
 
   th,
   td {
-    border-bottom: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-stroke);
+    border-bottom: var(--hds-stroke-default) solid var(--hds-colors-neutral-border-default);
   }
 
   th:first-child,

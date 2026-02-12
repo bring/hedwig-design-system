@@ -52,7 +52,7 @@
     left: 0;
     height: var(--checkmark-width);
     width: var(--checkmark-width);
-    border: solid 2px var(--hds-colors-darker);
+    border: solid 2px var(--hds-colors-text-default);
     border-radius: 50%;
   }
 
@@ -69,38 +69,38 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--hds-colors-dark);
+    background: var(--hds-colors-border-strong);
   }
 
   /**
   * Variant bounding-box and state error
   */
   &.hds-radio-button--bounding-box {
-    background-color: var(--hds-colors-lighter);
+    background-color: var(--hds-colors-bg-tinted);
     padding: calc(var(--hds-spacing-16) - 1px) var(--hds-spacing-32)
       calc(var(--hds-spacing-16) - 1px)
       calc(
         var(--hds-spacing-16) + var(--checkmark-width) + (var(--checkmark-margin) * 2) +
           var(--hds-spacing-12)
       );
-    border: solid var(--hds-stroke-default) var(--hds-colors-lighter);
+    border: solid var(--hds-stroke-default) var(--hds-colors-bg-tinted);
 
     .hds-radio-button__checkmark {
       left: var(--hds-spacing-16);
     }
 
     &.hds-radio-button--error {
-      border: solid var(--hds-stroke-default) var(--hds-ui-colors-warning-yellow);
+      border: solid var(--hds-stroke-default) var(--hds-colors-warning-base-default);
     }
   }
 
   &.hds-radio-button--error {
     .hds-radio-button__checkmark {
-      border-color: var(--hds-ui-colors-warning-yellow);
+      border-color: var(--hds-colors-warning-base-default);
     }
 
     .hds-radio-button__checkmark::after {
-      background: var(--hds-ui-colors-warning-yellow);
+      background: var(--hds-colors-warning-base-default);
     }
   }
 
@@ -110,28 +110,29 @@
   input[type="radio"]:disabled {
     ~ .hds-radio-button__checkmark,
     ~ .hds-radio-button__checkmark::after {
-      border-color: var(--hds-ui-colors-grey);
+      border-color: var(--hds-colors-neutral-border-default);
       cursor: default;
     }
 
     ~ .hds-radio-button__checkmark::after {
-      background: var(--hds-ui-colors-grey);
+      background: var(--hds-colors-border-strong);
       cursor: default;
     }
   }
 
   &.hds-radio-button:has(input:disabled) {
     cursor: default;
-    color: var(--hds-ui-colors-dark-grey);
+    color: var(--hds-colors-neutral-text-subtle);
 
     &.hds-radio-button--bounding-box {
-      background-color: var(--hds-ui-colors-light-grey-fill);
+      background-color: var(--hds-colors-neutral-base-default);
+      border-color: var(--hds-colors-bg-tinted);
     }
   }
 
   /* Focus effect */
   &:has(input[type="radio"]:focus-visible) {
-    outline: 2px solid var(--hds-colors-dark);
+    outline: 2px solid var(--hds-colors-border-strong);
     outline-offset: 2px;
   }
 }

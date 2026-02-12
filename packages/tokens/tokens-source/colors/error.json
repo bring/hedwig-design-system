@@ -1,0 +1,23 @@
+{
+  "colors": {
+    "$type": "color",
+    "surface-default": {
+      "$value": "{colors-error.surface-default}"
+    },
+    "border-default": {
+      "$value": "{colors-error.border-default}"
+    },
+    "border-strong": {
+      "$value": "{colors-error.border-strong}"
+    },
+    "text-default": {
+      "$value": "{colors-error.text-default}"
+    },
+    "base-default": {
+      "$value": "{colors-error.base-default}"
+    },
+    "base-contrast-default": {
+      "$value": "{colors-error.base-contrast-default}"
+    }
+  }
+}

@@ -26,6 +26,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 4,
+  index: 5,
   description: `Control the close state of the box with the <code>closed</code> and <code>onClose</code> props.`,
 };

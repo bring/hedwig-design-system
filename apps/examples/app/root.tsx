@@ -16,6 +16,10 @@ import { useEffect } from "react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [search] = useSearchParams();
+  const location = useLocation();
+  const isExample = isPathInExamples(location.pathname);
+  const viewOptions = parseViewOptions(location.search, isExample);
+
   return (
     <html lang="en">
       <head>
@@ -29,7 +33,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        data-color-scheme={viewOptions?.mode ? viewOptions?.mode : "auto"}
+        data-color={viewOptions?.theme ? viewOptions?.theme : ""}
+      >
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -54,6 +61,7 @@ const breakpointIndicatorValues = {
 
 export interface ViewOptions {
   theme?: "posten" | "bring";
+  mode?: "light" | "dark" | "auto";
 }
 export interface ExampleViewOptions {
   layout?: keyof typeof layoutClassNames;
@@ -66,12 +74,13 @@ export interface ExampleViewOptions {
 }
 
 function parseViewOptions(search: string, isExample: boolean): ViewOptions & ExampleViewOptions {
-  const { theme, layout, breakpointIndicator } = Object.fromEntries(
+  const { theme, mode, layout, breakpointIndicator } = Object.fromEntries(
     new URLSearchParams(search),
   ) as ViewOptions & ExampleViewOptions;
 
   return {
     theme: theme === "bring" ? theme : "posten",
+    mode: mode === "dark" ? "dark" : mode === "light" ? "light" : "auto",
     ...(isExample && {
       layout: layout! in layoutClassNames ? layout : "centered",
       breakpointIndicator:

@@ -1,12 +1,12 @@
 import "@postenbring/hedwig-css";
-import { Card, Link, Container, HStack } from "@postenbring/hedwig-react";
+import { Card, Link, Container } from "@postenbring/hedwig-react";
 import customerParcel from "../../assets/customer-parcel.svg";
 
 function Example() {
   return (
     <>
       <Container>
-        <h2>Color - Lighter Brand - Default</h2>
+        <h2>Miniature Card - All colors</h2>
         <div
           style={{
             marginTop: "var(--hds-spacing-20)",
@@ -14,208 +14,6 @@ function Example() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "var(--hds-spacing-24-32)",
-          }}
-        >
-          <Card variant="miniature" color="lighter-brand">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>
-                Our services for national and international transport
-              </Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow direction="up-right" />
-                  Parcels and cargo
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-          <Card variant="miniature" color="lighter-brand">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Mail</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>
-                Mail and direct mail delivered to the mailbox
-              </Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow />
-                  Mail to mailbox
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-          <Card variant="miniature" color="lighter-brand">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>International cargo</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow />
-                  International cargo
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-        </div>
-      </Container>
-      <Container>
-        <h2>Color - Light Grey Fill</h2>
-        <div
-          style={{
-            marginTop: "var(--hds-spacing-20)",
-            marginBottom: "var(--hds-spacing-20)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "var(--hds-spacing-24-32)",
-          }}
-        >
-          <Card variant="miniature" color="light-grey-fill">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>
-                Our services for national and international transport
-              </Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow direction="up-right" />
-                  Parcels and cargo
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-          <Card variant="miniature" color="light-grey-fill">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Mail</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>
-                Mail and direct mail delivered to the mailbox
-              </Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow />
-                  Mail to mailbox
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-          <Card variant="miniature" color="light-grey-fill">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>International cargo</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow />
-                  International cargo
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-        </div>
-      </Container>
-      <Container>
-        <h2>Color - White</h2>
-        <div
-          style={{
-            marginTop: "var(--hds-spacing-20)",
-            marginBottom: "var(--hds-spacing-20)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "var(--hds-spacing-24-32)",
-          }}
-        >
-          <Card variant="miniature" color="white">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Parcels and cargo</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>
-                Our services for national and international transport
-              </Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow direction="up-right" />
-                  Parcels and cargo
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-          <Card variant="miniature" color="white">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Mail</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>
-                Mail and direct mail delivered to the mailbox
-              </Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow />
-                  Mail to mailbox
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-          <Card variant="miniature" color="white">
-            <Card.Media>
-              <Card.MediaImg src={customerParcel} />
-            </Card.Media>
-            <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>International cargo</Card.BodyHeaderTitle>
-              </Card.BodyHeader>
-              <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
-              <Card.BodyAction asChild>
-                <Link href="https://www.posten.no" variant="solid" target="_blank">
-                  <Card.BodyActionArrow />
-                  International cargo
-                </Link>
-              </Card.BodyAction>
-            </Card.Body>
-          </Card>
-        </div>
-      </Container>
-      <Container>
-        <h2>Selected components</h2>
-        <HStack
-          gap="8"
-          style={{
-            marginTop: "var(--hds-spacing-20)",
-            marginBottom: "var(--hds-spacing-20)",
           }}
         >
           <Card variant="miniature">
@@ -223,6 +21,12 @@ function Example() {
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>Brand Default (default)</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>
+                Our services for national and international transport
+              </Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
@@ -231,8 +35,17 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-          <Card variant="miniature">
+          <Card variant="miniature" theme="tinted">
+            <Card.Media>
+              <Card.MediaImg src={customerParcel} />
+            </Card.Media>
             <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>Brand Tinted</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>
+                Our services for national and international transport
+              </Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="https://www.posten.no" variant="solid" target="_blank">
                   <Card.BodyActionArrow direction="up-right" />
@@ -241,7 +54,81 @@ function Example() {
               </Card.BodyAction>
             </Card.Body>
           </Card>
-        </HStack>
+          <Card variant="miniature" theme="base">
+            <Card.Media>
+              <Card.MediaImg src={customerParcel} />
+            </Card.Media>
+            <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>Brand Base</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>
+                Mail and direct mail delivered to the mailbox
+              </Card.BodyDescription>
+              <Card.BodyAction asChild>
+                <Link href="https://www.posten.no" variant="solid" target="_blank">
+                  <Card.BodyActionArrow direction="up-right" />
+                  Mail to mailbox
+                </Link>
+              </Card.BodyAction>
+            </Card.Body>
+          </Card>
+          <Card variant="miniature" theme="default" data-color="neutral">
+            <Card.Media>
+              <Card.MediaImg src={customerParcel} />
+            </Card.Media>
+            <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>Neutral Default</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
+              <Card.BodyAction asChild>
+                <Link href="https://www.posten.no" variant="solid" target="_blank">
+                  <Card.BodyActionArrow />
+                  International cargo
+                </Link>
+              </Card.BodyAction>
+            </Card.Body>
+          </Card>
+          <Card variant="miniature" theme="tinted" data-color="neutral">
+            <Card.Media>
+              <Card.MediaImg src={customerParcel} />
+            </Card.Media>
+            <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>Neutral Tinted</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>
+                Our services for national and international transport
+              </Card.BodyDescription>
+              <Card.BodyAction asChild>
+                <Link href="https://www.posten.no" variant="solid" target="_blank">
+                  <Card.BodyActionArrow direction="up-right" />
+                  Parcels and cargo
+                </Link>
+              </Card.BodyAction>
+            </Card.Body>
+          </Card>
+          <Card variant="miniature" theme="base" data-color="neutral">
+            <Card.Media>
+              <Card.MediaImg src={customerParcel} />
+            </Card.Media>
+            <Card.Body>
+              <Card.BodyHeader as="h2">
+                <Card.BodyHeaderTitle>Neutral Base</Card.BodyHeaderTitle>
+              </Card.BodyHeader>
+              <Card.BodyDescription>
+                Mail and direct mail delivered to the mailbox
+              </Card.BodyDescription>
+              <Card.BodyAction asChild>
+                <Link href="https://www.posten.no" variant="solid" target="_blank">
+                  <Card.BodyActionArrow />
+                  Mail to mailbox
+                </Link>
+              </Card.BodyAction>
+            </Card.Body>
+          </Card>
+        </div>
       </Container>
     </>
   );
@@ -251,6 +138,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 0,
+  index: 1,
   layout: "none",
 };

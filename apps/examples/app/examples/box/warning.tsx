@@ -3,15 +3,17 @@ import { Box, Link, Text } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Box variant="warning">
+    <Box data-color="warning">
       <Text variant="h3-title" as="h3">
         Box content
       </Text>
       <Text className="hds-mt-16-20">
-        This is some body copy in a box, but you can basically add anything you want in here.
+        Use the data-color attributte to get feature colors like warning on a Box
       </Text>
       <Text className="hds-mt-16-20">
-        <Link href="#a-link-for-whatever-reason">A link for whatever reason</Link>
+        <Link variant="solid" href="#a-link-for-whatever-reason">
+          A link for whatever reason
+        </Link>
       </Text>
     </Box>
   );
@@ -21,5 +23,5 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  index: 2,
+  index: 6,
 };

@@ -1,37 +1,62 @@
+/** @deprecated Use the new color scheme instead */
 export const PostenColorsSignatureRed : "#e32d22";
+/** @deprecated Use the new color scheme instead */
 export const PostenColorsDarkerRed : "#4a1011";
+/** @deprecated Use the new color scheme instead */
 export const PostenColorsDarkRed : "#980000";
+/** @deprecated Use the new color scheme instead */
 export const PostenColorsLightRed : "#ffb5af";
+/** @deprecated Use the new color scheme instead */
 export const PostenColorsLighterRed : "#fff5f0";
+/** @deprecated Use the new color scheme instead */
 export const PostenColorsSignatureRedHover : "#ca201c";
+/** @deprecated Use the new color scheme instead */
 export const PostenColorsLightRedHover : "#ffa199";
+/** @deprecated Use the new color scheme instead */
 export const BringColorsSignatureGreen : "#56b529";
+/** @deprecated Use the new color scheme instead */
 export const BringColorsDarkerGreen : "#002f19";
+/** @deprecated Use the new color scheme instead */
 export const BringColorsDarkGreen : "#00643a";
+/** @deprecated Use the new color scheme instead */
 export const BringColorsLightGreen : "#b5e099";
+/** @deprecated Use the new color scheme instead */
 export const BringColorsLighterGreen : "#f1f7e9";
+/** @deprecated Use the new color scheme instead */
 export const BringColorsSignatureGreenHover : "#6ec943";
+/** @deprecated Use the new color scheme instead */
 export const BringColorsLightGreenHover : "#d3e593";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsBlack : "#000000";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsDarkGrey : "#6e6e6e";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsGrey : "#d6d6d6";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsLightGreyStroke : "#e4e4e4";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsLightGreyFill : "#f2f2f2";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsWhite : "#ffffff";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsWarningYellow : "#fdbb2f";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsWarningYellowStroke : "#d68000";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsWarningYellowLightFill : "#fff5e0";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsWarningYellowHover : "#ffc340";
+/** @deprecated Use the new color scheme instead */
 export const UiColorsBlackHover : "#1e1e1e";
-/** Base color for dark mode */
+/** @deprecated Use the new color scheme instead - Base color for dark mode */
 export const DarkModeColorsObsidian : "#121212";
-/** Background on none-clickable cards */
+/** @deprecated Use the new color scheme instead - Background on none-clickable cards */
 export const DarkModeColorsCoal : "#252525";
-/** Fill inputfields, checkbox, radio buttons, toogles */
+/** @deprecated Use the new color scheme instead - Fill inputfields, checkbox, radio buttons, toogles */
 export const DarkModeColorsDusk : "#2c2c2c";
-/** Clickable cards or tiles */
+/** @deprecated Use the new color scheme instead - Clickable cards or tiles */
 export const DarkModeColorsSpider : "#333333";
-/** Default radio buttons, checkbox, label on inputsfields, toogle off  (background) */
+/** @deprecated Use the new color scheme instead - Default radio buttons, checkbox, label on inputsfields, toogle off  (background) */
 export const DarkModeColorsAsh : "#999999";
 /** Larger mobile phones */
 export const BreakpointSmall : "460px";

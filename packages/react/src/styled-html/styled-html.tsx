@@ -13,11 +13,6 @@ export interface StyledHtmlProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: "default" | "small";
 
   /**
-   * 🚧 Work in progress darkmode support
-   */
-  unstable_darkmode?: boolean;
-
-  /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    *
    * @default false
@@ -48,14 +43,13 @@ export interface StyledHtmlProps extends React.HTMLAttributes<HTMLDivElement> {
  * ```
  */
 export const StyledHtml = forwardRef<HTMLDivElement, StyledHtmlProps>(
-  ({ asChild, children, size, unstable_darkmode: darkmode = false, className, ...rest }, ref) => {
+  ({ asChild, children, size, className, ...rest }, ref) => {
     const Component = asChild ? Slot : "div";
     return (
       <Component
         className={clsx(
           `hds-styled-html`,
           size === "small" && "hds-styled-html--small",
-          darkmode && "hds-styled-html--darkmode",
           className as undefined,
         )}
         ref={ref}

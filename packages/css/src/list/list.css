@@ -4,8 +4,6 @@
 }
 
 .hds-list {
-  --_hds-list-marker-color: var(--hds-colors-dark);
-
   /**
    * Spacing from the left
    * In hedwig legacy the bullets started at the content
@@ -17,7 +15,7 @@
     padding-left: var(--hds-spacing-8);
 
     &::marker {
-      color: var(--_hds-list-marker-color);
+      color: var(--hds-colors-text-subtle);
     }
   }
 
