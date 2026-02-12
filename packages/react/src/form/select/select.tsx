@@ -9,7 +9,19 @@ export type SelectProps = Omit<
 > & { children: ReactNode };
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
-  { className, size, errorMessage, labelProps, label, id, style, disabled, children, ...rest },
+  {
+    className,
+    size,
+    errorMessage,
+    validationMessage,
+    labelProps,
+    label,
+    id,
+    style,
+    disabled,
+    children,
+    ...rest
+  },
   ref,
 ) {
   return (
@@ -17,6 +29,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
       className={clsx("hds-select", className as undefined)}
       disabled={disabled}
       errorMessage={errorMessage}
+      validationMessage={validationMessage}
       id={id}
       label={label}
       labelProps={labelProps}

@@ -1,0 +1,63 @@
+@import url("../../_icons.css");
+
+.hds-validation-message {
+  font: var(--hds-typography-body);
+  color: var(--hds-validation-message-color);
+  display: flex;
+  gap: var(--hds-spacing-8);
+
+  /**
+   * Avoid spacing when no validation messages are active, but keep the element always in DOM so `aria-live` works.
+   * Using `display: none` broke `aria-live` in some browsers.
+   *
+   * It isn't enough to reset the internal spacing, when used inside a flex container it affects the layout.
+   * using `position: fixed` we drag it out of any such contexts
+   */
+  &:empty {
+    height: 0;
+    width: 0;
+    padding: 0;
+    position: fixed;
+  }
+
+  &.hds-validation-message--info {
+    --hds-validation-message-color: var(--hds-ui-colors-black);
+    --hds-validation-message-icon: var(--_hds-info-circle);
+  }
+
+  &.hds-validation-message--success {
+    --hds-validation-message-color: var(--hds-bring-colors-dark-green);
+    --hds-validation-message-icon: var(--_hds-check-circle);
+  }
+
+  &.hds-validation-message--warning {
+    --hds-validation-message-color: var(--hds-ui-colors-black);
+    --hds-validation-message-icon: var(--_hds-warning);
+  }
+
+  &.hds-validation-message--danger {
+    --hds-validation-message-color: var(--hds-posten-colors-dark-red);
+    --hds-validation-message-icon: var(--_hds-error);
+  }
+
+  &:not(:empty) {
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-top: calc(var(--hds-spacing-4) / 2);
+      width: var(--hds-spacing-24);
+      height: var(--hds-spacing-24);
+      background-color: var(--hds-validation-message-color);
+      mask-image: var(--hds-validation-message-icon);
+    }
+  }
+}
+
+.hds-input-group--small .hds-validation-message {
+  font: var(--hds-typography-technical);
+
+  &:not(:empty)::before {
+    width: var(--hds-spacing-20);
+    height: var(--hds-spacing-20);
+  }
+}

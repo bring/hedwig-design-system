@@ -5,7 +5,25 @@ function Example() {
   return (
     <VStack gap="16-20" style={{ padding: "var(--hds-spacing-24-32) 0" }}>
       <SelectExample label="Plain" />
-      <SelectExample label="Error" defaultValue="Some value" errorMessage="This is invalid" />
+      <SelectExample
+        label="Info"
+        defaultValue="Some value"
+        validationMessage={{ value: "Some information", variant: "info" }}
+      />
+      <SelectExample
+        label="Success"
+        defaultValue="Some value"
+        validationMessage={{ value: "This went really well", variant: "success" }}
+      />
+      <SelectExample
+        label="Warning"
+        defaultValue="Some value"
+        validationMessage={{
+          value: "You should probably fix this, but don't worry too much",
+          variant: "warning",
+        }}
+      />
+      <SelectExample label="Danger" defaultValue="Some value" validationMessage="This is invalid" />
       <SelectExample label="Disabled" disabled />
     </VStack>
   );
