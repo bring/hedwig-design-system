@@ -41,7 +41,7 @@ jobs:
         run: |
           mv apps/examples/build/client/ apps/docs/storybook-static/examples
           mv apps/examples-v3/build/client/ apps/docs/storybook-static/examples-v3
-          cp apps/docs/storybook-static/examples/index.html apps/docs/storybook-static/404.html
+          cp apps/docs/404.html apps/docs/storybook-static/404.html
 
       - name: "upload"
         uses: actions/upload-pages-artifact@v4
