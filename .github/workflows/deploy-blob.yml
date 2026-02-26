@@ -1,0 +1,68 @@
+name: Reusable build and deploy workflow
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+
+permissions:
+  issues: write
+  id-token: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    name: Build and Deploy
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".tool-versions"
+
+      - run: pnpm i
+
+      - run: pnpm build
+
+      - name: Upload to Azure Blob Storage
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            echo "Uploading HTML"
+            az storage blob upload-batch \
+              --auth-mode login \
+              --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+              --overwrite \
+              --source apps/examples/build/client \
+              --destination '$web/hedwig-design-system/examples' \
+              --pattern "index.html" \
+              --content-type "text/html; charset=utf-8" \
+              --content-cache "public, max-age=600"
+
+            echo "Uploading assets"
+            az storage blob upload-batch \
+              --auth-mode login \
+              --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+              --overwrite \
+              --source apps/examples/build/client/assets \
+              --destination '$web/hedwig-design-system/examples/assets' \
+              --content-cache "public, max-age=604800, immutable"
+
+      - name: Azure logout
+        run: |
+          az logout
+        if: always()
