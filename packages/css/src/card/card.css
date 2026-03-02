@@ -107,8 +107,9 @@
     background-image: none;
     mask-image: var(--_hds-icons-arrow-right);
     background-color: var(--hds-colors-neutral-text-default);
-    width: var(--hds-spacing-20);
-    height: var(--hds-spacing-20);
+    width: 18px;
+    height: 22px;
+    vertical-align: middle;
     border-bottom: none;
     margin-right: 10px;
     transform: translateX(0);
