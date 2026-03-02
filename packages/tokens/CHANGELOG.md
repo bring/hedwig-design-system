@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 2.0.1
+
+### Patch Changes
+
+- bbbb0f3: just readme
+
 ## 2.0.0
 
 ### Major Changes
