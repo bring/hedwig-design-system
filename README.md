@@ -37,7 +37,7 @@ export function MyComponent() {
 
 ![Button inside Box with Posten theme](screenshots/posten-box-and-button.png)
 
-### Theme and darkmode in Hedwig ![NEW](https://img.shields.io/badge/-NEW-green)
+### Theme and darkmode in Hedwig 4![NEW](https://img.shields.io/badge/-NEW-green)
 
 #### Theme
 
