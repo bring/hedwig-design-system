@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 2.0.0
+
+### Major Changes
+
+- 81c377f: Hds dark mode
+
 ## 1.3.1
 
 ### Patch Changes

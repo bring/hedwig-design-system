@@ -12,8 +12,8 @@
     "clean": "rm -rf .turbo node_modules build"
   },
   "dependencies": {
-    "@postenbring/hedwig-css": "3.0.6",
-    "@postenbring/hedwig-react": "3.0.6",
+    "@postenbring/hedwig-css": "4.0.0",
+    "@postenbring/hedwig-react": "4.0.0",
     "@radix-ui/react-slot": "1.2.4",
     "@remix-run/node": "^2.17.4",
     "@remix-run/react": "^2.17.4",
