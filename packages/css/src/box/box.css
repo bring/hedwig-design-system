@@ -3,25 +3,24 @@
 @import url("../spacing/spacing.css");
 
 .hds-box {
-  position: relative;
-  border-radius: var(--hds-border-radius-8);
+  --_box-background-color: var(--hds-colors-base-default);
+  --_box-color: var(--hds-colors-base-contrast-default);
 
-  &, /* Default */
-  &.hds-box--light-grey {
-    background-color: var(--hds-ui-colors-light-grey-fill);
-  }
+  position: relative;
+  border-radius: var(--hds-border-radius-16);
+  background-color: var(--_box-background-color);
+  color: var(--_box-color);
 
   &.hds-box--lighter {
-    background-color: var(--hds-colors-lighter);
+    --_box-background-color: var(--hds-colors-surface-default);
+    --_box-color: var(--hds-colors-neutral-text-default);
   }
 
   &.hds-box--white {
-    background-color: var(--hds-ui-colors-white);
-    box-shadow: var(--hds-shadow-default);
-  }
+    --_box-background-color: var(--hds-colors-neutral-surface-default);
+    --_box-color: var(--hds-colors-neutral-text-default);
 
-  &.hds-box--warning {
-    background-color: var(--hds-ui-colors-warning-yellow);
+    box-shadow: var(--hds-shadow-default);
   }
 
   /* Padding */
@@ -30,7 +29,7 @@
   padding: var(--hds-component-box-padding);
 
   /* Closed state */
-  &.hds-box--closed {
+  & button.hds-button.hds-box--closed {
     display: none;
   }
 }
@@ -42,41 +41,23 @@
 .hds-box .hds-box__close-button {
   --hds-close-button-padding: var(--hds-spacing-8);
 
-  /* Icon */
-  width: calc(24px + var(--hds-close-button-padding));
-  height: calc(24px + var(--hds-close-button-padding));
+  color: var(--_box-color);
   background-color: transparent;
-  background-image: var(--_hds-icons-times);
-  background-position: center;
+  border: none;
 
   /* Positioning */
   position: absolute;
   top: calc(var(--hds-spacing-16) - var(--hds-close-button-padding) / 2);
   right: calc(var(--hds-spacing-16) - var(--hds-close-button-padding) / 2);
-  padding: 0;
-  border: none;
-  border-radius: var(--hds-border-radius);
-  cursor: pointer;
-
-  /* Hover effect */
-  transition: filter var(--hds-micro-animation-duration-quick)
-    var(--hds-micro-animation-easing-normal);
 
   &:hover {
     background-color: rgb(0 0 0 / 10%);
-  }
-
-  /* Active effect */
-  &:active {
-    background-color: rgb(0 0 0 / 20%);
-
-    /* outline: none; */
   }
 
   /* Keyboard focus */
   &:focus-visible {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px var(--hds-ui-colors-black-hover);
+    box-shadow: 0 0 0 2px #0000;
   }
 }
