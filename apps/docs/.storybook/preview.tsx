@@ -1,19 +1,18 @@
-import React from "react";
-
 import { Preview } from "@storybook/react";
-import { withThemeByClassName } from "@storybook/addon-themes";
-import { Title, Source, Description, Primary, Controls, Stories } from "@storybook/blocks";
+import { withThemeByDataAttribute } from "@storybook/addon-themes";
+import { Title, Primary, Controls, Stories } from "@storybook/blocks";
 
 import "@postenbring/hedwig-css";
 
 export const preview: Preview = {
   decorators: [
-    withThemeByClassName({
+    withThemeByDataAttribute({
       themes: {
-        Posten: "",
-        Bring: "hds-theme-bring",
+        Posten: "posten",
+        Bring: "bring",
       },
       defaultTheme: "Posten",
+      attributeName: "data-color",
     }),
   ],
   tags: ["autodocs"],
