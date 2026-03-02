@@ -1,5 +1,14 @@
 # @postenbring/hedwig-react
 
+## 4.0.1
+
+### Patch Changes
+
+- d30a13f: just a readme update
+- bbbb0f3: just readme
+- Updated dependencies [bbbb0f3]
+  - @postenbring/hedwig-css@4.0.1
+
 ## 4.0.0
 
 ### Major Changes
