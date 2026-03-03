@@ -1,0 +1,18 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build:remix": {
+      "outputs": ["build/client/**"]
+    },
+    "lint:eslint": {},
+    "typecheck:tsc": {},
+    "dev:remix": {
+      "cache": false,
+      "persistent": true
+    },
+    "clean:files": {
+      "cache": false
+    }
+  }
+}
