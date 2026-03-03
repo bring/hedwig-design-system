@@ -4,7 +4,7 @@ import { Alert, Badge, Button, Container, HStack, VStack, Text } from "@postenbr
 function Example() {
   return (
     <>
-      <body data-color-scheme="dark" style={{ paddingTop: "32px", paddingBottom: "32px" }}>
+      <body data-color-scheme="light" style={{ paddingTop: "32px", paddingBottom: "32px" }}>
         <Container>
           <Text as="h2" variant="h2" className="hds-mb-16-20" style={{ width: "65%" }}>
             Last ned Posten-appen
