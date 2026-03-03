@@ -2,6 +2,9 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef } from "react";
 
+/**
+ * @deprecated This interface is deprecated and will be removed in a future release.
+ */
 export interface BlockquoteProps extends React.HTMLAttributes<HTMLQuoteElement> {
   children?: React.ReactNode;
 
@@ -19,18 +22,7 @@ export interface BlockquoteProps extends React.HTMLAttributes<HTMLQuoteElement> 
    */
   asChild?: boolean;
 }
-
-/**
- * @example
- *
- * ```tsx
- * <Blockquote>
- *   <p>... but they&rsquo;ll never take our freedom!</p>
- *   <footer>William Wallace</footer>
- * </Blockquote>
- * ```
- *
- */
+/** @deprecated This component is deprecated and will be removed in a future release. */
 export const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
   ({ children, asChild, className, variant, ...rest }, ref) => {
     const Component = asChild ? Slot : "blockquote";
