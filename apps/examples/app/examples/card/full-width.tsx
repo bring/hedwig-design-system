@@ -18,6 +18,7 @@ function Example() {
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -46,6 +47,7 @@ function Example() {
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -59,12 +61,24 @@ function Example() {
               abroad. The new rules largely mean that foreign online shops will collect the value
               added tax (VAT) immediately when you shop and pay for the goods.
             </Card.BodyDescription>
-            <Card.BodyAction asChild>
-              <Link href="https://www.posten.no" variant="solid">
-                <Card.BodyActionArrow />
-                Import duty changes from 2024
-              </Link>
-            </Card.BodyAction>
+            <Card.BodyActionRow asChild>
+              <ButtonList variant="stretched">
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" asChild>
+                    <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
+                      Primary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" variant="secondary" asChild>
+                    <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                      Secondary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+              </ButtonList>
+            </Card.BodyActionRow>
           </Card.Body>
         </Card>
 
@@ -88,12 +102,24 @@ function Example() {
               abroad. The new rules largely mean that foreign online shops will collect the value
               added tax (VAT) immediately when you shop and pay for the goods.
             </Card.BodyDescription>
-            <Card.BodyAction asChild>
-              <Link href="https://www.posten.no" variant="solid">
-                <Card.BodyActionArrow />
-                Import duty changes from 2024
-              </Link>
-            </Card.BodyAction>
+            <Card.BodyActionRow asChild>
+              <ButtonList variant="stretched">
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" asChild>
+                    <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
+                      Primary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" variant="secondary" asChild>
+                    <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                      Secondary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+              </ButtonList>
+            </Card.BodyActionRow>
           </Card.Body>
         </Card>
 
