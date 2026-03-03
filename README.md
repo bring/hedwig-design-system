@@ -163,4 +163,4 @@ Snapshots of a branch is published when a new changeset file is present in a pul
 
 ### Deploy Kitchen Sink to QA
 
-To deploy Kitchen Sink examples to QA, navigate to https://github.com/bring/hedwig-design-system, click `Actions` and select `Deploy Kitchen Sink to Azure Blob Storage`. There, click `Run workflow` and select the branch you want to deploy.
+To deploy Kitchen Sink examples to QA, navigate to https://github.com/bring/hedwig-design-system, click `Actions` and select [Deploy Kitchen Sink to Azure Blob Storage](https://github.com/bring/hedwig-design-system/actions/workflows/deploy-qa.yml). There, click `Run workflow` and select the branch you want to deploy.
