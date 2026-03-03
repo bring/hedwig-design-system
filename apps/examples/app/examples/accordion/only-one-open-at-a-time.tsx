@@ -11,21 +11,23 @@ function Example() {
   return (
     <Accordion>
       <Accordion.Item onOpenChange={() => toggle("one")} open={openItem === "one"}>
-        <Accordion.Header>One</Accordion.Header>
+        <Accordion.Header>Can the mail be forwarded abroad?</Accordion.Header>
         <Accordion.Content>
-          Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
+          Yes, with some limitations. Shipments of items cannot be forwarded abroad due to customs
+          declaration.
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item onOpenChange={() => toggle("two")} open={openItem === "two"}>
-        <Accordion.Header>Two</Accordion.Header>
+        <Accordion.Header>Will all mail be forwarded to new address?</Accordion.Header>
         <Accordion.Content>
-          Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
+          All types of addressed mail distributed through Posten will be forwarded. Within Norway,
+          it also applies to items sent in letters.
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item onOpenChange={() => toggle("three")} open={openItem === "three"}>
-        <Accordion.Header>Three</Accordion.Header>
+        <Accordion.Header>How do I change my order?</Accordion.Header>
         <Accordion.Content>
-          Lorum ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget
+          Sign in to My address or call customer service at 22 03 00 00.
         </Accordion.Content>
       </Accordion.Item>
     </Accordion>
