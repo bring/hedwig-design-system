@@ -53,8 +53,16 @@ jobs:
               --source apps/examples/build/client \
               --destination '$web/hedwig-design-system/examples' \
               --pattern "index.html" \
-              --content-type "text/html; charset=utf-8" \
-              --content-cache "public, max-age=600"
+              --content-type "text/html; charset=utf-8"
+
+            az storage blob upload-batch \
+              --auth-mode login \
+              --account-name ${{ vars.AZURE_STORAGE_ACCOUNT_NAME }} \
+              --overwrite \
+              --source apps/examples/build/client \
+              --destination '$web' \
+              --pattern "index.html" \
+              --content-type "text/html; charset=utf-8"
 
             echo "Uploading assets"
             az storage blob upload-batch \
@@ -62,8 +70,7 @@ jobs:
               --account-name ${{ vars.AZURE_STORAGE_ACCOUNT_NAME }} \
               --overwrite \
               --source apps/examples/build/client/assets \
-              --destination '$web/hedwig-design-system/examples/assets' \
-              --content-cache "public, max-age=604800, immutable"
+              --destination '$web/hedwig-design-system/examples/assets'
 
       - name: Azure logout
         run: |
