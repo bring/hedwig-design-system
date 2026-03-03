@@ -33,6 +33,9 @@ jobs:
         with:
           node-version-file: ".tool-versions"
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - run: pnpm i
 
       - run: pnpm build
