@@ -5,24 +5,23 @@ function Example() {
   return (
     <Accordion>
       <Accordion.Item>
-        <Accordion.Header>The Dark Knight Rises</Accordion.Header>
+        <Accordion.Header>Can the mail be forwarded abroad?</Accordion.Header>
         <Accordion.Content>
-          Batman battles the formidable terrorist Bane to save Gotham City from destruction, facing
-          personal challenges and sacrifices along the way.
+          Yes, with some limitations. Shipments of items cannot be forwarded abroad due to customs
+          declaration.
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item defaultOpen>
-        <Accordion.Header>Looper</Accordion.Header>
+        <Accordion.Header>Will all mail be forwarded to new address?</Accordion.Header>
         <Accordion.Content>
-          Hitman goes back in time to kill people, but chokes it out when he is sent back to kill
-          himself. Then some hovering grass if I remember it correctly.
+          All types of addressed mail distributed through Posten will be forwarded. Within Norway,
+          it also applies to items sent in letters.
         </Accordion.Content>
       </Accordion.Item>
       <Accordion.Item>
-        <Accordion.Header>Jurassic Park</Accordion.Header>
+        <Accordion.Header>How do I change my order?</Accordion.Header>
         <Accordion.Content>
-          A bunch of people go to an island to usertest a theme park with dinosaurs. And they
-          brought kids, so what can go wrong? Hold on to ya butts.
+          Sign in to My address or call customer service at 22 03 00 00.
         </Accordion.Content>
       </Accordion.Item>
     </Accordion>
