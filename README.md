@@ -160,3 +160,7 @@ Snapshots of a branch is published when a new changeset file is present in a pul
 - [hedwig-react](https://www.npmjs.com/package/@postenbring/hedwig-react?activeTab=versions)
 - [hedwig-css](https://www.npmjs.com/package/@postenbring/hedwig-css?activeTab=versions)
 - [hedwig-tokens](https://www.npmjs.com/package/@postenbring/hedwig-tokens?activeTab=versions)
+
+### Deploy Kitchen Sink to QA
+
+To deploy Kitchen Sink examples to QA, navigate to https://github.com/bring/hedwig-design-system, click `Actions` and select `Deploy Kitchen Sink to Azure Blob Storage`. There, click `Run workflow` and select the branch you want to deploy.
