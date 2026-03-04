@@ -5,7 +5,7 @@ import { Slot } from "@radix-ui/react-slot";
 /**
  * @deprecated The "inverted" variant is deprecated. Use "primary", "secondary", or "tertiary" instead.
  */
-type DeprecatedVariant = "inverted";
+export type DeprecatedVariant = "inverted";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
