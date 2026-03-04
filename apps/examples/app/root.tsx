@@ -105,13 +105,13 @@ export default function App() {
   return (
     <div
       className={[
-        viewOptions?.theme === "bring" ? "hds-theme-bring" : "",
         isExample && viewOptions?.layout ? layoutClassNames[viewOptions.layout] : "",
         isExample && viewOptions?.breakpointIndicator ? styles.breakpointIndicator : "",
         isExample && viewOptions?.breakpointIndicator === "bottom"
           ? styles.breakpointIndicatorBottom
           : "",
       ].join(" ")}
+      data-color={viewOptions ? viewOptions.theme : "posten"}
     >
       {isExample ? (
         <div>
