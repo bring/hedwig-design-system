@@ -97,6 +97,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
       <button
         aria-expanded={open}
         aria-controls={contentId}
+        aria-label={open ? whenOpenHelperTitle : whenClosedHelperTitle}
         className={clsx(
           "hds-navbar__item",
           className as undefined,
@@ -105,7 +106,6 @@ export const NavbarExpandableMenuTrigger = forwardRef<
         onClick={toggleOpen}
         ref={ref}
         title={open ? whenOpenHelperTitle : whenClosedHelperTitle}
-        aria-label={open ? whenOpenHelperTitle : whenClosedHelperTitle}
         type="button"
         style={{ position: "relative", ...style }}
         {...rest}
