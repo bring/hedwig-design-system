@@ -105,6 +105,7 @@ export const NavbarExpandableMenuTrigger = forwardRef<
         onClick={toggleOpen}
         ref={ref}
         title={open ? whenOpenHelperTitle : whenClosedHelperTitle}
+        aria-label={open ? whenOpenHelperTitle : whenClosedHelperTitle}
         type="button"
         style={{ position: "relative", ...style }}
         {...rest}
