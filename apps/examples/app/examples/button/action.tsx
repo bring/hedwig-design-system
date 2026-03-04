@@ -20,17 +20,6 @@ function Example() {
           Tertiary
         </Button>
       </VStack>
-      <VStack
-        gap="24"
-        wrap
-        align="center"
-        style={{ backgroundColor: "var(--hds-colors-darker)", padding: "24px" }}
-      >
-        <Button variant="inverted">Inverted</Button>
-        <Button variant="inverted" size="small">
-          Inverted
-        </Button>
-      </VStack>
     </HStack>
   );
 }
