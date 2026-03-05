@@ -37,6 +37,7 @@
 
     &.hds-card__img__crop {
       object-fit: cover;
+      position: absolute;
     }
   }
 
