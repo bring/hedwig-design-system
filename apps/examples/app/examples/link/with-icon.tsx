@@ -1,10 +1,10 @@
 import "@postenbring/hedwig-css";
-import { Link, HStack } from "@postenbring/hedwig-react";
+import { Link, VStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
     <>
-      <HStack gap="40" className="hds-mt-24">
+      <VStack gap="40" className="hds-mt-24">
         <Link href="#demo-link" icon="leading">
           <ArrowRightIcon />
           Internal link with leading icon
@@ -16,7 +16,7 @@ function Example() {
           External link with trailing icon
           <ArrowUpRightIcon />
         </Link>
-      </HStack>
+      </VStack>
     </>
   );
 }
