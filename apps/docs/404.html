@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFXElEQVR42uVZTWzbZBj2uk3rhEBsHHZZS/25G6DGLmgXNn40xAEEAgFiE1xg7ARsFw6MnwtFGh1/gm5XQFw4VRBAgmoVI7bJZxekricQpB2CNknFYTusaZmGSsz7Os7ipEnzZ3+vXSy9apPY3/c+z/f+W5JCvBzH2fQd5/0pkx9OGXxUN3jSMKzzhsHz8P/f8PdfFO//PP6G9+C9+Aw+i2tIcbpGHKcHwNxjGOnTumHNAqAiiNOhFN01dGsM18S1Iwv8rG3v1HX+Kij6exeA1xV3bdgD94oM8HPnfroJTvsdULAQFvA6sgRW8TbuTQZc1/UtcBrH4VQuCQReaxGXUIfx8fHNQsGb5tRtusl/pAK+RkAX1EkIeIjUz8Gmy5EBX5FlcIsjoQFHM4P0dCaCwKuyBuoYuEvYtr0dzOyriIP3ifUlxKjeoIJdr26mz8YHfDkugM7dkuBGemQzbuB9ltCVO8TA55sKYujw9K0jXZaxkQmMEL+ebT/PRzPVdZEi7VtbTneRKnKCk6mW4gGWlhsQfDkzHGuhsaGr7evIrxDE3k2Z/FHTNPdMTk5e50BLPDExsQ0+94Gu94G8Bvf9ALLaSu+wbgOFHRY1aHdAYvLPwRLvbGcYoutTA6D/+01jl8lPNe7nsc2kJeDn7037QHeNmtnXpHZZqjtPAP94hfbkrU8CK19LTdsLYE1X69cG1ok1Yyz44QIZAXr6ZBizP4gdD8H6V+rseaFqvIbzNjrw1li47Xv68boBUud3+4PfGBEBuohpDljYSEPi0fS86a1o8AWM3CKGONPT01u9kbs/22Rct8PZO0nNb1pviBzj1XHzImLHQHGY4PSXIOLfKHyQCy5XlQ0Au4SFAQEBH9FMsq2nalrlUYli4JFK2Q9QEMA5vx5fw/l0SaJZzAguda9iTU/2PqPUN5T1mcEvFkWXu5RvskrvLK8dRl6qMQkRLzG+oSWAv+QjYEUSngJ1/hklASkzfdTfeUr/+2shwY7mEux5UZLX5Eco8eaHB+8o64LYpayq5LMqcwTKL5QEZFX5TEUXJS8tqOy8YAL++UvbRZYG4eTTFV3kGWCEJQUT4GQ15UEK8HODgzfA/ld8uiQhBihviSeAfUwS7zT2tF8P+Dwq5VT5kHACVLY0r/bvEO//iuHXA7FL+YTSBx+KBFYwIvT0VfneGh2Ki0OsX3IkaRN8yBBYwfKf2s2ykIHIvn1bMeDV7J9B7B477EMCAjANGc7Bg1vCN332Zu3eiLlSHAwpd9EQgK4gnw4VfII9Afus1u47P8wqQ1EwhR74co6KBMxE18wx2Jz/cE3aK8scYq5mSlNeJrMCNyKzT7P7d28PAjiSCUHvGBZdDVzvxJqHMC1heqIkAcvkKtPs4MLInlOVr9dLwdmh3TsbFQqjxAQ4XkpOQno+0I5bzKt7GQS2D+DZlSbrn2ocMIAZSBcXI0BCWX4D13xvQVUey97O9mAPgaRASbsN65ecxu7PafLrXn2/2nw9wNbo9H1W8GKECAg22AK25gHkkLQZmLI3HgGyjdhaGxpo8i3wUGEDEVBATO3lUE15hqRHCCGoIpZOq6ix2BMAGDovKDAeaOyL2IIH3Vv2+0bXHwMDvbDYtzEkYAJ1D6SmdkmIkyWAroGBr3KHUkyIcmAsoo5dm30L2SGKKbLQcbRvm4RhtjdaxZJst53ng3CJUtlM2TvIF1GHUE2+eRfWv8MbrV8WCP4y7kkxWV6XCHeokmCzIRY1s7hHpIDXmcb04IzRG7Rmuswa+GwG18I114yx4nC5ExpNftIbtiS98fSiN7goerJS+s79LYn34jPY84et33/vhZez3aIqywAAAABJRU5ErkJggg=="
+    />
+    <script>
+      // Load and replace the DOM with the correct index.html based on the path
+      (function () {
+        const path = window.location.pathname;
+        const ghBase = "/hedwig-design-system/";
+        const baseUrl = path.startsWith(ghBase) ? ghBase : "/";
+
+        // Determine which index.html to load
+        const isV3 = path.includes("examples-v3");
+        const indexPath = isV3
+          ? baseUrl + "examples-v3/index.html"
+          : baseUrl + "examples/index.html";
+
+        // Fetch and replace the entire document
+        fetch(indexPath)
+          .then((response) => response.text())
+          .then((html) => {
+            const normalizedHtml = baseUrl === "/" ? html.replaceAll(ghBase, "/") : html;
+
+            document.open();
+            document.write(normalizedHtml);
+            document.close();
+          })
+          .catch((error) => {
+            console.error("Error loading page:", error);
+            document.body.innerHTML = "<p>Error loading page. Please try again.</p>";
+          });
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Loading...</p>
+  </body>
+</html>

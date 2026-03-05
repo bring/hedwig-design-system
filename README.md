@@ -6,6 +6,8 @@ Welcome to the Hedwig Design System – a comprehensive design system built to s
 
 [Examples](https://bring.github.io/hedwig-design-system/examples/) - A kitchen sink of all the components, showing their usage.
 
+[Examples V3](https://bring.github.io/hedwig-design-system/examples-v3/) - Version 3 of all the components.
+
 [Storybook](https://bring.github.io/hedwig-design-system/) - Similar to the to examples, primarly used when developing the components inside the design system.
 
 Hedwig Design System consists of three packages
@@ -14,7 +16,7 @@ Hedwig Design System consists of three packages
 - `@postenbring/hedwig-css`
 - `@postenbring/hedwig-react`
 
-### Getting started
+### Getting started ![UPDATED](https://img.shields.io/badge/-UPDATED-yellow)
 
 Install the `@postenbring/hedwig-react` and `@postenbring/hedwig-css` packages
 
@@ -33,21 +35,41 @@ export function MyComponent() {
 }
 ```
 
-![Button inside Box with Posten theme](screenshots/box-and-button-posten-theme.png)
+![Button inside Box with Posten theme](screenshots/posten-box-and-button.png)
 
-By default you will get the Posten theme in your app. If you want to use the Bring theme, you have to apply the `hds-theme-bring` class to a wrapping element in e.g. your `index.html` or `App.tsx` file:
+### Theme and darkmode in Hedwig 4![NEW](https://img.shields.io/badge/-NEW-green)
+
+#### Theme
+
+By default you will get the Posten theme in your app. If you want to use the Bring theme, you have to apply the `data-color` attribute to a wrapping element in e.g. your `index.html` or `App.tsx` file:
 
 ```tsx
 function App() {
   return (
-    <div className="hds-theme-bring">
+    <div data-color="bring">
       <MyComponent />
     </div>
   );
 }
 ```
 
-![Button inside Box with Bring theme](screenshots/box-and-button-bring-theme.png)
+![Button inside Box with Bring theme](screenshots/bring-box-and-button.png)
+
+#### Darkmode
+
+Use the data-color-scheme attribute to set mode to "dark"|"light"|"auto" in one of your wrapping elements i.e body. If no data-color-scheme is set, it will default to "light"
+
+```tsx
+function App() {
+  return (
+    <div data-color="posten" data-color-scheme="dark">
+      <MyComponent />
+    </div>
+  );
+}
+```
+
+![Button inside Box with Bring theme](screenshots/posten-box-and-button-dark.png)
 
 ### Inspiration
 
@@ -108,7 +130,9 @@ To start the development server:
 pnpm dev
 ```
 
-[Storybook](https://storybook.js.org/) should now be available at [`localhost:6006`](http://localhost:6006). The [examples app](apps/examples/) should be available at [`localhost:6007`](http://localhost:6007).
+[Storybook](https://storybook.js.org/) should now be available at [`localhost:6006`](http://localhost:6006).
+The [examples app](apps/examples/) should be available at [`localhost:6007`](http://localhost:6007).
+The [examples-v3 app](apps/examples-v3/) should be available at [`localhost:6008`](http://localhost:6008). This will not reflect local changes to components. Only used for historic reference.
 
 ## Publishing
 
@@ -136,3 +160,7 @@ Snapshots of a branch is published when a new changeset file is present in a pul
 - [hedwig-react](https://www.npmjs.com/package/@postenbring/hedwig-react?activeTab=versions)
 - [hedwig-css](https://www.npmjs.com/package/@postenbring/hedwig-css?activeTab=versions)
 - [hedwig-tokens](https://www.npmjs.com/package/@postenbring/hedwig-tokens?activeTab=versions)
+
+### Deploy Kitchen Sink to QA
+
+To deploy Kitchen Sink examples to QA, navigate to https://github.com/bring/hedwig-design-system, click `Actions` and select [Deploy Kitchen Sink to Azure Blob Storage](https://github.com/bring/hedwig-design-system/actions/workflows/deploy-qa.yml). There, click `Run workflow` and select the branch you want to deploy.

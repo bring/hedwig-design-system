@@ -17,6 +17,7 @@
     var(--hds-component-message-padding) + var(--hds-component-message-icon-width) +
       var(--hds-component-message-spacing-between)
   );
+  background-color: var(--hds-colors-neutral-base-default);
 
   /* Icon placement */
   &::before {
@@ -29,15 +30,13 @@
   }
 
   &.hds-message--success {
-    background-color: var(--hds-ui-colors-light-grey-fill);
-
     &::before {
       background-image: var(--_hds-success-green);
     }
   }
 
   &.hds-message--attention {
-    background-color: var(--hds-ui-colors-warning-yellow-light-fill);
+    background-color: var(--hds-colors-info-base-default);
 
     &::before {
       background-image: var(--_hds-warning-hollow);
@@ -45,7 +44,8 @@
   }
 
   &.hds-message--warning {
-    background-color: var(--hds-ui-colors-warning-yellow);
+    background-color: var(--hds-colors-warning-base-default);
+    color: var(--hds-colors-warning-base-contrast-default);
 
     &::before {
       background-image: var(--_hds-warning-black);
@@ -53,8 +53,6 @@
   }
 
   &.hds-message--info {
-    background-color: var(--hds-ui-colors-light-grey-fill);
-
     &::before {
       background-size: 32px;
       background-image: var(--_hds-info-circle-deprecated);
@@ -62,8 +60,6 @@
   }
 
   &.hds-message--neutral {
-    background-color: var(--hds-ui-colors-light-grey-fill);
-
     /* stylelint-disable-next-line selector-class-pattern -- Custom icon is only available for the neutral variant */
     .hds-message--neutral__icon {
       position: absolute;

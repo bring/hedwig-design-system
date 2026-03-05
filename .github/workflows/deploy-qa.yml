@@ -1,0 +1,12 @@
+name: Deploy Kitchen Sink to Azure Blob Storage
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy_prod:
+    name: Build and deploy to QA
+    uses: ./.github/workflows/deploy-blob.yml
+    with:
+      environment: qa
+    secrets: inherit

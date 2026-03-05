@@ -1,0 +1,91 @@
+.codeExample {
+  max-width: 100%;
+
+  * ~ div:has(> iframe) {
+    margin-top: var(--hds-spacing-16-20);
+  }
+
+  /* Description */
+  :not(pre) > code {
+    &::before {
+      content: "`";
+    }
+    &::after {
+      content: "`";
+    }
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+
+  div:has(> iframe) {
+    position: relative;
+    border: 1px solid var(--hds-ui-colors-grey);
+    border-radius: var(--hds-border-radius);
+    background-color: var(--hds-ui-colors-light-grey-fill);
+
+    width: 100%;
+    overflow: hidden;
+
+    iframe {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      resize: horizontal;
+      box-shadow: var(--hds-shadow-default);
+    }
+
+    /* Action row */
+    div:last-child {
+      display: flex;
+      gap: var(--hds-spacing-4-8);
+      padding: var(--hds-spacing-8);
+
+      border-top: 1px solid var(--hds-ui-colors-grey);
+      background-color: var(--hds-ui-colors-white);
+
+      div {
+        display: flex;
+        gap: var(--hds-spacing-4-8);
+        padding: var(--hds-spacing-8);
+      }
+    }
+  }
+
+  div:has(pre) {
+    position: relative;
+    margin-top: var(--hds-spacing-8-12);
+  }
+
+  pre {
+    margin: 0;
+    padding: var(--hds-spacing-20-24);
+    border-radius: var(--hds-border-radius);
+
+    /* Dimensions */
+    max-height: 20rem;
+    min-width: 100%;
+
+    /* Fonts */
+    font-size: var(--hds-font-size-technical);
+
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      Liberation Mono,
+      Courier New,
+      monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  container-type: inline-size;
+
+  @container (max-width: 720px) {
+    pre {
+      font-size: var(--hds-font-size-technical-min);
+    }
+  }
+}

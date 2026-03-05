@@ -7,8 +7,6 @@
 :root {
   box-sizing: border-box;
   font: var(--hds-typography-body);
-  fill: var(--hds-ui-colors-black);
-  color: var(--hds-ui-colors-black);
   line-height: 1.4;
   cursor: auto;
   -moz-osx-font-smoothing: grayscale;
@@ -16,7 +14,9 @@
 }
 
 body {
-  background: var(--hds-ui-colors-white);
+  background: var(--hds-colors-neutral-bg-default);
+  fill: var(--hds-colors-neutral-text-default);
+  color: var(--hds-colors-neutral-text-default);
 
   /* Get specificity on the same level as the font decleration in the 
    * legacy Hedwig CSS, making it possible to override by ordering */

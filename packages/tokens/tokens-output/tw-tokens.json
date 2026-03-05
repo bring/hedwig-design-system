@@ -7,7 +7,8 @@
     "light-red": "#ffb5af",
     "lighter-red": "#fff5f0",
     "signature-red-hover": "#ca201c",
-    "light-red-hover": "#ffa199"
+    "light-red-hover": "#ffa199",
+    "_deprecated": true
   },
   "bring-colors": {
     "$type": "color",
@@ -17,7 +18,8 @@
     "light-green": "#b5e099",
     "lighter-green": "#f1f7e9",
     "signature-green-hover": "#6ec943",
-    "light-green-hover": "#d3e593"
+    "light-green-hover": "#d3e593",
+    "_deprecated": true
   },
   "ui-colors": {
     "$type": "color",
@@ -31,7 +33,8 @@
     "warning-yellow-stroke": "#d68000",
     "warning-yellow-light-fill": "#fff5e0",
     "warning-yellow-hover": "#ffc340",
-    "black-hover": "#1e1e1e"
+    "black-hover": "#1e1e1e",
+    "_deprecated": true
   },
   "dark-mode-colors": {
     "$type": "color",
@@ -39,7 +42,8 @@
     "coal": "#252525",
     "dusk": "#2c2c2c",
     "spider": "#333333",
-    "ash": "#999999"
+    "ash": "#999999",
+    "_deprecated": true
   },
   "breakpoint": {
     "$type": "dimension",
@@ -138,7 +142,7 @@
         "36px",
         "40px"
       ],
-      "fontWeight": 500,
+      "fontWeight": 700,
       "letterSpacing": "0"
     },
     "bring-h1-display": {
@@ -477,7 +481,7 @@
     "type": "number",
     "posten-h1-display": 700,
     "posten-h1": 700,
-    "posten-h2": 500,
+    "posten-h2": 700,
     "bring-h1-display": 500,
     "bring-h1": 500,
     "bring-h2": 500,

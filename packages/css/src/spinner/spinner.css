@@ -25,7 +25,9 @@
   --hds-spinner-fade-in: var(--hds-micro-animation-duration-slow);
   --_hds-spinner-animation: hds-spinner-spin 2s linear 0s infinite normal forwards;
 
-  background-image: var(--_hds-spinner);
+  background-color: var(--hds-colors-neutral-text-default);
+  mask-image: var(--_hds-spinner);
+  mask-size: cover;
   animation: var(--_hds-spinner-animation);
   width: var(--hds-component-spinner-size);
   height: var(--hds-component-spinner-size);
