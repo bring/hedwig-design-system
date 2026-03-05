@@ -7,7 +7,7 @@ const meta: Meta<typeof Alert> = {
   component: Alert,
 
   argTypes: {
-    variant: {
+    "data-color": {
       options: ["info", "success", "warning", "error", "neutral"],
       control: {
         type: "radio",
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Alert>;
 export const Preview: Story = {
   tags: ["!dev"],
   args: {
-    variant: "success",
+    "data-color": "success",
     children: (
       <>
         <Alert.Title>Alert header</Alert.Title>

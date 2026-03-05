@@ -7,7 +7,8 @@
 
   position: relative;
   width: 100%;
-  background-color: var(--hds-ui-colors-warning-yellow);
+  background-color: var(--hds-colors-warning-base-default);
+  color: var(--hds-colors-warning-base-contrast-default);
   text-align: center;
 
   .hds-warning-banner__title > *,
@@ -26,6 +27,11 @@
     margin: 0 auto;
     font: var(--hds-typography-body-small);
     padding: 0 var(--hds-spacing-16) var(--hds-spacing-32);
+
+    .hds-link {
+      color: var(--hds-colors-warning-base-contrast-default);
+      text-decoration-color: var(--hds-colors-warning-base-contrast-default);
+    }
   }
 
   .hds-warning-banner__title {

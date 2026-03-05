@@ -113,13 +113,7 @@ export const ErrorSummaryItem = forwardRef<HTMLLIElement, ErrorSummaryItemProps>
 
     return (
       <li className={clsx(`hds-error-summary__list-item`)} ref={ref} {...rest}>
-        <Link
-          size="small"
-          href={href}
-          variant="inverted-no-underline"
-          {...linkProps}
-          onClick={onClick}
-        >
+        <Link size="small" href={href} variant="solid" {...linkProps} onClick={onClick}>
           {children}
         </Link>
       </li>

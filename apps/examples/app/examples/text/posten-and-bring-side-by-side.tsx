@@ -4,11 +4,11 @@ import { HStack, Text, VStack } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <HStack gap="16">
-      <div className="hds-theme-posten">
+      <div data-color="posten">
         <FontGalleryHeader>Posten</FontGalleryHeader>
         <FontGallery />
       </div>
-      <div className="hds-theme-bring">
+      <div data-color="bring">
         <FontGalleryHeader>Bring</FontGalleryHeader>
         <FontGallery />
       </div>
@@ -71,8 +71,8 @@ function FontGalleryHeader({ children }: { children: React.ReactNode }) {
     <h2
       style={{
         padding: "var(--hds-spacing-8)",
-        background: "var(--hds-colors-signature)",
-        color: "var(--hds-button-colors-text)",
+        background: "var(--hds-colors-base-default)",
+        color: "var(--hds-colors-base-contrast-default)",
         fontWeight: 500,
         margin: 0,
       }}

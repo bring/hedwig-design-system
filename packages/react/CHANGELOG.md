@@ -1,5 +1,47 @@
 # @postenbring/hedwig-react
 
+## 4.0.1
+
+### Patch Changes
+
+- d30a13f: just a readme update
+- bbbb0f3: just readme
+- Updated dependencies [bbbb0f3]
+  - @postenbring/hedwig-css@4.0.1
+
+## 4.0.0
+
+### Major Changes
+
+- 81c377f: Hds dark mode
+
+### Patch Changes
+
+- Updated dependencies [81c377f]
+  - @postenbring/hedwig-css@4.0.0
+
+## 3.0.6
+
+### Patch Changes
+
+- Updated dependencies [6465956]
+  - @postenbring/hedwig-css@3.0.6
+
+## 3.0.5
+
+### Patch Changes
+
+- 114e12d: Add 'dark' background color for focus cards
+- Updated dependencies [114e12d]
+  - @postenbring/hedwig-css@3.0.5
+
+## 3.0.4
+
+### Patch Changes
+
+- Updated dependencies [3d82561]
+  - @postenbring/hedwig-css@3.0.4
+
 ## 3.0.3
 
 ### Patch Changes

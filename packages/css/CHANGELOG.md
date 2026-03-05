@@ -1,5 +1,42 @@
 # @postenbring/hedwig-css
 
+## 4.0.1
+
+### Patch Changes
+
+- bbbb0f3: just readme
+- Updated dependencies [bbbb0f3]
+  - @postenbring/hedwig-tokens@2.0.1
+
+## 4.0.0
+
+### Major Changes
+
+- 81c377f: Hds dark mode
+
+### Patch Changes
+
+- Updated dependencies [81c377f]
+  - @postenbring/hedwig-tokens@2.0.0
+
+## 3.0.6
+
+### Patch Changes
+
+- 6465956: Set arrow-icon color by CSS instead of separate icons
+
+## 3.0.5
+
+### Patch Changes
+
+- 114e12d: Add 'dark' background color for focus cards
+
+## 3.0.4
+
+### Patch Changes
+
+- 3d82561: Prevent error icon from repeating
+
 ## 3.0.3
 
 ### Patch Changes

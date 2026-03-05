@@ -1,4 +1,5 @@
 packages:
   - "apps/*"
+  - "!apps/examples-v3"
   - "packages/*"
   - "packages-internal/*"

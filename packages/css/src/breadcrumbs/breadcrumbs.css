@@ -34,15 +34,24 @@
     }
 
     &:last-child {
-      color: var(--hds-ui-colors-dark-grey);
+      color: var(--hds-colors-neutral-text-subtle);
     }
 
     &::before {
       content: "";
       display: inline-block;
-      background-image: var(--_hds-icons-cheveron-right-dark-grey);
       width: 20px;
       height: 20px;
+
+      /* background-image: var(--_hds-icons-cheveron-right-dark-grey); */
+      mask-image: var(--_hds-chevron-right);
+      mask-size:
+        7px 14px,
+        contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-image: none;
+      background-color: var(--hds-colors-text-subtle);
       margin: 0 var(--hds-spacing-4);
     }
 
@@ -57,7 +66,7 @@
         &::before {
           display: inline-block;
           margin-left: 0;
-          background-image: var(--_hds-icons-cheveron-left-black);
+          mask-image: var(--_hds-chevron-left);
         }
       }
     }

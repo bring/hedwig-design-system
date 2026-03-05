@@ -2,7 +2,8 @@
 
 .hds-error-message {
   font: var(--hds-typography-body);
-  color: var(--hds-posten-colors-dark-red);
+  color: var(--hds-colors-error-text-default);
+  fill: var(--hds-colors-error-text-default);
   display: flex;
   gap: var(--hds-spacing-8);
 
@@ -24,11 +25,11 @@
   &:not(:empty) {
     &::before {
       content: "";
-      display: inline-block;
+      flex: 0 0 auto;
       margin-top: calc(var(--hds-spacing-4) / 2);
       width: var(--hds-spacing-24);
       height: var(--hds-spacing-24);
-      background-color: var(--hds-posten-colors-dark-red);
+      background-color: var(--hds-colors-error-text-default);
       mask-image: var(--_hds-error);
     }
   }

@@ -1,0 +1,47 @@
+{
+  "colors": {
+    "$type": "color",
+    "bg-default": {
+      "$value": "{colors-posten.bg-default}"
+    },
+    "bg-tinted": {
+      "$value": "{colors-posten.bg-tinted}"
+    },
+    "surface-default": {
+      "$value": "{colors-posten.surface-default}"
+    },
+    "surface-tinted": {
+      "$value": "{colors-posten.surface-tinted}"
+    },
+    "surface-hover": {
+      "$value": "{colors-posten.surface-hover}"
+    },
+    "surface-active": {
+      "$value": "{colors-posten.surface-active}"
+    },
+    "border-default": {
+      "$value": "{colors-posten.border-default}"
+    },
+    "border-strong": {
+      "$value": "{colors-posten.border-strong}"
+    },
+    "text-subtle": {
+      "$value": "{colors-posten.text-subtle}"
+    },
+    "text-default": {
+      "$value": "{colors-posten.text-default}"
+    },
+    "base-default": {
+      "$value": "{colors-posten.base-default}"
+    },
+    "base-hover": {
+      "$value": "{colors-posten.base-hover}"
+    },
+    "base-active": {
+      "$value": "{colors-posten.base-active}"
+    },
+    "base-contrast-default": {
+      "$value": "{colors-posten.base-contrast-default}"
+    }
+  }
+}

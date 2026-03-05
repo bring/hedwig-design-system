@@ -5,12 +5,9 @@ function Example() {
   return (
     <>
       <Modal open closeOnBackdropClick>
-        <Modal.Header>Dialog header</Modal.Header>
+        <Modal.Header>Case registered</Modal.Header>
         <Modal.Content>
-          <p>
-            Dialog header Dialog description - a description of what is about to happen and maybe
-            something about the consequences.
-          </p>
+          <p>Your case has been registered. Reference number: #123456</p>
         </Modal.Content>
       </Modal>
 

@@ -1,0 +1,131 @@
+@import url("../spacing/spacing.css");
+
+.hds-card {
+  &.hds-card--full-width,
+  &.hds-card--focus {
+    /* Basic sizing for fullwidth cards: */
+    --hds-fullwidthcard-min-height: 400px;
+    --hds-fullwidthcard-content-min-height: calc(
+      var(--hds-fullwidthcard-min-height) - 2 * var(--hds-spacing-20-24)
+    );
+    --hds-fullwidthcard-image-aspect-mini: 100 / 155;
+    --hds-fullwidthcard-image-maxheight-small: 420px;
+    --hds-fullwidthcard-image-maxheight-medium: 650px;
+    --hds-fullwidthcard-image-height-small: 300px;
+    --hds-fullwidthcard-image-height-medium: 600px;
+
+    max-width: inherit;
+    container-type: inline-size;
+    container-name: fullwidthcard;
+
+    .hds-card__layoutwrapper {
+      height: 100%;
+      width: 100%;
+    }
+
+    .hds-card__media {
+      overflow: hidden;
+      position: relative;
+      border-radius: var(--hds-border-radius-8);
+      max-height: var(--hds-fullwidthcard-image-maxheight-small);
+      width: 100%;
+
+      /*  Responsivity: different card layouts and content/images sizes, while still displaying as much as the image as
+			 *  possible and trying to keep focus on the middle, .hds-card__media is displayed in particular ways on
+			 *  particular viewport widths, but always filling the available width (which below 800px is the full width of the
+			 *  card minus padding, and above 800px is only half the width of the card):
+			 *
+			 **/
+
+      /* Narrowest: fixed aspect ratio (portrait: height is 1.5 times the width). */
+      @container fullwidthcard (width < 300px) {
+        aspect-ratio: var(--hds-fullwidthcard-image-aspect-mini);
+        max-height: var(--hds-fullwidthcard-image-height-small);
+      }
+
+      /* Middle narrow: fixed aspect ratio (quare format), variable height */
+      @container fullwidthcard (width >= 300px) and (width < 648px) {
+        aspect-ratio: 1;
+      }
+
+      /* "Widest" of the narrow card layouts: fixed image height (but higher now) */
+      @container fullwidthcard (width >= 648px) and (width < 800px) {
+        height: var(--hds-fullwidthcard-image-height-medium);
+      }
+    }
+
+    .hds-card__body {
+      .hds-card__centerbody {
+        margin: var(--hds-spacing-32-40);
+      }
+
+      .hds-card__body-header {
+        margin-bottom: var(--hds-spacing-20-24);
+      }
+
+      .hds-card__body-description {
+        margin-bottom: var(--hds-spacing-20-24);
+      }
+
+      .hds-card__body-action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--hds-spacing-8);
+
+        .hds-button {
+          white-space: nowrap;
+        }
+      }
+
+      .hds-card__body-action {
+        margin-top: 0;
+      }
+    }
+
+    /*  Wide layout: image to the left or right of the text. Image height is at least 400px high, but scales up if the
+		 *  body text is higher. Image has a max height if the text is huge, limiting the aspect ratio of the image.
+		 *
+		 **/
+    @container fullwidthcard (width >= 800px) {
+      .hds-card__layoutwrapper {
+        display: flex;
+        flex-direction: row;
+        gap: var(--hds-spacing-12-16);
+
+        .hds-card__media,
+        .hds-card__body {
+          flex: 1;
+          min-height: var(--hds-fullwidthcard-content-min-height);
+        }
+
+        .hds-card__media {
+          max-height: var(--hds-fullwidthcard-image-maxheight-medium);
+        }
+      }
+
+      /* Image is absolutely positioned within .hds-card__media, to center and avoid making .hds-card__media outgrow
+			 * the body text:
+			 *
+			 **/
+      /* stylelint-disable selector-class-pattern */
+      .hds-card__media > .hds-card__media__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &.hds-card--image-position-right .hds-card__media {
+        order: 2;
+      }
+
+      /* Body sizes itself based on its content, and centers the contained wrapper (.hds-card__centerbody) vertically: */
+      .hds-card__body {
+        align-self: flex-start;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+}

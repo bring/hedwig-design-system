@@ -3,7 +3,7 @@ import { Alert } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Alert variant="warning">
+    <Alert data-color="warning">
       <Alert.Title>Warning</Alert.Title>
       <Alert.Description>
         Something did not go as expected. Yellow always means something negative.

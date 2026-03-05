@@ -2,6 +2,11 @@ import { forwardRef } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 
+/**
+ * @deprecated The "inverted" variant is deprecated. Use "primary", "secondary", or "tertiary" instead.
+ */
+export type DeprecatedVariant = "inverted";
+
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * The height, font size and padding of the button
@@ -15,7 +20,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    *
    * @default "primary"
    */
-  variant?: "primary" | "secondary" | "tertiary" | "inverted";
+  variant?: "primary" | "secondary" | "tertiary" | DeprecatedVariant;
 
   /**
    * Make the button use 100% width available.
@@ -47,7 +52,6 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
  * @example
  * <Button variant="primary">Primary</Button>
  * <Button variant="secondary" size="large">Secondary</Button>
- * <Button variant="inverted">Inverted</Button>
  * <Button variant="tertiary" fullWidth="mobile">Tertiary</Button>
  * <Button icon="leading"><LeadingIcon />Leading icon</Button>
  *

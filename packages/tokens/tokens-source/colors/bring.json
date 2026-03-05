@@ -1,0 +1,47 @@
+{
+  "colors": {
+    "$type": "color",
+    "bg-default": {
+      "$value": "{colors-bring.bg-default}"
+    },
+    "bg-tinted": {
+      "$value": "{colors-bring.bg-tinted}"
+    },
+    "surface-default": {
+      "$value": "{colors-bring.surface-default}"
+    },
+    "surface-tinted": {
+      "$value": "{colors-bring.surface-tinted}"
+    },
+    "surface-hover": {
+      "$value": "{colors-bring.surface-hover}"
+    },
+    "surface-active": {
+      "$value": "{colors-bring.surface-active}"
+    },
+    "border-default": {
+      "$value": "{colors-bring.border-default}"
+    },
+    "border-strong": {
+      "$value": "{colors-bring.border-strong}"
+    },
+    "text-subtle": {
+      "$value": "{colors-bring.text-subtle}"
+    },
+    "text-default": {
+      "$value": "{colors-bring.text-default}"
+    },
+    "base-default": {
+      "$value": "{colors-bring.base-default}"
+    },
+    "base-hover": {
+      "$value": "{colors-bring.base-hover}"
+    },
+    "base-active": {
+      "$value": "{colors-bring.base-active}"
+    },
+    "base-contrast-default": {
+      "$value": "{colors-bring.base-contrast-default}"
+    }
+  }
+}
