@@ -148,6 +148,7 @@ function Example() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "50% 50%",
+          maxHeight: "595px",
         }}
       />
 
