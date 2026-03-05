@@ -119,6 +119,10 @@
   .hds-card__body-action-arrow-up-right {
     transform: rotate(-45deg);
   }
+
+  &.hds-card--theme-base .hds-button--secondary {
+    color: var(--hds-colors-base-contrast-default);
+  }
 }
 
 .hds-card--theme-default {
