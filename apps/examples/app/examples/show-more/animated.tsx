@@ -47,6 +47,7 @@ function Example() {
       <div
         style={{
           height: "115vh",
+          maxHeight: "500px",
           background:
             "linear-gradient(var(--hds-ui-colors-white), var(--hds-ui-colors-light-grey-fill))",
         }}
