@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- 9562321: Add search wrapper component
+- 9562321: Add search wrapper component for aligning input and button
 - 2221a7f: Optional Label for Input Group
 
 ### Patch Changes
