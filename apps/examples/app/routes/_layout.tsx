@@ -12,13 +12,19 @@ import {
   useNavbarExpendableMenuContext,
 } from "@postenbring/hedwig-react";
 import { Outlet, useSearchParams, Link as RemixLink, useLocation } from "@remix-run/react";
+import { SunIcon, MoonIcon } from "../assets/icon-examples";
 
 import { kebabCaseToFirstLetterUpperCase } from "../components/component-examples";
 
 export default function Layout() {
   const [search] = useSearchParams();
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const activeTheme = search.get("theme") === "bring" ? "bring" : "posten";
   const nextTheme = activeTheme === "bring" ? "posten" : "bring";
+  const activeMode =
+    search.get("mode") === "dark" ? "dark" : search.get("mode") === "light" ? "light" : "auto";
+  const nextMode =
+    activeMode === "dark" || (prefersDark && activeMode === "auto") ? "light" : "dark";
 
   /**
    * When navigating inside an SPA from the expandable menu we need to manually ensure it closes.
@@ -88,6 +94,22 @@ export default function Layout() {
           </>
         )}
         <Navbar.Item>
+          <Button variant="secondary" size="small" icon={true} asChild>
+            <RemixLink
+              to={{
+                search:
+                  "?" +
+                  new URLSearchParams({
+                    ...Object.fromEntries(search),
+                    mode: nextMode,
+                  }).toString(),
+              }}
+            >
+              {nextMode === "dark" ? <MoonIcon /> : <SunIcon />}
+            </RemixLink>
+          </Button>
+        </Navbar.Item>
+        <Navbar.Item>
           <Button variant="secondary" size="small" asChild>
             <RemixLink
               to={{
@@ -99,7 +121,7 @@ export default function Layout() {
                   }).toString(),
               }}
             >
-              {kebabCaseToFirstLetterUpperCase(activeTheme)}
+              {kebabCaseToFirstLetterUpperCase(nextTheme)}
             </RemixLink>
           </Button>
         </Navbar.Item>

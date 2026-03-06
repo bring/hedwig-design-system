@@ -7,7 +7,7 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
   /**
    * The visual style of the link
    */
-  variant?: "underline" | "solid" | "inverted" | "no-underline" | "inverted-no-underline";
+  variant?: "underline" | "solid" | "no-underline";
 
   /**
    * Font size of the link

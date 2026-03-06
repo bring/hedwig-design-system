@@ -15,4 +15,5 @@ export default Example;
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   index: 0,
+  description: "⚠️Component is deprecated, and will be deleted in a future release ⚠️",
 };

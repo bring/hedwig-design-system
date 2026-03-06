@@ -45,27 +45,59 @@ AlertDescription.displayName = "Alert.Description";
 
 export type AlertProps = (
   | {
+      /**
+       * @deprecated use data-color instead
+       */
       variant?: "info" | "success" | "warning" | "error";
       icon?: never;
       iconClassName?: never;
     }
   | {
+      /**
+       * @deprecated use data-color instead
+       */
       variant: "neutral";
+      icon?: React.ReactNode;
+      iconClassName?: string;
+    }
+  | {
+      "data-color"?: "info" | "success" | "warning" | "error";
+      icon?: never;
+      iconClassName?: never;
+    }
+  | {
+      "data-color": "neutral";
       icon?: React.ReactNode;
       iconClassName?: string;
     }
 ) &
   Omit<BoxProps, "variant" | "asChild">;
 
+const allowedColors = ["neutral", "info", "success", "warning", "error", undefined] as const;
+type DataColor = (typeof allowedColors)[number];
+
+function isValidDataColor(value: string | undefined): value is DataColor {
+  return allowedColors.includes(value as DataColor);
+}
+
 export const Alert = forwardRef<HTMLDivElement, AlertProps>(
-  ({ children, className, variant = "success", icon, iconClassName, ...rest }, ref) => {
+  ({ children, className, "data-color": color = undefined, icon, iconClassName, ...rest }, ref) => {
+    const { variant, ...boxProps } = rest as { variant?: string };
+
+    // Support deprecated 'variant' prop for backward compatibility
+    const resolvedColor = color ?? variant;
+    const validColor: DataColor | undefined = isValidDataColor(resolvedColor)
+      ? resolvedColor
+      : undefined;
+
     return (
       <Box
-        className={clsx(`hds-alert`, `hds-alert--${variant}`, className as undefined)}
+        data-color={validColor}
+        className={clsx(`hds-alert`, className as undefined)}
         ref={ref}
-        {...rest}
+        {...boxProps}
       >
-        {variant === "neutral" && (
+        {validColor === "neutral" && (
           <div className={clsx("hds-alert--neutral__icon", iconClassName as undefined)}>{icon}</div>
         )}
         {children}

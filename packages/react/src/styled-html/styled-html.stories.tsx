@@ -13,13 +13,6 @@ const meta: Meta<typeof StyledHtml> = {
       control: {
         type: "radio",
       },
-      darkmode: {
-        defaultValue: false,
-        options: [true, false],
-        control: {
-          type: "radio",
-        },
-      },
     },
   },
 };

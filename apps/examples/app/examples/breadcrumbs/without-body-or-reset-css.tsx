@@ -19,7 +19,7 @@ function Example() {
       {/* Just for example sake, since the white background comes from `body.css` */}
       <style
         dangerouslySetInnerHTML={{
-          __html: `body { background-color: var(--hds-ui-colors-white); }`,
+          __html: `body { background-color: var(--hds-colors-neutral-bg-default); }`,
         }}
       />
     </>

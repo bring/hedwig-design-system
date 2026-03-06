@@ -2,4 +2,4 @@
 "@postenbring/hedwig-css": patch
 ---
 
-Fix card click area
+new icon for card

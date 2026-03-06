@@ -1,6 +1,7 @@
 import "@postenbring/hedwig-css";
 import { Card, Link, Container, Button, ButtonList } from "@postenbring/hedwig-react";
 import postenBringImage from "../../assets/posten-bring.avif";
+import vectoriImage from "../../assets/customer-parcel.svg";
 
 function Example() {
   return (
@@ -11,12 +12,13 @@ function Example() {
           gap: "var(--hds-spacing-24-32)",
         }}
       >
-        <h2>Color - Lighter Brand - Default</h2>
-        <Card variant="full-width" color="lighter-brand">
+        <h2>Theme: Default</h2>
+        <Card variant="full-width" theme="default">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -38,12 +40,96 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Lighter Brand - Default - Image right</h2>
-        <Card variant="full-width" color="lighter-brand" imagePosition="right">
+
+        <h2>Theme: Tinted - Image right</h2>
+        <Card variant="full-width" theme="tinted" imagePosition="right">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
+            />
+          </Card.Media>
+          <Card.Body>
+            <Card.BodyHeader as="h2">
+              <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
+              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+            </Card.BodyHeader>
+            <Card.BodyDescription>
+              From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
+              that you have to pay import duties from the first krone on most of what you buy from
+              abroad. The new rules largely mean that foreign online shops will collect the value
+              added tax (VAT) immediately when you shop and pay for the goods.
+            </Card.BodyDescription>
+            <Card.BodyActionRow asChild>
+              <ButtonList variant="stretched">
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" asChild>
+                    <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
+                      Primary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" variant="secondary" asChild>
+                    <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                      Secondary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+              </ButtonList>
+            </Card.BodyActionRow>
+          </Card.Body>
+        </Card>
+
+        <h2>Theme: Base</h2>
+        <Card variant="full-width" theme="base">
+          <Card.Media>
+            <Card.MediaImg
+              alt="Posten delivery van with Bring cargo truck in the background"
+              src={postenBringImage}
+              variant="crop"
+            />
+          </Card.Media>
+          <Card.Body>
+            <Card.BodyHeader as="h2">
+              <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
+              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+            </Card.BodyHeader>
+            <Card.BodyDescription>
+              From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
+              that you have to pay import duties from the first krone on most of what you buy from
+              abroad. The new rules largely mean that foreign online shops will collect the value
+              added tax (VAT) immediately when you shop and pay for the goods.
+            </Card.BodyDescription>
+            <Card.BodyActionRow asChild>
+              <ButtonList variant="stretched">
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" asChild>
+                    <a href="https://www.postenbring.no" target="_blank" rel="noreferrer">
+                      Primary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+                <Card.BodyAction asChild>
+                  <Button fullWidth="mobile" variant="secondary" asChild>
+                    <a href="https://www.posten.no" target="_blank" rel="noreferrer">
+                      Secondary
+                    </a>
+                  </Button>
+                </Card.BodyAction>
+              </ButtonList>
+            </Card.BodyActionRow>
+          </Card.Body>
+        </Card>
+
+        <h2>Theme: default, data-color: neutral</h2>
+        <Card variant="full-width" theme="default" data-color="neutral">
+          <Card.Media>
+            <Card.MediaImg
+              alt="Posten delivery van with Bring cargo truck in the background"
+              src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -65,12 +151,14 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - Light Grey Fill</h2>
-        <Card variant="full-width" color="light-grey-fill">
+
+        <h2>Theme: Tinted, data-color: neutral</h2>
+        <Card variant="full-width" theme="tinted" data-color="neutral">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -92,12 +180,14 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
-        <h2>Color - White</h2>
-        <Card variant="full-width" color="white">
+
+        <h2>Theme: Base, data-color: neutral</h2>
+        <Card variant="full-width" theme="base" data-color="neutral">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -119,12 +209,14 @@ function Example() {
             </Card.BodyAction>
           </Card.Body>
         </Card>
+
         <h2>A single CTA Button</h2>
-        <Card variant="full-width" color="lighter-brand">
+        <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -146,12 +238,14 @@ function Example() {
             </Card.BodyActionRow>
           </Card.Body>
         </Card>
+
         <h2>More CTA Buttons</h2>
-        <Card variant="full-width" color="lighter-brand">
+        <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -192,13 +286,13 @@ function Example() {
             </Card.BodyActionRow>
           </Card.Body>
         </Card>
-        <h2>Scale image, no cropping</h2>
-        <Card variant="full-width" color="lighter-brand">
+
+        <h2>Scale (not crop) illustrations</h2>
+        <Card variant="full-width">
           <Card.Media>
             <Card.MediaImg
-              alt="Posten delivery van with Bring cargo truck in the background"
-              variant="scale"
-              src={postenBringImage}
+              alt="Images with transparent backgrounds (eg. SVG's, some PNG's) should be used with variant=crop, or no variant prop at all"
+              src={vectoriImage}
             />
           </Card.Media>
           <Card.Body>
@@ -219,7 +313,8 @@ function Example() {
               >
                 variant=&quot;scale&quot;
               </pre>{" "}
-              on the image disables the cropping behavior when images resize.
+              on the image disables the cropping behavior when images resize. This prop&lsquo;s
+              default is &quot;scale&quot; already, so the variant prop can just be skipped.
             </Card.BodyDescription>
             <Card.BodyActionRow>
               <Card.BodyAction asChild>
@@ -242,6 +337,6 @@ export default Example;
 import type { ExampleConfig } from "..";
 
 export const config: ExampleConfig = {
-  index: 0,
+  index: 2,
   layout: "none",
 };

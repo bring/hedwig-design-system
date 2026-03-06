@@ -9,7 +9,7 @@
   }
 
   .hds-step-indicator__left-label {
-    color: var(--hds-colors-dark);
+    color: var(--hds-colors-text-subtle);
   }
 
   .hds-step-indicator__steps {
@@ -23,22 +23,22 @@
       height: var(--hds-spacing-4);
 
       &[data-state="previous"] {
-        background-color: var(--hds-colors-signature);
+        background-color: var(--hds-colors-border-default);
       }
 
       &[data-state="active"] {
-        background-color: var(--hds-colors-signature);
+        background-color: var(--hds-colors-border-default);
       }
 
       &[data-state="next"] {
-        background-color: var(--hds-ui-colors-grey);
+        background-color: var(--hds-colors-neutral-border-default);
       }
     }
   }
 
   .hds-step-indicator__title {
     font: var(--hds-typography-h1);
-    color: var(--hds-colors-darker);
+    color: var(--hds-colors-text-default);
 
     &:not(:empty) {
       margin-top: var(--hds-spacing-24-32);

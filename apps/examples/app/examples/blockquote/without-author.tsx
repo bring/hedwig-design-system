@@ -13,6 +13,6 @@ export default Example;
 
 import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
-  description: "The quotation marks are not used when the quote is not attributed to anyone.",
+  description: "⚠️Component is deprecated, and will be deleted in a future release ⚠️",
   index: 2,
 };

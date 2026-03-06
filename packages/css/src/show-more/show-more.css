@@ -13,14 +13,18 @@
     var(--hds-micro-animation-easing-normal);
 
   &:hover {
-    color: var(--hds-colors-dark);
+    color: var(--hds-colors-text-subtle);
+
+    .hds-show-more__icon {
+      background-color: var(--hds-colors-text-subtle);
+    }
   }
 
   &::before,
   &::after {
     content: "";
     height: 1px;
-    background-color: var(--hds-ui-colors-light-grey-stroke);
+    background-color: var(--hds-colors-neutral-border-default);
     flex-grow: 1;
   }
 
@@ -36,7 +40,9 @@
     margin-left: var(--hds-spacing-8);
     width: 24px;
     height: 24px;
-    background-image: var(--_hds-plus-dark);
+    background-color: var(--hds-colors-neutral-text-default);
+    mask-image: var(--_hds-plus);
+    mask-size: cover;
   }
 
   /**

@@ -34,6 +34,7 @@ function Example() {
       <div
         style={{
           height: "100vh",
+          maxHeight: "500px",
         }}
       />
     </div>

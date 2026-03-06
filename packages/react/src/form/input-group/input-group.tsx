@@ -23,7 +23,7 @@ export interface InputGroupProps {
   validationMessage?: ReactNode | { value: ReactNode; variant: ValidationMessageProps["variant"] };
   validationMessageProps?: Partial<ValidationMessageProps>;
   labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
-  label: ReactNode;
+  label?: ReactNode;
   disabled?: boolean;
   readOnly?: boolean;
   /**
@@ -113,13 +113,15 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
       style={style}
       {...rest}
     >
-      <label
-        className={clsx("hds-input-group__label", labelClassName as undefined)}
-        {...labelProps}
-        htmlFor={id ?? inputId}
-      >
-        {label}
-      </label>
+      {label !== null && label !== undefined && label !== false && (
+        <label
+          className={clsx("hds-input-group__label", labelClassName as undefined)}
+          {...labelProps}
+          htmlFor={id ?? inputId}
+        >
+          {label}
+        </label>
+      )}
       <div
         className={clsx("hds-input-group__input-wrapper")}
         data-disabled={disabled}
