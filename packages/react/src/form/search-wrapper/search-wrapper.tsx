@@ -2,13 +2,6 @@ import { forwardRef } from "react";
 import type { ReactNode, CSSProperties } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
-/**
- * Omitting:
- * - `size` from InputHTMLAttributes
- * - `children` from InputGroupProps
- * The original `size` prop that input elements have is not in use in HDS.
- * It is overridden by styling.
- */
 export interface SearchWrapperProps {
   id?: string;
   className?: string;
