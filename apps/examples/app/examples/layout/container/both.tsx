@@ -8,7 +8,7 @@ function Example() {
         <VStack
           justify="center"
           align="center"
-          style={{ height: "50vh", background: "var(--hds-colors-lighter)" }}
+          style={{ height: "50vh", background: "var(--hds-colors-lighter)", maxHeight: "300px" }}
         >
           <h2>Default</h2>
         </VStack>
@@ -17,7 +17,7 @@ function Example() {
         <VStack
           justify="center"
           align="center"
-          style={{ height: "50vh", background: "var(--hds-colors-lighter)" }}
+          style={{ height: "50vh", background: "var(--hds-colors-lighter)", maxHeight: "300px" }}
         >
           <h2>Slim</h2>
         </VStack>
