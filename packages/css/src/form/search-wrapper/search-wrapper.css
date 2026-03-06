@@ -1,4 +1,6 @@
 .hds-search-wrapper {
+  --hds-search-wrapper-input-row: 1;
+
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--hds-spacing-4) var(--hds-spacing-8);
@@ -8,18 +10,29 @@
   }
 
   > .hds-button {
-    grid-column: 2;
-    grid-row: 1;
+    grid-row: var(--hds-search-wrapper-input-row);
     align-self: start;
   }
 
-  &:has(.hds-input-group__label:not(:empty)) > .hds-button {
-    grid-row: 2;
+  &:has(.hds-input-group__label:not(:empty)) {
+    --hds-search-wrapper-input-row: 2;
   }
 
   .hds-input-group__label,
   .hds-input-group__input-wrapper,
   .hds-error-message {
     grid-column: 1;
+  }
+
+  .hds-input-group__input-wrapper {
+    grid-row: var(--hds-search-wrapper-input-row);
+  }
+
+  .hds-error-message {
+    grid-row: 2;
+  }
+
+  &:has(.hds-input-group__label:not(:empty)) .hds-error-message {
+    grid-row: 3;
   }
 }

@@ -1,5 +1,6 @@
 import "@postenbring/hedwig-css";
 import { Container, SearchWrapper, VStack, Input, Button } from "@postenbring/hedwig-react";
+import { XIcon } from "../../../assets/icon-examples";
 
 function Example() {
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -12,6 +13,9 @@ function Example() {
           <SearchWrapper>
             <Input name="name" />
             <Button>Search</Button>
+            <Button variant="tertiary" icon>
+              <XIcon />
+            </Button>
           </SearchWrapper>
           <SearchWrapper>
             <Input label="Søk her" name="name" />
