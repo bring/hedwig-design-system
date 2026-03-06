@@ -1,5 +1,26 @@
 # @postenbring/hedwig-react
 
+## 4.1.0
+
+### Minor Changes
+
+- 9562321: Add search wrapper component for aligning input and button
+- 2221a7f: Optional Label for Input Group
+
+### Patch Changes
+
+- e24efed: deprecated inverted button
+- 1761448: Flip default way of scaling Card.MediaImg from crop to scale
+  Fix text color on secondary buttons in base theme
+  Add buttons to focus card example
+- Updated dependencies [f5d7d87]
+- Updated dependencies [3d52cf9]
+- Updated dependencies [e24efed]
+- Updated dependencies [9562321]
+- Updated dependencies [1761448]
+- Updated dependencies [2221a7f]
+  - @postenbring/hedwig-css@4.1.0
+
 ## 4.0.1
 
 ### Patch Changes

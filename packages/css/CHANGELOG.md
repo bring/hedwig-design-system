@@ -1,5 +1,21 @@
 # @postenbring/hedwig-css
 
+## 4.1.0
+
+### Minor Changes
+
+- 9562321: Add search wrapper component
+- 2221a7f: Optional Label for Input Group
+
+### Patch Changes
+
+- f5d7d87: new icon for card
+- 3d52cf9: updated max-width on cards
+- e24efed: deprecated inverted button
+- 1761448: Flip default way of scaling Card.MediaImg from crop to scale
+  Fix text color on secondary buttons in base theme
+  Add buttons to focus card example
+
 ## 4.0.1
 
 ### Patch Changes
