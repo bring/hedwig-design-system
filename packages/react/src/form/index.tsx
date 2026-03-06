@@ -5,5 +5,6 @@ export * from "./error-summary";
 export * from "./fieldset";
 export * from "./input";
 export * from "./radio-button";
+export * from "./search-wrapper";
 export * from "./select";
 export * from "./textarea";
