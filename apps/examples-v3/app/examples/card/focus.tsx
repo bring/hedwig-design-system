@@ -108,6 +108,30 @@ function Example() {
             </Card.BodyActionRow>
           </Card.Body>
         </Card>
+
+        <h2>Hero card</h2>
+        <Card variant="focus">
+          <Card.Media>
+            <Card.MediaImg alt="Image to the right" src={postenBringImage} />
+          </Card.Media>
+          <Card.Body>
+            <Card.BodyHeader asChild>
+              <h1>
+                <Card.BodyHeaderTitle>Hero card</Card.BodyHeaderTitle>
+              </h1>
+            </Card.BodyHeader>
+            <Card.BodyDescription>
+              H1 header to function as the main title of a page.
+            </Card.BodyDescription>
+            <Card.BodyActionRow>
+              <Card.BodyAction asChild>
+                <Button fullWidth="mobile" asChild>
+                  <a href="https://www.posten.no">Internal link</a>
+                </Button>
+              </Card.BodyAction>
+            </Card.BodyActionRow>
+          </Card.Body>
+        </Card>
       </div>
     </Container>
   );
