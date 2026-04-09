@@ -79,6 +79,7 @@
 
       .hds-card__body-action {
         margin-top: 0;
+        width: inherit;
       }
     }
 
@@ -101,6 +102,10 @@
         .hds-card__media {
           max-height: var(--hds-fullwidthcard-image-maxheight-medium);
         }
+      }
+
+      .hds-card__centerbody {
+        width: 100%;
       }
 
       /* Image is absolutely positioned within .hds-card__media, to center and avoid making .hds-card__media outgrow
