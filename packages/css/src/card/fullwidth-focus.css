@@ -8,10 +8,10 @@
     --hds-fullwidthcard-content-min-height: calc(
       var(--hds-fullwidthcard-min-height) - 2 * var(--hds-spacing-20-24)
     );
-    --hds-fullwidthcard-image-aspect-mini: 100 / 155;
+    --hds-fullwidthcard-image-aspect-mini: 4 / 3;
     --hds-fullwidthcard-image-maxheight-small: 420px;
     --hds-fullwidthcard-image-maxheight-medium: 650px;
-    --hds-fullwidthcard-image-height-small: 300px;
+    --hds-fullwidthcard-image-height-small: 330px;
     --hds-fullwidthcard-image-height-medium: 600px;
 
     max-width: inherit;
@@ -30,27 +30,20 @@
       max-height: var(--hds-fullwidthcard-image-maxheight-small);
       width: 100%;
 
-      /*  Responsivity: different card layouts and content/images sizes, while still displaying as much as the image as
-			 *  possible and trying to keep focus on the middle, .hds-card__media is displayed in particular ways on
-			 *  particular viewport widths, but always filling the available width (which below 800px is the full width of the
-			 *  card minus padding, and above 800px is only half the width of the card):
-			 *
-			 **/
+      @container fullwidthcard (width >= 440px) {
+        min-height: var(--hds-fullwidthcard-image-height-small);
 
-      /* Narrowest: fixed aspect ratio (portrait: height is 1.5 times the width). */
-      @container fullwidthcard (width < 300px) {
+        img {
+          min-height: var(--hds-fullwidthcard-image-height-small);
+        }
+      }
+
+      @container fullwidthcard (width < 440px) {
         aspect-ratio: var(--hds-fullwidthcard-image-aspect-mini);
-        max-height: var(--hds-fullwidthcard-image-height-small);
-      }
 
-      /* Middle narrow: fixed aspect ratio (quare format), variable height */
-      @container fullwidthcard (width >= 300px) and (width < 648px) {
-        aspect-ratio: 1;
-      }
-
-      /* "Widest" of the narrow card layouts: fixed image height (but higher now) */
-      @container fullwidthcard (width >= 648px) and (width < 800px) {
-        height: var(--hds-fullwidthcard-image-height-medium);
+        img {
+          aspect-ratio: var(--hds-fullwidthcard-image-aspect-mini);
+        }
       }
     }
 
