@@ -111,7 +111,6 @@ export default function App() {
           ? styles.breakpointIndicatorBottom
           : "",
       ].join(" ")}
-      data-color={viewOptions ? viewOptions.theme : "posten"}
     >
       {isExample ? (
         <div>
