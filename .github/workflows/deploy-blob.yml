@@ -20,7 +20,7 @@ jobs:
     environment: ${{ inputs.environment }}
     steps:
       - name: Azure login
-        uses: azure/login@v2
+        uses: azure/login@v3
         with:
           client-id: ${{ vars.AZURE_CLIENT_ID }}
           tenant-id: ${{ vars.AZURE_TENANT_ID }}
@@ -34,14 +34,14 @@ jobs:
           node-version-file: ".tool-versions"
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - run: pnpm i
 
       - run: pnpm build
 
       - name: Upload to Azure Blob Storage
-        uses: azure/cli@v2
+        uses: azure/cli@v3
         with:
           azcliversion: latest
           inlineScript: |

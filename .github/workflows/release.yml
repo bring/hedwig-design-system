@@ -27,7 +27,7 @@ jobs:
           node-version-file: '.tool-versions'
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - name: Install Dependencies
         run: pnpm install
