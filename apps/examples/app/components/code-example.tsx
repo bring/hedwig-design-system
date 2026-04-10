@@ -55,11 +55,15 @@ export function CodeExample({
       iframeViewOptions.set("layout", example.config.layout);
     }
     if (search.get("theme")) {
-      iframeViewOptions.set("theme", search.get("theme")!);
+      const body = iframeRef.current?.contentWindow?.document.body;
+      if (body) {
+        body.setAttribute("data-color", search.get("theme")!);
+      }
     }
     if (example.config?.breakpointIndicator) {
       iframeViewOptions.set("breakpointIndicator", String(example.config?.breakpointIndicator));
     }
+
     return `${example.urlPath}?${iframeViewOptions.toString()}`;
   }
 
