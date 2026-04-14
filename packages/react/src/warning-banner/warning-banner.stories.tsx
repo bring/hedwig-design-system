@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { WarningBanner } from ".";
 
 const meta: Meta<typeof WarningBanner> = {
