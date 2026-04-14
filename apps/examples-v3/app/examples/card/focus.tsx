@@ -97,7 +97,7 @@ function Example() {
                 <Card.BodyAction asChild>
                   <Button fullWidth="mobile" variant="inverted" asChild>
                     <a href="https://www.posten.no" target="_blank" rel="noreferrer">
-                      Secondary
+                      Inverted
                     </a>
                   </Button>
                 </Card.BodyAction>
