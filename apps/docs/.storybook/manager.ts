@@ -1,5 +1,5 @@
-import { addons } from "@storybook/manager-api";
-import { create } from "@storybook/theming/create";
+import { addons } from "storybook/manager-api";
+import { create } from "storybook/theming";
 import postenbringLogo from "../public/postenbring-logo.png";
 
 const postenbringTheme = create({

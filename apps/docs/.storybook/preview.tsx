@@ -1,6 +1,6 @@
-import { Preview } from "@storybook/react";
+import { Preview } from "@storybook/react-vite";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
-import { Title, Primary, Controls, Stories } from "@storybook/blocks";
+import { Title, Primary, Controls, Stories } from "@storybook/addon-docs/blocks";
 
 import "@postenbring/hedwig-css";
 
@@ -15,20 +15,22 @@ export const preview: Preview = {
       attributeName: "data-color",
     }),
   ],
+
   tags: ["autodocs"],
+
   parameters: {
     backgrounds: {
-      default: "light",
-      values: [
-        {
+      options: {
+        light: {
           name: "light",
           value: "#ffffff",
         },
-        {
+
+        dark: {
           name: "dark",
           value: "#121212",
         },
-      ],
+      },
     },
     docs: {
       page: () => {
@@ -43,6 +45,12 @@ export const preview: Preview = {
           </>
         );
       },
+    },
+  },
+
+  initialGlobals: {
+    backgrounds: {
+      value: "light",
     },
   },
 };

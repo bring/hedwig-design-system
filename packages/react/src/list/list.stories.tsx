@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
-import type { StoryObj, Meta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react-vite";
 import { HStack } from "../layout";
 import { UnorderedList } from ".";
 

@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../button";
 import { ButtonList } from ".";
 
