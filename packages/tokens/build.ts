@@ -1,9 +1,24 @@
 /* eslint-disable no-console -- script */
 import { readFileSync, writeFileSync, unlinkSync } from "node:fs";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import StyleDictionary from "style-dictionary-utils";
 import { customTypography } from "./lib/typography";
 import { customTokensParser } from "./lib/parser";
 import { customFluidDimension } from "./lib/fluid-dimension";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+type JsonObject = Record<string, unknown>;
+
+function readJsonObject(filePath: string): JsonObject {
+  const parsed: unknown = JSON.parse(String(readFileSync(filePath, "utf8")));
+  if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+    throw new Error(`Expected a JSON object at ${filePath}`);
+  }
+  return parsed as JsonObject;
+}
 
 const config = {
   cssVariablesPrefix: "hds",
@@ -282,7 +297,13 @@ StyleDictionary.extend({
         },
       ],
     },
+  },
+}).buildAllPlatforms();
 
+StyleDictionary.extend({
+  include: ["tokens-source/shared-colors.json"],
+  source: ["tokens-source/shared.json", "tokens-source/themes/light.json"],
+  platforms: {
     tailwind: {
       options: {
         showFileHeader: false,
@@ -290,6 +311,7 @@ StyleDictionary.extend({
       transforms: forTailwindTransforms,
       files: [
         {
+          filter: "isSource",
           destination: "tokens-output/tw-tokens.json",
           format: "json/nested",
           options: {
@@ -300,3 +322,142 @@ StyleDictionary.extend({
     },
   },
 }).buildAllPlatforms();
+
+StyleDictionary.extend({
+  include: ["tokens-source/shared-colors.json"],
+  source: ["tokens-source/themes/dark.json"],
+  platforms: {
+    tailwind: {
+      options: {
+        showFileHeader: false,
+      },
+      transforms: forTailwindTransforms,
+      files: [
+        {
+          filter: "isSource",
+          destination: "tokens-output/tw-tokens.dark.json",
+          format: "json/nested",
+          options: {
+            outputStringLiterals: true,
+          },
+        },
+      ],
+    },
+  },
+}).buildAllPlatforms();
+
+const twTokensPath = `${__dirname}/tokens-output/tw-tokens.json`;
+const twTokensDarkPath = `${__dirname}/tokens-output/tw-tokens.dark.json`;
+const twTokens = readJsonObject(twTokensPath);
+const twTokensDark = readJsonObject(twTokensDarkPath);
+const sharedTokensSource = readJsonObject(`${__dirname}/tokens-source/shared.json`);
+const lightThemeSource = readJsonObject(`${__dirname}/tokens-source/themes/light.json`);
+const darkThemeSource = readJsonObject(`${__dirname}/tokens-source/themes/dark.json`);
+
+const semanticColorGroups = new Set([
+  "colors-bring",
+  "colors-posten",
+  "colors-neutral",
+  "colors-warning",
+  "colors-success",
+  "colors-info",
+  "colors-error",
+]);
+
+const generatedGroupTypes: Record<string, string> = {
+  "font-size": "dimension",
+  "line-height": "dimension",
+  "font-weight": "number",
+  "border-radius": "dimension",
+};
+
+function applyGroupMetadata(
+  target: Record<string, unknown>,
+  key: string,
+  source: Record<string, unknown>,
+) {
+  const sourceValue = source[key];
+  const targetValue = target[key];
+  if (
+    !sourceValue ||
+    typeof sourceValue !== "object" ||
+    !targetValue ||
+    typeof targetValue !== "object"
+  ) {
+    return;
+  }
+
+  const sourceGroup = sourceValue as Record<string, unknown>;
+  const targetGroup = targetValue as Record<string, unknown>;
+
+  if ("$type" in sourceGroup) {
+    targetGroup.$type = sourceGroup.$type;
+  }
+  if ("_deprecated" in sourceGroup) {
+    targetGroup._deprecated = sourceGroup._deprecated;
+  }
+}
+
+function orderGroupWithTypeFirst(group: Record<string, unknown>) {
+  if (!("$type" in group)) {
+    return group;
+  }
+
+  const { $type, _deprecated, ...rest } = group;
+  return {
+    $type,
+    ...(_deprecated === undefined ? {} : { _deprecated }),
+    ...rest,
+  };
+}
+
+for (const key of Object.keys(sharedTokensSource)) {
+  applyGroupMetadata(twTokens, key, sharedTokensSource);
+}
+
+for (const key of Object.keys(lightThemeSource)) {
+  applyGroupMetadata(twTokens, key, lightThemeSource);
+}
+
+for (const [key, type] of Object.entries(generatedGroupTypes)) {
+  if (key in twTokens && typeof twTokens[key] === "object" && twTokens[key] !== null) {
+    const group = twTokens[key] as Record<string, unknown>;
+    if (!("$type" in group) && !("type" in group)) {
+      group.$type = type;
+    }
+  }
+}
+
+for (const key of semanticColorGroups) {
+  if (key in twTokens && typeof twTokens[key] === "object" && twTokens[key] !== null) {
+    const existing = twTokens[key] as JsonObject;
+    twTokens[key] = {
+      colorScheme: "light",
+      ...existing,
+    };
+  }
+}
+
+for (const [key, value] of Object.entries(twTokensDark)) {
+  const darkKey = `${key}-dark`;
+  const valueObj =
+    typeof value === "object" && value !== null && !Array.isArray(value)
+      ? (value as JsonObject)
+      : {};
+  twTokens[darkKey] = {
+    colorScheme: "dark",
+    ...valueObj,
+  };
+  applyGroupMetadata(twTokens, darkKey, {
+    [darkKey]: darkThemeSource[key],
+  });
+}
+
+for (const [key, value] of Object.entries(twTokens)) {
+  if (typeof value === "object" && value !== null && !Array.isArray(value)) {
+    twTokens[key] = orderGroupWithTypeFirst(value as Record<string, unknown>);
+  }
+}
+
+writeFileSync(twTokensPath, JSON.stringify(twTokens, null, 2), "utf8");
+unlinkSync(twTokensDarkPath);
