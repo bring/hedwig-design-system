@@ -86,6 +86,7 @@ function Example() {
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -113,6 +114,7 @@ function Example() {
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
@@ -140,6 +142,7 @@ function Example() {
             <Card.MediaImg
               alt="Posten delivery van with Bring cargo truck in the background"
               src={postenBringImage}
+              variant="crop"
             />
           </Card.Media>
           <Card.Body>
