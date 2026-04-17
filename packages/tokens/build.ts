@@ -273,7 +273,8 @@ cssCleanup();
  * Javascript and Json output
  */
 StyleDictionary.extend({
-  source: ["tokens-source/shared.json"],
+  include: ["tokens-source/shared-colors.json"],
+  source: ["tokens-source/shared.json", "tokens-source/themes/light.json"],
   platforms: {
     javascript: {
       options: {
@@ -282,6 +283,7 @@ StyleDictionary.extend({
       transformGroup: "js",
       files: [
         {
+          filter: "isSource",
           destination: "tokens-output/tokens.js",
           format: "javascript/es6",
           options: {
@@ -289,6 +291,7 @@ StyleDictionary.extend({
           },
         },
         {
+          filter: "isSource",
           destination: "tokens-output/tokens.d.ts",
           format: "typescript/es6-declarations",
           options: {
@@ -299,6 +302,58 @@ StyleDictionary.extend({
     },
   },
 }).buildAllPlatforms();
+
+// Build dark theme tokens with remapped keys (colors-X → colors-X-dark) then append to main JS/TS outputs
+const darkSourceRaw = readJsonObject(`${__dirname}/tokens-source/themes/dark.json`);
+const darkSourceRemapped: JsonObject = {};
+for (const [key, value] of Object.entries(darkSourceRaw)) {
+  darkSourceRemapped[`${key}-dark`] = value;
+}
+const darkTempSourcePath = `${__dirname}/tokens-source/themes/dark-temp.json`;
+writeFileSync(darkTempSourcePath, JSON.stringify(darkSourceRemapped, null, 2), "utf8");
+
+StyleDictionary.extend({
+  include: ["tokens-source/shared-colors.json"],
+  source: ["tokens-source/themes/dark-temp.json"],
+  platforms: {
+    javascript: {
+      options: {
+        showFileHeader: false,
+      },
+      transformGroup: "js",
+      files: [
+        {
+          filter: "isSource",
+          destination: "tokens-output/tokens-dark-temp.js",
+          format: "javascript/es6",
+          options: {
+            outputStringLiterals: true,
+          },
+        },
+        {
+          filter: "isSource",
+          destination: "tokens-output/tokens-dark-temp.d.ts",
+          format: "typescript/es6-declarations",
+          options: {
+            outputStringLiterals: true,
+          },
+        },
+      ],
+    },
+  },
+}).buildAllPlatforms();
+
+const darkTempJs = String(readFileSync(`${__dirname}/tokens-output/tokens-dark-temp.js`, "utf8"));
+const darkTempDts = String(
+  readFileSync(`${__dirname}/tokens-output/tokens-dark-temp.d.ts`, "utf8"),
+);
+const mainJs = String(readFileSync(`${__dirname}/tokens-output/tokens.js`, "utf8"));
+const mainDts = String(readFileSync(`${__dirname}/tokens-output/tokens.d.ts`, "utf8"));
+writeFileSync(`${__dirname}/tokens-output/tokens.js`, `${mainJs}\n${darkTempJs}`, "utf8");
+writeFileSync(`${__dirname}/tokens-output/tokens.d.ts`, `${mainDts}\n${darkTempDts}`, "utf8");
+unlinkSync(darkTempSourcePath);
+unlinkSync(`${__dirname}/tokens-output/tokens-dark-temp.js`);
+unlinkSync(`${__dirname}/tokens-output/tokens-dark-temp.d.ts`);
 
 StyleDictionary.extend({
   include: ["tokens-source/shared-colors.json"],
