@@ -3,6 +3,8 @@
     "$type": "color",
     "signature": {
       "$value": "{bring-colors.signature-green}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "darker": {
@@ -19,18 +21,26 @@
     },
     "light": {
       "$value": "{bring-colors.light-green}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "lighter": {
       "$value": "{bring-colors.lighter-green}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "signature-hover": {
       "$value": "{bring-colors.signature-green-hover}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light-hover": {
       "$value": "{bring-colors.light-green-hover}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true

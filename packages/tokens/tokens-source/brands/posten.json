@@ -3,30 +3,44 @@
     "$type": "color",
     "signature": {
       "$value": "{posten-colors.signature-red}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "darker": {
       "$value": "{posten-colors.darker-red}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "dark": {
       "$value": "{posten-colors.dark-red}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light": {
       "$value": "{posten-colors.light-red}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "lighter": {
       "$value": "{posten-colors.lighter-red}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "signature-hover": {
       "$value": "{posten-colors.signature-red-hover}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light-hover": {
       "$value": "{posten-colors.light-red-hover}",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
