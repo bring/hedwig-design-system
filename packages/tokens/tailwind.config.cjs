@@ -32,12 +32,12 @@ function expandAndPrefix(obj, prefix) {
 }
 
 /**
- * 
- * @param {Record<string, unknown>} obj 
- * @param {string} key 
+ *
+ * @param {Record<string, unknown>} obj
+ * @param {string} key
  */
 function omitKey(obj, key) {
-  const {[key]: _, ...rest} = obj;
+  const { [key]: _, ...rest } = obj;
   return rest;
 }
 
@@ -125,16 +125,25 @@ module.exports = {
     },
     colors: {
       // The brand specifc tokens are themeable,
-      // so they must be referneced by css variables
+      // so they must be referenced by css variables
+      // @deprecated Use the new color scheme instead
       signature: "var(--hds-colors-signature)",
+      // @deprecated Use the new color scheme instead
       darker: "var(--hds-colors-darker)",
+      // @deprecated Use the new color scheme instead
       dark: "var(--hds-colors-dark)",
+      // @deprecated Use the new color scheme instead
       light: "var(--hds-colors-light)",
+      // @deprecated Use the new color scheme instead
       lighter: "var(--hds-colors-lighter)",
+      // @deprecated Use the new color scheme instead
       "signature-hover": "var(--hds-colors-signature-hover)",
+      // @deprecated Use the new color scheme instead
       "light-hover": "var(--hds-colors-light-hover)",
 
+      // @deprecated Use the new color scheme instead
       ...expandAndPrefix(tokens["ui-colors"], "ui-"),
+      // @deprecated Use the new color scheme instead
       ...expandAndPrefix(tokens["dark-mode-colors"], "dm-"),
     },
     spacing: {
