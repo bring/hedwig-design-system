@@ -9,26 +9,38 @@
     },
     "darker-red": {
       "$value": "#4a1011",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "dark-red": {
       "$value": "#980000",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light-red": {
       "$value": "#ffb5af",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "lighter-red": {
       "$value": "#fff5f0",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "signature-red-hover": {
       "$value": "#ca201c",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light-red-hover": {
       "$value": "#ffa199",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
@@ -37,30 +49,44 @@
     "$type": "color",
     "signature-green": {
       "$value": "#56b529",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "darker-green": {
       "$value": "#002f19",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "dark-green": {
       "$value": "#00643a",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light-green": {
       "$value": "#b5e099",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "lighter-green": {
       "$value": "#f1f7e9",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "signature-green-hover": {
       "$value": "#6ec943",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light-green-hover": {
       "$value": "#d3e593",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
@@ -69,46 +95,68 @@
     "$type": "color",
     "black": {
       "$value": "#000000",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "dark-grey": {
       "$value": "#6e6e6e",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "grey": {
       "$value": "#d6d6d6",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light-grey-stroke": {
       "$value": "#e4e4e4",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "light-grey-fill": {
       "$value": "#f2f2f2",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "white": {
       "$value": "#ffffff",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "warning-yellow": {
       "$value": "#fdbb2f",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "warning-yellow-stroke": {
       "$value": "#d68000",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "warning-yellow-light-fill": {
       "$value": "#fff5e0",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "warning-yellow-hover": {
       "$value": "#ffc340",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "black-hover": {
       "$value": "#1e1e1e",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead"
     },
     "_deprecated": true
@@ -117,22 +165,32 @@
     "$type": "color",
     "obsidian": {
       "$value": "#121212",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead - Base color for dark mode"
     },
     "coal": {
       "$value": "#252525",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead - Background on none-clickable cards"
     },
     "dusk": {
       "$value": "#2c2c2c",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead - Fill inputfields, checkbox, radio buttons, toogles"
     },
     "spider": {
       "$value": "#333333",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead - Clickable cards or tiles"
     },
     "ash": {
       "$value": "#999999",
+      "deprecated": true,
+      "deprecated_comment": "Use the new color scheme instead",
       "description": "@deprecated Use the new color scheme instead - Default radio buttons, checkbox, label on inputsfields, toogle off  (background)"
     },
     "_deprecated": true
