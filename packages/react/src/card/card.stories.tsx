@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies -- storybook story */
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Link } from "../link";
 import { Card } from ".";
 
 const meta: Meta<typeof Card> = {
@@ -25,17 +26,17 @@ export const Preview: Story = {
       <Card.Body>
         <Card.BodyHeader as="h2">
           <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
-          <Card.BodyHeaderTitle asChild>
-            <a href="#article">Cool article</a>
-          </Card.BodyHeaderTitle>
+          <Card.BodyHeaderTitle>Cool article</Card.BodyHeaderTitle>
         </Card.BodyHeader>
         <Card.BodyDescription>
-          This is a card which acts as a giant link. You can also use the hedwig provided{" "}
-          <code>Link</code> component, or a link component from your routing library. The link
-          component of your choice should be set with the <code>as</code> property on the body
-          header title. The card component provides a lot of flexibility.
+          This is a card The card component provides a lot of flexibility.
         </Card.BodyDescription>
-        <Card.BodyActionArrow />
+        <Card.BodyAction asChild>
+          <Link href="#article-1" variant="solid">
+            <Card.BodyActionArrow />
+            Go to this article
+          </Link>
+        </Card.BodyAction>
       </Card.Body>
     </Card>
   ),
