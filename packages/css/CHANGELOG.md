@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 4.1.1
+
+### Patch Changes
+
+- b3cdb3c: adjusted spacing for lists
+- Updated dependencies [6e1ff1d]
+  - @postenbring/hedwig-tokens@2.0.2
+
 ## 4.1.0
 
 ### Minor Changes
