@@ -130,7 +130,7 @@ export type ErrorSummaryProps = Omit<
 export const ErrorSummary = forwardRef<HTMLDivElement, ErrorSummaryProps>(
   ({ children, className, ...rest }, ref) => (
     <Box
-      data-color-scheme="dark"
+      data-color="error"
       ref={ref}
       {...rest}
       className={clsx(`hds-error-summary`, className as undefined)}
