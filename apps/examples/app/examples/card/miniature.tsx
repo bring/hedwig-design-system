@@ -140,4 +140,12 @@ import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   index: 1,
   layout: "none",
+  description: `<p>
+    Please note that the use of <code>variant</code> is deprecated. Use <code>theme</code> and <code>data-color</code> to achieve the same look.
+     </p>
+    <p>
+    The default look for miniature cards is now the same as the deprecated <code>variant="lighter-brand"</code>, so no need to set any theme or data-color for that look.
+    Use <code>theme="default"</code> and <code>data-color="neutral"</code> to achieve the same look as the deprecated <code>variant="white"</code>.
+    <p>Use <code>theme="base"</code> and <code>data-color="neutral"</code> to achieve the same look as the deprecated <code>variant="light-grey-fill"</code>.</p>
+    `,
 };
