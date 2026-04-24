@@ -9,7 +9,7 @@
    * In hedwig legacy the bullets started at the content
    * padding-left: var(--hds-spacing-16);
    */
-  padding-left: var(--hds-spacing-32);
+  padding-left: var(--hds-spacing-16);
 
   & li {
     padding-left: var(--hds-spacing-8);
