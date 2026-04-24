@@ -1,5 +1,13 @@
 # @postenbring/hedwig-react
 
+## 4.1.1
+
+### Patch Changes
+
+- b036be9: Fix Error summary link texts in light mode
+- Updated dependencies [b3cdb3c]
+  - @postenbring/hedwig-css@4.1.1
+
 ## 4.1.0
 
 ### Minor Changes

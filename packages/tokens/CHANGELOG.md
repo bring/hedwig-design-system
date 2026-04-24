@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 2.0.2
+
+### Patch Changes
+
+- 6e1ff1d: Deprecate some colors that were missed
+
 ## 2.0.1
 
 ### Patch Changes
