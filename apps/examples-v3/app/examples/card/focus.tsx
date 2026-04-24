@@ -144,4 +144,7 @@ import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   index: 0,
   layout: "none",
+  description: `<p>
+    Please note that Focus card will be deprecated in the next major release. From the next major release, you can achieve the same look as the deprecated default focus card (darker) by setting <code>data-color-scheme="dark"</code> and <code>data-color="tinted"</code> on your full-width card component.
+     </p>`,
 };
