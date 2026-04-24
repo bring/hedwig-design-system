@@ -1,6 +1,4 @@
 .hds-error-summary {
-  color: var(--hds-colors-error-base-contrast-default);
-  background-color: var(--hds-colors-error-base-default);
   display: flex;
   flex-direction: column;
   gap: var(--hds-spacing-12);
