@@ -68,23 +68,22 @@ function Example() {
           </Card.Body>
         </Card>
 
-        <h2>Buttons</h2>
-        <Card variant="focus">
+        <h2>Scale illustrations (no cropping)</h2>
+        <Card variant="focus" color="dark">
           <Card.Media>
             <Card.MediaImg
-              alt="Use variant=crop on photographs, to make the image fill the frame completely"
-              src={postenBringImage}
-              variant="crop"
+              alt="Images with transparent backgrounds (eg. SVG's, some PNG's) should be used with variant=scale, or no variant prop at all. This leaves some empty space on the sides/above/below if needed for showing the full image."
+              src={vectoriImage}
             />
           </Card.Media>
           <Card.Body>
             <Card.BodyHeader as="h2">
-              <Card.BodyHeaderOverline>Overline title</Card.BodyHeaderOverline>
               <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
-              For more than 1 CTA button, use &lt;ButtonList variant=&quot;stretched&quot;, and add
-              an &lsquo;asChild&lsquo; prop to the surrounding Card.BodyActionRow.
+              Images with transparent backgrounds (eg. SVG&lsquo;s, some PNG&lsquo;s) should be used
+              with variant=scale, or no variant prop at all. This leaves some empty space on the
+              sides/above/below if needed for showing the full image.
             </Card.BodyDescription>
             <Card.BodyActionRow asChild>
               <ButtonList variant="stretched">
@@ -107,30 +106,27 @@ function Example() {
           </Card.Body>
         </Card>
 
-        <h2>Scale illustrations (no cropping)</h2>
-        <Card variant="focus" color="dark">
+        <h2>Hero card</h2>
+        <Card variant="focus">
           <Card.Media>
-            <Card.MediaImg
-              alt="Images with transparent backgrounds (eg. SVG's, some PNG's) should be used with variant=scale, or no variant prop at all. This leaves some empty space on the sides/above/below if needed for showing the full image."
-              src={vectoriImage}
-            />
+            <Card.MediaImg alt="Image to the right" src={postenBringImage} />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
-              <Card.BodyHeaderOverline>Overline title</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+            <Card.BodyHeader asChild>
+              <h1>
+                <Card.BodyHeaderTitle>Hero card</Card.BodyHeaderTitle>
+              </h1>
             </Card.BodyHeader>
             <Card.BodyDescription>
-              Images with transparent backgrounds (eg. SVG&lsquo;s, some PNG&lsquo;s) should be used
-              with variant=scale, or no variant prop at all. This leaves some empty space on the
-              sides/above/below if needed for showing the full image.
+              H1 header to function as the main title of a page.
             </Card.BodyDescription>
-            <Card.BodyAction asChild>
-              <Link href="https://www.posten.no" variant="inverted" icon="leading">
-                <Card.BodyActionArrow direction="right" />
-                Internal link
-              </Link>
-            </Card.BodyAction>
+            <Card.BodyActionRow>
+              <Card.BodyAction asChild>
+                <Button fullWidth="mobile" asChild>
+                  <a href="https://www.posten.no">Internal link</a>
+                </Button>
+              </Card.BodyAction>
+            </Card.BodyActionRow>
           </Card.Body>
         </Card>
       </div>
