@@ -10,7 +10,19 @@ export type TextareaProps = Omit<
 >;
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
-  { className, size, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
+  {
+    className,
+    size,
+    errorMessage,
+    validationMessage,
+    labelProps,
+    label,
+    id,
+    style,
+    disabled,
+    readOnly,
+    ...rest
+  },
   ref,
 ) {
   return (
@@ -18,6 +30,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
       className={clsx("hds-textarea", className as undefined)}
       disabled={disabled}
       errorMessage={errorMessage}
+      validationMessage={validationMessage}
       id={id}
       label={label}
       labelProps={labelProps}

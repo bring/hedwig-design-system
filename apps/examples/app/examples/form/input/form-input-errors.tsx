@@ -23,9 +23,9 @@ function Example() {
           setErrors(newErrors);
         }}
       >
-        <Input errorMessage={errors.FirstName} label="First name" name="FirstName" />
-        <Input errorMessage={errors.LastName} label="Last name" name="LastName" />
-        <Input errorMessage={errors.PetName} label="Pet name" name="PetName" />
+        <Input validationMessage={errors.FirstName} label="First name" name="FirstName" />
+        <Input validationMessage={errors.LastName} label="Last name" name="LastName" />
+        <Input validationMessage={errors.PetName} label="Pet name" name="PetName" />
         <HStack gap="4" wrap justify="space-between">
           <Button type="submit" fullWidth="mobile">
             Submit

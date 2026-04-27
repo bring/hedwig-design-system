@@ -8,3 +8,4 @@ export * from "./radio-button";
 export * from "./search-wrapper";
 export * from "./select";
 export * from "./textarea";
+export * from "./validation-message";
