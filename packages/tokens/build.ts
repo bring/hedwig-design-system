@@ -309,12 +309,13 @@ const darkSourceRemapped: JsonObject = {};
 for (const [key, value] of Object.entries(darkSourceRaw)) {
   darkSourceRemapped[`${key}-dark`] = value;
 }
-const darkTempSourcePath = `${__dirname}/tokens-source/themes/dark-temp.json`;
+// Write temp file to tokens-output (not watched) to avoid infinite loop
+const darkTempSourcePath = `${__dirname}/tokens-output/dark-temp.json`;
 writeFileSync(darkTempSourcePath, JSON.stringify(darkSourceRemapped, null, 2), "utf8");
 
 StyleDictionary.extend({
   include: ["tokens-source/shared-colors.json"],
-  source: ["tokens-source/themes/dark-temp.json"],
+  source: ["tokens-output/dark-temp.json"],
   platforms: {
     javascript: {
       options: {
