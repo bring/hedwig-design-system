@@ -1,6 +1,7 @@
 import "@postenbring/hedwig-css";
 import { Card, Link, Container } from "@postenbring/hedwig-react";
 import postenBringImage from "../../assets/posten-bring.avif";
+import vectoriImage from "../../assets/customer-parcel.svg";
 
 function Example() {
   return (
@@ -19,6 +20,7 @@ function Example() {
           <Card variant="slim" theme="default">
             <Card.Media>
               <Card.MediaImg
+                variant="crop"
                 alt="Posten delivery van with Bring cargo truck in the background"
                 src={postenBringImage}
               />
@@ -40,6 +42,7 @@ function Example() {
           <Card variant="slim" theme="tinted">
             <Card.Media>
               <Card.MediaImg
+                variant="crop"
                 alt="Posten delivery van with Bring cargo truck in the background"
                 src={postenBringImage}
               />
@@ -63,6 +66,7 @@ function Example() {
           <Card variant="slim" theme="base">
             <Card.Media>
               <Card.MediaImg
+                variant="crop"
                 alt="Posten delivery van with Bring cargo truck in the background"
                 src={postenBringImage}
               />
@@ -84,6 +88,7 @@ function Example() {
           <Card variant="slim" theme="default" data-color="neutral">
             <Card.Media>
               <Card.MediaImg
+                variant="crop"
                 alt="Posten delivery van with Bring cargo truck in the background"
                 src={postenBringImage}
               />
@@ -107,6 +112,7 @@ function Example() {
           <Card variant="slim" theme="tinted" data-color="neutral">
             <Card.Media>
               <Card.MediaImg
+                variant="crop"
                 alt="Posten delivery van with Bring cargo truck in the background"
                 src={postenBringImage}
               />
@@ -131,16 +137,18 @@ function Example() {
             <Card.Media>
               <Card.MediaImg
                 alt="Posten delivery van with Bring cargo truck in the background"
-                src={postenBringImage}
+                src={vectoriImage}
               />
             </Card.Media>
             <Card.Body>
               <Card.BodyHeader as="h3">
-                <Card.BodyHeaderOverline>Customs</Card.BodyHeaderOverline>
+                <Card.BodyHeaderOverline>Vector image</Card.BodyHeaderOverline>
                 <Card.BodyHeaderTitle>Neutral Base</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
-                Familiarise yourself with regulations relating to customs and fees
+                Vector images / transparent backgrounds: use variant=&quot;scale&quot; (or skip
+                variant) on the MediaImg. This shows the entire image, instead of hiding parts to
+                fill the available area.
               </Card.BodyDescription>
               <Card.BodyAction asChild>
                 <Link href="#article-4" variant="solid">
