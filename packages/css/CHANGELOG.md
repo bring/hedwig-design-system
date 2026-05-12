@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 4.1.2
+
+### Patch Changes
+
+- b0c21d8: Update tokens
+- Updated dependencies [b0c21d8]
+  - @postenbring/hedwig-tokens@3.0.0
+
 ## 4.1.1
 
 ### Patch Changes
