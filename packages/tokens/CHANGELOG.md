@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 3.0.0
+
+### Major Changes
+
+- b0c21d8: Update tokens
+
 ## 2.0.2
 
 ### Patch Changes
