@@ -6,6 +6,10 @@
     "checkJs": true,
     "allowJs": true,
     "noEmit": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "module": "esnext",
+    "target": "es2020",
+    "downlevelIteration": true
   }
 }
