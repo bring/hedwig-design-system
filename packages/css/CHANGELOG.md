@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.1.3
+
+### Patch Changes
+
+- 17330ba: Visual bugfix for buttons with icons in buttonlist variant stretched
+
 ## 4.1.2
 
 ### Patch Changes
