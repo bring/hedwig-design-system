@@ -67,6 +67,7 @@
         opacity: 1;
         transition-delay: var(--_animation-time);
         overflow-y: auto;
+        padding-bottom: 90px;
       }
     }
 
