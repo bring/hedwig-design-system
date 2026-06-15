@@ -3,11 +3,12 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { ErrorMessage, type ErrorMessageProps } from "../error-message";
 import { useFieldsetContext } from "../fieldset";
 
-export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> & {
+export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue" | "size"> & {
   children: ReactNode;
   variant?: "plain" | "bounding-box";
   title?: string;
   errorMessageProps?: Partial<ErrorMessageProps>;
+  size?: "small" | "";
 } & (
     | {
         /**
@@ -43,6 +44,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       title,
       children,
       className,
+      size = "",
       ...rest
     },
     ref,
@@ -52,7 +54,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     const hasError = !!errorMessage || hasFieldsetError || hasErrorProp;
 
     return (
-      <div className={clsx("hds-checkbox-wrapper")}>
+      <div
+        className={clsx("hds-checkbox-wrapper", {
+          "hds-checkbox-wrapper--small": size === "small",
+        })}
+      >
         <div
           className={clsx(
             "hds-checkbox",
