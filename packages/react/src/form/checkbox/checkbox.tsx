@@ -64,7 +64,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             "hds-checkbox",
             {
               [`hds-checkbox--${variant}`]: variant === "bounding-box",
-              "hds-checkbox--error": hasError,
             },
             className as undefined,
           )}

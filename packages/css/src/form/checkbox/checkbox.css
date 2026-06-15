@@ -100,11 +100,8 @@
   }
 
   /**
-  * Variant bounding-box and state error
+  * Variant bounding-box
   */
-  &.hds-checkbox--error {
-    border-color: var(--hds-colors-border-strong);
-  }
 
   &.hds-checkbox--bounding-box {
     background-color: var(--hds-colors-bg-tinted);
