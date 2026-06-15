@@ -11,9 +11,6 @@
 }
 
 .hds-checkbox-wrapper--small {
-  /* --checkmark-width: 16px;
-  --checkmark-margin: 2px; */
-
   font: var(--hds-typography-body-small);
 }
 
@@ -105,6 +102,10 @@
   /**
   * Variant bounding-box and state error
   */
+  &.hds-checkbox--error {
+    border-color: var(--hds-colors-border-strong);
+  }
+
   &.hds-checkbox--bounding-box {
     background-color: var(--hds-colors-bg-tinted);
     padding: calc(var(--hds-spacing-16) - 1px) var(--hds-spacing-32)
