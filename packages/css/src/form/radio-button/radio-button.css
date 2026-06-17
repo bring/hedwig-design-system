@@ -94,12 +94,8 @@
   */
   &.hds-radio-button--bounding-box {
     background-color: var(--hds-colors-bg-tinted);
-    padding: calc(var(--hds-spacing-16) - 1px) var(--hds-spacing-32)
-      calc(var(--hds-spacing-16) - 1px)
-      calc(
-        var(--hds-spacing-16) + var(--checkmark-width) + (var(--checkmark-margin) * 2) +
-          var(--hds-spacing-12)
-      );
+    padding: var(--hds-spacing-16) var(--hds-spacing-32) var(--hds-spacing-16)
+      calc(var(--hds-spacing-16) + var(--checkmark-width) + var(--hds-spacing-16));
     border: solid var(--hds-stroke-default) var(--hds-colors-bg-tinted);
 
     .hds-radio-button__checkmark {
