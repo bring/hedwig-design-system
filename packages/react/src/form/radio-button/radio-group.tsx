@@ -23,13 +23,10 @@ export interface RadioGroupProps extends Omit<FieldsetProps, "onChange"> {
   onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
-type RadioGroupContextProps = {
-  hasError: boolean;
-} & Pick<RadioGroupProps, "name" | "value" | "onChange">;
+type RadioGroupContextProps = Pick<RadioGroupProps, "name" | "value" | "onChange">;
 
 const RadioGroupContext = createContext<RadioGroupContextProps>({
   name: undefined,
-  hasError: false,
   onChange: () => {
     return undefined;
   },
@@ -42,7 +39,7 @@ export const RadioGroup = forwardRef<HTMLFieldSetElement, RadioGroupProps>(funct
   ref,
 ) {
   return (
-    <RadioGroupContext.Provider value={{ name, value, hasError: Boolean(errorMessage), onChange }}>
+    <RadioGroupContext.Provider value={{ name, value, onChange }}>
       <Fieldset errorMessage={errorMessage} {...rest} ref={ref}>
         {children}
       </Fieldset>

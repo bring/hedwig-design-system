@@ -1,12 +1,12 @@
 .hds-radio-button {
-  --checkmark-width: 16px;
-  --checkmark-margin: var(--hds-spacing-4);
+  --checkmark-width: 24px;
+  --checkmark-margin: 2px;
 
   display: block;
   padding: 0 0 0
     calc(var(--checkmark-width) + (var(--checkmark-margin) * 2) + var(--hds-spacing-12));
   border-radius: var(--hds-border-radius);
-  font: var(--hds-typography-body-small);
+  font: var(--hds-typography-body);
   position: relative;
   cursor: pointer;
 
@@ -47,12 +47,12 @@
   * Create a custom RadioButton
   */
   .hds-radio-button__checkmark {
-    margin: var(--hds-spacing-4);
+    margin: var(--checkmark-margin) 0;
     position: absolute;
     left: 0;
     height: var(--checkmark-width);
     width: var(--checkmark-width);
-    border: solid 2px var(--hds-colors-text-default);
+    border: solid 2px var(--hds-colors-neutral-border-strong);
     border-radius: 50%;
   }
 
@@ -60,20 +60,37 @@
     display: block;
   }
 
+  input[type="radio"]:checked ~ .hds-radio-button__checkmark {
+    background-color: var(--hds-colors-base-default);
+    border-color: var(--hds-colors-base-default);
+  }
+
   .hds-radio-button__checkmark::after {
     content: "";
     position: absolute;
     display: none;
-    top: 3px;
-    left: 3px;
-    width: 6px;
-    height: 6px;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: var(--hds-colors-border-strong);
+    background: var(--hds-colors-base-contrast-default);
+  }
+
+  fieldset[data-color] & .hds-radio-button__checkmark,
+  fieldset[data-color] & input[type="radio"]:checked ~ .hds-radio-button__checkmark {
+    border-color: var(--hds-colors-border-strong);
   }
 
   /**
-  * Variant bounding-box and state error
+   * Small variant
+   */
+  &.hds-radio-button--small {
+    font: var(--hds-typography-body-small);
+  }
+
+  /**
+  * Variant bounding-box
   */
   &.hds-radio-button--bounding-box {
     background-color: var(--hds-colors-bg-tinted);
@@ -87,20 +104,6 @@
 
     .hds-radio-button__checkmark {
       left: var(--hds-spacing-16);
-    }
-
-    &.hds-radio-button--error {
-      border: solid var(--hds-stroke-default) var(--hds-colors-warning-base-default);
-    }
-  }
-
-  &.hds-radio-button--error {
-    .hds-radio-button__checkmark {
-      border-color: var(--hds-colors-warning-base-default);
-    }
-
-    .hds-radio-button__checkmark::after {
-      background: var(--hds-colors-warning-base-default);
     }
   }
 

@@ -41,6 +41,6 @@ export default Example;
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   description: `RadioGroup will aid you with styling and aria when it is provided an error message`,
-  index: 3,
+  index: 4,
   layout: "centered-fullwidth",
 };

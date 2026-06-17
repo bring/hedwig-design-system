@@ -43,6 +43,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       aria-describedby={errorMessage ? errorMessageId : undefined}
       aria-invalid={errorMessage ? true : undefined}
       className={clsx("hds-fieldset", className as undefined)}
+      data-color={errorMessage ? "error" : undefined}
       ref={ref}
       style={style}
       {...rest}
