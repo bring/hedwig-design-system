@@ -16,8 +16,7 @@
 
 .hds-checkbox {
   display: block;
-  padding: 0 0 0
-    calc(var(--checkmark-width) + (var(--checkmark-margin) * 2) + var(--hds-spacing-16));
+  padding: 0 0 0 calc(var(--checkmark-width) + var(--hds-spacing-16));
   border-radius: var(--hds-border-radius);
   position: relative;
   cursor: pointer;
@@ -60,7 +59,7 @@
   * Create a custom checkbox
   */
   .hds-checkbox__checkmark {
-    margin: var(--checkmark-margin);
+    margin: var(--checkmark-margin) 0;
     position: absolute;
     left: 0;
     height: var(--checkmark-width);
@@ -80,10 +79,9 @@
     border-color: var(--hds-colors-base-default);
   }
 
-  fieldset[data-color] & {
-    .hds-checkbox__checkmark {
-      border-color: var(--hds-colors-border-strong);
-    }
+  fieldset[data-color] & .hds-checkbox__checkmark,
+  fieldset[data-color] & input[type="checkbox"]:checked ~ .hds-checkbox__checkmark {
+    border-color: var(--hds-colors-border-strong);
   }
 
   .hds-checkbox__checkmark::after {
@@ -105,12 +103,8 @@
 
   &.hds-checkbox--bounding-box {
     background-color: var(--hds-colors-bg-tinted);
-    padding: calc(var(--hds-spacing-16) - 1px) var(--hds-spacing-32)
-      calc(var(--hds-spacing-16) - 1px)
-      calc(
-        var(--hds-spacing-16) + var(--checkmark-width) + (var(--checkmark-margin) * 2) +
-          var(--hds-spacing-12)
-      );
+    padding: var(--hds-spacing-16) var(--hds-spacing-32) var(--hds-spacing-16)
+      calc(var(--hds-spacing-16) + var(--checkmark-width) + var(--hds-spacing-16));
     border: solid var(--hds-stroke-default) var(--hds-colors-bg-tinted);
 
     .hds-checkbox__checkmark {
