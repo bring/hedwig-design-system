@@ -14,7 +14,6 @@ export interface RadioButtonProps
    *
    * You can use this when your Radio button is part of a non-HDS fieldset which shows an error message.
    */
-  hasError?: boolean;
   title?: string;
   size?: "small" | "";
 }
