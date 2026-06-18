@@ -1,19 +1,32 @@
 import "@postenbring/hedwig-css";
-import { Fieldset, Checkbox } from "@postenbring/hedwig-react";
+import { Fieldset, Checkbox, VStack } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Fieldset legend="Legend">
-      <Checkbox variant="bounding-box" defaultChecked value="Hello">
-        Hello
-      </Checkbox>
-      <Checkbox variant="bounding-box" value="Hello">
-        Hello
-      </Checkbox>
-      <Checkbox variant="bounding-box" value="Hello">
-        Hello
-      </Checkbox>
-    </Fieldset>
+    <VStack gap="12">
+      <Fieldset legend="Legend">
+        <Checkbox variant="bounding-box" defaultChecked value="Hello">
+          Hello
+        </Checkbox>
+        <Checkbox variant="bounding-box" value="Hello">
+          Hello
+        </Checkbox>
+        <Checkbox variant="bounding-box" value="Hello">
+          Hello
+        </Checkbox>
+      </Fieldset>
+      <Fieldset legend="Small checkboxes">
+        <Checkbox variant="bounding-box" defaultChecked value="Hello" size="small">
+          Hello
+        </Checkbox>
+        <Checkbox variant="bounding-box" value="Hello" size="small">
+          Hello
+        </Checkbox>
+        <Checkbox variant="bounding-box" value="Hello" size="small">
+          Hello
+        </Checkbox>
+      </Fieldset>
+    </VStack>
   );
 }
 

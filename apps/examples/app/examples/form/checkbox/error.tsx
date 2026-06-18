@@ -4,14 +4,24 @@ import { Fieldset, Checkbox, HStack } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <HStack justify="center" gap="24" wrap className="hds-mt-16 hds-mb-16">
-      <Fieldset legend="Legend" errorMessage="Something is wrong" style={{ minWidth: 400 }}>
+      <Fieldset
+        legend="Legend"
+        errorMessage="Something is wrong"
+        data-color="error"
+        style={{ minWidth: 400 }}
+      >
         <Checkbox defaultChecked value="Hello">
           Check this box
         </Checkbox>
         <Checkbox value="Hello">Check this box</Checkbox>
         <Checkbox value="Hello">Check this box</Checkbox>
       </Fieldset>
-      <Fieldset legend="Legend" errorMessage="Something is wrong" style={{ minWidth: 400 }}>
+      <Fieldset
+        legend="Legend"
+        errorMessage="Something is wrong"
+        data-color="error"
+        style={{ minWidth: 400 }}
+      >
         <Checkbox variant="bounding-box" defaultChecked value="Hello">
           Check this box
         </Checkbox>
@@ -26,6 +36,7 @@ function Example() {
         legend="Legend"
         errorMessage="Aria-live is off for this error"
         errorMessageProps={{ "aria-live": "off" }}
+        data-color="error"
         style={{ minWidth: 400 }}
       >
         <Checkbox variant="bounding-box" defaultChecked value="Hello">
