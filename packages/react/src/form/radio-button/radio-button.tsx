@@ -1,10 +1,9 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { useFieldsetContext } from "../fieldset";
 import { type RadioGroupProps, useRadioGroupContext } from "./radio-group";
 
 export interface RadioButtonProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue" | "size"> {
   children: ReactNode;
   variant?: "plain" | "bounding-box";
   /**
@@ -15,8 +14,8 @@ export interface RadioButtonProps
    *
    * You can use this when your Radio button is part of a non-HDS fieldset which shows an error message.
    */
-  hasError?: boolean;
   title?: string;
+  size?: "small" | "";
 }
 
 const isChecked = ({
@@ -32,26 +31,8 @@ const isChecked = ({
 };
 
 export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
-  (
-    {
-      checked,
-      value,
-      variant = "plain",
-      hasError: hasErrorProp,
-      title,
-      children,
-      className,
-      ...rest
-    },
-    ref,
-  ) => {
-    const {
-      value: selectedValue,
-      hasError: hasRadioGroupError,
-      ...context
-    } = useRadioGroupContext();
-    const { hasError: hasFieldsetError } = useFieldsetContext();
-    const hasError = hasFieldsetError || hasRadioGroupError || hasErrorProp;
+  ({ checked, value, variant = "plain", title, children, className, size = "", ...rest }, ref) => {
+    const { value: selectedValue, ...context } = useRadioGroupContext();
 
     return (
       <div
@@ -59,7 +40,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
           "hds-radio-button",
           {
             [`hds-radio-button--${variant}`]: variant === "bounding-box",
-            "hds-radio-button--error": hasError,
+            [`hds-radio-button--${size}`]: size,
           },
           className as undefined,
         )}

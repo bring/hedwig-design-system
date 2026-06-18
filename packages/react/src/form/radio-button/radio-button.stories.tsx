@@ -17,7 +17,6 @@ export const Preview: Story = {
     title: "",
     children: "Just a RadioButton",
     checked: true,
-    hasError: false,
     variant: "plain",
   },
   argTypes: {

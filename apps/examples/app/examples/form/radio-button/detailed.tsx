@@ -35,6 +35,6 @@ export default Example;
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   description: `Provide a title to the RadioButton if you need to add more context to the user.`,
-  index: 2,
+  index: 3,
   layout: "centered-fullwidth",
 };

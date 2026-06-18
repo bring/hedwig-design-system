@@ -4,13 +4,13 @@ import { RadioGroup, RadioButton } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <RadioGroup legend="Legend" name="group1">
-      <RadioButton variant="bounding-box" defaultChecked value="Hello">
+      <RadioButton defaultChecked value="Hello" size="small">
         Hello
       </RadioButton>
-      <RadioButton variant="bounding-box" value="Hello">
+      <RadioButton value="Hello" size="small">
         Hello
       </RadioButton>
-      <RadioButton variant="bounding-box" value="Hello">
+      <RadioButton value="Hello" size="small">
         Hello
       </RadioButton>
     </RadioGroup>
@@ -21,6 +21,7 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  index: 2,
+  description: `Radio buttons should be grouped in a <code>RadioGroup</code> with a given <code>name</code>`,
+  index: 1,
   layout: "centered-fullwidth",
 };
