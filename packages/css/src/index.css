@@ -28,6 +28,7 @@
 @import url("form/search-wrapper/search-wrapper.css");
 @import url("form/select/select.css");
 @import url("form/textarea/textarea.css");
+@import url("form/validation-message/validation-message.css");
 @import url("help-text/help-text.css");
 @import url("layout/container/container.css");
 @import url("layout/flex/flex.css");
