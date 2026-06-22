@@ -15,11 +15,12 @@ type Story = StoryObj<typeof Fieldset>;
 export const Preview: Story = {
   tags: ["!dev"],
   args: {
-    legend: "Default fieldset",
     errorMessage: "",
   },
   render: (props) => (
     <Fieldset {...props}>
+      <Fieldset.Legend>Default fieldset</Fieldset.Legend>
+      <Fieldset.Description>This is a description</Fieldset.Description>
       <Checkbox defaultChecked value="Hello">
         Hello
       </Checkbox>

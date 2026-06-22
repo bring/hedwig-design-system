@@ -2,7 +2,9 @@
   /* Reset outer margin from the browser defaults, but let consumers easily override it */
   margin: 0;
 
-  --hds-fieldset-spacing: var(--hds-spacing-8);
+  --hds-fieldset-spacing: var(--hds-spacing-16);
+  --hds-fieldset-legend-spacing: var(--hds-spacing-4);
+  --hds-fieldset-description-spacing: var(--hds-spacing-24);
 }
 
 .hds-fieldset {
@@ -12,17 +14,40 @@
   padding: 0;
   gap: var(--hds-fieldset-spacing);
 
-  & .hds-fieldset__legend,
-  & .hds-fieldset__legend--default {
+  & .hds-fieldset__legend {
     padding: 0;
     color: var(--hds-colors-neutral-text-default);
-    margin-bottom: var(--hds-fieldset-spacing);
+    margin-bottom: var(--hds-fieldset-legend-spacing);
     transition: color var(--hds-micro-animation-duration-quick)
       var(--hds-micro-animation-easing-normal);
-    font: var(--hds-typography-caption);
+    font: var(--hds-typography-h3-title);
   }
 
+  &:has(.hds-fieldset__legend):not(:has(.hds-fieldset__description)) .hds-fieldset__legend {
+    margin-bottom: var(--hds-fieldset-description-spacing);
+  }
+
+  /* Deprecated: .hds-fieldset__legend--large remains as a compatibility alias. Prefer .hds-fieldset__legend[data-size="large"]. */
   & .hds-fieldset__legend--large {
     font: var(--hds-typography-body-title);
+  }
+
+  & .hds-fieldset__description {
+    color: var(--hds-colors-neutral-text-subtle);
+    font: var(--hds-typography-h3);
+    margin-bottom: calc(var(--hds-fieldset-description-spacing) - var(--hds-fieldset-spacing));
+  }
+
+  &.hds-fieldset--small {
+    --hds-fieldset-spacing: var(--hds-spacing-12);
+    --hds-fieldset-description-spacing: var(--hds-spacing-16);
+
+    & .hds-fieldset__legend {
+      font: var(--hds-typography-body-title);
+    }
+
+    & .hds-fieldset__description {
+      font: var(--hds-typography-body);
+    }
   }
 }

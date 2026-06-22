@@ -3,24 +3,19 @@ import { Fieldset, RadioButton } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Fieldset
-      legend={
-        <>
-          Radio buttons wrapped in Fieldset will get error styling when Fieldset has errorMessage
-          <br />
-          However, you should probably use RadioGroup instead of Fieldset for Radio buttons
-        </>
-      }
-      errorMessage="Something's wrong"
-    >
+    <Fieldset errorMessage="Something's wrong">
+      <Fieldset.Legend>Please select an option</Fieldset.Legend>
+      <Fieldset.Description>
+        However, you should use RadioGroup instead of Fieldset
+      </Fieldset.Description>
       <RadioButton value="Hello" name="radiogroup">
-        Hello
+        Option 1
       </RadioButton>
       <RadioButton value="Hello" name="radiogroup">
-        Hello
+        Option 2
       </RadioButton>
       <RadioButton value="Hello" name="radiogroup">
-        Hello
+        Option 3
       </RadioButton>
     </Fieldset>
   );
@@ -30,6 +25,6 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  index: 4,
+  index: 3,
   layout: "centered-fullwidth",
 };

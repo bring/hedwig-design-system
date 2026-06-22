@@ -3,16 +3,12 @@ import { RadioGroup, RadioButton } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <RadioGroup legend="Legend" name="group1">
-      <RadioButton defaultChecked value="Hello" size="small">
+    <RadioGroup legend="Legend" name="group1" size="small">
+      <RadioButton defaultChecked value="Hello">
         Hello
       </RadioButton>
-      <RadioButton value="Hello" size="small">
-        Hello
-      </RadioButton>
-      <RadioButton value="Hello" size="small">
-        Hello
-      </RadioButton>
+      <RadioButton value="Hello">Hello</RadioButton>
+      <RadioButton value="Hello">Hello</RadioButton>
     </RadioGroup>
   );
 }
