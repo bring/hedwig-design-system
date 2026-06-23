@@ -20,22 +20,6 @@
     position: fixed;
   }
 
-  &[data-color="info"] {
-    --hds-validation-message-icon: var(--_hds-info-circle);
-  }
-
-  &[data-color="success"] {
-    --hds-validation-message-icon: var(--_hds-check-circle);
-  }
-
-  &[data-color="warning"] {
-    --hds-validation-message-icon: var(--_hds-warning);
-  }
-
-  &[data-color="error"] {
-    --hds-validation-message-icon: var(--_hds-error);
-  }
-
   &:not(:empty) {
     &::before {
       content: "";
@@ -56,4 +40,20 @@
     width: var(--hds-spacing-20);
     height: var(--hds-spacing-20);
   }
+}
+
+[data-color="info"] {
+  --hds-validation-message-icon: var(--_hds-info-circle);
+}
+
+[data-color="success"] {
+  --hds-validation-message-icon: var(--_hds-check-circle);
+}
+
+[data-color="warning"] {
+  --hds-validation-message-icon: var(--_hds-warning);
+}
+
+[data-color="error"] {
+  --hds-validation-message-icon: var(--_hds-error);
 }

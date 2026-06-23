@@ -1,7 +1,8 @@
 import { useId, forwardRef, Children, isValidElement, cloneElement } from "react";
 import type { LabelHTMLAttributes, ReactNode, CSSProperties } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { ErrorMessage, type ErrorMessageProps } from "../error-message";
+import { type ErrorMessageProps } from "../error-message";
+import { ValidationMessage, type ValidationMessageProps } from "../validation-message";
 
 interface InputProps {
   "aria-describedby"?: string;
@@ -14,8 +15,14 @@ export interface InputGroupProps {
   id?: string;
   className?: string;
   style?: CSSProperties;
+  "data-color"?: "info" | "success" | "warning" | "error";
+  "aria-invalid"?: boolean;
   size?: "large" | "small";
+  validationMessage?: ReactNode | { value: ReactNode };
+  validationMessageProps?: Partial<ValidationMessageProps>;
+  /** @deprecated Use `validationMessage` instead */
   errorMessage?: ReactNode;
+  /** @deprecated Use `validationMessageProps` instead */
   errorMessageProps?: Partial<ErrorMessageProps>;
   labelProps?: LabelHTMLAttributes<HTMLLabelElement>;
   label?: ReactNode;
@@ -34,7 +41,10 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
     id,
     className,
     style,
+    "data-color": dataColor = undefined,
     size = "large",
+    validationMessage,
+    validationMessageProps,
     errorMessage,
     errorMessageProps,
     labelProps: { className: labelClassName, ...labelProps } = {},
@@ -46,12 +56,25 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
   },
   ref,
 ) {
-  const errorMessageId = useId();
+  const validationMessageId = useId();
   const inputId = useId();
+  let validationMessageValue: ReactNode;
+
+  if (validationMessage) {
+    if (typeof validationMessage === "object" && "value" in validationMessage) {
+      validationMessageValue = validationMessage.value;
+    } else {
+      validationMessageValue = validationMessage;
+    }
+  } else if (errorMessage) {
+    validationMessageValue = errorMessage;
+  }
+
+  const validationColor = errorMessage ? "error" : dataColor;
 
   const renderInput = () => {
     const inputProps: InputProps = {
-      "aria-describedby": errorMessage ? errorMessageId : undefined,
+      "aria-describedby": validationMessage ? validationMessageId : undefined,
       "aria-invalid": errorMessage ? true : undefined,
       id: id ?? inputId,
       className: clsx("hds-input-group__input"),
@@ -80,12 +103,12 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
         "hds-input-group",
         {
           [`hds-input-group--${size}`]: size,
-          "hds-input-group--error": errorMessage,
         },
         className as undefined,
       )}
       ref={ref}
       style={style}
+      data-color={validationColor}
       {...rest}
     >
       {label !== null && label !== undefined && label !== false && (
@@ -104,9 +127,12 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
       >
         {renderInput()}
       </div>
-      <ErrorMessage id={errorMessageId} {...errorMessageProps}>
-        {errorMessage}
-      </ErrorMessage>
+      <ValidationMessage
+        id={validationMessageId}
+        {...(validationMessageProps ?? errorMessageProps)}
+      >
+        {validationMessageValue}
+      </ValidationMessage>
     </div>
   );
 });
