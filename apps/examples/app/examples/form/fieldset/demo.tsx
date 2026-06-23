@@ -3,7 +3,9 @@ import { Checkbox, Fieldset } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Fieldset legend="Default fieldset">
+    <Fieldset>
+      <Fieldset.Legend>Default fieldset</Fieldset.Legend>
+      <Fieldset.Description>This is a description</Fieldset.Description>
       <Checkbox defaultChecked value="Hello">
         Hello
       </Checkbox>

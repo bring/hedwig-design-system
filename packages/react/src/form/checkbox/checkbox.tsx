@@ -50,13 +50,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     ref,
   ) => {
     const errorMessageId = useId();
-    const { hasError: hasFieldsetError } = useFieldsetContext();
+    const { hasError: hasFieldsetError, size: fieldsetSize } = useFieldsetContext();
     const hasError = !!errorMessage || hasFieldsetError || hasErrorProp;
+    const effectiveSize = size || fieldsetSize;
 
     return (
       <div
         className={clsx("hds-checkbox-wrapper", {
-          "hds-checkbox-wrapper--small": size === "small",
+          "hds-checkbox-wrapper--small": effectiveSize === "small",
         })}
       >
         <div
