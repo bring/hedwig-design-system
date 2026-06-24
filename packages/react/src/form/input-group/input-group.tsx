@@ -16,7 +16,6 @@ export interface InputGroupProps {
   className?: string;
   style?: CSSProperties;
   "data-color"?: "info" | "success" | "warning" | "error";
-  "aria-invalid"?: boolean;
   size?: "large" | "small";
   validationMessage?: ReactNode | { value: ReactNode };
   validationMessageProps?: Partial<ValidationMessageProps>;
