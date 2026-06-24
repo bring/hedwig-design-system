@@ -20,20 +20,13 @@
       margin-top: 0.5px;
     }
 
-    & .hds-input-group__input-wrapper {
-      &:focus-within,
-      &:has(input.hds-input-group__input:read-only,
-      textarea.hds-input-group__input:read-only):focus-within,
-      &[data-readonly="true"]:focus-within /* Fallback for :has */ {
-        /* Since the border size increases when focused, we offset the added height by decreasing the input height and padding */
-        & .hds-input-group__input {
-          height: calc(
-            (var(--hds-spacing-12) - var(--hds-stroke-thick)) * 2 +
-              var(--hds-line-height-technical-min) - var(--hds-stroke-thick)
-          );
-          padding: calc(var(--hds-spacing-8) - var(--hds-stroke-default));
-        }
-      }
+    & .hds-input-group__input-wrapper:focus-within .hds-input-group__input {
+      /* Since the border size increases when focused, we offset the added height by decreasing the input height and padding */
+      height: calc(
+        (var(--hds-spacing-12) - var(--hds-stroke-thick)) * 2 +
+          var(--hds-line-height-technical-min) - var(--hds-stroke-thick)
+      );
+      padding: calc(var(--hds-spacing-8) - var(--hds-stroke-default));
     }
 
     & .hds-input-group__input {
@@ -45,21 +38,6 @@
   display: flex;
   flex-flow: column nowrap;
   gap: var(--hds-spacing-4);
-
-  /* State: Error */
-  &.hds-input-group--error {
-    .hds-input-group__input-wrapper,
-    .hds-input-group__input-wrapper:has(
-      input.hds-input-group__input:read-only,
-      textarea.hds-input-group__input:read-only
-    ),
-    .hds-input-group__input-wrapper[data-readonly="true"] /* Fallback for :has */,
-    .hds-input-group__input-wrapper:has(
-      input.hds-input-group__input:read-only,
-      textarea.hds-input-group__input:read-only):focus-within {
-      border-color: var(--hds-colors-error-border-strong);
-    }
-  }
 
   & .hds-input-group__label {
     font: var(--hds-typography-body-title);
@@ -114,9 +92,7 @@
     box-sizing: border-box;
 
     /* State: Focus */
-    &:focus-within,
-    &:has(input.hds-input-group__input:read-only, textarea.hds-input-group__input:read-only):focus-within,
-    &[data-readonly="true"]:focus-within /* Fallback for :has */ {
+    &:focus-within {
       border: var(--hds-stroke-thick) solid var(--hds-colors-border-default);
 
       /* Since the border size increases when focused, we offset the added height by decreasing the input height and padding */
@@ -154,6 +130,19 @@
 
     &:focus {
       outline: 0;
+    }
+  }
+}
+
+[data-color="info"],
+[data-color="success"],
+[data-color="warning"],
+[data-color="error"] {
+  & .hds-input-group__input-wrapper {
+    border-color: var(--hds-colors-border-strong);
+
+    &:focus-within {
+      border-color: var(--hds-colors-border-strong);
     }
   }
 }
