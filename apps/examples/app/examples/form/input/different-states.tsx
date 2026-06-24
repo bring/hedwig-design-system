@@ -5,7 +5,6 @@ function Example() {
   return (
     <VStack gap="16-20" style={{ padding: "var(--hds-spacing-24-32) 0" }}>
       <Input label="Plain" />
-      <Input label="Error" defaultValue="Some value" errorMessage="This is invalid" />
       <Input
         label="Info"
         defaultValue="Some info value"
@@ -41,12 +40,6 @@ function Example() {
         data-color="error"
         validationMessage="This is invalid"
         aria-invalid
-      />
-      <Input
-        label="Read only with error"
-        value="Some value"
-        readOnly
-        errorMessage="This is invalid"
       />
     </VStack>
   );

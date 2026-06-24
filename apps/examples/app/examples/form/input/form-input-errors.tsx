@@ -23,9 +23,27 @@ function Example() {
           setErrors(newErrors);
         }}
       >
-        <Input errorMessage={errors.FirstName} label="First name" name="FirstName" />
-        <Input errorMessage={errors.LastName} label="Last name" name="LastName" />
-        <Input errorMessage={errors.PetName} label="Pet name" name="PetName" />
+        <Input
+          validationMessage={errors.FirstName}
+          aria-invalid={Boolean(errors.FirstName)}
+          data-color={errors.FirstName ? "error" : undefined}
+          label="First name"
+          name="FirstName"
+        />
+        <Input
+          validationMessage={errors.LastName}
+          aria-invalid={Boolean(errors.LastName)}
+          data-color={errors.LastName ? "error" : undefined}
+          label="Last name"
+          name="LastName"
+        />
+        <Input
+          validationMessage={errors.PetName}
+          aria-invalid={Boolean(errors.PetName)}
+          data-color={errors.PetName ? "error" : undefined}
+          label="Pet name"
+          name="PetName"
+        />
         <HStack gap="4" wrap justify="space-between">
           <Button type="submit" fullWidth="mobile">
             Submit
