@@ -1,9 +1,9 @@
 import "@postenbring/hedwig-css";
-import { Input, VStack } from "@postenbring/hedwig-react";
+import { Input, VStack, Container } from "@postenbring/hedwig-react";
 
-function Example() {
-  return (
-    <VStack gap="16-20" style={{ padding: "var(--hds-spacing-24-32) 0" }}>
+const Example = () => (
+  <Container variant="slim">
+    <VStack gap="16-20" style={{ padding: "var(--hds-spacing-20-24) 0" }}>
       <Input
         label="Info"
         defaultValue="Some info value"
@@ -32,14 +32,15 @@ function Example() {
         aria-invalid
       />
     </VStack>
-  );
-}
+  </Container>
+);
 
 export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  description: `Input fields that are rarely used`,
+  description:
+    "`data-color` can be used to set colors `info`, `success` and `warning` in addition to `error`.",
   index: 5,
   layout: "centered-fullwidth",
 };

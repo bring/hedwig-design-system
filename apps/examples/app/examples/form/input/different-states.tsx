@@ -1,9 +1,9 @@
 import "@postenbring/hedwig-css";
-import { Input, VStack } from "@postenbring/hedwig-react";
+import { Input, VStack, Container } from "@postenbring/hedwig-react";
 
-function Example() {
-  return (
-    <VStack gap="16-20" style={{ padding: "var(--hds-spacing-24-32) 0" }}>
+const Example = () => (
+  <Container variant="slim">
+    <VStack gap="16-20" style={{ padding: "var(--hds-spacing-20-24) 0" }}>
       <Input label="Plain" />
       <Input
         label="Error"
@@ -15,8 +15,8 @@ function Example() {
       <Input label="Disabled" value="Some value" disabled />
       <Input label="Read only" value="Some value" readOnly />
     </VStack>
-  );
-}
+  </Container>
+);
 
 export default Example;
 
