@@ -8,18 +8,16 @@ export interface ValidationMessageProps extends React.HTMLAttributes<HTMLDivElem
 }
 
 export const ValidationMessage = forwardRef<HTMLDivElement, ValidationMessageProps>(
-  ({ children, id, className, ...rest }, ref) => {
-    return (
-      <div
-        aria-live="polite"
-        className={clsx("hds-validation-message", className as undefined)}
-        id={id}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </div>
-    );
-  },
+  ({ children, id, className, ...rest }, ref) => (
+    <div
+      aria-live="polite"
+      className={clsx("hds-validation-message", className as undefined)}
+      id={id}
+      ref={ref}
+      {...rest}
+    >
+      {children}
+    </div>
+  ),
 );
 ValidationMessage.displayName = "ValidationMessage";
