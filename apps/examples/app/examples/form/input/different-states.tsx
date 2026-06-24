@@ -38,6 +38,14 @@ function Example() {
         label="Read only with error"
         value="Some value"
         readOnly
+        data-color="error"
+        validationMessage="This is invalid"
+        aria-invalid
+      />
+      <Input
+        label="Read only with error"
+        value="Some value"
+        readOnly
         errorMessage="This is invalid"
       />
     </VStack>
