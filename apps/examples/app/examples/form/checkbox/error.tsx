@@ -10,11 +10,15 @@ function Example() {
         data-color="error"
         style={{ minWidth: 400 }}
       >
-        <Checkbox defaultChecked value="Hello">
+        <Checkbox defaultChecked value="Hello" aria-invalid>
           Check this box
         </Checkbox>
-        <Checkbox value="Hello">Check this box</Checkbox>
-        <Checkbox value="Hello">Check this box</Checkbox>
+        <Checkbox value="Hello" aria-invalid>
+          Check this box
+        </Checkbox>
+        <Checkbox value="Hello" aria-invalid>
+          Check this box
+        </Checkbox>
       </Fieldset>
       <Fieldset
         legend="Legend"
@@ -22,13 +26,13 @@ function Example() {
         data-color="error"
         style={{ minWidth: 400 }}
       >
-        <Checkbox variant="bounding-box" defaultChecked value="Hello">
+        <Checkbox variant="bounding-box" defaultChecked value="Hello" aria-invalid>
           Check this box
         </Checkbox>
-        <Checkbox variant="bounding-box" value="Hello">
+        <Checkbox variant="bounding-box" value="Hello" aria-invalid>
           Check this box
         </Checkbox>
-        <Checkbox variant="bounding-box" value="Hello">
+        <Checkbox variant="bounding-box" value="Hello" aria-invalid>
           Check this box
         </Checkbox>
       </Fieldset>
@@ -39,13 +43,13 @@ function Example() {
         data-color="error"
         style={{ minWidth: 400 }}
       >
-        <Checkbox variant="bounding-box" defaultChecked value="Hello">
+        <Checkbox variant="bounding-box" defaultChecked value="Hello" aria-invalid>
           Check this box
         </Checkbox>
-        <Checkbox variant="bounding-box" value="Hello">
+        <Checkbox variant="bounding-box" value="Hello" aria-invalid>
           Check this box
         </Checkbox>
-        <Checkbox variant="bounding-box" value="Hello">
+        <Checkbox variant="bounding-box" value="Hello" aria-invalid>
           Check this box
         </Checkbox>
       </Fieldset>

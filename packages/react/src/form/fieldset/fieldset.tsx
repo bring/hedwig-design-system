@@ -81,7 +81,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       >
         {legend}
       </legend>
-      <FieldsetContext.Provider value={{ hasError: Boolean(validationColor === "error") }}>
+      <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage) }}>
         {children}
       </FieldsetContext.Provider>
       <ValidationMessage
