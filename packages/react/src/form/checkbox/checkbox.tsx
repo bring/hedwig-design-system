@@ -3,6 +3,7 @@ import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { ValidationMessage, type ValidationMessageProps } from "../validation-message";
 import { type ErrorMessageProps } from "../error-message";
 import { useFieldsetContext } from "../fieldset";
+import { getValidationMessageValue } from "../../utils";
 
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue" | "size"> & {
   children: ReactNode;
@@ -62,18 +63,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     const validationMessageId = useId();
     const { hasError: hasFieldsetError } = useFieldsetContext();
     const hasError = !!errorMessage || hasFieldsetError || hasErrorProp;
-
-    let validationMessageValue: ReactNode;
-
-    if (validationMessage) {
-      if (typeof validationMessage === "object" && "value" in validationMessage) {
-        validationMessageValue = validationMessage.value;
-      } else {
-        validationMessageValue = validationMessage;
-      }
-    } else if (errorMessage) {
-      validationMessageValue = errorMessage;
-    }
+    const validationMessageValue = getValidationMessageValue(validationMessage, errorMessage);
 
     return (
       <div

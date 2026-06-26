@@ -12,6 +12,7 @@ function Example() {
         </>
       }
       errorMessage="Something's wrong"
+      //data-color="error"
     >
       <RadioButton value="Hello" name="radiogroup">
         Hello

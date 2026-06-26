@@ -3,6 +3,7 @@ import type { FieldsetHTMLAttributes, HTMLAttributes, ReactNode, CSSProperties }
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { ValidationMessage, type ValidationMessageProps } from "../validation-message";
 import { type ErrorMessageProps } from "../error-message";
+import { getValidationMessageValue } from "../../utils";
 
 export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
   className?: string;
@@ -26,8 +27,10 @@ export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElemen
   errorMessageProps?: Partial<ErrorMessageProps>;
 }
 
+/** @deprecated Will no longer be needed */
 const FieldsetContext = createContext<{ hasError: boolean }>({ hasError: false });
 
+/** @deprecated Will no longer be needed */
 export const useFieldsetContext = () => useContext(FieldsetContext);
 
 export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function Fieldset(
@@ -48,18 +51,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
 ) {
   const validationMessageId = useId();
   const validationColor = errorMessage ? "error" : dataColor;
-
-  let validationMessageValue: ReactNode;
-
-  if (validationMessage) {
-    if (typeof validationMessage === "object" && "value" in validationMessage) {
-      validationMessageValue = validationMessage.value;
-    } else {
-      validationMessageValue = validationMessage;
-    }
-  } else if (errorMessage) {
-    validationMessageValue = errorMessage;
-  }
+  const validationMessageValue = getValidationMessageValue(validationMessage, errorMessage);
 
   return (
     <fieldset

@@ -6,14 +6,6 @@ export interface RadioButtonProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue" | "size"> {
   children: ReactNode;
   variant?: "plain" | "bounding-box";
-  /**
-   * Set to `true` to add error styling. The component will take care of aria to indicate invalid state.
-   *
-   * Normally you don't need this, as you should wrap your Radio buttons in the RadioGroup component.
-   * When providing an errorMessage to RadioGroup, all contained Radio buttons will get correct hasError state.
-   *
-   * You can use this when your Radio button is part of a non-HDS fieldset which shows an error message.
-   */
   title?: string;
   size?: "small" | "";
 }
