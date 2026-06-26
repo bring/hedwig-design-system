@@ -1,8 +1,8 @@
 import { useId, forwardRef, Children, isValidElement, cloneElement } from "react";
 import type { LabelHTMLAttributes, ReactNode, CSSProperties } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { type ErrorMessageProps } from "../error-message";
 import { ValidationMessage, type ValidationMessageProps } from "../validation-message";
+import { type ErrorMessageProps } from "../error-message";
 
 interface InputProps {
   "aria-describedby"?: string;
@@ -57,6 +57,8 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
 ) {
   const validationMessageId = useId();
   const inputId = useId();
+  const validationColor = errorMessage ? "error" : dataColor;
+
   let validationMessageValue: ReactNode;
 
   if (validationMessage) {
@@ -68,8 +70,6 @@ export const InputGroup = forwardRef<HTMLDivElement, InputGroupProps>(function I
   } else if (errorMessage) {
     validationMessageValue = errorMessage;
   }
-
-  const validationColor = errorMessage ? "error" : dataColor;
 
   const renderInput = () => {
     const inputProps: InputProps = {
