@@ -31,6 +31,8 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function
   {
     className,
     size,
+    validationMessage,
+    validationMessageProps,
     errorMessage,
     labelProps,
     label,
@@ -38,6 +40,7 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function
     style,
     disabled,
     readOnly,
+    "data-color": dataColor,
     calendarButtonTitle = "Åpne kalender",
     ...rest
   },
@@ -50,6 +53,8 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function
     <InputGroup
       className={clsx("hds-date-picker", className as undefined)}
       disabled={disabled}
+      validationMessage={validationMessage}
+      validationMessageProps={validationMessageProps}
       errorMessage={errorMessage}
       id={id}
       label={label}
@@ -57,16 +62,17 @@ export const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(function
       readOnly={readOnly}
       style={style}
       size={size}
+      data-color={dataColor}
     >
       {(inputProps) => (
         <>
           <input
-            {...rest}
             {...inputProps}
             disabled={disabled}
             readOnly={readOnly}
             ref={mergedRef}
             type="date"
+            {...rest}
           />
           <button
             className={clsx("hds-date-picker__calendar-button")}
