@@ -1,21 +1,19 @@
 import "@postenbring/hedwig-css";
 import { Checkbox, Fieldset } from "@postenbring/hedwig-react";
 
-function Example() {
-  return (
-    <Fieldset legend="Legend" validationMessage="Something's wrong" data-color="error">
-      <Checkbox value="Hello" aria-invalid>
-        Hello
-      </Checkbox>
-      <Checkbox value="Hello" aria-invalid>
-        Hello
-      </Checkbox>
-      <Checkbox value="Hello" aria-invalid>
-        Hello
-      </Checkbox>
-    </Fieldset>
-  );
-}
+const Example = () => (
+  <Fieldset legend="Legend" validationMessage="Something's wrong" data-color="error">
+    <Checkbox value="Hello" aria-invalid>
+      Hello
+    </Checkbox>
+    <Checkbox value="Hello" aria-invalid>
+      Hello
+    </Checkbox>
+    <Checkbox value="Hello" aria-invalid>
+      Hello
+    </Checkbox>
+  </Fieldset>
+);
 
 export default Example;
 
