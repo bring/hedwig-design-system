@@ -20,7 +20,7 @@
 
   .hds-input-group__label,
   .hds-input-group__input-wrapper,
-  .hds-error-message {
+  .hds-validation-message {
     grid-column: 1;
   }
 
@@ -28,11 +28,11 @@
     grid-row: var(--hds-search-wrapper-input-row);
   }
 
-  .hds-error-message {
+  .hds-validation-message {
     grid-row: 2;
   }
 
-  &:has(.hds-input-group__label:not(:empty)) .hds-error-message {
+  &:has(.hds-input-group__label:not(:empty)) .hds-validation-message {
     grid-row: 3;
   }
 }
