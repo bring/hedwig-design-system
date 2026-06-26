@@ -5,7 +5,8 @@ function Example() {
   return (
     <Fieldset
       legend="Checkboxes wrapped in Fieldset will get error styling when Fieldset has errorMessage"
-      errorMessage="Something's wrong"
+      validationMessage="Something's wrong"
+      data-color="error"
     >
       <Checkbox value="Hello">Hello</Checkbox>
       <Checkbox value="Hello">Hello</Checkbox>

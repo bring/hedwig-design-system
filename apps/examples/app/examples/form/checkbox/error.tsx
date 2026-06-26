@@ -6,7 +6,7 @@ function Example() {
     <HStack justify="center" gap="24" wrap className="hds-mt-16 hds-mb-16">
       <Fieldset
         legend="Legend"
-        errorMessage="Something is wrong"
+        validationMessage="Something is wrong"
         data-color="error"
         style={{ minWidth: 400 }}
       >
@@ -18,7 +18,7 @@ function Example() {
       </Fieldset>
       <Fieldset
         legend="Legend"
-        errorMessage="Something is wrong"
+        validationMessage="Something is wrong"
         data-color="error"
         style={{ minWidth: 400 }}
       >
@@ -34,8 +34,8 @@ function Example() {
       </Fieldset>
       <Fieldset
         legend="Legend"
-        errorMessage="Aria-live is off for this error"
-        errorMessageProps={{ "aria-live": "off" }}
+        validationMessage="Aria-live is off for this error"
+        validationMessageProps={{ "aria-live": "off" }}
         data-color="error"
         style={{ minWidth: 400 }}
       >
@@ -57,7 +57,8 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  description: `Fieldset will aid you with styling and aria when it is provided an error message`,
-  index: 3,
+  description:
+    'Fieldset will aid you with styling and aria when it is provided `data-color="error"`',
+  index: 4,
   layout: "centered-fullwidth",
 };

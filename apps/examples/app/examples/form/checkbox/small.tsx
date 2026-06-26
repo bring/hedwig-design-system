@@ -22,6 +22,6 @@ export default Example;
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   description: `Checkboxes should be grouped in a Fieldset`,
-  index: 0,
+  index: 1,
   layout: "centered-fullwidth",
 };

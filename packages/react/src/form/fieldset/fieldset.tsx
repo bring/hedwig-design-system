@@ -1,21 +1,28 @@
 import { useId, forwardRef, createContext, useContext } from "react";
 import type { FieldsetHTMLAttributes, HTMLAttributes, ReactNode, CSSProperties } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { ErrorMessage, type ErrorMessageProps } from "../error-message";
+import { ValidationMessage, type ValidationMessageProps } from "../validation-message";
+import { type ErrorMessageProps } from "../error-message";
 
 export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
   className?: string;
   style?: CSSProperties;
+  "data-color"?: "info" | "success" | "warning" | "error";
+  validationMessage?: ReactNode | { value: ReactNode };
+  validationMessageProps?: Partial<ValidationMessageProps>;
   /**
    * Providing an errorMessage will also give contained Checkboxes or Radio buttons
    * error styling and aria to indicate invalid state.
    *
    * For Radio buttons you are even better off using RadioGroup.
    */
+
+  /** @deprecated Use `validationMessage` instead */
   errorMessage?: ReactNode;
   legendProps?: HTMLAttributes<HTMLElement> & { size: "default" | "large" };
   legend: ReactNode;
   children: ReactNode;
+  /** @deprecated Use `validationMessageProps` instead */
   errorMessageProps?: Partial<ErrorMessageProps>;
 }
 
@@ -27,6 +34,9 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
   {
     className,
     style,
+    "data-color": dataColor = undefined,
+    validationMessage,
+    validationMessageProps,
     errorMessage,
     errorMessageProps,
     legendProps: { size: legendSize = "default", className: legendClassName, ...legendProps } = {},
@@ -36,14 +46,27 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
   },
   ref,
 ) {
-  const errorMessageId = useId();
+  const validationMessageId = useId();
+  const validationColor = errorMessage ? "error" : dataColor;
+
+  let validationMessageValue: ReactNode;
+
+  if (validationMessage) {
+    if (typeof validationMessage === "object" && "value" in validationMessage) {
+      validationMessageValue = validationMessage.value;
+    } else {
+      validationMessageValue = validationMessage;
+    }
+  } else if (errorMessage) {
+    validationMessageValue = errorMessage;
+  }
 
   return (
     <fieldset
-      aria-describedby={errorMessage ? errorMessageId : undefined}
+      aria-describedby={validationMessage ? validationMessageId : undefined}
       aria-invalid={errorMessage ? true : undefined}
       className={clsx("hds-fieldset", className as undefined)}
-      data-color={errorMessage ? "error" : undefined}
+      data-color={validationColor}
       ref={ref}
       style={style}
       {...rest}
@@ -58,12 +81,15 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       >
         {legend}
       </legend>
-      <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage) }}>
+      <FieldsetContext.Provider value={{ hasError: Boolean(validationColor === "error") }}>
         {children}
       </FieldsetContext.Provider>
-      <ErrorMessage id={errorMessageId} {...errorMessageProps}>
-        {errorMessage}
-      </ErrorMessage>
+      <ValidationMessage
+        id={validationMessageId}
+        {...(validationMessageProps ?? errorMessageProps)}
+      >
+        {validationMessageValue}
+      </ValidationMessage>
     </fieldset>
   );
 });
