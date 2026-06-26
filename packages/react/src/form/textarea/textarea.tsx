@@ -42,7 +42,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
       size={size}
       data-color={dataColor}
     >
-      <textarea {...rest} disabled={disabled} readOnly={readOnly} ref={ref} />
+      <textarea disabled={disabled} readOnly={readOnly} ref={ref} {...rest} />
     </InputGroup>
   );
 });
