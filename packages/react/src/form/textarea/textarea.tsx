@@ -10,13 +10,29 @@ export type TextareaProps = Omit<
 >;
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
-  { className, size, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
+  {
+    className,
+    size,
+    validationMessage,
+    validationMessageProps,
+    errorMessage,
+    labelProps,
+    label,
+    id,
+    style,
+    disabled,
+    readOnly,
+    "data-color": dataColor,
+    ...rest
+  },
   ref,
 ) {
   return (
     <InputGroup
       className={clsx("hds-textarea", className as undefined)}
       disabled={disabled}
+      validationMessage={validationMessage}
+      validationMessageProps={validationMessageProps}
       errorMessage={errorMessage}
       id={id}
       label={label}
@@ -24,6 +40,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
       readOnly={readOnly}
       style={style}
       size={size}
+      data-color={dataColor}
     >
       <textarea {...rest} disabled={disabled} readOnly={readOnly} ref={ref} />
     </InputGroup>

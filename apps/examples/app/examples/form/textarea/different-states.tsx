@@ -4,7 +4,13 @@ import { Textarea, VStack } from "@postenbring/hedwig-react";
 const Example = () => (
   <VStack gap="16-20" style={{ padding: "var(--hds-spacing-24-32) 0" }}>
     <Textarea label="Plain" />
-    <Textarea label="Error" defaultValue="Some value" errorMessage="This is invalid" />
+    <Textarea
+      label="Error"
+      defaultValue="Some value"
+      validationMessage="This is invalid"
+      data-color="error"
+      aria-invalid
+    />
     <Textarea label="Disabled" value="Some value" disabled />
     <Textarea label="Read only" value="Some value" readOnly />
   </VStack>
