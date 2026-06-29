@@ -1,6 +1,6 @@
 ---
-"@postenbring/hedwig-css": minor
+"@postenbring/hedwig-css": major
 "@postenbring/hedwig-react": minor
 ---
 
-Validation message 2 - Electric bugaloo
+Create Validation Message component and implement usage in form components
