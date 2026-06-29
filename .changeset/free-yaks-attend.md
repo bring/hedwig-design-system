@@ -1,5 +1,4 @@
 ---
-"@postenbring/hedwig-css": major
 "@postenbring/hedwig-react": minor
 ---
 
