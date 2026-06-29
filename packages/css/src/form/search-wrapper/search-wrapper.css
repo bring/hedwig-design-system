@@ -20,7 +20,8 @@
 
   .hds-input-group__label,
   .hds-input-group__input-wrapper,
-  .hds-validation-message {
+  .hds-validation-message,
+  .hds-error-message {
     grid-column: 1;
   }
 
