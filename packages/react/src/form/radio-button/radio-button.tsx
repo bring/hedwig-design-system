@@ -1,6 +1,6 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { type RadioGroupProps, useRadioGroupContext } from "./radio-group";
+import { useRadioGroupContext } from "./radio-group";
 
 export interface RadioButtonProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "defaultValue" | "size"> {
@@ -15,7 +15,7 @@ const isChecked = ({
   selectedValue,
   value,
 }: Pick<RadioButtonProps, "checked" | "value"> & {
-  selectedValue: RadioGroupProps["value"];
+  selectedValue: RadioButtonProps["value"];
 }) => {
   if (typeof checked !== "undefined") return checked;
   if (typeof selectedValue !== "undefined") return value === selectedValue;
@@ -24,7 +24,8 @@ const isChecked = ({
 
 export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
   ({ checked, value, variant = "plain", title, children, className, size = "", ...rest }, ref) => {
-    const { value: selectedValue, ...context } = useRadioGroupContext();
+    const { value: selectedValue, size: groupSize, ...context } = useRadioGroupContext();
+    const effectiveSize = size || groupSize;
 
     return (
       <div
@@ -32,7 +33,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
           "hds-radio-button",
           {
             [`hds-radio-button--${variant}`]: variant === "bounding-box",
-            [`hds-radio-button--${size}`]: size,
+            [`hds-radio-button--${effectiveSize}`]: effectiveSize === "small",
           },
           className as undefined,
         )}

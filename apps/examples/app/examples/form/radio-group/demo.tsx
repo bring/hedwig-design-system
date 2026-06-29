@@ -1,15 +1,19 @@
 import "@postenbring/hedwig-css";
 import { RadioGroup, RadioButton } from "@postenbring/hedwig-react";
 
-const Example = () => (
-  <RadioGroup legend="Legend" name="group1">
-    <RadioButton defaultChecked value="Hello">
-      Hello
-    </RadioButton>
-    <RadioButton value="Hello">Hello</RadioButton>
-    <RadioButton value="Hello">Hello</RadioButton>
-  </RadioGroup>
-);
+function Example() {
+  return (
+    <RadioGroup name="group1">
+      <RadioGroup.Legend>Default radio group</RadioGroup.Legend>
+      <RadioGroup.Description>This is a description</RadioGroup.Description>
+      <RadioButton defaultChecked value="Hello">
+        Hello
+      </RadioButton>
+      <RadioButton value="Hello">Hello</RadioButton>
+      <RadioButton value="Hello">Hello</RadioButton>
+    </RadioGroup>
+  );
+}
 
 export default Example;
 

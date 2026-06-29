@@ -3,7 +3,7 @@ import { Checkbox, Fieldset } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Fieldset>
+    <Fieldset size="small">
       <Fieldset.Legend>Default fieldset</Fieldset.Legend>
       <Fieldset.Description>This is a description</Fieldset.Description>
       <Checkbox defaultChecked value="Hello">
@@ -19,6 +19,6 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  index: 0,
+  index: 1,
   layout: "centered-fullwidth",
 };

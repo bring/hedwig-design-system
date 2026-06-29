@@ -1,9 +1,27 @@
-import { useId, forwardRef, createContext, useContext } from "react";
-import type { FieldsetHTMLAttributes, HTMLAttributes, ReactNode, CSSProperties } from "react";
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  useId,
+  forwardRef,
+  createContext,
+  useContext,
+} from "react";
+import type {
+  FieldsetHTMLAttributes,
+  ReactElement,
+  ReactNode,
+  CSSProperties,
+  ComponentProps,
+} from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { ValidationMessage, type ValidationMessageProps } from "../validation-message";
 import { type ErrorMessageProps } from "../error-message";
 import { getValidationMessageValue } from "../../utils";
+import { FieldsetDescription } from "./fieldset-description";
+import { FieldsetLegend } from "./fieldset-legend";
+
+type FieldsetLegendProps = ComponentProps<typeof FieldsetLegend>;
 
 export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
   className?: string;
@@ -20,15 +38,25 @@ export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElemen
 
   /** @deprecated Use `validationMessage` instead */
   errorMessage?: ReactNode;
-  legendProps?: HTMLAttributes<HTMLElement> & { size: "default" | "large" };
-  legend: ReactNode;
+  /**
+   * @deprecated Pass props directly to <Fieldset.Legend> instead.
+   */
+  legendProps?: FieldsetLegendProps;
+  /**
+   * @deprecated Use <Fieldset.Legend>...</Fieldset.Legend> instead.
+   */
+  legend?: ReactNode;
+  size?: "small" | "";
   children: ReactNode;
   /** @deprecated Use `validationMessageProps` instead */
   errorMessageProps?: Partial<ErrorMessageProps>;
 }
 
 /** @deprecated Will no longer be needed */
-const FieldsetContext = createContext<{ hasError: boolean }>({ hasError: false });
+const FieldsetContext = createContext<{ hasError: boolean; size: "small" | "" }>({
+  hasError: false,
+  size: "",
+});
 
 /** @deprecated Will no longer be needed */
 export const useFieldsetContext = () => useContext(FieldsetContext);
@@ -42,8 +70,9 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
     validationMessageProps,
     errorMessage,
     errorMessageProps,
-    legendProps: { size: legendSize = "default", className: legendClassName, ...legendProps } = {},
+    legendProps,
     legend,
+    size = "",
     children,
     ...rest
   },
@@ -52,29 +81,42 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
   const validationMessageId = useId();
   const validationColor = errorMessage ? "error" : dataColor;
   const validationMessageValue = getValidationMessageValue(validationMessage, errorMessage);
+  const childArray = Children.toArray(children);
+  const legendChild = childArray.find(
+    (child): child is ReactElement<FieldsetLegendProps> =>
+      isValidElement<FieldsetLegendProps>(child) && child.type === FieldsetLegend,
+  );
+  const contentChildren = legendChild
+    ? childArray.filter((child) => child !== legendChild)
+    : childArray;
+  let renderedLegend = null;
+
+  if (legendChild) {
+    renderedLegend = cloneElement(legendChild, {
+      ...legendProps,
+      ...legendChild.props,
+      className: clsx(
+        legendProps?.className as undefined,
+        legendChild.props.className as undefined,
+      ),
+    });
+  } else if (legend !== undefined) {
+    renderedLegend = <FieldsetLegend {...legendProps}>{legend}</FieldsetLegend>;
+  }
 
   return (
     <fieldset
-      aria-describedby={validationMessage ? validationMessageId : undefined}
+      aria-describedby={validationMessageValue ? validationMessageId : undefined}
       aria-invalid={errorMessage ? true : undefined}
-      className={clsx("hds-fieldset", className as undefined)}
+      className={clsx("hds-fieldset", { [`hds-fieldset--${size}`]: size }, className as undefined)}
       data-color={validationColor}
       ref={ref}
       style={style}
       {...rest}
     >
-      <legend
-        className={clsx(
-          "hds-fieldset__legend",
-          { [`hds-fieldset__legend--${legendSize}`]: legendSize },
-          legendClassName as undefined,
-        )}
-        {...legendProps}
-      >
-        {legend}
-      </legend>
-      <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage) }}>
-        {children}
+      {renderedLegend}
+      <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage), size }}>
+        {contentChildren}
       </FieldsetContext.Provider>
       <ValidationMessage
         id={validationMessageId}
@@ -84,4 +126,12 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       </ValidationMessage>
     </fieldset>
   );
-});
+}) as FieldsetType;
+
+type FieldsetType = ReturnType<typeof forwardRef<HTMLFieldSetElement, FieldsetProps>> & {
+  Description: typeof FieldsetDescription;
+  Legend: typeof FieldsetLegend;
+};
+
+Fieldset.Description = FieldsetDescription;
+Fieldset.Legend = FieldsetLegend;

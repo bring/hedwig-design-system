@@ -342,8 +342,8 @@ export const config: ExampleConfig = {
   description: `<p>
     </p><strong>NB!! Focus card is deprecated.</strong></p>
     <p>
-    To achieve a the same look as the deprecated default focus card (darker), set <code>data-color-scheme="dark"</code> and <code>data-color="tinted"</code> on your full-width card component. 
+    To achieve a the same look as the deprecated default focus card (darker), set <code>data-color-scheme="dark"</code> and <code>theme="tinted"</code> on your full-width card component. 
     <p>
-    For the dark focus card, set <code>data-color="tinted"</code> and no <code>data-color-scheme</code> attribute on your full-width card component.
+    For the dark focus card, set <code>theme="base"</code> and no <code>data-color-scheme</code> attribute on your full-width card component.
     </p>`,
 };

@@ -61,14 +61,15 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     ref,
   ) => {
     const validationMessageId = useId();
-    const { hasError: hasFieldsetError } = useFieldsetContext();
+    const { hasError: hasFieldsetError, size: fieldsetSize } = useFieldsetContext();
     const hasError = !!errorMessage || hasFieldsetError || hasErrorProp;
+    const effectiveSize = size || fieldsetSize;
     const validationMessageValue = getValidationMessageValue(validationMessage, errorMessage);
 
     return (
       <div
         className={clsx("hds-checkbox-wrapper", {
-          "hds-checkbox-wrapper--small": size === "small",
+          "hds-checkbox-wrapper--small": effectiveSize === "small",
         })}
       >
         <div
@@ -83,7 +84,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           <label>
             <input
               aria-invalid={hasError ? true : undefined}
-              aria-describedby={validationMessage ? validationMessageId : undefined}
+              aria-describedby={validationMessageValue ? validationMessageId : undefined}
               ref={ref}
               type="checkbox"
               {...rest}
