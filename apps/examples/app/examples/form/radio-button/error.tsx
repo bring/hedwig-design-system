@@ -4,13 +4,13 @@ import { RadioGroup, RadioButton, HStack } from "@postenbring/hedwig-react";
 const Example = () => (
   <HStack justify="center" gap="24" wrap className="hds-mt-16 hds-mb-16">
     <RadioGroup
-      legend="Legend"
       name="group1"
       validationMessage="Select an option"
       validationMessageProps={{ "aria-live": "off" }}
       style={{ minWidth: 400 }}
       data-color="error"
     >
+      <RadioGroup.Legend>Legend</RadioGroup.Legend>
       <RadioButton value="Yes">Check this box</RadioButton>
       <RadioButton value="No">Check this box</RadioButton>
       <RadioButton value="Maybe">Check this box</RadioButton>

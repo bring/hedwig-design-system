@@ -3,7 +3,8 @@ import { RadioGroup, RadioButton, HStack } from "@postenbring/hedwig-react";
 
 const Example = () => (
   <HStack justify="center" gap="24" wrap className="hds-mt-16 hds-mb-16">
-    <RadioGroup legend="Legend" name="group1" style={{ minWidth: 400 }}>
+    <RadioGroup name="group1" style={{ minWidth: 400 }}>
+      <RadioGroup.Legend>Legend</RadioGroup.Legend>
       <RadioButton title="Check this box" defaultChecked value="Hello">
         Detailed description if needed
       </RadioButton>

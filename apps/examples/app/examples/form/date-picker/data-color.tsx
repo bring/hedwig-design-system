@@ -34,6 +34,8 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
+  description:
+    "The <code>data-color</code> prop can be used to set the visual styling of form components based on a semantic meaning, such as <code>info</code>, <code>warning</code>, <code>success</code> and <code>error</code>",
   index: 4,
   layout: "centered-fullwidth",
 };

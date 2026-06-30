@@ -2,19 +2,20 @@ import "@postenbring/hedwig-css";
 import { Checkbox, Fieldset } from "@postenbring/hedwig-react";
 
 const Example = () => (
-  <Fieldset validationMessage="Something's wrong" data-color="error">
-    <Fieldset.Legend>Please choose</Fieldset.Legend>
-    <Fieldset.Description>
-      Checkboxes wrapped in Fieldset will get error styling when Fieldset has validationMessage
-    </Fieldset.Description>
-    <Checkbox value="Hello" aria-invalid>
-      Option 1
+  <Fieldset
+    validationMessage="You must select at least two handling requirements"
+    data-color="error"
+  >
+    <Fieldset.Legend>Package Handling</Fieldset.Legend>
+    <Fieldset.Description>Please select required handling services</Fieldset.Description>
+    <Checkbox value="fragile" aria-invalid>
+      Fragile handling
     </Checkbox>
-    <Checkbox value="Hello" aria-invalid>
-      Option 2
+    <Checkbox value="perishable" aria-invalid>
+      Temperature controlled
     </Checkbox>
-    <Checkbox value="Hello" aria-invalid>
-      Option 3
+    <Checkbox value="signature" aria-invalid>
+      Signature required
     </Checkbox>
   </Fieldset>
 );
@@ -24,7 +25,7 @@ export default Example;
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   description:
-    "Checkboxes wrapped in Fieldset will get error styling with `data-color='error'`. Remember to apply `aria-invalid`",
+    "Checkboxes wrapped in Fieldset will get error styling with <code>data-color='error'</code>. Validation Message should be used together with <code>data-color='error'</code> to indicate to the user what needs to be changed. Remember to apply `aria-invalid`",
   index: 2,
   layout: "centered-fullwidth",
 };
