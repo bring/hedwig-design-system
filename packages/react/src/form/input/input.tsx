@@ -16,14 +16,28 @@ export type InputProps = Omit<
   "children"
 >;
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { className, size, errorMessage, labelProps, label, id, style, disabled, readOnly, ...rest },
-  ref,
-) {
-  return (
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  (
+    {
+      className,
+      size,
+      validationMessage,
+      errorMessage,
+      labelProps,
+      label,
+      id,
+      style,
+      disabled,
+      readOnly,
+      "data-color": dataColor,
+      ...rest
+    },
+    ref,
+  ) => (
     <InputGroup
       className={clsx("hds-input", className as undefined)}
       disabled={disabled}
+      validationMessage={validationMessage}
       errorMessage={errorMessage}
       id={id}
       label={label}
@@ -31,10 +45,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       readOnly={readOnly}
       style={style}
       size={size}
+      data-color={dataColor}
     >
-      <input {...rest} disabled={disabled} readOnly={readOnly} ref={ref} />
+      <input disabled={disabled} readOnly={readOnly} ref={ref} {...rest} />
     </InputGroup>
-  );
-});
+  ),
+);
 
 Input.displayName = "Input";

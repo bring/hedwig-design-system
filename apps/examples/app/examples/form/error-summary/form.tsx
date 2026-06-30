@@ -63,18 +63,13 @@ function Example() {
     });
   }
 
-  if (formSubmitted) {
-    return (
-      <>
-        <VStack gap="24" style={{ minWidth: "min(calc(100vw - 32px), 540px)" }}>
-          <p>Thank you for submitting the form</p>
-          <Button type="button" onClick={() => setFormSubmitted(false)}>
-            Go back
-          </Button>
-        </VStack>
-      </>
-    );
-  }
+  if (formSubmitted)
+    <VStack gap="24" style={{ minWidth: "min(calc(100vw - 32px), 540px)" }}>
+      <p>Thank you for submitting the form</p>
+      <Button type="button" onClick={() => setFormSubmitted(false)}>
+        Go back
+      </Button>
+    </VStack>;
 
   return (
     <VStack gap="24" asChild style={{ minWidth: "min(calc(100vw - 32px), 540px)" }}>

@@ -3,7 +3,7 @@ import { RadioGroup, RadioButton } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <RadioGroup name="group1" errorMessage="Something's wrong">
+    <RadioGroup name="group1" validationMessage="Something's wrong">
       <RadioGroup.Legend>Default radio group</RadioGroup.Legend>
       <RadioGroup.Description>This is a description</RadioGroup.Description>
       <RadioButton defaultChecked value="Hello">

@@ -1,23 +1,22 @@
 import "@postenbring/hedwig-css";
-import { Input, VStack } from "@postenbring/hedwig-react";
+import { Input, VStack, Container } from "@postenbring/hedwig-react";
 
-function Example() {
-  return (
-    <VStack gap="16-20" style={{ padding: "var(--hds-spacing-24-32) 0" }}>
+const Example = () => (
+  <Container variant="slim">
+    <VStack gap="16-20" style={{ padding: "var(--hds-spacing-20-24) 0" }}>
       <Input label="Plain" />
-      <Input label="Error" defaultValue="Some value" errorMessage="This is invalid" />
+      <Input
+        label="Error"
+        defaultValue="Some error value"
+        validationMessage="Error message"
+        data-color="error"
+        aria-invalid
+      />
       <Input label="Disabled" value="Some value" disabled />
       <Input label="Read only" value="Some value" readOnly />
-      {/* This one should really never happen */}
-      <Input
-        label="Read only with error"
-        value="Some value"
-        readOnly
-        errorMessage="This is invalid"
-      />
     </VStack>
-  );
-}
+  </Container>
+);
 
 export default Example;
 

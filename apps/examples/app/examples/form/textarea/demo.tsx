@@ -1,9 +1,7 @@
 import "@postenbring/hedwig-css";
 import { Textarea } from "@postenbring/hedwig-react";
 
-function Example() {
-  return <Textarea label="Label" />;
-}
+const Example = () => <Textarea label="Label" />;
 
 export default Example;
 

@@ -7,23 +7,36 @@ import {
   createContext,
   useContext,
 } from "react";
-import type { FieldsetHTMLAttributes, ReactElement, ReactNode, CSSProperties } from "react";
+import type {
+  FieldsetHTMLAttributes,
+  ReactElement,
+  ReactNode,
+  CSSProperties,
+  ComponentProps,
+} from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { ErrorMessage, type ErrorMessageProps } from "../error-message";
+import { ValidationMessage, type ValidationMessageProps } from "../validation-message";
+import { type ErrorMessageProps } from "../error-message";
+import { getValidationMessageValue } from "../../utils";
 import { FieldsetDescription } from "./fieldset-description";
 import { FieldsetLegend } from "./fieldset-legend";
 
-type FieldsetLegendProps = React.ComponentProps<typeof FieldsetLegend>;
+type FieldsetLegendProps = ComponentProps<typeof FieldsetLegend>;
 
 export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
   className?: string;
   style?: CSSProperties;
+  "data-color"?: "info" | "success" | "warning" | "error";
+  validationMessage?: ReactNode | { value: ReactNode };
+  validationMessageProps?: Partial<ValidationMessageProps>;
   /**
    * Providing an errorMessage will also give contained Checkboxes or Radio buttons
    * error styling and aria to indicate invalid state.
    *
    * For Radio buttons you are even better off using RadioGroup.
    */
+
+  /** @deprecated Use `validationMessage` instead */
   errorMessage?: ReactNode;
   /**
    * @deprecated Pass props directly to <Fieldset.Legend> instead.
@@ -35,20 +48,26 @@ export interface FieldsetProps extends FieldsetHTMLAttributes<HTMLFieldSetElemen
   legend?: ReactNode;
   size?: "small" | "";
   children: ReactNode;
+  /** @deprecated Use `validationMessageProps` instead */
   errorMessageProps?: Partial<ErrorMessageProps>;
 }
 
+/** @deprecated Will no longer be needed */
 const FieldsetContext = createContext<{ hasError: boolean; size: "small" | "" }>({
   hasError: false,
   size: "",
 });
 
+/** @deprecated Will no longer be needed */
 export const useFieldsetContext = () => useContext(FieldsetContext);
 
 export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function Fieldset(
   {
     className,
     style,
+    "data-color": dataColor = undefined,
+    validationMessage,
+    validationMessageProps,
     errorMessage,
     errorMessageProps,
     legendProps,
@@ -59,7 +78,9 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
   },
   ref,
 ) {
-  const errorMessageId = useId();
+  const validationMessageId = useId();
+  const validationColor = errorMessage ? "error" : dataColor;
+  const validationMessageValue = getValidationMessageValue(validationMessage, errorMessage);
   const childArray = Children.toArray(children);
   const legendChild = childArray.find(
     (child): child is ReactElement<FieldsetLegendProps> =>
@@ -85,10 +106,10 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
 
   return (
     <fieldset
-      aria-describedby={errorMessage ? errorMessageId : undefined}
+      aria-describedby={validationMessageValue ? validationMessageId : undefined}
       aria-invalid={errorMessage ? true : undefined}
       className={clsx("hds-fieldset", { [`hds-fieldset--${size}`]: size }, className as undefined)}
-      data-color={errorMessage ? "error" : undefined}
+      data-color={validationColor}
       ref={ref}
       style={style}
       {...rest}
@@ -97,9 +118,12 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       <FieldsetContext.Provider value={{ hasError: Boolean(errorMessage), size }}>
         {contentChildren}
       </FieldsetContext.Provider>
-      <ErrorMessage id={errorMessageId} {...errorMessageProps}>
-        {errorMessage}
-      </ErrorMessage>
+      <ValidationMessage
+        id={validationMessageId}
+        {...(validationMessageProps ?? errorMessageProps)}
+      >
+        {validationMessageValue}
+      </ValidationMessage>
     </fieldset>
   );
 }) as FieldsetType;

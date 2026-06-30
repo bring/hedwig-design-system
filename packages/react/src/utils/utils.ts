@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useCallback, useEffect, useState, version } from "react";
+import type { ReactNode } from "react";
 
 /**
  * Merges an array of refs into a single memoized callback ref or `null`.
@@ -63,6 +64,21 @@ export function useHydrated() {
     () => true,
     () => false,
   );
+}
+
+export function getValidationMessageValue(
+  validationMessage?: ReactNode | { value: ReactNode },
+  errorMessage?: ReactNode,
+): ReactNode {
+  if (validationMessage) {
+    if (typeof validationMessage === "object" && "value" in validationMessage) {
+      return validationMessage.value;
+    }
+
+    return validationMessage;
+  }
+
+  return errorMessage;
 }
 
 /**
