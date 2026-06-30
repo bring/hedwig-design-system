@@ -1,5 +1,22 @@
 # @postenbring/hedwig-react
 
+## 4.2.0
+
+### Minor Changes
+
+- b6839f1: new styling for radio buttons
+- 6656850: Create Validation Message component and implement usage in form components
+- 290756c: styling updates to checkboxes
+- 00b9df3: Styling updates and some refacturing to support both legend and description in fieldset
+
+### Patch Changes
+
+- Updated dependencies [b6839f1]
+- Updated dependencies [6656850]
+- Updated dependencies [290756c]
+- Updated dependencies [00b9df3]
+  - @postenbring/hedwig-css@4.2.0
+
 ## 4.1.3
 
 ### Patch Changes
