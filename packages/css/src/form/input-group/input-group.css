@@ -39,6 +39,23 @@
   flex-flow: column nowrap;
   gap: var(--hds-spacing-4);
 
+  /* State: Error */
+
+  /* @deprecated Use [data-color="error"] instead */
+  &.hds-input-group--error {
+    .hds-input-group__input-wrapper,
+    .hds-input-group__input-wrapper:has(
+      input.hds-input-group__input:read-only,
+      textarea.hds-input-group__input:read-only
+    ),
+    .hds-input-group__input-wrapper[data-readonly="true"] /* Fallback for :has */,
+    .hds-input-group__input-wrapper:has(
+      input.hds-input-group__input:read-only,
+      textarea.hds-input-group__input:read-only):focus-within {
+      border-color: var(--hds-colors-error-border-strong);
+    }
+  }
+
   & .hds-input-group__label {
     font: var(--hds-typography-body-title);
 
