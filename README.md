@@ -122,6 +122,22 @@ Follow these steps to get the design system up and running on your local machine
    pnpm install
    ```
 
+### Dependabot and lockfiles
+
+`apps/examples-v3` has its own `package.json` and `pnpm-lock.yaml`, and is intentionally excluded from the root workspace in `pnpm-workspace.yaml`.
+
+To avoid CI failures with pnpm's frozen lockfile mode:
+
+- Root dependencies are updated by the root Dependabot npm config.
+- `apps/examples-v3` dependencies are updated by a separate Dependabot npm config targeting `/apps/examples-v3`.
+
+If you update dependencies in `apps/examples-v3` manually, also refresh `apps/examples-v3/pnpm-lock.yaml`:
+
+```bash
+cd apps/examples-v3
+pnpm install --lockfile-only
+```
+
 ### Development
 
 To start the development server:
