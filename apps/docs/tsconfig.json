@@ -1,5 +1,9 @@
 {
   "extends": "hedwig-tsconfig/react-app.json",
+  // Use bundler module resolution for Vite config type checking.
+  "compilerOptions": {
+    "moduleResolution": "bundler"
+  },
   "include": [".", "../../packages/react/src/**/*.stories.tsx"],
   "exclude": ["dist", "build", "node_modules"]
 }
