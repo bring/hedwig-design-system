@@ -1,5 +1,8 @@
 {
   "extends": "hedwig-tsconfig/react-app.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler"
+  },
   "include": [".", "../../packages/react/src/**/*.stories.tsx"],
   "exclude": ["dist", "build", "node_modules"]
 }
