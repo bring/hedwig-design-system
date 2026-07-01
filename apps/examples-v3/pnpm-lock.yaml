@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@postenbring/hedwig-css':
-        specifier: 3.0.6
-        version: 3.0.6
+        specifier: 4.2.0
+        version: 4.2.0
       '@postenbring/hedwig-react':
         specifier: 3.0.6
         version: 3.0.6(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -826,6 +826,9 @@ packages:
   '@postenbring/hedwig-css@3.0.6':
     resolution: {integrity: sha512-dOzn+/VcIRS1fK8noTN+2Za1bTDfLgoE4qlI/7g79MAihemwXvwf3K48d5iNxv+aUeBX5VhULZC9tJBUurpidA==}
 
+  '@postenbring/hedwig-css@4.2.0':
+    resolution: {integrity: sha512-52xnwugy5QQISNs7+PI1WiRlXR1tTcOdaZoLimAHWXHLryXk1tKw9frRuBR6jna78K3221XpSwWPPL4R3IYpgQ==}
+
   '@postenbring/hedwig-react@3.0.6':
     resolution: {integrity: sha512-oJ8Fy9AWjO+9rvzsBQgOGeOpe+v7Ukn4IspPrjAlTvjzey5CLUfYH2/iNqKaG6rs3jaFJDfVhcPF6pE1NxKpfg==}
     peerDependencies:
@@ -836,6 +839,9 @@ packages:
 
   '@postenbring/hedwig-tokens@1.3.1':
     resolution: {integrity: sha512-26UprPkaLEkOmyQNN2A4+sQ9Js0b0JtUZUCAUHpFYMPc9dg5IzKcqFVktUmc1VgZm9WOCM20h5nUdX/HFlqQsg==}
+
+  '@postenbring/hedwig-tokens@3.0.0':
+    resolution: {integrity: sha512-4HcLHMx/wk6OgtLEUlmM6bg4nVlxp4g4sdfEL/U+rM332z8cLbOnk47OKav93hsK0bxCnRTWuRQ7zaOFawIbag==}
 
   '@radix-ui/primitive@1.1.2':
     resolution: {integrity: sha512-XnbHrrprsNqZKQhStrSwgRUQzoCI1glLzdw79xiZPoofhGICeZRSQ3dIxAKH1gb3OHfNf4d6f+vAv3kil2eggA==}
@@ -5209,6 +5215,11 @@ snapshots:
       '@postenbring/hedwig-tokens': 1.3.1
       clsx: 2.1.1
 
+  '@postenbring/hedwig-css@4.2.0':
+    dependencies:
+      '@postenbring/hedwig-tokens': 3.0.0
+      clsx: 2.1.1
+
   '@postenbring/hedwig-react@3.0.6(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@postenbring/hedwig-css': 3.0.6
@@ -5220,6 +5231,8 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@postenbring/hedwig-tokens@1.3.1': {}
+
+  '@postenbring/hedwig-tokens@3.0.0': {}
 
   '@radix-ui/primitive@1.1.2': {}
 
@@ -6743,7 +6756,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.56.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1):
+  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.56.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -6765,7 +6778,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.56.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.56.1(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@8.57.1))(eslint@8.57.1)
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
