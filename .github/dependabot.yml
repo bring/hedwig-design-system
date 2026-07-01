@@ -5,11 +5,24 @@ updates:
     schedule:
       interval: "weekly"
     versioning-strategy: auto
+    exclude-paths:
+      - "apps/examples-v3/**"
     groups:
       minor-and-patch:
         update-types:
-        - "minor"
-        - "patch"
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: "npm"
+    directory: "/apps/examples-v3"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: auto
+    groups:
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"
