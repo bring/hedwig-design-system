@@ -1,5 +1,6 @@
 {
   "extends": "hedwig-tsconfig/react-app.json",
+  // Required for Vite 8 type resolution in vite.config.ts.
   "compilerOptions": {
     "moduleResolution": "bundler"
   },
