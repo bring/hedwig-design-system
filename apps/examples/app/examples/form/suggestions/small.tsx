@@ -35,6 +35,20 @@ const Example = () => (
         </li>
       </Suggestions>
     </form>
+    <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
+      <Input type="search" defaultValue="al" aria-label="Search countries" size="small" />
+      <Suggestions size="small">
+        <li>
+          <a href="/?country=albania">Albania</a>
+        </li>
+        <li>
+          <a href="/?country=algeria">Algeria</a>
+        </li>
+        <li>
+          <a href="/?country=nepal">Nepal</a>
+        </li>
+      </Suggestions>
+    </form>
   </Container>
 );
 
@@ -44,6 +58,6 @@ import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   description:
     "<code>aria-controls</code> is recommended to use in a real implementation of this component.",
-  index: 0,
+  index: 1,
   layout: "centered-fullwidth",
 };

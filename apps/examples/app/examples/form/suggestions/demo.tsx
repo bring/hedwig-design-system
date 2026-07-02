@@ -35,6 +35,20 @@ const Example = () => (
         </li>
       </Suggestions>
     </form>
+    <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
+      <Input type="search" defaultValue="al" aria-label="Search countries" />
+      <Suggestions>
+        <li>
+          <a href="/?country=albania">Albania</a>
+        </li>
+        <li>
+          <a href="/?country=algeria">Algeria</a>
+        </li>
+        <li>
+          <a href="/?country=nepal">Nepal</a>
+        </li>
+      </Suggestions>
+    </form>
   </Container>
 );
 
