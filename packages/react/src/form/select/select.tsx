@@ -39,7 +39,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       size={size}
       data-color={dataColor}
     >
-      <select ref={ref} {...rest} />
+      <select disabled={disabled} ref={ref} {...rest} />
     </InputGroup>
   ),
 );
