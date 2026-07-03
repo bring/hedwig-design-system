@@ -1,6 +1,5 @@
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
-import { forwardRef } from "react";
-import type { HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 
 export interface ValidationMessageProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
