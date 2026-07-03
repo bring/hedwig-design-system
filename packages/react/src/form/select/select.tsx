@@ -8,25 +8,25 @@ export type SelectProps = Omit<
   "readOnly" | "children"
 > & { children: ReactNode };
 
-export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
-  {
-    className,
-    size,
-    validationMessage,
-    validationMessageProps,
-    errorMessage,
-    labelProps,
-    label,
-    id,
-    style,
-    disabled,
-    "data-color": dataColor,
-    children,
-    ...rest
-  },
-  ref,
-) {
-  return (
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(
+  (
+    {
+      className,
+      size,
+      validationMessage,
+      validationMessageProps,
+      errorMessage,
+      labelProps,
+      label,
+      id,
+      style,
+      disabled,
+      "data-color": dataColor,
+      children,
+      ...rest
+    },
+    ref,
+  ) => (
     <InputGroup
       className={clsx("hds-select", className as undefined)}
       disabled={disabled}
@@ -44,7 +44,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
         {children}
       </select>
     </InputGroup>
-  );
-});
+  ),
+);
 
 Select.displayName = "Select";
