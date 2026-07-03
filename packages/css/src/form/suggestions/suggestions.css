@@ -35,6 +35,10 @@
       background-color: var(--hds-colors-surface-hover);
     }
 
+    &:active {
+      background-color: var(--hds-colors-surface-active);
+    }
+
     &:last-child {
       border-bottom: none;
     }

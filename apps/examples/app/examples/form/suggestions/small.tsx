@@ -5,10 +5,30 @@ import { GlobeIcon } from "../../../assets/icon-examples";
 const Example = () => (
   <Container variant="slim">
     <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
+      <Input type="search" defaultValue="al" aria-label="Search countries" size="small" />
+      <Suggestions size="small">
+        <li>
+          <a href="/" target="_top">
+            Albania
+          </a>
+        </li>
+        <li>
+          <a href="/" target="_top">
+            Algeria
+          </a>
+        </li>
+        <li>
+          <a href="/" target="_top">
+            Nepal
+          </a>
+        </li>
+      </Suggestions>
+    </form>
+    <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
       <Input type="search" defaultValue="al" size="small" aria-label="Search countries" />
       <Suggestions size="small">
         <li>
-          <a href="/?country=albania">
+          <a href="/" target="_top">
             <GlobeIcon />
             <div>
               Albania<p style={{ color: "var(--hds-colors-neutral-text-subtle)" }}>AL</p>
@@ -16,7 +36,7 @@ const Example = () => (
           </a>
         </li>
         <li>
-          <a href="/?country=algeria">
+          <a href="/" target="_top">
             <GlobeIcon />
             <div>
               Algeria
@@ -25,27 +45,13 @@ const Example = () => (
           </a>
         </li>
         <li>
-          <a href="/?country=nepal">
+          <a href="/" target="_top">
             <GlobeIcon />
             <div>
               Nepal
               <p style={{ color: "var(--hds-colors-neutral-text-subtle)" }}>NP</p>
             </div>
           </a>
-        </li>
-      </Suggestions>
-    </form>
-    <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
-      <Input type="search" defaultValue="al" aria-label="Search countries" size="small" />
-      <Suggestions size="small">
-        <li>
-          <a href="/?country=albania">Albania</a>
-        </li>
-        <li>
-          <a href="/?country=algeria">Algeria</a>
-        </li>
-        <li>
-          <a href="/?country=nepal">Nepal</a>
         </li>
       </Suggestions>
     </form>
@@ -57,7 +63,7 @@ export default Example;
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   description:
-    "<code>aria-controls</code> is recommended to use in a real implementation of this component.",
+    "A list of suggestions for the user while searching. <code>aria-controls</code> is recommended to use in a real implementation of this component.",
   index: 1,
   layout: "centered-fullwidth",
 };

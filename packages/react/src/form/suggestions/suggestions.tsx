@@ -11,8 +11,26 @@ export interface SuggestionProps extends HTMLAttributes<HTMLUListElement> {
   size?: "default" | "small";
 }
 
+/**
+ * A list of suggestions for the user while searching
+ *
+ * @example
+ * ```tsx
+ * <Suggestions>
+ *  <li>
+ *   <a href="/">Albania</a>
+ *  </li>
+ *  <li>
+ *   <a href="/">Algeria</a>
+ *  </li>
+ *  <li>
+ *   <a href="/">Nepal</a>
+ *  </li>
+ * </Suggestions>
+ * ```
+ */
 export const Suggestions = forwardRef<HTMLUListElement, SuggestionProps>(
-  ({ className, size = "default", ...rest }, ref) => {
+  ({ size = "default", className, ...rest }, ref) => {
     return (
       <ul
         className={clsx(
