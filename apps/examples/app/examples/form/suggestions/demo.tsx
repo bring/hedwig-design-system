@@ -1,37 +1,46 @@
 import "@postenbring/hedwig-css";
-import { Suggestions, Input, Container } from "@postenbring/hedwig-react";
+import { Suggestions, Input, Container, Text } from "@postenbring/hedwig-react";
 import { GlobeIcon } from "../../../assets/icon-examples";
 
 const Example = () => (
   <Container variant="slim">
     <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
-      <Input type="search" defaultValue="al" aria-label="Search countries" />
+      <Input type="search" defaultValue="parcel" aria-label="Search content" />
       <Suggestions>
         <li>
           <a href="/" target="_top">
-            Albania
+            <p>
+              Pakkeboks (<strong>parcel</strong> locker)
+            </p>
           </a>
         </li>
         <li>
           <a href="/" target="_top">
-            Algeria
+            <p>
+              Send Norgespakke™ small from a <strong>parcel</strong> locker
+            </p>
           </a>
         </li>
         <li>
           <a href="/" target="_top">
-            Nepal
+            <p>
+              <strong>Parcel</strong> pickup automat
+            </p>
           </a>
         </li>
       </Suggestions>
     </form>
     <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
-      <Input type="search" defaultValue="al" aria-label="Search countries" />
+      <Input type="search" defaultValue="parcel" aria-label="Search content" />
       <Suggestions>
         <li>
           <a href="/" target="_top">
             <GlobeIcon />
             <div>
-              Albania<p style={{ color: "var(--hds-colors-neutral-text-subtle)" }}>AL</p>
+              <Text style={{ color: "var(--hds-colors-neutral-text-subtle)" }} variant="technical">
+                Content
+              </Text>
+              Pakkeboks (<strong>parcel</strong> locker)
             </div>
           </a>
         </li>
@@ -39,8 +48,10 @@ const Example = () => (
           <a href="/" target="_top">
             <GlobeIcon />
             <div>
-              Algeria
-              <p style={{ color: "var(--hds-colors-neutral-text-subtle)" }}>DZ</p>
+              <Text style={{ color: "var(--hds-colors-neutral-text-subtle)" }} variant="technical">
+                Content
+              </Text>
+              Send Norgespakke™ small from a <strong>parcel</strong> locker
             </div>
           </a>
         </li>
@@ -48,8 +59,10 @@ const Example = () => (
           <a href="/" target="_top">
             <GlobeIcon />
             <div>
-              Nepal
-              <p style={{ color: "var(--hds-colors-neutral-text-subtle)" }}>NP</p>
+              <Text style={{ color: "var(--hds-colors-neutral-text-subtle)" }} variant="technical">
+                Content
+              </Text>
+              <strong>Parcel</strong> pickup automat
             </div>
           </a>
         </li>

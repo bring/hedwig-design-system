@@ -24,6 +24,8 @@
       svg {
         width: var(--hds-suggestions-icon-size);
         height: var(--hds-suggestions-icon-size);
+        min-width: var(--hds-suggestions-icon-size);
+        min-height: var(--hds-suggestions-icon-size);
         color: var(--hds-colors-neutral-text-subtle);
         fill: var(--hds-colors-neutral-text-subtle);
       }
@@ -51,6 +53,6 @@
     --hds-suggestions-padding: var(--hds-spacing-12);
     --hds-suggestions-icon-size: var(--hds-spacing-20);
 
-    font: var(--hds-typography-technical);
+    font: var(--hds-typography-body-small);
   }
 }
