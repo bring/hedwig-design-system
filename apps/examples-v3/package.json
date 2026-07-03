@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@postenbring/hedwig-css": "3.0.6",
-    "@postenbring/hedwig-react": "3.0.6",
+    "@postenbring/hedwig-react": "4.2.0",
     "@radix-ui/react-slot": "1.3.0",
     "@remix-run/node": "^2.17.5",
     "@remix-run/react": "^2.17.5",
