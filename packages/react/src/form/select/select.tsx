@@ -33,9 +33,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       validationMessageProps={validationMessageProps}
       errorMessage={errorMessage}
       id={id}
-      style={style}
       label={label}
       labelProps={labelProps}
+      style={style}
       size={size}
       data-color={dataColor}
     >
