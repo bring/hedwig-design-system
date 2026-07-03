@@ -1,5 +1,4 @@
-import { forwardRef } from "react";
-import type { HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
 export interface SearchWrapperProps extends HTMLAttributes<HTMLDivElement> {
