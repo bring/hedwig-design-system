@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import type { HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
-export interface SuggestionProps extends HTMLAttributes<HTMLUListElement> {
+export interface SuggestionsProps extends HTMLAttributes<HTMLUListElement> {
   /**
    * Sets the size of the items
    *
@@ -10,6 +10,8 @@ export interface SuggestionProps extends HTMLAttributes<HTMLUListElement> {
    */
   size?: "default" | "small";
 }
+
+export type SuggestionProps = SuggestionsProps;
 
 /**
  * A list of suggestions for the user while searching
