@@ -32,19 +32,17 @@ export type SuggestionProps = SuggestionsProps;
  * ```
  */
 export const Suggestions = forwardRef<HTMLUListElement, SuggestionProps>(
-  ({ size = "default", className, ...rest }, ref) => {
-    return (
-      <ul
-        className={clsx(
-          "hds-suggestions",
-          size !== "default" && `hds-suggestions--${size}`,
-          className as undefined,
-        )}
-        ref={ref}
-        {...rest}
-      />
-    );
-  },
+  ({ size = "default", className, ...rest }, ref) => (
+    <ul
+      className={clsx(
+        "hds-suggestions",
+        size !== "default" && `hds-suggestions--${size}`,
+        className as undefined,
+      )}
+      ref={ref}
+      {...rest}
+    />
+  ),
 );
 
 Suggestions.displayName = "Suggestions";
