@@ -1,12 +1,12 @@
-import { forwardRef, type SelectHTMLAttributes } from "react";
+import { forwardRef, type ReactNode, type SelectHTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { InputGroup } from "../input-group";
 import type { InputGroupProps } from "../input-group";
 
 export type SelectProps = Omit<
   InputGroupProps & Omit<SelectHTMLAttributes<HTMLSelectElement>, "size">,
-  "readOnly"
->;
+  "readOnly" | "children"
+> & { children: ReactNode };
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
@@ -22,6 +22,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       style,
       disabled,
       "data-color": dataColor,
+      children,
       ...rest
     },
     ref,
@@ -39,7 +40,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       size={size}
       data-color={dataColor}
     >
-      <select disabled={disabled} ref={ref} {...rest} />
+      <select disabled={disabled} ref={ref} {...rest}>
+        {children}
+      </select>
     </InputGroup>
   ),
 );
