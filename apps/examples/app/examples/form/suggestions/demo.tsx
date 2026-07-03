@@ -75,8 +75,7 @@ export default Example;
 
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
-  description:
-    "A list of suggestions for the user while searching. <code>aria-controls</code> is recommended to use in a real implementation of this component.",
+  description: "A list of suggestions for the user while searching",
   index: 0,
   layout: "centered-fullwidth",
 };
