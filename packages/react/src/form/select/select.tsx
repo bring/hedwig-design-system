@@ -18,6 +18,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       errorMessage,
       labelProps,
       label,
+      id,
+      style,
+      disabled,
       "data-color": dataColor,
       ...rest
     },
@@ -25,9 +28,12 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   ) => (
     <InputGroup
       className={clsx("hds-select", className as undefined)}
+      disabled={disabled}
       validationMessage={validationMessage}
       validationMessageProps={validationMessageProps}
       errorMessage={errorMessage}
+      id={id}
+      style={style}
       label={label}
       labelProps={labelProps}
       size={size}
