@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createOnigurumaEngine } from "shiki";
 import { type ThemeRegistrationRaw, createHighlighterCore } from "shiki/core";
 import langsTsx from "shiki/langs/tsx.mjs";
 import getWasm from "shiki/wasm";
@@ -24,7 +25,7 @@ async function initHighlighter() {
   highlighter = await createHighlighterCore({
     themes: [codeThemes.posten, codeThemes.bring],
     langs: [langsTsx],
-    loadWasm: getWasm,
+    engine: await createOnigurumaEngine(getWasm),
   });
 }
 // Top-level await broke dev server. Need to do a non-blocking init
