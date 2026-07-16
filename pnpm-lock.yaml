@@ -300,8 +300,8 @@ importers:
         specifier: 3.9.2
         version: 3.9.2
       style-dictionary-utils:
-        specifier: 2.4.1
-        version: 2.4.1(style-dictionary@3.9.2)
+        specifier: 6.0.1
+        version: 6.0.1(style-dictionary@3.9.2)
       tailwindcss:
         specifier: 3.4.14
         version: 3.4.14
@@ -2835,6 +2835,9 @@ packages:
 
   colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
+
+  colorjs.io@0.5.2:
+    resolution: {integrity: sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==}
 
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
@@ -6181,10 +6184,10 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  style-dictionary-utils@2.4.1:
-    resolution: {integrity: sha512-Ged3wCzzswC6vw8Fh74IKUJg7ajPiH0ersYsPi0VT2ENWCq/gx6uAYOr1rjslqjSyQUfAVvNnOPxuWGJ2mdncQ==}
+  style-dictionary-utils@6.0.1:
+    resolution: {integrity: sha512-FvGdI94Fx9tuM3sbPBDOJw7poAQ3dAd+QuHYhe6Ab/KP5JjbdsNQe1DJ1CiOE8blkfdDGKCg+smteWyP2yMgnQ==}
     peerDependencies:
-      style-dictionary: ^3.7.1
+      style-dictionary: ^5
 
   style-dictionary@3.9.2:
     resolution: {integrity: sha512-M2pcQ6hyRtqHOh+NyT6T05R3pD/gwNpuhREBKvxC1En0vyywx+9Wy9nXWT1SZ9ePzv1vAo65ItnpA16tT9ZUCg==}
@@ -9606,6 +9609,8 @@ snapshots:
   colord@2.9.3: {}
 
   colorette@2.0.20: {}
+
+  colorjs.io@0.5.2: {}
 
   combined-stream@1.0.8:
     dependencies:
@@ -13833,11 +13838,10 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  style-dictionary-utils@2.4.1(style-dictionary@3.9.2):
+  style-dictionary-utils@6.0.1(style-dictionary@3.9.2):
     dependencies:
       color2k: 2.0.3
-      json5: 2.2.3
-      prettier: 2.8.8
+      colorjs.io: 0.5.2
       style-dictionary: 3.9.2
 
   style-dictionary@3.9.2:
