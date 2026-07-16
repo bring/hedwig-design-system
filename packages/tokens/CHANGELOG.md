@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 3.1.0
+
+### Minor Changes
+
+- b6143e9: Add new color scheme to tailwind preset
+
 ## 3.0.0
 
 ### Major Changes

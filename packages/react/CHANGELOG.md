@@ -1,5 +1,12 @@
 # @postenbring/hedwig-react
 
+## 4.2.1
+
+### Patch Changes
+
+- c414c4a: Diet some components
+  - @postenbring/hedwig-css@4.2.1
+
 ## 4.2.0
 
 ### Minor Changes
