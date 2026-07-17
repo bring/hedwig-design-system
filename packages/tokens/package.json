@@ -17,14 +17,14 @@
   },
   "devDependencies": {
     "@types/node": "22.15.21",
-    "color2k": "2.0.3",
+    "color2k": "2.0.4",
     "eslint": "^8.57.0",
     "eslint-config-custom": "*",
     "hedwig-tsconfig": "workspace:*",
     "style-dictionary": "3.9.2",
     "style-dictionary-utils": "2.4.1",
     "tailwindcss": "3.4.14",
-    "tsx": "4.19.4",
+    "tsx": "4.23.1",
     "typescript": "^5.8.3"
   },
   "publishConfig": {
