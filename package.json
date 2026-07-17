@@ -17,16 +17,16 @@
     "postinstall": "cd apps/examples-v3 && pnpm install"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.4",
+    "@changesets/cli": "^2.31.1",
     "@types/node": "22.15.21",
     "eslint": "^8.57.0",
     "eslint-config-custom": "workspace:*",
     "hedwig-tsconfig": "workspace:*",
     "husky": "9.1.7",
     "lint-staged": "15.5.1",
-    "prettier": "^3.5.3",
+    "prettier": "^3.9.5",
     "stylelint": "16.19.1",
-    "turbo": "2.9.14"
+    "turbo": "2.10.5"
   },
   "packageManager": "pnpm@9.1.1",
   "lint-staged": {
