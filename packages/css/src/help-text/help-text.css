@@ -44,6 +44,7 @@
 .hds-help-text-box {
   min-width: var(--hds-spacing-160);
   max-width: min(100vw, 400px);
+  padding-inline-end: var(--hds-spacing-48);
 
   /* Animation */
   animation-duration: var(--hds-micro-animation-duration-normal);
