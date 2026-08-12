@@ -5,6 +5,27 @@ import browserslist from "browserslist";
 import { globby } from "globby";
 
 /**
+ * Recursively remove null values from optional fields.
+ * lightningcss >= 1.30.2 changed serde handling and cannot deserialize
+ * null values for Specifier | null fields (e.g. DashedIdentReference.from).
+ * Removing null values (treating them as absent) is safe for all optional fields.
+ * @param {unknown} obj
+ * @returns {unknown}
+ */
+function stripNulls(obj) {
+  if (obj === null || obj === undefined) return undefined;
+  if (Array.isArray(obj)) return obj.map(stripNulls);
+  if (typeof obj === "object") {
+    return Object.fromEntries(
+      Object.entries(obj)
+        .filter(([, v]) => v !== null)
+        .map(([k, v]) => [k, stripNulls(v)]),
+    );
+  }
+  return obj;
+}
+
+/**
  * A basic @extend implementation
  * @type {Pick<import("lightningcss").BundleOptions<{}>, "customAtRules" | "visitor">}
  */
@@ -47,7 +68,7 @@ const customExtend = {
           });
 
           if (!result) throw new Error(`Could not find ${className} in ${file}`);
-          return result;
+          return stripNulls(result);
         },
       },
     },
