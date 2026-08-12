@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.2.2
+
+### Patch Changes
+
+- 4f5ddcf: fix: prevent close button overlapping long text
+
 ## 4.2.1
 
 ### Patch Changes
