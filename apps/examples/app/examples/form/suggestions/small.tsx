@@ -1,74 +1,64 @@
 import "@postenbring/hedwig-css";
-import { Suggestions, Input, Container, Text } from "@postenbring/hedwig-react";
-import { GlobeIcon } from "../../../assets/icon-examples";
+import {
+  Suggestions,
+  Input,
+  Container,
+  Skeleton,
+  Link,
+  SearchWrapper,
+  Button,
+} from "@postenbring/hedwig-react";
 
 const Example = () => (
-  <Container variant="slim">
-    <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
-      <Input type="search" defaultValue="parcel" aria-label="Search content" size="small" />
-      <Suggestions size="small">
-        <li>
-          <a href="/" target="_top">
-            <p>
-              Pakkeboks (<strong>parcel</strong> locker)
-            </p>
-          </a>
-        </li>
-        <li>
-          <a href="/" target="_top">
-            <p>
-              Send Norgespakke™ small from a <strong>parcel</strong> locker
-            </p>
-          </a>
-        </li>
-        <li>
-          <a href="/" target="_top">
-            <p>
-              <strong>Parcel</strong> pickup automat
-            </p>
-          </a>
-        </li>
-      </Suggestions>
-    </form>
-    <form style={{ padding: "var(--hds-spacing-20-24) 0" }}>
-      <Input type="search" defaultValue="parcel" size="small" aria-label="Search content" />
-      <Suggestions size="small">
-        <li>
-          <a href="/" target="_top">
-            <GlobeIcon />
-            <div>
-              <Text style={{ color: "var(--hds-colors-neutral-text-subtle)" }} variant="technical">
-                Content
-              </Text>
-              Pakkeboks (<strong>parcel</strong> locker)
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="/" target="_top">
-            <GlobeIcon />
-            <div>
-              <Text style={{ color: "var(--hds-colors-neutral-text-subtle)" }} variant="technical">
-                Content
-              </Text>
-              Send Norgespakke™ small from a <strong>parcel</strong> locker
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="/" target="_top">
-            <GlobeIcon />
-            <div>
-              <Text style={{ color: "var(--hds-colors-neutral-text-subtle)" }} variant="technical">
-                Content
-              </Text>
-              <strong>Parcel</strong> pickup automat
-            </div>
-          </a>
-        </li>
-      </Suggestions>
-    </form>
-  </Container>
+  <>
+    <Container variant="slim">
+      <form style={{ paddingTop: "var(--hds-spacing-20-24)" }}>
+        <SearchWrapper>
+          <Suggestions.Wrapper>
+            <Input type="search" defaultValue="parcel" aria-label="Search content" size="small" />
+            <Suggestions size="small">
+              <li>
+                <a href="/" target="_top">
+                  <p>
+                    Pakkeboks (<strong>parcel</strong> locker)
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="/" target="_top">
+                  <p>
+                    Send Norgespakke™ small from a <strong>parcel</strong> locker
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="/" target="_top">
+                  <p>
+                    <strong>Parcel</strong> pickup automat
+                  </p>
+                </a>
+              </li>
+            </Suggestions>
+          </Suggestions.Wrapper>
+          <Button size="small">Search</Button>
+        </SearchWrapper>
+      </form>
+    </Container>
+    {/* Some content that should be covered by Suggestions */}
+    <Container as="main" id="containers">
+      {/* Some filler content */}
+      {Array.from({ length: 15 }).map((_, i) => (
+        <Skeleton
+          key={i}
+          animation={false}
+          width={i % 3 === 0 ? "100%" : `${((i % 3) + 0) * 30}%`}
+        />
+      ))}
+      <Link href="#some-link">
+        This link should not be targetable while the expandable menu is open
+      </Link>
+    </Container>
+  </>
 );
 
 export default Example;

@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import type { HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
+import { SuggestionsWrapper } from "./suggestions-wrapper";
 
 export interface SuggestionsProps extends HTMLAttributes<HTMLUListElement> {
   /**
@@ -43,6 +44,11 @@ export const Suggestions = forwardRef<HTMLUListElement, SuggestionProps>(
       {...rest}
     />
   ),
-);
+) as SuggestionsType;
+
+type SuggestionsType = ReturnType<typeof forwardRef<HTMLUListElement, SuggestionProps>> & {
+  Wrapper: typeof SuggestionsWrapper;
+};
 
 Suggestions.displayName = "Suggestions";
+Suggestions.Wrapper = SuggestionsWrapper;

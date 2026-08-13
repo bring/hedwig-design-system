@@ -1,11 +1,24 @@
 .hds-search-wrapper {
   --hds-search-wrapper-input-row: 1;
 
+  align-self: start;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--hds-spacing-4) var(--hds-spacing-8);
 
   > .hds-input-group {
+    display: contents;
+  }
+
+  > .hds-suggestions-wrapper {
+    grid-column: 1;
+    grid-row: var(--hds-search-wrapper-input-row);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--hds-spacing-4);
+  }
+
+  > .hds-suggestions-wrapper > .hds-input-group {
     display: contents;
   }
 

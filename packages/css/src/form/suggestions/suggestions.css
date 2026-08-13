@@ -1,3 +1,15 @@
+.hds-suggestions-wrapper {
+  position: relative;
+}
+
+.hds-suggestions-wrapper > .hds-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+
 .hds-suggestions {
   --hds-suggestions-padding: var(--hds-spacing-16);
   --hds-suggestions-icon-size: var(--hds-spacing-24);
