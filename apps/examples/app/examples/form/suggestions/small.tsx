@@ -4,7 +4,6 @@ import {
   Input,
   Container,
   Skeleton,
-  Link,
   SearchWrapper,
   Button,
 } from "@postenbring/hedwig-react";
@@ -54,9 +53,6 @@ const Example = () => (
           width={i % 3 === 0 ? "100%" : `${((i % 3) + 0) * 30}%`}
         />
       ))}
-      <Link href="#some-link">
-        This link should not be targetable while the expandable menu is open
-      </Link>
     </Container>
   </>
 );

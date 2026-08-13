@@ -1,0 +1,114 @@
+import "@postenbring/hedwig-css";
+import {
+  Suggestions,
+  Input,
+  Navbar,
+  Button,
+  SearchWrapper,
+  Container,
+  Skeleton,
+} from "@postenbring/hedwig-react";
+import { XmarkIcon, MagnifyingGlassIcon } from "../../../assets/icon-examples";
+import { useState } from "react";
+
+const suggestionItems = [
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Argentina",
+  "Armenia",
+  "Australia",
+  "Austria",
+];
+
+const ShowSearch = ({ onClose }: { onClose: () => void }) => {
+  const [query, setQuery] = useState("");
+
+  const matches = suggestionItems.filter((item) =>
+    item.toLowerCase().startsWith(query.toLowerCase()),
+  );
+
+  return (
+    <SearchWrapper>
+      <Suggestions.Wrapper>
+        <Input
+          type="search"
+          aria-label="Search content"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Try searching for `a`"
+        />
+        {query.length > 0 && matches.length > 0 && (
+          <Suggestions>
+            {matches.map((item) => (
+              <li key={item}>
+                <a href="/" target="_top">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </Suggestions>
+        )}
+      </Suggestions.Wrapper>
+      <Button icon="trailing">Search</Button>
+      <Button
+        variant="tertiary"
+        icon
+        onClick={() => {
+          onClose();
+          setQuery("");
+        }}
+      >
+        <XmarkIcon />
+      </Button>
+    </SearchWrapper>
+  );
+};
+
+const Example = () => {
+  const [searching, setSearching] = useState(true);
+
+  return (
+    <>
+      <Navbar>
+        <Navbar.Logo asChild>
+          <a href="https://www.posten.no/" title="Til forsiden" />
+        </Navbar.Logo>
+        <Navbar.Navigation>
+          {searching && <ShowSearch onClose={() => setSearching(false)} />}
+          {!searching && (
+            <Navbar.ButtonItem title="Button" onClick={() => setSearching(true)}>
+              Search
+              <MagnifyingGlassIcon />
+            </Navbar.ButtonItem>
+          )}
+          <Navbar.ExpandableMenu>
+            <Navbar.ExpandableMenuTrigger whenClosedText="Menu" whenOpenText="Close" />
+            <Navbar.ExpandableMenuContent>Empty menu</Navbar.ExpandableMenuContent>
+          </Navbar.ExpandableMenu>
+        </Navbar.Navigation>
+      </Navbar>
+      {/* Some content that should be covered by Suggestions */}
+      <Container as="main" id="container">
+        {/* Some filler content */}
+        {Array.from({ length: 15 }).map((_, i) => (
+          <Skeleton
+            key={i}
+            animation={false}
+            width={i % 3 === 0 ? "100%" : `${((i % 3) + 0) * 30}%`}
+          />
+        ))}
+      </Container>
+    </>
+  );
+};
+
+export default Example;
+
+import type { ExampleConfig } from "../..";
+export const config: ExampleConfig = {
+  description: "A list of suggestions for the user while searching",
+  index: 1,
+  layout: "centered-fullwidth",
+};
