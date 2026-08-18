@@ -40,7 +40,8 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
           placeholder="Try searching for `a`"
         />
         {query.length > 0 && matches.length > 0 && (
-          <Suggestions>
+          /* Overriding the height default for Suggestions*/
+          <Suggestions style={{ maxHeight: "min(50vh, 300px)" }}>
             {matches.map((item) => (
               <li key={item}>
                 <a href="/" target="_top">

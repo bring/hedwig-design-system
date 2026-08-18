@@ -19,7 +19,8 @@
   padding-left: 0;
   border-radius: var(--hds-border-radius-8);
   border: 1px solid var(--hds-colors-neutral-border-default);
-  overflow: hidden;
+  max-height: min(60vh, 400px);
+  overflow: hidden auto;
 
   li {
     border-bottom: 1px solid var(--hds-colors-neutral-border-default);
