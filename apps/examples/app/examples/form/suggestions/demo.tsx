@@ -8,7 +8,8 @@ import {
   Button,
   SearchWrapper,
 } from "@postenbring/hedwig-react";
-import { GlobeIcon } from "../../../assets/icon-examples";
+import { GlobeIcon, MagnifyingGlassIcon } from "../../../assets/icon-examples";
+import "./demo.css";
 
 const Example = () => (
   <>
@@ -62,7 +63,10 @@ const Example = () => (
               </li>
             </Suggestions>
           </Suggestions.Wrapper>
-          <Button>Search</Button>
+          <Button className="suggestions-demo-search-button__desktop">Search</Button>
+          <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
+            <MagnifyingGlassIcon />
+          </Button>
         </SearchWrapper>
       </form>
     </Container>
