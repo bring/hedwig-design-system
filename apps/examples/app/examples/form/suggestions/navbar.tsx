@@ -10,6 +10,7 @@ import {
 } from "@postenbring/hedwig-react";
 import { XmarkIcon, MagnifyingGlassIcon } from "../../../assets/icon-examples";
 import { useState } from "react";
+import "./demo.css";
 
 const suggestionItems = [
   "Albania",
@@ -52,7 +53,10 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
           </Suggestions>
         )}
       </Suggestions.Wrapper>
-      <Button icon="trailing">Search</Button>
+      <Button className="suggestions-demo-search-button__desktop">Search</Button>
+      <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
+        <MagnifyingGlassIcon />
+      </Button>
       <Button
         variant="tertiary"
         icon
