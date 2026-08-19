@@ -13,6 +13,7 @@
 .hds-suggestions {
   --hds-suggestions-padding: var(--hds-spacing-16);
   --hds-suggestions-icon-size: var(--hds-spacing-24);
+  --hds-suggestions-inner-radius: calc(var(--hds-border-radius-8) - 1px);
 
   margin: 0;
   list-style: none;
@@ -21,9 +22,12 @@
   border: 1px solid var(--hds-colors-neutral-border-default);
   max-height: min(60vh, 400px);
   overflow: hidden auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: var(--hds-colors-neutral-border-default);
 
   li {
-    border-bottom: 1px solid var(--hds-colors-neutral-border-default);
     background-color: var(--hds-colors-neutral-surface-default);
 
     a {
@@ -33,6 +37,7 @@
       padding: var(--hds-suggestions-padding);
       color: var(--hds-colors-neutral-text-default);
       text-decoration: none;
+      outline-offset: -2px;
 
       svg {
         width: var(--hds-suggestions-icon-size);
@@ -57,8 +62,14 @@
       background-color: var(--hds-colors-surface-active);
     }
 
-    &:last-child {
-      border-bottom: none;
+    &:first-child a {
+      border-top-left-radius: var(--hds-suggestions-inner-radius);
+      border-top-right-radius: var(--hds-suggestions-inner-radius);
+    }
+
+    &:last-child a {
+      border-bottom-left-radius: var(--hds-suggestions-inner-radius);
+      border-bottom-right-radius: var(--hds-suggestions-inner-radius);
     }
   }
 
