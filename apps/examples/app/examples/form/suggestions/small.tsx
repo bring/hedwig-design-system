@@ -7,6 +7,8 @@ import {
   SearchWrapper,
   Button,
 } from "@postenbring/hedwig-react";
+import { MagnifyingGlassIcon } from "../../../assets/icon-examples";
+import "./demo.css";
 
 const Example = () => (
   <>
@@ -39,7 +41,17 @@ const Example = () => (
               </li>
             </Suggestions>
           </Suggestions.Wrapper>
-          <Button size="small">Search</Button>
+          <Button size="small" className="suggestions-demo-search-button__desktop">
+            Search
+          </Button>
+          <Button
+            size="small"
+            className="suggestions-demo-search-button__mobile"
+            icon
+            aria-label="Search"
+          >
+            <MagnifyingGlassIcon />
+          </Button>
         </SearchWrapper>
       </form>
     </Container>
