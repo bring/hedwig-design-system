@@ -10,18 +10,6 @@
     display: contents;
   }
 
-  > .hds-suggestions-wrapper {
-    grid-column: 1;
-    grid-row: var(--hds-search-wrapper-input-row);
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: var(--hds-spacing-4);
-  }
-
-  > .hds-suggestions-wrapper > .hds-input-group {
-    display: contents;
-  }
-
   > .hds-button {
     grid-row: var(--hds-search-wrapper-input-row);
     align-self: start;

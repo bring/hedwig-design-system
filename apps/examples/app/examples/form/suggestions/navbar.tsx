@@ -31,8 +31,8 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
   );
 
   return (
-    <SearchWrapper>
-      <Suggestions.Wrapper>
+    <Suggestions.Wrapper>
+      <SearchWrapper>
         <Input
           type="search"
           aria-label="Search content"
@@ -40,34 +40,34 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Try searching for `a`"
         />
-        {query.length > 0 && matches.length > 0 && (
-          /* Overriding the height default for Suggestions*/
-          <Suggestions style={{ maxHeight: "min(50vh, 300px)" }}>
-            {matches.map((item) => (
-              <li key={item}>
-                <a href="/" target="_top">
-                  {item}
-                </a>
-              </li>
-            ))}
-          </Suggestions>
-        )}
-      </Suggestions.Wrapper>
-      <Button className="suggestions-demo-search-button__desktop">Search</Button>
-      <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
-        <MagnifyingGlassIcon />
-      </Button>
-      <Button
-        variant="tertiary"
-        icon
-        onClick={() => {
-          onClose();
-          setQuery("");
-        }}
-      >
-        <XmarkIcon />
-      </Button>
-    </SearchWrapper>
+        <Button className="suggestions-demo-search-button__desktop">Search</Button>
+        <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
+          <MagnifyingGlassIcon />
+        </Button>
+        <Button
+          variant="tertiary"
+          icon
+          onClick={() => {
+            onClose();
+            setQuery("");
+          }}
+        >
+          <XmarkIcon />
+        </Button>
+      </SearchWrapper>
+      {query.length > 0 && matches.length > 0 && (
+        /* Overriding the height default for Suggestions*/
+        <Suggestions style={{ maxHeight: "min(50vh, 300px)" }}>
+          {matches.map((item) => (
+            <li key={item}>
+              <a href="/" target="_top">
+                {item}
+              </a>
+            </li>
+          ))}
+        </Suggestions>
+      )}
+    </Suggestions.Wrapper>
   );
 };
 

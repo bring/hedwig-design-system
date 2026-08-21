@@ -14,45 +14,45 @@ const Example = () => (
   <>
     <Container variant="slim">
       <form style={{ paddingTop: "var(--hds-spacing-20-24)" }}>
-        <SearchWrapper>
-          <Suggestions.Wrapper>
+        <Suggestions.Wrapper>
+          <SearchWrapper>
             <Input type="search" defaultValue="parcel" aria-label="Search content" size="small" />
-            <Suggestions size="small">
-              <li>
-                <a href="/" target="_top">
-                  <p>
-                    Pakkeboks (<strong>parcel</strong> locker)
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="/" target="_top">
-                  <p>
-                    Send Norgespakke™ small from a <strong>parcel</strong> locker
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="/" target="_top">
-                  <p>
-                    <strong>Parcel</strong> pickup automat
-                  </p>
-                </a>
-              </li>
-            </Suggestions>
-          </Suggestions.Wrapper>
-          <Button size="small" className="suggestions-demo-search-button__desktop">
-            Search
-          </Button>
-          <Button
-            size="small"
-            className="suggestions-demo-search-button__mobile"
-            icon
-            aria-label="Search"
-          >
-            <MagnifyingGlassIcon />
-          </Button>
-        </SearchWrapper>
+            <Button size="small" className="suggestions-demo-search-button__desktop">
+              Search
+            </Button>
+            <Button
+              size="small"
+              className="suggestions-demo-search-button__mobile"
+              icon
+              aria-label="Search"
+            >
+              <MagnifyingGlassIcon />
+            </Button>
+          </SearchWrapper>
+          <Suggestions size="small">
+            <li>
+              <a href="/" target="_top">
+                <p>
+                  Pakkeboks (<strong>parcel</strong> locker)
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="/" target="_top">
+                <p>
+                  Send Norgespakke™ small from a <strong>parcel</strong> locker
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="/" target="_top">
+                <p>
+                  <strong>Parcel</strong> pickup automat
+                </p>
+              </a>
+            </li>
+          </Suggestions>
+        </Suggestions.Wrapper>
       </form>
     </Container>
     {/* Some content that should be covered by Suggestions */}

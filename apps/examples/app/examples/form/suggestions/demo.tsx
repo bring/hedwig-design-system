@@ -8,70 +8,75 @@ import {
   Button,
   SearchWrapper,
 } from "@postenbring/hedwig-react";
-import { GlobeIcon, MagnifyingGlassIcon } from "../../../assets/icon-examples";
+import { GlobeIcon, MagnifyingGlassIcon, XmarkIcon } from "../../../assets/icon-examples";
 import "./demo.css";
 
 const Example = () => (
   <>
     <Container variant="slim">
-      <form style={{ paddingTop: "var(--hds-spacing-20-24)" }}>
-        <SearchWrapper>
-          <Suggestions.Wrapper>
+      <form style={{ paddingTop: "var(--hds-spacing-20-24)" }} action=".">
+        <Suggestions.Wrapper>
+          <SearchWrapper>
             <Input type="search" defaultValue="parcel" aria-label="Search content" />
-            <Suggestions>
-              <li>
-                <a href="/" target="_top">
-                  <GlobeIcon />
-                  <div>
-                    <Text
-                      style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
-                      variant="technical"
-                    >
-                      Content
-                    </Text>
-                    Pakkeboks (<strong>parcel</strong> locker)
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="/" target="_top">
-                  <GlobeIcon />
-                  <div>
-                    <Text
-                      style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
-                      variant="technical"
-                    >
-                      Content
-                    </Text>
-                    Send Norgespakke™ small from a <strong>parcel</strong> locker
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="/" target="_top">
-                  <GlobeIcon />
-                  <div>
-                    <Text
-                      style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
-                      variant="technical"
-                    >
-                      Content
-                    </Text>
-                    <strong>Parcel</strong> pickup automat
-                  </div>
-                </a>
-              </li>
-            </Suggestions>
-          </Suggestions.Wrapper>
-          <Button className="suggestions-demo-search-button__desktop">Search</Button>
-          <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
-            <MagnifyingGlassIcon />
-          </Button>
-        </SearchWrapper>
+            <Button className="suggestions-demo-search-button__desktop" data-color="posten">
+              Search
+            </Button>
+            <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
+              <MagnifyingGlassIcon />
+            </Button>
+            <Button icon data-color="posten" variant="tertiary">
+              <XmarkIcon />
+            </Button>
+          </SearchWrapper>
+          <Suggestions>
+            <li>
+              <a href="/" target="_top">
+                <GlobeIcon />
+                <div>
+                  <Text
+                    style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
+                    variant="technical"
+                  >
+                    Content
+                  </Text>
+                  Pakkeboks (<strong>parcel</strong> locker)
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/" target="_top">
+                <GlobeIcon />
+                <div>
+                  <Text
+                    style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
+                    variant="technical"
+                  >
+                    Content
+                  </Text>
+                  Send Norgespakke™ small from a <strong>parcel</strong> locker
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/" target="_top">
+                <GlobeIcon />
+                <div>
+                  <Text
+                    style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
+                    variant="technical"
+                  >
+                    Content
+                  </Text>
+                  <strong>Parcel</strong> pickup automat
+                </div>
+              </a>
+            </li>
+          </Suggestions>
+        </Suggestions.Wrapper>
       </form>
     </Container>
     {/* Some content that should be covered by Suggestions */}
-    <Container as="main" id="container">
+    <Container as="main" id="containers">
       {/* Some filler content */}
       {Array.from({ length: 15 }).map((_, i) => (
         <Skeleton

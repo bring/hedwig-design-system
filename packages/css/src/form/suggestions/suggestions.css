@@ -1,5 +1,6 @@
 .hds-suggestions-wrapper {
   position: relative;
+  align-self: start;
 }
 
 .hds-suggestions-wrapper > .hds-suggestions {
@@ -16,6 +17,7 @@
   --hds-suggestions-inner-radius: calc(var(--hds-border-radius-8) - 1px);
 
   margin: 0;
+  margin-top: var(--hds-spacing-4);
   list-style: none;
   padding-left: 0;
   border-radius: var(--hds-border-radius-8);
