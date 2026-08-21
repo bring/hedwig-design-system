@@ -29,13 +29,14 @@ const SuggestionsItem = forwardRef<HTMLLIElement, SuggestionsItemProps>(
  * ```tsx
  * <Suggestions>
  *  <Suggestions.Item>
- *   <a href="/">Albania</a>
+ *   <a className="hds-suggestions-item__action" href="/">
+ *     Albania
+ *   </a>
  *  </Suggestions.Item>
  *  <Suggestions.Item>
- *   <a href="/">Algeria</a>
- *  </Suggestions.Item>
- *  <Suggestions.Item>
- *   <a href="/">Nepal</a>
+ *   <button className="hds-suggestions-item__action" type="button">
+ *     Select Albania
+ *   </button>
  *  </Suggestions.Item>
  * </Suggestions>
  * ```

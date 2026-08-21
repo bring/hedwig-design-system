@@ -20,7 +20,9 @@ export type SuggestionsWrapperProps = HTMLAttributes<HTMLDivElement>;
  *   </SearchWrapper>
  *   <Suggestions>
  *     <Suggestions.Item>
- *       <a href="/">Albania</a>
+ *       <a className="hds-suggestions-item__action" href="/">
+ *         Albania
+ *       </a>
  *     </Suggestions.Item>
  *   </Suggestions>
  * </Suggestions.Wrapper>

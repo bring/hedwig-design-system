@@ -30,7 +30,7 @@ const Example = () => (
           </SearchWrapper>
           <Suggestions>
             <Suggestions.Item>
-              <a href="/" target="_top">
+              <a className="hds-suggestions-item__action" href="/" target="_top">
                 <GlobeIcon />
                 <div>
                   <Text
@@ -44,7 +44,7 @@ const Example = () => (
               </a>
             </Suggestions.Item>
             <Suggestions.Item>
-              <a href="/" target="_top">
+              <button className="hds-suggestions-item__action" type="button">
                 <GlobeIcon />
                 <div>
                   <Text
@@ -55,10 +55,10 @@ const Example = () => (
                   </Text>
                   Send Norgespakke™ small from a <strong>parcel</strong> locker
                 </div>
-              </a>
+              </button>
             </Suggestions.Item>
             <Suggestions.Item>
-              <a href="/" target="_top">
+              <button className="hds-suggestions-item__action" type="button">
                 <GlobeIcon />
                 <div>
                   <Text
@@ -69,7 +69,7 @@ const Example = () => (
                   </Text>
                   <strong>Parcel</strong> pickup automat
                 </div>
-              </a>
+              </button>
             </Suggestions.Item>
           </Suggestions>
         </Suggestions.Wrapper>

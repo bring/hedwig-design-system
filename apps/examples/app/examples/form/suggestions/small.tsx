@@ -31,21 +31,21 @@ const Example = () => (
           </SearchWrapper>
           <Suggestions size="small">
             <Suggestions.Item>
-              <a href="/" target="_top">
+              <a className="hds-suggestions-item__action" href="/" target="_top">
                 <p>
                   Pakkeboks (<strong>parcel</strong> locker)
                 </p>
               </a>
             </Suggestions.Item>
             <Suggestions.Item>
-              <a href="/" target="_top">
+              <button className="hds-suggestions-item__action" type="button">
                 <p>
                   Send Norgespakke™ small from a <strong>parcel</strong> locker
                 </p>
-              </a>
+              </button>
             </Suggestions.Item>
             <Suggestions.Item>
-              <a href="/" target="_top">
+              <a className="hds-suggestions-item__action" href="/" target="_top">
                 <p>
                   <strong>Parcel</strong> pickup automat
                 </p>

@@ -32,7 +32,7 @@
   .hds-suggestions-item {
     background-color: var(--hds-colors-neutral-surface-default);
 
-    a {
+    > :is(a, .hds-suggestions-item__action) {
       display: flex;
       align-items: center;
       gap: var(--hds-suggestions-padding);
@@ -40,6 +40,15 @@
       color: var(--hds-colors-neutral-text-default);
       text-decoration: none;
       outline-offset: -2px;
+
+      &.hds-suggestions-item__action {
+        width: 100%;
+        border: 0;
+        background: none;
+        text-align: left;
+        font: inherit;
+        cursor: pointer;
+      }
 
       svg {
         width: var(--hds-suggestions-icon-size);
@@ -64,12 +73,12 @@
       background-color: var(--hds-colors-surface-active);
     }
 
-    &:first-child a {
+    &:first-child > :is(a, .hds-suggestions-item__action) {
       border-top-left-radius: var(--hds-suggestions-inner-radius);
       border-top-right-radius: var(--hds-suggestions-inner-radius);
     }
 
-    &:last-child a {
+    &:last-child > :is(a, .hds-suggestions-item__action) {
       border-bottom-left-radius: var(--hds-suggestions-inner-radius);
       border-bottom-right-radius: var(--hds-suggestions-inner-radius);
     }
