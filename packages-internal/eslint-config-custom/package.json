@@ -6,7 +6,7 @@
   "devDependencies": {
     "@vercel/style-guide": "^6.0.0",
     "eslint": "8.57.1",
-    "eslint-config-turbo": "^2.10.9",
+    "eslint-config-turbo": "^2.10.10",
     "eslint-plugin-mdx": "^3.8.1",
     "eslint-plugin-storybook": "^0.12.0",
     "typescript": "5.8.3"
