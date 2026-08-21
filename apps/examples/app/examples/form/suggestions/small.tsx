@@ -30,27 +30,27 @@ const Example = () => (
             </Button>
           </SearchWrapper>
           <Suggestions size="small">
-            <li>
+            <Suggestions.Item>
               <a href="/" target="_top">
                 <p>
                   Pakkeboks (<strong>parcel</strong> locker)
                 </p>
               </a>
-            </li>
-            <li>
+            </Suggestions.Item>
+            <Suggestions.Item>
               <a href="/" target="_top">
                 <p>
                   Send Norgespakke™ small from a <strong>parcel</strong> locker
                 </p>
               </a>
-            </li>
-            <li>
+            </Suggestions.Item>
+            <Suggestions.Item>
               <a href="/" target="_top">
                 <p>
                   <strong>Parcel</strong> pickup automat
                 </p>
               </a>
-            </li>
+            </Suggestions.Item>
           </Suggestions>
         </Suggestions.Wrapper>
       </form>

@@ -12,7 +12,15 @@ export interface SuggestionsProps extends HTMLAttributes<HTMLUListElement> {
   size?: "default" | "small";
 }
 
+export type SuggestionsItemProps = HTMLAttributes<HTMLLIElement>;
+
 export type SuggestionProps = SuggestionsProps;
+
+const SuggestionsItem = forwardRef<HTMLLIElement, SuggestionsItemProps>(
+  ({ className, ...rest }, ref) => (
+    <li className={clsx("hds-suggestions-item", className as undefined)} ref={ref} {...rest} />
+  ),
+);
 
 /**
  * A list of suggestions for the user while searching
@@ -20,15 +28,15 @@ export type SuggestionProps = SuggestionsProps;
  * @example
  * ```tsx
  * <Suggestions>
- *  <li>
+ *  <Suggestions.Item>
  *   <a href="/">Albania</a>
- *  </li>
- *  <li>
+ *  </Suggestions.Item>
+ *  <Suggestions.Item>
  *   <a href="/">Algeria</a>
- *  </li>
- *  <li>
+ *  </Suggestions.Item>
+ *  <Suggestions.Item>
  *   <a href="/">Nepal</a>
- *  </li>
+ *  </Suggestions.Item>
  * </Suggestions>
  * ```
  */
@@ -47,8 +55,11 @@ export const Suggestions = forwardRef<HTMLUListElement, SuggestionProps>(
 ) as SuggestionsType;
 
 type SuggestionsType = ReturnType<typeof forwardRef<HTMLUListElement, SuggestionProps>> & {
+  Item: typeof SuggestionsItem;
   Wrapper: typeof SuggestionsWrapper;
 };
 
 Suggestions.displayName = "Suggestions";
+SuggestionsItem.displayName = "Suggestions.Item";
+Suggestions.Item = SuggestionsItem;
 Suggestions.Wrapper = SuggestionsWrapper;

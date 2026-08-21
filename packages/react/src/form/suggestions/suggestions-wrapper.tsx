@@ -19,9 +19,9 @@ export type SuggestionsWrapperProps = HTMLAttributes<HTMLDivElement>;
  *     </Button>
  *   </SearchWrapper>
  *   <Suggestions>
- *     <li>
+ *     <Suggestions.Item>
  *       <a href="/">Albania</a>
- *     </li>
+ *     </Suggestions.Item>
  *   </Suggestions>
  * </Suggestions.Wrapper>
  * ```

@@ -29,7 +29,7 @@ const Example = () => (
             </Button>
           </SearchWrapper>
           <Suggestions>
-            <li>
+            <Suggestions.Item>
               <a href="/" target="_top">
                 <GlobeIcon />
                 <div>
@@ -42,8 +42,8 @@ const Example = () => (
                   Pakkeboks (<strong>parcel</strong> locker)
                 </div>
               </a>
-            </li>
-            <li>
+            </Suggestions.Item>
+            <Suggestions.Item>
               <a href="/" target="_top">
                 <GlobeIcon />
                 <div>
@@ -56,8 +56,8 @@ const Example = () => (
                   Send Norgespakke™ small from a <strong>parcel</strong> locker
                 </div>
               </a>
-            </li>
-            <li>
+            </Suggestions.Item>
+            <Suggestions.Item>
               <a href="/" target="_top">
                 <GlobeIcon />
                 <div>
@@ -70,7 +70,7 @@ const Example = () => (
                   <strong>Parcel</strong> pickup automat
                 </div>
               </a>
-            </li>
+            </Suggestions.Item>
           </Suggestions>
         </Suggestions.Wrapper>
       </form>

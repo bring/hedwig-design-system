@@ -59,11 +59,11 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
         /* Overriding the height default for Suggestions*/
         <Suggestions style={{ maxHeight: "min(50vh, 300px)" }}>
           {matches.map((item) => (
-            <li key={item}>
+            <Suggestions.Item key={item}>
               <a href="/" target="_top">
                 {item}
               </a>
-            </li>
+            </Suggestions.Item>
           ))}
         </Suggestions>
       )}
