@@ -14,6 +14,20 @@ export interface SuggestionsItemActionProps extends AnchorHTMLAttributes<HTMLAnc
   asChild?: boolean;
 }
 
+/**
+ * A single structural item in a suggestions list.
+ *
+ * Use `Suggestions.ItemAction` as the interactive child of each item.
+ *
+ * @example
+ * ```tsx
+ * <Suggestions.Item>
+ *   <Suggestions.ItemAction href="/results">
+ *     View results
+ *   </Suggestions.ItemAction>
+ * </Suggestions.Item>
+ * ```
+ */
 export const SuggestionsItem = forwardRef<HTMLLIElement, SuggestionsItemProps>(
   ({ className, ...rest }, ref) => (
     <li className={clsx("hds-suggestions-item", className as undefined)} ref={ref} {...rest} />
@@ -22,6 +36,24 @@ export const SuggestionsItem = forwardRef<HTMLLIElement, SuggestionsItemProps>(
 
 SuggestionsItem.displayName = "Suggestions.Item";
 
+/**
+ * The interactive action within a suggestions item.
+ *
+ * Renders an anchor by default and applies the `hds-suggestions-item__action`
+ * class. Use `asChild` to render another interactive element, such as a button
+ * or router link, while preserving the action styling.
+ *
+ * @example
+ * ```tsx
+ * <Suggestions.ItemAction href="/results">
+ *   View results
+ * </Suggestions.ItemAction>
+ *
+ * <Suggestions.ItemAction asChild>
+ *   <button type="button">Select result</button>
+ * </Suggestions.ItemAction>
+ * ```
+ */
 export const SuggestionsItemAction = forwardRef<HTMLElement, SuggestionsItemActionProps>(
   ({ asChild, className, ...rest }, ref) => {
     const Component = asChild ? Slot : "a";
