@@ -6,12 +6,18 @@ export type SuggestionsWrapperProps = HTMLAttributes<HTMLDivElement>;
 
 /**
  * A wrapper for search suggestions.
- * Intended to contain Input and Suggestions.
+ * Intended to contain a SearchWrapper and Suggestions.
  *
  * @example
  * ```tsx
  * <Suggestions.Wrapper>
- *   <Input type="search" aria-label="Search content" />
+ *   <SearchWrapper>
+ *     <Input type="search" aria-label="Search content" />
+ *     <Button>Search</Button>
+ *     <Button icon aria-label="Clear search">
+ *       <XmarkIcon />
+ *     </Button>
+ *   </SearchWrapper>
  *   <Suggestions>
  *     <li>
  *       <a href="/">Albania</a>
