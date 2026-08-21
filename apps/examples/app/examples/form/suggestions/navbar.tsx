@@ -114,6 +114,6 @@ export default Example;
 import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   description: "A list of suggestions for the user while searching",
-  index: 1,
+  index: 2,
   layout: "centered-fullwidth",
 };
