@@ -24,7 +24,7 @@ const Example = () => (
             <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
               <MagnifyingGlassIcon />
             </Button>
-            <Button icon data-color="posten" variant="tertiary">
+            <Button icon variant="tertiary">
               <XmarkIcon />
             </Button>
           </SearchWrapper>
