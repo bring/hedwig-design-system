@@ -7,5 +7,6 @@ export * from "./input";
 export * from "./radio-button";
 export * from "./search-wrapper";
 export * from "./select";
+export * from "./suggestions";
 export * from "./textarea";
 export * from "./validation-message";

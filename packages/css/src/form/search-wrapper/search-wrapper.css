@@ -1,6 +1,7 @@
 .hds-search-wrapper {
   --hds-search-wrapper-input-row: 1;
 
+  align-self: start;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: var(--hds-spacing-4) var(--hds-spacing-8);
