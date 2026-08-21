@@ -18,9 +18,7 @@ const Example = () => (
         <Suggestions.Wrapper>
           <SearchWrapper>
             <Input type="search" defaultValue="parcel" aria-label="Search content" />
-            <Button className="suggestions-demo-search-button__desktop" data-color="posten">
-              Search
-            </Button>
+            <Button className="suggestions-demo-search-button__desktop">Search</Button>
             <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
               <MagnifyingGlassIcon />
             </Button>
