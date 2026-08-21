@@ -60,8 +60,8 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
         <Suggestions style={{ maxHeight: "min(50vh, 300px)" }}>
           {matches.map((item) => (
             <Suggestions.Item key={item}>
-              <Suggestions.ItemAction asChild>
-                <button type="button">{item}</button>
+              <Suggestions.ItemAction href="/" target="_top">
+                {item}
               </Suggestions.ItemAction>
             </Suggestions.Item>
           ))}
