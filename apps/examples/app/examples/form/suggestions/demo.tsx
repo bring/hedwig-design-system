@@ -30,7 +30,7 @@ const Example = () => (
           </SearchWrapper>
           <Suggestions>
             <Suggestions.Item>
-              <a className="hds-suggestions-item__action" href="/" target="_top">
+              <Suggestions.ItemAction href="/" target="_top">
                 <GlobeIcon />
                 <div>
                   <Text
@@ -41,35 +41,39 @@ const Example = () => (
                   </Text>
                   Pakkeboks (<strong>parcel</strong> locker)
                 </div>
-              </a>
+              </Suggestions.ItemAction>
             </Suggestions.Item>
             <Suggestions.Item>
-              <button className="hds-suggestions-item__action" type="button">
-                <GlobeIcon />
-                <div>
-                  <Text
-                    style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
-                    variant="technical"
-                  >
-                    Content
-                  </Text>
-                  Send Norgespakke™ small from a <strong>parcel</strong> locker
-                </div>
-              </button>
+              <Suggestions.ItemAction asChild>
+                <button type="button">
+                  <GlobeIcon />
+                  <div>
+                    <Text
+                      style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
+                      variant="technical"
+                    >
+                      Content
+                    </Text>
+                    Send Norgespakke™ small from a <strong>parcel</strong> locker
+                  </div>
+                </button>
+              </Suggestions.ItemAction>
             </Suggestions.Item>
             <Suggestions.Item>
-              <button className="hds-suggestions-item__action" type="button">
-                <GlobeIcon />
-                <div>
-                  <Text
-                    style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
-                    variant="technical"
-                  >
-                    Content
-                  </Text>
-                  <strong>Parcel</strong> pickup automat
-                </div>
-              </button>
+              <Suggestions.ItemAction asChild>
+                <button type="button">
+                  <GlobeIcon />
+                  <div>
+                    <Text
+                      style={{ color: "var(--hds-colors-neutral-text-subtle)" }}
+                      variant="technical"
+                    >
+                      Content
+                    </Text>
+                    <strong>Parcel</strong> pickup automat
+                  </div>
+                </button>
+              </Suggestions.ItemAction>
             </Suggestions.Item>
           </Suggestions>
         </Suggestions.Wrapper>

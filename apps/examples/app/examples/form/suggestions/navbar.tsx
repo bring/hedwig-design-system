@@ -60,9 +60,9 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
         <Suggestions style={{ maxHeight: "min(50vh, 300px)" }}>
           {matches.map((item) => (
             <Suggestions.Item key={item}>
-              <button className="hds-suggestions-item__action" type="button">
-                {item}
-              </button>
+              <Suggestions.ItemAction asChild>
+                <button type="button">{item}</button>
+              </Suggestions.ItemAction>
             </Suggestions.Item>
           ))}
         </Suggestions>

@@ -2,7 +2,14 @@ import { forwardRef } from "react";
 import type { HTMLAttributes } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 
-export type SuggestionsWrapperProps = HTMLAttributes<HTMLDivElement>;
+export interface SuggestionsWrapperProps extends HTMLAttributes<HTMLDivElement> {
+  /**
+   * Change the rendered element for the suggestions wrapper.
+   *
+   * @default "div"
+   */
+  as?: "section" | "div" | "article" | "aside";
+}
 
 /**
  * A wrapper for search suggestions.
@@ -20,17 +27,23 @@ export type SuggestionsWrapperProps = HTMLAttributes<HTMLDivElement>;
  *   </SearchWrapper>
  *   <Suggestions>
  *     <Suggestions.Item>
- *       <a className="hds-suggestions-item__action" href="/">
- *         Albania
- *       </a>
+ *       <Suggestions.ItemAction href="/">Albania</Suggestions.ItemAction>
  *     </Suggestions.Item>
  *   </Suggestions>
  * </Suggestions.Wrapper>
  * ```
+ *
+ * Use `as` when the wrapper needs a different semantic element:
+ * ```tsx
+ * <Suggestions.Wrapper as="section">
+ *   <SearchWrapper>...</SearchWrapper>
+ *   <Suggestions>...</Suggestions>
+ * </Suggestions.Wrapper>
+ * ```
  */
 export const SuggestionsWrapper = forwardRef<HTMLDivElement, SuggestionsWrapperProps>(
-  ({ className, ...rest }, ref) => (
-    <div className={clsx("hds-suggestions-wrapper", className as undefined)} ref={ref} {...rest} />
+  ({ as: Tag = "div", className, ...rest }, ref) => (
+    <Tag className={clsx("hds-suggestions-wrapper", className as undefined)} ref={ref} {...rest} />
   ),
 );
 
