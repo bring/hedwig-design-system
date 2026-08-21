@@ -8,7 +8,7 @@ export interface SuggestionsWrapperProps extends HTMLAttributes<HTMLDivElement> 
    *
    * @default "div"
    */
-  as?: "section" | "div" | "article" | "aside";
+  as?: "section" | "div";
 }
 
 /**

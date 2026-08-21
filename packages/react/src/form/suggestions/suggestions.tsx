@@ -6,6 +6,12 @@ import { SuggestionsWrapper } from "./suggestions-wrapper";
 
 export interface SuggestionsProps extends HTMLAttributes<HTMLUListElement> {
   /**
+   * Change the rendered list element.
+   *
+   * @default "ul"
+   */
+  as?: "ul" | "ol";
+  /**
    * Sets the size of the items
    *
    * @default "default"
@@ -63,22 +69,33 @@ const SuggestionsItemAction = forwardRef<HTMLElement, SuggestionsItemActionProps
  *  </Suggestions.Item>
  * </Suggestions>
  * ```
+ *
+ * Use `as="ol"` for ordered suggestions:
+ * ```tsx
+ * <Suggestions as="ol">
+ *   <Suggestions.Item>
+ *     <Suggestions.ItemAction href="/">First result</Suggestions.ItemAction>
+ *   </Suggestions.Item>
+ * </Suggestions>
+ * ```
  */
-export const Suggestions = forwardRef<HTMLUListElement, SuggestionProps>(
-  ({ size = "default", className, ...rest }, ref) => (
-    <ul
+export const Suggestions = forwardRef<HTMLUListElement | HTMLOListElement, SuggestionProps>(
+  ({ as: Tag = "ul", size = "default", className, ...rest }, ref) => (
+    <Tag
       className={clsx(
         "hds-suggestions",
         size !== "default" && `hds-suggestions--${size}`,
         className as undefined,
       )}
-      ref={ref}
+      ref={ref as Ref<HTMLUListElement & HTMLOListElement>}
       {...rest}
     />
   ),
 ) as SuggestionsType;
 
-type SuggestionsType = ReturnType<typeof forwardRef<HTMLUListElement, SuggestionProps>> & {
+type SuggestionsType = ReturnType<
+  typeof forwardRef<HTMLUListElement | HTMLOListElement, SuggestionProps>
+> & {
   Item: typeof SuggestionsItem;
   ItemAction: typeof SuggestionsItemAction;
   Wrapper: typeof SuggestionsWrapper;
