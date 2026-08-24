@@ -54,17 +54,23 @@ export type SuggestionProps = SuggestionsProps;
  * ```
  */
 export const Suggestions = forwardRef<HTMLUListElement | HTMLOListElement, SuggestionProps>(
-  ({ as: Tag = "ul", size = "default", className, ...rest }, ref) => (
-    <Tag
-      className={clsx(
-        "hds-suggestions",
-        size !== "default" && `hds-suggestions--${size}`,
-        className as undefined,
-      )}
-      ref={ref as Ref<HTMLUListElement & HTMLOListElement>}
-      {...rest}
-    />
-  ),
+  ({ as = "ul", size = "default", className, ...rest }, ref) => {
+    const classes = clsx(
+      "hds-suggestions",
+      size !== "default" && `hds-suggestions--${size}`,
+      className as undefined,
+    );
+
+    return as === "ol" ? (
+      <ol
+        className={classes}
+        ref={ref as Ref<HTMLOListElement>}
+        {...(rest as HTMLAttributes<HTMLOListElement>)}
+      />
+    ) : (
+      <ul className={classes} ref={ref as Ref<HTMLUListElement>} {...rest} />
+    );
+  },
 ) as SuggestionsType;
 
 type SuggestionsType = ReturnType<
