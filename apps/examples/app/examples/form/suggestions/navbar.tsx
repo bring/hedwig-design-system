@@ -9,7 +9,8 @@ import {
   Skeleton,
 } from "@postenbring/hedwig-react";
 import { XmarkIcon, MagnifyingGlassIcon } from "../../../assets/icon-examples";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import type { KeyboardEvent } from "react";
 import "./demo.css";
 
 const suggestionItems = [
@@ -25,19 +26,46 @@ const suggestionItems = [
 
 const ShowSearch = ({ onClose }: { onClose: () => void }) => {
   const [query, setQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const suggestionRefs = useRef<Array<HTMLElement | null>>([]);
 
   const matches = suggestionItems.filter((item) =>
     item.toLowerCase().startsWith(query.toLowerCase()),
   );
 
+  const focusSuggestion = (index: number) => {
+    suggestionRefs.current[index]?.focus();
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLElement>, index?: number) => {
+    if (event.key === "ArrowDown") {
+      const nextIndex = index === undefined ? 0 : index + 1;
+      if (nextIndex < matches.length) {
+        event.preventDefault();
+        focusSuggestion(nextIndex);
+      }
+    }
+
+    if (event.key === "ArrowUp" && index !== undefined) {
+      event.preventDefault();
+      if (index === 0) {
+        inputRef.current?.focus();
+      } else {
+        focusSuggestion(index - 1);
+      }
+    }
+  };
+
   return (
     <Suggestions.Wrapper>
       <SearchWrapper>
         <Input
+          ref={inputRef}
           type="search"
           aria-label="Search content"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
           placeholder="Try searching for `a`"
         />
         <Button className="suggestions-demo-search-button__desktop">Search</Button>
@@ -58,9 +86,16 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
       {query.length > 0 && matches.length > 0 && (
         /* Overriding the height default for Suggestions*/
         <Suggestions style={{ maxHeight: "min(50vh, 300px)" }}>
-          {matches.map((item) => (
+          {matches.map((item, index) => (
             <Suggestions.Item key={item}>
-              <Suggestions.ItemAction href="/" target="_top">
+              <Suggestions.ItemAction
+                ref={(element) => {
+                  suggestionRefs.current[index] = element;
+                }}
+                href="/"
+                target="_top"
+                onKeyDown={(event) => handleKeyDown(event, index)}
+              >
                 {item}
               </Suggestions.ItemAction>
             </Suggestions.Item>
