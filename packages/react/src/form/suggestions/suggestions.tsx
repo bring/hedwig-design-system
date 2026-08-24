@@ -46,7 +46,9 @@ export type SuggestionProps = SuggestionsProps;
  * ```tsx
  * <Suggestions as="ol">
  *   <Suggestions.Item>
- *     <Suggestions.ItemAction href="/">First result</Suggestions.ItemAction>
+*     <Suggestions.ItemAction href="/">
+*       First result
+*     </Suggestions.ItemAction>
  *   </Suggestions.Item>
  * </Suggestions>
  * ```
