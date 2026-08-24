@@ -8,7 +8,7 @@ import {
   Button,
   SearchWrapper,
 } from "@postenbring/hedwig-react";
-import { GlobeIcon, MagnifyingGlassIcon, XmarkIcon } from "../../../assets/icon-examples";
+import { GlobeIcon, MagnifyingGlassIcon } from "../../../assets/icon-examples";
 import { useRef } from "react";
 import type { KeyboardEvent } from "react";
 import "./demo.css";
@@ -56,9 +56,6 @@ const Example = () => {
               <Button className="suggestions-demo-search-button__desktop">Search</Button>
               <Button className="suggestions-demo-search-button__mobile" icon aria-label="Search">
                 <MagnifyingGlassIcon />
-              </Button>
-              <Button icon variant="tertiary">
-                <XmarkIcon />
               </Button>
             </SearchWrapper>
             <Suggestions>
