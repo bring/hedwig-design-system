@@ -7,7 +7,7 @@ import {
   Skeleton,
   Suggestions,
 } from "@postenbring/hedwig-react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import "./demo.css";
 
 const suggestionItems = [
@@ -22,13 +22,8 @@ const suggestionItems = [
 ];
 
 const Example = () => {
-  const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionRefs = useRef<Array<HTMLElement | null>>([]);
-
-  const matches = suggestionItems.filter((item) =>
-    item.toLowerCase().startsWith(query.toLowerCase()),
-  );
 
   const focusSuggestion = (index: number) => {
     suggestionRefs.current[index]?.focus();
@@ -44,50 +39,46 @@ const Example = () => {
                 ref={inputRef}
                 type="search"
                 aria-label="Search content"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === "ArrowDown" && matches.length > 0) {
+                  if (e.key === "ArrowDown") {
                     e.preventDefault();
                     focusSuggestion(0);
                   }
                 }}
-                placeholder="Try searching for `a`"
+                placeholder="Focus here, then press ArrowDown"
               />
               <Button>Search</Button>
             </SearchWrapper>
-            {query.length > 0 && matches.length > 0 && (
-              <Suggestions>
-                {matches.map((item, index) => (
-                  <Suggestions.Item key={item}>
-                    <Suggestions.ItemAction
-                      ref={(element) => {
-                        suggestionRefs.current[index] = element;
-                      }}
-                      href="/"
-                      target="_top"
-                      onKeyDown={(e) => {
-                        if (e.key === "ArrowDown" && index < matches.length - 1) {
-                          e.preventDefault();
-                          focusSuggestion(index + 1);
-                        }
+            <Suggestions>
+              {suggestionItems.map((item, index) => (
+                <Suggestions.Item key={item}>
+                  <Suggestions.ItemAction
+                    ref={(element) => {
+                      suggestionRefs.current[index] = element;
+                    }}
+                    href="/"
+                    target="_top"
+                    onKeyDown={(e) => {
+                      if (e.key === "ArrowDown" && index < suggestionItems.length - 1) {
+                        e.preventDefault();
+                        focusSuggestion(index + 1);
+                      }
 
-                        if (e.key === "ArrowUp") {
-                          e.preventDefault();
-                          if (index === 0) {
-                            inputRef.current?.focus();
-                          } else {
-                            focusSuggestion(index - 1);
-                          }
+                      if (e.key === "ArrowUp") {
+                        e.preventDefault();
+                        if (index === 0) {
+                          inputRef.current?.focus();
+                        } else {
+                          focusSuggestion(index - 1);
                         }
-                      }}
-                    >
-                      {item}
-                    </Suggestions.ItemAction>
-                  </Suggestions.Item>
-                ))}
-              </Suggestions>
-            )}
+                      }
+                    }}
+                  >
+                    {item}
+                  </Suggestions.ItemAction>
+                </Suggestions.Item>
+              ))}
+            </Suggestions>
           </Suggestions.Wrapper>
         </form>
       </Container>
