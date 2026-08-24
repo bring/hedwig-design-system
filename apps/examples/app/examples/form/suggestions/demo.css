@@ -1,0 +1,13 @@
+.suggestions-demo-search-button__mobile {
+  display: none;
+}
+
+@media (max-width: 939px) {
+  .suggestions-demo-search-button__desktop {
+    display: none;
+  }
+
+  .suggestions-demo-search-button__mobile {
+    display: inline-flex;
+  }
+}
