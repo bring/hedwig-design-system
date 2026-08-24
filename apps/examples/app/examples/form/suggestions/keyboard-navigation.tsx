@@ -7,7 +7,9 @@ import {
   Skeleton,
   Suggestions,
 } from "@postenbring/hedwig-react";
-import { useRef } from "react";
+import { XmarkIcon } from "../../../assets/icon-examples";
+import { useRef, useState } from "react";
+import type { KeyboardEvent } from "react";
 import "./demo.css";
 
 const suggestionItems = [
@@ -22,6 +24,7 @@ const suggestionItems = [
 ];
 
 const Example = () => {
+  const [showSuggestions, setShowSuggestions] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionRefs = useRef<Array<HTMLElement | null>>([]);
 
@@ -29,56 +32,73 @@ const Example = () => {
     suggestionRefs.current[index]?.focus();
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLElement>, index?: number) => {
+    if (event.key === "ArrowDown") {
+      const nextIndex = index === undefined ? 0 : index + 1;
+      if (nextIndex < suggestionItems.length) {
+        event.preventDefault();
+        focusSuggestion(nextIndex);
+      }
+    }
+
+    if (event.key === "ArrowUp" && index !== undefined) {
+      event.preventDefault();
+      if (index === 0) {
+        inputRef.current?.focus();
+      } else {
+        focusSuggestion(index - 1);
+      }
+    }
+  };
+
   return (
     <>
       <Container variant="slim">
         <form style={{ paddingTop: "var(--hds-spacing-20-24)" }}>
           <Suggestions.Wrapper>
-            <SearchWrapper>
-              <Input
-                ref={inputRef}
-                type="search"
-                aria-label="Search content"
-                onKeyDown={(e) => {
-                  if (e.key === "ArrowDown") {
-                    e.preventDefault();
-                    focusSuggestion(0);
-                  }
-                }}
-                placeholder="Focus here, then press ArrowDown"
-              />
-              <Button>Search</Button>
-            </SearchWrapper>
-            <Suggestions>
-              {suggestionItems.map((item, index) => (
-                <Suggestions.Item key={item}>
-                  <Suggestions.ItemAction
-                    ref={(element) => {
-                      suggestionRefs.current[index] = element;
-                    }}
-                    href="/"
-                    target="_top"
-                    onKeyDown={(e) => {
-                      if (e.key === "ArrowDown" && index < suggestionItems.length - 1) {
-                        e.preventDefault();
-                        focusSuggestion(index + 1);
-                      }
-
-                      if (e.key === "ArrowUp") {
-                        e.preventDefault();
-                        if (index === 0) {
-                          inputRef.current?.focus();
-                        } else {
-                          focusSuggestion(index - 1);
-                        }
-                      }
-                    }}
+            {showSuggestions ? (
+              <>
+                <SearchWrapper>
+                  <Input
+                    ref={inputRef}
+                    type="search"
+                    aria-label="Search content"
+                    defaultValue="al"
+                    onKeyDown={handleKeyDown}
+                    placeholder="Focus here, then press ArrowDown"
+                  />
+                  <Button>Search</Button>
+                  <Button
+                    icon
+                    variant="tertiary"
+                    aria-label="Close suggestions"
+                    onClick={() => setShowSuggestions(false)}
                   >
-                    {item}
-                  </Suggestions.ItemAction>
-                </Suggestions.Item>
-              ))}
-            </Suggestions>
+                    <XmarkIcon />
+                  </Button>
+                </SearchWrapper>
+                <Suggestions>
+                  {suggestionItems.map((item, index) => (
+                    <Suggestions.Item key={item}>
+                      <Suggestions.ItemAction
+                        ref={(element) => {
+                          suggestionRefs.current[index] = element;
+                        }}
+                        href="/"
+                        target="_top"
+                        onKeyDown={(event) => handleKeyDown(event, index)}
+                      >
+                        {item}
+                      </Suggestions.ItemAction>
+                    </Suggestions.Item>
+                  ))}
+                </Suggestions>
+              </>
+            ) : (
+              <Button type="button" onClick={() => setShowSuggestions(true)}>
+                Open search
+              </Button>
+            )}
           </Suggestions.Wrapper>
         </form>
       </Container>
