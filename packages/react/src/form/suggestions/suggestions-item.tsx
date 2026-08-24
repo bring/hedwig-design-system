@@ -54,7 +54,7 @@ SuggestionsItem.displayName = "Suggestions.Item";
  * </Suggestions.ItemAction>
  * ```
  */
-export const SuggestionsItemAction = forwardRef<HTMLElement, SuggestionsItemActionProps>(
+export const SuggestionsItemAction = forwardRef<HTMLAnchorElement, SuggestionsItemActionProps>(
   ({ asChild, className, ...rest }, ref) => {
     const Component = asChild ? Slot : "a";
     return (
