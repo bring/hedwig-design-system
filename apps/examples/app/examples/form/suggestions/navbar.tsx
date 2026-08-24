@@ -81,6 +81,7 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
         <Button
           variant="tertiary"
           icon
+          aria-label="Close search"
           onClick={() => {
             onClose();
             setQuery("");
