@@ -6,7 +6,7 @@ import { SuggestionsItem, SuggestionsItemAction } from "./suggestions-item";
 
 export type { SuggestionsItemActionProps, SuggestionsItemProps } from "./suggestions-item";
 
-export interface SuggestionsProps extends HTMLAttributes<HTMLUListElement> {
+export interface SuggestionsProps extends HTMLAttributes<HTMLUListElement | HTMLOListElement> {
   /**
    * Change the rendered list element.
    *
