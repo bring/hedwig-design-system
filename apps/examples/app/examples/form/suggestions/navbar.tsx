@@ -38,6 +38,12 @@ const ShowSearch = ({ onClose }: { onClose: () => void }) => {
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>, index?: number) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      onClose();
+      return;
+    }
+
     if (event.key === "ArrowDown") {
       const nextIndex = index === undefined ? 0 : index + 1;
       if (nextIndex < matches.length) {
