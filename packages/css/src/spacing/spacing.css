@@ -4,6 +4,7 @@
  * Responsive extension of the spacing css variables
  */
 :root {
+  --hds-spacing-2-4: var(--hds-spacing-2);
   --hds-spacing-4-8: var(--hds-spacing-4);
   --hds-spacing-8-12: var(--hds-spacing-8);
   --hds-spacing-12-16: var(--hds-spacing-12);
@@ -18,6 +19,7 @@
   --hds-spacing-120-160: var(--hds-spacing-120);
 
   @media (--large) {
+    --hds-spacing-2-4: var(--hds-spacing-4);
     --hds-spacing-4-8: var(--hds-spacing-8);
     --hds-spacing-8-12: var(--hds-spacing-12);
     --hds-spacing-12-16: var(--hds-spacing-16);

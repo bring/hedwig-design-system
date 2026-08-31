@@ -170,6 +170,7 @@ export const BreakpointMedium : "720px";
 export const BreakpointLarge : "940px";
 /** Most modern laptops and desktop monitors */
 export const BreakpointXlarge : "1200px";
+export const Spacing2 : "2px";
 export const Spacing4 : "4px";
 export const Spacing8 : "8px";
 export const Spacing12 : "12px";
