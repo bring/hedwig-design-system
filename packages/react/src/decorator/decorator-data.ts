@@ -22,7 +22,7 @@ export interface DecoratorLinkItem {
   absolutePath: string;
 }
 
-interface DecoratorIconItem extends DecoratorLinkItem {
+export interface DecoratorIconItem extends DecoratorLinkItem {
   serviceIcon: string;
 }
 

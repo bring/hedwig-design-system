@@ -1,6 +1,20 @@
 @import url("../_custom-media.css");
 @import url("../spacing/spacing.css");
 
+/* Row of quick-access service links, shown above the header link sections */
+.hds-decorator__header-icon-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hds-spacing-16) var(--hds-spacing-24);
+  margin: 0 0 var(--hds-spacing-48);
+  padding: 0;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+  }
+}
+
 /**
  * Header link sections
  * Accordion on mobile, equal-size columns on desktop.

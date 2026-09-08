@@ -27,7 +27,7 @@ export function Search({ identifier, header }: SearchProps) {
         <Input
           label=""
           aria-label={header.searchAriaLabel}
-          role="search"
+          type="search"
           placeholder={header.searchPlaceholder}
           value={term}
           onChange={(event) => {

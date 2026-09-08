@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Navbar } from "../navbar";
 import { Footer } from "../footer";
@@ -6,6 +6,7 @@ import { Accordion } from "../accordion";
 import { Container } from "../layout";
 import { Link } from "../link";
 import { LinkList } from "../list/link-list";
+import { Skeleton } from "../skeleton";
 import { useDecoratorData } from "./use-decorator-data";
 import {
   resolveFrontPageUrl,
@@ -21,7 +22,7 @@ import { CloseIcon, SearchIcon } from "./icons";
  * Bare `<li>` items — wrap in `LinkList` yourself, or pass straight to
  * `Footer.LinkSection`, which wraps its children in a `LinkList` internally.
  */
-function LinkItems({ items }: { items: DecoratorLinkItem[] }) {
+function LinkItems({ items }: Readonly<{ items: DecoratorLinkItem[] }>) {
   return (
     <>
       {items.map((item) => (
@@ -37,10 +38,18 @@ export interface DecoratorProps extends DecoratorSiteIdentifier {
   children: React.ReactNode;
 
   /**
-   * Rendered in place of the default header/footer while data is loading.
-   * Defaults to rendering `children` alone (no header/footer flash of empty chrome).
+   * Rendered in place of the header while data is loading.
+   * Defaults to a skeleton bar sized to the navbar's height, to avoid layout
+   * shift once the real header appears.
    */
-  fallback?: React.ReactNode;
+  loadingFallback?: React.ReactNode;
+
+  /**
+   * Called when fetching header/footer content from Enonic fails. Content
+   * still renders without decorator chrome — this is for reporting the
+   * failure to your own error tracking, since the component itself can't.
+   */
+  onError?: (error: Error) => void;
 }
 
 /**
@@ -50,19 +59,41 @@ export interface DecoratorProps extends DecoratorSiteIdentifier {
  * `children` with a default header and footer built from HDS's `Navbar` and
  * `Footer`, themed for `brand`, with content fetched live from Enonic.
  */
-export function Decorator({ children, fallback, ...identifier }: DecoratorProps) {
+export function Decorator({
+  children,
+  loadingFallback,
+  onError,
+  ...identifier
+}: Readonly<DecoratorProps>) {
   const result = useDecoratorData(identifier);
   const isBring = identifier.brand === "bring";
+  const lang = identifier.lang ?? "no";
+  const translate = getTranslate(lang);
   const [searchOpen, setSearchOpen] = useState(false);
 
-  if (result.status !== "success") {
-    return <div className={clsx(isBring && "hds-theme-bring")}>{fallback ?? children}</div>;
+  useEffect(() => {
+    if (result.status === "error") {
+      // eslint-disable-next-line no-console -- the component has no other way to surface this
+      console.error("Decorator: failed to load header/footer content from Enonic.", result.error);
+      onError?.(result.error);
+    }
+  }, [result, onError]);
+
+  if (result.status === "loading") {
+    return (
+      <div className={clsx(isBring && "hds-theme-bring")}>
+        {loadingFallback ?? <Skeleton variant="rectangle" width="100%" height={112} />}
+        {children}
+      </div>
+    );
+  }
+
+  if (result.status === "error") {
+    return <div className={clsx(isBring && "hds-theme-bring")}>{children}</div>;
   }
 
   const { header, footer } = result.data;
   const frontPageUrl = resolveFrontPageUrl(identifier);
-  const lang = identifier.lang ?? "no";
-  const translate = getTranslate(lang);
 
   return (
     <div className={clsx(isBring && "hds-theme-bring")}>
@@ -105,6 +136,16 @@ export function Decorator({ children, fallback, ...identifier }: DecoratorProps)
                 />
                 <Navbar.ExpandableMenuContent>
                   <Container>
+                    {header.iconSection && header.iconSection.length > 0 ? (
+                      <ul className="hds-decorator__header-icon-section">
+                        {header.iconSection.map((icon) => (
+                          <li key={icon.absolutePath}>
+                            <a href={icon.absolutePath}>{icon.title}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+
                     <Accordion className="hds-decorator__header-sections">
                       {header.mainSections.map((section) => (
                         <Fragment key={section.heading}>
