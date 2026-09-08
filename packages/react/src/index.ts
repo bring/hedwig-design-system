@@ -7,6 +7,7 @@ export * from "./breadcrumbs";
 export * from "./button";
 export * from "./button-list";
 export * from "./card";
+export * from "./decorator";
 export * from "./description-list";
 export * from "./figure";
 export * from "./form";

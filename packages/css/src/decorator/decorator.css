@@ -1,0 +1,109 @@
+@import url("../_custom-media.css");
+@import url("../spacing/spacing.css");
+
+/**
+ * Header link sections
+ * Accordion on mobile, equal-size columns on desktop.
+ * Same dual-render + CSS-toggle pattern as .hds-footer__link-sections.
+ */
+.hds-decorator__header-sections.hds-accordion {
+  &:empty {
+    display: none;
+  }
+
+  @media (--large) {
+    display: grid;
+    gap: var(--hds-spacing-24);
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+}
+
+/* Mobile accordion item */
+.hds-decorator__header-section.hds-accordion-item {
+  @media (--large) {
+    display: none;
+  }
+}
+
+/* Desktop heading + link list */
+.hds-decorator__header-section:not(.hds-accordion-item) {
+  display: none;
+
+  @media (--large) {
+    display: block;
+  }
+
+  h2 {
+    font: var(--hds-typography-body-title);
+    margin-bottom: var(--hds-spacing-16);
+  }
+}
+
+.hds-decorator__header-section .hds-list.hds-list--link-list a {
+  text-decoration: none;
+}
+
+.hds-decorator__login-nav-item {
+  position: relative;
+}
+
+/* Small popover listing multiple login destinations, opened from the "Logg inn" trigger */
+.hds-decorator__login-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--hds-spacing-12);
+  max-width: 325px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--hds-spacing-24) var(--hds-spacing-16) var(--hds-spacing-32);
+  text-align: left;
+  background-color: var(--hds-colors-neutral-bg-default);
+  box-shadow: 0 1px 5px 0 rgb(0 0 0 / 22%);
+}
+
+.hds-decorator__login-dropdown-heading {
+  font: var(--hds-typography-body-title);
+}
+
+.hds-decorator__login-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: var(--hds-spacing-8);
+  text-decoration: none;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.hds-decorator__search {
+  flex-grow: 1;
+  position: relative;
+
+  @media (--large) {
+    max-width: 600px;
+  }
+}
+
+.hds-decorator__search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--hds-colors-neutral-bg-default);
+  box-shadow: 0 1px 5px 0 rgb(0 0 0 / 22%);
+
+  li {
+    padding: var(--hds-spacing-12) var(--hds-spacing-16);
+  }
+}
