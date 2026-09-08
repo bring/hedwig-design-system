@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  applyEnvToProdUrl,
   assertDecoratorHeaderFooterData,
   assertDecoratorSearchSuggestions,
   buildHeaderFooterDataUrl,
@@ -33,6 +34,44 @@ describe("resolveFrontPageUrl", () => {
     expect(() => resolveFrontPageUrl({ brand: "bring", tld: "pl", lang: "pl" })).toThrow(
       /no known frontPageUrl/,
     );
+  });
+
+  it("defaults env to prod", () => {
+    expect(resolveFrontPageUrl({ brand: "posten" })).toBe(
+      resolveFrontPageUrl({ brand: "posten", env: "prod" }),
+    );
+  });
+
+  it("resolves the qa origin", () => {
+    expect(resolveFrontPageUrl({ brand: "posten", env: "qa" })).toBe("https://www.qa.posten.no");
+    expect(resolveFrontPageUrl({ brand: "bring", tld: "se", lang: "sv", env: "qa" })).toBe(
+      "https://www.qa.bring.se",
+    );
+  });
+
+  it("resolves the test origin", () => {
+    expect(resolveFrontPageUrl({ brand: "posten", env: "test" })).toBe("https://test.posten.no");
+    expect(resolveFrontPageUrl({ brand: "bring", tld: "dk", lang: "da", env: "test" })).toBe(
+      "https://test.bring.dk",
+    );
+  });
+
+  it("an explicit frontPageUrl bypasses env entirely", () => {
+    expect(
+      resolveFrontPageUrl({ brand: "posten", env: "qa", frontPageUrl: "https://custom.example" }),
+    ).toBe("https://custom.example");
+  });
+});
+
+describe("applyEnvToProdUrl", () => {
+  it.each([
+    ["https://www.posten.no", "qa", "https://www.qa.posten.no"],
+    ["https://www.posten.no", "test", "https://test.posten.no"],
+    ["https://www.bring.com", "qa", "https://www.qa.bring.com"],
+    ["https://www.bring.com", "test", "https://test.bring.com"],
+    ["https://www.posten.no", "prod", "https://www.posten.no"],
+  ] as const)("%s + %s -> %s", (prodUrl, env, expected) => {
+    expect(applyEnvToProdUrl(prodUrl, env)).toBe(expected);
   });
 });
 

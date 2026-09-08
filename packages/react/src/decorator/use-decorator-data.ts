@@ -24,13 +24,13 @@ export function useDecoratorData(identifier: DecoratorSiteIdentifier): UseDecora
     error: undefined,
   });
 
-  const { brand, tld, lang, frontPageUrl } = identifier;
+  const { brand, tld, lang, env, frontPageUrl } = identifier;
 
   useEffect(() => {
     let cancelled = false;
     setResult({ status: "loading", data: undefined, error: undefined });
 
-    const url = buildHeaderFooterDataUrl({ brand, tld, lang, frontPageUrl });
+    const url = buildHeaderFooterDataUrl({ brand, tld, lang, env, frontPageUrl });
 
     fetch(url)
       .then(async (response) => {
@@ -56,7 +56,7 @@ export function useDecoratorData(identifier: DecoratorSiteIdentifier): UseDecora
     return () => {
       cancelled = true;
     };
-  }, [brand, tld, lang, frontPageUrl]);
+  }, [brand, tld, lang, env, frontPageUrl]);
 
   return result;
 }

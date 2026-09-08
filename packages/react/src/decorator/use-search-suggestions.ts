@@ -18,7 +18,7 @@ export function useSearchSuggestions(
   query: string,
 ): DecoratorSearchHit[] {
   const [hits, setHits] = useState<DecoratorSearchHit[]>([]);
-  const { brand, tld, lang, frontPageUrl } = identifier;
+  const { brand, tld, lang, env, frontPageUrl } = identifier;
 
   useEffect(() => {
     if (query.length < MIN_QUERY_LENGTH) {
@@ -28,7 +28,7 @@ export function useSearchSuggestions(
 
     let cancelled = false;
     const timeoutId = setTimeout(() => {
-      const url = buildSearchSuggestionsUrl({ brand, tld, lang, frontPageUrl }, query);
+      const url = buildSearchSuggestionsUrl({ brand, tld, lang, env, frontPageUrl }, query);
       fetch(url)
         .then(async (response) => {
           if (!response.ok) {
@@ -51,7 +51,7 @@ export function useSearchSuggestions(
       cancelled = true;
       clearTimeout(timeoutId);
     };
-  }, [brand, tld, lang, frontPageUrl, query]);
+  }, [brand, tld, lang, env, frontPageUrl, query]);
 
   return hits;
 }

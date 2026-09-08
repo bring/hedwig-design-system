@@ -1,18 +1,20 @@
 export type DecoratorBrand = "posten" | "bring";
 export type DecoratorLang = "no" | "en" | "da" | "sv" | "fi" | "nl" | "pl";
 export type DecoratorTld = "no" | "com" | "dk" | "se" | "fi" | "nl" | "pl" | "be";
+export type DecoratorEnv = "test" | "qa" | "prod";
 
 /**
  * Identifies which site's header/footer content to fetch from Enonic.
  *
  * `frontPageUrl` is resolved from {@link DEFAULT_FRONT_PAGE_URLS} for the given
- * `brand`/`tld`/`lang` when omitted. Pass it explicitly to target a non-prod
- * origin (test/QA) until env-based resolution is added.
+ * `brand`/`tld`/`lang`, adjusted for `env` (default `"prod"`), when omitted.
+ * Pass `frontPageUrl` explicitly to bypass this entirely — it always wins.
  */
 export interface DecoratorSiteIdentifier {
   brand: DecoratorBrand;
   tld?: DecoratorTld;
   lang?: DecoratorLang;
+  env?: DecoratorEnv;
   frontPageUrl?: string;
 }
 
@@ -80,7 +82,10 @@ const ENONIC_SERVICE_NAME: Record<DecoratorBrand, string> = {
 /**
  * Known production front page URLs, mirroring kp-decorator's site-config.prod.ts.
  * Used as the default origin to fetch header/footer data from when `frontPageUrl`
- * isn't provided explicitly.
+ * isn't provided explicitly. `qa`/`test` origins are derived from these (see
+ * {@link applyEnvToProdUrl}) rather than kept as separate tables, since
+ * kp-decorator's own site-config.{qa,test}.ts follow this exact substitution
+ * for every entry: qa inserts "qa." after "www.", test replaces "www." with "test.".
  */
 const DEFAULT_FRONT_PAGE_URLS: Partial<
   Record<DecoratorBrand, Partial<Record<DecoratorTld, Partial<Record<DecoratorLang, string>>>>>
@@ -96,19 +101,34 @@ const DEFAULT_FRONT_PAGE_URLS: Partial<
   },
 };
 
+export function applyEnvToProdUrl(prodUrl: string, env: DecoratorEnv): string {
+  if (env === "prod") {
+    return prodUrl;
+  }
+  if (env === "qa") {
+    return prodUrl.replace(/^https:\/\/www\./, "https://www.qa.");
+  }
+  return prodUrl.replace(/^https:\/\/www\./, "https://test.");
+}
+
 export function resolveFrontPageUrl({
   brand,
   tld = "no",
   lang = "no",
+  env = "prod",
   frontPageUrl,
 }: DecoratorSiteIdentifier): string {
-  const resolved = frontPageUrl ?? DEFAULT_FRONT_PAGE_URLS[brand]?.[tld]?.[lang];
-  if (!resolved) {
+  if (frontPageUrl) {
+    return frontPageUrl;
+  }
+
+  const prodUrl = DEFAULT_FRONT_PAGE_URLS[brand]?.[tld]?.[lang];
+  if (!prodUrl) {
     throw new Error(
       `Decorator: no known frontPageUrl for brand="${brand}" tld="${tld}" lang="${lang}". Pass frontPageUrl explicitly.`,
     );
   }
-  return resolved;
+  return applyEnvToProdUrl(prodUrl, env);
 }
 
 function buildEnonicServiceUrl(identifier: DecoratorSiteIdentifier, servicePath: string): URL {
