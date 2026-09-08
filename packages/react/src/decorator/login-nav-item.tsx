@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Navbar } from "../navbar";
 import { Link } from "../link";
-import { UpRightArrowIcon } from "./icons";
+import { UpRightArrowIcon, UserIcon } from "./icons";
 import { getTranslate } from "./translations";
 import type { DecoratorHeaderData, DecoratorLang } from "./decorator-data";
 
@@ -47,7 +47,12 @@ export function LoginNavItem({ loginLinks, lang }: LoginNavItemProps) {
 
   if (loginLinks.length === 1) {
     return (
-      <Navbar.LinkItem href={loginLinks[0].absolutePath}>{loginLinks[0].title}</Navbar.LinkItem>
+      <Navbar.LinkItem className="hds-decorator__login-nav-item" href={loginLinks[0].absolutePath}>
+        <span className="hds-navbar__item-responsive-text">{loginLinks[0].title}</span>
+        <Navbar.ItemIcon>
+          <UserIcon />
+        </Navbar.ItemIcon>
+      </Navbar.LinkItem>
     );
   }
 
@@ -59,7 +64,10 @@ export function LoginNavItem({ loginLinks, lang }: LoginNavItemProps) {
           setOpen((value) => !value);
         }}
       >
-        {translate("login")}
+        <span className="hds-navbar__item-responsive-text">{translate("login")}</span>
+        <Navbar.ItemIcon>
+          <UserIcon />
+        </Navbar.ItemIcon>
       </Navbar.ButtonItem>
       {open ? (
         <aside className="hds-decorator__login-dropdown">

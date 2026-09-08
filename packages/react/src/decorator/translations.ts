@@ -50,6 +50,15 @@ const translations = {
     nl: "Waar wilt u inloggen?",
     pl: "Gdzie chcesz się zalogować?",
   },
+  "search.placeholder": {
+    no: "Søk på",
+    en: "Search on",
+    da: "Søg på",
+    sv: "Sök på",
+    fi: "Hae",
+    nl: "Zoek op",
+    pl: "Szukaj na",
+  },
 } as const satisfies Record<string, Record<DecoratorLang, string>>;
 
 export function getTranslate(lang: DecoratorLang) {

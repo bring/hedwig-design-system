@@ -8,6 +8,20 @@ import type { DecoratorHeaderFooterData, DecoratorSearchSuggestions } from "./de
 export const postenHeaderFooterData: DecoratorHeaderFooterData = {
   header: {
     loginLinks: [{ title: "Min side", relativePath: "/", absolutePath: "https://id.posten.no/" }],
+    iconSection: [
+      {
+        title: "Kundeservice",
+        relativePath: "/kundeservice",
+        absolutePath: "https://www.posten.no/kundeservice",
+        serviceIcon: "kundeservice",
+      },
+      {
+        title: "English",
+        relativePath: "/en",
+        absolutePath: "https://www.posten.no/en",
+        serviceIcon: "internasjonalt",
+      },
+    ],
     mainSections: [
       {
         heading: "Sende",

@@ -17,6 +17,7 @@ import { LoginNavItem } from "./login-nav-item";
 import { getTranslate } from "./translations";
 import { Search } from "./search";
 import { CloseIcon, SearchIcon } from "./icons";
+import { serviceIconMap } from "./service-icons";
 
 /**
  * Bare `<li>` items — wrap in `LinkList` yourself, or pass straight to
@@ -79,9 +80,14 @@ export function Decorator({
     }
   }, [result, onError]);
 
+  // `data-color` drives brand-scoped design tokens (surface/border colors, etc.) that
+  // have no root fallback in HDS — without it those colors resolve to nothing.
+  // `hds-theme-bring` remains for the logo, which is themed separately by that class.
+  const dataColor = identifier.brand;
+
   if (result.status === "loading") {
     return (
-      <div className={clsx(isBring && "hds-theme-bring")}>
+      <div className={clsx(isBring && "hds-theme-bring")} data-color={dataColor}>
         {loadingFallback ?? <Skeleton variant="rectangle" width="100%" height={112} />}
         {children}
       </div>
@@ -89,22 +95,30 @@ export function Decorator({
   }
 
   if (result.status === "error") {
-    return <div className={clsx(isBring && "hds-theme-bring")}>{children}</div>;
+    return (
+      <div className={clsx(isBring && "hds-theme-bring")} data-color={dataColor}>
+        {children}
+      </div>
+    );
   }
 
   const { header, footer } = result.data;
   const frontPageUrl = resolveFrontPageUrl(identifier);
 
   return (
-    <div className={clsx(isBring && "hds-theme-bring")}>
+    <div className={clsx("hds-decorator", isBring && "hds-theme-bring")} data-color={dataColor}>
       <Navbar>
-        <Navbar.Logo asChild>
+        <Navbar.Logo
+          asChild
+          className="hds-decorator__logo"
+          data-state={searchOpen ? "hidden-on-search-open" : "visible"}
+        >
           <a href={frontPageUrl} title={translate("to-the-front-page")} />
         </Navbar.Logo>
         <Navbar.Navigation>
           {searchOpen ? (
             <>
-              <Search identifier={identifier} header={header} />
+              <Search identifier={identifier} header={header} lang={lang} />
               <Navbar.ButtonItem
                 title={translate("close")}
                 onClick={() => {
@@ -117,67 +131,74 @@ export function Decorator({
               </Navbar.ButtonItem>
             </>
           ) : (
-            <>
-              <Navbar.ButtonItem
-                title={header.searchAriaLabel}
-                onClick={() => {
-                  setSearchOpen(true);
-                }}
-              >
-                <Navbar.ItemIcon>
-                  <SearchIcon />
-                </Navbar.ItemIcon>
-              </Navbar.ButtonItem>
-              <LoginNavItem loginLinks={header.loginLinks} lang={lang} />
-              <Navbar.ExpandableMenu>
-                <Navbar.ExpandableMenuTrigger
-                  whenClosedText={translate("menu")}
-                  whenOpenText={translate("close")}
-                />
-                <Navbar.ExpandableMenuContent>
-                  <Container>
-                    {header.iconSection && header.iconSection.length > 0 ? (
-                      <ul className="hds-decorator__header-icon-section">
-                        {header.iconSection.map((icon) => (
-                          <li key={icon.absolutePath}>
-                            <a href={icon.absolutePath}>{icon.title}</a>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-
-                    <Accordion className="hds-decorator__header-sections">
-                      {header.mainSections.map((section) => (
-                        <Fragment key={section.heading}>
-                          {/* Mobile */}
-                          <Accordion.Item className="hds-decorator__header-section">
-                            <Accordion.Header>{section.heading}</Accordion.Header>
-                            <Accordion.Content>
-                              <LinkList>
-                                <LinkItems items={section.items} />
-                              </LinkList>
-                            </Accordion.Content>
-                          </Accordion.Item>
-
-                          {/* Desktop */}
-                          <div className="hds-decorator__header-section">
-                            <h2>{section.heading}</h2>
-                            <LinkList>
-                              <LinkItems items={section.items} />
-                            </LinkList>
-                          </div>
-                        </Fragment>
-                      ))}
-                    </Accordion>
-                  </Container>
-                </Navbar.ExpandableMenuContent>
-              </Navbar.ExpandableMenu>
-            </>
+            <Navbar.ButtonItem
+              title={header.searchAriaLabel}
+              onClick={() => {
+                setSearchOpen(true);
+              }}
+            >
+              <span className="hds-navbar__item-responsive-text">{header.searchAriaLabel}</span>
+              <Navbar.ItemIcon>
+                <SearchIcon />
+              </Navbar.ItemIcon>
+            </Navbar.ButtonItem>
           )}
+
+          <LoginNavItem loginLinks={header.loginLinks} lang={lang} />
+          <Navbar.ExpandableMenu>
+            <Navbar.ExpandableMenuTrigger
+              whenClosedText={translate("menu")}
+              whenOpenText={translate("close")}
+            />
+            <Navbar.ExpandableMenuContent>
+              <Container>
+                {header.iconSection && header.iconSection.length > 0 ? (
+                  <ul className="hds-decorator__header-icon-section">
+                    {header.iconSection.map((icon) => (
+                      <li key={icon.absolutePath}>
+                        <Link
+                          variant="no-underline"
+                          className="hds-decorator__header-icon-section-item"
+                          href={icon.absolutePath}
+                        >
+                          {serviceIconMap[icon.serviceIcon]}
+                          {icon.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+
+                <Accordion className="hds-decorator__header-sections">
+                  {header.mainSections.map((section) => (
+                    <Fragment key={section.heading}>
+                      {/* Mobile */}
+                      <Accordion.Item className="hds-decorator__header-section">
+                        <Accordion.Header>{section.heading}</Accordion.Header>
+                        <Accordion.Content>
+                          <LinkList>
+                            <LinkItems items={section.items} />
+                          </LinkList>
+                        </Accordion.Content>
+                      </Accordion.Item>
+
+                      {/* Desktop */}
+                      <div className="hds-decorator__header-section">
+                        <h2>{section.heading}</h2>
+                        <LinkList>
+                          <LinkItems items={section.items} />
+                        </LinkList>
+                      </div>
+                    </Fragment>
+                  ))}
+                </Accordion>
+              </Container>
+            </Navbar.ExpandableMenuContent>
+          </Navbar.ExpandableMenu>
         </Navbar.Navigation>
       </Navbar>
 
-      {children}
+      <main className="hds-decorator__main">{children}</main>
 
       <Footer>
         <Container>

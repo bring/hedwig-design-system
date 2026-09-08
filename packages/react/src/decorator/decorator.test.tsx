@@ -67,6 +67,24 @@ describe("Decorator", () => {
     expect(container.firstChild).toHaveClass("hds-theme-bring");
   });
 
+  it("sets data-color so brand-scoped tokens (surface/border colors) resolve", async () => {
+    const { container } = render(
+      <Decorator brand="posten">
+        <div>Page content</div>
+      </Decorator>,
+    );
+
+    // Present even before data arrives — brand-scoped colors have no root
+    // fallback in HDS, so this must be set from the very first render.
+    expect(container.firstChild).toHaveAttribute("data-color", "posten");
+
+    await waitFor(() => {
+      expect(screen.getByText("Page content")).toBeInTheDocument();
+    });
+
+    expect(container.firstChild).toHaveAttribute("data-color", "posten");
+  });
+
   it("renders children without decorator chrome and reports the error when the fetch fails", async () => {
     vi.stubGlobal(
       "fetch",
@@ -114,6 +132,42 @@ describe("Decorator", () => {
     await waitFor(() => {
       expect(screen.getByRole("link", { name: "Hjelp til Posten sporing" })).toBeInTheDocument();
     });
+  });
+
+  it("keeps login and menu visible while search is open", async () => {
+    const user = userEvent.setup();
+    render(
+      <Decorator brand="posten">
+        <div>Page content</div>
+      </Decorator>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByRole("link", { name: "Min side" })).toBeInTheDocument();
+    });
+
+    await user.click(screen.getByRole("button", { name: "Søk" }));
+
+    expect(screen.getByRole("link", { name: "Min side" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Meny" })).toBeInTheDocument();
+  });
+
+  it("renders the quick-access icon section links inside the expandable menu", async () => {
+    render(
+      <Decorator brand="posten">
+        <div>Page content</div>
+      </Decorator>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByRole("link", { name: "Kundeservice" })).toBeInTheDocument();
+    });
+
+    expect(screen.getByRole("link", { name: "Kundeservice" })).toHaveAttribute(
+      "href",
+      "https://www.posten.no/kundeservice",
+    );
+    expect(screen.getByRole("link", { name: "English" })).toBeInTheDocument();
   });
 
   it("shows the main header sections inside the expandable menu", async () => {

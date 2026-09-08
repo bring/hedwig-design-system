@@ -1,23 +1,90 @@
 @import url("../_custom-media.css");
 @import url("../spacing/spacing.css");
 
-/* Row of quick-access service links, shown above the header link sections */
+/* Keeps the footer pinned to the bottom of the viewport on short pages */
+.hds-decorator {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.hds-decorator__main {
+  flex: 1 0 auto;
+}
+
+/*
+ * Mobile header: logo centered between the search and menu icons (kp-decorator
+ * does this too), search/menu spread to the outer edges, and login moves out
+ * of the top row entirely — it's reachable from the icon-section row inside
+ * the "Meny" content instead, same as kp-decorator's kp-hidden-before-large.
+ */
+@media (--before-large) {
+  .hds-decorator__logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: 100px;
+    height: 32px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &[data-state="hidden-on-search-open"] {
+      display: none;
+    }
+  }
+
+  .hds-decorator .hds-navbar__navigation {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hds-decorator__login-nav-item {
+    display: none;
+  }
+}
+
+/*
+ * Row of quick-access service links, shown above the header link sections.
+ * Fixed quarter-width columns (not a responsive/auto-fit grid) — matches
+ * kp-decorator's actual behavior, where each item is `flex: 0 0 25%`.
+ */
 .hds-decorator__header-icon-section {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--hds-spacing-16) var(--hds-spacing-24);
+  row-gap: var(--hds-spacing-16);
   margin: 0 0 var(--hds-spacing-48);
   padding: 0;
   list-style: none;
 
-  a {
-    text-decoration: none;
+  /* One full-width row per item on mobile, instead of wrapping fixed 25% columns */
+  @media (--before-large) {
+    flex-direction: column;
+    gap: var(--hds-spacing-16);
+  }
+
+  > li {
+    flex: 0 0 25%;
+  }
+}
+
+.hds-decorator__header-icon-section-item {
+  display: flex;
+  align-items: center;
+  gap: var(--hds-spacing-8);
+  text-decoration: none;
+
+  svg {
+    flex-shrink: 0;
   }
 }
 
 /**
  * Header link sections
- * Accordion on mobile, equal-size columns on desktop.
+ * Accordion on mobile, fixed quarter-width columns on desktop (not a
+ * responsive/auto-fit grid — matches kp-decorator's actual `flex: 0 0 25%`
+ * per section, wrapping and leaving empty space when there are under 4).
  * Same dual-render + CSS-toggle pattern as .hds-footer__link-sections.
  */
 .hds-decorator__header-sections.hds-accordion {
@@ -26,9 +93,12 @@
   }
 
   @media (--large) {
-    display: grid;
-    gap: var(--hds-spacing-24);
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: var(--hds-spacing-48);
+
+    /* .hds-accordion always sets this; not wanted for the desktop column layout */
+    border-bottom: none;
   }
 }
 
@@ -45,6 +115,7 @@
 
   @media (--large) {
     display: block;
+    flex: 0 0 25%;
   }
 
   h2 {
@@ -94,12 +165,17 @@
   }
 }
 
+/*
+ * An explicit width, not flex-grow: .hds-navbar__navigation doesn't itself
+ * stretch to fill .hds-navbar (which uses justify-content: space-between), so
+ * a flex-grow child here has no extra space to grow into.
+ */
 .hds-decorator__search {
-  flex-grow: 1;
   position: relative;
+  width: 260px;
 
   @media (--large) {
-    max-width: 600px;
+    width: 600px;
   }
 }
 
