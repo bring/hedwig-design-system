@@ -36,7 +36,6 @@ export const postenHeaderFooterData: DecoratorHeaderFooterData = {
     ],
     searchUrl: "https://www.posten.no/sok",
     searchButtonLabel: "Søk",
-    searchPlaceholder: "Søk",
     searchAriaLabel: "Søk",
   },
   footer: {
@@ -96,10 +95,8 @@ export const bringHeaderFooterData: DecoratorHeaderFooterData = {
         ],
       },
     ],
-    searchUrl: "https://www.bring.no/sok",
-    searchButtonLabel: "Søk",
-    searchPlaceholder: "Søk",
-    searchAriaLabel: "Søk",
+    // Bring's live Enonic service doesn't return search fields at all —
+    // confirmed against the real endpoint. Search is hidden for this brand.
   },
   footer: {
     mainSections: [],

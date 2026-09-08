@@ -67,6 +67,27 @@ describe("Decorator", () => {
     expect(container.firstChild).toHaveClass("hds-theme-bring");
   });
 
+  it("renders bring successfully even though its payload has no search fields", async () => {
+    // Regression test: bring's real Enonic service omits searchUrl/searchButtonLabel/
+    // searchAriaLabel entirely (confirmed against the live endpoint), which used to
+    // fail the required-field validation and push every bring render into the error
+    // state. Search should just be absent, not break the whole render.
+    vi.stubGlobal("fetch", mockFetchFor(bringHeaderFooterData));
+
+    render(
+      <Decorator brand="bring">
+        <div>Page content</div>
+      </Decorator>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: "Logg inn" })).toBeInTheDocument();
+    });
+
+    expect(screen.queryByRole("button", { name: "Søk" })).not.toBeInTheDocument();
+    expect(screen.getByText("Page content")).toBeInTheDocument();
+  });
+
   it("sets data-color so brand-scoped tokens (surface/border colors) resolve", async () => {
     const { container } = render(
       <Decorator brand="posten">

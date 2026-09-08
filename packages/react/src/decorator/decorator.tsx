@@ -14,9 +14,8 @@ import {
   type DecoratorSiteIdentifier,
 } from "./decorator-data";
 import { LoginNavItem } from "./login-nav-item";
+import { SearchNavItem } from "./search-nav-item";
 import { getTranslate } from "./translations";
-import { Search } from "./search";
-import { CloseIcon, SearchIcon } from "./icons";
 import { serviceIconMap } from "./service-icons";
 
 /**
@@ -116,33 +115,13 @@ export function Decorator({
           <a href={frontPageUrl} title={translate("to-the-front-page")} />
         </Navbar.Logo>
         <Navbar.Navigation>
-          {searchOpen ? (
-            <>
-              <Search identifier={identifier} header={header} lang={lang} />
-              <Navbar.ButtonItem
-                title={translate("close")}
-                onClick={() => {
-                  setSearchOpen(false);
-                }}
-              >
-                <Navbar.ItemIcon>
-                  <CloseIcon />
-                </Navbar.ItemIcon>
-              </Navbar.ButtonItem>
-            </>
-          ) : (
-            <Navbar.ButtonItem
-              title={header.searchAriaLabel}
-              onClick={() => {
-                setSearchOpen(true);
-              }}
-            >
-              <span className="hds-navbar__item-responsive-text">{header.searchAriaLabel}</span>
-              <Navbar.ItemIcon>
-                <SearchIcon />
-              </Navbar.ItemIcon>
-            </Navbar.ButtonItem>
-          )}
+          <SearchNavItem
+            identifier={identifier}
+            header={header}
+            lang={lang}
+            open={searchOpen}
+            onOpenChange={setSearchOpen}
+          />
 
           <LoginNavItem loginLinks={header.loginLinks} lang={lang} />
           <Navbar.ExpandableMenu>

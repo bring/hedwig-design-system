@@ -35,11 +35,14 @@ export interface DecoratorHeaderData {
   loginLinks: DecoratorLinkItem[];
   iconSection?: DecoratorIconItem[];
   mainSections: DecoratorLinkSection[];
-  /** Page to send the visitor to on search submit, e.g. "https://www.posten.no/sok" */
-  searchUrl: string;
-  searchButtonLabel: string;
-  searchPlaceholder: string;
-  searchAriaLabel: string;
+  /**
+   * Page to send the visitor to on search submit, e.g. "https://www.posten.no/sok".
+   * Only some brands' Enonic services return search fields at all (confirmed:
+   * posten does, bring doesn't) — the search UI is hidden entirely when absent.
+   */
+  searchUrl?: string;
+  searchButtonLabel?: string;
+  searchAriaLabel?: string;
 }
 
 export interface DecoratorSearchHit {
@@ -170,9 +173,9 @@ export function assertDecoratorHeaderFooterData(
     !Array.isArray(footer.buttons) ||
     !Array.isArray(footer.bottomLinks) ||
     typeof footer.copyRightText !== "string" ||
-    typeof header.searchUrl !== "string" ||
-    typeof header.searchButtonLabel !== "string" ||
-    typeof header.searchPlaceholder !== "string" ||
+    (header.searchUrl !== undefined && typeof header.searchUrl !== "string") ||
+    (header.searchButtonLabel !== undefined && typeof header.searchButtonLabel !== "string") ||
+    (header.searchAriaLabel !== undefined && typeof header.searchAriaLabel !== "string") ||
     !header.mainSections.every(
       (section) => Array.isArray(section.items) && section.items.every(isLinkItem),
     )

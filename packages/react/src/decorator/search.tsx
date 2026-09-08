@@ -5,16 +5,24 @@ import { HStack } from "../layout";
 import { Link } from "../link";
 import { useSearchSuggestions } from "./use-search-suggestions";
 import { resolveFrontPageUrl } from "./decorator-data";
-import type { DecoratorHeaderData, DecoratorLang, DecoratorSiteIdentifier } from "./decorator-data";
+import type { DecoratorLang, DecoratorSiteIdentifier } from "./decorator-data";
 import { getTranslate } from "./translations";
 
 interface SearchProps {
   identifier: DecoratorSiteIdentifier;
-  header: DecoratorHeaderData;
+  searchUrl: string;
+  searchButtonLabel: string;
+  searchAriaLabel: string;
   lang: DecoratorLang;
 }
 
-export function Search({ identifier, header, lang }: SearchProps) {
+export function Search({
+  identifier,
+  searchUrl,
+  searchButtonLabel,
+  searchAriaLabel,
+  lang,
+}: SearchProps) {
   const [term, setTerm] = useState("");
   const hits = useSearchSuggestions(identifier, term);
   const translate = getTranslate(lang);
@@ -25,7 +33,7 @@ export function Search({ identifier, header, lang }: SearchProps) {
   const placeholder = `${translate("search.placeholder")} ${domain}`;
 
   function goToSearchPage() {
-    const url = new URL(header.searchUrl);
+    const url = new URL(searchUrl);
     url.searchParams.set("q", term);
     window.location.href = url.toString();
   }
@@ -35,7 +43,7 @@ export function Search({ identifier, header, lang }: SearchProps) {
       <HStack gap="4" align="end">
         <Input
           label=""
-          aria-label={header.searchAriaLabel}
+          aria-label={searchAriaLabel}
           type="search"
           placeholder={placeholder}
           value={term}
@@ -49,7 +57,7 @@ export function Search({ identifier, header, lang }: SearchProps) {
           }}
         />
         <Button variant="primary" onClick={goToSearchPage}>
-          {header.searchButtonLabel}
+          {searchButtonLabel}
         </Button>
       </HStack>
 

@@ -15,6 +15,14 @@ const meta: Meta<typeof Decorator> = {
           "network request on load, so they need network access to work.",
       },
     },
+    // Decorator manages brand theming itself via the `brand` arg below — it
+    // also picks which live Enonic endpoint to fetch from, not just a color,
+    // so it's a bigger switch than the global theme toolbar (which just
+    // recolors static demo content for other components' stories). The
+    // toolbar has no effect here; hide it so it doesn't look like it should.
+    themes: {
+      disable: true,
+    },
   },
   argTypes: {
     brand: {

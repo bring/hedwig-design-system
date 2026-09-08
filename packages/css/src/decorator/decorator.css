@@ -1,6 +1,56 @@
 @import url("../_custom-media.css");
 @import url("../spacing/spacing.css");
 
+/**
+ * HDS's own brand-color tokens (surface/border/text colors used by Footer,
+ * Navbar, Button, etc.) are only ever declared under `[data-color="posten"]`
+ * / `[data-color="bring"]` — there's no unconditional root fallback. Those
+ * declarations live inside `@layer hds.theme.color`, and by the CSS cascade
+ * layers spec, an unlayered rule *always* wins over a layered one regardless
+ * of specificity or source order. So if anything else on the page also sets
+ * `data-color` on an ancestor (Storybook's theme-switcher sets it on <html>,
+ * for example), that layered rule can silently override Decorator's own
+ * `data-color`, even though Decorator's is the closer ancestor — cascade
+ * layers don't care about DOM proximity.
+ *
+ * Redeclaring the same tokens here, unlayered and scoped to `.hds-decorator`,
+ * makes Decorator's own brand always win for its own subtree, regardless of
+ * what any ancestor sets. Values copied verbatim from tokens.css.
+ */
+.hds-decorator[data-color="posten"] {
+  --hds-colors-base-contrast-default: var(--hds-colors-posten-base-contrast-default);
+  --hds-colors-base-active: var(--hds-colors-posten-base-active);
+  --hds-colors-base-hover: var(--hds-colors-posten-base-hover);
+  --hds-colors-base-default: var(--hds-colors-posten-base-default);
+  --hds-colors-text-default: var(--hds-colors-posten-text-default);
+  --hds-colors-text-subtle: var(--hds-colors-posten-text-subtle);
+  --hds-colors-border-strong: var(--hds-colors-posten-border-strong);
+  --hds-colors-border-default: var(--hds-colors-posten-border-default);
+  --hds-colors-surface-active: var(--hds-colors-posten-surface-active);
+  --hds-colors-surface-hover: var(--hds-colors-posten-surface-hover);
+  --hds-colors-surface-tinted: var(--hds-colors-posten-surface-tinted);
+  --hds-colors-surface-default: var(--hds-colors-posten-surface-default);
+  --hds-colors-bg-tinted: var(--hds-colors-posten-bg-tinted);
+  --hds-colors-bg-default: var(--hds-colors-posten-bg-default);
+}
+
+.hds-decorator[data-color="bring"] {
+  --hds-colors-base-contrast-default: var(--hds-colors-bring-base-contrast-default);
+  --hds-colors-base-active: var(--hds-colors-bring-base-active);
+  --hds-colors-base-hover: var(--hds-colors-bring-base-hover);
+  --hds-colors-base-default: var(--hds-colors-bring-base-default);
+  --hds-colors-text-default: var(--hds-colors-bring-text-default);
+  --hds-colors-text-subtle: var(--hds-colors-bring-text-subtle);
+  --hds-colors-border-strong: var(--hds-colors-bring-border-strong);
+  --hds-colors-border-default: var(--hds-colors-bring-border-default);
+  --hds-colors-surface-active: var(--hds-colors-bring-surface-active);
+  --hds-colors-surface-hover: var(--hds-colors-bring-surface-hover);
+  --hds-colors-surface-tinted: var(--hds-colors-bring-surface-tinted);
+  --hds-colors-surface-default: var(--hds-colors-bring-surface-default);
+  --hds-colors-bg-tinted: var(--hds-colors-bring-bg-tinted);
+  --hds-colors-bg-default: var(--hds-colors-bring-bg-default);
+}
+
 /* Keeps the footer pinned to the bottom of the viewport on short pages */
 .hds-decorator {
   display: flex;
