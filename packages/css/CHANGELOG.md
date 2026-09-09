@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.3.1
+
+### Patch Changes
+
+- 8901d3a: Bump Nodejs to 24, changeset is to allow for re-release after failed release
+
 ## 4.3.0
 
 ### Minor Changes
