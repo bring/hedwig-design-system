@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.3.0
+
+### Minor Changes
+
+- 1e922c7: Suggestions
+
 ## 4.2.2
 
 ### Patch Changes

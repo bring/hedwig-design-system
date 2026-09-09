@@ -1,5 +1,16 @@
 # @postenbring/hedwig-react
 
+## 4.3.0
+
+### Minor Changes
+
+- 1e922c7: Suggestions
+
+### Patch Changes
+
+- Updated dependencies [1e922c7]
+  - @postenbring/hedwig-css@4.3.0
+
 ## 4.2.2
 
 ### Patch Changes
