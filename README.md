@@ -83,12 +83,12 @@ We welcome anyone who would like to contribute to improving the Hedwig Design Sy
 
 Before you begin, ensure you have the following installed:
 
-- Node.js (version 20 or higher)
+- Node.js (version 24 or higher)
 - pnpm (version 9 or higher)
 
 ### Check node
 
-Check if you have node 20 or higher
+Check if you have node 24 or higher
 
 ```bash
 node -v
@@ -96,7 +96,7 @@ node -v
 
 ### Install node
 
-If node is not installed, or you don't have version 20 or higher you need to install it. Download from [nodejs.org](https://nodejs.org/en/download/), or use package manager like [`fnm`](https://github.com/Schniz/fnm), [`nvm`](https://github.com/nvm-sh/nvm), or [`asdf`](https://github.com/asdf-vm/asdf).
+If node is not installed, or you don't have version 24 or higher you need to install it. Download from [nodejs.org](https://nodejs.org/en/download/), or use package manager like [`fnm`](https://github.com/Schniz/fnm), [`nvm`](https://github.com/nvm-sh/nvm), or [`asdf`](https://github.com/asdf-vm/asdf).
 
 ### Install pnpm
 
