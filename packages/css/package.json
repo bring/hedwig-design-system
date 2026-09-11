@@ -38,7 +38,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "browserslist": "4.28.8",
+    "browserslist": "4.28.9",
     "chokidar-cli": "3.0.0",
     "globby": "14.1.0",
     "lightningcss": "1.33.0",
