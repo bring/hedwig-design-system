@@ -1,0 +1,36 @@
+@import url("../spacing/spacing.css");
+
+/**
+ * Block
+ */
+
+.hds-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hds-spacing-4);
+  background-color: var(--hds-colors-surface-tinted);
+  color: var(--hds-colors-text-default);
+  font: var(--hds-typography-technical);
+  border: 1px solid var(--hds-colors-border-default);
+  border-radius: var(--hds-border-radius-8);
+  padding: var(--hds-spacing-4-8) var(--hds-spacing-8-12);
+
+  &.hds-tag--small {
+    padding: var(--hds-spacing-2-4) var(--hds-spacing-4-8);
+  }
+
+  &[data-color="posten"],
+  &[data-color="bring"] {
+    /* FIXME: Border color is set to the same as background while waiting for correct token */
+
+    /* Tags with data-color "posten/bring" should look like they have no border */
+    border-color: var(--hds-colors-surface-tinted);
+  }
+
+  &[data-color="info"],
+  &[data-color="success"],
+  &[data-color="warning"],
+  &[data-color="error"] {
+    background-color: var(--hds-colors-surface-default);
+  }
+}
