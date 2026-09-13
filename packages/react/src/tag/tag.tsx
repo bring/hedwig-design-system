@@ -38,10 +38,7 @@ export interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
  *
  */
 export const Tag = forwardRef<HTMLSpanElement, TagProps>(
-  (
-    { "data-color": color = "neutral", children, asChild, size = "default", className, ...rest },
-    ref,
-  ) => {
+  ({ "data-color": color, children, asChild, size = "default", className, ...rest }, ref) => {
     const Component = asChild ? Slot : "span";
     return (
       <Component

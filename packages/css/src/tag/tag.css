@@ -11,7 +11,9 @@
   background-color: var(--hds-colors-surface-tinted);
   color: var(--hds-colors-text-default);
   font: var(--hds-typography-technical);
-  border: 1px solid var(--hds-colors-border-default);
+
+  /* FIXME: Border color is set to the same as background while waiting for correct token */
+  border: 1px solid var(--hds-colors-surface-tinted);
   border-radius: var(--hds-border-radius-8);
   padding: var(--hds-spacing-4-8) var(--hds-spacing-8-12);
 
