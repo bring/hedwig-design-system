@@ -25,6 +25,7 @@ export * from "./step-indicator";
 export * from "./styled-html";
 export * from "./table";
 export * from "./tabs";
+export * from "./tag";
 export * from "./text";
 export * from "./utils";
 export * from "./warning-banner";
