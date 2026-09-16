@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { forwardRef } from "react";
+import { createContext, forwardRef, useContext } from "react";
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
 
@@ -63,39 +63,47 @@ export const CardBody = forwardRef<HTMLDivElement, CardBaseProps>(
 );
 CardBody.displayName = "Card.Body";
 
-export const CardBodyHeader = forwardRef<
-  HTMLHeadingElement,
-  CardBaseProps &
-    (
-      | {
-          /**
-           * Heading level of the card heading
-           */
-          as: "h2" | "h3" | "h4" | "h5" | "h6";
-          asChild?: never;
-        }
-      | {
-          asChild: true;
-          as?: never;
-        }
-    )
->(({ as: Tag, asChild, className, children, ...rest }, ref) => {
-  const Component = asChild ? Slot : Tag;
-  return (
-    <Component
-      {...rest}
-      className={clsx("hds-card__body-header", className as undefined)}
-      ref={ref}
-    >
-      {children}
-    </Component>
-  );
-});
+type CardBodyHeaderTag = "h2" | "h3" | "h4" | "h5" | "h6";
+
+const CardBodyHeaderContext = createContext<CardBodyHeaderTag>("h2");
+
+export interface CardBodyHeaderPropsDeprecated extends React.HTMLAttributes<HTMLElement> {
+  children: ReactNode;
+
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
+  asChild?: boolean;
+
+  /**
+   * Heading level of the card heading
+   */
+  as?: CardBodyHeaderTag;
+}
+
+export const CardBodyHeader = forwardRef<HTMLElement, CardBodyHeaderPropsDeprecated>(
+  ({ as: Tag, asChild, className, children, ...rest }, ref) => {
+    const Component = asChild ? Slot : "hgroup";
+    return (
+      <CardBodyHeaderContext.Provider value={Tag ?? "h2"}>
+        <Component
+          {...rest}
+          className={clsx("hds-card__body-header", className as undefined)}
+          ref={ref}
+        >
+          {children}
+        </Component>
+      </CardBodyHeaderContext.Provider>
+    );
+  },
+);
 CardBodyHeader.displayName = "Card.BodyHeader";
 
-export const CardBodyHeaderOverline = forwardRef<HTMLDivElement, CardBaseProps>(
+export const CardBodyHeaderOverline = forwardRef<HTMLParagraphElement, CardBaseProps>(
   ({ asChild, className, children, ...rest }, ref) => {
-    const Component = asChild ? Slot : "span";
+    const Component = asChild ? Slot : "p";
     return (
       <Component
         {...rest}
@@ -109,9 +117,18 @@ export const CardBodyHeaderOverline = forwardRef<HTMLDivElement, CardBaseProps>(
 );
 CardBodyHeaderOverline.displayName = "Card.BodyHeaderOverline";
 
-export const CardBodyHeaderTitle = forwardRef<HTMLDivElement, CardBaseProps>(
-  ({ asChild, className, children, ...rest }, ref) => {
-    const Component = asChild ? Slot : "div";
+export interface CardBodyHeaderTitleProps extends CardBaseProps {
+  /**
+   * Heading level of the card title.
+   */
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+}
+
+export const CardBodyHeaderTitle = forwardRef<HTMLHeadingElement, CardBodyHeaderTitleProps>(
+  ({ as: TitleTag, asChild, className, children, ...rest }, ref) => {
+    const ParentTag = useContext(CardBodyHeaderContext);
+    const Tag = TitleTag ?? ParentTag;
+    const Component = asChild ? Slot : Tag;
     return (
       <Component
         {...rest}
