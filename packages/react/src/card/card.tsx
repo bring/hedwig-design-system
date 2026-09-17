@@ -79,18 +79,13 @@ type CardBodyHeaderTag = "h2" | "h3" | "h4" | "h5" | "h6";
 const CardBodyHeaderContext = createContext<CardBodyHeaderTag>("h2");
 
 export interface CardBodyHeaderPropsDeprecated extends React.HTMLAttributes<HTMLHeadingElement> {
-  asChild?: never;
+  asChild?: boolean;
   as?: CardBodyHeaderTag;
-}
-
-export interface CardBodyHeaderHmmPropsDeprecated extends CardBaseProps {
-  asChild: true;
-  as?: never;
 }
 
 export const CardBodyHeader = forwardRef<
   HTMLElement,
-  CardBodyHeaderProps | CardBodyHeaderPropsDeprecated | CardBodyHeaderHmmPropsDeprecated
+  CardBodyHeaderProps | CardBodyHeaderPropsDeprecated
 >(({ as: Tag, asChild, className, children, ...rest }, ref) => {
   const Component = asChild ? Slot : "hgroup";
   return (
