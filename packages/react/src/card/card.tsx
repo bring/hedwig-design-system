@@ -78,6 +78,10 @@ type CardBodyHeaderTag = "h2" | "h3" | "h4" | "h5" | "h6";
 
 const CardBodyHeaderContext = createContext<CardBodyHeaderTag>("h2");
 
+/**
+ * @deprecated This interface is deprecated and will be removed in a future release.
+ * Set the `as` prop on CardBodyHeaderTitle instead
+ */
 export interface CardBodyHeaderPropsDeprecated extends React.HTMLAttributes<HTMLHeadingElement> {
   asChild?: boolean;
   as?: CardBodyHeaderTag;
