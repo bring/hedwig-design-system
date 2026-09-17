@@ -26,9 +26,9 @@ function Example() {
               />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h3">
+              <Card.BodyHeader>
                 <Card.BodyHeaderOverline>Services</Card.BodyHeaderOverline>
-                <Card.BodyHeaderTitle>Brand Default</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle as="h3">Brand Default</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Find the right service and order</Card.BodyDescription>
               <Card.BodyAction asChild>
@@ -48,9 +48,9 @@ function Example() {
               />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h3">
+              <Card.BodyHeader>
                 <Card.BodyHeaderOverline>Customer service</Card.BodyHeaderOverline>
-                <Card.BodyHeaderTitle>Brand Tinted</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle as="h3">Brand Tinted</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Contact our customer service for help with your questions
@@ -72,9 +72,9 @@ function Example() {
               />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h3">
+              <Card.BodyHeader>
                 <Card.BodyHeaderOverline>Quote</Card.BodyHeaderOverline>
-                <Card.BodyHeaderTitle>Brand Base</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle as="h3">Brand Base</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Request a quote for your business</Card.BodyDescription>
               <Card.BodyAction asChild>
@@ -94,9 +94,9 @@ function Example() {
               />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h3">
+              <Card.BodyHeader>
                 <Card.BodyHeaderOverline>Customs</Card.BodyHeaderOverline>
-                <Card.BodyHeaderTitle>Neutral Default</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle as="h3">Neutral Default</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Familiarise yourself with regulations relating to customs and fees
@@ -118,9 +118,9 @@ function Example() {
               />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h3">
+              <Card.BodyHeader>
                 <Card.BodyHeaderOverline>Customs</Card.BodyHeaderOverline>
-                <Card.BodyHeaderTitle>Neutral Tinted</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle as="h3">Neutral Tinted</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Familiarise yourself with regulations relating to customs and fees
@@ -141,9 +141,9 @@ function Example() {
               />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h3">
+              <Card.BodyHeader>
                 <Card.BodyHeaderOverline>Vector image</Card.BodyHeaderOverline>
-                <Card.BodyHeaderTitle>Neutral Base</Card.BodyHeaderTitle>
+                <Card.BodyHeaderTitle as="h3">Neutral Base</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Vector images / transparent backgrounds: use variant=&quot;scale&quot; (or skip

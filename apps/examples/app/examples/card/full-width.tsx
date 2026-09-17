@@ -22,9 +22,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h6">Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
@@ -51,9 +51,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h2">Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
@@ -92,9 +92,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h2">Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
@@ -133,9 +133,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h2">Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
@@ -162,9 +162,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h2">Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
@@ -191,9 +191,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Import duties</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h2">Import duties</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
@@ -220,9 +220,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>CTA buttons</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Only one button: Button</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h2">Only one button: Button</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               For a single CTA button, just use the Button component direclty.
@@ -249,9 +249,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>CTA buttons</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>Multiple buttons: ButtonList</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h2">Multiple buttons: ButtonList</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               For more than 1 CTA button, use{" "}
@@ -296,9 +296,9 @@ function Example() {
             />
           </Card.Media>
           <Card.Body>
-            <Card.BodyHeader as="h2">
+            <Card.BodyHeader>
               <Card.BodyHeaderOverline>Scale</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle>No image cropping</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h2">No image cropping</Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               Some images, in particular SVG illustrations with transparent backgrounds, should not

@@ -21,8 +21,8 @@ function Example() {
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Brand Default (default)</Card.BodyHeaderTitle>
+              <Card.BodyHeader>
+                <Card.BodyHeaderTitle as="h2">Brand Default</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Our services for national and international transport
@@ -40,8 +40,8 @@ function Example() {
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Brand Tinted</Card.BodyHeaderTitle>
+              <Card.BodyHeader>
+                <Card.BodyHeaderTitle as="h2">Brand Tinted</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Our services for national and international transport
@@ -59,8 +59,8 @@ function Example() {
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Brand Base</Card.BodyHeaderTitle>
+              <Card.BodyHeader>
+                <Card.BodyHeaderTitle as="h2">Brand Base</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Mail and direct mail delivered to the mailbox
@@ -78,8 +78,8 @@ function Example() {
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Neutral Default</Card.BodyHeaderTitle>
+              <Card.BodyHeader>
+                <Card.BodyHeaderTitle as="h2">Neutral Default</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>Our services for international transport</Card.BodyDescription>
               <Card.BodyAction asChild>
@@ -95,8 +95,8 @@ function Example() {
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Neutral Tinted</Card.BodyHeaderTitle>
+              <Card.BodyHeader>
+                <Card.BodyHeaderTitle as="h2">Neutral Tinted</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Our services for national and international transport
@@ -114,8 +114,8 @@ function Example() {
               <Card.MediaImg src={customerParcel} />
             </Card.Media>
             <Card.Body>
-              <Card.BodyHeader as="h2">
-                <Card.BodyHeaderTitle>Neutral Base</Card.BodyHeaderTitle>
+              <Card.BodyHeader>
+                <Card.BodyHeaderTitle as="h2">Neutral Base</Card.BodyHeaderTitle>
               </Card.BodyHeader>
               <Card.BodyDescription>
                 Mail and direct mail delivered to the mailbox
