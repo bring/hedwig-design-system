@@ -93,7 +93,7 @@ export interface CardBodyHeaderPropsDeprecated extends React.HTMLAttributes<HTML
   /**
    * Heading level of the card heading.
    *
-   * @deprecated Set this prop on CardBodyHeaderTitle instead.
+   * @deprecated This prop will be removed in a future release. Set it on CardBodyHeaderTitle instead.
    */
   as?: CardBodyHeaderTag;
 }
