@@ -63,42 +63,48 @@ export const CardBody = forwardRef<HTMLDivElement, CardBaseProps>(
 );
 CardBody.displayName = "Card.Body";
 
+/**
+ * This is the current interface of CardBodyHeader
+ */
+export interface CardBodyHeaderProps extends React.HtmlHTMLAttributes<HTMLElement> {
+  asChild?: boolean;
+  /**
+   * This element is always an hgroup
+   */
+  as?: never;
+}
+
 type CardBodyHeaderTag = "h2" | "h3" | "h4" | "h5" | "h6";
 
 const CardBodyHeaderContext = createContext<CardBodyHeaderTag>("h2");
 
-export interface CardBodyHeaderPropsDeprecated extends React.HTMLAttributes<HTMLElement> {
-  children: ReactNode;
-
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior.
-   *
-   * @default false
-   */
-  asChild?: boolean;
-
-  /**
-   * Heading level of the card heading
-   */
+export interface CardBodyHeaderPropsDeprecated extends React.HTMLAttributes<HTMLHeadingElement> {
+  asChild?: never;
   as?: CardBodyHeaderTag;
 }
 
-export const CardBodyHeader = forwardRef<HTMLElement, CardBodyHeaderPropsDeprecated>(
-  ({ as: Tag, asChild, className, children, ...rest }, ref) => {
-    const Component = asChild ? Slot : "hgroup";
-    return (
-      <CardBodyHeaderContext.Provider value={Tag ?? "h2"}>
-        <Component
-          {...rest}
-          className={clsx("hds-card__body-header", className as undefined)}
-          ref={ref}
-        >
-          {children}
-        </Component>
-      </CardBodyHeaderContext.Provider>
-    );
-  },
-);
+export interface CardBodyHeaderHmmPropsDeprecated extends CardBaseProps {
+  asChild: true;
+  as?: never;
+}
+
+export const CardBodyHeader = forwardRef<
+  HTMLElement,
+  CardBodyHeaderProps | CardBodyHeaderPropsDeprecated | CardBodyHeaderHmmPropsDeprecated
+>(({ as: Tag, asChild, className, children, ...rest }, ref) => {
+  const Component = asChild ? Slot : "hgroup";
+  return (
+    <CardBodyHeaderContext.Provider value={Tag ?? "h2"}>
+      <Component
+        {...rest}
+        className={clsx("hds-card__body-header", className as undefined)}
+        ref={ref}
+      >
+        {children}
+      </Component>
+    </CardBodyHeaderContext.Provider>
+  );
+});
 CardBodyHeader.displayName = "Card.BodyHeader";
 
 export const CardBodyHeaderOverline = forwardRef<HTMLParagraphElement, CardBaseProps>(
