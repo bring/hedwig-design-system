@@ -83,7 +83,18 @@ const CardBodyHeaderContext = createContext<CardBodyHeaderTag>("h2");
  * Set the `as` prop on CardBodyHeaderTitle instead
  */
 export interface CardBodyHeaderPropsDeprecated extends React.HTMLAttributes<HTMLHeadingElement> {
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
+   *
+   * @default false
+   */
   asChild?: boolean;
+
+  /**
+   * Heading level of the card heading.
+   *
+   * @deprecated Set this prop on CardBodyHeaderTitle instead.
+   */
   as?: CardBodyHeaderTag;
 }
 
