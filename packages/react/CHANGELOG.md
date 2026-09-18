@@ -1,5 +1,16 @@
 # @postenbring/hedwig-react
 
+## 4.4.0
+
+### Minor Changes
+
+- 1000e6a: Card hgroup, title variant
+
+### Patch Changes
+
+- Updated dependencies [1000e6a]
+  - @postenbring/hedwig-css@4.4.0
+
 ## 4.3.1
 
 ### Patch Changes

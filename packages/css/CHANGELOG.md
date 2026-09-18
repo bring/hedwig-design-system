@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.4.0
+
+### Minor Changes
+
+- 1000e6a: Card hgroup, title variant
+
 ## 4.3.1
 
 ### Patch Changes
