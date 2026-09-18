@@ -24,7 +24,9 @@ function Example() {
           <Card.Body>
             <Card.BodyHeader>
               <Card.BodyHeaderOverline>Importing goods</Card.BodyHeaderOverline>
-              <Card.BodyHeaderTitle as="h6">Import duties</Card.BodyHeaderTitle>
+              <Card.BodyHeaderTitle as="h1" variant="h1">
+                Import duties
+              </Card.BodyHeaderTitle>
             </Card.BodyHeader>
             <Card.BodyDescription>
               From January 1, 2024, the authorities will abolish the 350-kroner limit. This means
