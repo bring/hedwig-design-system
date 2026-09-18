@@ -63,6 +63,10 @@
     font: var(--hds-typography-h2);
     color: var(--hds-card-text-color);
     text-decoration: none;
+
+    &.hds-card__body-header-title-h1 {
+      font: var(--hds-typography-h1);
+    }
   }
 
   .hds-card__body-description {

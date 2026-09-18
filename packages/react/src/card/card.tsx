@@ -138,17 +138,27 @@ export interface CardBodyHeaderTitleProps extends CardBaseProps {
    * Heading level of the card title.
    */
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+  /**
+   * Displayed font size of card title
+   * @default: h2
+   */
+  variant?: "h1" | "h2";
 }
 
 export const CardBodyHeaderTitle = forwardRef<HTMLHeadingElement, CardBodyHeaderTitleProps>(
-  ({ as: TitleTag, asChild, className, children, ...rest }, ref) => {
+  ({ as: TitleTag, variant = "h2", asChild, className, children, ...rest }, ref) => {
     const ParentTag = useContext(CardBodyHeaderContext);
     const Tag = TitleTag ?? ParentTag;
     const Component = asChild ? Slot : Tag;
     return (
       <Component
         {...rest}
-        className={clsx("hds-card__body-header-title", className as undefined)}
+        className={clsx(
+          "hds-card__body-header-title",
+          { "hds-card__body-header-title-h1": variant === "h1" },
+          className as undefined,
+        )}
         ref={ref}
       >
         {children}
