@@ -24,9 +24,9 @@ export const Preview: Story = {
         />
       </Card.Media>
       <Card.Body>
-        <Card.BodyHeader as="h2">
+        <Card.BodyHeader>
           <Card.BodyHeaderOverline>Theme</Card.BodyHeaderOverline>
-          <Card.BodyHeaderTitle>Cool article</Card.BodyHeaderTitle>
+          <Card.BodyHeaderTitle as="h2">Cool article</Card.BodyHeaderTitle>
         </Card.BodyHeader>
         <Card.BodyDescription>
           This is a card The card component provides a lot of flexibility.

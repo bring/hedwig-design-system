@@ -56,25 +56,23 @@
     display: block;
     margin-bottom: var(--hds-spacing-4-8);
     color: var(--hds-card-overline-color);
-    font-size: var(--hds-font-size-body-title);
-    font-weight: var(--hds-font-weight-body-title);
-    line-height: var(--hds-line-height-body-title);
+    font: var(--hds-typography-body-title);
   }
 
   .hds-card__body-header-title {
-    font-size: var(--hds-font-size-h2);
-    font-weight: var(--hds-font-weight-h1);
-    line-height: var(--hds-line-height-h2);
+    font: var(--hds-typography-h2);
     color: var(--hds-card-text-color);
     text-decoration: none;
+
+    &.hds-card__body-header-title-h1 {
+      font: var(--hds-typography-h1);
+    }
   }
 
   .hds-card__body-description {
     margin-top: var(--hds-spacing-8-12);
     margin-bottom: auto;
-    font-size: var(--hds-font-size-body);
-    font-weight: var(--hds-font-weight-body);
-    line-height: var(--hds-line-height-body);
+    font: var(--hds-typography-body);
   }
 
   .hds-card__body-action {
@@ -187,9 +185,7 @@
     padding-top: 0;
 
     .hds-card__body-header-title {
-      font-size: var(--hds-font-size-body-title);
-      font-weight: var(--hds-font-weight-body-title);
-      line-height: var(--hds-line-height-body-title);
+      font: var(--hds-typography-body-title);
     }
 
     .hds-card__body-action:only-child {
