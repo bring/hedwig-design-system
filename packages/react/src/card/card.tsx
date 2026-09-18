@@ -140,7 +140,10 @@ export interface CardBodyHeaderTitleProps extends CardBaseProps {
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
   /**
-   * Displayed font size of card title
+   * Displayed font size of Card title
+   * These will not be displayed in Miniature Card
+   * Should probably not be used in Slim Card
+   *
    * @default: h2
    */
   variant?: "h1" | "h2";
