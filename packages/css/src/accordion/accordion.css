@@ -36,6 +36,7 @@
       border-top: var(--hds-stroke-default) solid var(--hds-ui-colors-light-grey-stroke);
       text-align: left;
       background-color: transparent;
+      color: var(--hds-colors-neutral-text-default);
 
       /* color: var(--hds-colors-text-subtle); */
       font: var(--hds-typography-body);
