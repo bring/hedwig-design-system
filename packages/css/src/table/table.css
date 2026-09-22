@@ -4,9 +4,6 @@
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-
-  /* Minimum width */
-  min-width: 460px;
   overflow-x: scroll;
 
   th,
