@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.4.1
+
+### Patch Changes
+
+- 40bb845: mobile fix for accordion
+
 ## 4.4.0
 
 ### Minor Changes
