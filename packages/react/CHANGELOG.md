@@ -1,5 +1,16 @@
 # @postenbring/hedwig-react
 
+## 4.5.0
+
+### Minor Changes
+
+- 3dc18a4: Add Tag component
+
+### Patch Changes
+
+- Updated dependencies [3dc18a4]
+  - @postenbring/hedwig-css@4.5.0
+
 ## 4.4.1
 
 ### Patch Changes
