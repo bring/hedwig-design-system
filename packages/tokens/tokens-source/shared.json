@@ -216,6 +216,9 @@
   },
   "spacing": {
     "$type": "dimension",
+    "2": {
+      "$value": "2px"
+    },
     "4": {
       "$value": "4px"
     },

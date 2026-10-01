@@ -136,6 +136,7 @@ export const BreakpointSmall = "460px"; // Larger mobile phones
 export const BreakpointMedium = "720px"; // Most tablets
 export const BreakpointLarge = "940px"; // Smaller laptops and desktop monitors. This is where the navbar goes from the mobile version to the desktop version
 export const BreakpointXlarge = "1200px"; // Most modern laptops and desktop monitors
+export const Spacing2 = "2px";
 export const Spacing4 = "4px";
 export const Spacing8 = "8px";
 export const Spacing12 = "12px";

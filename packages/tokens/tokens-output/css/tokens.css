@@ -34,6 +34,7 @@
   --hds-breakpoint-medium: 720px; /* Most tablets */
   --hds-breakpoint-large: 940px; /* Smaller laptops and desktop monitors. This is where the navbar goes from the mobile version to the desktop version */
   --hds-breakpoint-xlarge: 1200px; /* Most modern laptops and desktop monitors */
+  --hds-spacing-2: 2px;
   --hds-spacing-4: 4px;
   --hds-spacing-8: 8px;
   --hds-spacing-12: 12px;
