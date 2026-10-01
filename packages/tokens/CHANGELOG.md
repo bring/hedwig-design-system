@@ -1,5 +1,11 @@
 # @postenbring/hedwig-tokens
 
+## 3.2.0
+
+### Minor Changes
+
+- 3dc18a4: Add Tag component
+
 ## 3.1.0
 
 ### Minor Changes
