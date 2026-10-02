@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.5.1
+
+### Patch Changes
+
+- 9412ef6: small border-color fix on tag
+
 ## 4.5.0
 
 ### Minor Changes
