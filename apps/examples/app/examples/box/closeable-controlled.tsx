@@ -8,7 +8,12 @@ function Example() {
     return <Button onClick={() => setClosed(false)}>Open box again</Button>;
   }
   return (
-    <Box closeable closed={closed} onClose={() => setClosed(true)}>
+    <Box
+      closeable
+      closeButtonProps={{ "aria-label": "Close" }}
+      closed={closed}
+      onClose={() => setClosed(true)}
+    >
       <Text variant="h3-title" as="h3">
         Box content
       </Text>

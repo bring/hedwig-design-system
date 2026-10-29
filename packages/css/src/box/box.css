@@ -36,28 +36,9 @@
 
 /**
  * Close button
- * TODO: Styling for the hover and focus effect can be improved upon
  */
 .hds-box .hds-box__close-button {
-  --hds-close-button-padding: var(--hds-spacing-8);
-
-  color: var(--_box-color);
-  background-color: transparent;
-  border: none;
-
-  /* Positioning */
   position: absolute;
-  top: calc(var(--hds-spacing-16) - var(--hds-close-button-padding) / 2);
-  right: calc(var(--hds-spacing-16) - var(--hds-close-button-padding) / 2);
-
-  &:hover {
-    background-color: rgb(0 0 0 / 10%);
-  }
-
-  /* Keyboard focus */
-  &:focus-visible {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    box-shadow: 0 0 0 2px #0000;
-  }
+  top: var(--hds-spacing-12);
+  right: var(--hds-spacing-12);
 }
