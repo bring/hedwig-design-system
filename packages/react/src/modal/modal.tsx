@@ -70,6 +70,8 @@ export const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>(
 );
 ModalFooter.displayName = "Modal.Footer";
 
+export type CloseButtonProps = Omit<React.HTMLAttributes<HTMLButtonElement>, "children">;
+
 export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
   children: React.ReactNode;
 
@@ -82,6 +84,11 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
    * Whether to close when clicking on the backdrop.
    */
   closeOnBackdropClick?: boolean;
+
+  /**
+   * Props applied to the close button element.
+   */
+  closeButtonProps?: CloseButtonProps;
 }
 
 /**
@@ -119,7 +126,10 @@ export interface ModalProps extends React.HTMLAttributes<HTMLDialogElement> {
  * ```
  */
 export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
-  ({ children, className, open, closeOnBackdropClick, onClick, ...rest }, ref) => {
+  (
+    { children, className, open, closeOnBackdropClick, closeButtonProps, onClick, ...rest },
+    ref,
+  ) => {
     const modalRef = useRef<HTMLDialogElement>(null);
     const mergedRef = useMergeRefs([modalRef, ref]);
 
@@ -158,6 +168,7 @@ export const Modal = forwardRef<HTMLDialogElement, ModalProps>(
         onClick={onDialogClick}
         onClose={onCloseButtonClick}
         variant="white"
+        closeButtonProps={closeButtonProps}
       >
         <dialog ref={mergedRef} {...rest}>
           {children}
