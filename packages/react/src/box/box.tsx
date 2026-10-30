@@ -20,6 +20,7 @@ export const BoxCloseButton = forwardRef<HTMLButtonElement, BoxCloseButtonProps>
         size="small"
         icon
         ref={ref}
+        type="button"
         {...rest}
       >
         <CloseIcon />
