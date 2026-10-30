@@ -1,5 +1,16 @@
 # @postenbring/hedwig-react
 
+## 4.6.0
+
+### Minor Changes
+
+- 9ddc193: Modal close button fix
+
+### Patch Changes
+
+- Updated dependencies [9ddc193]
+  - @postenbring/hedwig-css@4.6.0
+
 ## 4.5.2
 
 ### Patch Changes

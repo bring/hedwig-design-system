@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.6.0
+
+### Minor Changes
+
+- 9ddc193: Modal close button fix
+
 ## 4.5.2
 
 ### Patch Changes
