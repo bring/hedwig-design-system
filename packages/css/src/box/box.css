@@ -1,5 +1,6 @@
 @import url("../_custom-media.css");
 @import url("../_icons.css");
+@import url("../button/button.css");
 @import url("../spacing/spacing.css");
 
 .hds-box {
