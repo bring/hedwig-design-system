@@ -3,7 +3,7 @@ import { Box, Link, Text } from "@postenbring/hedwig-react";
 
 function Example() {
   return (
-    <Box closeable>
+    <Box closeable closeButtonProps={{ "aria-label": "Close" }}>
       <Text variant="h3-title" as="h3">
         Box content
       </Text>
