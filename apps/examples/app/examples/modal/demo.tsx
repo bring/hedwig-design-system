@@ -9,7 +9,7 @@ function Example() {
   return (
     <>
       <Button onClick={() => modalRef.current?.showModal()}>Open Modal</Button>
-      <Modal ref={modalRef}>
+      <Modal ref={modalRef} closeButtonProps={{ "aria-label": "Close" }}>
         <Modal.Header>Case registered</Modal.Header>
         <Modal.Content>
           <p>Your case has been registered. Reference number: #123456</p>

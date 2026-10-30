@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.5.2
+
+### Patch Changes
+
+- c890a27: Fix repeating icon on Validation Message
+
 ## 4.5.1
 
 ### Patch Changes

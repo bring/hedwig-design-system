@@ -4,7 +4,7 @@ import { Modal, Button } from "@postenbring/hedwig-react";
 function Example() {
   return (
     <>
-      <Modal open closeOnBackdropClick>
+      <Modal open closeOnBackdropClick closeButtonProps={{ "aria-label": "Close" }}>
         <Modal.Header>Case registered</Modal.Header>
         <Modal.Content>
           <p>Your case has been registered. Reference number: #123456</p>
