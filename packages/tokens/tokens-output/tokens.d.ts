@@ -205,6 +205,7 @@ export const TypographyTechnical : { fontFamily: string[], fontSize: string[], l
 export const TypographyTechnicalTitle : { fontFamily: string[], fontSize: string[], lineHeight: string[], fontWeight: number, letterSpacing: string };
 export const TypographyCaption : { fontFamily: string[], fontSize: string, lineHeight: string, fontWeight: number, letterSpacing: string };
 export const TypographyCaptionTitle : { fontFamily: string[], fontSize: string, lineHeight: string, fontWeight: number, letterSpacing: string };
+export const BorderRadius4 : "4px";
 export const BorderRadius8 : "8px";
 export const BorderRadius16 : "16px";
 export const BorderRadius24 : "24px";
