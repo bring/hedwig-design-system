@@ -38,7 +38,7 @@ importers:
     devDependencies:
       '@remix-run/dev':
         specifier: ^2.17.5
-        version: 2.17.5(@remix-run/react@2.17.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/node@26.0.1)(jiti@2.7.0)(lightningcss@1.33.0)(typescript@5.9.3)(vite@8.3.5(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)
+        version: 2.17.5(@remix-run/react@2.17.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/node@26.0.1)(jiti@2.7.0)(lightningcss@1.33.0)(typescript@5.9.3)(vite@8.3.6(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)
       '@tailwindcss/postcss':
         specifier: 4.3.3
         version: 4.3.3
@@ -88,8 +88,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       vite:
-        specifier: ^8.3.5
-        version: 8.3.5(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^8.3.6
+        version: 8.3.6(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0)
       wait-on:
         specifier: ^9.5.1
         version: 9.5.1
@@ -4574,8 +4574,8 @@ packages:
       yaml:
         optional: true
 
-  vite@8.3.5:
-    resolution: {integrity: sha512-z1YpjieJ9g0ebTmQpLBv/oq9E3F9EIlOe+7LahW8SrE3LTiG3udBRUXQOlYXP9b+IC2q2phHeVxj9xGlw34OEQ==}
+  vite@8.3.6:
+    resolution: {integrity: sha512-UI7dK29NnS54Fk+mmo7o+jI6U8Fp7hDl+X5Q1k45WH+d4dSlbLVUETGQ+hfkNgvLQGyoElPj837nZyv4MBc0VA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -5534,7 +5534,7 @@ snapshots:
 
   '@radix-ui/rect@1.1.1': {}
 
-  '@remix-run/dev@2.17.5(@remix-run/react@2.17.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/node@26.0.1)(jiti@2.7.0)(lightningcss@1.33.0)(typescript@5.9.3)(vite@8.3.5(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)':
+  '@remix-run/dev@2.17.5(@remix-run/react@2.17.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3))(@types/node@26.0.1)(jiti@2.7.0)(lightningcss@1.33.0)(typescript@5.9.3)(vite@8.3.6(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/generator': 7.29.7
@@ -5595,7 +5595,7 @@ snapshots:
       ws: 7.5.11
     optionalDependencies:
       typescript: 5.9.3
-      vite: 8.3.5(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 8.3.6(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -9631,7 +9631,7 @@ snapshots:
       lightningcss: 1.33.0
       yaml: 2.9.0
 
-  vite@8.3.5(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0):
+  vite@8.3.6(@types/node@26.0.1)(esbuild@0.17.6)(jiti@2.7.0)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
