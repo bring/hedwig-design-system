@@ -1,5 +1,13 @@
 # @postenbring/hedwig-css
 
+## 4.6.1
+
+### Patch Changes
+
+- 01eb139: Add `--hds-border-radius-4` token (4px) and use it for the checkbox
+- Updated dependencies [01eb139]
+  - @postenbring/hedwig-tokens@3.3.0
+
 ## 4.6.0
 
 ### Minor Changes
