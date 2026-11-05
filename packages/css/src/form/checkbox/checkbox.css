@@ -17,7 +17,7 @@
 .hds-checkbox {
   display: block;
   padding: 0 0 0 calc(var(--checkmark-width) + var(--hds-spacing-16));
-  border-radius: var(--hds-border-radius);
+  border-radius: var(--hds-border-radius-4);
   position: relative;
   cursor: pointer;
 
@@ -37,10 +37,6 @@
 
   label::after {
     content: "";
-
-    /* position: absolute;
-    top: 0;
-    left: 0; */
     height: 100%;
     width: 100%;
   }
@@ -65,7 +61,7 @@
     height: var(--checkmark-width);
     width: var(--checkmark-width);
     border: solid 2px var(--hds-colors-neutral-border-strong);
-    border-radius: var(--hds-border-radius);
+    border-radius: var(--hds-border-radius-4);
     color: var(--hds-colors-base-contrast-default);
     padding: 2px;
   }
