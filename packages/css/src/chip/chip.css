@@ -4,33 +4,21 @@
 /**
  * Block
  *
- * Colors are controlled by the custom properties prefixed with `--_chip-`,
- * which are redefined per type, variant and state below.
  * All colors are semantic tokens, so the brand (data-color) and color scheme are inherited.
  */
 
 .hds-chip {
-  --_chip-bg: var(--hds-colors-surface-tinted);
-  --_chip-border: transparent;
-  --_chip-color: var(--hds-colors-text-default);
-
-  /* Radio and checkbox indicator */
-  --_chip-indicator-bg: transparent;
-  --_chip-indicator-border: var(--hds-colors-base-default);
-  --_chip-indicator-mark: var(--hds-colors-base-default);
-
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   position: relative;
   display: inline-flex;
-  flex-shrink: 0;
   align-items: center;
   gap: var(--hds-spacing-8);
   margin: 0;
   padding: var(--hds-spacing-8) var(--hds-spacing-12);
-  background-color: var(--_chip-bg);
-  color: var(--_chip-color);
-  border: var(--hds-stroke-default) solid var(--_chip-border);
+  background-color: var(--hds-colors-surface-tinted);
+  color: var(--hds-colors-text-default);
+  border: var(--hds-stroke-default) solid transparent;
   border-radius: var(--hds-border-radius-8);
   font: var(--hds-typography-body-small);
   text-decoration: none;
@@ -49,93 +37,72 @@
     border-radius: 999px;
   }
 
-  /* Toggle is white with a brand border */
+  &.hds-chip--removable {
+    gap: var(--hds-spacing-4);
+  }
+
   &.hds-chip--toggle {
-    --_chip-bg: var(--hds-colors-surface-default);
-    --_chip-border: var(--hds-colors-border-default);
+    background-color: var(--hds-colors-surface-default);
+    border-color: var(--hds-colors-border-default);
   }
 
   /**
    * Variant: neutral
    */
   &.hds-chip--neutral {
-    --_chip-bg: var(--hds-colors-neutral-surface-default);
-    --_chip-border: var(--hds-colors-neutral-border-default);
-    --_chip-indicator-border: var(--hds-colors-neutral-border-strong);
+    background-color: var(--hds-colors-neutral-surface-default);
+    border-color: var(--hds-colors-neutral-border-default);
 
     &.hds-chip--removable {
-      --_chip-bg: var(--hds-colors-neutral-surface-tinted);
-      --_chip-border: transparent;
+      background-color: var(--hds-colors-neutral-surface-tinted);
+      border-color: transparent;
     }
   }
 
   /**
-   * State: Hover
+   * State: Hover and active
    */
   &:hover {
-    --_chip-bg: var(--hds-colors-surface-hover);
-
-    &.hds-chip--neutral {
-      --_chip-bg: var(--hds-colors-neutral-surface-hover);
-    }
+    background-color: var(--hds-colors-surface-hover);
   }
 
-  /**
-   * State: Active
-   */
   &:active {
-    --_chip-bg: var(--hds-colors-surface-active);
+    background-color: var(--hds-colors-surface-active);
+  }
 
-    &.hds-chip--neutral {
-      --_chip-bg: var(--hds-colors-neutral-surface-active);
-    }
+  &.hds-chip--neutral:hover {
+    background-color: var(--hds-colors-neutral-surface-hover);
+  }
+
+  &.hds-chip--neutral:active {
+    background-color: var(--hds-colors-neutral-surface-active);
   }
 
   /**
    * State: Checked / pressed
+   *
+   * Main gets a solid brand background, neutral keeps its background and only gets a stronger border
    */
   &:has(.hds-chip__input:checked),
-  &.hds-chip--toggle[aria-pressed="true"] {
-    --_chip-bg: var(--hds-colors-base-default);
-    --_chip-border: var(--hds-colors-base-default);
-    --_chip-color: var(--hds-colors-base-contrast-default);
-    --_chip-indicator-bg: var(--hds-colors-base-contrast-default);
-    --_chip-indicator-border: var(--hds-colors-base-contrast-default);
-
-    &:hover {
-      --_chip-bg: var(--hds-colors-base-hover);
-      --_chip-border: var(--hds-colors-base-hover);
-    }
-
-    &:active {
-      --_chip-bg: var(--hds-colors-base-active);
-      --_chip-border: var(--hds-colors-base-active);
-    }
-
-    /* Neutral keeps its neutral background, only the indicator is branded */
-    &.hds-chip--neutral {
-      --_chip-bg: var(--hds-colors-neutral-surface-default);
-      --_chip-border: var(--hds-colors-neutral-border-strong);
-      --_chip-color: var(--hds-colors-text-default);
-      --_chip-indicator-bg: var(--hds-colors-base-default);
-      --_chip-indicator-border: var(--hds-colors-base-default);
-      --_chip-indicator-mark: var(--hds-colors-base-contrast-default);
+  &[aria-pressed="true"] {
+    &:not(.hds-chip--neutral) {
+      background-color: var(--hds-colors-base-default);
+      border-color: var(--hds-colors-base-default);
+      color: var(--hds-colors-base-contrast-default);
 
       &:hover {
-        --_chip-bg: var(--hds-colors-neutral-surface-hover);
-        --_chip-border: var(--hds-colors-neutral-border-strong);
+        background-color: var(--hds-colors-base-hover);
+        border-color: var(--hds-colors-base-hover);
       }
 
       &:active {
-        --_chip-bg: var(--hds-colors-neutral-surface-active);
-        --_chip-border: var(--hds-colors-neutral-border-strong);
+        background-color: var(--hds-colors-base-active);
+        border-color: var(--hds-colors-base-active);
       }
+    }
 
-      /* A radio is a white circle with a branded dot */
-      &.hds-chip--radio {
-        --_chip-indicator-bg: var(--hds-colors-surface-default);
-        --_chip-indicator-mark: var(--hds-colors-base-default);
-      }
+    &.hds-chip--neutral {
+      border-color: var(--hds-colors-neutral-border-strong);
     }
   }
 
@@ -146,7 +113,6 @@
   &[aria-disabled="true"],
   &:has(.hds-chip__input:disabled) {
     opacity: var(--hds-opacity-50);
-    cursor: default;
 
     /* Keep hover and active from changing the chip */
     pointer-events: none;
@@ -161,81 +127,95 @@
   }
 
   /**
-   * Elements
+   * Element: Hidden native input (radio and checkbox)
    */
-
-  /* Visually hidden native input, still focusable and clickable through the label */
   .hds-chip__input {
     position: absolute;
     opacity: 0;
     height: 0;
     width: 0;
-    margin: 0;
-    pointer-events: none;
   }
 
+  /**
+   * Element: Indicator (radio and checkbox)
+   */
   .hds-chip__indicator {
-    --_chip-indicator-size: 20px;
-
     position: relative;
     flex-shrink: 0;
     box-sizing: border-box;
-    height: var(--_chip-indicator-size);
-    width: var(--_chip-indicator-size);
-    background-color: var(--_chip-indicator-bg);
-    border: 2px solid var(--_chip-indicator-border);
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--hds-colors-base-default);
     border-radius: var(--hds-border-radius-4);
     transition: inherit;
+
+    /* The radio dot or the checkmark */
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      background-color: var(--hds-colors-base-default);
+    }
   }
 
   &.hds-chip--radio .hds-chip__indicator {
     border-radius: 50%;
+
+    &::after {
+      inset: 4px;
+      border-radius: 50%;
+    }
   }
 
-  /* Radio dot, same approach as radio-button.css */
-  &.hds-chip--radio .hds-chip__indicator::after {
-    content: "";
-    position: absolute;
-    display: none;
-    top: 50%;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-color: var(--_chip-indicator-mark);
-  }
-
-  /* Checkmark, same approach as checkbox.css */
   &.hds-chip--checkbox .hds-chip__indicator::after {
-    content: "";
-    position: absolute;
-    display: none;
     inset: 0;
     mask-image: var(--_hds-icons-check);
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-    background-color: var(--_chip-indicator-mark);
   }
 
-  .hds-chip__input:checked ~ .hds-chip__indicator::after {
-    display: block;
+  &.hds-chip--neutral .hds-chip__indicator {
+    border-color: var(--hds-colors-neutral-border-strong);
   }
 
+  .hds-chip__input:checked ~ .hds-chip__indicator {
+    background-color: var(--hds-colors-base-contrast-default);
+    border-color: var(--hds-colors-base-contrast-default);
+
+    &::after {
+      display: block;
+    }
+  }
+
+  /* Neutral keeps the brand color on the indicator: a brand ring for radio, a filled box for checkbox */
+  &.hds-chip--neutral .hds-chip__input:checked ~ .hds-chip__indicator {
+    border-color: var(--hds-colors-base-default);
+  }
+
+  &.hds-chip--neutral.hds-chip--checkbox .hds-chip__input:checked ~ .hds-chip__indicator {
+    background-color: var(--hds-colors-base-default);
+
+    &::after {
+      background-color: var(--hds-colors-base-contrast-default);
+    }
+  }
+
+  /**
+   * Element: Icon (toggle)
+   */
   .hds-chip__icon {
-    display: inline-flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
+    display: flex;
 
     & > svg {
-      display: block;
       height: 20px;
       width: 20px;
     }
   }
 
+  /**
+   * Element: Remove icon (removable)
+   */
   .hds-chip__remove {
     flex-shrink: 0;
     height: 20px;
@@ -245,10 +225,6 @@
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
-  }
-
-  &.hds-chip--removable {
-    gap: var(--hds-spacing-4);
   }
 }
 
@@ -260,12 +236,16 @@
   display: flex;
   gap: var(--hds-spacing-8);
 
-  /* Room for the focus outline of the chips */
-  padding: 2px;
-
   &.hds-chip-group--inline {
     flex-wrap: nowrap;
     overflow-x: auto;
+
+    /* Room for the focus outline of the chips, which would otherwise be clipped by the scroll container */
+    padding: var(--hds-spacing-4);
+
+    & > * {
+      flex-shrink: 0;
+    }
   }
 
   &.hds-chip-group--wrap {
