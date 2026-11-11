@@ -49,11 +49,6 @@
     border-radius: 999px;
   }
 
-  &.hds-chip--removable,
-  &.hds-chip--button {
-    padding: var(--hds-spacing-8) var(--hds-spacing-12);
-  }
-
   /* Toggle is white with a brand border */
   &.hds-chip--toggle {
     --_chip-bg: var(--hds-colors-surface-default);
@@ -150,26 +145,11 @@
   &:disabled,
   &[aria-disabled="true"],
   &:has(.hds-chip__input:disabled) {
-    --_chip-bg: var(--hds-colors-neutral-surface-tinted);
-    --_chip-border: transparent;
-    --_chip-color: var(--hds-colors-neutral-text-subtle);
-    --_chip-indicator-bg: transparent;
-    --_chip-indicator-border: var(--hds-colors-neutral-border-default);
-    --_chip-indicator-mark: var(--hds-colors-neutral-text-subtle);
+    opacity: var(--hds-opacity-50);
+    cursor: default;
 
-    cursor: not-allowed;
+    /* Keep hover and active from changing the chip */
     pointer-events: none;
-
-    &.hds-chip--toggle,
-    &.hds-chip--neutral {
-      --_chip-bg: var(--hds-colors-neutral-surface-default);
-      --_chip-border: var(--hds-colors-neutral-border-default);
-    }
-
-    &.hds-chip--neutral.hds-chip--removable {
-      --_chip-bg: var(--hds-colors-neutral-surface-tinted);
-      --_chip-border: transparent;
-    }
   }
 
   /**
