@@ -29,15 +29,11 @@ interface ChipBaseProps {
  */
 type NativeButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "children">;
 
-export type ChipRadioProps = ChipBaseProps &
-  Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "children" | "size"> & {
-    type: "radio";
-  };
+type NativeInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "children" | "size">;
 
-export type ChipCheckboxProps = ChipBaseProps &
-  Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "children" | "size"> & {
-    type: "checkbox";
-  };
+export type ChipRadioProps = ChipBaseProps & NativeInputProps & { type: "radio" };
+
+export type ChipCheckboxProps = ChipBaseProps & NativeInputProps & { type: "checkbox" };
 
 export type ChipRemovableProps = ChipBaseProps &
   NativeButtonProps & {
@@ -85,6 +81,118 @@ export type ChipToggleProps = ChipBaseProps &
 export type ChipProps =
   ChipRadioProps | ChipCheckboxProps | ChipRemovableProps | ChipButtonProps | ChipToggleProps;
 
+function chipClassName(type: ChipProps["type"], variant: ChipProps["variant"], className?: string) {
+  return clsx(
+    "hds-chip",
+    // The button type has no type-specific styles, so it has no modifier class
+    type !== "button" && `hds-chip--${type}`,
+    { "hds-chip--neutral": variant === "neutral" },
+    className as undefined,
+  );
+}
+
+/**
+ * One component per type of chip, `Chip` picks the right one
+ */
+
+const InputChip = forwardRef<HTMLInputElement, ChipRadioProps | ChipCheckboxProps>(
+  function InputChip({ type, variant, className, style, children, ...inputProps }, ref) {
+    return (
+      <label className={chipClassName(type, variant, className)} style={style}>
+        <input {...inputProps} ref={ref} type={type} className="hds-chip__input" />
+        <span className="hds-chip__indicator" aria-hidden="true" />
+        {children}
+      </label>
+    );
+  },
+);
+
+const RemovableChip = forwardRef<HTMLButtonElement, ChipRemovableProps>(function RemovableChip(
+  { type, variant, className, onRemove, removeLabel = "Fjern", onClick, children, ...buttonProps },
+  ref,
+) {
+  // E.g. "Fjern Oslo". For other children than text the consumer must provide an `aria-label`
+  const ariaLabel =
+    typeof children === "string" || typeof children === "number"
+      ? `${removeLabel} ${children}`
+      : undefined;
+
+  return (
+    <button
+      aria-label={ariaLabel}
+      {...buttonProps}
+      ref={ref}
+      type="button"
+      className={chipClassName(type, variant, className)}
+      onClick={(event) => {
+        onClick?.(event);
+        if (!event.defaultPrevented) onRemove?.(event);
+      }}
+    >
+      {children}
+      <span className="hds-chip__remove" aria-hidden="true" />
+    </button>
+  );
+});
+
+const ButtonChip = forwardRef<HTMLButtonElement, ChipButtonProps>(function ButtonChip(
+  { type, variant, className, asChild, ...buttonProps },
+  ref,
+) {
+  const classNames = chipClassName(type, variant, className);
+
+  // With `asChild` the child decides the element, e.g. an anchor, so no `type="button"`
+  if (asChild) return <Slot {...buttonProps} ref={ref} className={classNames} />;
+
+  return <button {...buttonProps} ref={ref} type="button" className={classNames} />;
+});
+
+const ToggleChip = forwardRef<HTMLButtonElement, ChipToggleProps>(function ToggleChip(
+  {
+    type,
+    variant,
+    className,
+    icon,
+    pressedIcon,
+    pressed: pressedProp,
+    defaultPressed = false,
+    onPressedChange,
+    onClick,
+    children,
+    ...buttonProps
+  },
+  ref,
+) {
+  const [pressedState, setPressedState] = useState(defaultPressed);
+  const isControlled = pressedProp !== undefined;
+  const pressed = isControlled ? pressedProp : pressedState;
+
+  return (
+    <button
+      {...buttonProps}
+      ref={ref}
+      type="button"
+      aria-pressed={pressed}
+      className={chipClassName(type, variant, className)}
+      onClick={(event) => {
+        onClick?.(event);
+        if (event.defaultPrevented) return;
+        if (!isControlled) setPressedState(!pressed);
+        onPressedChange?.(!pressed);
+      }}
+    >
+      <span className="hds-chip__icon" aria-hidden="true">
+        {pressed && pressedIcon ? pressedIcon : icon}
+      </span>
+      {children}
+    </button>
+  );
+});
+
+/**
+ * Gives `ref` the right element type for each chip type:
+ * `HTMLInputElement` for radio and checkbox, `HTMLButtonElement` for the rest.
+ */
 interface ChipComponent {
   (
     props:
@@ -95,55 +203,6 @@ interface ChipComponent {
   ): ReactElement | null;
   displayName?: string;
 }
-
-const ToggleChip = forwardRef<HTMLButtonElement, ChipToggleProps>(
-  (
-    {
-      type,
-      variant = "main",
-      icon,
-      pressedIcon,
-      pressed: pressedProp,
-      defaultPressed = false,
-      onPressedChange,
-      onClick,
-      className,
-      children,
-      ...rest
-    }: ChipToggleProps,
-    ref,
-  ) => {
-    const [pressedState, setPressedState] = useState(defaultPressed);
-    const pressed = pressedProp ?? pressedState;
-
-    return (
-      <button
-        {...rest}
-        ref={ref}
-        type="button"
-        aria-pressed={pressed}
-        className={clsx(
-          "hds-chip",
-          `hds-chip--${type}`,
-          { "hds-chip--neutral": variant === "neutral" },
-          className as undefined,
-        )}
-        onClick={(event) => {
-          onClick?.(event);
-          if (event.defaultPrevented) return;
-          if (pressedProp === undefined) setPressedState(!pressed);
-          onPressedChange?.(!pressed);
-        }}
-      >
-        <span className="hds-chip__icon" aria-hidden="true">
-          {pressed && pressedIcon ? pressedIcon : icon}
-        </span>
-        {children}
-      </button>
-    );
-  },
-);
-ToggleChip.displayName = "ToggleChip";
 
 /**
  * Chips let the user select one or more options, toggle something, or remove an item.
@@ -177,81 +236,19 @@ ToggleChip.displayName = "ToggleChip";
  * <Chip type="button" asChild><a href="/tracking">Sporing</a></Chip>
  */
 export const Chip = forwardRef<HTMLInputElement | HTMLButtonElement, ChipProps>((props, ref) => {
-  const { variant = "main", className } = props;
-  const classNames = clsx(
-    "hds-chip",
-    // The button type has no type-specific styles, so there is no modifier class for it
-    props.type !== "button" && `hds-chip--${props.type}`,
-    { "hds-chip--neutral": variant === "neutral" },
-    className as undefined,
-  );
+  const inputRef = ref as Ref<HTMLInputElement>;
+  const buttonRef = ref as Ref<HTMLButtonElement>;
 
-  if (props.type === "radio" || props.type === "checkbox") {
-    const { type, variant: _variant, className: _className, style, children, ...rest } = props;
-    return (
-      <label className={classNames} style={style}>
-        <input
-          {...rest}
-          ref={ref as Ref<HTMLInputElement>}
-          type={type}
-          className="hds-chip__input"
-        />
-        <span className="hds-chip__indicator" aria-hidden="true" />
-        {children}
-      </label>
-    );
+  switch (props.type) {
+    case "radio":
+    case "checkbox":
+      return <InputChip {...props} ref={inputRef} />;
+    case "removable":
+      return <RemovableChip {...props} ref={buttonRef} />;
+    case "button":
+      return <ButtonChip {...props} ref={buttonRef} />;
+    case "toggle":
+      return <ToggleChip {...props} ref={buttonRef} />;
   }
-
-  if (props.type === "toggle") {
-    return <ToggleChip {...props} ref={ref as Ref<HTMLButtonElement>} />;
-  }
-
-  if (props.type === "removable") {
-    const {
-      type,
-      variant: _variant,
-      className: _className,
-      onRemove,
-      removeLabel = "Fjern",
-      onClick,
-      children,
-      ...rest
-    } = props;
-    void type;
-    const label =
-      typeof children === "string" || typeof children === "number"
-        ? `${removeLabel} ${children}`
-        : undefined;
-    return (
-      <button
-        aria-label={label}
-        {...rest}
-        ref={ref as Ref<HTMLButtonElement>}
-        type="button"
-        className={classNames}
-        onClick={(event) => {
-          onClick?.(event);
-          if (!event.defaultPrevented) onRemove?.(event);
-        }}
-      >
-        {children}
-        <span className="hds-chip__remove" aria-hidden="true" />
-      </button>
-    );
-  }
-
-  const { type, variant: _variant, className: _className, asChild, children, ...rest } = props;
-  void type;
-  const Component = asChild ? Slot : "button";
-  return (
-    <Component
-      {...rest}
-      ref={ref as Ref<HTMLButtonElement>}
-      {...(asChild ? {} : { type: "button" })}
-      className={classNames}
-    >
-      {children}
-    </Component>
-  );
 }) as ChipComponent;
 Chip.displayName = "Chip";
