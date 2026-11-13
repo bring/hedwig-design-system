@@ -1,0 +1,254 @@
+@import url("../_icons.css");
+@import url("../spacing/spacing.css");
+
+/**
+ * Block
+ *
+ * All colors are semantic tokens, so the brand (data-color) and color scheme are inherited.
+ */
+
+.hds-chip {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hds-spacing-8);
+  margin: 0;
+  padding: var(--hds-spacing-8) var(--hds-spacing-12);
+  background-color: var(--hds-colors-surface-tinted);
+  color: var(--hds-colors-text-default);
+  border: var(--hds-stroke-default) solid transparent;
+  border-radius: var(--hds-border-radius-8);
+  font: var(--hds-typography-body-small);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition-duration: var(--hds-micro-animation-duration-quick);
+  transition-timing-function: var(--hds-micro-animation-easing-normal);
+  transition-property: color, background-color, border-color, outline;
+  outline-offset: 2px;
+
+  /**
+   * Types
+   */
+  &.hds-chip--radio {
+    border-radius: 999px;
+  }
+
+  &.hds-chip--removable {
+    gap: var(--hds-spacing-4);
+  }
+
+  &.hds-chip--toggle {
+    background-color: var(--hds-colors-surface-default);
+    border-color: var(--hds-colors-border-default);
+  }
+
+  /**
+   * Variant: neutral
+   */
+  &.hds-chip--neutral {
+    background-color: var(--hds-colors-neutral-surface-default);
+    border-color: var(--hds-colors-neutral-border-default);
+
+    &.hds-chip--removable {
+      background-color: var(--hds-colors-neutral-surface-tinted);
+      border-color: transparent;
+    }
+  }
+
+  /**
+   * State: Hover and active
+   */
+  &:hover {
+    background-color: var(--hds-colors-surface-hover);
+  }
+
+  &:active {
+    background-color: var(--hds-colors-surface-active);
+  }
+
+  &.hds-chip--neutral:hover {
+    background-color: var(--hds-colors-neutral-surface-hover);
+  }
+
+  &.hds-chip--neutral:active {
+    background-color: var(--hds-colors-neutral-surface-active);
+  }
+
+  /**
+   * State: Checked / pressed
+   *
+   * Main gets a solid brand background, neutral keeps its background and only gets a stronger border
+   */
+  &:has(.hds-chip__input:checked),
+  &[aria-pressed="true"] {
+    &:not(.hds-chip--neutral) {
+      background-color: var(--hds-colors-base-default);
+      border-color: var(--hds-colors-base-default);
+      color: var(--hds-colors-base-contrast-default);
+
+      &:hover {
+        background-color: var(--hds-colors-base-hover);
+        border-color: var(--hds-colors-base-hover);
+      }
+
+      &:active {
+        background-color: var(--hds-colors-base-active);
+        border-color: var(--hds-colors-base-active);
+      }
+    }
+
+    &.hds-chip--neutral {
+      border-color: var(--hds-colors-neutral-border-strong);
+    }
+  }
+
+  /**
+   * State: Disabled
+   */
+  &:disabled,
+  &[aria-disabled="true"],
+  &:has(.hds-chip__input:disabled) {
+    opacity: var(--hds-opacity-50);
+
+    /* Keep hover and active from changing the chip */
+    pointer-events: none;
+  }
+
+  /**
+   * State: Focus
+   */
+  &:focus-visible,
+  &:has(.hds-chip__input:focus-visible) {
+    outline: 2px solid var(--hds-colors-border-strong);
+  }
+
+  /**
+   * Element: Hidden native input (radio and checkbox)
+   */
+  .hds-chip__input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  /**
+   * Element: Indicator (radio and checkbox)
+   */
+  .hds-chip__indicator {
+    position: relative;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--hds-colors-base-default);
+    border-radius: var(--hds-border-radius-4);
+    transition: inherit;
+
+    /* The radio dot or the checkmark */
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      background-color: var(--hds-colors-base-default);
+    }
+  }
+
+  &.hds-chip--radio .hds-chip__indicator {
+    border-radius: 50%;
+
+    &::after {
+      inset: 4px;
+      border-radius: 50%;
+    }
+  }
+
+  &.hds-chip--checkbox .hds-chip__indicator::after {
+    inset: 0;
+    mask-image: var(--_hds-icons-check);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  &.hds-chip--neutral .hds-chip__indicator {
+    border-color: var(--hds-colors-neutral-border-strong);
+  }
+
+  .hds-chip__input:checked ~ .hds-chip__indicator {
+    background-color: var(--hds-colors-base-contrast-default);
+    border-color: var(--hds-colors-base-contrast-default);
+
+    &::after {
+      display: block;
+    }
+  }
+
+  /* Neutral keeps the brand color on the indicator: a brand ring for radio, a filled box for checkbox */
+  &.hds-chip--neutral .hds-chip__input:checked ~ .hds-chip__indicator {
+    border-color: var(--hds-colors-base-default);
+  }
+
+  &.hds-chip--neutral.hds-chip--checkbox .hds-chip__input:checked ~ .hds-chip__indicator {
+    background-color: var(--hds-colors-base-default);
+
+    &::after {
+      background-color: var(--hds-colors-base-contrast-default);
+    }
+  }
+
+  /**
+   * Element: Icon (toggle)
+   */
+  .hds-chip__icon {
+    display: flex;
+
+    & > svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  /**
+   * Element: Remove icon (removable)
+   */
+  .hds-chip__remove {
+    flex-shrink: 0;
+    height: 20px;
+    width: 20px;
+    background-color: currentcolor;
+    mask-image: var(--_hds-icons-times);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}
+
+/**
+ * Chip group
+ */
+
+.hds-chip-group {
+  display: flex;
+  gap: var(--hds-spacing-8);
+
+  &.hds-chip-group--inline {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    /* Room for the focus outline of the chips, which would otherwise be clipped by the scroll container */
+    padding: var(--hds-spacing-4);
+
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+
+  &.hds-chip-group--wrap {
+    flex-wrap: wrap;
+  }
+}

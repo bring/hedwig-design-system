@@ -1,3 +1,4 @@
+// TODO: Replace this internal chip with the official Hedwig <Chip> from @postenbring/hedwig-react once it is published.
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef } from "react";
 import "./chip.css";
