@@ -5,7 +5,7 @@ import {
   Badge,
   Breadcrumbs,
   Button,
-  Navbar,
+  //Navbar,
   Link,
   Figure,
   HStack,
@@ -16,28 +16,11 @@ import {
   Input,
   Box,
 } from "@postenbring/hedwig-react";
-import ex1 from "../../assets/ex1.avif";
+import ex1 from "../../../assets/ex1.avif";
 
 function Example() {
   return (
     <div>
-      <Navbar>
-        <Navbar.Logo asChild>
-          <a href="https://www.posten.no/" title="Til forsiden" />
-        </Navbar.Logo>
-        <Navbar.Navigation>
-          <Navbar.LinkItem title="Link" href="https://www.posten.no/">
-            English
-          </Navbar.LinkItem>
-          <Navbar.ButtonItem title="Button">Search</Navbar.ButtonItem>
-          <Navbar.ExpandableMenu>
-            <Navbar.ExpandableMenuTrigger whenClosedText="Meny" whenOpenText="Close" />
-            {/* <Navbar.ExpandableMenuContent>
-                   
-                 </Navbar.ExpandableMenuContent> */}
-          </Navbar.ExpandableMenu>
-        </Navbar.Navigation>
-      </Navbar>
       <Container>
         <Breadcrumbs className="hds-mb-24-32">
           <li>
