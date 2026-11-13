@@ -16,7 +16,7 @@ import {
   Input,
   Box,
 } from "@postenbring/hedwig-react";
-import ex1 from "../../assets/ex1.avif";
+import ex1 from "../../../assets/ex1.avif";
 
 function Example() {
   return (
@@ -291,7 +291,7 @@ function Example() {
 
 export default Example;
 
-import type { ExampleConfig } from "..";
+import type { ExampleConfig } from "../..";
 export const config: ExampleConfig = {
   index: 0,
   layout: "padding-only",
