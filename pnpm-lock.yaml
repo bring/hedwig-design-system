@@ -67,8 +67,8 @@ importers:
         specifier: 9.1.20
         version: 9.1.20(react@18.3.1)(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))
       '@storybook/addon-themes':
-        specifier: 9.1.20
-        version: 9.1.20(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))
+        specifier: 10.6.7
+        version: 10.6.7(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))
       '@storybook/react-vite':
         specifier: 9.1.20
         version: 9.1.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.62.4)(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))(typescript@5.8.3)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1))
@@ -514,8 +514,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/runtime@7.29.13':
-    resolution: {integrity: sha512-v+oN26xP4YIlQsbQ/CbTH1WG5m/l/DjKKZNy/Kp3f/AFvbgt7Em/D0FeMM3O2hX0YzeN2M16W8lOpyhIkfCBcQ==}
+  '@babel/runtime@7.29.14':
+    resolution: {integrity: sha512-Y5tqevQaUAZhhj82BpYMNC1ssvLQTVAfwKdm8iy8qwmhvC2/CpcAu8OC+QEtjM7pMk7knx83u1Qj8gzkicyelw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.29.7':
@@ -2160,10 +2160,10 @@ packages:
       react:
         optional: true
 
-  '@storybook/addon-themes@9.1.20':
-    resolution: {integrity: sha512-GY9WKJMxbsI24CTj1PToWbjZGuXnwLasahv51wpIQC94Sn/8NxRta8K2BO2Pqb7U3sdtjH6htUasnQnaL0/ZBw==}
+  '@storybook/addon-themes@10.6.7':
+    resolution: {integrity: sha512-1nwGqsIm5btynuccrS7ReRY04JwFjc3vV6mZYlT5c0Jdk4cS3qvbo+VoIaXvyVNC2u/HrJ802ytZi40eaq9MqA==}
     peerDependencies:
-      storybook: ^9.1.20
+      storybook: ^10.6.7
 
   '@storybook/builder-vite@9.1.20':
     resolution: {integrity: sha512-cdU3Q2/wEaT8h+mApFToRiF/0hYKH1eAkD0scQn67aODgp7xnkr0YHcdA+8w0Uxd2V7U8crV/cmT/HD0ELVOGw==}
@@ -6669,6 +6669,10 @@ packages:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
 
+  ts-dedent@2.3.0:
+    resolution: {integrity: sha512-JfJeIHke7y2egdGGgRAvpCwYFUsHlM2gPcrVOxFkznt/4uzQ7HFmvE63iFHVLBJNDuyDOQgijDK/tXH/f6Msjg==}
+    engines: {node: '>=6.10'}
+
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
@@ -7523,7 +7527,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/runtime@7.29.13': {}
+  '@babel/runtime@7.29.14': {}
 
   '@babel/runtime@7.29.7': {}
 
@@ -8936,16 +8940,16 @@ snapshots:
     optionalDependencies:
       react: 18.3.1
 
-  '@storybook/addon-themes@9.1.20(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))':
+  '@storybook/addon-themes@10.6.7(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))':
     dependencies:
       storybook: 9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1))
-      ts-dedent: 2.2.0
+      ts-dedent: 2.3.0
 
   '@storybook/builder-vite@9.1.20(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1))':
     dependencies:
       '@storybook/csf-plugin': 9.1.20(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))
       storybook: 9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1))
-      ts-dedent: 2.2.0
+      ts-dedent: 2.3.0
       vite: 8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)
 
   '@storybook/csf-plugin@9.1.20(storybook@9.1.21(@testing-library/dom@10.4.0)(prettier@3.9.10)(vite@8.3.7(@types/node@26.2.0)(esbuild@0.25.12)(jiti@1.21.6)(tsx@4.23.15)(yaml@2.9.1)))':
@@ -9003,7 +9007,7 @@ snapshots:
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/runtime': 7.29.13
+      '@babel/runtime': 7.29.14
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -14661,6 +14665,8 @@ snapshots:
       typescript: 5.8.3
 
   ts-dedent@2.2.0: {}
+
+  ts-dedent@2.3.0: {}
 
   ts-interface-checker@0.1.13: {}
 
