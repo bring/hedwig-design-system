@@ -1,5 +1,11 @@
 # @postenbring/hedwig-css
 
+## 4.7.0
+
+### Minor Changes
+
+- cc2e5e4: Added new Chip component
+
 ## 4.6.1
 
 ### Patch Changes

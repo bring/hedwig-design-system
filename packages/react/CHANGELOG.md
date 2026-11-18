@@ -1,5 +1,16 @@
 # @postenbring/hedwig-react
 
+## 4.7.0
+
+### Minor Changes
+
+- cc2e5e4: Added new Chip component
+
+### Patch Changes
+
+- Updated dependencies [cc2e5e4]
+  - @postenbring/hedwig-css@4.7.0
+
 ## 4.6.1
 
 ### Patch Changes
