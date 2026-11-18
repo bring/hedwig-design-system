@@ -13,12 +13,12 @@ import { Slot } from "@radix-ui/react-slot";
 
 interface ChipBaseProps {
   /**
-   * `main`: Colored by the inherited brand theme.
-   * `neutral`: White/grey chip, the checked indicator keeps the brand color.
+   * `primary`: Colored by the inherited brand theme.
+   * `secondary`: White/grey chip, the checked indicator keeps the brand color.
    *
-   * @default "main"
+   * @default "primary"
    */
-  variant?: "main" | "neutral";
+  variant?: "primary" | "secondary";
   children: ReactNode;
 }
 
@@ -86,7 +86,7 @@ function chipClassName(type: ChipProps["type"], variant: ChipProps["variant"], c
     "hds-chip",
     // The button type has no type-specific styles, so it has no modifier class
     type !== "button" && `hds-chip--${type}`,
-    { "hds-chip--neutral": variant === "neutral" },
+    { "hds-chip--secondary": variant === "secondary" },
     className as undefined,
   );
 }
@@ -96,7 +96,10 @@ function chipClassName(type: ChipProps["type"], variant: ChipProps["variant"], c
  */
 
 const InputChip = forwardRef<HTMLInputElement, ChipRadioProps | ChipCheckboxProps>(
-  function InputChip({ type, variant, className, style, children, ...inputProps }, ref) {
+  function InputChip(
+    { type, variant = "primary", className, style, children, ...inputProps },
+    ref,
+  ) {
     return (
       <label className={chipClassName(type, variant, className)} style={style}>
         <input {...inputProps} ref={ref} type={type} className="hds-chip__input" />
@@ -108,7 +111,16 @@ const InputChip = forwardRef<HTMLInputElement, ChipRadioProps | ChipCheckboxProp
 );
 
 const RemovableChip = forwardRef<HTMLButtonElement, ChipRemovableProps>(function RemovableChip(
-  { type, variant, className, onRemove, removeLabel = "Fjern", onClick, children, ...buttonProps },
+  {
+    type,
+    variant = "primary",
+    className,
+    onRemove,
+    removeLabel = "Fjern",
+    onClick,
+    children,
+    ...buttonProps
+  },
   ref,
 ) {
   // E.g. "Fjern Oslo". For other children than text the consumer must provide an `aria-label`
@@ -136,7 +148,7 @@ const RemovableChip = forwardRef<HTMLButtonElement, ChipRemovableProps>(function
 });
 
 const ButtonChip = forwardRef<HTMLButtonElement, ChipButtonProps>(function ButtonChip(
-  { type, variant, className, asChild, ...buttonProps },
+  { type, variant = "primary", className, asChild, ...buttonProps },
   ref,
 ) {
   const classNames = chipClassName(type, variant, className);
@@ -150,7 +162,7 @@ const ButtonChip = forwardRef<HTMLButtonElement, ChipButtonProps>(function Butto
 const ToggleChip = forwardRef<HTMLButtonElement, ChipToggleProps>(function ToggleChip(
   {
     type,
-    variant,
+    variant = "primary",
     className,
     icon,
     pressedIcon,
@@ -227,7 +239,7 @@ interface ChipComponent {
  * <Chip type="checkbox" defaultChecked>Sporing</Chip>
  * <Chip type="removable" onRemove={() => removeCity("oslo")}>Oslo</Chip>
  * <Chip type="button" onClick={openFilter}>Filter</Chip>
- * <Chip variant="neutral" type="toggle" icon={<StarOutline />} pressedIcon={<StarSolid />}>
+ * <Chip variant="secondary" type="toggle" icon={<StarOutline />} pressedIcon={<StarSolid />}>
  *   Favoritt
  * </Chip>
  *

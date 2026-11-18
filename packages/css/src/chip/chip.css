@@ -47,9 +47,9 @@
   }
 
   /**
-   * Variant: neutral
+   * Variant: secondary
    */
-  &.hds-chip--neutral {
+  &.hds-chip--secondary {
     background-color: var(--hds-colors-neutral-surface-default);
     border-color: var(--hds-colors-neutral-border-default);
 
@@ -70,22 +70,22 @@
     background-color: var(--hds-colors-surface-active);
   }
 
-  &.hds-chip--neutral:hover {
+  &.hds-chip--secondary:hover {
     background-color: var(--hds-colors-neutral-surface-hover);
   }
 
-  &.hds-chip--neutral:active {
+  &.hds-chip--secondary:active {
     background-color: var(--hds-colors-neutral-surface-active);
   }
 
   /**
    * State: Checked / pressed
    *
-   * Main gets a solid brand background, neutral keeps its background and only gets a stronger border
+   * Primary gets a solid brand background, secondary keeps its background and only gets a stronger border
    */
   &:has(.hds-chip__input:checked),
   &[aria-pressed="true"] {
-    &:not(.hds-chip--neutral) {
+    &:not(.hds-chip--secondary) {
       background-color: var(--hds-colors-base-default);
       border-color: var(--hds-colors-base-default);
       color: var(--hds-colors-base-contrast-default);
@@ -101,7 +101,7 @@
       }
     }
 
-    &.hds-chip--neutral {
+    &.hds-chip--secondary {
       border-color: var(--hds-colors-neutral-border-strong);
     }
   }
@@ -175,7 +175,7 @@
     mask-position: center;
   }
 
-  &.hds-chip--neutral .hds-chip__indicator {
+  &.hds-chip--secondary .hds-chip__indicator {
     border-color: var(--hds-colors-neutral-border-strong);
   }
 
@@ -188,12 +188,12 @@
     }
   }
 
-  /* Neutral keeps the brand color on the indicator: a brand ring for radio, a filled box for checkbox */
-  &.hds-chip--neutral .hds-chip__input:checked ~ .hds-chip__indicator {
+  /* Secondary keeps the brand color on the indicator: a brand ring for radio, a filled box for checkbox */
+  &.hds-chip--secondary .hds-chip__input:checked ~ .hds-chip__indicator {
     border-color: var(--hds-colors-base-default);
   }
 
-  &.hds-chip--neutral.hds-chip--checkbox .hds-chip__input:checked ~ .hds-chip__indicator {
+  &.hds-chip--secondary.hds-chip--checkbox .hds-chip__input:checked ~ .hds-chip__indicator {
     background-color: var(--hds-colors-base-default);
 
     &::after {

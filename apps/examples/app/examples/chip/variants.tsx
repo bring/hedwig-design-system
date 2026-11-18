@@ -5,30 +5,30 @@ function Example() {
   return (
     <div style={{ display: "grid", gap: "1rem" }}>
       <ChipGroup>
-        <Chip variant="main" type="radio" name="variants-main" defaultChecked>
+        <Chip variant="primary" type="radio" name="variants-primary" defaultChecked>
           Radio
         </Chip>
-        <Chip variant="main" type="checkbox" defaultChecked>
+        <Chip variant="primary" type="checkbox" defaultChecked>
           Checkbox
         </Chip>
-        <Chip variant="main" type="removable">
+        <Chip variant="primary" type="removable">
           Removable
         </Chip>
-        <Chip variant="main" type="button">
+        <Chip variant="primary" type="button">
           Button
         </Chip>
       </ChipGroup>
       <ChipGroup>
-        <Chip variant="neutral" type="radio" name="variants-neutral" defaultChecked>
+        <Chip variant="secondary" type="radio" name="variants-secondary" defaultChecked>
           Radio
         </Chip>
-        <Chip variant="neutral" type="checkbox" defaultChecked>
+        <Chip variant="secondary" type="checkbox" defaultChecked>
           Checkbox
         </Chip>
-        <Chip variant="neutral" type="removable">
+        <Chip variant="secondary" type="removable">
           Removable
         </Chip>
-        <Chip variant="neutral" type="button">
+        <Chip variant="secondary" type="button">
           Button
         </Chip>
       </ChipGroup>
@@ -42,5 +42,5 @@ import type { ExampleConfig } from "..";
 export const config: ExampleConfig = {
   index: 2,
   description:
-    "The <code>variant</code> prop is either <code>main</code> (default, colored by the theme) or <code>neutral</code>. Top row is main, bottom row is neutral.",
+    "The <code>variant</code> prop is either <code>primary</code> (default, colored by the theme) or <code>secondary</code>. Top row is primary, bottom row is secondary.",
 };

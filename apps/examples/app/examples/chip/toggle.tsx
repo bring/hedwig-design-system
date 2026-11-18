@@ -9,7 +9,7 @@ function Example() {
       </Chip>
       <Chip
         type="toggle"
-        variant="neutral"
+        variant="secondary"
         icon={<StarOutline />}
         pressedIcon={<StarSolid />}
         defaultPressed

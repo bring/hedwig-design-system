@@ -45,7 +45,7 @@ export const Preview: Story = {
   tags: ["!dev"],
   args: {
     type: "checkbox",
-    variant: "main",
+    variant: "primary",
     children: "Sporing",
     disabled: false,
   },
@@ -54,7 +54,7 @@ export const Preview: Story = {
       control: "select",
       options: ["radio", "checkbox", "removable", "button", "toggle"],
     },
-    variant: { control: "inline-radio", options: ["main", "neutral"] },
+    variant: { control: "inline-radio", options: ["primary", "secondary"] },
   },
   render: (args) => {
     if (args.type === "toggle") {
@@ -64,7 +64,7 @@ export const Preview: Story = {
   },
 };
 
-const variants = ["main", "neutral"] as const;
+const variants = ["primary", "secondary"] as const;
 
 export const AllTypes: Story = {
   render: () => (
