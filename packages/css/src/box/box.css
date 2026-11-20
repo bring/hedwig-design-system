@@ -30,7 +30,7 @@
   padding: var(--hds-component-box-padding);
 
   /* Closed state */
-  & button.hds-button.hds-box--closed {
+  &.hds-box--closed {
     display: none;
   }
 }
