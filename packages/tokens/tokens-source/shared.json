@@ -283,7 +283,7 @@
     "posten-h1-display": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["40px", "72px"],
+        "fontSize": ["2.5rem", "4.5rem"],
         "lineHeight": ["56px", "80px"],
         "fontWeight": 700,
         "letterSpacing": "0"
@@ -292,7 +292,7 @@
     "posten-h1": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["32px", "48px"],
+        "fontSize": ["2rem", "3rem"],
         "lineHeight": ["40px", "56px"],
         "fontWeight": 700,
         "letterSpacing": "0"
@@ -301,7 +301,7 @@
     "posten-h2": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["28px", "32px"],
+        "fontSize": ["1.75rem", "2rem"],
         "lineHeight": ["36px", "40px"],
         "fontWeight": 700,
         "letterSpacing": "0"
@@ -310,7 +310,7 @@
     "bring-h1-display": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["40px", "72px"],
+        "fontSize": ["2.5rem", "4.5rem"],
         "lineHeight": ["56px", "80px"],
         "fontWeight": 500,
         "letterSpacing": "0"
@@ -319,7 +319,7 @@
     "bring-h1": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["32px", "48px"],
+        "fontSize": ["2rem", "3rem"],
         "lineHeight": ["40px", "56px"],
         "fontWeight": 500,
         "letterSpacing": "0"
@@ -328,7 +328,7 @@
     "bring-h2": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["28px", "32px"],
+        "fontSize": ["1.75rem", "2rem"],
         "lineHeight": ["36px", "40px"],
         "fontWeight": 500,
         "letterSpacing": "0"
@@ -337,7 +337,7 @@
     "h3": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["22px", "24px"],
+        "fontSize": ["1.375rem", "1.5rem"],
         "lineHeight": ["28px", "32px"],
         "fontWeight": 400,
         "letterSpacing": "0"
@@ -346,7 +346,7 @@
     "h3-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["22px", "24px"],
+        "fontSize": ["1.375rem", "1.5rem"],
         "lineHeight": ["28px", "32px"],
         "fontWeight": 500,
         "letterSpacing": "0"
@@ -355,7 +355,7 @@
     "body": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["18px", "20px"],
+        "fontSize": ["1.125rem", "1.25rem"],
         "lineHeight": ["26px", "28px"],
         "fontWeight": 400,
         "letterSpacing": "0"
@@ -364,7 +364,7 @@
     "body-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["18px", "20px"],
+        "fontSize": ["1.125rem", "1.25rem"],
         "lineHeight": ["26px", "28px"],
         "fontWeight": 500,
         "letterSpacing": "0"
@@ -373,7 +373,7 @@
     "body-small": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["16px", "18px"],
+        "fontSize": ["1rem", "1.125rem"],
         "lineHeight": ["24px", "26px"],
         "fontWeight": 400,
         "letterSpacing": "0"
@@ -382,7 +382,7 @@
     "body-small-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["16px", "18px"],
+        "fontSize": ["1rem", "1.125rem"],
         "lineHeight": ["24px", "26px"],
         "fontWeight": 500,
         "letterSpacing": "0"
@@ -391,7 +391,7 @@
     "technical": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["14px", "16px"],
+        "fontSize": ["0.875rem", "1rem"],
         "lineHeight": ["22px", "24px"],
         "fontWeight": 400,
         "letterSpacing": "0"
@@ -400,7 +400,7 @@
     "technical-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": ["14px", "16px"],
+        "fontSize": ["0.875rem", "1rem"],
         "lineHeight": ["22px", "24px"],
         "fontWeight": 500,
         "letterSpacing": "0"
@@ -409,7 +409,7 @@
     "caption": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": "13px",
+        "fontSize": "0.8125rem",
         "lineHeight": "18px",
         "fontWeight": 400,
         "letterSpacing": "0"
@@ -418,7 +418,7 @@
     "caption-title": {
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
-        "fontSize": "13px",
+        "fontSize": "0.8125rem",
         "lineHeight": "18px",
         "fontWeight": 500,
         "letterSpacing": "0"

@@ -7,6 +7,9 @@
 :root {
   box-sizing: border-box;
   font: var(--hds-typography-body);
+
+  /* Keep rem-based typography relative to the browser's root font size. */
+  font-size: 100%;
   line-height: 1.4;
   cursor: auto;
   -moz-osx-font-smoothing: grayscale;

@@ -1,50 +1,50 @@
 {
   "font-size": {
     "$type": "dimension",
-    "posten-h1-display": "clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)",
-    "posten-h1-display-min": "40px",
-    "posten-h1-display-max": "72px",
-    "posten-h1": "clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)",
-    "posten-h1-min": "32px",
-    "posten-h1-max": "48px",
-    "posten-h2": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
-    "posten-h2-min": "28px",
-    "posten-h2-max": "32px",
-    "bring-h1-display": "clamp(40px,calc(40px + (72 - 40) * ((100vw - 300px) / (1200 - 300))),72px)",
-    "bring-h1-display-min": "40px",
-    "bring-h1-display-max": "72px",
-    "bring-h1": "clamp(32px,calc(32px + (48 - 32) * ((100vw - 300px) / (1200 - 300))),48px)",
-    "bring-h1-min": "32px",
-    "bring-h1-max": "48px",
-    "bring-h2": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
-    "bring-h2-min": "28px",
-    "bring-h2-max": "32px",
-    "h3": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
-    "h3-min": "22px",
-    "h3-max": "24px",
-    "h3-title": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
-    "h3-title-min": "22px",
-    "h3-title-max": "24px",
-    "body": "clamp(18px,calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))),20px)",
-    "body-min": "18px",
-    "body-max": "20px",
-    "body-title": "clamp(18px,calc(18px + (20 - 18) * ((100vw - 300px) / (1200 - 300))),20px)",
-    "body-title-min": "18px",
-    "body-title-max": "20px",
-    "body-small": "clamp(16px,calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300))),18px)",
-    "body-small-min": "16px",
-    "body-small-max": "18px",
-    "body-small-title": "clamp(16px,calc(16px + (18 - 16) * ((100vw - 300px) / (1200 - 300))),18px)",
-    "body-small-title-min": "16px",
-    "body-small-title-max": "18px",
-    "technical": "clamp(14px,calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300))),16px)",
-    "technical-min": "14px",
-    "technical-max": "16px",
-    "technical-title": "clamp(14px,calc(14px + (16 - 14) * ((100vw - 300px) / (1200 - 300))),16px)",
-    "technical-title-min": "14px",
-    "technical-title-max": "16px",
-    "caption": "13px",
-    "caption-title": "13px"
+    "posten-h1-display": "clamp(2.5rem,calc(2.5rem + (72 - 40) * ((100vw - 300px) / (1200 - 300))),4.5rem)",
+    "posten-h1-display-min": "2.5rem",
+    "posten-h1-display-max": "4.5rem",
+    "posten-h1": "clamp(2rem,calc(2rem + (48 - 32) * ((100vw - 300px) / (1200 - 300))),3rem)",
+    "posten-h1-min": "2rem",
+    "posten-h1-max": "3rem",
+    "posten-h2": "clamp(1.75rem,calc(1.75rem + (32 - 28) * ((100vw - 300px) / (1200 - 300))),2rem)",
+    "posten-h2-min": "1.75rem",
+    "posten-h2-max": "2rem",
+    "bring-h1-display": "clamp(2.5rem,calc(2.5rem + (72 - 40) * ((100vw - 300px) / (1200 - 300))),4.5rem)",
+    "bring-h1-display-min": "2.5rem",
+    "bring-h1-display-max": "4.5rem",
+    "bring-h1": "clamp(2rem,calc(2rem + (48 - 32) * ((100vw - 300px) / (1200 - 300))),3rem)",
+    "bring-h1-min": "2rem",
+    "bring-h1-max": "3rem",
+    "bring-h2": "clamp(1.75rem,calc(1.75rem + (32 - 28) * ((100vw - 300px) / (1200 - 300))),2rem)",
+    "bring-h2-min": "1.75rem",
+    "bring-h2-max": "2rem",
+    "h3": "clamp(1.375rem,calc(1.375rem + (24 - 22) * ((100vw - 300px) / (1200 - 300))),1.5rem)",
+    "h3-min": "1.375rem",
+    "h3-max": "1.5rem",
+    "h3-title": "clamp(1.375rem,calc(1.375rem + (24 - 22) * ((100vw - 300px) / (1200 - 300))),1.5rem)",
+    "h3-title-min": "1.375rem",
+    "h3-title-max": "1.5rem",
+    "body": "clamp(1.125rem,calc(1.125rem + (20 - 18) * ((100vw - 300px) / (1200 - 300))),1.25rem)",
+    "body-min": "1.125rem",
+    "body-max": "1.25rem",
+    "body-title": "clamp(1.125rem,calc(1.125rem + (20 - 18) * ((100vw - 300px) / (1200 - 300))),1.25rem)",
+    "body-title-min": "1.125rem",
+    "body-title-max": "1.25rem",
+    "body-small": "clamp(1rem,calc(1rem + (18 - 16) * ((100vw - 300px) / (1200 - 300))),1.125rem)",
+    "body-small-min": "1rem",
+    "body-small-max": "1.125rem",
+    "body-small-title": "clamp(1rem,calc(1rem + (18 - 16) * ((100vw - 300px) / (1200 - 300))),1.125rem)",
+    "body-small-title-min": "1rem",
+    "body-small-title-max": "1.125rem",
+    "technical": "clamp(0.875rem,calc(0.875rem + (16 - 14) * ((100vw - 300px) / (1200 - 300))),1rem)",
+    "technical-min": "0.875rem",
+    "technical-max": "1rem",
+    "technical-title": "clamp(0.875rem,calc(0.875rem + (16 - 14) * ((100vw - 300px) / (1200 - 300))),1rem)",
+    "technical-title-min": "0.875rem",
+    "technical-title-max": "1rem",
+    "caption": "0.8125rem",
+    "caption-title": "0.8125rem"
   },
   "line-height": {
     "$type": "dimension",
@@ -215,8 +215,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "40px",
-        "72px"
+        "2.5rem",
+        "4.5rem"
       ],
       "lineHeight": [
         "56px",
@@ -232,8 +232,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "32px",
-        "48px"
+        "2rem",
+        "3rem"
       ],
       "lineHeight": [
         "40px",
@@ -249,8 +249,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "28px",
-        "32px"
+        "1.75rem",
+        "2rem"
       ],
       "lineHeight": [
         "36px",
@@ -266,8 +266,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "40px",
-        "72px"
+        "2.5rem",
+        "4.5rem"
       ],
       "lineHeight": [
         "56px",
@@ -283,8 +283,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "32px",
-        "48px"
+        "2rem",
+        "3rem"
       ],
       "lineHeight": [
         "40px",
@@ -300,8 +300,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "28px",
-        "32px"
+        "1.75rem",
+        "2rem"
       ],
       "lineHeight": [
         "36px",
@@ -317,8 +317,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "22px",
-        "24px"
+        "1.375rem",
+        "1.5rem"
       ],
       "lineHeight": [
         "28px",
@@ -334,8 +334,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "22px",
-        "24px"
+        "1.375rem",
+        "1.5rem"
       ],
       "lineHeight": [
         "28px",
@@ -351,8 +351,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "18px",
-        "20px"
+        "1.125rem",
+        "1.25rem"
       ],
       "lineHeight": [
         "26px",
@@ -368,8 +368,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "18px",
-        "20px"
+        "1.125rem",
+        "1.25rem"
       ],
       "lineHeight": [
         "26px",
@@ -385,8 +385,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "16px",
-        "18px"
+        "1rem",
+        "1.125rem"
       ],
       "lineHeight": [
         "24px",
@@ -402,8 +402,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "16px",
-        "18px"
+        "1rem",
+        "1.125rem"
       ],
       "lineHeight": [
         "24px",
@@ -419,8 +419,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "14px",
-        "16px"
+        "0.875rem",
+        "1rem"
       ],
       "lineHeight": [
         "22px",
@@ -436,8 +436,8 @@
         "sans-serif"
       ],
       "fontSize": [
-        "14px",
-        "16px"
+        "0.875rem",
+        "1rem"
       ],
       "lineHeight": [
         "22px",
@@ -452,7 +452,7 @@
         "Arial",
         "sans-serif"
       ],
-      "fontSize": "13px",
+      "fontSize": "0.8125rem",
       "lineHeight": "18px",
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -463,7 +463,7 @@
         "Arial",
         "sans-serif"
       ],
-      "fontSize": "13px",
+      "fontSize": "0.8125rem",
       "lineHeight": "18px",
       "fontWeight": 500,
       "letterSpacing": "0"
