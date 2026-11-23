@@ -13,7 +13,7 @@
   /* Custom typography for this component */
   font-family: var(--hds-fonts-posten-sans);
   font-weight: 500;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 18px;
   -moz-osx-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: subpixel-antialiased;

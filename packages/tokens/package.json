@@ -12,6 +12,7 @@
     "build": "node --import tsx build.ts",
     "dev": "node --import tsx --watch-preserve-output --watch-path lib --watch-path tokens-source --watch-path build.ts --watch build.ts",
     "lint": "eslint \"*.ts*\"",
+    "test": "node --import tsx --test lib/*.test.ts",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .turbo node_modules dist"
   },
