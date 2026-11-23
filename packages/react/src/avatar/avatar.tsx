@@ -1,6 +1,7 @@
 import { clsx } from "@postenbring/hedwig-css/typed-classname";
 import { Slot } from "@radix-ui/react-slot";
-import { forwardRef, useState } from "react";
+import { forwardRef, useContext, useState } from "react";
+import { AvatarGroupContext } from "./context";
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
@@ -10,6 +11,8 @@ export interface AvatarProps extends React.HTMLAttributes<HTMLSpanElement> {
    * - `medium`: 40px
    * - `large`: 60px
    * - `xlarge`: 100px
+   *
+   * Inside an `AvatarGroup` the size of the group is used unless set here.
    *
    * @default "medium"
    */
@@ -105,7 +108,7 @@ function DefaultIcon() {
 export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
   (
     {
-      size = "medium",
+      size: sizeProp,
       variant = "default",
       src,
       alt,
@@ -118,6 +121,9 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
     },
     ref,
   ) => {
+    const groupSize = useContext(AvatarGroupContext);
+    const size = sizeProp ?? groupSize ?? "medium";
+
     // Remembers which src failed, so a new src is tried again
     const [failedSrc, setFailedSrc] = useState<string | undefined>();
 

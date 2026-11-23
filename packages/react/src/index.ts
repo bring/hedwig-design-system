@@ -8,6 +8,7 @@ export * from "./button";
 export * from "./button-list";
 export * from "./card";
 export * from "./avatar";
+export * from "./avatar-group";
 export * from "./chip";
 export * from "./description-list";
 export * from "./figure";
