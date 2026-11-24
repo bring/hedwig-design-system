@@ -217,46 +217,46 @@
   "spacing": {
     "$type": "dimension",
     "2": {
-      "$value": "2px"
+      "$value": "0.125rem"
     },
     "4": {
-      "$value": "4px"
+      "$value": "0.25rem"
     },
     "8": {
-      "$value": "8px"
+      "$value": "0.5rem"
     },
     "12": {
-      "$value": "12px"
+      "$value": "0.75rem"
     },
     "16": {
-      "$value": "16px"
+      "$value": "1rem"
     },
     "20": {
-      "$value": "20px"
+      "$value": "1.25rem"
     },
     "24": {
-      "$value": "24px"
+      "$value": "1.5rem"
     },
     "32": {
-      "$value": "32px"
+      "$value": "2rem"
     },
     "40": {
-      "$value": "40px"
+      "$value": "2.5rem"
     },
     "48": {
-      "$value": "48px"
+      "$value": "3rem"
     },
     "64": {
-      "$value": "64px"
+      "$value": "4rem"
     },
     "80": {
-      "$value": "80px"
+      "$value": "5rem"
     },
     "120": {
-      "$value": "120px"
+      "$value": "7.5rem"
     },
     "160": {
-      "$value": "160px"
+      "$value": "10rem"
     }
   },
   "navbar-height": {

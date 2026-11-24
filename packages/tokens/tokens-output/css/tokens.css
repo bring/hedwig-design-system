@@ -34,20 +34,20 @@
   --hds-breakpoint-medium: 720px; /* Most tablets */
   --hds-breakpoint-large: 940px; /* Smaller laptops and desktop monitors. This is where the navbar goes from the mobile version to the desktop version */
   --hds-breakpoint-xlarge: 1200px; /* Most modern laptops and desktop monitors */
-  --hds-spacing-2: 2px;
-  --hds-spacing-4: 4px;
-  --hds-spacing-8: 8px;
-  --hds-spacing-12: 12px;
-  --hds-spacing-16: 16px;
-  --hds-spacing-20: 20px;
-  --hds-spacing-24: 24px;
-  --hds-spacing-32: 32px;
-  --hds-spacing-40: 40px;
-  --hds-spacing-48: 48px;
-  --hds-spacing-64: 64px;
-  --hds-spacing-80: 80px;
-  --hds-spacing-120: 120px;
-  --hds-spacing-160: 160px;
+  --hds-spacing-2: 0.125rem;
+  --hds-spacing-4: 0.25rem;
+  --hds-spacing-8: 0.5rem;
+  --hds-spacing-12: 0.75rem;
+  --hds-spacing-16: 1rem;
+  --hds-spacing-20: 1.25rem;
+  --hds-spacing-24: 1.5rem;
+  --hds-spacing-32: 2rem;
+  --hds-spacing-40: 2.5rem;
+  --hds-spacing-48: 3rem;
+  --hds-spacing-64: 4rem;
+  --hds-spacing-80: 5rem;
+  --hds-spacing-120: 7.5rem;
+  --hds-spacing-160: 10rem;
   --hds-navbar-height: 112px;
   --hds-fonts-posten-sans: 'Posten Sans', Arial, sans-serif;
   --hds-fonts-posten-sans-bold: 'Posten Sans Bold', Arial, sans-serif;
