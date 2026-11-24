@@ -19,6 +19,10 @@ export const preview: Preview = {
   tags: ["autodocs"],
 
   parameters: {
+    options: {
+      // Without this, components that only have examples (e.g. Footer) end up last
+      storySort: { method: "alphabetical" },
+    },
     backgrounds: {
       options: {
         light: {
