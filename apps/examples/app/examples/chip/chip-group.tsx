@@ -5,7 +5,7 @@ const options = ["Sporing", "Retur", "Rask levering", "Erstatningsgaranti", "Mot
 
 function Example() {
   return (
-    <div style={{ display: "grid", gap: "1.5rem", maxWidth: "20rem" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", maxWidth: "20rem" }}>
       <div>
         <p>Inline: single row, scrolls horizontally</p>
         <ChipGroup layout="inline">
