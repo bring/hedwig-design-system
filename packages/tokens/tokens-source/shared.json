@@ -284,7 +284,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["2.5rem", "4.5rem"],
-        "lineHeight": ["56px", "80px"],
+        "lineHeight": ["3.5rem", "5rem"],
         "fontWeight": 700,
         "letterSpacing": "0"
       }
@@ -293,7 +293,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["2rem", "3rem"],
-        "lineHeight": ["40px", "56px"],
+        "lineHeight": ["2.5rem", "3.5rem"],
         "fontWeight": 700,
         "letterSpacing": "0"
       }
@@ -302,7 +302,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["1.75rem", "2rem"],
-        "lineHeight": ["36px", "40px"],
+        "lineHeight": ["2.25rem", "2.5rem"],
         "fontWeight": 700,
         "letterSpacing": "0"
       }
@@ -311,7 +311,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["2.5rem", "4.5rem"],
-        "lineHeight": ["56px", "80px"],
+        "lineHeight": ["3.5rem", "5rem"],
         "fontWeight": 500,
         "letterSpacing": "0"
       }
@@ -320,7 +320,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["2rem", "3rem"],
-        "lineHeight": ["40px", "56px"],
+        "lineHeight": ["2.5rem", "3.5rem"],
         "fontWeight": 500,
         "letterSpacing": "0"
       }
@@ -329,7 +329,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["1.75rem", "2rem"],
-        "lineHeight": ["36px", "40px"],
+        "lineHeight": ["2.25rem", "2.5rem"],
         "fontWeight": 500,
         "letterSpacing": "0"
       }
@@ -338,7 +338,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["1.375rem", "1.5rem"],
-        "lineHeight": ["28px", "32px"],
+        "lineHeight": ["1.75rem", "2rem"],
         "fontWeight": 400,
         "letterSpacing": "0"
       }
@@ -347,7 +347,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["1.375rem", "1.5rem"],
-        "lineHeight": ["28px", "32px"],
+        "lineHeight": ["1.75rem", "2rem"],
         "fontWeight": 500,
         "letterSpacing": "0"
       }
@@ -356,7 +356,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["1.125rem", "1.25rem"],
-        "lineHeight": ["26px", "28px"],
+        "lineHeight": ["1.625rem", "1.75rem"],
         "fontWeight": 400,
         "letterSpacing": "0"
       }
@@ -365,7 +365,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["1.125rem", "1.25rem"],
-        "lineHeight": ["26px", "28px"],
+        "lineHeight": ["1.625rem", "1.75rem"],
         "fontWeight": 500,
         "letterSpacing": "0"
       }
@@ -374,7 +374,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["1rem", "1.125rem"],
-        "lineHeight": ["24px", "26px"],
+        "lineHeight": ["1.5rem", "1.625rem"],
         "fontWeight": 400,
         "letterSpacing": "0"
       }
@@ -383,7 +383,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["1rem", "1.125rem"],
-        "lineHeight": ["24px", "26px"],
+        "lineHeight": ["1.5rem", "1.625rem"],
         "fontWeight": 500,
         "letterSpacing": "0"
       }
@@ -392,7 +392,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["0.875rem", "1rem"],
-        "lineHeight": ["22px", "24px"],
+        "lineHeight": ["1.375rem", "1.5rem"],
         "fontWeight": 400,
         "letterSpacing": "0"
       }
@@ -401,7 +401,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": ["0.875rem", "1rem"],
-        "lineHeight": ["22px", "24px"],
+        "lineHeight": ["1.375rem", "1.5rem"],
         "fontWeight": 500,
         "letterSpacing": "0"
       }
@@ -410,7 +410,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": "0.8125rem",
-        "lineHeight": "18px",
+        "lineHeight": "1.125rem",
         "fontWeight": 400,
         "letterSpacing": "0"
       }
@@ -419,7 +419,7 @@
       "$value": {
         "fontFamily": "{fonts.posten-sans}",
         "fontSize": "0.8125rem",
-        "lineHeight": "18px",
+        "lineHeight": "1.125rem",
         "fontWeight": 500,
         "letterSpacing": "0"
       }
