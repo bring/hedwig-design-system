@@ -48,50 +48,50 @@
   },
   "line-height": {
     "$type": "dimension",
-    "posten-h1-display": "clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px)",
-    "posten-h1-display-min": "56px",
-    "posten-h1-display-max": "80px",
-    "posten-h1": "clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px)",
-    "posten-h1-min": "40px",
-    "posten-h1-max": "56px",
-    "posten-h2": "clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px)",
-    "posten-h2-min": "36px",
-    "posten-h2-max": "40px",
-    "bring-h1-display": "clamp(56px,calc(56px + (80 - 56) * ((100vw - 300px) / (1200 - 300))),80px)",
-    "bring-h1-display-min": "56px",
-    "bring-h1-display-max": "80px",
-    "bring-h1": "clamp(40px,calc(40px + (56 - 40) * ((100vw - 300px) / (1200 - 300))),56px)",
-    "bring-h1-min": "40px",
-    "bring-h1-max": "56px",
-    "bring-h2": "clamp(36px,calc(36px + (40 - 36) * ((100vw - 300px) / (1200 - 300))),40px)",
-    "bring-h2-min": "36px",
-    "bring-h2-max": "40px",
-    "h3": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
-    "h3-min": "28px",
-    "h3-max": "32px",
-    "h3-title": "clamp(28px,calc(28px + (32 - 28) * ((100vw - 300px) / (1200 - 300))),32px)",
-    "h3-title-min": "28px",
-    "h3-title-max": "32px",
-    "body": "clamp(26px,calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))),28px)",
-    "body-min": "26px",
-    "body-max": "28px",
-    "body-title": "clamp(26px,calc(26px + (28 - 26) * ((100vw - 300px) / (1200 - 300))),28px)",
-    "body-title-min": "26px",
-    "body-title-max": "28px",
-    "body-small": "clamp(24px,calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300))),26px)",
-    "body-small-min": "24px",
-    "body-small-max": "26px",
-    "body-small-title": "clamp(24px,calc(24px + (26 - 24) * ((100vw - 300px) / (1200 - 300))),26px)",
-    "body-small-title-min": "24px",
-    "body-small-title-max": "26px",
-    "technical": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
-    "technical-min": "22px",
-    "technical-max": "24px",
-    "technical-title": "clamp(22px,calc(22px + (24 - 22) * ((100vw - 300px) / (1200 - 300))),24px)",
-    "technical-title-min": "22px",
-    "technical-title-max": "24px",
-    "caption": "18px",
-    "caption-title": "18px"
+    "posten-h1-display": "clamp(3.5rem,calc(3.5rem + (80 - 56) * ((100vw - 300px) / (1200 - 300))),5rem)",
+    "posten-h1-display-min": "3.5rem",
+    "posten-h1-display-max": "5rem",
+    "posten-h1": "clamp(2.5rem,calc(2.5rem + (56 - 40) * ((100vw - 300px) / (1200 - 300))),3.5rem)",
+    "posten-h1-min": "2.5rem",
+    "posten-h1-max": "3.5rem",
+    "posten-h2": "clamp(2.25rem,calc(2.25rem + (40 - 36) * ((100vw - 300px) / (1200 - 300))),2.5rem)",
+    "posten-h2-min": "2.25rem",
+    "posten-h2-max": "2.5rem",
+    "bring-h1-display": "clamp(3.5rem,calc(3.5rem + (80 - 56) * ((100vw - 300px) / (1200 - 300))),5rem)",
+    "bring-h1-display-min": "3.5rem",
+    "bring-h1-display-max": "5rem",
+    "bring-h1": "clamp(2.5rem,calc(2.5rem + (56 - 40) * ((100vw - 300px) / (1200 - 300))),3.5rem)",
+    "bring-h1-min": "2.5rem",
+    "bring-h1-max": "3.5rem",
+    "bring-h2": "clamp(2.25rem,calc(2.25rem + (40 - 36) * ((100vw - 300px) / (1200 - 300))),2.5rem)",
+    "bring-h2-min": "2.25rem",
+    "bring-h2-max": "2.5rem",
+    "h3": "clamp(1.75rem,calc(1.75rem + (32 - 28) * ((100vw - 300px) / (1200 - 300))),2rem)",
+    "h3-min": "1.75rem",
+    "h3-max": "2rem",
+    "h3-title": "clamp(1.75rem,calc(1.75rem + (32 - 28) * ((100vw - 300px) / (1200 - 300))),2rem)",
+    "h3-title-min": "1.75rem",
+    "h3-title-max": "2rem",
+    "body": "clamp(1.625rem,calc(1.625rem + (28 - 26) * ((100vw - 300px) / (1200 - 300))),1.75rem)",
+    "body-min": "1.625rem",
+    "body-max": "1.75rem",
+    "body-title": "clamp(1.625rem,calc(1.625rem + (28 - 26) * ((100vw - 300px) / (1200 - 300))),1.75rem)",
+    "body-title-min": "1.625rem",
+    "body-title-max": "1.75rem",
+    "body-small": "clamp(1.5rem,calc(1.5rem + (26 - 24) * ((100vw - 300px) / (1200 - 300))),1.625rem)",
+    "body-small-min": "1.5rem",
+    "body-small-max": "1.625rem",
+    "body-small-title": "clamp(1.5rem,calc(1.5rem + (26 - 24) * ((100vw - 300px) / (1200 - 300))),1.625rem)",
+    "body-small-title-min": "1.5rem",
+    "body-small-title-max": "1.625rem",
+    "technical": "clamp(1.375rem,calc(1.375rem + (24 - 22) * ((100vw - 300px) / (1200 - 300))),1.5rem)",
+    "technical-min": "1.375rem",
+    "technical-max": "1.5rem",
+    "technical-title": "clamp(1.375rem,calc(1.375rem + (24 - 22) * ((100vw - 300px) / (1200 - 300))),1.5rem)",
+    "technical-title-min": "1.375rem",
+    "technical-title-max": "1.5rem",
+    "caption": "1.125rem",
+    "caption-title": "1.125rem"
   },
   "font-weight": {
     "$type": "number",
@@ -166,20 +166,20 @@
     "xlarge": "1200px"
   },
   "spacing": {
-    "2": "2px",
-    "4": "4px",
-    "8": "8px",
-    "12": "12px",
-    "16": "16px",
-    "20": "20px",
-    "24": "24px",
-    "32": "32px",
-    "40": "40px",
-    "48": "48px",
-    "64": "64px",
-    "80": "80px",
-    "120": "120px",
-    "160": "160px",
+    "2": "0.125rem",
+    "4": "0.25rem",
+    "8": "0.5rem",
+    "12": "0.75rem",
+    "16": "1rem",
+    "20": "1.25rem",
+    "24": "1.5rem",
+    "32": "2rem",
+    "40": "2.5rem",
+    "48": "3rem",
+    "64": "4rem",
+    "80": "5rem",
+    "120": "7.5rem",
+    "160": "10rem",
     "$type": "dimension"
   },
   "navbar-height": "112px",
@@ -219,8 +219,8 @@
         "4.5rem"
       ],
       "lineHeight": [
-        "56px",
-        "80px"
+        "3.5rem",
+        "5rem"
       ],
       "fontWeight": 700,
       "letterSpacing": "0"
@@ -236,8 +236,8 @@
         "3rem"
       ],
       "lineHeight": [
-        "40px",
-        "56px"
+        "2.5rem",
+        "3.5rem"
       ],
       "fontWeight": 700,
       "letterSpacing": "0"
@@ -253,8 +253,8 @@
         "2rem"
       ],
       "lineHeight": [
-        "36px",
-        "40px"
+        "2.25rem",
+        "2.5rem"
       ],
       "fontWeight": 700,
       "letterSpacing": "0"
@@ -270,8 +270,8 @@
         "4.5rem"
       ],
       "lineHeight": [
-        "56px",
-        "80px"
+        "3.5rem",
+        "5rem"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -287,8 +287,8 @@
         "3rem"
       ],
       "lineHeight": [
-        "40px",
-        "56px"
+        "2.5rem",
+        "3.5rem"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -304,8 +304,8 @@
         "2rem"
       ],
       "lineHeight": [
-        "36px",
-        "40px"
+        "2.25rem",
+        "2.5rem"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -321,8 +321,8 @@
         "1.5rem"
       ],
       "lineHeight": [
-        "28px",
-        "32px"
+        "1.75rem",
+        "2rem"
       ],
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -338,8 +338,8 @@
         "1.5rem"
       ],
       "lineHeight": [
-        "28px",
-        "32px"
+        "1.75rem",
+        "2rem"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -355,8 +355,8 @@
         "1.25rem"
       ],
       "lineHeight": [
-        "26px",
-        "28px"
+        "1.625rem",
+        "1.75rem"
       ],
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -372,8 +372,8 @@
         "1.25rem"
       ],
       "lineHeight": [
-        "26px",
-        "28px"
+        "1.625rem",
+        "1.75rem"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -389,8 +389,8 @@
         "1.125rem"
       ],
       "lineHeight": [
-        "24px",
-        "26px"
+        "1.5rem",
+        "1.625rem"
       ],
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -406,8 +406,8 @@
         "1.125rem"
       ],
       "lineHeight": [
-        "24px",
-        "26px"
+        "1.5rem",
+        "1.625rem"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -423,8 +423,8 @@
         "1rem"
       ],
       "lineHeight": [
-        "22px",
-        "24px"
+        "1.375rem",
+        "1.5rem"
       ],
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -440,8 +440,8 @@
         "1rem"
       ],
       "lineHeight": [
-        "22px",
-        "24px"
+        "1.375rem",
+        "1.5rem"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -453,7 +453,7 @@
         "sans-serif"
       ],
       "fontSize": "0.8125rem",
-      "lineHeight": "18px",
+      "lineHeight": "1.125rem",
       "fontWeight": 400,
       "letterSpacing": "0"
     },
@@ -464,7 +464,7 @@
         "sans-serif"
       ],
       "fontSize": "0.8125rem",
-      "lineHeight": "18px",
+      "lineHeight": "1.125rem",
       "fontWeight": 500,
       "letterSpacing": "0"
     }
