@@ -6,10 +6,10 @@ function Example() {
   const [weight, setWeight] = useState("0-2");
 
   return (
-    <form style={{ display: "grid", gap: "1.5rem", maxWidth: "40rem" }}>
+    <form style={{ display: "flex", flexDirection: "column", gap: "1.5rem", maxWidth: "40rem" }}>
       <h2 className="hds-text-h3">Sende i Norge</h2>
 
-      <fieldset style={{ border: 0, padding: 0, margin: 0 }}>
+      <fieldset style={{ border: 0, padding: 0, margin: 0, minInlineSize: 0 }}>
         <legend>Hvor mye veier pakken?</legend>
         <ChipGroup layout="inline">
           {["0-2", "2-5", "5-10", "10-25"].map((value) => (
@@ -30,7 +30,7 @@ function Example() {
         </ChipGroup>
       </fieldset>
 
-      <fieldset style={{ border: 0, padding: 0, margin: 0 }}>
+      <fieldset style={{ border: 0, padding: 0, margin: 0, minInlineSize: 0 }}>
         <legend>Tilleggstjenester</legend>
         <ChipGroup>
           <Chip type="checkbox" name="extras" value="tracking">
