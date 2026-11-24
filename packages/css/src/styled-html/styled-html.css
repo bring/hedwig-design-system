@@ -84,11 +84,6 @@
     margin-top: var(--hds-spacing-32);
   }
 
-  /* Blockquote */
-  & blockquote {
-    @extend url("./src/blockquote/blockquote.css:hds-blockquote");
-  }
-
   /* Table */
   & table {
     @extend url("./src/table/table.css:hds-table");
