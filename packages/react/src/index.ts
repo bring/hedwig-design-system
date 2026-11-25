@@ -1,7 +1,6 @@
 export * from "./accordion";
 export * from "./alert";
 export * from "./badge";
-export * from "./blockquote";
 export * from "./box";
 export * from "./breadcrumbs";
 export * from "./button";
