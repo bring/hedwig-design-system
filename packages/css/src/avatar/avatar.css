@@ -110,15 +110,15 @@
     }
 
     /* Only the top part (the symbol) of the secondary logo is shown by clipping it to the box */
-    &:not(:has(.hds-avatar__image)) {
+    &.hds-avatar--built-in-logo {
       background-image: var(--_hds-logo-secondary);
       background-repeat: no-repeat;
       background-position: top center;
       background-size: 100% auto;
     }
 
-    &.hds-avatar--large:not(:has(.hds-avatar__image)),
-    &.hds-avatar--xlarge:not(:has(.hds-avatar__image)) {
+    &.hds-avatar--built-in-logo.hds-avatar--large,
+    &.hds-avatar--built-in-logo.hds-avatar--xlarge {
       background-position: center;
       background-size: contain;
     }

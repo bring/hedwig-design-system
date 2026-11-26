@@ -139,13 +139,19 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(
         "hds-avatar--large": size === "large",
         "hds-avatar--xlarge": size === "xlarge",
         "hds-avatar--logo": isLogo,
+        "hds-avatar--built-in-logo": isBuiltInLogo,
       },
       className as undefined,
     );
 
     if (asChild) {
       return (
-        <Slot ref={ref} className={classes} aria-label={ariaLabel} {...rest}>
+        <Slot
+          ref={ref}
+          className={classes}
+          {...(ariaLabel !== undefined && { role: "img", "aria-label": ariaLabel })}
+          {...rest}
+        >
           {children}
         </Slot>
       );
