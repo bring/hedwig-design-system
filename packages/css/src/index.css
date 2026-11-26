@@ -7,6 +7,8 @@
 /* All components */
 @import url("accordion/accordion.css");
 @import url("alert/alert.css");
+@import url("avatar/avatar.css");
+@import url("avatar-group/avatar-group.css");
 @import url("badge/badge.css");
 @import url("blockquote/blockquote.css");
 @import url("box/box.css");

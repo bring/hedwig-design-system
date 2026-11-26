@@ -1,0 +1,45 @@
+/**
+ * Block
+ *
+ * A horizontal stack of overlapping avatars. Later avatars are painted on top of earlier ones.
+ */
+
+.hds-avatar-group {
+  --_hds-avatar-group-overlap: 23px;
+
+  display: inline-flex;
+  align-items: center;
+  isolation: isolate;
+  margin: 0;
+  padding: 0;
+
+  /**
+   * Sizes, the overlap is 56.25% of the avatar width (18px at 32px), rounded to whole pixels
+   */
+  &.hds-avatar-group--small {
+    --_hds-avatar-group-overlap: 18px;
+  }
+
+  &.hds-avatar-group--medium {
+    --_hds-avatar-group-overlap: 23px;
+  }
+
+  &.hds-avatar-group--large {
+    --_hds-avatar-group-overlap: 34px;
+  }
+
+  &.hds-avatar-group--xlarge {
+    --_hds-avatar-group-overlap: 56px;
+  }
+
+  /**
+   * Separator outline, so the edges stay visible where the avatars overlap
+   */
+  & > .hds-avatar {
+    box-shadow: 0 0 0 2px var(--hds-colors-surface-default);
+  }
+
+  & > .hds-avatar + .hds-avatar {
+    margin-inline-start: calc(var(--_hds-avatar-group-overlap) * -1);
+  }
+}
