@@ -1,5 +1,6 @@
 import type { DesignTokens, Parser } from "style-dictionary-utils";
 import { w3cTokenJsonParser } from "style-dictionary-utils/dist/parser/w3c-token-json-parser";
+import { lineHeightRatioToLength } from "./fluid-dimension";
 import type { CustomTokenTypography } from "./typography";
 
 /**
@@ -80,7 +81,7 @@ export const customTokensParser: Parser = {
           const [min, max] = value.lineHeight;
           extractedTokens.lineHeight[parentKey] = {
             type: "fluidDimension",
-            value: [min, max],
+            value: lineHeightRatioToLength(value.fontSize, value.lineHeight),
           };
           extractedTokens.lineHeight[`${parentKey}-min`] = { value: min };
           extractedTokens.lineHeight[`${parentKey}-max`] = { value: max };

@@ -45,3 +45,17 @@ function asPixels(value: string | number) {
   // Use a 16px root for the viewport-dependent part without typed CSS division.
   return Number(match.groups.amount) * (match.groups.unit === "rem" ? 16 : 1);
 }
+
+/**
+ * Converts a unitless fluid line-height ratio into fluid rem lengths.
+ * Each ratio is multiplied by the font size at the same viewport end, so the
+ * result can be passed to `transformMaybeFluidDimension` as a valid length.
+ */
+export function lineHeightRatioToLength(
+  fontSize: string | [string, string],
+  [minRatio, maxRatio]: [string, string],
+): [string, string] {
+  const [minFont, maxFont] = Array.isArray(fontSize) ? fontSize : [fontSize, fontSize];
+  const toRem = (px: number) => `${String(Number((px / 16).toFixed(4)))}rem`;
+  return [toRem(Number(minRatio) * asPixels(minFont)), toRem(Number(maxRatio) * asPixels(maxFont))];
+}
