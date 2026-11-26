@@ -48,50 +48,50 @@
   },
   "line-height": {
     "$type": "dimension",
-    "posten-h1-display": "clamp(3.5rem,calc(3.5rem + (80 - 56) * ((100vw - 300px) / (1200 - 300))),5rem)",
-    "posten-h1-display-min": "3.5rem",
-    "posten-h1-display-max": "5rem",
-    "posten-h1": "clamp(2.5rem,calc(2.5rem + (56 - 40) * ((100vw - 300px) / (1200 - 300))),3.5rem)",
-    "posten-h1-min": "2.5rem",
-    "posten-h1-max": "3.5rem",
-    "posten-h2": "clamp(2.25rem,calc(2.25rem + (40 - 36) * ((100vw - 300px) / (1200 - 300))),2.5rem)",
-    "posten-h2-min": "2.25rem",
-    "posten-h2-max": "2.5rem",
-    "bring-h1-display": "clamp(3.5rem,calc(3.5rem + (80 - 56) * ((100vw - 300px) / (1200 - 300))),5rem)",
-    "bring-h1-display-min": "3.5rem",
-    "bring-h1-display-max": "5rem",
-    "bring-h1": "clamp(2.5rem,calc(2.5rem + (56 - 40) * ((100vw - 300px) / (1200 - 300))),3.5rem)",
-    "bring-h1-min": "2.5rem",
-    "bring-h1-max": "3.5rem",
-    "bring-h2": "clamp(2.25rem,calc(2.25rem + (40 - 36) * ((100vw - 300px) / (1200 - 300))),2.5rem)",
-    "bring-h2-min": "2.25rem",
-    "bring-h2-max": "2.5rem",
-    "h3": "clamp(1.75rem,calc(1.75rem + (32 - 28) * ((100vw - 300px) / (1200 - 300))),2rem)",
-    "h3-min": "1.75rem",
-    "h3-max": "2rem",
-    "h3-title": "clamp(1.75rem,calc(1.75rem + (32 - 28) * ((100vw - 300px) / (1200 - 300))),2rem)",
-    "h3-title-min": "1.75rem",
-    "h3-title-max": "2rem",
-    "body": "clamp(1.625rem,calc(1.625rem + (28 - 26) * ((100vw - 300px) / (1200 - 300))),1.75rem)",
-    "body-min": "1.625rem",
-    "body-max": "1.75rem",
-    "body-title": "clamp(1.625rem,calc(1.625rem + (28 - 26) * ((100vw - 300px) / (1200 - 300))),1.75rem)",
-    "body-title-min": "1.625rem",
-    "body-title-max": "1.75rem",
-    "body-small": "clamp(1.5rem,calc(1.5rem + (26 - 24) * ((100vw - 300px) / (1200 - 300))),1.625rem)",
-    "body-small-min": "1.5rem",
-    "body-small-max": "1.625rem",
-    "body-small-title": "clamp(1.5rem,calc(1.5rem + (26 - 24) * ((100vw - 300px) / (1200 - 300))),1.625rem)",
-    "body-small-title-min": "1.5rem",
-    "body-small-title-max": "1.625rem",
-    "technical": "clamp(1.375rem,calc(1.375rem + (24 - 22) * ((100vw - 300px) / (1200 - 300))),1.5rem)",
-    "technical-min": "1.375rem",
-    "technical-max": "1.5rem",
-    "technical-title": "clamp(1.375rem,calc(1.375rem + (24 - 22) * ((100vw - 300px) / (1200 - 300))),1.5rem)",
-    "technical-title-min": "1.375rem",
-    "technical-title-max": "1.5rem",
-    "caption": "1.125rem",
-    "caption-title": "1.125rem"
+    "posten-h1-display": "clamp(3.5rem,calc(3.5rem + (79.92 - 56) * ((100vw - 300px) / (1200 - 300))),4.995rem)",
+    "posten-h1-display-min": "1.4",
+    "posten-h1-display-max": "1.11",
+    "posten-h1": "clamp(2.5rem,calc(2.5rem + (56.16 - 40) * ((100vw - 300px) / (1200 - 300))),3.51rem)",
+    "posten-h1-min": "1.25",
+    "posten-h1-max": "1.17",
+    "posten-h2": "clamp(2.2575rem,calc(2.2575rem + (40 - 36.12) * ((100vw - 300px) / (1200 - 300))),2.5rem)",
+    "posten-h2-min": "1.29",
+    "posten-h2-max": "1.25",
+    "bring-h1-display": "clamp(3.5rem,calc(3.5rem + (79.92 - 56) * ((100vw - 300px) / (1200 - 300))),4.995rem)",
+    "bring-h1-display-min": "1.40",
+    "bring-h1-display-max": "1.11",
+    "bring-h1": "clamp(2.5rem,calc(2.5rem + (56.16 - 40) * ((100vw - 300px) / (1200 - 300))),3.51rem)",
+    "bring-h1-min": "1.25",
+    "bring-h1-max": "1.17",
+    "bring-h2": "clamp(2.2575rem,calc(2.2575rem + (40 - 36.12) * ((100vw - 300px) / (1200 - 300))),2.5rem)",
+    "bring-h2-min": "1.29",
+    "bring-h2-max": "1.25",
+    "h3": "clamp(1.7463rem,calc(1.7463rem + (31.92 - 27.9408) * ((100vw - 300px) / (1200 - 300))),1.995rem)",
+    "h3-min": "1.27",
+    "h3-max": "1.33",
+    "h3-title": "clamp(1.7463rem,calc(1.7463rem + (31.92 - 27.9408) * ((100vw - 300px) / (1200 - 300))),1.995rem)",
+    "h3-title-min": "1.27",
+    "h3-title-max": "1.33",
+    "body": "clamp(1.62rem,calc(1.62rem + (28 - 25.92) * ((100vw - 300px) / (1200 - 300))),1.75rem)",
+    "body-min": "1.44",
+    "body-max": "1.40",
+    "body-title": "clamp(1.62rem,calc(1.62rem + (28 - 25.92) * ((100vw - 300px) / (1200 - 300))),1.75rem)",
+    "body-title-min": "1.44",
+    "body-title-max": "1.40",
+    "body-small": "clamp(1.5rem,calc(1.5rem + (25.92 - 24) * ((100vw - 300px) / (1200 - 300))),1.62rem)",
+    "body-small-min": "1.5",
+    "body-small-max": "1.44",
+    "body-small-title": "clamp(1.5rem,calc(1.5rem + (25.92 - 24) * ((100vw - 300px) / (1200 - 300))),1.62rem)",
+    "body-small-title-min": "1.5",
+    "body-small-title-max": "1.44",
+    "technical": "clamp(1.3738rem,calc(1.3738rem + (24 - 21.9808) * ((100vw - 300px) / (1200 - 300))),1.5rem)",
+    "technical-min": "1.57",
+    "technical-max": "1.5",
+    "technical-title": "clamp(1.3738rem,calc(1.3738rem + (24 - 21.9808) * ((100vw - 300px) / (1200 - 300))),1.5rem)",
+    "technical-title-min": "1.57",
+    "technical-title-max": "1.5",
+    "caption": "1.38",
+    "caption-title": "1.38"
   },
   "font-weight": {
     "$type": "number",
@@ -219,8 +219,8 @@
         "4.5rem"
       ],
       "lineHeight": [
-        "3.5rem",
-        "5rem"
+        "1.4",
+        "1.11"
       ],
       "fontWeight": 700,
       "letterSpacing": "0"
@@ -236,8 +236,8 @@
         "3rem"
       ],
       "lineHeight": [
-        "2.5rem",
-        "3.5rem"
+        "1.25",
+        "1.17"
       ],
       "fontWeight": 700,
       "letterSpacing": "0"
@@ -253,8 +253,8 @@
         "2rem"
       ],
       "lineHeight": [
-        "2.25rem",
-        "2.5rem"
+        "1.29",
+        "1.25"
       ],
       "fontWeight": 700,
       "letterSpacing": "0"
@@ -270,8 +270,8 @@
         "4.5rem"
       ],
       "lineHeight": [
-        "3.5rem",
-        "5rem"
+        "1.40",
+        "1.11"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -287,8 +287,8 @@
         "3rem"
       ],
       "lineHeight": [
-        "2.5rem",
-        "3.5rem"
+        "1.25",
+        "1.17"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -304,8 +304,8 @@
         "2rem"
       ],
       "lineHeight": [
-        "2.25rem",
-        "2.5rem"
+        "1.29",
+        "1.25"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -321,8 +321,8 @@
         "1.5rem"
       ],
       "lineHeight": [
-        "1.75rem",
-        "2rem"
+        "1.27",
+        "1.33"
       ],
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -338,8 +338,8 @@
         "1.5rem"
       ],
       "lineHeight": [
-        "1.75rem",
-        "2rem"
+        "1.27",
+        "1.33"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -355,8 +355,8 @@
         "1.25rem"
       ],
       "lineHeight": [
-        "1.625rem",
-        "1.75rem"
+        "1.44",
+        "1.40"
       ],
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -372,8 +372,8 @@
         "1.25rem"
       ],
       "lineHeight": [
-        "1.625rem",
-        "1.75rem"
+        "1.44",
+        "1.40"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -389,8 +389,8 @@
         "1.125rem"
       ],
       "lineHeight": [
-        "1.5rem",
-        "1.625rem"
+        "1.5",
+        "1.44"
       ],
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -406,8 +406,8 @@
         "1.125rem"
       ],
       "lineHeight": [
-        "1.5rem",
-        "1.625rem"
+        "1.5",
+        "1.44"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -423,8 +423,8 @@
         "1rem"
       ],
       "lineHeight": [
-        "1.375rem",
-        "1.5rem"
+        "1.57",
+        "1.5"
       ],
       "fontWeight": 400,
       "letterSpacing": "0"
@@ -440,8 +440,8 @@
         "1rem"
       ],
       "lineHeight": [
-        "1.375rem",
-        "1.5rem"
+        "1.57",
+        "1.5"
       ],
       "fontWeight": 500,
       "letterSpacing": "0"
@@ -453,7 +453,7 @@
         "sans-serif"
       ],
       "fontSize": "0.8125rem",
-      "lineHeight": "1.125rem",
+      "lineHeight": "1.38",
       "fontWeight": 400,
       "letterSpacing": "0"
     },
@@ -464,7 +464,7 @@
         "sans-serif"
       ],
       "fontSize": "0.8125rem",
-      "lineHeight": "1.125rem",
+      "lineHeight": "1.38",
       "fontWeight": 500,
       "letterSpacing": "0"
     }
