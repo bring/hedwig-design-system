@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "22.15.21",
-    "color2k": "2.0.4",
+    "color2k": "2.2.0",
     "eslint": "^8.57.0",
     "eslint-config-custom": "*",
     "hedwig-tsconfig": "workspace:*",
