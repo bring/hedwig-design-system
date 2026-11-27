@@ -1,11 +1,16 @@
 @import url("../_custom-media.css");
 
 .hds-button {
-  --hds-component-button-border-width: 1px;
-  --hds-component-button-height-large: 58px;
-  --hds-component-button-height-small: 44px;
-  --hds-component-button-icon-size-large: 24px;
-  --hds-component-button-icon-size-small: 20px;
+  --hds-component-button-height-large: calc(
+    var(--hds-line-height-body-title) + var(--hds-spacing-12) * 2 + var(--hds-spacing-4) +
+      var(--hds-stroke-default) * 2
+  );
+  --hds-component-button-height-small: calc(
+    var(--hds-line-height-technical-title) + var(--hds-spacing-8) * 2 + var(--hds-spacing-2) +
+      var(--hds-stroke-default) * 2
+  );
+  --hds-component-button-icon-size-large: 1.2em;
+  --hds-component-button-icon-size-small: 1.25em;
 
   -webkit-font-smoothing: antialiased;
   appearance: button;
@@ -14,13 +19,12 @@
   gap: var(--hds-spacing-12);
   border-style: solid;
   border-radius: var(--hds-border-radius-8);
-  border-width: var(--hds-component-button-border-width);
+  border-width: var(--hds-stroke-default);
   transition-duration: var(--hds-micro-animation-duration-quick);
   transition-timing-function: var(--hds-micro-animation-easing-normal);
   transition-property: color, background-color, border-color, fill, outline;
   cursor: pointer;
   word-break: normal;
-  font: var(--hds-typography-body-small-title);
   align-items: center;
   justify-content: center;
 
@@ -33,8 +37,7 @@
    * Modifiers: sizes
    */
   &.hds-button--small {
-    font-size: var(--hds-font-size-technical-title-max);
-    line-height: var(--hds-line-height-technical-title-max);
+    font: var(--hds-typography-technical-title);
     padding: var(--hds-spacing-8) var(--hds-spacing-16);
 
     /* The height can be more if the text inside the button wraps */
@@ -56,18 +59,16 @@
     &.hds-button--only-icon {
       padding-left: var(--hds-spacing-8);
       padding-right: var(--hds-spacing-8);
-
-      & * {
-        width: var(--hds-spacing-24);
-      }
+      min-width: var(--hds-component-button-height-small);
     }
   }
 
   &.hds-button--large {
-    min-height: var(--hds-component-button-height-large);
-    font-size: var(--hds-font-size-body);
-    line-height: var(--hds-line-height-body);
+    font: var(--hds-typography-body-title);
     padding: var(--hds-spacing-12) var(--hds-spacing-20);
+
+    /* The height can be more if the text inside the button wraps */
+    min-height: var(--hds-component-button-height-large);
 
     & * {
       height: var(--hds-component-button-icon-size-large);
@@ -85,10 +86,7 @@
     &.hds-button--only-icon {
       padding-left: var(--hds-spacing-12);
       padding-right: var(--hds-spacing-12);
-
-      & * {
-        width: var(--hds-spacing-32);
-      }
+      min-width: var(--hds-component-button-height-large);
     }
   }
 
