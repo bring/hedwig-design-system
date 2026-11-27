@@ -28,7 +28,7 @@
     .hds-accordion-item-header {
       cursor: pointer;
       display: grid;
-      grid-template-columns: 24px auto;
+      grid-template-columns: 1.5rem auto;
       grid-gap: var(--hds-spacing-16);
       width: 100%;
       padding: var(--hds-component-accordion-header-spacing-between) 0;
@@ -48,11 +48,11 @@
 
       &::before {
         content: "";
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
         mask-image: var(--_hds-chevron-down);
         mask-size:
-          15px 20px,
+          0.9375rem 1.25rem,
           contain;
         mask-repeat: no-repeat;
         mask-position: center;
