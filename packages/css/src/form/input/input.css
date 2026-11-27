@@ -1,11 +1,11 @@
 .hds-input .hds-input-group__input {
   height: calc(
-    var(--hds-line-height-body-title) + (var(--hds-spacing-12) * 2) + var(--hds-spacing-4)
+    var(--hds-line-height-body-title) + var(--hds-spacing-12) * 2 + var(--hds-spacing-4)
   );
 }
 
 .hds-input.hds-input-group--small .hds-input-group__input {
   height: calc(
-    var(--hds-line-height-technical-title) + (var(--hds-spacing-8) * 2) + var(--hds-spacing-2)
+    var(--hds-line-height-technical-title) + var(--hds-spacing-8) * 2 + var(--hds-spacing-2)
   );
 }
