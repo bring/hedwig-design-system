@@ -2,7 +2,7 @@
 
 .hds-button {
   --hds-component-button-height-large: calc(
-    var(--hds-line-height-body-title) + var(--hds-spacing-12 * 2) + var(--hds-spacing-4) +
+    var(--hds-line-height-body-title) + var(--hds-spacing-12) * 2 + var(--hds-spacing-4) +
       var(--hds-stroke-default) * 2
   );
   --hds-component-button-height-small: calc(
