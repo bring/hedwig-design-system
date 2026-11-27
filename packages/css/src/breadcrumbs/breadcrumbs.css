@@ -41,18 +41,20 @@
       content: "";
       display: inline-block;
       width: 20px;
-      height: 20px;
+      height: 1lh;
 
       /* background-image: var(--_hds-icons-cheveron-right-dark-grey); */
       mask-image: var(--_hds-chevron-right);
       mask-size:
-        7px 14px,
+        0.4735rem 0.875rem,
         contain;
       mask-repeat: no-repeat;
       mask-position: center;
       background-image: none;
       background-color: var(--hds-colors-text-subtle);
       margin: 0 var(--hds-spacing-4);
+      position: relative;
+      top: 0.0625rem;
     }
 
     @media (--before-medium) {
